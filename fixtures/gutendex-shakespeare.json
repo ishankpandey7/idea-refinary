@@ -1,0 +1,660 @@
+[
+  {
+    "sourceId": "gutendex",
+    "externalId": "1513",
+    "canonicalUrl": "https://www.gutenberg.org/ebooks/1513.html.images",
+    "title": "Romeo and Juliet",
+    "authors": [
+      "Shakespeare, William"
+    ],
+    "publishedAt": null,
+    "mediaType": "text",
+    "licence": {
+      "spdx": "PD",
+      "url": null,
+      "assertedBy": "gutendex",
+      "attribution": "Shakespeare, William — Romeo and Juliet"
+    },
+    "snippet": null,
+    "thumbnailUrl": "https://www.gutenberg.org/cache/epub/1513/pg1513.cover.medium.jpg",
+    "raw": {
+      "id": 1513,
+      "title": "Romeo and Juliet",
+      "authors": [
+        {
+          "name": "Shakespeare, William",
+          "birth_year": 1564,
+          "death_year": 1616
+        }
+      ],
+      "summaries": [
+        "\"Romeo and Juliet\" by William Shakespeare is a tragedy written between 1591 and 1595. Two young lovers from feuding Italian families meet and fall secretly in love in Verona. Their forbidden romance leads them to marry in secret with a friar's help, hoping to unite their warring households. But family hatred, violent duels, and tragic misunderstandings threaten to destroy their bond. This tale of star-crossed lovers has become the archetypal story of young love and remains one of Shakespeare's most frequently performed plays. (This is an automatically generated summary.)"
+      ],
+      "editors": [],
+      "translators": [],
+      "subjects": [
+        "Conflict of generations -- Drama",
+        "Juliet (Fictitious character) -- Drama",
+        "Romeo (Fictitious character) -- Drama",
+        "Tragedies (Drama)",
+        "Vendetta -- Drama",
+        "Verona (Italy) -- Drama",
+        "Youth -- Drama"
+      ],
+      "bookshelves": [
+        "Category: British Literature",
+        "Category: Classics of Literature",
+        "Category: Plays/Films/Dramas",
+        "Category: Romance"
+      ],
+      "languages": [
+        "en"
+      ],
+      "copyright": false,
+      "media_type": "Text",
+      "formats": {
+        "text/html": "https://www.gutenberg.org/ebooks/1513.html.images",
+        "application/epub+zip": "https://www.gutenberg.org/ebooks/1513.epub3.images",
+        "application/x-mobipocket-ebook": "https://www.gutenberg.org/ebooks/1513.kf8.images",
+        "application/rdf+xml": "https://www.gutenberg.org/ebooks/1513.rdf",
+        "image/jpeg": "https://www.gutenberg.org/cache/epub/1513/pg1513.cover.medium.jpg",
+        "application/octet-stream": "https://www.gutenberg.org/cache/epub/1513/pg1513-h.zip",
+        "text/plain; charset=utf-8": "https://www.gutenberg.org/ebooks/1513.txt.utf-8",
+        "text/plain; charset=us-ascii": "https://www.gutenberg.org/files/1513/1513-0.txt"
+      },
+      "download_count": 116214
+    }
+  },
+  {
+    "sourceId": "gutendex",
+    "externalId": "100",
+    "canonicalUrl": "https://www.gutenberg.org/ebooks/100.html.images",
+    "title": "The Complete Works of William Shakespeare",
+    "authors": [
+      "Shakespeare, William"
+    ],
+    "publishedAt": null,
+    "mediaType": "text",
+    "licence": {
+      "spdx": "PD",
+      "url": null,
+      "assertedBy": "gutendex",
+      "attribution": "Shakespeare, William — The Complete Works of William Shakespeare"
+    },
+    "snippet": null,
+    "thumbnailUrl": "https://www.gutenberg.org/cache/epub/100/pg100.cover.medium.jpg",
+    "raw": {
+      "id": 100,
+      "title": "The Complete Works of William Shakespeare",
+      "authors": [
+        {
+          "name": "Shakespeare, William",
+          "birth_year": 1564,
+          "death_year": 1616
+        }
+      ],
+      "summaries": [
+        "\"The Complete Works of William Shakespeare\" by William Shakespeare is a comprehensive collection containing all of Shakespeare's plays and poems. This standard volume gathers the playwright's entire output, including histories, tragedies, and comedies that have shaped literature for centuries. Some editions feature collaborative works with other writers, though their authorship remains debated. Published by numerous academic presses and major publishers, these collected editions have become prized possessions for book collectors, often released in luxurious leather-bound formats that preserve Shakespeare's timeless literary legacy. (This is an automatically generated summary.)"
+      ],
+      "editors": [],
+      "translators": [],
+      "subjects": [
+        "English drama -- Early modern and Elizabethan, 1500-1600"
+      ],
+      "bookshelves": [
+        "Category: British Literature",
+        "Category: Classics of Literature",
+        "Category: Plays/Films/Dramas",
+        "Category: Poetry",
+        "Plays"
+      ],
+      "languages": [
+        "en"
+      ],
+      "copyright": false,
+      "media_type": "Text",
+      "formats": {
+        "text/html": "https://www.gutenberg.org/ebooks/100.html.images",
+        "application/epub+zip": "https://www.gutenberg.org/ebooks/100.epub3.images",
+        "application/x-mobipocket-ebook": "https://www.gutenberg.org/ebooks/100.kf8.images",
+        "application/rdf+xml": "https://www.gutenberg.org/ebooks/100.rdf",
+        "image/jpeg": "https://www.gutenberg.org/cache/epub/100/pg100.cover.medium.jpg",
+        "application/octet-stream": "https://www.gutenberg.org/cache/epub/100/pg100-h.zip",
+        "text/plain; charset=utf-8": "https://www.gutenberg.org/ebooks/100.txt.utf-8",
+        "text/plain; charset=us-ascii": "https://www.gutenberg.org/files/100/100-0.txt"
+      },
+      "download_count": 96639
+    }
+  },
+  {
+    "sourceId": "gutendex",
+    "externalId": "1510",
+    "canonicalUrl": "https://www.gutenberg.org/ebooks/1510.html.images",
+    "title": "Love's Labour's Lost",
+    "authors": [
+      "Shakespeare, William"
+    ],
+    "publishedAt": null,
+    "mediaType": "text",
+    "licence": {
+      "spdx": "PD",
+      "url": null,
+      "assertedBy": "gutendex",
+      "attribution": "Shakespeare, William — Love's Labour's Lost"
+    },
+    "snippet": null,
+    "thumbnailUrl": "https://www.gutenberg.org/cache/epub/1510/pg1510.cover.medium.jpg",
+    "raw": {
+      "id": 1510,
+      "title": "Love's Labour's Lost",
+      "authors": [
+        {
+          "name": "Shakespeare, William",
+          "birth_year": 1564,
+          "death_year": 1616
+        }
+      ],
+      "summaries": [
+        "\"Love's Labour's Lost\" by William Shakespeare is a comedy written in the mid-1590s. The King of Navarre and three companions vow to avoid women for three years to pursue study and fasting. Their oath crumbles when the Princess of France and her ladies arrive, sparking romantic entanglements. Through disguises, mistaken identities, and witty wordplay, the men pursue the women—only to face an unconventional ending when sudden news forces the ladies to demand a year's proof of devotion before any weddings can proceed. (This is an automatically generated summary.)"
+      ],
+      "editors": [],
+      "translators": [],
+      "subjects": [
+        "Comedy plays",
+        "Courts and courtiers -- Drama",
+        "Navarre (Kingdom) -- Drama",
+        "Princesses -- Drama"
+      ],
+      "bookshelves": [
+        "Category: British Literature",
+        "Category: Classics of Literature",
+        "Category: Humour",
+        "Category: Plays/Films/Dramas",
+        "Category: Romance"
+      ],
+      "languages": [
+        "en"
+      ],
+      "copyright": false,
+      "media_type": "Text",
+      "formats": {
+        "text/html": "https://www.gutenberg.org/ebooks/1510.html.images",
+        "application/epub+zip": "https://www.gutenberg.org/ebooks/1510.epub3.images",
+        "application/x-mobipocket-ebook": "https://www.gutenberg.org/ebooks/1510.kf8.images",
+        "application/rdf+xml": "https://www.gutenberg.org/ebooks/1510.rdf",
+        "image/jpeg": "https://www.gutenberg.org/cache/epub/1510/pg1510.cover.medium.jpg",
+        "application/octet-stream": "https://www.gutenberg.org/cache/epub/1510/pg1510-h.zip",
+        "text/plain; charset=utf-8": "https://www.gutenberg.org/ebooks/1510.txt.utf-8",
+        "text/plain; charset=us-ascii": "https://www.gutenberg.org/files/1510/1510-0.txt"
+      },
+      "download_count": 60179
+    }
+  },
+  {
+    "sourceId": "gutendex",
+    "externalId": "1523",
+    "canonicalUrl": "https://www.gutenberg.org/ebooks/1523.html.images",
+    "title": "As You Like It",
+    "authors": [
+      "Shakespeare, William"
+    ],
+    "publishedAt": null,
+    "mediaType": "text",
+    "licence": {
+      "spdx": "PD",
+      "url": null,
+      "assertedBy": "gutendex",
+      "attribution": "Shakespeare, William — As You Like It"
+    },
+    "snippet": null,
+    "thumbnailUrl": "https://www.gutenberg.org/cache/epub/1523/pg1523.cover.medium.jpg",
+    "raw": {
+      "id": 1523,
+      "title": "As You Like It",
+      "authors": [
+        {
+          "name": "Shakespeare, William",
+          "birth_year": 1564,
+          "death_year": 1616
+        }
+      ],
+      "summaries": [
+        "\"As You Like It\" by William Shakespeare is a pastoral comedy written in 1599. When Rosalind flees her uncle's court seeking safety, she ventures into the Forest of Arden with her cousin Celia. There they discover a world of memorable characters, including the melancholy philosopher Jaques, who delivers the famous speech \"All the world's a stage.\" In this enchanted forest setting, persecution gives way to possibility as Rosalind navigates disguise, love, and the contrast between courtly life and country existence. (This is an automatically generated summary.)"
+      ],
+      "editors": [],
+      "translators": [],
+      "subjects": [
+        "Comedy plays",
+        "Exiles -- Drama",
+        "Fathers and daughters -- Drama",
+        "Pastoral drama"
+      ],
+      "bookshelves": [
+        "Category: British Literature",
+        "Category: Plays/Films/Dramas",
+        "Category: Romance"
+      ],
+      "languages": [
+        "en"
+      ],
+      "copyright": false,
+      "media_type": "Text",
+      "formats": {
+        "text/html": "https://www.gutenberg.org/ebooks/1523.html.images",
+        "application/epub+zip": "https://www.gutenberg.org/ebooks/1523.epub3.images",
+        "application/x-mobipocket-ebook": "https://www.gutenberg.org/ebooks/1523.kf8.images",
+        "application/rdf+xml": "https://www.gutenberg.org/ebooks/1523.rdf",
+        "image/jpeg": "https://www.gutenberg.org/cache/epub/1523/pg1523.cover.medium.jpg",
+        "application/octet-stream": "https://www.gutenberg.org/cache/epub/1523/pg1523-h.zip",
+        "text/plain; charset=utf-8": "https://www.gutenberg.org/ebooks/1523.txt.utf-8",
+        "text/plain; charset=us-ascii": "https://www.gutenberg.org/files/1523/1523-0.txt"
+      },
+      "download_count": 56401
+    }
+  },
+  {
+    "sourceId": "gutendex",
+    "externalId": "18143",
+    "canonicalUrl": "https://www.gutenberg.org/ebooks/18143.html.images",
+    "title": "Roméo et Juliette: Tragédie",
+    "authors": [
+      "Shakespeare, William"
+    ],
+    "publishedAt": null,
+    "mediaType": "text",
+    "licence": {
+      "spdx": "PD",
+      "url": null,
+      "assertedBy": "gutendex",
+      "attribution": "Shakespeare, William — Roméo et Juliette: Tragédie"
+    },
+    "snippet": null,
+    "thumbnailUrl": "https://www.gutenberg.org/cache/epub/18143/pg18143.cover.medium.jpg",
+    "raw": {
+      "id": 18143,
+      "title": "Roméo et Juliette: Tragédie",
+      "authors": [
+        {
+          "name": "Shakespeare, William",
+          "birth_year": 1564,
+          "death_year": 1616
+        }
+      ],
+      "summaries": [
+        "\"Roméo et Juliette\" by William Shakespeare is a tragedy written between 1591 and 1595. Two young lovers from feuding Italian families defy ancient hatred to pursue their forbidden romance. Set in Verona, their secret marriage sets off a chain of violence involving duels, banishment, and desperate schemes. As misunderstandings multiply and blood feuds escalate, the lovers face impossible choices between family loyalty and their devotion to each other. This archetypal tale of young love has become one of Shakespeare's most performed plays. (This is an automatically generated summary.)"
+      ],
+      "editors": [],
+      "translators": [
+        {
+          "name": "Guizot, François",
+          "birth_year": 1787,
+          "death_year": 1874
+        }
+      ],
+      "subjects": [
+        "Conflict of generations -- Drama",
+        "Juliet (Fictitious character) -- Drama",
+        "Romeo (Fictitious character) -- Drama",
+        "Tragedies (Drama)",
+        "Vendetta -- Drama",
+        "Verona (Italy) -- Drama",
+        "Youth -- Drama"
+      ],
+      "bookshelves": [
+        "Category: British Literature",
+        "Category: Classics of Literature",
+        "Category: Plays/Films/Dramas",
+        "Category: Romance",
+        "FR Théâtre"
+      ],
+      "languages": [
+        "fr"
+      ],
+      "copyright": false,
+      "media_type": "Text",
+      "formats": {
+        "text/html": "https://www.gutenberg.org/ebooks/18143.html.images",
+        "application/epub+zip": "https://www.gutenberg.org/ebooks/18143.epub3.images",
+        "application/x-mobipocket-ebook": "https://www.gutenberg.org/ebooks/18143.kf8.images",
+        "application/rdf+xml": "https://www.gutenberg.org/ebooks/18143.rdf",
+        "image/jpeg": "https://www.gutenberg.org/cache/epub/18143/pg18143.cover.medium.jpg",
+        "application/octet-stream": "https://www.gutenberg.org/files/18143/18143-8.zip",
+        "text/plain; charset=utf-8": "https://www.gutenberg.org/ebooks/18143.txt.utf-8",
+        "text/plain; charset=us-ascii": "https://www.gutenberg.org/files/18143/18143-8.txt"
+      },
+      "download_count": 49717
+    }
+  },
+  {
+    "sourceId": "gutendex",
+    "externalId": "1514",
+    "canonicalUrl": "https://www.gutenberg.org/ebooks/1514.html.images",
+    "title": "A Midsummer Night's Dream",
+    "authors": [
+      "Shakespeare, William"
+    ],
+    "publishedAt": null,
+    "mediaType": "text",
+    "licence": {
+      "spdx": "PD",
+      "url": null,
+      "assertedBy": "gutendex",
+      "attribution": "Shakespeare, William — A Midsummer Night's Dream"
+    },
+    "snippet": null,
+    "thumbnailUrl": "https://www.gutenberg.org/cache/epub/1514/pg1514.cover.medium.jpg",
+    "raw": {
+      "id": 1514,
+      "title": "A Midsummer Night's Dream",
+      "authors": [
+        {
+          "name": "Shakespeare, William",
+          "birth_year": 1564,
+          "death_year": 1616
+        }
+      ],
+      "summaries": [
+        "\"A Midsummer Night's Dream\" by William Shakespeare is a comedy play written in about 1595 or 1596. Set in ancient Athens, the story weaves together multiple plots surrounding the wedding of Duke Theseus and Amazon Queen Hippolyta. Four young Athenian lovers become entangled in romantic confusion, while amateur actors rehearse a play for the wedding celebration. When both groups wander into an enchanted forest, mischievous fairies manipulate their affairs with magical potions, creating chaos under the moonlight as the fairy king and queen pursue their own domestic quarrel. (This is an automatically generated summary.)"
+      ],
+      "editors": [],
+      "translators": [],
+      "subjects": [
+        "Athens (Greece) -- Drama",
+        "Comedy plays",
+        "Courtship -- Drama",
+        "Fairy plays"
+      ],
+      "bookshelves": [
+        "Category: British Literature",
+        "Category: Classics of Literature",
+        "Category: Humour",
+        "Category: Plays/Films/Dramas",
+        "Category: Romance",
+        "Category: Science-Fiction & Fantasy"
+      ],
+      "languages": [
+        "en"
+      ],
+      "copyright": false,
+      "media_type": "Text",
+      "formats": {
+        "text/html": "https://www.gutenberg.org/ebooks/1514.html.images",
+        "application/epub+zip": "https://www.gutenberg.org/ebooks/1514.epub3.images",
+        "application/x-mobipocket-ebook": "https://www.gutenberg.org/ebooks/1514.kf8.images",
+        "application/rdf+xml": "https://www.gutenberg.org/ebooks/1514.rdf",
+        "image/jpeg": "https://www.gutenberg.org/cache/epub/1514/pg1514.cover.medium.jpg",
+        "application/octet-stream": "https://www.gutenberg.org/cache/epub/1514/pg1514-h.zip",
+        "text/plain; charset=utf-8": "https://www.gutenberg.org/ebooks/1514.txt.utf-8",
+        "text/plain; charset=us-ascii": "https://www.gutenberg.org/files/1514/1514-0.txt"
+      },
+      "download_count": 45367
+    }
+  },
+  {
+    "sourceId": "gutendex",
+    "externalId": "1112",
+    "canonicalUrl": "https://www.gutenberg.org/ebooks/1112.html.images",
+    "title": "Romeo and Juliet",
+    "authors": [
+      "Shakespeare, William"
+    ],
+    "publishedAt": null,
+    "mediaType": "text",
+    "licence": {
+      "spdx": "PD",
+      "url": null,
+      "assertedBy": "gutendex",
+      "attribution": "Shakespeare, William — Romeo and Juliet"
+    },
+    "snippet": null,
+    "thumbnailUrl": "https://www.gutenberg.org/files/1112/cover.jpg",
+    "raw": {
+      "id": 1112,
+      "title": "Romeo and Juliet",
+      "authors": [
+        {
+          "name": "Shakespeare, William",
+          "birth_year": 1564,
+          "death_year": 1616
+        }
+      ],
+      "summaries": [
+        "\"Romeo and Juliet\" by William Shakespeare is a tragedy written between 1591 and 1595. Two young lovers from feuding Italian families fall passionately for each other in Verona, defying the bitter hatred between the Montagues and Capulets. Their secret marriage, orchestrated with the help of Friar Laurence, becomes entangled in violence, misunderstanding, and fate. As tensions escalate and blood is shed, the young couple faces impossible choices that will test the boundaries of love and loyalty in this archetypal tale of star-crossed romance. (This is an automatically generated summary.)"
+      ],
+      "editors": [],
+      "translators": [],
+      "subjects": [
+        "Conflict of generations -- Drama",
+        "Juliet (Fictitious character) -- Drama",
+        "Romeo (Fictitious character) -- Drama",
+        "Vendetta -- Drama",
+        "Verona (Italy) -- Drama",
+        "Youth -- Drama"
+      ],
+      "bookshelves": [
+        "Category: British Literature",
+        "Category: Classics of Literature",
+        "Category: Plays/Films/Dramas",
+        "Category: Romance",
+        "Italy"
+      ],
+      "languages": [
+        "en"
+      ],
+      "copyright": false,
+      "media_type": "Text",
+      "formats": {
+        "text/html": "https://www.gutenberg.org/ebooks/1112.html.images",
+        "application/epub+zip": "https://www.gutenberg.org/ebooks/1112.epub3.images",
+        "image/jpeg": "https://www.gutenberg.org/files/1112/cover.jpg",
+        "application/x-mobipocket-ebook": "https://www.gutenberg.org/ebooks/1112.kf8.images",
+        "application/rdf+xml": "https://www.gutenberg.org/ebooks/1112.rdf",
+        "application/octet-stream": "https://www.gutenberg.org/cache/epub/1112/pg1112-h.zip",
+        "text/plain; charset=utf-8": "https://www.gutenberg.org/ebooks/1112.txt.utf-8",
+        "text/plain; charset=us-ascii": "https://www.gutenberg.org/files/1112/1112-0.txt"
+      },
+      "download_count": 44259
+    }
+  },
+  {
+    "sourceId": "gutendex",
+    "externalId": "47960",
+    "canonicalUrl": "https://www.gutenberg.org/ebooks/47960.html.images",
+    "title": "Romeo and Juliet",
+    "authors": [
+      "Shakespeare, William"
+    ],
+    "publishedAt": null,
+    "mediaType": "text",
+    "licence": {
+      "spdx": "PD",
+      "url": null,
+      "assertedBy": "gutendex",
+      "attribution": "Shakespeare, William — Romeo and Juliet"
+    },
+    "snippet": null,
+    "thumbnailUrl": "https://www.gutenberg.org/cache/epub/47960/pg47960.cover.medium.jpg",
+    "raw": {
+      "id": 47960,
+      "title": "Romeo and Juliet",
+      "authors": [
+        {
+          "name": "Shakespeare, William",
+          "birth_year": 1564,
+          "death_year": 1616
+        }
+      ],
+      "summaries": [
+        "\"Romeo and Juliet\" by William Shakespeare is a tragedy written between 1591 and 1595. Set in Verona, Italy, it tells the story of two young lovers from feuding families—the Montagues and Capulets. Their secret romance unfolds against a backdrop of street brawls, family honor, and bitter hatred. With the help of Friar Laurence, they attempt to overcome the violence dividing their families. The play explores themes of love, fate, and the devastating consequences of ancient grudges through Shakespeare's masterful poetic language and dramatic structure. (This is an automatically generated summary.)"
+      ],
+      "editors": [
+        {
+          "name": "Rolfe, W. J. (William James)",
+          "birth_year": 1827,
+          "death_year": 1910
+        }
+      ],
+      "translators": [],
+      "subjects": [
+        "Conflict of generations -- Drama",
+        "Juliet (Fictitious character) -- Drama",
+        "Romeo (Fictitious character) -- Drama",
+        "Tragedies (Drama)",
+        "Vendetta -- Drama",
+        "Verona (Italy) -- Drama",
+        "Youth -- Drama"
+      ],
+      "bookshelves": [
+        "Category: British Literature",
+        "Category: Classics of Literature",
+        "Category: Plays/Films/Dramas"
+      ],
+      "languages": [
+        "en"
+      ],
+      "copyright": false,
+      "media_type": "Text",
+      "formats": {
+        "text/html": "https://www.gutenberg.org/ebooks/47960.html.images",
+        "application/epub+zip": "https://www.gutenberg.org/ebooks/47960.epub3.images",
+        "application/x-mobipocket-ebook": "https://www.gutenberg.org/ebooks/47960.kf8.images",
+        "application/rdf+xml": "https://www.gutenberg.org/ebooks/47960.rdf",
+        "image/jpeg": "https://www.gutenberg.org/cache/epub/47960/pg47960.cover.medium.jpg",
+        "application/octet-stream": "https://www.gutenberg.org/cache/epub/47960/pg47960-h.zip",
+        "text/plain; charset=utf-8": "https://www.gutenberg.org/ebooks/47960.txt.utf-8",
+        "text/plain; charset=us-ascii": "https://www.gutenberg.org/files/47960/47960-0.txt"
+      },
+      "download_count": 30469
+    }
+  },
+  {
+    "sourceId": "gutendex",
+    "externalId": "50559",
+    "canonicalUrl": "https://www.gutenberg.org/ebooks/50559.html.images",
+    "title": "The Works of William Shakespeare [Cambridge Edition] [Vol. 3 of 9]",
+    "authors": [
+      "Shakespeare, William"
+    ],
+    "publishedAt": null,
+    "mediaType": "text",
+    "licence": {
+      "spdx": "PD",
+      "url": null,
+      "assertedBy": "gutendex",
+      "attribution": "Shakespeare, William — The Works of William Shakespeare [Cambridge Edition] [Vol. 3 of 9]"
+    },
+    "snippet": null,
+    "thumbnailUrl": "https://www.gutenberg.org/cache/epub/50559/pg50559.cover.medium.jpg",
+    "raw": {
+      "id": 50559,
+      "title": "The Works of William Shakespeare [Cambridge Edition] [Vol. 3 of 9]",
+      "authors": [
+        {
+          "name": "Shakespeare, William",
+          "birth_year": 1564,
+          "death_year": 1616
+        }
+      ],
+      "summaries": [
+        "\"The Works of William Shakespeare [Cambridge Edition] [Vol. 3 of 9]\" by Shakespeare is a collection of plays written in the early 17th century. This volume includes prominent works such as \"The Taming of the Shrew,\" \"All's Well That Ends Well,\" \"Twelfth Night; or, What You Will,\" and \"The Winter's Tale,\" showcasing Shakespeare's mastery in comedy and drama. The likely topics revolve around themes of love, power dynamics in relationships, and societal expectations, along with richly drawn characters who navigate the complexities of courtship and familial duty.  At the start of the volume, the opening scenes of \"The Taming of the Shrew\" introduce Christopher Sly, a drunken tinker who is the subject of a playful ruse by a lord and his servants, who seek to convince him that he is, in fact, a nobleman. This leads into the main narrative that focuses on the tempestuous relationship between Petruchio and Katharina, highlighting their initial conflicts and fiery exchanges. Meanwhile, Lucentio arrives in Padua, infatuated with Katharina's sister Bianca, setting the stage for a web of courtship entanglements influenced by the shrewish elder sister and her suitors. The juxtaposition of Sly’s comedic predicament and the serious romantic pursuits establishes a fascinating interplay between class, gender roles, and the dynamics of love. (This is an automatically generated summary.)"
+      ],
+      "editors": [
+        {
+          "name": "Wright, William Aldis",
+          "birth_year": 1831,
+          "death_year": 1914
+        },
+        {
+          "name": "Clark, William George",
+          "birth_year": 1821,
+          "death_year": 1878
+        }
+      ],
+      "translators": [],
+      "subjects": [
+        "English drama"
+      ],
+      "bookshelves": [
+        "Category: British Literature",
+        "Category: Classics of Literature",
+        "Category: Plays/Films/Dramas"
+      ],
+      "languages": [
+        "en"
+      ],
+      "copyright": false,
+      "media_type": "Text",
+      "formats": {
+        "text/html": "https://www.gutenberg.org/ebooks/50559.html.images",
+        "application/epub+zip": "https://www.gutenberg.org/ebooks/50559.epub3.images",
+        "application/x-mobipocket-ebook": "https://www.gutenberg.org/ebooks/50559.kf8.images",
+        "application/rdf+xml": "https://www.gutenberg.org/ebooks/50559.rdf",
+        "image/jpeg": "https://www.gutenberg.org/cache/epub/50559/pg50559.cover.medium.jpg",
+        "application/octet-stream": "https://www.gutenberg.org/cache/epub/50559/pg50559-h.zip",
+        "text/plain; charset=utf-8": "https://www.gutenberg.org/ebooks/50559.txt.utf-8",
+        "text/plain; charset=us-ascii": "https://www.gutenberg.org/files/50559/50559-0.txt"
+      },
+      "download_count": 30037
+    }
+  },
+  {
+    "sourceId": "gutendex",
+    "externalId": "1041",
+    "canonicalUrl": "https://www.gutenberg.org/ebooks/1041.html.images",
+    "title": "Shakespeare's Sonnets",
+    "authors": [
+      "Shakespeare, William"
+    ],
+    "publishedAt": null,
+    "mediaType": "text",
+    "licence": {
+      "spdx": "PD",
+      "url": null,
+      "assertedBy": "gutendex",
+      "attribution": "Shakespeare, William — Shakespeare's Sonnets"
+    },
+    "snippet": null,
+    "thumbnailUrl": "https://www.gutenberg.org/cache/epub/1041/pg1041.cover.medium.jpg",
+    "raw": {
+      "id": 1041,
+      "title": "Shakespeare's Sonnets",
+      "authors": [
+        {
+          "name": "Shakespeare, William",
+          "birth_year": 1564,
+          "death_year": 1616
+        }
+      ],
+      "summaries": [
+        "\"Shakespeare's Sonnets\" by William Shakespeare is a collection of poems published in 1609. The work includes 154 sonnets, with sonnets 127-152 addressing a mysterious figure known as the Dark Lady, described as having black wiry hair and dark skin. These poems contrast sharply with earlier sonnets through their overtly sexual nature. The Dark Lady's true identity remains one of literature's enduring mysteries, with scholars debating whether she was a real person or purely Shakespeare's artistic invention. (This is an automatically generated summary.)"
+      ],
+      "editors": [],
+      "translators": [],
+      "subjects": [
+        "English poetry",
+        "Sonnets, English"
+      ],
+      "bookshelves": [
+        "Category: British Literature",
+        "Category: Classics of Literature",
+        "Category: Poetry"
+      ],
+      "languages": [
+        "en"
+      ],
+      "copyright": false,
+      "media_type": "Text",
+      "formats": {
+        "text/html": "https://www.gutenberg.org/ebooks/1041.html.images",
+        "application/epub+zip": "https://www.gutenberg.org/ebooks/1041.epub3.images",
+        "application/x-mobipocket-ebook": "https://www.gutenberg.org/ebooks/1041.kf8.images",
+        "application/rdf+xml": "https://www.gutenberg.org/ebooks/1041.rdf",
+        "image/jpeg": "https://www.gutenberg.org/cache/epub/1041/pg1041.cover.medium.jpg",
+        "application/octet-stream": "https://www.gutenberg.org/cache/epub/1041/pg1041-h.zip",
+        "text/plain; charset=utf-8": "https://www.gutenberg.org/ebooks/1041.txt.utf-8",
+        "text/plain; charset=us-ascii": "https://www.gutenberg.org/files/1041/1041-0.txt"
+      },
+      "download_count": 26975
+    }
+  }
+]

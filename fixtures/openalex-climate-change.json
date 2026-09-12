@@ -522,8 +522,8 @@
       },
       "sustainable_development_goals": [
         {
-          "display_name": "Climate action",
           "score": 0.7599999904632568,
+          "display_name": "Climate action",
           "id": "https://metadata.un.org/sdg/13"
         }
       ],
@@ -774,7 +774,7 @@
     "mediaType": "paper",
     "licence": {
       "spdx": "UNKNOWN",
-      "url": null,
+      "url": "http://www.ipcc.ch/ipccreports/ar4-wg1.htm",
       "assertedBy": "openalex",
       "attribution": "Susan Solomon — Climate change 2007 : the physical science basis : contribution of Working Group I to the Fourth Assessment Report of the Intergovernmental Panel on Climate Change"
     },
@@ -1128,8 +1128,8 @@
       "best_oa_location": null,
       "sustainable_development_goals": [
         {
-          "display_name": "Climate action",
           "score": 0.8500000238418579,
+          "display_name": "Climate action",
           "id": "https://metadata.un.org/sdg/13"
         }
       ],
@@ -1468,7 +1468,7 @@
     "mediaType": "paper",
     "licence": {
       "spdx": "UNKNOWN",
-      "url": null,
+      "url": "https://doi.org/10.2307/20033020",
       "assertedBy": "openalex",
       "attribution": "Richard N. Cooper, J. T. Houghton, James J. McCarthy, Bert Metz — Climate Change 2001: The Scientific Basis"
     },
@@ -1787,8 +1787,8 @@
       "best_oa_location": null,
       "sustainable_development_goals": [
         {
-          "display_name": "Climate action",
           "score": 0.75,
+          "display_name": "Climate action",
           "id": "https://metadata.un.org/sdg/13"
         }
       ],
@@ -2128,7 +2128,7 @@
     "mediaType": "paper",
     "licence": {
       "spdx": "UNKNOWN",
-      "url": null,
+      "url": "https://escholarship.org/uc/item/2j42x9fh",
       "assertedBy": "openalex",
       "attribution": "Stefano Schiavon, Roberto Zecchin — Climate Change 2007: The Physical Science Basis."
     },
@@ -2417,8 +2417,8 @@
       "best_oa_location": null,
       "sustainable_development_goals": [
         {
-          "display_name": "Climate action",
           "score": 0.8500000238418579,
+          "display_name": "Climate action",
           "id": "https://metadata.un.org/sdg/13"
         }
       ],
@@ -2646,7 +2646,7 @@
     "mediaType": "paper",
     "licence": {
       "spdx": "UNKNOWN",
-      "url": null,
+      "url": "https://doi.org/10.1017/cbo9781107415324",
       "assertedBy": "openalex",
       "attribution": "Intergovernmental Panel on Climate Change (IPCC) — Climate Change 2013 – The Physical Science Basis"
     },
@@ -2929,8 +2929,8 @@
       "best_oa_location": null,
       "sustainable_development_goals": [
         {
-          "display_name": "Climate action",
           "score": 0.7799999713897705,
+          "display_name": "Climate action",
           "id": "https://metadata.un.org/sdg/13"
         }
       ],
@@ -3406,7 +3406,7 @@
     "mediaType": "paper",
     "licence": {
       "spdx": "UNKNOWN",
-      "url": null,
+      "url": "https://doi.org/10.1017/cbo9781107415379",
       "assertedBy": "openalex",
       "attribution": "Intergovernmental Panel on Climate Change (IPCC) — Climate Change 2014 Impacts, Adaptation, and Vulnerability"
     },
@@ -3843,8 +3843,8 @@
       "best_oa_location": null,
       "sustainable_development_goals": [
         {
-          "display_name": "Climate action",
           "score": 0.8799999952316284,
+          "display_name": "Climate action",
           "id": "https://metadata.un.org/sdg/13"
         }
       ],
@@ -5169,8 +5169,8 @@
       },
       "sustainable_development_goals": [
         {
-          "display_name": "Climate action",
           "score": 0.8700000047683716,
+          "display_name": "Climate action",
           "id": "https://metadata.un.org/sdg/13"
         }
       ],
@@ -5380,7 +5380,7 @@
     "mediaType": "paper",
     "licence": {
       "spdx": "UNKNOWN",
-      "url": null,
+      "url": "http://eprints.lse.ac.uk/3781/",
       "assertedBy": "openalex",
       "attribution": "Nicholas Stern — The Economics of Climate Change: The Stern Review"
     },
@@ -5807,8 +5807,8 @@
       "best_oa_location": null,
       "sustainable_development_goals": [
         {
-          "display_name": "Climate action",
           "score": 0.7200000286102295,
+          "display_name": "Climate action",
           "id": "https://metadata.un.org/sdg/13"
         }
       ],
@@ -6894,8 +6894,8 @@
       },
       "sustainable_development_goals": [
         {
-          "display_name": "Climate action",
           "score": 0.4300000071525574,
+          "display_name": "Climate action",
           "id": "https://metadata.un.org/sdg/13"
         }
       ],
@@ -7034,7 +7034,7 @@
     "mediaType": "paper",
     "licence": {
       "spdx": "UNKNOWN",
-      "url": null,
+      "url": "https://doi.org/10.1038/nature01286",
       "assertedBy": "openalex",
       "attribution": "Camille Parmesan, Gary Yohe — A globally coherent fingerprint of climate change impacts across natural systems"
     },
@@ -7793,8 +7793,8 @@
       "best_oa_location": null,
       "sustainable_development_goals": [
         {
-          "display_name": "Climate action",
           "score": 0.7699999809265137,
+          "display_name": "Climate action",
           "id": "https://metadata.un.org/sdg/13"
         }
       ],

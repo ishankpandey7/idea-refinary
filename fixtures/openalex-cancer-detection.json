@@ -1825,8 +1825,8 @@
       },
       "sustainable_development_goals": [
         {
-          "score": 0.8799999952316284,
           "id": "https://metadata.un.org/sdg/3",
+          "score": 0.8799999952316284,
           "display_name": "Good health and well-being"
         }
       ],
@@ -2394,7 +2394,7 @@
     "mediaType": "paper",
     "licence": {
       "spdx": "UNKNOWN",
-      "url": null,
+      "url": "https://pubmed.ncbi.nlm.nih.gov/9823339",
       "assertedBy": "openalex",
       "attribution": "C. Richard Boland, Stephen N. Thibodeau, Stanley R. Hamilton, David Sidransky, James R. Eshleman, Randall W. Burt, Stephen J. Meltzer, Miguel A. Rodrı́guez-Bigas, Riccardo Fodde, Guglielmina Nadia Ranzani, Sudhir Srivastava — A National Cancer Institute Workshop on Microsatellite Instability for cancer detection and familial predisposition: development of international criteria for the determination of microsatellite instability in colorectal cancer."
     },
@@ -3485,8 +3485,8 @@
       "best_oa_location": null,
       "sustainable_development_goals": [
         {
-          "score": 0.5,
           "id": "https://metadata.un.org/sdg/17",
+          "score": 0.5,
           "display_name": "Partnerships for the goals"
         }
       ],
@@ -5067,8 +5067,8 @@
       },
       "sustainable_development_goals": [
         {
-          "score": 0.6299999952316284,
           "id": "https://metadata.un.org/sdg/3",
+          "score": 0.6299999952316284,
           "display_name": "Good health and well-being"
         }
       ],
@@ -6050,7 +6050,7 @@
     "publishedAt": "2014-04-08",
     "mediaType": "paper",
     "licence": {
-      "spdx": "UNKNOWN",
+      "spdx": "CC-BY-NC-SA",
       "url": "https://doi.org/10.1038/cr.2014.44",
       "assertedBy": "openalex",
       "attribution": "Basant Kumar Thakur, Haiying Zhang, Annette Becker, Irina Matei, Yujie Huang, Bruno Costa‐Silva, Yan Zheng, Ayuko Hoshino, Hélène Brazier, Jenny Xiang, Caitlin Williams, Ruth Rodríguez‐Barrueco, José M. Silva, Weijia Zhang, Stephen Hearn, Olivier Elemento, Navid Paknejad, Katia Manova‐Todorova, Karl Welte, Jacqueline Bromberg, Héctor Peinado, David Lyden — Double-stranded DNA in exosomes: a novel biomarker in cancer detection"
@@ -7980,8 +7980,8 @@
       },
       "sustainable_development_goals": [
         {
-          "score": 0.5600000023841858,
           "id": "https://metadata.un.org/sdg/3",
+          "score": 0.5600000023841858,
           "display_name": "Good health and well-being"
         }
       ],
@@ -12271,7 +12271,7 @@
     "publishedAt": "2020-03-30",
     "mediaType": "paper",
     "licence": {
-      "spdx": "UNKNOWN",
+      "spdx": "CC-BY-NC-ND",
       "url": "https://doi.org/10.1016/j.annonc.2020.02.011",
       "assertedBy": "openalex",
       "attribution": "M.C. Liu, Geoffrey R. Oxnard, Eric A. Klein, Charles Swanton, Michael V. Seiden, M.V. Seiden, Minetta C. Liu, Geoffrey R. Oxnard, Eric A. Klein, David A. Smith, Donald Richards, Timothy J. Yeatman, Allen Lee Cohn, Rosanna L. Lapham, Jessica Clément, Alexander S. Parker, Mohan K. Tummala, Kristi McIntyre, Mikkael A. Sekeres, Alan H. Bryce, Robert D. Siegel, Xuezhong Wang, David Cosgrove, Nadeem R. Abu‐Rustum, Jonathan C. Trent, David D. Thiel, Carlos Becerra, Manish Agrawal, Lawrence Garbo, Jeffrey K. Giguere, Ross M. Michels, Ronald P. Harris, Stephen Richey, Timothy A. McCarthy, David Waterhouse, Fergus J. Couch, Sharon Wilks, Amy Krie, Rama Balaraman, Álvaro Restrepo, Michael W. Meshad, Kimberly Rieger‐Christ, Travis Sullivan, Christine Lee, Daniel Greenwald, William Oh, Che‐Kai Tsao, Neil Fleshner, Hagen F. Kennecke, Maged Khalil, David R. Spigel, Atisha Manhas, Brian Ulrich, P. Kovoor, Christopher Stokoe, Jay Courtright, Habte Yimer, Timothy Larson, Charles Swanton, Michael V. Seiden, Michael V. Seiden, Steven R. Cummings, Farnaz Absalan, Gregory E. Alexander, Brian C. Allen, Hamed Amini, Alexander M. Aravanis, Siddhartha Bagaria, Leila Bazargan, John F. Beausang, Jennifer R. Berman, Craig Betts, Alexander W. Blocker, Joerg Bredno, Robert Calef, Gordon Cann, Jeremy G. Carter, Christopher Chang, Hemanshi Chawla, Xiaoji Chen, Tom C. Chien, Daniel Civello, Konstantin Davydov, Vasiliki Demas, Mohini Desai, Zhao Dong, Saniya Fayzullina, Alexander P. Fields, Darya Filippova, Peter Freese, Eric T. Fung, Sante Gnerre, Samuel Gross, Meredith Halks‐Miller, Megan P. Hall, Anne‐Renee Hartman, Chenlu Hou, Earl Hubbell, Nathan Hunkapiller, Karthik A. Jagadeesh — Sensitive and specific multi-cancer detection and localization using methylation signatures in cell-free DNA"
@@ -18042,8 +18042,8 @@
       },
       "sustainable_development_goals": [
         {
-          "score": 0.800000011920929,
           "id": "https://metadata.un.org/sdg/3",
+          "score": 0.800000011920929,
           "display_name": "Good health and well-being"
         }
       ],
@@ -20190,8 +20190,8 @@
       },
       "sustainable_development_goals": [
         {
-          "score": 0.5199999809265137,
           "id": "https://metadata.un.org/sdg/11",
+          "score": 0.5199999809265137,
           "display_name": "Sustainable cities and communities"
         }
       ],
@@ -22458,8 +22458,8 @@
       },
       "sustainable_development_goals": [
         {
-          "score": 0.8100000023841858,
           "id": "https://metadata.un.org/sdg/3",
+          "score": 0.8100000023841858,
           "display_name": "Good health and well-being"
         }
       ],
@@ -23124,7 +23124,7 @@
     "mediaType": "paper",
     "licence": {
       "spdx": "UNKNOWN",
-      "url": null,
+      "url": "https://doi.org/10.1001/jama.1989.03420050087046",
       "assertedBy": "openalex",
       "attribution": "Leopold G. Koss — The Papanicolaou Test for Cervical Cancer Detection"
     },
@@ -23923,8 +23923,8 @@
       "best_oa_location": null,
       "sustainable_development_goals": [
         {
-          "score": 0.8500000238418579,
           "id": "https://metadata.un.org/sdg/3",
+          "score": 0.8500000238418579,
           "display_name": "Good health and well-being"
         }
       ],
@@ -25730,8 +25730,8 @@
       },
       "sustainable_development_goals": [
         {
-          "score": 0.800000011920929,
           "id": "https://metadata.un.org/sdg/3",
+          "score": 0.800000011920929,
           "display_name": "Good health and well-being"
         }
       ],
@@ -27610,8 +27610,8 @@
       },
       "sustainable_development_goals": [
         {
-          "score": 0.8600000143051147,
           "id": "https://metadata.un.org/sdg/3",
+          "score": 0.8600000143051147,
           "display_name": "Good health and well-being"
         }
       ],
