@@ -16,13 +16,13 @@ export default function SiteHeader() {
   return (
     <header
       data-print-hide
-      className="flex items-center justify-between gap-4 border-b border-[#3a1f14]/60 px-6 py-5 sm:px-10"
+      className="flex items-center justify-between gap-4 border-b border-[#e5dccd] bg-[#fffdf9] px-6 py-5 sm:px-10"
     >
       <Link href="/" className="flex items-center gap-2.5">
         <span aria-hidden className="text-lg text-[#e8451f]">
           &#10022;
         </span>
-        <span className="font-serif text-xl tracking-tight text-[#f5a962]">
+        <span className="font-serif text-xl tracking-tight text-[#1c1410]">
           Idea Refinery
         </span>
       </Link>
@@ -34,8 +34,8 @@ export default function SiteHeader() {
             href={l.href}
             className={
               pathname === l.href
-                ? "text-[#f5a962]"
-                : "text-[#c9b6a8] transition hover:text-[#f5a962]"
+                ? "text-[#1c1410]"
+                : "text-[#8b8178] transition hover:text-[#1c1410]"
             }
           >
             {l.label}
@@ -46,17 +46,17 @@ export default function SiteHeader() {
       {!configured || loading ? (
         <div
           aria-hidden
-          className="size-9 rounded-full border border-[#3a1f14]"
+          className="size-9 rounded-full border border-[#e5dccd]"
         />
       ) : user ? (
         <div className="flex items-center gap-3">
-          <span className="hidden text-[13px] text-[#7a6558] sm:inline">
+          <span className="hidden text-[13px] text-[#8b8178] sm:inline">
             {user.email}
           </span>
           <button
             type="button"
             onClick={signOut}
-            className="rounded-full border border-[#3a1f14] px-4 py-1.5 text-[12px] text-[#b39c8c] transition hover:border-[#e8451f] hover:text-[#ff9c6b]"
+            className="rounded-full border border-[#e5dccd] px-4 py-1.5 text-[12px] text-[#57504a] transition hover:border-[#e8451f] hover:text-[#e8451f]"
           >
             Sign out
           </button>
@@ -64,7 +64,7 @@ export default function SiteHeader() {
       ) : (
         <Link
           href="/login"
-          className="rounded-full bg-[#e8451f] px-5 py-1.5 text-[12px] font-medium text-white transition hover:bg-[#ff5a2e]"
+          className="rounded-full bg-[#e8451f] px-5 py-1.5 text-[12px] font-medium text-white transition hover:bg-[#d13d18]"
         >
           Sign in
         </Link>

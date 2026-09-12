@@ -59,13 +59,13 @@ export default function IdeaSearch({
   }
 
   return (
-    <section className="mt-10 rounded-2xl border border-[#3a1f14] bg-[#100a07]/70 p-6">
+    <section className="mt-10 rounded-2xl border border-[#e5dccd] bg-[#f4eee4] p-6">
       <p className="text-[11px] font-medium uppercase tracking-[0.18em] text-[#e8451f]">
         Add to this idea
       </p>
 
       <form className="mt-5 flex flex-col gap-3 sm:flex-row" onSubmit={onSearch}>
-        <div className="flex flex-1 items-center gap-3 rounded-full border border-[#3a1f14] bg-[#120b08]/60 px-6 py-3 focus-within:border-[#e8451f]/70">
+        <div className="flex flex-1 items-center gap-3 rounded-full border border-[#e5dccd] bg-[#fffdf9] px-6 py-3 focus-within:border-[#e8451f]/70">
           <span aria-hidden className="text-[#e8451f]">
             &#8981;
           </span>
@@ -74,31 +74,31 @@ export default function IdeaSearch({
             value={query}
             onChange={(e) => setQuery(e.target.value)}
             placeholder="Search for something to add"
-            className="w-full bg-transparent text-[15px] text-[#e8d8cc] placeholder:text-[#7a6558] focus:outline-none"
+            className="w-full bg-transparent text-[15px] text-[#1c1410] placeholder:text-[#8b8178] focus:outline-none"
           />
         </div>
         <button
           type="submit"
           disabled={loading}
-          className="rounded-full bg-[#e8451f] px-6 py-2.5 text-[13px] font-medium text-white transition hover:bg-[#ff5a2e] disabled:cursor-not-allowed disabled:opacity-60"
+          className="rounded-full bg-[#e8451f] px-6 py-2.5 text-[13px] font-medium text-white transition hover:bg-[#d13d18] disabled:cursor-not-allowed disabled:opacity-60"
         >
           {loading ? "Searching…" : "Search →"}
         </button>
       </form>
 
       {error ? (
-        <p className="mt-4 text-[13px] text-[#ff9c6b]">{error}</p>
+        <p className="mt-4 text-[13px] text-[#e8451f]">{error}</p>
       ) : null}
 
       {searched && !loading && results.length === 0 ? (
-        <p className="mt-5 text-[13px] text-[#7a6558]">
+        <p className="mt-5 text-[13px] text-[#8b8178]">
           Nothing came back. Try another query.
         </p>
       ) : null}
 
       {results.length > 0 ? (
         <>
-          <p className="mt-6 text-[12px] text-[#7a6558]">
+          <p className="mt-6 text-[12px] text-[#8b8178]">
             {results.length} result{results.length === 1 ? "" : "s"}
           </p>
           <ul className="mt-5 grid gap-5 sm:grid-cols-2">
@@ -116,8 +116,8 @@ export default function IdeaSearch({
                       disabled={saved || adding === key}
                       className={`rounded-full border px-4 py-1.5 text-[11px] font-medium transition ${
                         saved
-                          ? "cursor-default border-[#e8451f]/40 bg-[#e8451f]/15 text-[#ff9c6b]"
-                          : "border-[#3a1f14] text-[#b39c8c] hover:border-[#e8451f] hover:text-[#ff9c6b] disabled:opacity-60"
+                          ? "cursor-default border-[#e8451f]/40 bg-[#e8451f]/15 text-[#e8451f]"
+                          : "border-[#e5dccd] text-[#57504a] hover:border-[#e8451f] hover:text-[#e8451f] disabled:opacity-60"
                       }`}
                     >
                       {saved

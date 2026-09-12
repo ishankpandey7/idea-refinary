@@ -58,12 +58,12 @@ export default function ResultCard({
   const known = KNOWN_LICENCES.has(r.licence.spdx);
 
   return (
-    <li className="flex flex-col rounded-2xl border border-[#3a1f14] bg-[#100a07]/70 p-6 transition hover:border-[#e8451f]/60">
+    <li className="flex flex-col rounded-2xl border border-[#e5dccd] bg-[#f4eee4] p-6 transition hover:border-[#e8451f]/50">
       <div className="flex items-center justify-between gap-3">
-        <span className="rounded-full border border-[#3a1f14] px-3 py-1 text-[10px] font-medium uppercase tracking-[0.16em] text-[#e8451f]">
+        <span className="text-[10px] font-semibold uppercase tracking-[0.16em] text-[#e8451f]">
           {r.sourceId}
         </span>
-        {y ? <span className="text-[12px] text-[#7a6558]">{y}</span> : null}
+        {y ? <span className="text-[12px] text-[#8b8178]">{y}</span> : null}
       </div>
 
       {r.thumbnailUrl ? (
@@ -75,37 +75,33 @@ export default function ResultCard({
           onError={(e) => {
             e.currentTarget.hidden = true;
           }}
-          className="mt-4 h-40 w-full rounded-xl border border-[#3a1f14]/70 object-cover"
+          className="mt-4 h-40 w-full rounded-xl border border-[#e5dccd] bg-[#fffdf9] object-cover"
         />
       ) : null}
 
-      <h2 className="mt-4 font-serif text-xl leading-snug">
+      <h2 className="mt-3 font-serif text-xl leading-snug">
         <a
           href={r.canonicalUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="text-[#f5a962] underline-offset-4 hover:text-[#ff7a3d] hover:underline"
+          className="text-[#1c1410] underline-offset-4 hover:text-[#e8451f] hover:underline"
         >
           {r.title}
         </a>
       </h2>
 
-      <p className="mt-2 line-clamp-2 text-[13px] text-[#b39c8c]">
+      <p className="mt-2 line-clamp-2 text-[13px] text-[#57504a]">
         {r.authors.join(", ") || "Unknown"}
       </p>
 
-      {r.snippet ? (
-        <p className="mt-3 line-clamp-3 text-[13px] leading-relaxed text-[#8d7768]">
-          {r.snippet}
-        </p>
-      ) : null}
-
-      <div className="mt-5 flex items-center gap-2 border-t border-[#3a1f14]/60 pt-4">
+      <div
+        className={`mt-4 flex flex-wrap items-center gap-2 rounded-xl px-3 py-2 ${
+          known ? "bg-[#dff0e4]" : "bg-[#ece5d9]"
+        }`}
+      >
         <span
-          className={`rounded-full px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.14em] ${
-            known
-              ? "bg-[#e8451f]/15 text-[#ff9c6b]"
-              : "bg-[#2a1a12] text-[#8d7768]"
+          className={`rounded-md px-2 py-1 text-[10px] font-semibold uppercase tracking-[0.14em] ${
+            known ? "bg-[#2b6b46] text-white" : "bg-[#d9cdb9] text-[#57504a]"
           }`}
         >
           {r.licence.spdx}
@@ -115,17 +111,36 @@ export default function ResultCard({
             href={r.licence.url}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-[11px] text-[#7a6558] underline-offset-2 hover:text-[#b39c8c] hover:underline"
+            className={`text-[11px] underline-offset-2 hover:underline ${
+              known ? "text-[#2b6b46]" : "text-[#8b8178]"
+            }`}
           >
             licence
           </a>
         ) : null}
-        {action ? <div className="ml-auto">{action}</div> : null}
       </div>
 
-      <p className="mt-3 line-clamp-2 text-[11px] leading-relaxed text-[#6f5a4d]">
+      {r.snippet ? (
+        <p className="mt-3 line-clamp-3 text-[13px] leading-relaxed text-[#6f665e]">
+          {r.snippet}
+        </p>
+      ) : null}
+
+      <p className="mt-3 line-clamp-2 text-[11px] leading-relaxed text-[#9a9089]">
         {r.licence.attribution}
       </p>
+
+      <div className="mt-4 flex items-center gap-3 border-t border-[#e5dccd] pt-4">
+        <a
+          href={r.canonicalUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-[11px] font-medium text-[#57504a] underline-offset-2 transition hover:text-[#e8451f] hover:underline"
+        >
+          Open source &#8599;
+        </a>
+        {action ? <div className="ml-auto">{action}</div> : null}
+      </div>
     </li>
   );
 }

@@ -28,11 +28,11 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     >
       <body className="min-h-full">
         {/* globals.css styles `body` unlayered, which beats Tailwind's layered
-            utilities — so the dark shell lives on a wrapper, not on body. */}
+            utilities — so the page shell lives on a wrapper, not on body. */}
         <AuthProvider>
           <div
             data-print-shell
-            className="flex min-h-screen flex-col bg-[#0a0605] text-[#e8d8cc] selection:bg-[#e8451f]/30"
+            className="flex min-h-screen flex-col bg-[#faf7f2] text-[#57504a] selection:bg-[#e8451f]/20"
           >
             <SiteHeader />
             {children}

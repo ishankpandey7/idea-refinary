@@ -32,7 +32,7 @@ function when(iso: string): string {
 /** Marks an idea someone else owns and shared with you. */
 function SharedBadge() {
   return (
-    <span className="rounded-full border border-[#e8451f]/40 bg-[#e8451f]/10 px-3 py-1 text-[10px] font-medium uppercase tracking-[0.16em] text-[#ff9c6b]">
+    <span className="rounded-full border border-[#e8451f]/40 bg-[#e8451f]/10 px-3 py-1 text-[10px] font-medium uppercase tracking-[0.16em] text-[#e8451f]">
       Shared
     </span>
   );
@@ -91,21 +91,21 @@ export default function MyIdeas() {
         className="mx-auto w-full max-w-5xl px-6 pb-24 pt-16 sm:px-10"
       >
         <div className="flex justify-center">
-          <span className="rounded-full border border-[#3a1f14] px-4 py-1.5 text-[11px] font-medium uppercase tracking-[0.18em] text-[#e8451f]">
+          <span className="rounded-full border border-[#e5dccd] px-4 py-1.5 text-[11px] font-medium uppercase tracking-[0.18em] text-[#e8451f]">
             My Ideas
           </span>
         </div>
 
-        <h1 className="mt-10 text-center font-serif text-5xl leading-[1.08] text-[#f5a962] sm:text-6xl">
-          Streams of <em className="italic text-[#ff7a3d]">thought.</em>
+        <h1 className="mt-10 text-center font-serif text-5xl leading-[1.08] text-[#1c1410] sm:text-6xl">
+          Streams of <em className="italic text-[#e8451f]">thought.</em>
         </h1>
 
-        <p className="mx-auto mt-6 max-w-xl text-center text-[15px] leading-relaxed text-[#b39c8c]">
+        <p className="mx-auto mt-6 max-w-xl text-center text-[15px] leading-relaxed text-[#57504a]">
           Every search you save becomes an idea. Open one to see what you kept.
         </p>
 
         {imported ? (
-          <p className="mx-auto mt-8 max-w-xl rounded-2xl border border-[#e8451f]/40 bg-[#e8451f]/10 px-6 py-4 text-center text-[13px] text-[#ff9c6b]">
+          <p className="mx-auto mt-8 max-w-xl rounded-2xl border border-[#e8451f]/40 bg-[#e8451f]/10 px-6 py-4 text-center text-[13px] text-[#e8451f]">
             Moved {imported.results} saved result
             {imported.results === 1 ? "" : "s"} from this browser into your
             account.
@@ -113,27 +113,27 @@ export default function MyIdeas() {
         ) : null}
 
         {authLoading || !ready ? null : !configured ? (
-          <p className="mt-16 text-center text-[15px] text-[#7a6558]">
+          <p className="mt-16 text-center text-[15px] text-[#8b8178]">
             Sign-in is unavailable: this deployment has no Supabase keys set.
           </p>
         ) : !user ? (
           <div className="mt-16 text-center">
-            <p className="text-[15px] text-[#7a6558]">
+            <p className="text-[15px] text-[#8b8178]">
               Sign in to see your saved ideas.
             </p>
             <Link
               href="/login"
-              className="mt-6 inline-block rounded-full bg-[#e8451f] px-9 py-4 text-[15px] font-medium text-white transition hover:bg-[#ff5a2e]"
+              className="mt-6 inline-block rounded-full bg-[#e8451f] px-9 py-4 text-[15px] font-medium text-white transition hover:bg-[#d13d18]"
             >
               Sign in &rarr;
             </Link>
           </div>
         ) : ideas.length === 0 ? (
           <div className="mt-16 text-center">
-            <p className="text-[15px] text-[#7a6558]">Nothing saved yet.</p>
+            <p className="text-[15px] text-[#8b8178]">Nothing saved yet.</p>
             <Link
               href="/"
-              className="mt-6 inline-block rounded-full bg-[#e8451f] px-9 py-4 text-[15px] font-medium text-white transition hover:bg-[#ff5a2e]"
+              className="mt-6 inline-block rounded-full bg-[#e8451f] px-9 py-4 text-[15px] font-medium text-white transition hover:bg-[#d13d18]"
             >
               Start a search &rarr;
             </Link>
@@ -144,14 +144,14 @@ export default function MyIdeas() {
               <button
                 type="button"
                 onClick={() => setOpenId(null)}
-                className="rounded-full border border-[#3a1f14] px-5 py-2 text-[13px] text-[#b39c8c] transition hover:border-[#e8451f]/60 hover:text-[#ff9c6b]"
+                className="rounded-full border border-[#e5dccd] px-5 py-2 text-[13px] text-[#57504a] transition hover:border-[#e8451f] hover:text-[#e8451f]"
               >
                 &larr; All ideas
               </button>
-              <h2 className="font-serif text-2xl text-[#f5a962]">
+              <h2 className="font-serif text-2xl text-[#1c1410]">
                 &ldquo;{open.query}&rdquo;
               </h2>
-              <span className="text-[12px] text-[#7a6558]">
+              <span className="text-[12px] text-[#8b8178]">
                 {open.results.length} saved &middot; {when(open.savedAt)}
               </span>
               {ownsOpen ? null : <SharedBadge />}
@@ -162,7 +162,7 @@ export default function MyIdeas() {
                 <button
                   type="button"
                   onClick={() => setInviteOpen((v) => !v)}
-                  className="rounded-full border border-[#3a1f14] px-5 py-2 text-[13px] text-[#b39c8c] transition hover:border-[#e8451f]/60 hover:text-[#ff9c6b]"
+                  className="rounded-full border border-[#e5dccd] px-5 py-2 text-[13px] text-[#57504a] transition hover:border-[#e8451f] hover:text-[#e8451f]"
                 >
                   Invite
                 </button>
@@ -170,7 +170,7 @@ export default function MyIdeas() {
               <button
                 type="button"
                 onClick={() => window.print()}
-                className="rounded-full bg-[#e8451f] px-5 py-2 text-[13px] font-medium text-white transition hover:bg-[#ff5a2e]"
+                className="rounded-full bg-[#e8451f] px-5 py-2 text-[13px] font-medium text-white transition hover:bg-[#d13d18]"
               >
                 Export PDF
               </button>
@@ -178,7 +178,7 @@ export default function MyIdeas() {
                 <button
                   type="button"
                   onClick={() => onRemoveIdea(open.id)}
-                  className="rounded-full border border-[#3a1f14] px-5 py-2 text-[13px] text-[#7a6558] transition hover:border-[#e8451f] hover:text-[#ff9c6b]"
+                  className="rounded-full border border-[#e5dccd] px-5 py-2 text-[13px] text-[#8b8178] transition hover:border-[#e8451f] hover:text-[#e8451f]"
                 >
                   Delete idea
                 </button>
@@ -220,7 +220,7 @@ export default function MyIdeas() {
                             onClick={() =>
                               onRemoveResult(open.id, resultKey(r))
                             }
-                            className="rounded-full border border-[#3a1f14] px-4 py-1.5 text-[11px] font-medium text-[#7a6558] transition hover:border-[#e8451f] hover:text-[#ff9c6b]"
+                            className="rounded-full border border-[#e5dccd] px-4 py-1.5 text-[11px] font-medium text-[#8b8178] transition hover:border-[#e8451f] hover:text-[#e8451f]"
                           >
                             Remove
                           </button>
@@ -243,13 +243,13 @@ export default function MyIdeas() {
               return (
                 <li
                   key={idea.id}
-                  className="flex flex-col rounded-2xl border border-[#3a1f14] bg-[#100a07]/70 p-6 transition hover:border-[#e8451f]/60"
+                  className="flex flex-col rounded-2xl border border-[#e5dccd] bg-[#f4eee4] p-6 transition hover:border-[#e8451f]"
                 >
                   <div className="flex items-center justify-between gap-3">
-                    <span className="rounded-full border border-[#3a1f14] px-3 py-1 text-[10px] font-medium uppercase tracking-[0.16em] text-[#e8451f]">
+                    <span className="rounded-full border border-[#e5dccd] px-3 py-1 text-[10px] font-medium uppercase tracking-[0.16em] text-[#e8451f]">
                       {idea.results.length} saved
                     </span>
-                    <span className="text-[12px] text-[#7a6558]">
+                    <span className="text-[12px] text-[#8b8178]">
                       {when(idea.savedAt)}
                     </span>
                   </div>
@@ -260,19 +260,19 @@ export default function MyIdeas() {
                     </div>
                   ) : null}
 
-                  <h2 className="mt-4 font-serif text-xl leading-snug text-[#f5a962]">
+                  <h2 className="mt-4 font-serif text-xl leading-snug text-[#1c1410]">
                     {idea.query}
                   </h2>
 
-                  <p className="mt-2 text-[13px] text-[#b39c8c]">
+                  <p className="mt-2 text-[13px] text-[#57504a]">
                     {counts.map((c) => `${c.label} ${c.n}`).join("  ·  ")}
                   </p>
 
-                  <div className="mt-6 flex items-center gap-2 border-t border-[#3a1f14]/60 pt-4">
+                  <div className="mt-6 flex items-center gap-2 border-t border-[#e5dccd] pt-4">
                     <button
                       type="button"
                       onClick={() => setOpenId(idea.id)}
-                      className="rounded-full bg-[#e8451f] px-5 py-2 text-[12px] font-medium text-white transition hover:bg-[#ff5a2e]"
+                      className="rounded-full bg-[#e8451f] px-5 py-2 text-[12px] font-medium text-white transition hover:bg-[#d13d18]"
                     >
                       Open
                     </button>
@@ -280,7 +280,7 @@ export default function MyIdeas() {
                       <button
                         type="button"
                         onClick={() => onRemoveIdea(idea.id)}
-                        className="ml-auto rounded-full border border-[#3a1f14] px-5 py-2 text-[12px] text-[#7a6558] transition hover:border-[#e8451f] hover:text-[#ff9c6b]"
+                        className="ml-auto rounded-full border border-[#e5dccd] px-5 py-2 text-[12px] text-[#8b8178] transition hover:border-[#e8451f] hover:text-[#e8451f]"
                       >
                         Delete
                       </button>
