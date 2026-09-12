@@ -4,7 +4,13 @@ import { useCallback, useEffect, useState } from "react";
 import Link from "next/link";
 import type { SourceResult } from "@/types/source-result";
 import ResultCard from "./_components/ResultCard";
-import { resultKey, saveResult, savedKeysFor } from "./_lib/ideas-db";
+import {
+  listIdeas,
+  resultKey,
+  saveResult,
+  savedKeysFor,
+  type Idea,
+} from "./_lib/ideas-db";
 import { useAuth } from "./_components/AuthProvider";
 
 const CATEGORIES = [
@@ -59,6 +65,29 @@ const ANGLES = [
 
 const EXAMPLE_QUERY = "a cancer awareness campaign for my campus";
 
+/** Client-only — it reads Date.now(), and the list arrives after mount. */
+function ago(iso: string): string {
+  const then = new Date(iso).getTime();
+  if (Number.isNaN(then)) return "";
+
+  const mins = Math.round((Date.now() - then) / 60000);
+  if (mins < 1) return "just now";
+  if (mins < 60) return `${mins} minute${mins === 1 ? "" : "s"} ago`;
+
+  const hours = Math.round(mins / 60);
+  if (hours < 24) return `${hours} hour${hours === 1 ? "" : "s"} ago`;
+
+  const days = Math.round(hours / 24);
+  if (days === 1) return "yesterday";
+  if (days < 30) return `${days} days ago`;
+
+  return new Date(then).toLocaleDateString(undefined, {
+    day: "numeric",
+    month: "short",
+    year: "numeric",
+  });
+}
+
 export default function Home() {
   const [query, setQuery] = useState("");
   const [category, setCategory] = useState<string>("");
@@ -70,6 +99,7 @@ export default function Home() {
   const [currentIdea, setCurrentIdea] = useState("");
   const [savedKeys, setSavedKeys] = useState<Set<string>>(new Set());
   const [saveError, setSaveError] = useState<string | null>(null);
+  const [recent, setRecent] = useState<Idea[]>([]);
 
   const { user } = useAuth();
 
@@ -87,6 +117,22 @@ export default function Home() {
   useEffect(() => {
     if (currentIdea) void refreshSaved(currentIdea);
   }, [currentIdea, refreshSaved]);
+
+  // RLS already scopes this to ideas you are a member of, so the home page
+  // shows shared ones too.
+  useEffect(() => {
+    if (!user) {
+      setRecent([]);
+      return;
+    }
+    let active = true;
+    void listIdeas().then((all) => {
+      if (active) setRecent(all.slice(0, 2));
+    });
+    return () => {
+      active = false;
+    };
+  }, [user]);
 
   const runSearchFor = useCallback(async (term: string, cat: string) => {
     const q = term.trim();
@@ -356,6 +402,52 @@ export default function Home() {
               </li>
             ))}
           </ul>
+
+          {recent.length > 0 ? (
+            <div className="mt-20">
+              <div className="flex items-end justify-between gap-4">
+                <h2 className="flex items-center gap-2 text-[13px] font-semibold uppercase tracking-[0.16em] text-accent">
+                  <span aria-hidden>&#128193;</span> Recent Saved Ideas
+                </h2>
+                <Link
+                  href="/my-ideas"
+                  className="text-[12px] text-muted underline-offset-2 transition hover:text-accent hover:underline"
+                >
+                  View all history
+                </Link>
+              </div>
+
+              <ul className="mt-6 grid gap-5 sm:grid-cols-2">
+                {recent.map((idea) => (
+                  <li
+                    key={idea.id}
+                    className="flex flex-col rounded-2xl border border-line bg-surface p-6"
+                  >
+                    <span className="self-start rounded-full bg-brand/10 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.16em] text-accent">
+                      {idea.results.length} source
+                      {idea.results.length === 1 ? "" : "s"} saved
+                    </span>
+
+                    <p className="mt-4 font-serif text-lg leading-snug text-ink">
+                      &ldquo;{idea.query}&rdquo;
+                    </p>
+
+                    <div className="mt-6 flex items-center gap-3 border-t border-line pt-4">
+                      <span className="text-[12px] text-muted">
+                        Saved {ago(idea.savedAt)}
+                      </span>
+                      <Link
+                        href={`/my-ideas?idea=${encodeURIComponent(idea.id)}`}
+                        className="ml-auto text-[12px] font-medium text-accent underline-offset-2 hover:underline"
+                      >
+                        Open board &rarr;
+                      </Link>
+                    </div>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ) : null}
         </section>
       )}
     </main>

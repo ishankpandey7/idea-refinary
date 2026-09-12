@@ -76,6 +76,13 @@ export default function MyIdeas() {
     if (openId === ideaId) setOpenId(null);
   }
 
+  // Deep link from the home page's "Open board" — the list arrives after
+  // mount, so this just parks the id and `open` resolves once it lands.
+  useEffect(() => {
+    const id = new URLSearchParams(window.location.search).get("idea");
+    if (id) setOpenId(id);
+  }, []);
+
   // Closing an idea, or switching to another one, puts the invite form away.
   useEffect(() => {
     setInviteOpen(false);
