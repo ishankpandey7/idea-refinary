@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Idea Refinery",
+  title: "Idea Craft",
   description:
     "Federated open-licence search. One query fans out to open sources; every result links back to where it lives.",
 };
@@ -52,7 +52,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
             >
               <p className="text-[13px] text-body">
                 <span className="font-serif text-[15px] text-ink">
-                  Idea Refinery
+                  Idea Craft
                 </span>
                 <span aria-hidden className="mx-2 text-accent">
                   &bull;
@@ -60,7 +60,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
                 Open-licence resource discovery engine
               </p>
               <p className="mx-auto mt-3 max-w-xl text-[11px] leading-relaxed text-faint">
-                &copy; 2026 Idea Refinery. Results link back to the source and
+                &copy; 2026 Idea Craft. Results link back to the source and
                 carry the licence and attribution the provider published &mdash;
                 we never host the content.
               </p>

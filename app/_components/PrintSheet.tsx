@@ -30,7 +30,7 @@ export default function PrintSheet({ idea }: { idea: Idea }) {
           {idea.results.length === 1 ? "" : "s"} &middot; exported{" "}
           {day(new Date().toISOString())}
         </p>
-        <p>Idea Refinery &mdash; every item links back to its source.</p>
+        <p>Idea Craft &mdash; every item links back to its source.</p>
       </header>
 
       {CATEGORY_LABELS.map((label) => {

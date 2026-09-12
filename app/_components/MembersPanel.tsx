@@ -138,7 +138,7 @@ export default function MembersPanel({
             </button>
           </div>
           <p className="text-[12px] leading-relaxed text-muted">
-            They need an Idea Refinery account already &mdash; this shares the
+            They need an Idea Craft account already &mdash; this shares the
             idea, it does not send a signup invitation.
           </p>
         </form>

@@ -219,7 +219,7 @@ export default function Home() {
       </h1>
 
       <p className="mx-auto mt-6 max-w-xl text-center text-[15px] leading-relaxed text-body">
-        Describe what you&rsquo;re trying to make. Idea Refinery finds the
+        Describe what you&rsquo;re trying to make. Idea Craft finds the
         research, visuals and language behind it &mdash; with reuse rights
         attached.
       </p>

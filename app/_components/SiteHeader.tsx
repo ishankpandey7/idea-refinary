@@ -21,7 +21,7 @@ export default function SiteHeader() {
     >
       <Link href="/" className="flex items-baseline gap-1.5">
         <span className="whitespace-nowrap font-serif text-base tracking-tight text-ink sm:text-xl">
-          Idea Refinery
+          Idea Craft
         </span>
         <span aria-hidden className="text-lg leading-none text-accent">
           &bull;

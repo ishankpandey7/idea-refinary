@@ -1,4 +1,4 @@
-# Idea Refinery
+# Idea Craft
 
 Federated open-licence search + idea workspace. One query fans out to
 source APIs; results are normalised, deduped, licence-tagged and shown
