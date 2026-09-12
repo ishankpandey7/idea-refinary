@@ -14,6 +14,10 @@
 - `package.json` — deps and scripts.
 - `public/` — static assets served at `/`.
 
+## Env
+`OPENALEX_MAILTO` (optional) — contact address for the OpenAlex polite pool.
+Put it in `.env.local`; unset is fine, requests just use the common pool.
+
 ## Run
 ```
 npm install

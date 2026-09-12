@@ -2,7 +2,9 @@ import type { Adapter, SourceResult, Spdx } from "@/types/source-result";
 
 const SOURCE_ID = "openalex";
 const ENDPOINT = "https://api.openalex.org/works";
-const MAILTO = "ishankpandey16077@gmail.com";
+// OpenAlex polite pool: opt-in, set OPENALEX_MAILTO in .env.local.
+// Unset is fine - the request just goes to the common pool.
+const MAILTO = process.env.OPENALEX_MAILTO?.trim() ?? "";
 
 type OpenAlexAuthorship = {
   author?: { display_name?: string | null } | null;
@@ -101,7 +103,9 @@ export const adapter: Adapter = {
       const q = query.trim();
       if (!q) return [];
 
-      const url = `${ENDPOINT}?search=${encodeURIComponent(q)}&per-page=10&mailto=${encodeURIComponent(MAILTO)}`;
+      const params = new URLSearchParams({ search: q, "per-page": "10" });
+      if (MAILTO) params.set("mailto", MAILTO);
+      const url = `${ENDPOINT}?${params.toString()}`;
       const res = await fetch(url, {
         headers: { Accept: "application/json" },
         signal,
