@@ -38,7 +38,14 @@ async function runAdapter(
   if (isDemo()) return readFixture(adapter.id, query);
 
   const results = await searchWithTimeout(adapter, query);
-  if (isRecording()) await writeFixture(adapter.id, query, results);
+
+  // An adapter that caught a failure returns [] exactly like a genuine zero,
+  // so recording an empty result would let a source outage overwrite a good
+  // fixture with []. Skip those: a genuine zero just becomes a fixture miss,
+  // which replays as [] anyway.
+  if (isRecording() && results.length > 0) {
+    await writeFixture(adapter.id, query, results);
+  }
   return results;
 }
 

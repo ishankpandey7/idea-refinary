@@ -71,7 +71,7 @@
     "publishedAt": null,
     "mediaType": "image",
     "licence": {
-      "spdx": "UNKNOWN",
+      "spdx": "CC-BY-ND",
       "url": "https://creativecommons.org/licenses/by-nd/2.0/",
       "assertedBy": "openverse",
       "attribution": "\"IBM quantum computer\" by IBM Research is licensed under CC BY-ND 2.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-nd/2.0/."
