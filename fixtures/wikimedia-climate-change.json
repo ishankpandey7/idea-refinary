@@ -1,0 +1,1198 @@
+[
+  {
+    "sourceId": "wikimedia",
+    "externalId": "36382631",
+    "canonicalUrl": "https://commons.wikimedia.org/wiki/File:Climate_change_numbered.svg",
+    "title": "Climate change numbered.svg",
+    "authors": [
+      "This SVG image was created by Medium69. Cette image SVG a été créée par Medium69. Please credit this : William Crochot"
+    ],
+    "publishedAt": null,
+    "mediaType": "image",
+    "licence": {
+      "spdx": "CC-BY-SA-4.0",
+      "url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "assertedBy": "wikimedia",
+      "attribution": "This SVG image was created by Medium69. Cette image SVG a été créée par Medium69. Please credit this : William Crochot — Climate change numbered.svg"
+    },
+    "snippet": null,
+    "thumbnailUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/ba/Climate_change_numbered.svg/500px-Climate_change_numbered.svg.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "raw": {
+      "pageid": 36382631,
+      "ns": 6,
+      "title": "File:Climate change numbered.svg",
+      "index": 2,
+      "imagerepository": "local",
+      "imageinfo": [
+        {
+          "thumburl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/ba/Climate_change_numbered.svg/500px-Climate_change_numbered.svg.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumbwidth": 400,
+          "thumbheight": 388,
+          "responsiveUrls": {
+            "2": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/ba/Climate_change_numbered.svg/960px-Climate_change_numbered.svg.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+          },
+          "thumbattribs": {
+            "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/ba/Climate_change_numbered.svg/500px-Climate_change_numbered.svg.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "decoding": "async",
+            "loading": "lazy",
+            "width": 400,
+            "height": 388,
+            "srcset": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/ba/Climate_change_numbered.svg/960px-Climate_change_numbered.svg.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail 2x"
+          },
+          "url": "https://upload.wikimedia.org/wikipedia/commons/b/ba/Climate_change_numbered.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "descriptionurl": "https://commons.wikimedia.org/wiki/File:Climate_change_numbered.svg",
+          "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=36382631",
+          "extmetadata": {
+            "DateTime": {
+              "value": "2015-01-14 11:05:35",
+              "source": "mediawiki-metadata",
+              "hidden": ""
+            },
+            "ObjectName": {
+              "value": "Climate change numbered",
+              "source": "mediawiki-metadata"
+            },
+            "CommonsMetadataExtension": {
+              "value": 1.2,
+              "source": "extension",
+              "hidden": ""
+            },
+            "Categories": {
+              "value": "Self-published work|Climate change diagrams|Global warming graphs|Images by Medium69|Valid SVG created with Adobe Illustrator|Diagrams labelled with numbers only|Assessment tagged valued image pages missing scope|Numbered version by Medium69",
+              "source": "commons-categories",
+              "hidden": ""
+            },
+            "Assessments": {
+              "value": "quality|valued",
+              "source": "commons-categories",
+              "hidden": ""
+            },
+            "ImageDescription": {
+              "value": "Image composite ilustrating main factors affecting climatic change.",
+              "source": "commons-desc-page"
+            },
+            "DateTimeOriginal": {
+              "value": "2014-10-25",
+              "source": "commons-desc-page"
+            },
+            "Credit": {
+              "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+              "source": "commons-desc-page"
+            },
+            "Artist": {
+              "value": "<table style=\"margin: 1em auto; background-color:#F7FEFF; border:2px solid #aaaaaa; padding:1px;\" cellspacing=\"10\">\n<tbody><tr>\n<td align=\"center\"><span typeof=\"mw:File\"><a href=\"//commons.wikimedia.org/wiki/File:Climate_change_numbered.svg\" class=\"mw-file-description\"><img src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Climate_change_numbered.svg/120px-Climate_change_numbered.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail\" decoding=\"async\" width=\"100\" height=\"97\" class=\"mw-file-element\" srcset=\"https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Climate_change_numbered.svg/250px-Climate_change_numbered.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail 2x\" data-file-width=\"512\" data-file-height=\"497\"></a></span>\n</td>\n<td>\n<ul><li>This SVG image was created by <b><a href=\"//commons.wikimedia.org/wiki/User:Medium69\" title=\"User:Medium69\">Medium69</a></b>.</li>\n<li>Cette image SVG a été créée par <b><a href=\"//commons.wikimedia.org/wiki/User:Medium69\" title=\"User:Medium69\">Medium69</a></b>.</li></ul>\n<p>Please credit this : <i>William Crochot</i>\n</p>\n</td>\n<td align=\"center\"><span typeof=\"mw:File\"><a href=\"//commons.wikimedia.org/wiki/Category:Images_by_Medium69\" title=\"Gallery\"><img alt=\"Gallery\" src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Camera-photo.svg/60px-Camera-photo.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail\" decoding=\"async\" width=\"50\" height=\"50\" class=\"mw-file-element\" srcset=\"https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Camera-photo.svg/120px-Camera-photo.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail 2x\" data-file-width=\"48\" data-file-height=\"48\"></a></span>\n</td></tr></tbody></table>",
+              "source": "commons-desc-page"
+            },
+            "LicenseShortName": {
+              "value": "CC BY-SA 4.0",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "UsageTerms": {
+              "value": "Creative Commons Attribution-Share Alike 4.0",
+              "source": "commons-desc-page"
+            },
+            "AttributionRequired": {
+              "value": "true",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "LicenseUrl": {
+              "value": "https://creativecommons.org/licenses/by-sa/4.0",
+              "source": "commons-desc-page"
+            },
+            "Copyrighted": {
+              "value": "True",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "Restrictions": {
+              "value": "",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "License": {
+              "value": "cc-by-sa-4.0",
+              "source": "commons-templates",
+              "hidden": ""
+            }
+          }
+        }
+      ]
+    }
+  },
+  {
+    "sourceId": "wikimedia",
+    "externalId": "82402036",
+    "canonicalUrl": "https://commons.wikimedia.org/wiki/File:1880-_Global_surface_temperature_-_heat_map_animation_-_NASA_SVS.webm",
+    "title": "1880- Global surface temperature - heat map animation - NASA SVS.webm",
+    "authors": [
+      "NASA attribution: \"Visualizations by Lori Perkins\" (versions 1 to 5), \"Visualizations by Mark SubbaRao\" (version 6+7)"
+    ],
+    "publishedAt": null,
+    "mediaType": "image",
+    "licence": {
+      "spdx": "PD",
+      "url": null,
+      "assertedBy": "wikimedia",
+      "attribution": "NASA attribution: \"Visualizations by Lori Perkins\" (versions 1 to 5), \"Visualizations by Mark SubbaRao\" (version 6+7) — 1880- Global surface temperature - heat map animation - NASA SVS.webm"
+    },
+    "snippet": null,
+    "thumbnailUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b9/1880-_Global_surface_temperature_-_heat_map_animation_-_NASA_SVS.webm/500px--1880-_Global_surface_temperature_-_heat_map_animation_-_NASA_SVS.webm.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo",
+    "raw": {
+      "pageid": 82402036,
+      "ns": 6,
+      "title": "File:1880- Global surface temperature - heat map animation - NASA SVS.webm",
+      "index": 1,
+      "imagerepository": "local",
+      "imageinfo": [
+        {
+          "thumburl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b9/1880-_Global_surface_temperature_-_heat_map_animation_-_NASA_SVS.webm/500px--1880-_Global_surface_temperature_-_heat_map_animation_-_NASA_SVS.webm.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo",
+          "thumbwidth": 400,
+          "thumbheight": 225,
+          "responsiveUrls": {
+            "2": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b9/1880-_Global_surface_temperature_-_heat_map_animation_-_NASA_SVS.webm/960px--1880-_Global_surface_temperature_-_heat_map_animation_-_NASA_SVS.webm.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo"
+          },
+          "thumbattribs": [],
+          "url": "https://upload.wikimedia.org/wikipedia/commons/b/b9/1880-_Global_surface_temperature_-_heat_map_animation_-_NASA_SVS.webm?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "descriptionurl": "https://commons.wikimedia.org/wiki/File:1880-_Global_surface_temperature_-_heat_map_animation_-_NASA_SVS.webm",
+          "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=82402036",
+          "extmetadata": {
+            "DateTime": {
+              "value": "2025-09-28 11:08:01",
+              "source": "mediawiki-metadata",
+              "hidden": ""
+            },
+            "ObjectName": {
+              "value": "1880- Global surface temperature - heat map animation - NASA SVS",
+              "source": "mediawiki-metadata"
+            },
+            "CommonsMetadataExtension": {
+              "value": 1.2,
+              "source": "extension",
+              "hidden": ""
+            },
+            "Categories": {
+              "value": "PD NASA|Featured pictures on Wikipedia, English|Videos of global warming|NASA videos in 2025|Charts showing data through 2024|Videos of climate change|GISTEMP|Files with Assessments template missing SDC Commons no value quality assessment|Global warming maps of the world with subnational resolution|Temperature maps",
+              "source": "commons-categories",
+              "hidden": ""
+            },
+            "Assessments": {
+              "value": "",
+              "source": "commons-categories",
+              "hidden": ""
+            },
+            "ImageDescription": {
+              "value": "Global surface temperature <a href=\"https://en.wikipedia.org/wiki/heat_map\" class=\"extiw\" title=\"w:heat map\">heat map</a> animation for 1880—___. Produced by <a href=\"https://en.wikipedia.org/wiki/NASA\" class=\"extiw\" title=\"w:NASA\">NASA</a>'s Scientific Visualization Studio (SVS) from data from NASA's <a href=\"https://en.wikipedia.org/wiki/Goddard_Institute_for_Space_Studies\" class=\"extiw\" title=\"w:Goddard Institute for Space Studies\">Goddard Institute for Space Studies</a>.\n<ul><li>Direct links to source are provided in \"Source\" box below.</li></ul>\n<div class=\"mw-heading mw-heading3\"><h3 id=\"Version_7_(data_through_2024)\"><span id=\"Version_7_.28data_through_2024.29\"></span>Version 7 (data through 2024)</h3></div>\n<p>Global Temperature Anomalies from 1880 to 2024 <br>\nScientific consulting by:\nGavin A. Schmidt\nVisualizations by:\nMark SubbaRao\n</p>\n<div class=\"mw-heading mw-heading3\"><h3 id=\"Version_6_(data_through_2023)\"><span id=\"Version_6_.28data_through_2023.29\"></span>Version 6 (data through 2023)</h3></div>\n<p>Original source page, titled \"Global Temperature Anomalies from 1880 to 2023\" Visualizations by Mark SubbaRao, includes the descriptions:\n</p>\n<dl><dd><ul><li>This color-coded map in Robinson projection displays a progression of changing global surface temperature anomalies. Normal temperatures are shown in white. Higher than normal temperatures are shown in red and lower than normal temperatures are shown in blue. Normal temperatures are calculated over the 30 year baseline period 1951-1980. The maps are averages over a running 24 month window. The final frame represents global temperature anomalies in 2023. Scale in degrees Celsius and Fahrenheit.</li></ul></dd></dl>\n<div class=\"mw-heading mw-heading3\"><h3 id=\"Version_5_(data_through_2022)\"><span id=\"Version_5_.28data_through_2022.29\"></span>Version 5 (data through 2022)</h3></div>\n<p>Original source page, titled \"Global Temperature Anomalies from 1880 to 2022\" Visualizations by Lori Perkins, includes the descriptions:\n</p>\n<dl><dd><ul><li>This color-coded map in Robinson projection displays a progression of changing global surface temperature anomalies. Normal temperatures are shown in white. Higher than normal temperatures are shown in red and lower than normal temperatures are shown in blue. Normal temperatures are calculated over the 30 year baseline period 1951-1980. The final frame represents the 5 year global temperature anomalies from 2018-2022. Scale in degrees Celsius and Fahrenheit.</li></ul></dd></dl>\n<div class=\"mw-heading mw-heading3\"><h3 id=\"Version_4_(data_through_2021)\"><span id=\"Version_4_.28data_through_2021.29\"></span>Version 4 (data through 2021)</h3></div>\n<p>Original source page, titled \"Global Temperature Anomalies from 1880 to 2021\" Visualizations by Lori Perkins, includes the descriptions:\n</p>\n<dl><dd><ul><li>This color-coded map in Robinson projection displays a progression of changing global surface temperature anomalies. Normal temperatures are shown in white. Higher than normal temperatures are shown in red and lower than normal temperatures are shown in blue. Normal temperatures are calculated over the 30 year baseline period 1951-1980. The final frame represents the 5 year global temperature anomalies from 2017-2021. Scale in degrees Celsius.</li></ul></dd></dl>\n<div class=\"mw-heading mw-heading3\"><h3 id=\"Version_3_(data_through_2020)\"><span id=\"Version_3_.28data_through_2020.29\"></span>Version 3 (data through 2020)</h3></div>\n<p>Original source page, titled \"Global Temperature Anomalies from 1880 to 2020\" Visualizations by Lori Perkins, includes the descriptions:\n</p>\n<dl><dd><ul><li>This color-coded map in Robinson projection displays a progression of changing global surface temperature anomalies. Normal temperatures are the average over the 30 year baseline period 1951-1980. Higher than normal temperatures are shown in red and lower than normal temperatures are shown in blue. The final frame represents the 5 year global temperature anomalies from 2016-2020. Scale in degrees Celsius.</li>\n<li>NASA’s full surface temperature data set – and the complete methodology used to make the temperature calculation – are available at: <a rel=\"nofollow\" class=\"external free\" href=\"https://data.giss.nasa.gov/gistemp\">https://data.giss.nasa.gov/gistemp</a></li></ul></dd></dl>\n<div class=\"mw-heading mw-heading3\"><h3 id=\"Version_2_(data_through_2019)\"><span id=\"Version_2_.28data_through_2019.29\"></span>Version 2 (data through 2019)</h3></div>\n<p>Original source page, titled \"Global Temperature Anomalies from 1880 to 2019\" Visualizations by Lori Perkins, includes the descriptions:\n</p>\n<dl><dd><ul><li>\"This color-coded map in Robinson projection displays a progression of changing global surface temperature anomalies. Normal temperatures are the average over the 30 year baseline period 1951-1980. Higher than normal temperatures are shown in red and lower than normal temperatures are shown in blue. The final frame represents the 5 year global temperature anomalies from 2015-2019. Scale in degrees Celsius.\"</li>\n<li>\"These calculations produce the global average temperature deviations from the baseline period of 1951 to 1980.\"</li>\n<li>\"NASA’s full 2019 surface temperature data set and the complete methodology used for the temperature calculation and its uncertainties are available at: <a rel=\"nofollow\" class=\"external free\" href=\"https://data.giss.nasa.gov/gistemp\">https://data.giss.nasa.gov/gistemp</a></li></ul></dd></dl>\n<div class=\"mw-heading mw-heading3\"><h3 id=\"Version_1_(data_through_2018)\"><span id=\"Version_1_.28data_through_2018.29\"></span>Version 1 (data through 2018)</h3></div>\n<p>Original source page, titled \"Global Temperature Anomalies from 1880 to 2018\", includes the descriptions:\n</p>\n<dl><dd><ul><li>\"This color-coded map in Robinson projection displays a progression of changing global surface temperature anomalies from 1880 through 2018. Higher than normal temperatures are shown in red and lower then normal temperatures are shown in blue. The final frame represents the global temperatures 5-year averaged from 2014 through 2018. Scale in degree Celsius.\"</li>\n<li>\"These calculations produce the global average temperature deviations from the baseline period of 1951 to 1980.\"</li>\n<li>\"NASA’s full 2018 surface temperature data set — and the complete methodology used to make the temperature calculation — are available at: <a rel=\"nofollow\" class=\"external free\" href=\"https://data.giss.nasa.gov/gistemp\">https://data.giss.nasa.gov/gistemp</a>\".</li></ul></dd></dl>\n<div class=\"description fr\" dir=\"ltr\" lang=\"fr\"><span class=\"language fr\" title=\"French\"><b>Français : </b></span> <a href=\"https://fr.wikipedia.org/wiki/Carte_thermique\" class=\"extiw\" title=\"fr:Carte thermique\">Carte thermique</a> animée de l'évolution des températures de la surface terrestre de 1880 à nos jours, réalisée par le service \"Scientific Visualization Studio\" de la <a href=\"https://fr.wikipedia.org/wiki/NASA\" class=\"extiw\" title=\"fr:NASA\">NASA</a>, à partir de données du <a href=\"https://fr.wikipedia.org/wiki/Goddard_Institute_for_Space_Studies\" class=\"extiw\" title=\"fr:Goddard Institute for Space Studies\">Goddard Institute for Space Studies</a>.</div>.\n<ul><li>Un lien direct vers la vidéo source est donné dans la section \"source\" ci-bas.</li></ul>",
+              "source": "commons-desc-page"
+            },
+            "DateTimeOriginal": {
+              "value": "<ul><li>2025-01-10 (Version 7)</li>\n<li>2024-01-12 (Version 6)</li>\n<li>2023-01-12 (Version 5)</li>\n<li>2022-01-13 (Version 4)</li>\n<li>2021-01-14 (Version 3)</li>\n<li>2020-01-15 (Version 2)</li>\n<li>2019-02-06 (Version 1)</li></ul>",
+              "source": "commons-desc-page"
+            },
+            "Credit": {
+              "value": "<ul><li>Version 7: Original from <a href=\"https://en.wikipedia.org/wiki/NASA\" class=\"extiw\" title=\"w:NASA\">NASA</a>: <a rel=\"nofollow\" class=\"external free\" href=\"https://svs.gsfc.nasa.gov/5450/\">https://svs.gsfc.nasa.gov/5450/</a></li>\n<li>Version 7: archive of source page: <a rel=\"nofollow\" class=\"external free\" href=\"https://web.archive.org/web/20250928110722/https://svs.gsfc.nasa.gov/5450/\">https://web.archive.org/web/20250928110722/https://svs.gsfc.nasa.gov/5450/</a></li>\n<li>Version 6: Original from <a href=\"https://en.wikipedia.org/wiki/NASA\" class=\"extiw\" title=\"w:NASA\">NASA</a>: <a rel=\"nofollow\" class=\"external free\" href=\"https://svs.gsfc.nasa.gov/5207/\">https://svs.gsfc.nasa.gov/5207/</a></li>\n<li>Version 6: archive of source page: <a rel=\"nofollow\" class=\"external free\" href=\"https://web.archive.org/web/20241123102856/https://svs.gsfc.nasa.gov/5207/\">https://web.archive.org/web/20241123102856/https://svs.gsfc.nasa.gov/5207/</a></li></ul>\n<ul><li>Version 5: Original from <a href=\"https://en.wikipedia.org/wiki/NASA\" class=\"extiw\" title=\"w:NASA\">NASA</a>: <a rel=\"nofollow\" class=\"external free\" href=\"https://svs.gsfc.nasa.gov/5060/\">https://svs.gsfc.nasa.gov/5060/</a></li>\n<li>Version 5: archive of source page: <a rel=\"nofollow\" class=\"external free\" href=\"https://web.archive.org/web/20240225153315/https://svs.gsfc.nasa.gov/5060/\">https://web.archive.org/web/20240225153315/https://svs.gsfc.nasa.gov/5060/</a></li></ul>\n<ul><li>Version 4: Original from <a href=\"https://en.wikipedia.org/wiki/NASA\" class=\"extiw\" title=\"w:NASA\">NASA</a>: <a rel=\"nofollow\" class=\"external free\" href=\"https://svs.gsfc.nasa.gov/4964\">https://svs.gsfc.nasa.gov/4964</a></li>\n<li>Version 4: archive of source page: <a rel=\"nofollow\" class=\"external free\" href=\"https://web.archive.org/web/20220722141422/https://svs.gsfc.nasa.gov/4964\">https://web.archive.org/web/20220722141422/https://svs.gsfc.nasa.gov/4964</a></li></ul>\n<ul><li>Version 3: Original from <a href=\"https://en.wikipedia.org/wiki/NASA\" class=\"extiw\" title=\"w:NASA\">NASA</a>: <a rel=\"nofollow\" class=\"external free\" href=\"https://svs.gsfc.nasa.gov/4882\">https://svs.gsfc.nasa.gov/4882</a></li>\n<li>Version 3: archive of source page: <a rel=\"nofollow\" class=\"external free\" href=\"https://web.archive.org/web/20210620080719/https://svs.gsfc.nasa.gov/4882\">https://web.archive.org/web/20210620080719/https://svs.gsfc.nasa.gov/4882</a></li></ul>\n<dl><dd></dd></dl>\n<ul><li>Version 2: Original from <a href=\"https://en.wikipedia.org/wiki/NASA\" class=\"extiw\" title=\"w:NASA\">NASA</a>: <a rel=\"nofollow\" class=\"external free\" href=\"https://svs.gsfc.nasa.gov/4787\">https://svs.gsfc.nasa.gov/4787</a></li>\n<li>Version 2 archive of source page: <a rel=\"nofollow\" class=\"external free\" href=\"https://web.archive.org/web/20200228060248/https://svs.gsfc.nasa.gov/4787\">https://web.archive.org/web/20200228060248/https://svs.gsfc.nasa.gov/4787</a></li></ul>\n<dl><dd></dd></dl>\n<ul><li>Version 1: Original from <a href=\"https://en.wikipedia.org/wiki/NASA\" class=\"extiw\" title=\"w:NASA\">NASA</a>: <a rel=\"nofollow\" class=\"external free\" href=\"https://svs.gsfc.nasa.gov/4626\">https://svs.gsfc.nasa.gov/4626</a></li>\n<li>Version 1 archive of source page: <a rel=\"nofollow\" class=\"external free\" href=\"https://web.archive.org/web/20190524131808/https://svs.gsfc.nasa.gov/4626\">https://web.archive.org/web/20190524131808/https://svs.gsfc.nasa.gov/4626</a></li></ul>",
+              "source": "commons-desc-page"
+            },
+            "Artist": {
+              "value": "NASA attribution: \"Visualizations by Lori Perkins\" (versions 1 to 5), \"Visualizations by Mark SubbaRao\" (version 6+7)",
+              "source": "commons-desc-page"
+            },
+            "LicenseShortName": {
+              "value": "Public domain",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "UsageTerms": {
+              "value": "Public domain",
+              "source": "commons-desc-page"
+            },
+            "AttributionRequired": {
+              "value": "false",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "Copyrighted": {
+              "value": "False",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "Restrictions": {
+              "value": "",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "License": {
+              "value": "pd",
+              "source": "commons-templates",
+              "hidden": ""
+            }
+          }
+        }
+      ]
+    }
+  },
+  {
+    "sourceId": "wikimedia",
+    "externalId": "85715474",
+    "canonicalUrl": "https://commons.wikimedia.org/wiki/File:20200107_%22Global_warming%22_vs_%22Climate_change%22_Google_search_term_ratio.png",
+    "title": "20200107 \"Global warming\" vs \"Climate change\" Google search term ratio.png",
+    "authors": [
+      "RCraig09"
+    ],
+    "publishedAt": null,
+    "mediaType": "image",
+    "licence": {
+      "spdx": "PD",
+      "url": null,
+      "assertedBy": "wikimedia",
+      "attribution": "RCraig09 — 20200107 \"Global warming\" vs \"Climate change\" Google search term ratio.png"
+    },
+    "snippet": null,
+    "thumbnailUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/40/20200107_%22Global_warming%22_vs_%22Climate_change%22_Google_search_term_ratio.png/500px-20200107_%22Global_warming%22_vs_%22Climate_change%22_Google_search_term_ratio.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "raw": {
+      "pageid": 85715474,
+      "ns": 6,
+      "title": "File:20200107 \"Global warming\" vs \"Climate change\" Google search term ratio.png",
+      "index": 5,
+      "imagerepository": "local",
+      "imageinfo": [
+        {
+          "thumburl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/40/20200107_%22Global_warming%22_vs_%22Climate_change%22_Google_search_term_ratio.png/500px-20200107_%22Global_warming%22_vs_%22Climate_change%22_Google_search_term_ratio.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumbwidth": 400,
+          "thumbheight": 302,
+          "responsiveUrls": {
+            "2": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/40/20200107_%22Global_warming%22_vs_%22Climate_change%22_Google_search_term_ratio.png/960px-20200107_%22Global_warming%22_vs_%22Climate_change%22_Google_search_term_ratio.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+          },
+          "thumbattribs": {
+            "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/40/20200107_%22Global_warming%22_vs_%22Climate_change%22_Google_search_term_ratio.png/500px-20200107_%22Global_warming%22_vs_%22Climate_change%22_Google_search_term_ratio.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "decoding": "async",
+            "loading": "lazy",
+            "width": 400,
+            "height": 302,
+            "srcset": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/40/20200107_%22Global_warming%22_vs_%22Climate_change%22_Google_search_term_ratio.png/960px-20200107_%22Global_warming%22_vs_%22Climate_change%22_Google_search_term_ratio.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail 2x"
+          },
+          "url": "https://upload.wikimedia.org/wikipedia/commons/4/40/20200107_%22Global_warming%22_vs_%22Climate_change%22_Google_search_term_ratio.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "descriptionurl": "https://commons.wikimedia.org/wiki/File:20200107_%22Global_warming%22_vs_%22Climate_change%22_Google_search_term_ratio.png",
+          "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=85715474",
+          "extmetadata": {
+            "DateTime": {
+              "value": "2022-10-01 20:49:46",
+              "source": "mediawiki-metadata",
+              "hidden": ""
+            },
+            "ObjectName": {
+              "value": "20200107 \"Global warming\" vs \"Climate change\" Google search term ratio",
+              "source": "mediawiki-metadata"
+            },
+            "CommonsMetadataExtension": {
+              "value": 1.2,
+              "source": "extension",
+              "hidden": ""
+            },
+            "Categories": {
+              "value": "Climate change|PD shape|Global warming graphs|RCraig09 charts showing data through 2022|Global Google Trends charts",
+              "source": "commons-categories",
+              "hidden": ""
+            },
+            "Assessments": {
+              "value": "",
+              "source": "commons-categories",
+              "hidden": ""
+            },
+            "ImageDescription": {
+              "value": "Graph of ratio of web searches for \"Global warming\" over \"Climate change\" over time (web search, worldwide, all categories).\n<ul><li>Source: Google trends</li></ul>\n<dl><dd><dl><dd><a rel=\"nofollow\" class=\"external free\" href=\"https://trends.google.com/trends/explore?date=all&amp;q=global%20warming,climate%20change\">https://trends.google.com/trends/explore?date=all&amp;q=global%20warming,climate%20change</a></dd></dl></dd></dl>",
+              "source": "commons-desc-page"
+            },
+            "DateTimeOriginal": {
+              "value": "2020-01-08",
+              "source": "commons-desc-page"
+            },
+            "Credit": {
+              "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+              "source": "commons-desc-page"
+            },
+            "Artist": {
+              "value": "<a href=\"//commons.wikimedia.org/wiki/User:RCraig09\" title=\"User:RCraig09\">RCraig09</a>",
+              "source": "commons-desc-page"
+            },
+            "LicenseShortName": {
+              "value": "Public domain",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "UsageTerms": {
+              "value": "Public domain",
+              "source": "commons-desc-page"
+            },
+            "AttributionRequired": {
+              "value": "false",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "Copyrighted": {
+              "value": "False",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "Restrictions": {
+              "value": "",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "License": {
+              "value": "pd",
+              "source": "commons-templates",
+              "hidden": ""
+            }
+          }
+        }
+      ]
+    }
+  },
+  {
+    "sourceId": "wikimedia",
+    "externalId": "86068576",
+    "canonicalUrl": "https://commons.wikimedia.org/wiki/File:20200118_Global_warming_and_climate_change_-_vertical_block_diagram_-_causes_effects_feedback.png",
+    "title": "20200118 Global warming and climate change - vertical block diagram - causes effects feedback.png",
+    "authors": [
+      "RCraig09"
+    ],
+    "publishedAt": null,
+    "mediaType": "image",
+    "licence": {
+      "spdx": "CC-BY-SA-4.0",
+      "url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "assertedBy": "wikimedia",
+      "attribution": "RCraig09 — 20200118 Global warming and climate change - vertical block diagram - causes effects feedback.png"
+    },
+    "snippet": null,
+    "thumbnailUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/08/20200118_Global_warming_and_climate_change_-_vertical_block_diagram_-_causes_effects_feedback.png/500px-20200118_Global_warming_and_climate_change_-_vertical_block_diagram_-_causes_effects_feedback.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "raw": {
+      "pageid": 86068576,
+      "ns": 6,
+      "title": "File:20200118 Global warming and climate change - vertical block diagram - causes effects feedback.png",
+      "index": 4,
+      "imagerepository": "local",
+      "imageinfo": [
+        {
+          "thumburl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/08/20200118_Global_warming_and_climate_change_-_vertical_block_diagram_-_causes_effects_feedback.png/500px-20200118_Global_warming_and_climate_change_-_vertical_block_diagram_-_causes_effects_feedback.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumbwidth": 400,
+          "thumbheight": 564,
+          "responsiveUrls": {
+            "2": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/08/20200118_Global_warming_and_climate_change_-_vertical_block_diagram_-_causes_effects_feedback.png/960px-20200118_Global_warming_and_climate_change_-_vertical_block_diagram_-_causes_effects_feedback.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+          },
+          "thumbattribs": {
+            "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/08/20200118_Global_warming_and_climate_change_-_vertical_block_diagram_-_causes_effects_feedback.png/500px-20200118_Global_warming_and_climate_change_-_vertical_block_diagram_-_causes_effects_feedback.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "decoding": "async",
+            "loading": "lazy",
+            "width": 400,
+            "height": 564,
+            "srcset": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/08/20200118_Global_warming_and_climate_change_-_vertical_block_diagram_-_causes_effects_feedback.png/960px-20200118_Global_warming_and_climate_change_-_vertical_block_diagram_-_causes_effects_feedback.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail 2x"
+          },
+          "url": "https://upload.wikimedia.org/wikipedia/commons/0/08/20200118_Global_warming_and_climate_change_-_vertical_block_diagram_-_causes_effects_feedback.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "descriptionurl": "https://commons.wikimedia.org/wiki/File:20200118_Global_warming_and_climate_change_-_vertical_block_diagram_-_causes_effects_feedback.png",
+          "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=86068576",
+          "extmetadata": {
+            "DateTime": {
+              "value": "2021-04-04 20:33:06",
+              "source": "mediawiki-metadata",
+              "hidden": ""
+            },
+            "ObjectName": {
+              "value": "20200118 Global warming and climate change - vertical block diagram - causes effects feedback",
+              "source": "mediawiki-metadata"
+            },
+            "CommonsMetadataExtension": {
+              "value": 1.2,
+              "source": "extension",
+              "hidden": ""
+            },
+            "Categories": {
+              "value": "Self-published work|Climate change diagrams|Global warming diagrams|Effects of climate change|Climate change cascading|Human migration in the 21st century",
+              "source": "commons-categories",
+              "hidden": ""
+            },
+            "Assessments": {
+              "value": "",
+              "source": "commons-categories",
+              "hidden": ""
+            },
+            "ImageDescription": {
+              "value": "<div style=\"clear:both;\"></div>\n<ul><li>Block diagram indicating primary causes and wide-ranging effects, including feedback, of global warming and climate change.</li>\n<li>Of course, other elements and causal paths (arrowed connecting lines) could have been included, but are omitted to keep the diagram reasonably simple for a lay audience.</li></ul>\n<p>—————————————————————————\n</p>\n<ul><li><i><b>Suggested description:</b></i> (uses Harvard citations to comply with <a href=\"https://en.wikipedia.org/wiki/Global_warming\" class=\"extiw\" title=\"w:Global warming\">Global warming</a> citation standards) at <a href=\"https://en.wikipedia.org/wiki/Talk:Global_warming/Citation_standards\" class=\"extiw\" title=\"w:Talk:Global warming/Citation standards\">Talk:Global warming/Citation standards</a></li></ul>\n<p>The primary <a href=\"https://en.wikipedia.org/wiki/Attribution_of_recent_climate_change\" class=\"extiw\" title=\"w:Attribution of recent climate change\">causes</a><sup id=\"cite_ref-NASA:_The_Causes_of_Climate_Change_—_2019_——_1-0\" class=\"reference\"><a href=\"#cite_note-NASA:_The_Causes_of_Climate_Change_%E2%80%94_2019_%E2%80%94%E2%80%94-1\"><span class=\"cite-bracket\">[</span>1<span class=\"cite-bracket\">]</span></a></sup> and the wide-ranging <a href=\"https://en.wikipedia.org/wiki/Effects_of_global_warming\" class=\"extiw\" title=\"w:Effects of global warming\">effects</a><sup id=\"cite_ref-NCA4:_Climate_Science_Special_Report_—_2017_——_2-0\" class=\"reference\"><a href=\"#cite_note-NCA4:_Climate_Science_Special_Report_%E2%80%94_2017_%E2%80%94%E2%80%94-2\"><span class=\"cite-bracket\">[</span>2<span class=\"cite-bracket\">]</span></a></sup><sup id=\"cite_ref-IPCC_SROCC_Summary_for_Policymakers_—_2019_——6_3-0\" class=\"reference\"><a href=\"#cite_note-IPCC_SROCC_Summary_for_Policymakers_%E2%80%94_2019_%E2%80%94%E2%80%946-3\"><span class=\"cite-bracket\">[</span>3<span class=\"cite-bracket\">]</span></a></sup> of global warming and resulting climate change. Some effects constitute <a href=\"https://en.wikipedia.org/wiki/Climate_change_feedback\" class=\"extiw\" title=\"w:Climate change feedback\">feedback mechanisms</a> that intensify global warming.<sup id=\"cite_ref-NASA:_The_Study_of_Earth_as_an_Integrated_System_—2016_——_4-0\" class=\"reference\"><a href=\"#cite_note-NASA:_The_Study_of_Earth_as_an_Integrated_System_%E2%80%942016_%E2%80%94%E2%80%94-4\"><span class=\"cite-bracket\">[</span>4<span class=\"cite-bracket\">]</span></a></sup>\n</p><p><sup id=\"cite_ref-NASAcauses_2019_5-0\" class=\"reference\"><a href=\"#cite_note-NASAcauses_2019-5\"><span class=\"cite-bracket\">[</span>5<span class=\"cite-bracket\">]</span></a></sup>\n</p><p><sup id=\"cite_ref-NCA4_volume1_2017_6-0\" class=\"reference\"><a href=\"#cite_note-NCA4_volume1_2017-6\"><span class=\"cite-bracket\">[</span>6<span class=\"cite-bracket\">]</span></a></sup>\n</p><p><sup id=\"cite_ref-IPCC_Summary_2019_7-0\" class=\"reference\"><a href=\"#cite_note-IPCC_Summary_2019-7\"><span class=\"cite-bracket\">[</span>7<span class=\"cite-bracket\">]</span></a></sup>\n</p><p><sup id=\"cite_ref-NASA_IntegratedSystem_8-0\" class=\"reference\"><a href=\"#cite_note-NASA_IntegratedSystem-8\"><span class=\"cite-bracket\">[</span>8<span class=\"cite-bracket\">]</span></a></sup>\n</p>\n<div class=\"reflist\" style=\"list-style-type: decimal;\">\n<ol class=\"references\">\n<li id=\"cite_note-NASA:_The_Causes_of_Climate_Change_—_2019_——-1\"><span class=\"mw-cite-backlink\"><a href=\"#cite_ref-NASA:_The_Causes_of_Climate_Change_%E2%80%94_2019_%E2%80%94%E2%80%94_1-0\">↑</a></span> <span class=\"reference-text\"><a href=\"#CITEREFNASA:_The_Causes_of_Climate_Change_2019\"> NASA: The Causes of Climate Change ,  2019 </a></span>\n</li>\n<li id=\"cite_note-NCA4:_Climate_Science_Special_Report_—_2017_——-2\"><span class=\"mw-cite-backlink\"><a href=\"#cite_ref-NCA4:_Climate_Science_Special_Report_%E2%80%94_2017_%E2%80%94%E2%80%94_2-0\">↑</a></span> <span class=\"reference-text\"><a href=\"#CITEREFNCA4:_Climate_Science_Special_Report_2017\"> NCA4: Climate Science Special Report ,  2017 </a></span>\n</li>\n<li id=\"cite_note-IPCC_SROCC_Summary_for_Policymakers_—_2019_——6-3\"><span class=\"mw-cite-backlink\"><a href=\"#cite_ref-IPCC_SROCC_Summary_for_Policymakers_%E2%80%94_2019_%E2%80%94%E2%80%946_3-0\">↑</a></span> <span class=\"reference-text\"><a href=\"#CITEREFIPCC_SROCC_Summary_for_Policymakers_2019\"> IPCC SROCC Summary for Policymakers ,  2019 </a>, p. 6</span>\n</li>\n<li id=\"cite_note-NASA:_The_Study_of_Earth_as_an_Integrated_System_—2016_——-4\"><span class=\"mw-cite-backlink\"><a href=\"#cite_ref-NASA:_The_Study_of_Earth_as_an_Integrated_System_%E2%80%942016_%E2%80%94%E2%80%94_4-0\">↑</a></span> <span class=\"reference-text\"><a href=\"#CITEREFNASA:_The_Study_of_Earth_as_an_Integrated_System_2016\"> NASA: The Study of Earth as an Integrated System , 2016 </a></span>\n</li>\n<li id=\"cite_note-NASAcauses_2019-5\"><span class=\"mw-cite-backlink\"><a href=\"#cite_ref-NASAcauses_2019_5-0\">↑</a></span> <span class=\"reference-text\"><a rel=\"nofollow\" class=\"external text\" href=\"https://web.archive.org/web/20191221010331/https://climate.nasa.gov/causes/\">The Causes of Climate Change</a>. <i>climate.nasa.gov</i>. NASA. Archived from <a rel=\"nofollow\" class=\"external text\" href=\"https://climate.nasa.gov/causes/\">the original</a> on <span class=\"mw-formatted-date\" title=\"2019-12-21\">December 21, 2019</span>.</span>\n</li>\n<li id=\"cite_note-NCA4_volume1_2017-6\"><span class=\"mw-cite-backlink\"><a href=\"#cite_ref-NCA4_volume1_2017_6-0\">↑</a></span> <span class=\"reference-text\"><a rel=\"nofollow\" class=\"external text\" href=\"https://web.archive.org/web/20191214141932/https://science2017.globalchange.gov/\">Climate Science Special Report / Fourth National Climate Assessment (NCA4), Volume I</a>. <i>science2017.globalchange.gov</i>. U.S. Global Change Research Program. Archived from <a rel=\"nofollow\" class=\"external text\" href=\"https://science2017.globalchange.gov/\">the original</a> on <span class=\"mw-formatted-date\" title=\"2019-12-14\">December 14, 2019</span>.</span>\n</li>\n<li id=\"cite_note-IPCC_Summary_2019-7\"><span class=\"mw-cite-backlink\"><a href=\"#cite_ref-IPCC_Summary_2019_7-0\">↑</a></span> <span class=\"reference-text\"><cite class=\"book\" style=\"font-style:normal\" id=\"[[:Template:Harvid]]\">IPCC (2019) \"Summary for Policymakers\" in    <i> <a href=\"#CITEREFIPCC_SROCC2019\">IPCC SROCC 2019</a></i>  <small></small></cite>\n<dl><dd>Link: <a rel=\"nofollow\" class=\"external free\" href=\"https://www.ipcc.ch/site/assets/uploads/sites/3/2019/11/03_SROCC_SPM_FINAL.pdf\">https://www.ipcc.ch/site/assets/uploads/sites/3/2019/11/03_SROCC_SPM_FINAL.pdf</a></dd></dl>\n</span></li>\n<li id=\"cite_note-NASA_IntegratedSystem-8\"><span class=\"mw-cite-backlink\"><a href=\"#cite_ref-NASA_IntegratedSystem_8-0\">↑</a></span> <span class=\"reference-text\"><a rel=\"nofollow\" class=\"external text\" href=\"https://web.archive.org/web/20161102022200/https://climate.nasa.gov/nasa_science/science/\">The Study of Earth as an Integrated System</a>. <i>nasa.gov</i>. NASA (2016). Archived from <a rel=\"nofollow\" class=\"external text\" href=\"https://climate.nasa.gov/nasa_science/science/\">the original</a> on <span class=\"mw-formatted-date\" title=\"2016-11-02\">November 2, 2016</span>.</span>\n</li>\n</ol></div>\n<p><i><b>Suggested description wikitext:</b></i> (<u>not</u> using Harvard citation)<br>\n<span style=\"font-family:Courier; color: green;\">\nThe primary [[Attribution of recent climate change|causes]]&lt;ref name=NASAcauses_2019&gt;{{cite web |title=The Causes of Climate Change |url=https://climate.nasa.gov/causes/ |website=climate.nasa.gov |publisher=NASA |archiveurl=https://web.archive.org/web/20191221010331/https://climate.nasa.gov/causes/ |archivedate=December 21, 2019 |url-status=live | ref =  }}&lt;/ref&gt; and the wide-ranging [[Effects of global warming|effects]]&lt;ref name=NCA4_volume1_2017&gt;{{cite web |title=Climate Science Special Report / Fourth National Climate Assessment (NCA4), Volume I |url=https://science2017.globalchange.gov/ |website=science2017.globalchange.gov |publisher=U.S. Global Change Research Program |archiveurl=https://web.archive.org/web/20191214141932/https://science2017.globalchange.gov/ |archivedate=December 14, 2019 |url-status=live| volume=I }}&lt;/ref&gt;&lt;ref name=IPCC_Summary_2016&gt;{{cite web |title=Summary for Policymakers |url=https://www.ipcc.ch/site/assets/uploads/sites/3/2019/11/03_SROCC_SPM_FINAL.pdf |website=ipcc.ch |publisher=Intergovernmental Panel on Climate Change |archiveurl=https://web.archive.org/web/20200101021958/https://www.ipcc.ch/site/assets/uploads/sites/3/2019/11/03_SROCC_SPM_FINAL.pdf |archivedate=January 1, 2020 |date=2019 |p=6 |url-status=live }}&lt;/ref&gt; of global warming and resulting climate change. Some effects constitute feedback mechanisms that intensify global warming.&lt;ref name=NASA_IntegratedSystem&gt;{{cite web |title=The Study of Earth as an Integrated System |url=https://climate.nasa.gov/nasa_science/science/ |website=nasa.gov |publisher=NASA |date=2016 |archiveurl=https://web.archive.org/web/20161102022200/https://climate.nasa.gov/nasa_science/science/ |archivedate=November 2, 2016 |url-status=live  }}&lt;/ref&gt;\n</span>\n</p><p>Which yields the following citations:\n</p>\n<ol><li>\"The Causes of Climate Change\". climate.nasa.gov. NASA. Archived from the original on December 21, 2019.</li>\n<li>\"Climate Science Special Report / Fourth National Climate Assessment (NCA4), Volume I\". science2017.globalchange.gov. U.S. Global Change Research Program. Archived from the original on December 14, 2019.</li>\n<li>\"Summary for Policymakers\" (PDF). ipcc.ch. Intergovernmental Panel on Climate Change. 2019. Archived (PDF) from the original on December 19, 2019.</li>\n<li>\"The Study of Earth as an Integrated System\". nasa.gov. NASA. 2016. Archived from the original on November 2, 2016.</li></ol>\n<p><br>\n</p><p>Chart<sup>(pointed out by en.wikipedia user J. Johnson)</sup> with a similar approach, but showing causes and feedback in more detail than appropriate for the present chart:\n</p>\n<ul><li><a rel=\"nofollow\" class=\"external text\" href=\"https://science2017.globalchange.gov/img/figure/figure2_2.png\">\"Simplified conceptual framework of the climate system\"</a> (2017) U.S. Global Change Research Program, <i>Fourth National Climate Assessment</i> (NCA4), Vol. I, Fig. 2.2. <a rel=\"nofollow\" class=\"external text\" href=\"https://web.archive.org/web/20191112203134/https://science2017.globalchange.gov/img/figure/figure2_2.png\">Archived</a> from the original on November 12, 2019.</li></ul>",
+              "source": "commons-desc-page"
+            },
+            "DateTimeOriginal": {
+              "value": "2020-01-18",
+              "source": "commons-desc-page"
+            },
+            "Credit": {
+              "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span> <br>Also, successive versions were developed through collaboration with users Efbrazil, Femkemilene, and J. Johnson on en.wikipedia.",
+              "source": "commons-desc-page"
+            },
+            "Artist": {
+              "value": "<a href=\"//commons.wikimedia.org/wiki/User:RCraig09\" title=\"User:RCraig09\">RCraig09</a>",
+              "source": "commons-desc-page"
+            },
+            "LicenseShortName": {
+              "value": "CC BY-SA 4.0",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "UsageTerms": {
+              "value": "Creative Commons Attribution-Share Alike 4.0",
+              "source": "commons-desc-page"
+            },
+            "AttributionRequired": {
+              "value": "true",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "LicenseUrl": {
+              "value": "https://creativecommons.org/licenses/by-sa/4.0",
+              "source": "commons-desc-page"
+            },
+            "Copyrighted": {
+              "value": "True",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "Restrictions": {
+              "value": "",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "License": {
+              "value": "cc-by-sa-4.0",
+              "source": "commons-templates",
+              "hidden": ""
+            }
+          }
+        }
+      ]
+    }
+  },
+  {
+    "sourceId": "wikimedia",
+    "externalId": "89894507",
+    "canonicalUrl": "https://commons.wikimedia.org/wiki/File:20200505_Global_warming_variability_-_global_vs_Caribbean.svg",
+    "title": "20200505 Global warming variability - global vs Caribbean.svg",
+    "authors": [
+      "RCraig09"
+    ],
+    "publishedAt": null,
+    "mediaType": "image",
+    "licence": {
+      "spdx": "CC-BY-SA-4.0",
+      "url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "assertedBy": "wikimedia",
+      "attribution": "RCraig09 — 20200505 Global warming variability - global vs Caribbean.svg"
+    },
+    "snippet": null,
+    "thumbnailUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2b/20200505_Global_warming_variability_-_global_vs_Caribbean.svg/500px-20200505_Global_warming_variability_-_global_vs_Caribbean.svg.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "raw": {
+      "pageid": 89894507,
+      "ns": 6,
+      "title": "File:20200505 Global warming variability - global vs Caribbean.svg",
+      "index": 9,
+      "imagerepository": "local",
+      "imageinfo": [
+        {
+          "thumburl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2b/20200505_Global_warming_variability_-_global_vs_Caribbean.svg/500px-20200505_Global_warming_variability_-_global_vs_Caribbean.svg.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumbwidth": 400,
+          "thumbheight": 287,
+          "responsiveUrls": {
+            "2": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2b/20200505_Global_warming_variability_-_global_vs_Caribbean.svg/960px-20200505_Global_warming_variability_-_global_vs_Caribbean.svg.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+          },
+          "thumbattribs": {
+            "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2b/20200505_Global_warming_variability_-_global_vs_Caribbean.svg/500px-20200505_Global_warming_variability_-_global_vs_Caribbean.svg.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "decoding": "async",
+            "loading": "lazy",
+            "width": 400,
+            "height": 287,
+            "srcset": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2b/20200505_Global_warming_variability_-_global_vs_Caribbean.svg/960px-20200505_Global_warming_variability_-_global_vs_Caribbean.svg.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail 2x"
+          },
+          "url": "https://upload.wikimedia.org/wikipedia/commons/2/2b/20200505_Global_warming_variability_-_global_vs_Caribbean.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "descriptionurl": "https://commons.wikimedia.org/wiki/File:20200505_Global_warming_variability_-_global_vs_Caribbean.svg",
+          "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=89894507",
+          "extmetadata": {
+            "DateTime": {
+              "value": "2020-08-26 21:40:31",
+              "source": "mediawiki-metadata",
+              "hidden": ""
+            },
+            "ObjectName": {
+              "value": "20200505 Global warming variability - global vs Caribbean",
+              "source": "mediawiki-metadata"
+            },
+            "CommonsMetadataExtension": {
+              "value": 1.2,
+              "source": "extension",
+              "hidden": ""
+            },
+            "Categories": {
+              "value": "Hockey stick temperature graph|Climate change in the Caribbean|Self-published work|Unspec SVG created with Inkscape|Unspec New SVG created with Inkscape|RCraig09 charts showing data through 2019|Climate variability and change",
+              "source": "commons-categories",
+              "hidden": ""
+            },
+            "Assessments": {
+              "value": "",
+              "source": "commons-categories",
+              "hidden": ""
+            },
+            "ImageDescription": {
+              "value": "Contrasting global and regional climatic variability, by comparing global average temperature changes with temperature changes in the Caribbean region.\n<p>Native text objects are in hidden SVG layer (to facilitate translations). Text-converted-to-paths are in visible layer.\n</p><p>Source for data: NOAA<br>\n</p>\n<a rel=\"nofollow\" class=\"external text\" href=\"https://web.archive.org/web/20200223062050/https://www.ncdc.noaa.gov/cag/global/time-series/globe/land_ocean/12/12/1880-2019\">Climate at a Glance</a>. <i>NCDC / NOAA</i>. Archived from <a rel=\"nofollow\" class=\"external text\" href=\"https://www.ncdc.noaa.gov/cag/global/time-series/globe/land_ocean/12/12/1880-2019\">the original</a> on <span class=\"mw-formatted-date\" title=\"2020-02-23\">February 23, 2020</span>.",
+              "source": "commons-desc-page"
+            },
+            "DateTimeOriginal": {
+              "value": "2020-05-05",
+              "source": "commons-desc-page"
+            },
+            "Credit": {
+              "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+              "source": "commons-desc-page"
+            },
+            "Artist": {
+              "value": "<a href=\"//commons.wikimedia.org/wiki/User:RCraig09\" title=\"User:RCraig09\">RCraig09</a>",
+              "source": "commons-desc-page"
+            },
+            "LicenseShortName": {
+              "value": "CC BY-SA 4.0",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "UsageTerms": {
+              "value": "Creative Commons Attribution-Share Alike 4.0",
+              "source": "commons-desc-page"
+            },
+            "AttributionRequired": {
+              "value": "true",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "LicenseUrl": {
+              "value": "https://creativecommons.org/licenses/by-sa/4.0",
+              "source": "commons-desc-page"
+            },
+            "Copyrighted": {
+              "value": "True",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "Restrictions": {
+              "value": "",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "License": {
+              "value": "cc-by-sa-4.0",
+              "source": "commons-templates",
+              "hidden": ""
+            }
+          }
+        }
+      ]
+    }
+  },
+  {
+    "sourceId": "wikimedia",
+    "externalId": "89907644",
+    "canonicalUrl": "https://commons.wikimedia.org/wiki/File:20200505_Global_warming_variability_-_Northern_vs_Southern_hemispheres.svg",
+    "title": "20200505 Global warming variability - Northern vs Southern hemispheres.svg",
+    "authors": [
+      "RCraig09"
+    ],
+    "publishedAt": null,
+    "mediaType": "image",
+    "licence": {
+      "spdx": "CC-BY-SA-4.0",
+      "url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "assertedBy": "wikimedia",
+      "attribution": "RCraig09 — 20200505 Global warming variability - Northern vs Southern hemispheres.svg"
+    },
+    "snippet": null,
+    "thumbnailUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fe/20200505_Global_warming_variability_-_Northern_vs_Southern_hemispheres.svg/500px-20200505_Global_warming_variability_-_Northern_vs_Southern_hemispheres.svg.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "raw": {
+      "pageid": 89907644,
+      "ns": 6,
+      "title": "File:20200505 Global warming variability - Northern vs Southern hemispheres.svg",
+      "index": 10,
+      "imagerepository": "local",
+      "imageinfo": [
+        {
+          "thumburl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fe/20200505_Global_warming_variability_-_Northern_vs_Southern_hemispheres.svg/500px-20200505_Global_warming_variability_-_Northern_vs_Southern_hemispheres.svg.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumbwidth": 400,
+          "thumbheight": 287,
+          "responsiveUrls": {
+            "2": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fe/20200505_Global_warming_variability_-_Northern_vs_Southern_hemispheres.svg/960px-20200505_Global_warming_variability_-_Northern_vs_Southern_hemispheres.svg.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+          },
+          "thumbattribs": {
+            "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fe/20200505_Global_warming_variability_-_Northern_vs_Southern_hemispheres.svg/500px-20200505_Global_warming_variability_-_Northern_vs_Southern_hemispheres.svg.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "decoding": "async",
+            "loading": "lazy",
+            "width": 400,
+            "height": 287,
+            "srcset": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fe/20200505_Global_warming_variability_-_Northern_vs_Southern_hemispheres.svg/960px-20200505_Global_warming_variability_-_Northern_vs_Southern_hemispheres.svg.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail 2x"
+          },
+          "url": "https://upload.wikimedia.org/wikipedia/commons/f/fe/20200505_Global_warming_variability_-_Northern_vs_Southern_hemispheres.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "descriptionurl": "https://commons.wikimedia.org/wiki/File:20200505_Global_warming_variability_-_Northern_vs_Southern_hemispheres.svg",
+          "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=89907644",
+          "extmetadata": {
+            "DateTime": {
+              "value": "2020-08-26 19:33:56",
+              "source": "mediawiki-metadata",
+              "hidden": ""
+            },
+            "ObjectName": {
+              "value": "20200505 Global warming variability - Northern vs Southern hemispheres",
+              "source": "mediawiki-metadata"
+            },
+            "CommonsMetadataExtension": {
+              "value": 1.2,
+              "source": "extension",
+              "hidden": ""
+            },
+            "Categories": {
+              "value": "Hockey stick temperature graph|Self-published work|RCraig09 charts showing data through 2019|Climate variability and change",
+              "source": "commons-categories",
+              "hidden": ""
+            },
+            "Assessments": {
+              "value": "",
+              "source": "commons-categories",
+              "hidden": ""
+            },
+            "ImageDescription": {
+              "value": "Graphs of average temperature changes for the Northern and Southern hemispheres, demonstrating regional climate variability.\n<p>Data source:<br>\n<a rel=\"nofollow\" class=\"external text\" href=\"https://web.archive.org/web/20200416074510/https://data.giss.nasa.gov/gistemp/graphs_v4/\">GISS Surface Temperature Analysis (v4) / Annual Mean Temperature Change for Hemispheres</a>. <i>NASA GISS</i>. Archived from <a rel=\"nofollow\" class=\"external text\" href=\"https://data.giss.nasa.gov/gistemp/graphs_v4/\">the original</a> on <span class=\"mw-formatted-date\" title=\"2020-04-16\">April 16, 2020</span>.\n</p><p>Uploader's notes:<br>\n</p>\n<ul><li>This SVG file has a transparent layer of text objects. A copy of the text objects was converted to visible 'paths' in Inkscape to avoid font rendering problems here.</li>\n<li>A <a href=\"https://en.wikipedia.org/wiki/warming_stripes\" class=\"extiw\" title=\"w:warming stripes\">warming stripes</a>  equivalent<sup>(except for chosen reference period)</sup> representation of this data is pictured and linked below.</li></ul>",
+              "source": "commons-desc-page"
+            },
+            "DateTimeOriginal": {
+              "value": "2020-05-05",
+              "source": "commons-desc-page"
+            },
+            "Credit": {
+              "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+              "source": "commons-desc-page"
+            },
+            "Artist": {
+              "value": "<a href=\"//commons.wikimedia.org/wiki/User:RCraig09\" title=\"User:RCraig09\">RCraig09</a>",
+              "source": "commons-desc-page"
+            },
+            "LicenseShortName": {
+              "value": "CC BY-SA 4.0",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "UsageTerms": {
+              "value": "Creative Commons Attribution-Share Alike 4.0",
+              "source": "commons-desc-page"
+            },
+            "AttributionRequired": {
+              "value": "true",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "LicenseUrl": {
+              "value": "https://creativecommons.org/licenses/by-sa/4.0",
+              "source": "commons-desc-page"
+            },
+            "Copyrighted": {
+              "value": "True",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "Restrictions": {
+              "value": "",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "License": {
+              "value": "cc-by-sa-4.0",
+              "source": "commons-templates",
+              "hidden": ""
+            }
+          }
+        }
+      ]
+    }
+  },
+  {
+    "sourceId": "wikimedia",
+    "externalId": "94116472",
+    "canonicalUrl": "https://commons.wikimedia.org/wiki/File:Gavin_Newsom_talks_about_climate_change_at_North_Complex_Fire_-_2020-09-11.ogv",
+    "title": "Gavin Newsom talks about climate change at North Complex Fire - 2020-09-11.ogv",
+    "authors": [
+      "Government of California"
+    ],
+    "publishedAt": null,
+    "mediaType": "image",
+    "licence": {
+      "spdx": "PD",
+      "url": null,
+      "assertedBy": "wikimedia",
+      "attribution": "Government of California — Gavin Newsom talks about climate change at North Complex Fire - 2020-09-11.ogv"
+    },
+    "snippet": null,
+    "thumbnailUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e6/Gavin_Newsom_talks_about_climate_change_at_North_Complex_Fire_-_2020-09-11.ogv/500px--Gavin_Newsom_talks_about_climate_change_at_North_Complex_Fire_-_2020-09-11.ogv.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo",
+    "raw": {
+      "pageid": 94116472,
+      "ns": 6,
+      "title": "File:Gavin Newsom talks about climate change at North Complex Fire - 2020-09-11.ogv",
+      "index": 7,
+      "imagerepository": "local",
+      "imageinfo": [
+        {
+          "thumburl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e6/Gavin_Newsom_talks_about_climate_change_at_North_Complex_Fire_-_2020-09-11.ogv/500px--Gavin_Newsom_talks_about_climate_change_at_North_Complex_Fire_-_2020-09-11.ogv.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo",
+          "thumbwidth": 400,
+          "thumbheight": 225,
+          "responsiveUrls": {
+            "2": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e6/Gavin_Newsom_talks_about_climate_change_at_North_Complex_Fire_-_2020-09-11.ogv/960px--Gavin_Newsom_talks_about_climate_change_at_North_Complex_Fire_-_2020-09-11.ogv.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo"
+          },
+          "thumbattribs": [],
+          "url": "https://upload.wikimedia.org/wikipedia/commons/e/e6/Gavin_Newsom_talks_about_climate_change_at_North_Complex_Fire_-_2020-09-11.ogv?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "descriptionurl": "https://commons.wikimedia.org/wiki/File:Gavin_Newsom_talks_about_climate_change_at_North_Complex_Fire_-_2020-09-11.ogv",
+          "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=94116472",
+          "extmetadata": {
+            "DateTime": {
+              "value": "2020-09-15 00:13:21",
+              "source": "mediawiki-metadata",
+              "hidden": ""
+            },
+            "ObjectName": {
+              "value": "Gavin Newsom talks about climate change at North Complex Fire - 2020-09-11",
+              "source": "mediawiki-metadata"
+            },
+            "CommonsMetadataExtension": {
+              "value": 1.2,
+              "source": "extension",
+              "hidden": ""
+            },
+            "Categories": {
+              "value": "North Complex Fire (2020)|Personality rights warning|PD California|2020-09-11|Climate change in California|Gavin Newsom in 2020|Videos of climate change|2020 videos from the Government of California|Videos about wildfires in California|Videos of Gavin Newsom in 2020",
+              "source": "commons-categories",
+              "hidden": ""
+            },
+            "Assessments": {
+              "value": "",
+              "source": "commons-categories",
+              "hidden": ""
+            },
+            "ImageDescription": {
+              "value": "Gavin Newsom talks about climate change at North Complex Fire.",
+              "source": "commons-desc-page"
+            },
+            "DateTimeOriginal": {
+              "value": "2020-09-11",
+              "source": "commons-desc-page"
+            },
+            "Credit": {
+              "value": "<a rel=\"nofollow\" class=\"external free\" href=\"https://twitter.com/CAgovernor/status/1304796913787527168\">https://twitter.com/CAgovernor/status/1304796913787527168</a>",
+              "source": "commons-desc-page"
+            },
+            "Artist": {
+              "value": "Government of California",
+              "source": "commons-desc-page"
+            },
+            "LicenseShortName": {
+              "value": "Public domain",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "UsageTerms": {
+              "value": "Public domain",
+              "source": "commons-desc-page"
+            },
+            "AttributionRequired": {
+              "value": "false",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "Copyrighted": {
+              "value": "False",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "Restrictions": {
+              "value": "personality",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "License": {
+              "value": "pd",
+              "source": "commons-templates",
+              "hidden": ""
+            }
+          }
+        }
+      ]
+    }
+  },
+  {
+    "sourceId": "wikimedia",
+    "externalId": "99417629",
+    "canonicalUrl": "https://commons.wikimedia.org/wiki/File:Gina_McCarthy_explains_why_climate_change_is_an_intersectional_issue.ogv",
+    "title": "Gina McCarthy explains why climate change is an intersectional issue.ogv",
+    "authors": [
+      "The White House"
+    ],
+    "publishedAt": null,
+    "mediaType": "image",
+    "licence": {
+      "spdx": "PD",
+      "url": null,
+      "assertedBy": "wikimedia",
+      "attribution": "The White House — Gina McCarthy explains why climate change is an intersectional issue.ogv"
+    },
+    "snippet": null,
+    "thumbnailUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/60/Gina_McCarthy_explains_why_climate_change_is_an_intersectional_issue.ogv/500px--Gina_McCarthy_explains_why_climate_change_is_an_intersectional_issue.ogv.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo",
+    "raw": {
+      "pageid": 99417629,
+      "ns": 6,
+      "title": "File:Gina McCarthy explains why climate change is an intersectional issue.ogv",
+      "index": 6,
+      "imagerepository": "local",
+      "imageinfo": [
+        {
+          "thumburl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/60/Gina_McCarthy_explains_why_climate_change_is_an_intersectional_issue.ogv/500px--Gina_McCarthy_explains_why_climate_change_is_an_intersectional_issue.ogv.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo",
+          "thumbwidth": 400,
+          "thumbheight": 225,
+          "responsiveUrls": {
+            "2": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/60/Gina_McCarthy_explains_why_climate_change_is_an_intersectional_issue.ogv/960px--Gina_McCarthy_explains_why_climate_change_is_an_intersectional_issue.ogv.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo"
+          },
+          "thumbattribs": [],
+          "url": "https://upload.wikimedia.org/wikipedia/commons/6/60/Gina_McCarthy_explains_why_climate_change_is_an_intersectional_issue.ogv?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "descriptionurl": "https://commons.wikimedia.org/wiki/File:Gina_McCarthy_explains_why_climate_change_is_an_intersectional_issue.ogv",
+          "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=99417629",
+          "extmetadata": {
+            "DateTime": {
+              "value": "2021-01-30 16:53:37",
+              "source": "mediawiki-metadata",
+              "hidden": ""
+            },
+            "ObjectName": {
+              "value": "Gina McCarthy explains why climate change is an intersectional issue",
+              "source": "mediawiki-metadata"
+            },
+            "CommonsMetadataExtension": {
+              "value": 1.2,
+              "source": "extension",
+              "hidden": ""
+            },
+            "Categories": {
+              "value": "January 2021 in Washington, D.C.|Intersectionality|Gina McCarthy in 2021|Personality rights warning|Executive Office of the President files|Environmental policy of the Biden administration|Videos of climate change|Media supported by WikiProject Women in Red - 2021|Climate change policy in the United States",
+              "source": "commons-categories",
+              "hidden": ""
+            },
+            "Assessments": {
+              "value": "",
+              "source": "commons-categories",
+              "hidden": ""
+            },
+            "ImageDescription": {
+              "value": "Climate change is an intersectional issue. Watch National Climate Advisor @Gina_McCarthy explain why:",
+              "source": "commons-desc-page"
+            },
+            "DateTimeOriginal": {
+              "value": "2021-01-30",
+              "source": "commons-desc-page"
+            },
+            "Credit": {
+              "value": "<a rel=\"nofollow\" class=\"external free\" href=\"https://twitter.com/WhiteHouse/status/1355541278524628994\">https://twitter.com/WhiteHouse/status/1355541278524628994</a>",
+              "source": "commons-desc-page"
+            },
+            "Artist": {
+              "value": "The White House",
+              "source": "commons-desc-page"
+            },
+            "LicenseShortName": {
+              "value": "Public domain",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "UsageTerms": {
+              "value": "Public domain",
+              "source": "commons-desc-page"
+            },
+            "AttributionRequired": {
+              "value": "false",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "Copyrighted": {
+              "value": "False",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "Restrictions": {
+              "value": "personality",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "License": {
+              "value": "pd",
+              "source": "commons-templates",
+              "hidden": ""
+            }
+          }
+        }
+      ]
+    }
+  },
+  {
+    "sourceId": "wikimedia",
+    "externalId": "148548360",
+    "canonicalUrl": "https://commons.wikimedia.org/wiki/File:River_is_dying.jpg",
+    "title": "River is dying.jpg",
+    "authors": [
+      "Asker Ibne Firoz"
+    ],
+    "publishedAt": null,
+    "mediaType": "image",
+    "licence": {
+      "spdx": "CC-BY-SA-4.0",
+      "url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "assertedBy": "wikimedia",
+      "attribution": "Asker Ibne Firoz — River is dying.jpg"
+    },
+    "snippet": null,
+    "thumbnailUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/05/River_is_dying.jpg/500px-River_is_dying.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "raw": {
+      "pageid": 148548360,
+      "ns": 6,
+      "title": "File:River is dying.jpg",
+      "index": 3,
+      "imagerepository": "local",
+      "imageinfo": [
+        {
+          "thumburl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/05/River_is_dying.jpg/500px-River_is_dying.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumbwidth": 400,
+          "thumbheight": 300,
+          "responsiveUrls": {
+            "2": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/05/River_is_dying.jpg/960px-River_is_dying.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+          },
+          "thumbattribs": {
+            "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/05/River_is_dying.jpg/500px-River_is_dying.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "decoding": "async",
+            "loading": "lazy",
+            "width": 400,
+            "height": 300,
+            "srcset": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/05/River_is_dying.jpg/960px-River_is_dying.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail 2x"
+          },
+          "url": "https://upload.wikimedia.org/wikipedia/commons/0/05/River_is_dying.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "descriptionurl": "https://commons.wikimedia.org/wiki/File:River_is_dying.jpg",
+          "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=148548360",
+          "extmetadata": {
+            "DateTime": {
+              "value": "2024-05-20 10:02:39",
+              "source": "mediawiki-metadata",
+              "hidden": ""
+            },
+            "ObjectName": {
+              "value": "River is dying",
+              "source": "mediawiki-metadata"
+            },
+            "CommonsMetadataExtension": {
+              "value": 1.2,
+              "source": "extension",
+              "hidden": ""
+            },
+            "Categories": {
+              "value": "Fishing in Bangladesh|Featured pictures of Bangladesh|Self-published work|Padma River in Rajshahi|Fishermen from Bangladesh|Bangladesh photographs taken on 2023-04-30|Featured pictures of watercourses|River banks in Bangladesh|Aerial photographs of rivers|Files with coordinates missing SDC location of creation|2023 aerial photographs of Bangladesh|Project Korikath-All images|Images from Wiki Loves Earth 2024|Images from Wiki Loves Earth 2024 in Bangladesh|Winners of Wiki Loves Earth 2024 in Bangladesh|Images from Wiki Loves Earth missing SDC location of creation|Featured pictures from unmanned aerial vehicles|Photos and videos from unmanned aerial vehicles of Bangladesh|Images from Wiki Loves Earth 2024 Human Rights and Environment Special Nomination|Featured pictures of Project Korikath|Wiki Loves Earth 2024 in Bangladesh Round-1|Uploaded via Campaign:wle bd 2024|Wiki Loves Earth 2024 in Bangladesh Round-2|Wiki Loves Earth 2024 in Bangladesh Round-3|1 boat in Bangladesh",
+              "source": "commons-categories",
+              "hidden": ""
+            },
+            "Assessments": {
+              "value": "featured|potd",
+              "source": "commons-categories",
+              "hidden": ""
+            },
+            "GPSLatitude": {
+              "value": "24.344209",
+              "source": "commons-desc-page"
+            },
+            "GPSLongitude": {
+              "value": "88.645079",
+              "source": "commons-desc-page"
+            },
+            "GPSMapDatum": {
+              "value": "WGS-84",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "ImageDescription": {
+              "value": "Climate Change, Deforestation, Upstream Dams and Diversion, Urbanization, Population Pressure are the most acute reason behind the dying situation of a mighty river like Padma. Changes in weather patterns and shifting precipitation regimes have led to reduced rainfall and altered river flow. These changes disrupt the natural balance of water in the river. Unregulated deforestation along the river basin has resulted in soil erosion, siltation, and reduced groundwater recharge. This, in turn, impacts the river's ability to maintain a healthy water flow. Construction of dams and diversion of water for various purposes upstream significantly reduces the water reaching downstream areas, including the Padma River.\nThe gradual drying of the Padma River carries several grave consequences like Ecological Impact, Environmental Degradation, Agricultural Disruption, Water Scarcity, Economic Fallout and many others. Reduced water flow disrupts the river's ecosystems, affecting aquatic life, wetlands, and biodiversity. Farmers who rely on the river for irrigation face challenges, leading to decreased agricultural productivity. As the river's water levels drop, it directly impacts the availability of drinking water for communities living along its banks. The drying of the river can lead to increased pollution, sedimentation, and loss of natural habitats.",
+              "source": "commons-desc-page"
+            },
+            "DateTimeOriginal": {
+              "value": "2023-04-30 14:22:21",
+              "source": "commons-desc-page"
+            },
+            "Credit": {
+              "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+              "source": "commons-desc-page"
+            },
+            "Artist": {
+              "value": "<a href=\"//commons.wikimedia.org/w/index.php?title=User:Asker_Ibne_Firoz&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"User:Asker Ibne Firoz (page does not exist)\">Asker Ibne Firoz</a>",
+              "source": "commons-desc-page"
+            },
+            "LicenseShortName": {
+              "value": "CC BY-SA 4.0",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "UsageTerms": {
+              "value": "Creative Commons Attribution-Share Alike 4.0",
+              "source": "commons-desc-page"
+            },
+            "AttributionRequired": {
+              "value": "true",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "LicenseUrl": {
+              "value": "https://creativecommons.org/licenses/by-sa/4.0",
+              "source": "commons-desc-page"
+            },
+            "Copyrighted": {
+              "value": "True",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "Restrictions": {
+              "value": "",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "License": {
+              "value": "cc-by-sa-4.0",
+              "source": "commons-templates",
+              "hidden": ""
+            }
+          }
+        }
+      ]
+    }
+  },
+  {
+    "sourceId": "wikimedia",
+    "externalId": "185830592",
+    "canonicalUrl": "https://commons.wikimedia.org/wiki/File:Street_art_in_Sydney_-_Climate_change_-_2026_-_165.jpg",
+    "title": "Street art in Sydney - Climate change - 2026 - 165.jpg",
+    "authors": [
+      "Xyxyzyz"
+    ],
+    "publishedAt": null,
+    "mediaType": "image",
+    "licence": {
+      "spdx": "CC0-1.0",
+      "url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "assertedBy": "wikimedia",
+      "attribution": "Xyxyzyz — Street art in Sydney - Climate change - 2026 - 165.jpg"
+    },
+    "snippet": null,
+    "thumbnailUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/83/Street_art_in_Sydney_-_Climate_change_-_2026_-_165.jpg/500px-Street_art_in_Sydney_-_Climate_change_-_2026_-_165.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "raw": {
+      "pageid": 185830592,
+      "ns": 6,
+      "title": "File:Street art in Sydney - Climate change - 2026 - 165.jpg",
+      "index": 8,
+      "imagerepository": "local",
+      "imageinfo": [
+        {
+          "thumburl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/83/Street_art_in_Sydney_-_Climate_change_-_2026_-_165.jpg/500px-Street_art_in_Sydney_-_Climate_change_-_2026_-_165.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumbwidth": 400,
+          "thumbheight": 400,
+          "responsiveUrls": {
+            "2": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/83/Street_art_in_Sydney_-_Climate_change_-_2026_-_165.jpg/960px-Street_art_in_Sydney_-_Climate_change_-_2026_-_165.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+          },
+          "thumbattribs": {
+            "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/83/Street_art_in_Sydney_-_Climate_change_-_2026_-_165.jpg/500px-Street_art_in_Sydney_-_Climate_change_-_2026_-_165.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "decoding": "async",
+            "loading": "lazy",
+            "width": 400,
+            "height": 400,
+            "srcset": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/83/Street_art_in_Sydney_-_Climate_change_-_2026_-_165.jpg/960px-Street_art_in_Sydney_-_Climate_change_-_2026_-_165.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail 2x"
+          },
+          "url": "https://upload.wikimedia.org/wikipedia/commons/8/83/Street_art_in_Sydney_-_Climate_change_-_2026_-_165.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "descriptionurl": "https://commons.wikimedia.org/wiki/File:Street_art_in_Sydney_-_Climate_change_-_2026_-_165.jpg",
+          "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=185830592",
+          "extmetadata": {
+            "DateTime": {
+              "value": "2026-03-10 07:16:43",
+              "source": "mediawiki-metadata",
+              "hidden": ""
+            },
+            "ObjectName": {
+              "value": "Street art in Sydney - Climate change - 2026 - 165",
+              "source": "mediawiki-metadata"
+            },
+            "CommonsMetadataExtension": {
+              "value": 1.2,
+              "source": "extension",
+              "hidden": ""
+            },
+            "Categories": {
+              "value": "CC-Zero|Self-published work|Climate change in art|Street art in Sydney",
+              "source": "commons-categories",
+              "hidden": ""
+            },
+            "Assessments": {
+              "value": "",
+              "source": "commons-categories",
+              "hidden": ""
+            },
+            "ImageDescription": {
+              "value": "Street art in Sydney. \n<p>Climate change.\n</p>\n 2026",
+              "source": "commons-desc-page"
+            },
+            "DateTimeOriginal": {
+              "value": "2026-03-10 16:35:28",
+              "source": "commons-desc-page"
+            },
+            "Credit": {
+              "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+              "source": "commons-desc-page"
+            },
+            "Artist": {
+              "value": "<a href=\"//commons.wikimedia.org/wiki/User:Xyxyzyz\" title=\"User:Xyxyzyz\">Xyxyzyz</a>",
+              "source": "commons-desc-page"
+            },
+            "LicenseShortName": {
+              "value": "CC0",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "UsageTerms": {
+              "value": "Creative Commons Zero, Public Domain Dedication",
+              "source": "commons-desc-page"
+            },
+            "AttributionRequired": {
+              "value": "false",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "LicenseUrl": {
+              "value": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+              "source": "commons-desc-page"
+            },
+            "Copyrighted": {
+              "value": "True",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "Restrictions": {
+              "value": "",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "License": {
+              "value": "cc0",
+              "source": "commons-templates",
+              "hidden": ""
+            }
+          }
+        }
+      ]
+    }
+  }
+]

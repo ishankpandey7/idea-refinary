@@ -1,0 +1,1317 @@
+[
+  {
+    "sourceId": "wikimedia",
+    "externalId": "3503583",
+    "canonicalUrl": "https://commons.wikimedia.org/wiki/File:A_storm_at_Pors-Loubous.jpg",
+    "title": "A storm at Pors-Loubous.jpg",
+    "authors": [
+      "Henri Camus"
+    ],
+    "publishedAt": null,
+    "mediaType": "image",
+    "licence": {
+      "spdx": "CC-BY",
+      "url": "https://creativecommons.org/licenses/by/1.0",
+      "assertedBy": "wikimedia",
+      "attribution": "Henri Camus — A storm at Pors-Loubous.jpg"
+    },
+    "snippet": null,
+    "thumbnailUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/88/A_storm_at_Pors-Loubous.jpg/500px-A_storm_at_Pors-Loubous.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "raw": {
+      "pageid": 3503583,
+      "ns": 6,
+      "title": "File:A storm at Pors-Loubous.jpg",
+      "index": 7,
+      "imagerepository": "local",
+      "imageinfo": [
+        {
+          "thumburl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/88/A_storm_at_Pors-Loubous.jpg/500px-A_storm_at_Pors-Loubous.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumbwidth": 400,
+          "thumbheight": 300,
+          "responsiveUrls": {
+            "2": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/88/A_storm_at_Pors-Loubous.jpg/960px-A_storm_at_Pors-Loubous.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+          },
+          "thumbattribs": {
+            "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/88/A_storm_at_Pors-Loubous.jpg/500px-A_storm_at_Pors-Loubous.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "decoding": "async",
+            "loading": "lazy",
+            "width": 400,
+            "height": 300,
+            "srcset": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/88/A_storm_at_Pors-Loubous.jpg/960px-A_storm_at_Pors-Loubous.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail 2x"
+          },
+          "url": "https://upload.wikimedia.org/wikipedia/commons/8/88/A_storm_at_Pors-Loubous.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "descriptionurl": "https://commons.wikimedia.org/wiki/File:A_storm_at_Pors-Loubous.jpg",
+          "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=3503583",
+          "extmetadata": {
+            "DateTime": {
+              "value": "2008-02-05 00:36:33",
+              "source": "mediawiki-metadata",
+              "hidden": ""
+            },
+            "ObjectName": {
+              "value": "A storm at Pors-Loubous",
+              "source": "mediawiki-metadata"
+            },
+            "CommonsMetadataExtension": {
+              "value": 1.2,
+              "source": "extension",
+              "hidden": ""
+            },
+            "Categories": {
+              "value": "March 2006 in Bretagne|Commons featured desktop backgrounds|Splashing water waves|2006 in Finistère|Featured pictures of the Atlantic Ocean|Featured pictures on Wikipedia, Vietnamese|France photographs taken on 2006-03-27|Boats in Finistère|Storms in Finistère|Files with coordinates missing SDC location of creation|Featured pictures of boats|Featured pictures of Plogoff|Featured pictures of storms|Pors Loubous",
+              "source": "commons-categories",
+              "hidden": ""
+            },
+            "Assessments": {
+              "value": "featured|potd|poty",
+              "source": "commons-categories",
+              "hidden": ""
+            },
+            "GPSLatitude": {
+              "value": "48.025083",
+              "source": "commons-desc-page"
+            },
+            "GPSLongitude": {
+              "value": "-4.663417",
+              "source": "commons-desc-page"
+            },
+            "GPSMapDatum": {
+              "value": "WGS-84",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "ImageDescription": {
+              "value": "A storm at <i>Pors-Loubous</i>, a small harbour in the municipality of <a href=\"https://en.wikipedia.org/wiki/Plogoff\" class=\"extiw\" title=\"en:Plogoff\">Plogoff</a> (<a href=\"https://en.wikipedia.org/wiki/Finist%C3%A8re\" class=\"extiw\" title=\"en:Finistère\">Finistère</a>, Bretagne, France).",
+              "source": "commons-desc-page"
+            },
+            "DateTimeOriginal": {
+              "value": "27 March 2006",
+              "source": "commons-desc-page"
+            },
+            "Credit": {
+              "value": "Photo: Henri Camus",
+              "source": "commons-desc-page"
+            },
+            "Artist": {
+              "value": "<a href=\"https://fr.wikipedia.org/wiki/User:Henri_Camus\" class=\"extiw\" title=\"fr:User:Henri Camus\">Henri Camus</a>",
+              "source": "commons-desc-page"
+            },
+            "Permission": {
+              "value": "CC-BY; CC-BY-1.0.",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "LicenseShortName": {
+              "value": "CC BY 1.0",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "UsageTerms": {
+              "value": "Creative Commons Attribution 1.0",
+              "source": "commons-desc-page"
+            },
+            "AttributionRequired": {
+              "value": "true",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "LicenseUrl": {
+              "value": "https://creativecommons.org/licenses/by/1.0",
+              "source": "commons-desc-page"
+            },
+            "Copyrighted": {
+              "value": "True",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "Restrictions": {
+              "value": "",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "License": {
+              "value": "cc-by-1.0",
+              "source": "commons-templates",
+              "hidden": ""
+            }
+          }
+        }
+      ]
+    }
+  },
+  {
+    "sourceId": "wikimedia",
+    "externalId": "6415243",
+    "canonicalUrl": "https://commons.wikimedia.org/wiki/File:Chersonesos_Bell.jpg",
+    "title": "Chersonesos Bell.jpg",
+    "authors": [
+      "Dmitry A. Mottl"
+    ],
+    "publishedAt": null,
+    "mediaType": "image",
+    "licence": {
+      "spdx": "CC-BY-SA",
+      "url": "https://creativecommons.org/licenses/by-sa/3.0",
+      "assertedBy": "wikimedia",
+      "attribution": "Dmitry A. Mottl — Chersonesos Bell.jpg"
+    },
+    "snippet": null,
+    "thumbnailUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fe/Chersonesos_Bell.jpg/500px-Chersonesos_Bell.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "raw": {
+      "pageid": 6415243,
+      "ns": 6,
+      "title": "File:Chersonesos Bell.jpg",
+      "index": 10,
+      "imagerepository": "local",
+      "imageinfo": [
+        {
+          "thumburl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fe/Chersonesos_Bell.jpg/500px-Chersonesos_Bell.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumbwidth": 400,
+          "thumbheight": 267,
+          "responsiveUrls": {
+            "2": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fe/Chersonesos_Bell.jpg/960px-Chersonesos_Bell.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+          },
+          "thumbattribs": {
+            "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fe/Chersonesos_Bell.jpg/500px-Chersonesos_Bell.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "decoding": "async",
+            "loading": "lazy",
+            "width": 400,
+            "height": 267,
+            "srcset": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fe/Chersonesos_Bell.jpg/960px-Chersonesos_Bell.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail 2x"
+          },
+          "url": "https://upload.wikimedia.org/wikipedia/commons/f/fe/Chersonesos_Bell.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "descriptionurl": "https://commons.wikimedia.org/wiki/File:Chersonesos_Bell.jpg",
+          "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=6415243",
+          "extmetadata": {
+            "DateTime": {
+              "value": "2009-04-04 13:03:36",
+              "source": "mediawiki-metadata",
+              "hidden": ""
+            },
+            "ObjectName": {
+              "value": "Chersonesos Bell",
+              "source": "mediawiki-metadata"
+            },
+            "CommonsMetadataExtension": {
+              "value": 1.2,
+              "source": "extension",
+              "hidden": ""
+            },
+            "Categories": {
+              "value": "GFDL|Taken with Canon EOS 400D|Signal bell in Chersones|License migration redundant|Self-published work|Featured pictures on Wikipedia, Turkish|Featured pictures on Wikipedia, Vietnamese|Crimea photographs taken on 2009-01-08|Wet surfaces|Featured pictures of Sevastopol|Files with coordinates missing SDC location of creation|Assessment tagged pages marked as POTY candidates|Photos by Mottl",
+              "source": "commons-categories",
+              "hidden": ""
+            },
+            "Assessments": {
+              "value": "featured|potd|poty",
+              "source": "commons-categories",
+              "hidden": ""
+            },
+            "GPSLatitude": {
+              "value": "44.612804",
+              "source": "commons-desc-page"
+            },
+            "GPSLongitude": {
+              "value": "33.491049",
+              "source": "commons-desc-page"
+            },
+            "GPSMapDatum": {
+              "value": "WGS-84",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "ImageDescription": {
+              "value": "The <a href=\"https://en.wikipedia.org/wiki/Bell_of_Chersonesos\" class=\"extiw\" title=\"en:Bell of Chersonesos\">Bell of Chersonesos</a>, Crimea, Ukraine",
+              "source": "commons-desc-page"
+            },
+            "DateTimeOriginal": {
+              "value": "January 2009 (8 January 2009, according to <span lang=\"en\" dir=\"ltr\"><a href=\"https://en.wikipedia.org/wiki/Exif\" class=\"extiw\" title=\"en:Exif\">Exif</a></span> data)",
+              "source": "commons-desc-page"
+            },
+            "Credit": {
+              "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+              "source": "commons-desc-page"
+            },
+            "Artist": {
+              "value": "<a href=\"//commons.wikimedia.org/wiki/User:Dmottl\" title=\"User:Dmottl\">Dmitry A. Mottl</a>",
+              "source": "commons-desc-page"
+            },
+            "LicenseShortName": {
+              "value": "CC BY-SA 3.0",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "UsageTerms": {
+              "value": "Creative Commons Attribution-Share Alike 3.0",
+              "source": "commons-desc-page"
+            },
+            "AttributionRequired": {
+              "value": "true",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "LicenseUrl": {
+              "value": "https://creativecommons.org/licenses/by-sa/3.0",
+              "source": "commons-desc-page"
+            },
+            "Copyrighted": {
+              "value": "True",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "Restrictions": {
+              "value": "",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "License": {
+              "value": "cc-by-sa-3.0",
+              "source": "commons-templates",
+              "hidden": ""
+            }
+          }
+        }
+      ]
+    }
+  },
+  {
+    "sourceId": "wikimedia",
+    "externalId": "12079178",
+    "canonicalUrl": "https://commons.wikimedia.org/wiki/File:Ocean_beach_at_low_tide_against_the_sun.jpg",
+    "title": "Ocean beach at low tide against the sun.jpg",
+    "authors": [
+      "Brocken Inaglory"
+    ],
+    "publishedAt": null,
+    "mediaType": "image",
+    "licence": {
+      "spdx": "CC-BY-SA",
+      "url": "https://creativecommons.org/licenses/by-sa/3.0",
+      "assertedBy": "wikimedia",
+      "attribution": "Brocken Inaglory — Ocean beach at low tide against the sun.jpg"
+    },
+    "snippet": null,
+    "thumbnailUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ef/Ocean_beach_at_low_tide_against_the_sun.jpg/500px-Ocean_beach_at_low_tide_against_the_sun.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "raw": {
+      "pageid": 12079178,
+      "ns": 6,
+      "title": "File:Ocean beach at low tide against the sun.jpg",
+      "index": 1,
+      "imagerepository": "local",
+      "imageinfo": [
+        {
+          "thumburl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ef/Ocean_beach_at_low_tide_against_the_sun.jpg/500px-Ocean_beach_at_low_tide_against_the_sun.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumbwidth": 400,
+          "thumbheight": 291,
+          "responsiveUrls": {
+            "2": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ef/Ocean_beach_at_low_tide_against_the_sun.jpg/960px-Ocean_beach_at_low_tide_against_the_sun.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+          },
+          "thumbattribs": {
+            "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ef/Ocean_beach_at_low_tide_against_the_sun.jpg/500px-Ocean_beach_at_low_tide_against_the_sun.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "decoding": "async",
+            "loading": "lazy",
+            "width": 400,
+            "height": 291,
+            "srcset": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ef/Ocean_beach_at_low_tide_against_the_sun.jpg/960px-Ocean_beach_at_low_tide_against_the_sun.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail 2x"
+          },
+          "url": "https://upload.wikimedia.org/wikipedia/commons/e/ef/Ocean_beach_at_low_tide_against_the_sun.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "descriptionurl": "https://commons.wikimedia.org/wiki/File:Ocean_beach_at_low_tide_against_the_sun.jpg",
+          "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=12079178",
+          "extmetadata": {
+            "DateTime": {
+              "value": "2010-11-17 20:10:55",
+              "source": "mediawiki-metadata",
+              "hidden": ""
+            },
+            "ObjectName": {
+              "value": "Ocean beach at low tide against the sun",
+              "source": "mediawiki-metadata"
+            },
+            "CommonsMetadataExtension": {
+              "value": 1.2,
+              "source": "extension",
+              "hidden": ""
+            },
+            "Categories": {
+              "value": "Limosa fedoa|GFDL|Taken with Canon EOS 400D|Breaking water waves|Ocean Beach, San Francisco|License migration redundant|Autumn in California|Self-published work|Featured pictures of Scolopacidae|Contre-jour photography of the United States|Walking birds|Featured contemporary black and white photographs|Low tide in California|Assessment tagged pages marked as POTY candidates",
+              "source": "commons-categories",
+              "hidden": ""
+            },
+            "Assessments": {
+              "value": "quality|featured|potd|poty",
+              "source": "commons-categories",
+              "hidden": ""
+            },
+            "ImageDescription": {
+              "value": "<i>Limosa fedoa</i> is walking at <a href=\"//commons.wikimedia.org/wiki/Category:Ocean_Beach,_San_Diego\" title=\"Category:Ocean Beach, San Diego\">Ocean Beach</a> at low tide against the sun.",
+              "source": "commons-desc-page"
+            },
+            "DateTimeOriginal": {
+              "value": "2010-11-16",
+              "source": "commons-desc-page"
+            },
+            "Credit": {
+              "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+              "source": "commons-desc-page"
+            },
+            "Artist": {
+              "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://sites.google.com/site/thebrockeninglory/\">Brocken Inaglory</a>",
+              "source": "commons-desc-page"
+            },
+            "LicenseShortName": {
+              "value": "CC BY-SA 3.0",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "UsageTerms": {
+              "value": "Creative Commons Attribution-Share Alike 3.0",
+              "source": "commons-desc-page"
+            },
+            "AttributionRequired": {
+              "value": "true",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "LicenseUrl": {
+              "value": "https://creativecommons.org/licenses/by-sa/3.0",
+              "source": "commons-desc-page"
+            },
+            "Copyrighted": {
+              "value": "True",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "Restrictions": {
+              "value": "",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "License": {
+              "value": "cc-by-sa-3.0",
+              "source": "commons-templates",
+              "hidden": ""
+            }
+          }
+        }
+      ]
+    }
+  },
+  {
+    "sourceId": "wikimedia",
+    "externalId": "15020113",
+    "canonicalUrl": "https://commons.wikimedia.org/wiki/File:Sea_foam_at_Ocean_Beach_in_San_Francisco_-1_on_3-25-11.jpg",
+    "title": "Sea foam at Ocean Beach in San Francisco -1 on 3-25-11.jpg",
+    "authors": [
+      "Brocken Inaglory"
+    ],
+    "publishedAt": null,
+    "mediaType": "image",
+    "licence": {
+      "spdx": "CC-BY-SA",
+      "url": "https://creativecommons.org/licenses/by-sa/3.0",
+      "assertedBy": "wikimedia",
+      "attribution": "Brocken Inaglory"
+    },
+    "snippet": null,
+    "thumbnailUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e3/Sea_foam_at_Ocean_Beach_in_San_Francisco_-1_on_3-25-11.jpg/500px-Sea_foam_at_Ocean_Beach_in_San_Francisco_-1_on_3-25-11.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "raw": {
+      "pageid": 15020113,
+      "ns": 6,
+      "title": "File:Sea foam at Ocean Beach in San Francisco -1 on 3-25-11.jpg",
+      "index": 3,
+      "imagerepository": "local",
+      "imageinfo": [
+        {
+          "thumburl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e3/Sea_foam_at_Ocean_Beach_in_San_Francisco_-1_on_3-25-11.jpg/500px-Sea_foam_at_Ocean_Beach_in_San_Francisco_-1_on_3-25-11.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumbwidth": 400,
+          "thumbheight": 299,
+          "responsiveUrls": {
+            "2": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e3/Sea_foam_at_Ocean_Beach_in_San_Francisco_-1_on_3-25-11.jpg/960px-Sea_foam_at_Ocean_Beach_in_San_Francisco_-1_on_3-25-11.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+          },
+          "thumbattribs": {
+            "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e3/Sea_foam_at_Ocean_Beach_in_San_Francisco_-1_on_3-25-11.jpg/500px-Sea_foam_at_Ocean_Beach_in_San_Francisco_-1_on_3-25-11.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "decoding": "async",
+            "loading": "lazy",
+            "width": 400,
+            "height": 299,
+            "srcset": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e3/Sea_foam_at_Ocean_Beach_in_San_Francisco_-1_on_3-25-11.jpg/960px-Sea_foam_at_Ocean_Beach_in_San_Francisco_-1_on_3-25-11.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail 2x"
+          },
+          "url": "https://upload.wikimedia.org/wikipedia/commons/e/e3/Sea_foam_at_Ocean_Beach_in_San_Francisco_-1_on_3-25-11.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "descriptionurl": "https://commons.wikimedia.org/wiki/File:Sea_foam_at_Ocean_Beach_in_San_Francisco_-1_on_3-25-11.jpg",
+          "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=15020113",
+          "extmetadata": {
+            "DateTime": {
+              "value": "2011-04-25 11:59:01",
+              "source": "mediawiki-metadata",
+              "hidden": ""
+            },
+            "ObjectName": {
+              "value": "Sea foam at Ocean Beach in San Francisco -1 on 3-25-11",
+              "source": "mediawiki-metadata"
+            },
+            "CommonsMetadataExtension": {
+              "value": 1.2,
+              "source": "extension",
+              "hidden": ""
+            },
+            "Categories": {
+              "value": "GFDL|Taken with Canon EOS 400D|Ocean Beach, San Francisco|License migration redundant|Self-published work|Featured pictures on Wikipedia, English|Limosa fedoa in flight|Files with Assessments template missing SDC Commons no value quality assessment|Sea foam in the United States",
+              "source": "commons-categories",
+              "hidden": ""
+            },
+            "Assessments": {
+              "value": "",
+              "source": "commons-categories",
+              "hidden": ""
+            },
+            "ImageDescription": {
+              "value": "<a href=\"https://en.wikipedia.org/wiki/Sea_foam\" class=\"extiw\" title=\"en:Sea foam\">Sea foam</a> and <i>Limosa fedoa</i> at Ocean Beach in San Francisco",
+              "source": "commons-desc-page"
+            },
+            "DateTimeOriginal": {
+              "value": "2011-03-26 22:55",
+              "source": "commons-desc-page"
+            },
+            "Credit": {
+              "value": "<span class=\"int-own-work\" lang=\"\">Own work by the original uploader</span> (<span lang=\"en\" dir=\"ltr\">Original text: <i><bdi lang=\"\">I (<a rel=\"nofollow\" class=\"external text\" href=\"https://sites.google.com/site/thebrockeninglory/\">Brocken Inaglory</a>  created this work entirely by myself.</bdi></i></span>)",
+              "source": "commons-desc-page"
+            },
+            "Artist": {
+              "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://sites.google.com/site/thebrockeninglory/\">Brocken Inaglory</a>",
+              "source": "commons-desc-page"
+            },
+            "LicenseShortName": {
+              "value": "CC BY-SA 3.0",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "UsageTerms": {
+              "value": "Creative Commons Attribution-Share Alike 3.0",
+              "source": "commons-desc-page"
+            },
+            "AttributionRequired": {
+              "value": "true",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "Attribution": {
+              "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://sites.google.com/site/thebrockeninglory/\">Brocken Inaglory</a>",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "LicenseUrl": {
+              "value": "https://creativecommons.org/licenses/by-sa/3.0",
+              "source": "commons-desc-page"
+            },
+            "Copyrighted": {
+              "value": "True",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "Restrictions": {
+              "value": "",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "License": {
+              "value": "cc-by-sa-3.0",
+              "source": "commons-templates",
+              "hidden": ""
+            }
+          }
+        }
+      ]
+    }
+  },
+  {
+    "sourceId": "wikimedia",
+    "externalId": "29834611",
+    "canonicalUrl": "https://commons.wikimedia.org/wiki/File:Acapulco_fishermen.jpg",
+    "title": "Acapulco fishermen.jpg",
+    "authors": [
+      "Tomascastelazo"
+    ],
+    "publishedAt": null,
+    "mediaType": "image",
+    "licence": {
+      "spdx": "CC-BY-SA",
+      "url": "https://creativecommons.org/licenses/by-sa/3.0",
+      "assertedBy": "wikimedia",
+      "attribution": "In order to comply with the use and licensing terms of this image, the following text must must be included with the image when published in any medium, failure to do so constitutes a violation of the licensing terms and copyright infringement: © Tomas Castelazo, www.tomascastelazo.com / Wikimedia Commons"
+    },
+    "snippet": null,
+    "thumbnailUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d2/Acapulco_fishermen.jpg/500px-Acapulco_fishermen.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "raw": {
+      "pageid": 29834611,
+      "ns": 6,
+      "title": "File:Acapulco fishermen.jpg",
+      "index": 5,
+      "imagerepository": "local",
+      "imageinfo": [
+        {
+          "thumburl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d2/Acapulco_fishermen.jpg/500px-Acapulco_fishermen.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumbwidth": 400,
+          "thumbheight": 278,
+          "responsiveUrls": {
+            "2": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d2/Acapulco_fishermen.jpg/960px-Acapulco_fishermen.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+          },
+          "thumbattribs": {
+            "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d2/Acapulco_fishermen.jpg/500px-Acapulco_fishermen.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "decoding": "async",
+            "loading": "lazy",
+            "width": 400,
+            "height": 278,
+            "srcset": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d2/Acapulco_fishermen.jpg/960px-Acapulco_fishermen.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail 2x"
+          },
+          "url": "https://upload.wikimedia.org/wikipedia/commons/d/d2/Acapulco_fishermen.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "descriptionurl": "https://commons.wikimedia.org/wiki/File:Acapulco_fishermen.jpg",
+          "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=29834611",
+          "extmetadata": {
+            "DateTime": {
+              "value": "2013-11-24 23:34:04",
+              "source": "mediawiki-metadata",
+              "hidden": ""
+            },
+            "ObjectName": {
+              "value": "Acapulco fishermen",
+              "source": "mediawiki-metadata"
+            },
+            "CommonsMetadataExtension": {
+              "value": 1.2,
+              "source": "extension",
+              "hidden": ""
+            },
+            "Categories": {
+              "value": "Taken with Canon EOS 650D|Personality rights warning|Beaches of Acapulco|Self-published work|Information field template with formatting|Fishermen from Mexico|Fishing boats of Mexico|Featured pictures of the Pacific Ocean|Blue boats|Featured pictures of boats|Mexico photographs taken on 2013-11-08|Featured pictures of Guerrero|2013 in Acapulco|Boats in Acapulco|Featured pictures of beaches",
+              "source": "commons-categories",
+              "hidden": ""
+            },
+            "Assessments": {
+              "value": "featured|potd",
+              "source": "commons-categories",
+              "hidden": ""
+            },
+            "ImageDescription": {
+              "value": "Fishermen in Acapulco, Mexico.",
+              "source": "commons-desc-page"
+            },
+            "DateTimeOriginal": {
+              "value": "2013-11-08 17:18:40",
+              "source": "commons-desc-page"
+            },
+            "Credit": {
+              "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+              "source": "commons-desc-page"
+            },
+            "Artist": {
+              "value": "<a href=\"//commons.wikimedia.org/wiki/User:Tomascastelazo\" title=\"User:Tomascastelazo\">Tomascastelazo</a>",
+              "source": "commons-desc-page"
+            },
+            "Attribution": {
+              "value": "In order to comply with the use and licensing terms of this image, the following text must must be included with the image when published in any medium, failure to do so constitutes a violation of the licensing terms and copyright infringement: © Tomas Castelazo, <a rel=\"nofollow\" class=\"external text\" href=\"http://www.tomascastelazo.com\">www.tomascastelazo.com</a> / <a href=\"//commons.wikimedia.org/wiki/Main_Page\" title=\"Main Page\">Wikimedia Commons</a>",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "LicenseShortName": {
+              "value": "CC BY-SA 3.0",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "UsageTerms": {
+              "value": "Creative Commons Attribution-Share Alike 3.0",
+              "source": "commons-desc-page"
+            },
+            "AttributionRequired": {
+              "value": "true",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "LicenseUrl": {
+              "value": "https://creativecommons.org/licenses/by-sa/3.0",
+              "source": "commons-desc-page"
+            },
+            "Copyrighted": {
+              "value": "True",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "Restrictions": {
+              "value": "personality",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "License": {
+              "value": "cc-by-sa-3.0",
+              "source": "commons-templates",
+              "hidden": ""
+            }
+          }
+        }
+      ]
+    }
+  },
+  {
+    "sourceId": "wikimedia",
+    "externalId": "30287867",
+    "canonicalUrl": "https://commons.wikimedia.org/wiki/File:Ponta_de_S%C3%A3o_Louren%C3%A7o_north_north_east.jpg",
+    "title": "Ponta de São Lourenço north north east.jpg",
+    "authors": [
+      "Richard Bartz"
+    ],
+    "publishedAt": null,
+    "mediaType": "image",
+    "licence": {
+      "spdx": "CC-BY-SA",
+      "url": "https://creativecommons.org/licenses/by-sa/3.0",
+      "assertedBy": "wikimedia",
+      "attribution": "Richard Bartz — Ponta de São Lourenço north north east.jpg"
+    },
+    "snippet": null,
+    "thumbnailUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a5/Ponta_de_S%C3%A3o_Louren%C3%A7o_north_north_east.jpg/500px-Ponta_de_S%C3%A3o_Louren%C3%A7o_north_north_east.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "raw": {
+      "pageid": 30287867,
+      "ns": 6,
+      "title": "File:Ponta de São Lourenço north north east.jpg",
+      "index": 8,
+      "imagerepository": "local",
+      "imageinfo": [
+        {
+          "thumburl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a5/Ponta_de_S%C3%A3o_Louren%C3%A7o_north_north_east.jpg/500px-Ponta_de_S%C3%A3o_Louren%C3%A7o_north_north_east.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumbwidth": 400,
+          "thumbheight": 183,
+          "responsiveUrls": {
+            "2": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a5/Ponta_de_S%C3%A3o_Louren%C3%A7o_north_north_east.jpg/960px-Ponta_de_S%C3%A3o_Louren%C3%A7o_north_north_east.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+          },
+          "thumbattribs": {
+            "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a5/Ponta_de_S%C3%A3o_Louren%C3%A7o_north_north_east.jpg/500px-Ponta_de_S%C3%A3o_Louren%C3%A7o_north_north_east.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "decoding": "async",
+            "loading": "lazy",
+            "width": 400,
+            "height": 183,
+            "srcset": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a5/Ponta_de_S%C3%A3o_Louren%C3%A7o_north_north_east.jpg/960px-Ponta_de_S%C3%A3o_Louren%C3%A7o_north_north_east.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail 2x"
+          },
+          "url": "https://upload.wikimedia.org/wikipedia/commons/a/a5/Ponta_de_S%C3%A3o_Louren%C3%A7o_north_north_east.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "descriptionurl": "https://commons.wikimedia.org/wiki/File:Ponta_de_S%C3%A3o_Louren%C3%A7o_north_north_east.jpg",
+          "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=30287867",
+          "extmetadata": {
+            "DateTime": {
+              "value": "2013-12-22 13:36:47",
+              "source": "mediawiki-metadata",
+              "hidden": ""
+            },
+            "ObjectName": {
+              "value": "Ponta de São Lourenço north north east",
+              "source": "mediawiki-metadata"
+            },
+            "CommonsMetadataExtension": {
+              "value": 1.2,
+              "source": "extension",
+              "hidden": ""
+            },
+            "Categories": {
+              "value": "Taken with Leaf Credo 80|Photographs by User:Richard Bartz|Featured pictures on Wikipedia, German|Featured pictures of landscapes|Featured pictures of the Atlantic Ocean|Featured pictures on Wikipedia, Persian|Featured pictures on Wikipedia, Spanish|Featured pictures of Madeira|2013 in Machico|Photographs taken on 2013-12-05|Files with coordinates missing SDC location of creation|Pedra Furada (Ponta de São Lourenço)|Ponta do Castelo from Miradouro da Ponta do Rosto",
+              "source": "commons-categories",
+              "hidden": ""
+            },
+            "Assessments": {
+              "value": "quality|featured|valued|potd",
+              "source": "commons-categories",
+              "hidden": ""
+            },
+            "GPSLatitude": {
+              "value": "32.747800",
+              "source": "commons-desc-page"
+            },
+            "GPSLongitude": {
+              "value": "-16.700217",
+              "source": "commons-desc-page"
+            },
+            "GPSMapDatum": {
+              "value": "WGS-84",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "ImageDescription": {
+              "value": "<b>Ponta de São Lourenço</b>, Madeira, Portugal. Heading north north east.",
+              "source": "commons-desc-page"
+            },
+            "DateTimeOriginal": {
+              "value": "2013-12-05",
+              "source": "commons-desc-page"
+            },
+            "Credit": {
+              "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+              "source": "commons-desc-page"
+            },
+            "Artist": {
+              "value": "<a href=\"//commons.wikimedia.org/wiki/User:Richard_Bartz\" title=\"User:Richard Bartz\">Richard Bartz</a>",
+              "source": "commons-desc-page"
+            },
+            "Permission": {
+              "value": "<div class=\"responsive-license-cc layouttemplate licensetpl\" dir=\"ltr\" lang=\"en\"><div class=\"rlicense-icons\"><span class=\"skin-invert\" typeof=\"mw:File\"><span title=\"w:en:Creative Commons\"><img alt=\"w:en:Creative Commons\" src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/7/79/CC_some_rights_reserved.svg/120px-CC_some_rights_reserved.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail\" decoding=\"async\" loading=\"lazy\" width=\"90\" height=\"36\" class=\"mw-file-element\" srcset=\"https://upload.wikimedia.org/wikipedia/commons/thumb/7/79/CC_some_rights_reserved.svg/250px-CC_some_rights_reserved.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail 2x\" data-file-width=\"744\" data-file-height=\"300\"></span></span><br>\n<span class=\"skin-invert\" typeof=\"mw:File\"><span title=\"attribution\"><img alt=\"attribution\" src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/Cc-by_new_white.svg/40px-Cc-by_new_white.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail\" decoding=\"async\" loading=\"lazy\" width=\"24\" height=\"24\" class=\"mw-file-element\" srcset=\"https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/Cc-by_new_white.svg/60px-Cc-by_new_white.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail 2x\" data-file-width=\"64\" data-file-height=\"64\"></span></span> <span class=\"skin-invert\" typeof=\"mw:File\"><span title=\"share alike\"><img alt=\"share alike\" src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/d/df/Cc-sa_white.svg/40px-Cc-sa_white.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail\" decoding=\"async\" loading=\"lazy\" width=\"24\" height=\"24\" class=\"mw-file-element\" srcset=\"https://upload.wikimedia.org/wikipedia/commons/thumb/d/df/Cc-sa_white.svg/60px-Cc-sa_white.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail 2x\" data-file-width=\"64\" data-file-height=\"64\"></span></span></div><div class=\"rlicense-text\"><div class=\"rlicense-declaration\">This file is licensed under the <a href=\"https://en.wikipedia.org/wiki/en:Creative_Commons\" class=\"extiw\" title=\"w:en:Creative Commons\">Creative Commons</a> <a href=\"//creativecommons.org/licenses/by-sa/3.0/deed.en\" class=\"extiw\" title=\"creativecommons:by-sa/3.0/deed.en\">Attribution-Share Alike 3.0 Unported</a> license.</div><div class=\"rlicense-desc\" style=\"text-align:start;\" lang=\"en\">\n<dl><dd>You are free:\n<ul><li><b>to share</b> – to copy, distribute and transmit the work</li>\n<li><b>to remix</b> – to adapt the work</li></ul></dd>\n<dd>Under the following conditions:\n<ul><li><b>attribution</b> – You must give appropriate credit, provide a link to the license, and indicate if changes were made. You may do so in any reasonable manner, but not in any way that suggests the licensor endorses you or your use.</li>\n<li><b>share alike</b> – If you remix, transform, or build upon the material, you must distribute your contributions under the <a href=\"https://creativecommons.org/share-your-work/licensing-considerations/compatible-licenses\" class=\"extiw\" title=\"ccorg:share-your-work/licensing-considerations/compatible-licenses\">same or compatible license</a> as the original.</li></ul></dd></dl></div><span class=\"licensetpl_link\" style=\"display:none;\">https://creativecommons.org/licenses/by-sa/3.0</span><span class=\"licensetpl_short\" style=\"display:none;\">CC BY-SA 3.0 </span><span class=\"licensetpl_long\" style=\"display:none;\">Creative Commons Attribution-Share Alike 3.0 </span><span class=\"licensetpl_link_req\" style=\"display:none;\">true</span><span class=\"licensetpl_attr_req\" style=\"display:none;\">true</span></div></div>",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "LicenseShortName": {
+              "value": "CC BY-SA 3.0",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "UsageTerms": {
+              "value": "Creative Commons Attribution-Share Alike 3.0",
+              "source": "commons-desc-page"
+            },
+            "AttributionRequired": {
+              "value": "true",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "LicenseUrl": {
+              "value": "https://creativecommons.org/licenses/by-sa/3.0",
+              "source": "commons-desc-page"
+            },
+            "Copyrighted": {
+              "value": "True",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "Restrictions": {
+              "value": "",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "License": {
+              "value": "cc-by-sa-3.0",
+              "source": "commons-templates",
+              "hidden": ""
+            }
+          }
+        }
+      ]
+    }
+  },
+  {
+    "sourceId": "wikimedia",
+    "externalId": "39842313",
+    "canonicalUrl": "https://commons.wikimedia.org/wiki/File:Simone_Marinho_-_Trindade_-_2010_05_08_edited.jpg",
+    "title": "Simone Marinho - Trindade - 2010 05 08 edited.jpg",
+    "authors": [
+      "Simone Marinho"
+    ],
+    "publishedAt": null,
+    "mediaType": "image",
+    "licence": {
+      "spdx": "CC-BY-SA",
+      "url": "https://creativecommons.org/licenses/by-sa/3.0",
+      "assertedBy": "wikimedia",
+      "attribution": "Simone Marinho — Simone Marinho - Trindade - 2010 05 08 edited.jpg"
+    },
+    "snippet": null,
+    "thumbnailUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c2/Simone_Marinho_-_Trindade_-_2010_05_08_edited.jpg/500px-Simone_Marinho_-_Trindade_-_2010_05_08_edited.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "raw": {
+      "pageid": 39842313,
+      "ns": 6,
+      "title": "File:Simone Marinho - Trindade - 2010 05 08 edited.jpg",
+      "index": 6,
+      "imagerepository": "local",
+      "imageinfo": [
+        {
+          "thumburl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c2/Simone_Marinho_-_Trindade_-_2010_05_08_edited.jpg/500px-Simone_Marinho_-_Trindade_-_2010_05_08_edited.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumbwidth": 400,
+          "thumbheight": 261,
+          "responsiveUrls": {
+            "2": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c2/Simone_Marinho_-_Trindade_-_2010_05_08_edited.jpg/960px-Simone_Marinho_-_Trindade_-_2010_05_08_edited.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+          },
+          "thumbattribs": {
+            "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c2/Simone_Marinho_-_Trindade_-_2010_05_08_edited.jpg/500px-Simone_Marinho_-_Trindade_-_2010_05_08_edited.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "decoding": "async",
+            "loading": "lazy",
+            "width": 400,
+            "height": 261,
+            "srcset": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c2/Simone_Marinho_-_Trindade_-_2010_05_08_edited.jpg/960px-Simone_Marinho_-_Trindade_-_2010_05_08_edited.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail 2x"
+          },
+          "url": "https://upload.wikimedia.org/wikipedia/commons/c/c2/Simone_Marinho_-_Trindade_-_2010_05_08_edited.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "descriptionurl": "https://commons.wikimedia.org/wiki/File:Simone_Marinho_-_Trindade_-_2010_05_08_edited.jpg",
+          "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=39842313",
+          "extmetadata": {
+            "DateTime": {
+              "value": "2015-05-01 14:17:06",
+              "source": "mediawiki-metadata",
+              "hidden": ""
+            },
+            "ObjectName": {
+              "value": "Simone Marinho - Trindade - 2010 05 08 edited",
+              "source": "mediawiki-metadata"
+            },
+            "CommonsMetadataExtension": {
+              "value": 1.2,
+              "source": "extension",
+              "hidden": ""
+            },
+            "Categories": {
+              "value": "Taken with Canon EOS-1D Mark III|Beaches of Brazil|Nature of Espírito Santo|Trindade and Martin Vaz|Self-published work|Featured pictures of the Atlantic Ocean|Featured pictures on Wikipedia, Persian|Featured pictures on Wikipedia, Vietnamese|Featured pictures of Espírito Santo|Clouds and blue sky in Brazil|Featured pictures of beaches",
+              "source": "commons-categories",
+              "hidden": ""
+            },
+            "Assessments": {
+              "value": "featured|potd",
+              "source": "commons-categories",
+              "hidden": ""
+            },
+            "ImageDescription": {
+              "value": "<a href=\"https://en.wikipedia.org/wiki/Trindade_and_Martim_Vaz\" class=\"extiw\" title=\"en:Trindade and Martim Vaz\">Trindade</a> is a volcanic island off the coast of the Brazilian state of <a href=\"https://en.wikipedia.org/wiki/Espirito_Santo\" class=\"extiw\" title=\"en:Espirito Santo\">Espirito Santo</a>. It constitutes an archipelago with Martim Vaz. The distance to the nearest coast of mainland Brazil is 1167 km, and the surface area is 9.2 km2. It is part of the municipality of <a href=\"https://en.wikipedia.org/wiki/Vit%C3%B3ria,_Esp%C3%ADrito_Santo\" class=\"extiw\" title=\"en:Vitória, Espírito Santo\">Vitória</a>.",
+              "source": "commons-desc-page"
+            },
+            "DateTimeOriginal": {
+              "value": "2010-05-08 08:00:30",
+              "source": "commons-desc-page"
+            },
+            "Credit": {
+              "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+              "source": "commons-desc-page"
+            },
+            "Artist": {
+              "value": "<a href=\"//commons.wikimedia.org/w/index.php?title=User:Simone_Marinho&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"User:Simone Marinho (page does not exist)\">Simone Marinho</a>",
+              "source": "commons-desc-page"
+            },
+            "LicenseShortName": {
+              "value": "CC BY-SA 3.0",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "UsageTerms": {
+              "value": "Creative Commons Attribution-Share Alike 3.0",
+              "source": "commons-desc-page"
+            },
+            "AttributionRequired": {
+              "value": "true",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "LicenseUrl": {
+              "value": "https://creativecommons.org/licenses/by-sa/3.0",
+              "source": "commons-desc-page"
+            },
+            "Copyrighted": {
+              "value": "True",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "Restrictions": {
+              "value": "",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "License": {
+              "value": "cc-by-sa-3.0",
+              "source": "commons-templates",
+              "hidden": ""
+            }
+          }
+        }
+      ]
+    }
+  },
+  {
+    "sourceId": "wikimedia",
+    "externalId": "64448615",
+    "canonicalUrl": "https://commons.wikimedia.org/wiki/File:Harvesting_seaweed_in_Jambiani.jpg",
+    "title": "Harvesting seaweed in Jambiani.jpg",
+    "authors": [
+      "Yann Macherez"
+    ],
+    "publishedAt": null,
+    "mediaType": "image",
+    "licence": {
+      "spdx": "CC-BY-SA-4.0",
+      "url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "assertedBy": "wikimedia",
+      "attribution": "Yann Macherez — Harvesting seaweed in Jambiani.jpg"
+    },
+    "snippet": null,
+    "thumbnailUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/85/Harvesting_seaweed_in_Jambiani.jpg/500px-Harvesting_seaweed_in_Jambiani.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "raw": {
+      "pageid": 64448615,
+      "ns": 6,
+      "title": "File:Harvesting seaweed in Jambiani.jpg",
+      "index": 9,
+      "imagerepository": "local",
+      "imageinfo": [
+        {
+          "thumburl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/85/Harvesting_seaweed_in_Jambiani.jpg/500px-Harvesting_seaweed_in_Jambiani.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumbwidth": 400,
+          "thumbheight": 261,
+          "responsiveUrls": {
+            "2": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/85/Harvesting_seaweed_in_Jambiani.jpg/960px-Harvesting_seaweed_in_Jambiani.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+          },
+          "thumbattribs": {
+            "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/85/Harvesting_seaweed_in_Jambiani.jpg/500px-Harvesting_seaweed_in_Jambiani.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "decoding": "async",
+            "loading": "lazy",
+            "width": 400,
+            "height": 261,
+            "srcset": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/85/Harvesting_seaweed_in_Jambiani.jpg/960px-Harvesting_seaweed_in_Jambiani.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail 2x"
+          },
+          "url": "https://upload.wikimedia.org/wikipedia/commons/8/85/Harvesting_seaweed_in_Jambiani.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "descriptionurl": "https://commons.wikimedia.org/wiki/File:Harvesting_seaweed_in_Jambiani.jpg",
+          "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=64448615",
+          "extmetadata": {
+            "DateTime": {
+              "value": "2020-08-18 09:34:13",
+              "source": "mediawiki-metadata",
+              "hidden": ""
+            },
+            "ObjectName": {
+              "value": "Harvesting seaweed in Jambiani",
+              "source": "mediawiki-metadata"
+            },
+            "CommonsMetadataExtension": {
+              "value": 1.2,
+              "source": "extension",
+              "hidden": ""
+            },
+            "Categories": {
+              "value": "Featured pictures of Tanzania|Jambiani|People of Zanzibar|Seaweed harvest|Self-published work|Best images from Wiki Loves Africa 2017|Featured pictures of the Indian Ocean|Featured pictures on Wikipedia, Vietnamese|Images from Wiki Loves Africa 2017|Featured pictures of people|Algae harvesters|Women at work in Tanzania|2 women|Uploaded via Campaign:wlafrica|Images from Wiki Loves Africa 2017 in Tanzania|Clouds and blue sky in Tanzania|Women wearing headscarves in Tanzania|Unidentified women of Tanzania|Harvesting in Tanzania|Featured pictures from Wiki Loves Africa 2017|Wiki Loves Africa 2017 winning pictures",
+              "source": "commons-categories",
+              "hidden": ""
+            },
+            "Assessments": {
+              "value": "quality|featured",
+              "source": "commons-categories",
+              "hidden": ""
+            },
+            "ImageDescription": {
+              "value": "This is an image of \"African people at work\" from",
+              "source": "commons-desc-page"
+            },
+            "DateTimeOriginal": {
+              "value": "2016-08-20 11:58:31",
+              "source": "commons-desc-page"
+            },
+            "Credit": {
+              "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+              "source": "commons-desc-page"
+            },
+            "Artist": {
+              "value": "<a href=\"//commons.wikimedia.org/wiki/User:Yann_Macherez\" title=\"User:Yann Macherez\">Yann Macherez</a>",
+              "source": "commons-desc-page"
+            },
+            "LicenseShortName": {
+              "value": "CC BY-SA 4.0",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "UsageTerms": {
+              "value": "Creative Commons Attribution-Share Alike 4.0",
+              "source": "commons-desc-page"
+            },
+            "AttributionRequired": {
+              "value": "true",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "LicenseUrl": {
+              "value": "https://creativecommons.org/licenses/by-sa/4.0",
+              "source": "commons-desc-page"
+            },
+            "Copyrighted": {
+              "value": "True",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "Restrictions": {
+              "value": "",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "License": {
+              "value": "cc-by-sa-4.0",
+              "source": "commons-templates",
+              "hidden": ""
+            }
+          }
+        }
+      ]
+    }
+  },
+  {
+    "sourceId": "wikimedia",
+    "externalId": "113305948",
+    "canonicalUrl": "https://commons.wikimedia.org/wiki/File:Seal_Rocks,_Ocean_Beach,_San_Francisco.jpg",
+    "title": "Seal Rocks, Ocean Beach, San Francisco.jpg",
+    "authors": [
+      "Radomianin"
+    ],
+    "publishedAt": null,
+    "mediaType": "image",
+    "licence": {
+      "spdx": "CC-BY-SA-4.0",
+      "url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "assertedBy": "wikimedia",
+      "attribution": "Radomianin — Seal Rocks, Ocean Beach, San Francisco.jpg"
+    },
+    "snippet": null,
+    "thumbnailUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/56/Seal_Rocks%2C_Ocean_Beach%2C_San_Francisco.jpg/500px-Seal_Rocks%2C_Ocean_Beach%2C_San_Francisco.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "raw": {
+      "pageid": 113305948,
+      "ns": 6,
+      "title": "File:Seal Rocks, Ocean Beach, San Francisco.jpg",
+      "index": 2,
+      "imagerepository": "local",
+      "imageinfo": [
+        {
+          "thumburl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/56/Seal_Rocks%2C_Ocean_Beach%2C_San_Francisco.jpg/500px-Seal_Rocks%2C_Ocean_Beach%2C_San_Francisco.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumbwidth": 400,
+          "thumbheight": 230,
+          "responsiveUrls": {
+            "2": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/56/Seal_Rocks%2C_Ocean_Beach%2C_San_Francisco.jpg/960px-Seal_Rocks%2C_Ocean_Beach%2C_San_Francisco.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+          },
+          "thumbattribs": {
+            "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/56/Seal_Rocks%2C_Ocean_Beach%2C_San_Francisco.jpg/500px-Seal_Rocks%2C_Ocean_Beach%2C_San_Francisco.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "decoding": "async",
+            "loading": "lazy",
+            "width": 400,
+            "height": 230,
+            "srcset": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/56/Seal_Rocks%2C_Ocean_Beach%2C_San_Francisco.jpg/960px-Seal_Rocks%2C_Ocean_Beach%2C_San_Francisco.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail 2x"
+          },
+          "url": "https://upload.wikimedia.org/wikipedia/commons/5/56/Seal_Rocks%2C_Ocean_Beach%2C_San_Francisco.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "descriptionurl": "https://commons.wikimedia.org/wiki/File:Seal_Rocks,_Ocean_Beach,_San_Francisco.jpg",
+          "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=113305948",
+          "extmetadata": {
+            "DateTime": {
+              "value": "2022-01-03 22:22:38",
+              "source": "mediawiki-metadata",
+              "hidden": ""
+            },
+            "ObjectName": {
+              "value": "Seal Rocks, Ocean Beach, San Francisco",
+              "source": "mediawiki-metadata"
+            },
+            "CommonsMetadataExtension": {
+              "value": 1.2,
+              "source": "extension",
+              "hidden": ""
+            },
+            "Categories": {
+              "value": "Taken with Nikon D3300|Ocean Beach, San Francisco|Personality rights warning|Seal Rocks|Clouds and blue sky in California|Self-published work|Information field template with formatting|Featured pictures of San Francisco|Featured pictures of reflections|Featured pictures of women|Featured pictures by Radomianin|Photographs by Radomianin|August 2019 in San Francisco|United States photographs taken on 2019-08-21|Featured pictures of landscapes in the United States|Barefoot women walking|Barefoot women with brown hair|Barefoot women wearing jeans|Barefoot women with bare legs|Women walking on beaches|Breaking ocean waves in California",
+              "source": "commons-categories",
+              "hidden": ""
+            },
+            "Assessments": {
+              "value": "quality|featured|potd",
+              "source": "commons-categories",
+              "hidden": ""
+            },
+            "GPSLatitude": {
+              "value": "37.774702",
+              "source": "commons-desc-page"
+            },
+            "GPSLongitude": {
+              "value": "-122.513674",
+              "source": "commons-desc-page"
+            },
+            "GPSMapDatum": {
+              "value": "WGS-84",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "ImageDescription": {
+              "value": "View of the <a href=\"https://en.wikipedia.org/wiki/Seal_Rocks_(San_Francisco,_California)\" class=\"extiw\" title=\"en:Seal Rocks (San Francisco, California)\">Seal Rocks</a> at the north end of <a href=\"https://en.wikipedia.org/wiki/Ocean_Beach,_San_Francisco\" class=\"extiw\" title=\"en:Ocean Beach, San Francisco\">Ocean Beach</a>, San Francisco, California, USA",
+              "source": "commons-desc-page"
+            },
+            "DateTimeOriginal": {
+              "value": "Taken on 21 August 2019, 10:40:30",
+              "source": "commons-desc-page"
+            },
+            "Credit": {
+              "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+              "source": "commons-desc-page"
+            },
+            "Artist": {
+              "value": "<a href=\"//commons.wikimedia.org/wiki/User:Radomianin\" title=\"User:Radomianin\">Radomianin</a>",
+              "source": "commons-desc-page"
+            },
+            "LicenseShortName": {
+              "value": "CC BY-SA 4.0",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "UsageTerms": {
+              "value": "Creative Commons Attribution-Share Alike 4.0",
+              "source": "commons-desc-page"
+            },
+            "AttributionRequired": {
+              "value": "true",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "LicenseUrl": {
+              "value": "https://creativecommons.org/licenses/by-sa/4.0",
+              "source": "commons-desc-page"
+            },
+            "Copyrighted": {
+              "value": "True",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "Restrictions": {
+              "value": "personality",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "License": {
+              "value": "cc-by-sa-4.0",
+              "source": "commons-templates",
+              "hidden": ""
+            }
+          }
+        }
+      ]
+    }
+  },
+  {
+    "sourceId": "wikimedia",
+    "externalId": "179030861",
+    "canonicalUrl": "https://commons.wikimedia.org/wiki/File:Ribeira_da_Janela_(Madeira,_Portugal),_Ilheus_da_Rib_--_2025_--_1582.jpg",
+    "title": "Ribeira da Janela (Madeira, Portugal), Ilheus da Rib -- 2025 -- 1582.jpg",
+    "authors": [
+      "Dietmar Rabich"
+    ],
+    "publishedAt": null,
+    "mediaType": "image",
+    "licence": {
+      "spdx": "CC-BY-SA-4.0",
+      "url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "assertedBy": "wikimedia",
+      "attribution": "Dietmar Rabich"
+    },
+    "snippet": null,
+    "thumbnailUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7b/Ribeira_da_Janela_%28Madeira%2C_Portugal%29%2C_Ilheus_da_Rib_--_2025_--_1582.jpg/500px-Ribeira_da_Janela_%28Madeira%2C_Portugal%29%2C_Ilheus_da_Rib_--_2025_--_1582.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "raw": {
+      "pageid": 179030861,
+      "ns": 6,
+      "title": "File:Ribeira da Janela (Madeira, Portugal), Ilheus da Rib -- 2025 -- 1582.jpg",
+      "index": 4,
+      "imagerepository": "local",
+      "imageinfo": [
+        {
+          "thumburl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7b/Ribeira_da_Janela_%28Madeira%2C_Portugal%29%2C_Ilheus_da_Rib_--_2025_--_1582.jpg/500px-Ribeira_da_Janela_%28Madeira%2C_Portugal%29%2C_Ilheus_da_Rib_--_2025_--_1582.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumbwidth": 400,
+          "thumbheight": 533,
+          "responsiveUrls": {
+            "2": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7b/Ribeira_da_Janela_%28Madeira%2C_Portugal%29%2C_Ilheus_da_Rib_--_2025_--_1582.jpg/960px-Ribeira_da_Janela_%28Madeira%2C_Portugal%29%2C_Ilheus_da_Rib_--_2025_--_1582.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+          },
+          "thumbattribs": {
+            "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7b/Ribeira_da_Janela_%28Madeira%2C_Portugal%29%2C_Ilheus_da_Rib_--_2025_--_1582.jpg/500px-Ribeira_da_Janela_%28Madeira%2C_Portugal%29%2C_Ilheus_da_Rib_--_2025_--_1582.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "decoding": "async",
+            "loading": "lazy",
+            "width": 400,
+            "height": 533,
+            "srcset": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7b/Ribeira_da_Janela_%28Madeira%2C_Portugal%29%2C_Ilheus_da_Rib_--_2025_--_1582.jpg/960px-Ribeira_da_Janela_%28Madeira%2C_Portugal%29%2C_Ilheus_da_Rib_--_2025_--_1582.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail 2x"
+          },
+          "url": "https://upload.wikimedia.org/wikipedia/commons/7/7b/Ribeira_da_Janela_%28Madeira%2C_Portugal%29%2C_Ilheus_da_Rib_--_2025_--_1582.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "descriptionurl": "https://commons.wikimedia.org/wiki/File:Ribeira_da_Janela_(Madeira,_Portugal),_Ilheus_da_Rib_--_2025_--_1582.jpg",
+          "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=179030861",
+          "extmetadata": {
+            "DateTime": {
+              "value": "2025-11-29 14:07:55",
+              "source": "mediawiki-metadata",
+              "hidden": ""
+            },
+            "ObjectName": {
+              "value": "Ribeira da Janela (Madeira, Portugal), Ilheus da Rib -- 2025 -- 1582",
+              "source": "mediawiki-metadata"
+            },
+            "CommonsMetadataExtension": {
+              "value": 1.2,
+              "source": "extension",
+              "hidden": ""
+            },
+            "Categories": {
+              "value": "ISO speed rating 100|Sea spray|Photographs with aspect ratio of 3:4|Self-published work|Photographs by Dietmar Rabich/Long exposure|Clouds in the Northern Hemisphere in November 2025|Photographs by Dietmar Rabich/Featured pictures|Photographs by Dietmar Rabich/Quality images|Information field template with formatting|Featured pictures of the Atlantic Ocean|Featured pictures of Madeira|Lens focal length 35 mm|Storms in Madeira|Clouds in Madeira|Oceanic whitecaps|Exposure time 30 sec|Changes of XRay's photographs of the recent weeks|Images by XRay (flat list)|Photographs by Dietmar Rabich/Quality images of Portugal|Photographs by Dietmar Rabich/Featured pictures of Portugal|Uploaded with LrMediaWiki|Long exposure photographs of Portugal|F-number f/11|Ilhéus da Ribeira da Janela|Clouds and blue sky in Portugal|2025 in Madeira|Photographs by Dietmar Rabich/Landscape photography|Breaking ocean waves in Madeira|Photographs by Dietmar Rabich/Featured pictures on Wikimedia Commons|Portugal photographs taken on 2025-11-17|Photographs by Dietmar Rabich/Year/2025|Long exposures (coasts)|Cobble beaches in Madeira|Photographs by Dietmar Rabich/Quality images of natural phenomena|Photographs by Dietmar Rabich/Quality images of coasts|Photographs by Dietmar Rabich/Quality images of oceans and seas|Taken with Canon EOS 5D Mark IV and Canon EF 24-105mm F4L IS II USM|November 2025 in the Atlantic Ocean|Featured pictures of landforms|Photographs by Dietmar Rabich/Portugal|Featured pictures of beaches",
+              "source": "commons-categories",
+              "hidden": ""
+            },
+            "Assessments": {
+              "value": "quality|featured|potd",
+              "source": "commons-categories",
+              "hidden": ""
+            },
+            "GPSLatitude": {
+              "value": "32.850000",
+              "source": "commons-desc-page"
+            },
+            "GPSLongitude": {
+              "value": "-17.150000",
+              "source": "commons-desc-page"
+            },
+            "GPSMapDatum": {
+              "value": "WGS-84",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "ImageDescription": {
+              "value": "Rock formation “Ilheus da Rib”, Ribeira da Janela, <a href=\"https://en.wikipedia.org/wiki/Madeira_Island\" class=\"extiw\" title=\"en:Madeira Island\">Madeira</a>, Portugal<br><small>Between November 11 and 13, 2025, storm <i>Claudia</i> swept across the region. During these days and the days that followed, the storm caused heavy seas.</small>",
+              "source": "commons-desc-page"
+            },
+            "DateTimeOriginal": {
+              "value": "Taken on 17 November 2025, 11:18",
+              "source": "commons-desc-page"
+            },
+            "Credit": {
+              "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+              "source": "commons-desc-page"
+            },
+            "Artist": {
+              "value": "<bdi><a href=\"https://www.wikidata.org/wiki/Q34788025\" class=\"extiw\" title=\"d:Q34788025\"><span title=\"German photographer and mathematician\">Dietmar Rabich</span></a></bdi>",
+              "source": "commons-desc-page"
+            },
+            "Permission": {
+              "value": "<table class=\"layouttemplate navigation-not-searchable\" style=\"margin:.25em;padding:.25em .5em;background-color:var(--background-color-base,#ffffff);color:inherit;border:1px solid var(--background-color-disabled,#eeeeee)\" data-nosnippet=\"\">\n<tbody><tr>\n<td><span typeof=\"mw:File\"><span><img src=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/b/ba/Flag_of_Germany.svg/40px-Flag_of_Germany.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail\" decoding=\"async\" loading=\"lazy\" width=\"24\" height=\"14\" class=\"mw-file-element\" srcset=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/b/ba/Flag_of_Germany.svg/60px-Flag_of_Germany.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail 2x\" data-file-width=\"1000\" data-file-height=\"600\"></span></span>\n</td>\n<td>Dieser Text und viele andere auch sind ebenso in deutscher Sprache verfügbar. Um diese sehen zu können, wähle bitte auf dieser Webseite die Spracheinstellung „Deutsch“.\n</td></tr></tbody></table><div style=\"clear:both;border:1px solid var(--background-color-disabled,#eeeeee);margin:.25em;padding:.25em .5em;background-color:var(--background-color-base,#ffffff);color:inherit;font-size:90%;\" class=\"searchaux\" data-nosnippet=\"\">\n<figure class=\"mw-halign-right\" typeof=\"mw:File\"><a href=\"//commons.wikimedia.org/wiki/File:HSSection_sign.svg\" class=\"mw-file-description\"><img src=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/1/18/HSSection_sign.svg/120px-HSSection_sign.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail\" decoding=\"async\" loading=\"lazy\" width=\"100\" height=\"100\" class=\"mw-file-element\" srcset=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/1/18/HSSection_sign.svg/250px-HSSection_sign.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail 2x\" data-file-width=\"156\" data-file-height=\"156\"></a><figcaption></figcaption></figure><figure class=\"mw-halign-right\" typeof=\"mw:File\"><a href=\"//commons.wikimedia.org/wiki/File:Cc_by-sa_(1).svg\" class=\"mw-file-description\"><img src=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1c/Cc_by-sa_%281%29.svg/120px-Cc_by-sa_%281%29.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail\" decoding=\"async\" loading=\"lazy\" width=\"100\" height=\"35\" class=\"mw-file-element\" srcset=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1c/Cc_by-sa_%281%29.svg/250px-Cc_by-sa_%281%29.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail 2x\" data-file-width=\"120\" data-file-height=\"42\"></a><figcaption></figcaption></figure><div><b>I. Licence</b></div>\n<div style=\"margin-top:0.5em;\">This photograph is protected by copyright law. However, it may be used for free by anyone, provided it is used in accordance with the license <b>Creative Commons License <a rel=\"nofollow\" class=\"external text\" href=\"https://creativecommons.org/licenses/by-sa/4.0/deed\">“Attribution-ShareAlike 4.0 International”</a></b> (CC BY-SA 4.0). These include, among other things, the naming of the author and the license, as well as the setting of a link to the license text or its complete imprint. The attribution should be done as follows:</div>\n<div style=\"margin-top:0.5em; text-align:center;\"><i><a href=\"//commons.wikimedia.org/wiki/User:XRay\" title=\"User:XRay\">Dietmar Rabich</a> / <a href=\"//commons.wikimedia.org/wiki/Main_Page\" title=\"Main Page\">Wikimedia Commons</a> / <span class=\"plainlinks noprint\"><a class=\"external text\" data-mw-original-href=\"//commons.wikimedia.org/wiki/File:Ribeira_da_Janela_(Madeira,_Portugal),_Ilheus_da_Rib_--_2025_--_1582.jpg\" href=\"https://commons.wikimedia.org/wiki/File:Ribeira_da_Janela_(Madeira,_Portugal),_Ilheus_da_Rib_--_2025_--_1582.jpg\">“Ribeira da Janela (Madeira, Portugal), Ilheus da Rib -- 2025 -- 1582”</a></span> / <span class=\"plainlinks noprint\"><a rel=\"nofollow\" class=\"external text\" href=\"https://creativecommons.org/licenses/by-sa/4.0/\">CC BY-SA 4.0</a></span></i></div>\n<div style=\"margin-top:0.5em;\">Please read the text of the license carefully before using the photograph. If you do not agree with the conditions of the license or if you do not understand these conditions, please refrain from using the photo. If you have any questions regarding the license or the reuse of the image, please contact me before using it. If you do not comply with the terms of the license, you do not acquire any right to use the image. If you need another license to use, please contact the author <b>before</b> using.</div>\n<div style=\"margin-top:0.5em;\">For informations about the licence see section <a class=\"mw-selflink-fragment\" href=\"#ImgLic\">Licensing</a> or as <a rel=\"nofollow\" class=\"external text\" href=\"https://creativecommons.org/licenses/by-sa/4.0/deed.en\">human-readable summary</a> or as <a rel=\"nofollow\" class=\"external text\" href=\"https://creativecommons.org/licenses/by-sa/4.0/legalcode\">full licence text</a> at Creative Commons. In addition to the above, a link to the source - so this page with the descriptions and license terms - is appreciated. More information or examples of use can be found at <a href=\"//commons.wikimedia.org/wiki/Commons:Reusing_content_outside_Wikimedia\" title=\"Commons:Reusing content outside Wikimedia\">re-use (with example file)</a>. The <a rel=\"nofollow\" class=\"external text\" href=\"https://lizenzhinweisgenerator.de/?lang=en&amp;url=https://commons.wikimedia.org/wiki/File:Ribeira_da_Janela_(Madeira,_Portugal),_Ilheus_da_Rib_--_2025_--_1582.jpg\">Attribution Generator</a> is helpful in licensing matters.</div>\n<div style=\"margin:0.5em auto 1em;text-align:center;\" class=\"plainlinks\"><span class=\"plainlinks\"><a rel=\"nofollow\" class=\"external text\" href=\"https://lizenzhinweisgenerator.de/?lang=en&amp;url=https://commons.wikimedia.org/wiki/File:Ribeira_da_Janela_(Madeira,_Portugal),_Ilheus_da_Rib_--_2025_--_1582.jpg\"><span class=\"submit ui-button ui-widget ui-state-default ui-corner-all ui-button-text-icon-secondary ui-button-blue\" role=\"button\"><span class=\"ui-button-text\">Generate License <b>Attribution</b></span><span class=\"ui-button-icon-secondary ui-icon ui-icon-extlink\"> </span></span></a></span></div>\n<div style=\"margin-top:0.5em;\">As an alternative to the Creative Commons License <i>CC BY-SA 4.0</i>, the <i><a href=\"https://en.wikipedia.org/wiki/Free_Art_License\" class=\"extiw\" title=\"en:Free Art License\">Free Art License</a></i> (<a rel=\"nofollow\" class=\"external text\" href=\"http://artlibre.org/licence/lal/en/\">from version 1.3</a>) may also be used.</div>\n<div style=\"margin-top:0.75em;\"><b>II. Fairness</b></div>\n<div style=\"margin-top:0.5em;\">From printed materials and other tangible products that use that work, the user is asked to send a copy to the author as thank you. However, this is not a condition for the use of the photo, but a voluntary service. The mailing address can be requested via the contact options.</div>\n<div style=\"margin-top:0.5em;\">Please note that the author had quite considerable effort to draw up this file. Thus, it is only fair to comply with the conditions of <a href=\"https://en.wikipedia.org/wiki/Free_license\" class=\"extiw\" title=\"en:Free license\">free licenses</a> listed here. In the case of violation of the license conditions, the rights granted hereunder will expire automatically.</div>\n<div style=\"margin-top:0.75em; clear: both;\"><b>III. Disclaimer</b></div>\n<div style=\"margin-top:0.5em;\">Please note that the rights granted under the license apply exclusively to the photograph itself, but not to the rights of third parties — such as copyrights or property rights in the object depicted or the personal rights of any individuals who may be depicted. (See <a href=\"//commons.wikimedia.org/wiki/Commons:L\" class=\"mw-redirect\" title=\"Commons:L\">licences</a> and <a href=\"//commons.wikimedia.org/wiki/Commons:SOSUMI\" class=\"mw-redirect\" title=\"Commons:SOSUMI\">non-copyright restrictions</a>.) I do not grant any warranty that the subsequent use of the photograph is legally possible concerning the object or person shown in the photograph. You are responsible to check and respect these rights in the publication in the respective medium or country.</div>\n<div style=\"margin-top:0.5em;\">The author is not responsible for the accuracy of the information contained herein (description, title, etc.). Likewise, the author assumes no liability for further use. Please note the <a href=\"//commons.wikimedia.org/wiki/Commons:General_disclaimer\" title=\"Commons:General disclaimer\">general disclaimer</a> and please read <a href=\"//commons.wikimedia.org/wiki/Commons:Reusing_content_outside_Wikimedia\" title=\"Commons:Reusing content outside Wikimedia\">reusing content outside Wikimedia</a> too.</div>\n<div style=\"margin-top:0.75em;\"><b>IV. Contact</b></div>\n<div style=\"margin-top:0.5em;\"><b><span typeof=\"mw:File\"><a href=\"//commons.wikimedia.org/wiki/File:UserIconMail.svg\" class=\"mw-file-description\"><img src=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ea/UserIconMail.svg/40px-UserIconMail.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail\" decoding=\"async\" loading=\"lazy\" width=\"24\" height=\"24\" class=\"mw-file-element\" srcset=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ea/UserIconMail.svg/60px-UserIconMail.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail 2x\" data-file-width=\"700\" data-file-height=\"700\"></a></span> <a href=\"//commons.wikimedia.org/wiki/Special:EmailUser/XRay\" title=\"Special:EmailUser/XRay\">E-mail to the author</a></b> or the <a href=\"//commons.wikimedia.org/wiki/User_talk:XRay\" title=\"User talk:XRay\">author's talk page</a> <small>or the <a rel=\"nofollow\" class=\"external text\" href=\"http://www.rabich.de/\">author's website</a></small></div></div>",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "Attribution": {
+              "value": "<b><a href=\"//commons.wikimedia.org/wiki/User:XRay\" title=\"User:XRay\">Dietmar Rabich</a></b>",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "LicenseShortName": {
+              "value": "CC BY-SA 4.0",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "UsageTerms": {
+              "value": "Creative Commons Attribution-Share Alike 4.0",
+              "source": "commons-desc-page"
+            },
+            "AttributionRequired": {
+              "value": "true",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "LicenseUrl": {
+              "value": "https://creativecommons.org/licenses/by-sa/4.0",
+              "source": "commons-desc-page"
+            },
+            "Copyrighted": {
+              "value": "True",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "Restrictions": {
+              "value": "",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "License": {
+              "value": "cc-by-sa-4.0",
+              "source": "commons-templates",
+              "hidden": ""
+            }
+          }
+        }
+      ]
+    }
+  }
+]

@@ -1,0 +1,1215 @@
+[
+  {
+    "sourceId": "wikimedia",
+    "externalId": "5442977",
+    "canonicalUrl": "https://commons.wikimedia.org/wiki/File:Shakespeare.jpg",
+    "title": "Shakespeare.jpg",
+    "authors": [
+      "Attributed to John Taylor"
+    ],
+    "publishedAt": null,
+    "mediaType": "image",
+    "licence": {
+      "spdx": "PD",
+      "url": null,
+      "assertedBy": "wikimedia",
+      "attribution": "Attributed to John Taylor — Shakespeare.jpg"
+    },
+    "snippet": null,
+    "thumbnailUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a2/Shakespeare.jpg/500px-Shakespeare.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "raw": {
+      "pageid": 5442977,
+      "ns": 6,
+      "title": "File:Shakespeare.jpg",
+      "index": 1,
+      "imagerepository": "local",
+      "imageinfo": [
+        {
+          "thumburl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a2/Shakespeare.jpg/500px-Shakespeare.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumbwidth": 400,
+          "thumbheight": 510,
+          "responsiveUrls": {
+            "2": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a2/Shakespeare.jpg/960px-Shakespeare.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+          },
+          "thumbattribs": {
+            "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a2/Shakespeare.jpg/500px-Shakespeare.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "decoding": "async",
+            "loading": "lazy",
+            "width": 400,
+            "height": 510,
+            "srcset": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a2/Shakespeare.jpg/960px-Shakespeare.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail 2x"
+          },
+          "url": "https://upload.wikimedia.org/wikipedia/commons/a/a2/Shakespeare.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "descriptionurl": "https://commons.wikimedia.org/wiki/File:Shakespeare.jpg",
+          "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=5442977",
+          "extmetadata": {
+            "DateTime": {
+              "value": "2025-08-10 10:35:07",
+              "source": "mediawiki-metadata",
+              "hidden": ""
+            },
+            "ObjectName": {
+              "value": "<div class=\"fn\">\n<div style=\"font-weight:bold;display:inline-block;\"><div style=\"display:inline-block\" dir=\"ltr\" lang=\"en\"><i>Portrait of William Shakespeare (1564-1646) <span class=\"mw-valign-text-top noprint\" typeof=\"mw:File/Frameless\"><a href=\"https://www.wikidata.org/wiki/Q1061759#P1476\" title=\"Edit this at Wikidata\"><img alt=\"Edit this at Wikidata\" src=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8a/OOjs_UI_icon_edit-ltr-progressive.svg/20px-OOjs_UI_icon_edit-ltr-progressive.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail\" decoding=\"async\" loading=\"lazy\" width=\"10\" height=\"10\" class=\"mw-file-element\" data-file-width=\"20\" data-file-height=\"20\"></a></span></i></div></div><div style=\"display: none;\">title QS:P1476,en:\"Portrait of William Shakespeare (1564-1646) <span class=\"mw-valign-text-top noprint\" typeof=\"mw:File/Frameless\"><a href=\"https://www.wikidata.org/wiki/Q1061759#P1476\" title=\"Edit this at Wikidata\"><img alt=\"Edit this at Wikidata\" src=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8a/OOjs_UI_icon_edit-ltr-progressive.svg/20px-OOjs_UI_icon_edit-ltr-progressive.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail\" decoding=\"async\" loading=\"lazy\" width=\"10\" height=\"10\" class=\"mw-file-element\" data-file-width=\"20\" data-file-height=\"20\"></a></span>\"</div><div style=\"display: none;\">label QS:Len,\"Portrait of William Shakespeare (1564-1646) <span class=\"mw-valign-text-top noprint\" typeof=\"mw:File/Frameless\"><a href=\"https://www.wikidata.org/wiki/Q1061759#P1476\" title=\"Edit this at Wikidata\"><img alt=\"Edit this at Wikidata\" src=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8a/OOjs_UI_icon_edit-ltr-progressive.svg/20px-OOjs_UI_icon_edit-ltr-progressive.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail\" decoding=\"async\" loading=\"lazy\" width=\"10\" height=\"10\" class=\"mw-file-element\" data-file-width=\"20\" data-file-height=\"20\"></a></span>\"</div><div style=\"display: none;\">label QS:Les,\"Retrato Chandos\"</div><div style=\"display: none;\">label QS:Lja,\"チャンドス・ポートレイト\"</div><div style=\"display: none;\">label QS:Lfr,\"Portrait Chandos\"</div><div style=\"display: none;\">label QS:Lar,\"لوحة شاندوس\"</div><div style=\"display: none;\">label QS:Lsv,\"Chandos porträtt\"</div><div style=\"display: none;\">label QS:Lpl,\"Portret z Chandos\"</div><div style=\"display: none;\">label QS:Lzh,\"錢多斯肖像\"</div><div style=\"display: none;\">label QS:Lnl,\"portret van William Shakespeare\"</div><div style=\"display: none;\">label QS:Lsl,\"Chandosov portret\"</div><div style=\"display: none;\">label QS:Lpt,\"Retrato de Chandos\"</div><div style=\"display: none;\">label QS:Lde,\"Chandos-Porträt\"</div><div style=\"display: none;\">label QS:Lfa,\"پرتره چاندوس\"</div><div style=\"display: none;\">label QS:Lru,\"Чандосовский портрет\"</div></div>",
+              "source": "commons-desc-page"
+            },
+            "CommonsMetadataExtension": {
+              "value": 1.2,
+              "source": "extension",
+              "hidden": ""
+            },
+            "Categories": {
+              "value": "PD-old-100-expired|PD-Art (PD-old-auto-expired)|Artworks with Wikidata item|Artworks with known accession number|Images with extracted images|Featured pictures on Wikipedia, Persian|Featured pictures on Wikipedia, Turkish|CC-PD-Mark|Artworks with accession number from Wikidata|17th-century portrait paintings in the National Portrait Gallery, London|17th-century oil portraits of men at bust length|1610 oil on canvas paintings in the United Kingdom|17th-century three-quarter view portrait paintings of men, facing left and looking at viewer|1610 portrait paintings of men|Men with earrings in Europe|PD-Art missing SDC copyright status|Males with earrings in art|PD-old missing SDC copyright status|Artworks digital representation of unknown type of work|Files with Assessments template missing SDC Commons no value quality assessment|Featured pictures on Wikipedia, Arabic|Male long hair in art|Portrait of William Shakespeare|Chandos portrait of William Shakespeare by John Taylor attr.",
+              "source": "commons-categories",
+              "hidden": ""
+            },
+            "Assessments": {
+              "value": "",
+              "source": "commons-categories",
+              "hidden": ""
+            },
+            "Artist": {
+              "value": "<bdi>Attributed to <a href=\"https://en.wikipedia.org/wiki/en:John_Taylor_(English_publisher)\" class=\"extiw\" title=\"w:en:John Taylor (English publisher)\"><span title=\"English publisher, essayist, and writer (1781-1864)\">John Taylor</span></a></bdi>",
+              "source": "commons-desc-page"
+            },
+            "ImageDescription": {
+              "value": "This was long thought to be the only portrait of <a href=\"https://en.wikipedia.org/wiki/William_Shakespeare\" class=\"extiw\" title=\"w:William Shakespeare\">William Shakespeare</a> that had any claim to have been painted from life, until another possible life portrait, the <a href=\"https://en.wikipedia.org/wiki/Cobbe_portrait\" class=\"extiw\" title=\"w:Cobbe portrait\">Cobbe portrait</a>, was revealed in 2009. The portrait is known as the '<a href=\"https://en.wikipedia.org/wiki/Chandos_portrait\" class=\"extiw\" title=\"w:Chandos portrait\">Chandos portrait</a>' after a previous owner, <a href=\"https://en.wikipedia.org/wiki/James_Brydges,_1st_Duke_of_Chandos\" class=\"extiw\" title=\"w:James Brydges, 1st Duke of Chandos\">James Brydges, 1st Duke of Chandos</a>. It was the first portrait to be acquired by the <a href=\"https://en.wikipedia.org/wiki/National_Portrait_Gallery_(London)\" class=\"extiw\" title=\"w:National Portrait Gallery (London)\">National Portrait Gallery</a> in 1856. The artist may be by a painter called John Taylor who was an important member of the Painter-Stainers' Company.",
+              "source": "commons-desc-page"
+            },
+            "DateTimeOriginal": {
+              "value": "1648 <span class=\"mw-valign-text-top noprint\" typeof=\"mw:File/Frameless\"><a href=\"https://www.wikidata.org/wiki/Q1061759#P571\" title=\"Edit this at Wikidata\"><img alt=\"Edit this at Wikidata\" src=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8a/OOjs_UI_icon_edit-ltr-progressive.svg/20px-OOjs_UI_icon_edit-ltr-progressive.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail\" decoding=\"async\" loading=\"lazy\" width=\"10\" height=\"10\" class=\"mw-file-element\" data-file-width=\"20\" data-file-height=\"20\"></a></span>",
+              "source": "commons-desc-page"
+            },
+            "Credit": {
+              "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.npg.org.uk/collections/search/portrait/mw11574/William-Shakespeare\">Official gallery link</a>",
+              "source": "commons-desc-page"
+            },
+            "LicenseShortName": {
+              "value": "Public domain",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "UsageTerms": {
+              "value": "Public domain",
+              "source": "commons-desc-page"
+            },
+            "AttributionRequired": {
+              "value": "false",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "Copyrighted": {
+              "value": "False",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "Restrictions": {
+              "value": "",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "License": {
+              "value": "pd",
+              "source": "commons-templates",
+              "hidden": ""
+            }
+          }
+        }
+      ]
+    }
+  },
+  {
+    "sourceId": "wikimedia",
+    "externalId": "6189379",
+    "canonicalUrl": "https://commons.wikimedia.org/wiki/File:Cobbe_portrait_of_Shakespeare.jpg",
+    "title": "Cobbe portrait of Shakespeare.jpg",
+    "authors": [
+      "anonymous"
+    ],
+    "publishedAt": null,
+    "mediaType": "image",
+    "licence": {
+      "spdx": "PD",
+      "url": null,
+      "assertedBy": "wikimedia",
+      "attribution": "anonymous — Cobbe portrait of Shakespeare.jpg"
+    },
+    "snippet": null,
+    "thumbnailUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fb/Cobbe_portrait_of_Shakespeare.jpg/500px-Cobbe_portrait_of_Shakespeare.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "raw": {
+      "pageid": 6189379,
+      "ns": 6,
+      "title": "File:Cobbe portrait of Shakespeare.jpg",
+      "index": 2,
+      "imagerepository": "local",
+      "imageinfo": [
+        {
+          "thumburl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fb/Cobbe_portrait_of_Shakespeare.jpg/500px-Cobbe_portrait_of_Shakespeare.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumbwidth": 400,
+          "thumbheight": 574,
+          "responsiveUrls": {
+            "2": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fb/Cobbe_portrait_of_Shakespeare.jpg/960px-Cobbe_portrait_of_Shakespeare.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+          },
+          "thumbattribs": {
+            "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fb/Cobbe_portrait_of_Shakespeare.jpg/500px-Cobbe_portrait_of_Shakespeare.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "decoding": "async",
+            "loading": "lazy",
+            "width": 400,
+            "height": 574,
+            "srcset": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fb/Cobbe_portrait_of_Shakespeare.jpg/960px-Cobbe_portrait_of_Shakespeare.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail 2x"
+          },
+          "url": "https://upload.wikimedia.org/wikipedia/commons/f/fb/Cobbe_portrait_of_Shakespeare.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "descriptionurl": "https://commons.wikimedia.org/wiki/File:Cobbe_portrait_of_Shakespeare.jpg",
+          "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=6189379",
+          "extmetadata": {
+            "DateTime": {
+              "value": "2009-03-10 00:43:58",
+              "source": "mediawiki-metadata",
+              "hidden": ""
+            },
+            "ObjectName": {
+              "value": "<div class=\"fn\">\n<div style=\"font-weight:bold;display:inline-block;\"><div style=\"display:inline-block\" dir=\"ltr\" lang=\"en\"><i>The Cobbe Portrait of WillIam Shakespeare (1564-1616) <span class=\"mw-valign-text-top noprint\" typeof=\"mw:File/Frameless\"><a href=\"https://www.wikidata.org/wiki/Q1104588#P1476\" title=\"Edit this at Wikidata\"><img alt=\"Edit this at Wikidata\" src=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8a/OOjs_UI_icon_edit-ltr-progressive.svg/20px-OOjs_UI_icon_edit-ltr-progressive.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail\" decoding=\"async\" loading=\"lazy\" width=\"10\" height=\"10\" class=\"mw-file-element\" data-file-width=\"20\" data-file-height=\"20\"></a></span></i></div></div><div style=\"display: none;\">title QS:P1476,en:\"The Cobbe Portrait of WillIam Shakespeare (1564-1616) <span class=\"mw-valign-text-top noprint\" typeof=\"mw:File/Frameless\"><a href=\"https://www.wikidata.org/wiki/Q1104588#P1476\" title=\"Edit this at Wikidata\"><img alt=\"Edit this at Wikidata\" src=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8a/OOjs_UI_icon_edit-ltr-progressive.svg/20px-OOjs_UI_icon_edit-ltr-progressive.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail\" decoding=\"async\" loading=\"lazy\" width=\"10\" height=\"10\" class=\"mw-file-element\" data-file-width=\"20\" data-file-height=\"20\"></a></span>\"</div><div style=\"display: none;\">label QS:Len,\"The Cobbe Portrait of WillIam Shakespeare (1564-1616) <span class=\"mw-valign-text-top noprint\" typeof=\"mw:File/Frameless\"><a href=\"https://www.wikidata.org/wiki/Q1104588#P1476\" title=\"Edit this at Wikidata\"><img alt=\"Edit this at Wikidata\" src=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8a/OOjs_UI_icon_edit-ltr-progressive.svg/20px-OOjs_UI_icon_edit-ltr-progressive.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail\" decoding=\"async\" loading=\"lazy\" width=\"10\" height=\"10\" class=\"mw-file-element\" data-file-width=\"20\" data-file-height=\"20\"></a></span>\"</div><div style=\"display: none;\">label QS:Lka,\"კობის პორტრეტი\"</div><div style=\"display: none;\">label QS:Lfr,\"Portrait Cobbe\"</div><div style=\"display: none;\">label QS:Les,\"Retrato Cobbe\"</div><div style=\"display: none;\">label QS:Larz,\"بورتريه كوبى\"</div><div style=\"display: none;\">label QS:Lde,\"Cobbe-Porträt\"</div></div>",
+              "source": "commons-desc-page"
+            },
+            "CommonsMetadataExtension": {
+              "value": 1.2,
+              "source": "extension",
+              "hidden": ""
+            },
+            "Categories": {
+              "value": "Cobbe portrait of William Shakespeare|Featured pictures on Wikipedia, English|PD-Art (PD-old-100)|Artworks with Wikidata item|Artworks with known accession number|CC-PD-Mark|Artworks with accession number from Wikidata|Artworks with Wikidata item missing author|Artworks digital representation of 2D work|Files with Assessments template missing SDC Commons no value quality assessment|Artworks with digital representation of different depicts|Portrait of William Shakespeare",
+              "source": "commons-categories",
+              "hidden": ""
+            },
+            "Assessments": {
+              "value": "",
+              "source": "commons-categories",
+              "hidden": ""
+            },
+            "Artist": {
+              "value": "<div class=\"fn value\">\n<table cellpadding=\"0\" cellspacing=\"0\"><tbody><tr><td><a href=\"https://www.wikidata.org/wiki/Q4233718\" class=\"extiw\" title=\"d:Q4233718\"><span title='unknown creator of a work (do not use as value of P50; use \"unknown value\" instead)'>anonymous</span></a></td><td valign=\"top\"> <span class=\"mw-valign-text-top noprint\" typeof=\"mw:File/Frameless\"><a href=\"https://www.wikidata.org/wiki/Q1104588#P170\" title=\"Edit this at Wikidata\"><img alt=\"Edit this at Wikidata\" src=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8a/OOjs_UI_icon_edit-ltr-progressive.svg/20px-OOjs_UI_icon_edit-ltr-progressive.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail\" decoding=\"async\" loading=\"lazy\" width=\"10\" height=\"10\" class=\"mw-file-element\" data-file-width=\"20\" data-file-height=\"20\"></a></span></td></tr></tbody></table></div>",
+              "source": "commons-desc-page"
+            },
+            "ImageDescription": {
+              "value": "<a href=\"https://en.wikipedia.org/wiki/Cobbe_portrait\" class=\"extiw\" title=\"en:Cobbe portrait\">Cobbe portrait</a>, claimed to be a portrait of <a href=\"https://en.wikipedia.org/wiki/William_Shakespeare\" class=\"extiw\" title=\"en:William Shakespeare\">William Shakespeare</a> done while he was alive",
+              "source": "commons-desc-page"
+            },
+            "DateTimeOriginal": {
+              "value": "circa 1610<div style=\"display: none;\">date QS:P571,+1610-00-00T00:00:00Z/9,P1480,Q5727902</div>",
+              "source": "commons-desc-page"
+            },
+            "Credit": {
+              "value": "Getty Images(?)<a rel=\"nofollow\" class=\"external autonumber\" href=\"http://www.gettyimages.com/detail/85308131/Getty-Images-News\">[1]</a>",
+              "source": "commons-desc-page"
+            },
+            "LicenseShortName": {
+              "value": "Public domain",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "UsageTerms": {
+              "value": "Public domain",
+              "source": "commons-desc-page"
+            },
+            "AttributionRequired": {
+              "value": "false",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "Copyrighted": {
+              "value": "False",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "Restrictions": {
+              "value": "",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "License": {
+              "value": "pd",
+              "source": "commons-templates",
+              "hidden": ""
+            }
+          }
+        }
+      ]
+    }
+  },
+  {
+    "sourceId": "wikimedia",
+    "externalId": "18358348",
+    "canonicalUrl": "https://commons.wikimedia.org/wiki/File:Shakespeare,_New_Mexico_from_SE_3.JPG",
+    "title": "Shakespeare, New Mexico from SE 3.JPG",
+    "authors": [
+      "Ammodramus"
+    ],
+    "publishedAt": null,
+    "mediaType": "image",
+    "licence": {
+      "spdx": "CC0-1.0",
+      "url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "assertedBy": "wikimedia",
+      "attribution": "Ammodramus — Shakespeare, New Mexico from SE 3.JPG"
+    },
+    "snippet": null,
+    "thumbnailUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/63/Shakespeare%2C_New_Mexico_from_SE_3.JPG/500px-Shakespeare%2C_New_Mexico_from_SE_3.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "raw": {
+      "pageid": 18358348,
+      "ns": 6,
+      "title": "File:Shakespeare, New Mexico from SE 3.JPG",
+      "index": 4,
+      "imagerepository": "local",
+      "imageinfo": [
+        {
+          "thumburl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/63/Shakespeare%2C_New_Mexico_from_SE_3.JPG/500px-Shakespeare%2C_New_Mexico_from_SE_3.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumbwidth": 400,
+          "thumbheight": 214,
+          "responsiveUrls": {
+            "2": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/63/Shakespeare%2C_New_Mexico_from_SE_3.JPG/960px-Shakespeare%2C_New_Mexico_from_SE_3.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+          },
+          "thumbattribs": {
+            "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/63/Shakespeare%2C_New_Mexico_from_SE_3.JPG/500px-Shakespeare%2C_New_Mexico_from_SE_3.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "decoding": "async",
+            "loading": "lazy",
+            "width": 400,
+            "height": 214,
+            "srcset": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/63/Shakespeare%2C_New_Mexico_from_SE_3.JPG/960px-Shakespeare%2C_New_Mexico_from_SE_3.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail 2x"
+          },
+          "url": "https://upload.wikimedia.org/wikipedia/commons/6/63/Shakespeare%2C_New_Mexico_from_SE_3.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "descriptionurl": "https://commons.wikimedia.org/wiki/File:Shakespeare,_New_Mexico_from_SE_3.JPG",
+          "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=18358348",
+          "extmetadata": {
+            "DateTime": {
+              "value": "2012-02-12 14:22:16",
+              "source": "mediawiki-metadata",
+              "hidden": ""
+            },
+            "ObjectName": {
+              "value": "Shakespeare, New Mexico from SE 3",
+              "source": "mediawiki-metadata"
+            },
+            "CommonsMetadataExtension": {
+              "value": 1.2,
+              "source": "extension",
+              "hidden": ""
+            },
+            "Categories": {
+              "value": "Taken with Panasonic Lumix DMC-FZ20|CC-Zero|Shakespeare, New Mexico|Self-published work|National Register of Historic Places with known IDs|Pictures by Ammodramus",
+              "source": "commons-categories",
+              "hidden": ""
+            },
+            "Assessments": {
+              "value": "",
+              "source": "commons-categories",
+              "hidden": ""
+            },
+            "GPSLatitude": {
+              "value": "32.325560",
+              "source": "commons-desc-page"
+            },
+            "GPSLongitude": {
+              "value": "-108.738330",
+              "source": "commons-desc-page"
+            },
+            "GPSMapDatum": {
+              "value": "WGS-84",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "ImageDescription": {
+              "value": "Shakespeare ghost town in <a href=\"https://en.wikipedia.org/wiki/Hidalgo_County,_New_Mexico\" class=\"extiw\" title=\"w:Hidalgo County, New Mexico\">Hidalgo County, New Mexico</a>, seen from hill southeast of town.",
+              "source": "commons-desc-page"
+            },
+            "DateTimeOriginal": {
+              "value": "2012-02-03",
+              "source": "commons-desc-page"
+            },
+            "Credit": {
+              "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+              "source": "commons-desc-page"
+            },
+            "Artist": {
+              "value": "<a href=\"//commons.wikimedia.org/wiki/User:Ammodramus\" title=\"User:Ammodramus\">Ammodramus</a>",
+              "source": "commons-desc-page"
+            },
+            "LicenseShortName": {
+              "value": "CC0",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "UsageTerms": {
+              "value": "Creative Commons Zero, Public Domain Dedication",
+              "source": "commons-desc-page"
+            },
+            "AttributionRequired": {
+              "value": "false",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "LicenseUrl": {
+              "value": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+              "source": "commons-desc-page"
+            },
+            "Copyrighted": {
+              "value": "True",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "Restrictions": {
+              "value": "",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "License": {
+              "value": "cc0",
+              "source": "commons-templates",
+              "hidden": ""
+            }
+          }
+        }
+      ]
+    }
+  },
+  {
+    "sourceId": "wikimedia",
+    "externalId": "32412469",
+    "canonicalUrl": "https://commons.wikimedia.org/wiki/File:Shakespeare,_Ontario,_Canada.jpg",
+    "title": "Shakespeare, Ontario, Canada.jpg",
+    "authors": [
+      "Doug Kerr from Albany, NY, United States"
+    ],
+    "publishedAt": null,
+    "mediaType": "image",
+    "licence": {
+      "spdx": "CC-BY-SA",
+      "url": "https://creativecommons.org/licenses/by-sa/2.0",
+      "assertedBy": "wikimedia",
+      "attribution": "Doug Kerr from Albany, NY, United States — Shakespeare, Ontario, Canada.jpg"
+    },
+    "snippet": null,
+    "thumbnailUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a2/Shakespeare%2C_Ontario%2C_Canada.jpg/500px-Shakespeare%2C_Ontario%2C_Canada.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "raw": {
+      "pageid": 32412469,
+      "ns": 6,
+      "title": "File:Shakespeare, Ontario, Canada.jpg",
+      "index": 9,
+      "imagerepository": "local",
+      "imageinfo": [
+        {
+          "thumburl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a2/Shakespeare%2C_Ontario%2C_Canada.jpg/500px-Shakespeare%2C_Ontario%2C_Canada.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumbwidth": 400,
+          "thumbheight": 300,
+          "responsiveUrls": {
+            "2": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a2/Shakespeare%2C_Ontario%2C_Canada.jpg/960px-Shakespeare%2C_Ontario%2C_Canada.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+          },
+          "thumbattribs": {
+            "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a2/Shakespeare%2C_Ontario%2C_Canada.jpg/500px-Shakespeare%2C_Ontario%2C_Canada.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "decoding": "async",
+            "loading": "lazy",
+            "width": 400,
+            "height": 300,
+            "srcset": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a2/Shakespeare%2C_Ontario%2C_Canada.jpg/960px-Shakespeare%2C_Ontario%2C_Canada.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail 2x"
+          },
+          "url": "https://upload.wikimedia.org/wikipedia/commons/a/a2/Shakespeare%2C_Ontario%2C_Canada.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "descriptionurl": "https://commons.wikimedia.org/wiki/File:Shakespeare,_Ontario,_Canada.jpg",
+          "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=32412469",
+          "extmetadata": {
+            "DateTime": {
+              "value": "2014-04-26 22:16:11",
+              "source": "mediawiki-metadata",
+              "hidden": ""
+            },
+            "ObjectName": {
+              "value": "Shakespeare, Ontario, Canada",
+              "source": "mediawiki-metadata"
+            },
+            "CommonsMetadataExtension": {
+              "value": 1.2,
+              "source": "extension",
+              "hidden": ""
+            },
+            "Categories": {
+              "value": "Taken with Canon PowerShot SX150 IS|Shakespeare, Ontario|Flickr images reviewed by FlickreviewR|May 2013 in Ontario",
+              "source": "commons-categories",
+              "hidden": ""
+            },
+            "Assessments": {
+              "value": "",
+              "source": "commons-categories",
+              "hidden": ""
+            },
+            "ImageDescription": {
+              "value": "Shakespeare, Ontario, Canada.",
+              "source": "commons-desc-page"
+            },
+            "DateTimeOriginal": {
+              "value": "2013-05-26 19:34",
+              "source": "commons-desc-page"
+            },
+            "Credit": {
+              "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/photos/dougtone/9186789129/\">King's Highway 8 - Ontario</a>",
+              "source": "commons-desc-page"
+            },
+            "Artist": {
+              "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/people/7327243@N05\">Doug Kerr</a> from Albany, NY, United States",
+              "source": "commons-desc-page"
+            },
+            "LicenseShortName": {
+              "value": "CC BY-SA 2.0",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "UsageTerms": {
+              "value": "Creative Commons Attribution-Share Alike 2.0",
+              "source": "commons-desc-page"
+            },
+            "AttributionRequired": {
+              "value": "true",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "LicenseUrl": {
+              "value": "https://creativecommons.org/licenses/by-sa/2.0",
+              "source": "commons-desc-page"
+            },
+            "Copyrighted": {
+              "value": "True",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "Restrictions": {
+              "value": "",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "License": {
+              "value": "cc-by-sa-2.0",
+              "source": "commons-templates",
+              "hidden": ""
+            }
+          }
+        }
+      ]
+    }
+  },
+  {
+    "sourceId": "wikimedia",
+    "externalId": "60894073",
+    "canonicalUrl": "https://commons.wikimedia.org/wiki/File:Duke_of_York_(Twelve_Characters_from_Shakespeare)_MET_DP828471.jpg",
+    "title": "Duke of York (Twelve Characters from Shakespeare) MET DP828471.jpg",
+    "authors": [
+      "John Hamilton Mortimer / William Shakespeare"
+    ],
+    "publishedAt": null,
+    "mediaType": "image",
+    "licence": {
+      "spdx": "CC0-1.0",
+      "url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "assertedBy": "wikimedia",
+      "attribution": "John Hamilton Mortimer / William Shakespeare — Duke of York (Twelve Characters from Shakespeare) MET DP828471.jpg"
+    },
+    "snippet": null,
+    "thumbnailUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/02/Duke_of_York_%28Twelve_Characters_from_Shakespeare%29_MET_DP828471.jpg/500px-Duke_of_York_%28Twelve_Characters_from_Shakespeare%29_MET_DP828471.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "raw": {
+      "pageid": 60894073,
+      "ns": 6,
+      "title": "File:Duke of York (Twelve Characters from Shakespeare) MET DP828471.jpg",
+      "index": 7,
+      "imagerepository": "local",
+      "imageinfo": [
+        {
+          "thumburl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/02/Duke_of_York_%28Twelve_Characters_from_Shakespeare%29_MET_DP828471.jpg/500px-Duke_of_York_%28Twelve_Characters_from_Shakespeare%29_MET_DP828471.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumbwidth": 400,
+          "thumbheight": 496,
+          "responsiveUrls": {
+            "2": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/02/Duke_of_York_%28Twelve_Characters_from_Shakespeare%29_MET_DP828471.jpg/960px-Duke_of_York_%28Twelve_Characters_from_Shakespeare%29_MET_DP828471.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+          },
+          "thumbattribs": {
+            "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/02/Duke_of_York_%28Twelve_Characters_from_Shakespeare%29_MET_DP828471.jpg/500px-Duke_of_York_%28Twelve_Characters_from_Shakespeare%29_MET_DP828471.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "decoding": "async",
+            "loading": "lazy",
+            "width": 400,
+            "height": 496,
+            "srcset": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/02/Duke_of_York_%28Twelve_Characters_from_Shakespeare%29_MET_DP828471.jpg/960px-Duke_of_York_%28Twelve_Characters_from_Shakespeare%29_MET_DP828471.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail 2x"
+          },
+          "url": "https://upload.wikimedia.org/wikipedia/commons/0/02/Duke_of_York_%28Twelve_Characters_from_Shakespeare%29_MET_DP828471.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "descriptionurl": "https://commons.wikimedia.org/wiki/File:Duke_of_York_(Twelve_Characters_from_Shakespeare)_MET_DP828471.jpg",
+          "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=60894073",
+          "extmetadata": {
+            "DateTime": {
+              "value": "2017-07-11 23:07:38",
+              "source": "mediawiki-metadata",
+              "hidden": ""
+            },
+            "ObjectName": {
+              "value": "<div class=\"fn\">\nDuke of York (Twelve Characters from Shakespeare)</div>",
+              "source": "commons-desc-page"
+            },
+            "CommonsMetadataExtension": {
+              "value": 1.2,
+              "source": "extension",
+              "hidden": ""
+            },
+            "Categories": {
+              "value": "William Shakespeare|CC-Zero|John Hamilton Mortimer|Artworks without Wikidata item|Artworks with known accession number|Images from Metropolitan Museum of Art|GWToolset Batch Upload|Works of Shakespeare in art|Literary prints in the Metropolitan Museum of Art",
+              "source": "commons-categories",
+              "hidden": ""
+            },
+            "Assessments": {
+              "value": "",
+              "source": "commons-categories",
+              "hidden": ""
+            },
+            "Artist": {
+              "value": "<bdi><a href=\"https://en.wikipedia.org/wiki/en:John_Hamilton_Mortimer\" class=\"extiw\" title=\"w:en:John Hamilton Mortimer\"><span title=\"British artist (1740-1779)\">John Hamilton Mortimer</span></a></bdi> / <bdi><a href=\"https://en.wikipedia.org/wiki/en:William_Shakespeare\" class=\"extiw\" title=\"w:en:William Shakespeare\"><span title=\"English playwright and poet (1564–1616)\">William Shakespeare</span></a></bdi>",
+              "source": "commons-desc-page"
+            },
+            "ImageDescription": {
+              "value": "<div class=\"description\">\n<dl><dt>Print; Prints</dt></dl></div>",
+              "source": "commons-desc-page"
+            },
+            "DateTimeOriginal": {
+              "value": "15 March 1776<div style=\"display: none;\">date QS:P571,+1776-03-15T00:00:00Z/11</div>",
+              "source": "commons-desc-page"
+            },
+            "Credit": {
+              "value": "This file was donated to Wikimedia Commons as part of a project by the <a href=\"//commons.wikimedia.org/wiki/Commons:Met\" title=\"Commons:Met\">Metropolitan Museum of Art</a>. See the <a rel=\"nofollow\" class=\"external text\" href=\"https://metmuseum.org/about-the-met/policies-and-documents/image-resources\">Image and Data Resources Open Access Policy</a>",
+              "source": "commons-desc-page"
+            },
+            "Permission": {
+              "value": "<table style=\"width:100%; clear:both; text-align:center; margin:0.5em auto; background-color:var(--background-color-neutral-subtle, #f8f9fa); border:var(--border-subtle, 2px solid #c8ccd1); padding: 0; border-spacing: 8px; color:var(--color-base, #202122);\" dir=\"ltr\" class=\"layouttemplate licensetpl\" lang=\"en\">\n<tbody><tr>\n<td style=\"width:90px;\" rowspan=\"2\"><span class=\"skin-invert\" typeof=\"mw:File\"><span title=\"Creative Commons\"><img alt=\"Creative Commons\" src=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a3/Cc.logo.circle.svg/40px-Cc.logo.circle.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail\" decoding=\"async\" loading=\"lazy\" width=\"28\" height=\"28\" class=\"mw-file-element\" srcset=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a3/Cc.logo.circle.svg/60px-Cc.logo.circle.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail 2x\" data-file-width=\"64\" data-file-height=\"64\"></span></span> <span class=\"skin-invert\" typeof=\"mw:File\"><span title=\"CC-Zero\"><img alt=\"CC-Zero\" src=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/5/52/Cc-zero.svg/40px-Cc-zero.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail\" decoding=\"async\" loading=\"lazy\" width=\"28\" height=\"28\" class=\"mw-file-element\" srcset=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/5/52/Cc-zero.svg/60px-Cc-zero.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail 2x\" data-file-width=\"64\" data-file-height=\"64\"></span></span>\n</td>\n<td>This file is made available under the <a href=\"https://en.wikipedia.org/wiki/en:Creative_Commons\" class=\"extiw\" title=\"w:en:Creative Commons\">Creative Commons</a> <a href=\"https://creativecommons.org/publicdomain/zero/1.0/deed.en\" class=\"extiw\" title=\"ccorg:publicdomain/zero/1.0/deed.en\">CC0 1.0 Universal Public Domain Dedication</a>.\n</td></tr>\n<tr style=\"text-align:left;\">\n<td>The person who associated a work with this deed has dedicated the work to the <a href=\"https://en.wikipedia.org/wiki/en:public_domain\" class=\"extiw\" title=\"w:en:public domain\">public domain</a> by waiving all of their rights to the work worldwide under copyright law, including all related and neighboring rights, to the extent allowed by law. You can copy, modify, distribute and perform the work, even for commercial purposes, all without asking permission.\n<p><span class=\"licensetpl_link\" style=\"display:none;\">http://creativecommons.org/publicdomain/zero/1.0/deed.en</span><span class=\"licensetpl_short\" style=\"display:none;\">CC0</span><span class=\"licensetpl_long\" style=\"display:none;\">Creative Commons Zero, Public Domain Dedication</span><span class=\"licensetpl_link_req\" style=\"display:none;\">false</span><span class=\"licensetpl_attr_req\" style=\"display:none;\">false</span>\n</p>\n</td></tr></tbody></table>",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "LicenseShortName": {
+              "value": "CC0",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "UsageTerms": {
+              "value": "Creative Commons Zero, Public Domain Dedication",
+              "source": "commons-desc-page"
+            },
+            "AttributionRequired": {
+              "value": "false",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "LicenseUrl": {
+              "value": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+              "source": "commons-desc-page"
+            },
+            "Copyrighted": {
+              "value": "True",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "Restrictions": {
+              "value": "",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "License": {
+              "value": "cc0",
+              "source": "commons-templates",
+              "hidden": ""
+            }
+          }
+        }
+      ]
+    }
+  },
+  {
+    "sourceId": "wikimedia",
+    "externalId": "64513396",
+    "canonicalUrl": "https://commons.wikimedia.org/wiki/File:Shakespeare_Window,_State_Library_of_Victoria,_Melbourne,_2017-10-29.jpg",
+    "title": "Shakespeare Window, State Library of Victoria, Melbourne, 2017-10-29.jpg",
+    "authors": [
+      "Crisco 1492"
+    ],
+    "publishedAt": null,
+    "mediaType": "image",
+    "licence": {
+      "spdx": "CC-BY-SA-4.0",
+      "url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "assertedBy": "wikimedia",
+      "attribution": "Crisco 1492 — Shakespeare Window, State Library of Victoria, Melbourne, 2017-10-29.jpg"
+    },
+    "snippet": null,
+    "thumbnailUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b5/Shakespeare_Window%2C_State_Library_of_Victoria%2C_Melbourne%2C_2017-10-29.jpg/500px-Shakespeare_Window%2C_State_Library_of_Victoria%2C_Melbourne%2C_2017-10-29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "raw": {
+      "pageid": 64513396,
+      "ns": 6,
+      "title": "File:Shakespeare Window, State Library of Victoria, Melbourne, 2017-10-29.jpg",
+      "index": 5,
+      "imagerepository": "local",
+      "imageinfo": [
+        {
+          "thumburl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b5/Shakespeare_Window%2C_State_Library_of_Victoria%2C_Melbourne%2C_2017-10-29.jpg/500px-Shakespeare_Window%2C_State_Library_of_Victoria%2C_Melbourne%2C_2017-10-29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumbwidth": 400,
+          "thumbheight": 718,
+          "responsiveUrls": {
+            "2": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b5/Shakespeare_Window%2C_State_Library_of_Victoria%2C_Melbourne%2C_2017-10-29.jpg/960px-Shakespeare_Window%2C_State_Library_of_Victoria%2C_Melbourne%2C_2017-10-29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+          },
+          "thumbattribs": {
+            "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b5/Shakespeare_Window%2C_State_Library_of_Victoria%2C_Melbourne%2C_2017-10-29.jpg/500px-Shakespeare_Window%2C_State_Library_of_Victoria%2C_Melbourne%2C_2017-10-29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "decoding": "async",
+            "loading": "lazy",
+            "width": 400,
+            "height": 718,
+            "srcset": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b5/Shakespeare_Window%2C_State_Library_of_Victoria%2C_Melbourne%2C_2017-10-29.jpg/960px-Shakespeare_Window%2C_State_Library_of_Victoria%2C_Melbourne%2C_2017-10-29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail 2x"
+          },
+          "url": "https://upload.wikimedia.org/wikipedia/commons/b/b5/Shakespeare_Window%2C_State_Library_of_Victoria%2C_Melbourne%2C_2017-10-29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "descriptionurl": "https://commons.wikimedia.org/wiki/File:Shakespeare_Window,_State_Library_of_Victoria,_Melbourne,_2017-10-29.jpg",
+          "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=64513396",
+          "extmetadata": {
+            "DateTime": {
+              "value": "2017-12-02 04:37:20",
+              "source": "mediawiki-metadata",
+              "hidden": ""
+            },
+            "ObjectName": {
+              "value": "Shakespeare Window, State Library of Victoria, Melbourne, 2017-10-29",
+              "source": "mediawiki-metadata"
+            },
+            "CommonsMetadataExtension": {
+              "value": 1.2,
+              "source": "extension",
+              "hidden": ""
+            },
+            "Categories": {
+              "value": "Taken with Canon EOS 60D|Portraits of William Shakespeare|Self-published work|Files with coordinates missing SDC location of creation|Photographs taken on 2017-10-29|Photographs of objects by Chris Woodrich|Interior of the State Library of Victoria",
+              "source": "commons-categories",
+              "hidden": ""
+            },
+            "Assessments": {
+              "value": "quality",
+              "source": "commons-categories",
+              "hidden": ""
+            },
+            "GPSLatitude": {
+              "value": "-37.810000",
+              "source": "commons-desc-page"
+            },
+            "GPSLongitude": {
+              "value": "144.965158",
+              "source": "commons-desc-page"
+            },
+            "GPSMapDatum": {
+              "value": "WGS-84",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "ImageDescription": {
+              "value": "Shakespeare Window, State Library of Victoria, Melbourne, 2017-10-29. Window commissioned by George Coppin in 1862, made by James Ferguson and James Urie.",
+              "source": "commons-desc-page"
+            },
+            "DateTimeOriginal": {
+              "value": "2017-10-29 08:12:30",
+              "source": "commons-desc-page"
+            },
+            "Credit": {
+              "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+              "source": "commons-desc-page"
+            },
+            "Artist": {
+              "value": "<a href=\"//commons.wikimedia.org/wiki/User:Crisco_1492\" title=\"User:Crisco 1492\">Crisco 1492</a>",
+              "source": "commons-desc-page"
+            },
+            "LicenseShortName": {
+              "value": "CC BY-SA 4.0",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "UsageTerms": {
+              "value": "Creative Commons Attribution-Share Alike 4.0",
+              "source": "commons-desc-page"
+            },
+            "AttributionRequired": {
+              "value": "true",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "LicenseUrl": {
+              "value": "https://creativecommons.org/licenses/by-sa/4.0",
+              "source": "commons-desc-page"
+            },
+            "Copyrighted": {
+              "value": "True",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "Restrictions": {
+              "value": "",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "License": {
+              "value": "cc-by-sa-4.0",
+              "source": "commons-templates",
+              "hidden": ""
+            }
+          }
+        }
+      ]
+    }
+  },
+  {
+    "sourceId": "wikimedia",
+    "externalId": "116398881",
+    "canonicalUrl": "https://commons.wikimedia.org/wiki/File:Mariupol_Museum_Shakespeare_1904_ed.jpg",
+    "title": "Mariupol Museum Shakespeare 1904 ed.jpg",
+    "authors": [
+      "Brockhaus-Efron"
+    ],
+    "publishedAt": null,
+    "mediaType": "image",
+    "licence": {
+      "spdx": "PD",
+      "url": null,
+      "assertedBy": "wikimedia",
+      "attribution": "Brockhaus-Efron — Mariupol Museum Shakespeare 1904 ed.jpg"
+    },
+    "snippet": null,
+    "thumbnailUrl": "https://upload.wikimedia.org/wikipedia/commons/c/c7/Mariupol_Museum_Shakespeare_1904_ed.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+    "raw": {
+      "pageid": 116398881,
+      "ns": 6,
+      "title": "File:Mariupol Museum Shakespeare 1904 ed.jpg",
+      "index": 8,
+      "imagerepository": "local",
+      "imageinfo": [
+        {
+          "thumburl": "https://upload.wikimedia.org/wikipedia/commons/c/c7/Mariupol_Museum_Shakespeare_1904_ed.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+          "thumbwidth": 400,
+          "thumbheight": 526,
+          "thumbattribs": {
+            "src": "https://upload.wikimedia.org/wikipedia/commons/c/c7/Mariupol_Museum_Shakespeare_1904_ed.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+            "decoding": "async",
+            "loading": "lazy",
+            "width": 400,
+            "height": 526
+          },
+          "url": "https://upload.wikimedia.org/wikipedia/commons/c/c7/Mariupol_Museum_Shakespeare_1904_ed.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "descriptionurl": "https://commons.wikimedia.org/wiki/File:Mariupol_Museum_Shakespeare_1904_ed.jpg",
+          "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=116398881",
+          "extmetadata": {
+            "DateTime": {
+              "value": "2022-03-25 09:11:33",
+              "source": "mediawiki-metadata",
+              "hidden": ""
+            },
+            "ObjectName": {
+              "value": "Mariupol Museum Shakespeare 1904 ed",
+              "source": "mediawiki-metadata"
+            },
+            "CommonsMetadataExtension": {
+              "value": 1.2,
+              "source": "extension",
+              "hidden": ""
+            },
+            "Categories": {
+              "value": "William Shakespeare|Mariupol Museum of Local Lore|PD-Russia-expired|1904 in Mariupol",
+              "source": "commons-categories",
+              "hidden": ""
+            },
+            "Assessments": {
+              "value": "",
+              "source": "commons-categories",
+              "hidden": ""
+            },
+            "ImageDescription": {
+              "value": "Shakespeare title 1904 ed., published by Brockhaus-Efron, St. Petersburg",
+              "source": "commons-desc-page"
+            },
+            "DateTimeOriginal": {
+              "value": "1904",
+              "source": "commons-desc-page"
+            },
+            "Credit": {
+              "value": "Mariupol Museum of Local Lore",
+              "source": "commons-desc-page"
+            },
+            "Artist": {
+              "value": "Brockhaus-Efron",
+              "source": "commons-desc-page"
+            },
+            "LicenseShortName": {
+              "value": "Public domain",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "UsageTerms": {
+              "value": "Public domain",
+              "source": "commons-desc-page"
+            },
+            "AttributionRequired": {
+              "value": "false",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "Copyrighted": {
+              "value": "False",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "Restrictions": {
+              "value": "",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "License": {
+              "value": "pd",
+              "source": "commons-templates",
+              "hidden": ""
+            }
+          }
+        }
+      ]
+    }
+  },
+  {
+    "sourceId": "wikimedia",
+    "externalId": "122205518",
+    "canonicalUrl": "https://commons.wikimedia.org/wiki/File:Frontispiece_to_%22The_Works_of_William_Shakespeare%22_publication.jpg",
+    "title": "Frontispiece to \"The Works of William Shakespeare\" publication.jpg",
+    "authors": [
+      "Illustrated by W Harvey (London: Charles Cox, 1852)"
+    ],
+    "publishedAt": null,
+    "mediaType": "image",
+    "licence": {
+      "spdx": "CC-BY-SA-4.0",
+      "url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "assertedBy": "wikimedia",
+      "attribution": "Illustrated by W Harvey (London: Charles Cox, 1852) — Frontispiece to \"The Works of William Shakespeare\" publication.jpg"
+    },
+    "snippet": null,
+    "thumbnailUrl": "https://upload.wikimedia.org/wikipedia/commons/d/df/Frontispiece_to_%22The_Works_of_William_Shakespeare%22_publication.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+    "raw": {
+      "pageid": 122205518,
+      "ns": 6,
+      "title": "File:Frontispiece to \"The Works of William Shakespeare\" publication.jpg",
+      "index": 6,
+      "imagerepository": "local",
+      "imageinfo": [
+        {
+          "thumburl": "https://upload.wikimedia.org/wikipedia/commons/d/df/Frontispiece_to_%22The_Works_of_William_Shakespeare%22_publication.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+          "thumbwidth": 400,
+          "thumbheight": 686,
+          "thumbattribs": {
+            "src": "https://upload.wikimedia.org/wikipedia/commons/d/df/Frontispiece_to_%22The_Works_of_William_Shakespeare%22_publication.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+            "decoding": "async",
+            "loading": "lazy",
+            "width": 400,
+            "height": 686
+          },
+          "url": "https://upload.wikimedia.org/wikipedia/commons/d/df/Frontispiece_to_%22The_Works_of_William_Shakespeare%22_publication.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "descriptionurl": "https://commons.wikimedia.org/wiki/File:Frontispiece_to_%22The_Works_of_William_Shakespeare%22_publication.jpg",
+          "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=122205518",
+          "extmetadata": {
+            "DateTime": {
+              "value": "2022-08-22 14:20:04",
+              "source": "mediawiki-metadata",
+              "hidden": ""
+            },
+            "ObjectName": {
+              "value": "Frontispiece to \"The Works of William Shakespeare\" publication",
+              "source": "mediawiki-metadata"
+            },
+            "CommonsMetadataExtension": {
+              "value": 1.2,
+              "source": "extension",
+              "hidden": ""
+            },
+            "Categories": {
+              "value": "William Shakespeare|Scanned with Anagramm|Uploaded by King's College London, Archives",
+              "source": "commons-categories",
+              "hidden": ""
+            },
+            "Assessments": {
+              "value": "",
+              "source": "commons-categories",
+              "hidden": ""
+            },
+            "ImageDescription": {
+              "value": "Frontispiece to The Works of William Shakspere, Charles Knight, editor, illustrated by W Harvey (London: Charles Cox, 1852), (reference: King's College London Archives Accn 3244)",
+              "source": "commons-desc-page"
+            },
+            "DateTimeOriginal": {
+              "value": "1852-01-01",
+              "source": "commons-desc-page"
+            },
+            "Credit": {
+              "value": "King’s College London, Foyle Special Collections Library",
+              "source": "commons-desc-page"
+            },
+            "Artist": {
+              "value": "Illustrated by W Harvey (London: Charles Cox, 1852)",
+              "source": "commons-desc-page"
+            },
+            "LicenseShortName": {
+              "value": "CC BY-SA 4.0",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "UsageTerms": {
+              "value": "Creative Commons Attribution-Share Alike 4.0",
+              "source": "commons-desc-page"
+            },
+            "AttributionRequired": {
+              "value": "true",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "LicenseUrl": {
+              "value": "https://creativecommons.org/licenses/by-sa/4.0",
+              "source": "commons-desc-page"
+            },
+            "Copyrighted": {
+              "value": "True",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "Restrictions": {
+              "value": "",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "License": {
+              "value": "cc-by-sa-4.0",
+              "source": "commons-templates",
+              "hidden": ""
+            }
+          }
+        }
+      ]
+    }
+  },
+  {
+    "sourceId": "wikimedia",
+    "externalId": "147141653",
+    "canonicalUrl": "https://commons.wikimedia.org/wiki/File:William_Shakespeare_by_John_Taylor,_edited.jpg",
+    "title": "William Shakespeare by John Taylor, edited.jpg",
+    "authors": [
+      "Attributed to John Taylor"
+    ],
+    "publishedAt": null,
+    "mediaType": "image",
+    "licence": {
+      "spdx": "PD",
+      "url": null,
+      "assertedBy": "wikimedia",
+      "attribution": "Attributed to John Taylor — William Shakespeare by John Taylor, edited.jpg"
+    },
+    "snippet": null,
+    "thumbnailUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/21/William_Shakespeare_by_John_Taylor%2C_edited.jpg/500px-William_Shakespeare_by_John_Taylor%2C_edited.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "raw": {
+      "pageid": 147141653,
+      "ns": 6,
+      "title": "File:William Shakespeare by John Taylor, edited.jpg",
+      "index": 3,
+      "imagerepository": "local",
+      "imageinfo": [
+        {
+          "thumburl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/21/William_Shakespeare_by_John_Taylor%2C_edited.jpg/500px-William_Shakespeare_by_John_Taylor%2C_edited.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumbwidth": 400,
+          "thumbheight": 510,
+          "responsiveUrls": {
+            "2": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/21/William_Shakespeare_by_John_Taylor%2C_edited.jpg/960px-William_Shakespeare_by_John_Taylor%2C_edited.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+          },
+          "thumbattribs": {
+            "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/21/William_Shakespeare_by_John_Taylor%2C_edited.jpg/500px-William_Shakespeare_by_John_Taylor%2C_edited.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "decoding": "async",
+            "loading": "lazy",
+            "width": 400,
+            "height": 510,
+            "srcset": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/21/William_Shakespeare_by_John_Taylor%2C_edited.jpg/960px-William_Shakespeare_by_John_Taylor%2C_edited.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail 2x"
+          },
+          "url": "https://upload.wikimedia.org/wikipedia/commons/2/21/William_Shakespeare_by_John_Taylor%2C_edited.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "descriptionurl": "https://commons.wikimedia.org/wiki/File:William_Shakespeare_by_John_Taylor,_edited.jpg",
+          "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=147141653",
+          "extmetadata": {
+            "DateTime": {
+              "value": "2024-04-06 18:19:01",
+              "source": "mediawiki-metadata",
+              "hidden": ""
+            },
+            "ObjectName": {
+              "value": "<div class=\"fn\">\n<div style=\"font-weight:bold;display:inline-block;\"><div style=\"display:inline-block\" dir=\"ltr\" lang=\"en\"><i>Portrait of William Shakespeare (1564-1646) <span class=\"mw-valign-text-top noprint\" typeof=\"mw:File/Frameless\"><a href=\"https://www.wikidata.org/wiki/Q1061759#P1476\" title=\"Edit this at Wikidata\"><img alt=\"Edit this at Wikidata\" src=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8a/OOjs_UI_icon_edit-ltr-progressive.svg/20px-OOjs_UI_icon_edit-ltr-progressive.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail\" decoding=\"async\" loading=\"lazy\" width=\"10\" height=\"10\" class=\"mw-file-element\" data-file-width=\"20\" data-file-height=\"20\"></a></span></i></div></div><div style=\"display: none;\">title QS:P1476,en:\"Portrait of William Shakespeare (1564-1646) <span class=\"mw-valign-text-top noprint\" typeof=\"mw:File/Frameless\"><a href=\"https://www.wikidata.org/wiki/Q1061759#P1476\" title=\"Edit this at Wikidata\"><img alt=\"Edit this at Wikidata\" src=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8a/OOjs_UI_icon_edit-ltr-progressive.svg/20px-OOjs_UI_icon_edit-ltr-progressive.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail\" decoding=\"async\" loading=\"lazy\" width=\"10\" height=\"10\" class=\"mw-file-element\" data-file-width=\"20\" data-file-height=\"20\"></a></span>\"</div><div style=\"display: none;\">label QS:Len,\"Portrait of William Shakespeare (1564-1646) <span class=\"mw-valign-text-top noprint\" typeof=\"mw:File/Frameless\"><a href=\"https://www.wikidata.org/wiki/Q1061759#P1476\" title=\"Edit this at Wikidata\"><img alt=\"Edit this at Wikidata\" src=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8a/OOjs_UI_icon_edit-ltr-progressive.svg/20px-OOjs_UI_icon_edit-ltr-progressive.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail\" decoding=\"async\" loading=\"lazy\" width=\"10\" height=\"10\" class=\"mw-file-element\" data-file-width=\"20\" data-file-height=\"20\"></a></span>\"</div><div style=\"display: none;\">label QS:Les,\"Retrato Chandos\"</div><div style=\"display: none;\">label QS:Lja,\"チャンドス・ポートレイト\"</div><div style=\"display: none;\">label QS:Lfr,\"Portrait Chandos\"</div><div style=\"display: none;\">label QS:Lar,\"لوحة شاندوس\"</div><div style=\"display: none;\">label QS:Lsv,\"Chandos porträtt\"</div><div style=\"display: none;\">label QS:Lpl,\"Portret z Chandos\"</div><div style=\"display: none;\">label QS:Lzh,\"錢多斯肖像\"</div><div style=\"display: none;\">label QS:Lnl,\"portret van William Shakespeare\"</div><div style=\"display: none;\">label QS:Lsl,\"Chandosov portret\"</div><div style=\"display: none;\">label QS:Lpt,\"Retrato de Chandos\"</div><div style=\"display: none;\">label QS:Lde,\"Chandos-Porträt\"</div><div style=\"display: none;\">label QS:Lfa,\"پرتره چاندوس\"</div><div style=\"display: none;\">label QS:Lru,\"Чандосовский портрет\"</div></div>",
+              "source": "commons-desc-page"
+            },
+            "CommonsMetadataExtension": {
+              "value": 1.2,
+              "source": "extension",
+              "hidden": ""
+            },
+            "Categories": {
+              "value": "Retouched pictures|Images from the National Portrait Gallery, London|PD-old-100-expired|Featured pictures on Wikipedia, English|Files uploaded by Yann Forget|PD-Art (PD-old-100-expired)|Artworks with Wikidata item|Artworks with known accession number|Images with extracted images|Items with copyright claims|CC-PD-Mark|Artworks with accession number from Wikidata|PD-Art missing SDC copyright status|PD-old missing SDC copyright status|PD-art-old-100-expired missing SDC copyright status|Files with Assessments template missing SDC Commons no value quality assessment|Chandos portrait of William Shakespeare by John Taylor attr.",
+              "source": "commons-categories",
+              "hidden": ""
+            },
+            "Assessments": {
+              "value": "",
+              "source": "commons-categories",
+              "hidden": ""
+            },
+            "Artist": {
+              "value": "<bdi>Attributed to <a href=\"https://en.wikipedia.org/wiki/en:John_Taylor_(English_publisher)\" class=\"extiw\" title=\"w:en:John Taylor (English publisher)\"><span title=\"English publisher, essayist, and writer (1781-1864)\">John Taylor</span></a></bdi>",
+              "source": "commons-desc-page"
+            },
+            "DateTimeOriginal": {
+              "value": "1648 <span class=\"mw-valign-text-top noprint\" typeof=\"mw:File/Frameless\"><a href=\"https://www.wikidata.org/wiki/Q1061759#P571\" title=\"Edit this at Wikidata\"><img alt=\"Edit this at Wikidata\" src=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8a/OOjs_UI_icon_edit-ltr-progressive.svg/20px-OOjs_UI_icon_edit-ltr-progressive.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail\" decoding=\"async\" loading=\"lazy\" width=\"10\" height=\"10\" class=\"mw-file-element\" data-file-width=\"20\" data-file-height=\"20\"></a></span>",
+              "source": "commons-desc-page"
+            },
+            "Credit": {
+              "value": "one or more <b>third parties have made copyright claims against Wikimedia Commons in relation to the work from which this is sourced or a purely mechanical reproduction thereof</b>. This may be due to recognition of the \"<a href=\"https://en.wikipedia.org/wiki/sweat_of_the_brow\" class=\"extiw\" title=\"w:sweat of the brow\">sweat of the brow</a>\" doctrine, allowing works to be eligible for protection through skill and labour, and not purely by originality as is the case in the United States (where this website is hosted). These claims may or may not be valid in all jurisdictions.\nAs such, use of this image in the jurisdiction of the claimant or other countries <i>may</i> be regarded as <b>copyright infringement</b>. Please see <a href=\"//commons.wikimedia.org/wiki/Commons:When_to_use_the_PD-Art_tag\" title=\"Commons:When to use the PD-Art tag\">Commons:When to use the PD-Art tag</a> for more information.",
+              "source": "commons-desc-page"
+            },
+            "LicenseShortName": {
+              "value": "Public domain",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "UsageTerms": {
+              "value": "Public domain",
+              "source": "commons-desc-page"
+            },
+            "AttributionRequired": {
+              "value": "false",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "Copyrighted": {
+              "value": "False",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "Restrictions": {
+              "value": "",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "License": {
+              "value": "pd",
+              "source": "commons-templates",
+              "hidden": ""
+            }
+          }
+        }
+      ]
+    }
+  },
+  {
+    "sourceId": "wikimedia",
+    "externalId": "159026283",
+    "canonicalUrl": "https://commons.wikimedia.org/wiki/File:Shakespeare-ren_Veneziako_Merkataria_antzezlanaren_laburpena_Txikipediarako.ogg",
+    "title": "Shakespeare-ren Veneziako Merkataria antzezlanaren laburpena Txikipediarako.ogg",
+    "authors": [
+      "Abadiño 2024"
+    ],
+    "publishedAt": null,
+    "mediaType": "image",
+    "licence": {
+      "spdx": "CC0-1.0",
+      "url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "assertedBy": "wikimedia",
+      "attribution": "Abadiño 2024 — Shakespeare-ren Veneziako Merkataria antzezlanaren laburpena Txikipediarako.ogg"
+    },
+    "snippet": null,
+    "thumbnailUrl": "https://commons.wikimedia.org/w/resources/assets/file-type-icons/fileicon-ogg.png",
+    "raw": {
+      "pageid": 159026283,
+      "ns": 6,
+      "title": "File:Shakespeare-ren Veneziako Merkataria antzezlanaren laburpena Txikipediarako.ogg",
+      "index": 10,
+      "imagerepository": "local",
+      "imageinfo": [
+        {
+          "thumburl": "https://commons.wikimedia.org/w/resources/assets/file-type-icons/fileicon-ogg.png",
+          "thumbwidth": 400,
+          "thumbheight": 400,
+          "thumbattribs": [],
+          "url": "https://upload.wikimedia.org/wikipedia/commons/6/6b/Shakespeare-ren_Veneziako_Merkataria_antzezlanaren_laburpena_Txikipediarako.ogg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "descriptionurl": "https://commons.wikimedia.org/wiki/File:Shakespeare-ren_Veneziako_Merkataria_antzezlanaren_laburpena_Txikipediarako.ogg",
+          "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=159026283",
+          "extmetadata": {
+            "DateTime": {
+              "value": "2025-02-03 09:53:36",
+              "source": "mediawiki-metadata",
+              "hidden": ""
+            },
+            "ObjectName": {
+              "value": "Shakespeare-ren Veneziako Merkataria antzezlanaren laburpena Txikipediarako",
+              "source": "mediawiki-metadata"
+            },
+            "CommonsMetadataExtension": {
+              "value": 1.2,
+              "source": "extension",
+              "hidden": ""
+            },
+            "Categories": {
+              "value": "William Shakespeare|CC-Zero|Self-published work",
+              "source": "commons-categories",
+              "hidden": ""
+            },
+            "Assessments": {
+              "value": "",
+              "source": "commons-categories",
+              "hidden": ""
+            },
+            "ImageDescription": {
+              "value": "Shakespeare-ren Veneziako Merkataria antzezlanaren laburpena Txikipediarako",
+              "source": "commons-desc-page"
+            },
+            "DateTimeOriginal": {
+              "value": "2025-02-03",
+              "source": "commons-desc-page"
+            },
+            "Credit": {
+              "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+              "source": "commons-desc-page"
+            },
+            "Artist": {
+              "value": "<a href=\"//commons.wikimedia.org/w/index.php?title=User:Abadi%C3%B1o_2024&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"User:Abadiño 2024 (page does not exist)\">Abadiño 2024</a>",
+              "source": "commons-desc-page"
+            },
+            "LicenseShortName": {
+              "value": "CC0",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "UsageTerms": {
+              "value": "Creative Commons Zero, Public Domain Dedication",
+              "source": "commons-desc-page"
+            },
+            "AttributionRequired": {
+              "value": "false",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "LicenseUrl": {
+              "value": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+              "source": "commons-desc-page"
+            },
+            "Copyrighted": {
+              "value": "True",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "Restrictions": {
+              "value": "",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "License": {
+              "value": "cc0",
+              "source": "commons-templates",
+              "hidden": ""
+            }
+          }
+        }
+      ]
+    }
+  }
+]

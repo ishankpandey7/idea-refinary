@@ -1,0 +1,1254 @@
+[
+  {
+    "sourceId": "wikimedia",
+    "externalId": "6696299",
+    "canonicalUrl": "https://commons.wikimedia.org/wiki/File:LOVE_Liebe.JPG",
+    "title": "LOVE Liebe.JPG",
+    "authors": [
+      "böhringer friedrich"
+    ],
+    "publishedAt": null,
+    "mediaType": "image",
+    "licence": {
+      "spdx": "CC-BY-SA",
+      "url": "https://creativecommons.org/licenses/by-sa/2.5",
+      "assertedBy": "wikimedia",
+      "attribution": "böhringer friedrich — LOVE Liebe.JPG"
+    },
+    "snippet": null,
+    "thumbnailUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c0/LOVE_Liebe.JPG/500px-LOVE_Liebe.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "raw": {
+      "pageid": 6696299,
+      "ns": 6,
+      "title": "File:LOVE Liebe.JPG",
+      "index": 2,
+      "imagerepository": "local",
+      "imageinfo": [
+        {
+          "thumburl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c0/LOVE_Liebe.JPG/500px-LOVE_Liebe.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumbwidth": 400,
+          "thumbheight": 266,
+          "responsiveUrls": {
+            "2": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c0/LOVE_Liebe.JPG/960px-LOVE_Liebe.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+          },
+          "thumbattribs": {
+            "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c0/LOVE_Liebe.JPG/500px-LOVE_Liebe.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "decoding": "async",
+            "loading": "lazy",
+            "width": 400,
+            "height": 266,
+            "srcset": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c0/LOVE_Liebe.JPG/960px-LOVE_Liebe.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail 2x"
+          },
+          "url": "https://upload.wikimedia.org/wikipedia/commons/c/c0/LOVE_Liebe.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "descriptionurl": "https://commons.wikimedia.org/wiki/File:LOVE_Liebe.JPG",
+          "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=6696299",
+          "extmetadata": {
+            "DateTime": {
+              "value": "2009-05-04 11:03:11",
+              "source": "mediawiki-metadata",
+              "hidden": ""
+            },
+            "ObjectName": {
+              "value": "LOVE Liebe",
+              "source": "mediawiki-metadata"
+            },
+            "CommonsMetadataExtension": {
+              "value": 1.2,
+              "source": "extension",
+              "hidden": ""
+            },
+            "Categories": {
+              "value": "Taken with Sony DSLR-A700|Self-published work|Photos by Böhringer|User:Böhringer - Quality images Gallery|Corroded objects|Love (text)|Files with coordinates missing SDC location of creation|Sculptures of love|Steel sculptures in unidentified countries",
+              "source": "commons-categories",
+              "hidden": ""
+            },
+            "Assessments": {
+              "value": "quality",
+              "source": "commons-categories",
+              "hidden": ""
+            },
+            "GPSLatitude": {
+              "value": "47.201728",
+              "source": "commons-desc-page"
+            },
+            "GPSLongitude": {
+              "value": "9.761994",
+              "source": "commons-desc-page"
+            },
+            "GPSMapDatum": {
+              "value": "WGS-84",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "ImageDescription": {
+              "value": "<a href=\"https://en.wikipedia.org/wiki/Chrome_steel\" class=\"extiw\" title=\"w:Chrome steel\">Chrome steel</a> letters on a <a href=\"https://en.wikipedia.org/wiki/rust\" class=\"extiw\" title=\"w:rust\">rusty</a> <a href=\"https://en.wikipedia.org/wiki/steel\" class=\"extiw\" title=\"w:steel\">steel</a> plate.",
+              "source": "commons-desc-page"
+            },
+            "DateTimeOriginal": {
+              "value": "2009-05-03",
+              "source": "commons-desc-page"
+            },
+            "Credit": {
+              "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+              "source": "commons-desc-page"
+            },
+            "Artist": {
+              "value": "<a href=\"//commons.wikimedia.org/wiki/User:B%C3%B6hringer\" title=\"User:Böhringer\">böhringer friedrich</a>",
+              "source": "commons-desc-page"
+            },
+            "Permission": {
+              "value": "I, the copyright holder of this work, hereby publish it under the following license:",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "LicenseShortName": {
+              "value": "CC BY-SA 2.5",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "UsageTerms": {
+              "value": "Creative Commons Attribution-Share Alike 2.5",
+              "source": "commons-desc-page"
+            },
+            "AttributionRequired": {
+              "value": "true",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "LicenseUrl": {
+              "value": "https://creativecommons.org/licenses/by-sa/2.5",
+              "source": "commons-desc-page"
+            },
+            "Copyrighted": {
+              "value": "True",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "Restrictions": {
+              "value": "",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "License": {
+              "value": "cc-by-sa-2.5",
+              "source": "commons-templates",
+              "hidden": ""
+            }
+          }
+        }
+      ]
+    }
+  },
+  {
+    "sourceId": "wikimedia",
+    "externalId": "16139839",
+    "canonicalUrl": "https://commons.wikimedia.org/wiki/File:Sean_Combs_2010.jpg",
+    "title": "Sean Combs 2010.jpg",
+    "authors": [
+      "Reckless Dream Photography"
+    ],
+    "publishedAt": null,
+    "mediaType": "image",
+    "licence": {
+      "spdx": "CC-BY",
+      "url": "https://creativecommons.org/licenses/by/2.0",
+      "assertedBy": "wikimedia",
+      "attribution": "Reckless Dream Photography — Sean Combs 2010.jpg"
+    },
+    "snippet": null,
+    "thumbnailUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/13/Sean_Combs_2010.jpg/500px-Sean_Combs_2010.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "raw": {
+      "pageid": 16139839,
+      "ns": 6,
+      "title": "File:Sean Combs 2010.jpg",
+      "index": 4,
+      "imagerepository": "local",
+      "imageinfo": [
+        {
+          "thumburl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/13/Sean_Combs_2010.jpg/500px-Sean_Combs_2010.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumbwidth": 400,
+          "thumbheight": 487,
+          "responsiveUrls": {
+            "2": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/13/Sean_Combs_2010.jpg/960px-Sean_Combs_2010.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+          },
+          "thumbattribs": {
+            "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/13/Sean_Combs_2010.jpg/500px-Sean_Combs_2010.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "decoding": "async",
+            "loading": "lazy",
+            "width": 400,
+            "height": 487,
+            "srcset": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/13/Sean_Combs_2010.jpg/960px-Sean_Combs_2010.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail 2x"
+          },
+          "url": "https://upload.wikimedia.org/wikipedia/commons/1/13/Sean_Combs_2010.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "descriptionurl": "https://commons.wikimedia.org/wiki/File:Sean_Combs_2010.jpg",
+          "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=16139839",
+          "extmetadata": {
+            "DateTime": {
+              "value": "2011-08-18 07:05:27",
+              "source": "mediawiki-metadata",
+              "hidden": ""
+            },
+            "ObjectName": {
+              "value": "Sean Combs 2010",
+              "source": "mediawiki-metadata"
+            },
+            "CommonsMetadataExtension": {
+              "value": 1.2,
+              "source": "extension",
+              "hidden": ""
+            },
+            "Categories": {
+              "value": "Sean Combs|Taken with Nikon D3000|Flickr images reviewed by trusted users|Flickr images missing SDC creator|2010 Tribute to the Troops",
+              "source": "commons-categories",
+              "hidden": ""
+            },
+            "Assessments": {
+              "value": "",
+              "source": "commons-categories",
+              "hidden": ""
+            },
+            "ImageDescription": {
+              "value": "Diddy Dirty Money.",
+              "source": "commons-desc-page"
+            },
+            "DateTimeOriginal": {
+              "value": "2010-12-11",
+              "source": "commons-desc-page"
+            },
+            "Credit": {
+              "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/photos/recklessdreamphotography/5260905853/\">Diddy 23</a>",
+              "source": "commons-desc-page"
+            },
+            "Artist": {
+              "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/photos/recklessdreamphotography/\">Reckless Dream Photography</a>",
+              "source": "commons-desc-page"
+            },
+            "LicenseShortName": {
+              "value": "CC BY 2.0",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "UsageTerms": {
+              "value": "Creative Commons Attribution 2.0",
+              "source": "commons-desc-page"
+            },
+            "AttributionRequired": {
+              "value": "true",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "LicenseUrl": {
+              "value": "https://creativecommons.org/licenses/by/2.0",
+              "source": "commons-desc-page"
+            },
+            "Copyrighted": {
+              "value": "True",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "Restrictions": {
+              "value": "",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "License": {
+              "value": "cc-by-2.0",
+              "source": "commons-templates",
+              "hidden": ""
+            }
+          }
+        }
+      ]
+    }
+  },
+  {
+    "sourceId": "wikimedia",
+    "externalId": "38827275",
+    "canonicalUrl": "https://commons.wikimedia.org/wiki/File:The_Kiss_-_Gustav_Klimt_-_Google_Cultural_Institute.jpg",
+    "title": "The Kiss - Gustav Klimt - Google Cultural Institute.jpg",
+    "authors": [
+      "Gustav Klimt"
+    ],
+    "publishedAt": null,
+    "mediaType": "image",
+    "licence": {
+      "spdx": "PD",
+      "url": null,
+      "assertedBy": "wikimedia",
+      "attribution": "Gustav Klimt — The Kiss - Gustav Klimt - Google Cultural Institute.jpg"
+    },
+    "snippet": null,
+    "thumbnailUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/40/The_Kiss_-_Gustav_Klimt_-_Google_Cultural_Institute.jpg/500px-The_Kiss_-_Gustav_Klimt_-_Google_Cultural_Institute.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "raw": {
+      "pageid": 38827275,
+      "ns": 6,
+      "title": "File:The Kiss - Gustav Klimt - Google Cultural Institute.jpg",
+      "index": 5,
+      "imagerepository": "local",
+      "imageinfo": [
+        {
+          "thumburl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/40/The_Kiss_-_Gustav_Klimt_-_Google_Cultural_Institute.jpg/500px-The_Kiss_-_Gustav_Klimt_-_Google_Cultural_Institute.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumbwidth": 400,
+          "thumbheight": 401,
+          "responsiveUrls": {
+            "2": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/40/The_Kiss_-_Gustav_Klimt_-_Google_Cultural_Institute.jpg/960px-The_Kiss_-_Gustav_Klimt_-_Google_Cultural_Institute.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+          },
+          "thumbattribs": {
+            "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/40/The_Kiss_-_Gustav_Klimt_-_Google_Cultural_Institute.jpg/500px-The_Kiss_-_Gustav_Klimt_-_Google_Cultural_Institute.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "decoding": "async",
+            "loading": "lazy",
+            "width": 400,
+            "height": 401,
+            "srcset": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/40/The_Kiss_-_Gustav_Klimt_-_Google_Cultural_Institute.jpg/960px-The_Kiss_-_Gustav_Klimt_-_Google_Cultural_Institute.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail 2x"
+          },
+          "url": "https://upload.wikimedia.org/wikipedia/commons/4/40/The_Kiss_-_Gustav_Klimt_-_Google_Cultural_Institute.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "descriptionurl": "https://commons.wikimedia.org/wiki/File:The_Kiss_-_Gustav_Klimt_-_Google_Cultural_Institute.jpg",
+          "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=38827275",
+          "extmetadata": {
+            "DateTime": {
+              "value": "2015-03-10 06:41:34",
+              "source": "mediawiki-metadata",
+              "hidden": ""
+            },
+            "ObjectName": {
+              "value": "<div class=\"fn\">\n<div style=\"font-weight:bold;display:inline-block;\">The Kiss (Der Kuß)</div></div>",
+              "source": "commons-desc-page"
+            },
+            "CommonsMetadataExtension": {
+              "value": 1.2,
+              "source": "extension",
+              "hidden": ""
+            },
+            "Categories": {
+              "value": "The Kiss (Gustav Klimt)|PD-old-100-expired|Featured pictures on Wikipedia, English|PD-Art (PD-old-100-expired)|Artworks with Wikidata item|Artworks with known accession number|Featured pictures of Vienna|Featured pictures on Wikipedia, Indonesian|Featured pictures on Wikipedia, Persian|Featured pictures on Wikipedia, Turkish|CC-PD-Mark|Artworks with accession number from Wikidata|Google Art Project works by Gustav Klimt|Featured pictures on Wikipedia, Bengali|PD-Art missing SDC copyright status|Featured pictures in the public domain|PD-old missing SDC copyright status|Featured pictures of paintings by Gustav Klimt|Artworks digital representation of 2D work|Artworks with digital representation of different depicts|Paintings uploaded by Chris Woodrich|Google Art Project works in the Österreichische Galerie Belvedere",
+              "source": "commons-categories",
+              "hidden": ""
+            },
+            "Assessments": {
+              "value": "featured",
+              "source": "commons-categories",
+              "hidden": ""
+            },
+            "Artist": {
+              "value": "<bdi><a href=\"https://en.wikipedia.org/wiki/en:Gustav_Klimt\" class=\"extiw\" title=\"w:en:Gustav Klimt\"><span title=\"Austrian symbolist painter (1862–1918)\">Gustav Klimt</span></a></bdi>",
+              "source": "commons-desc-page"
+            },
+            "ImageDescription": {
+              "value": "<div class=\"description\">\n<a href=\"https://www.wikidata.org/wiki/Q18121798\" class=\"extiw\" title=\"d:Q18121798\"><span title=\"artistic theme\">lovers' embrace</span></a> <span class=\"mw-valign-text-top noprint\" typeof=\"mw:File/Frameless\"><a href=\"https://www.wikidata.org/wiki/Q698487#P180\" title=\"Edit this at Wikidata\"><img alt=\"Edit this at Wikidata\" src=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8a/OOjs_UI_icon_edit-ltr-progressive.svg/20px-OOjs_UI_icon_edit-ltr-progressive.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail\" decoding=\"async\" loading=\"lazy\" width=\"10\" height=\"10\" class=\"mw-file-element\" data-file-width=\"20\" data-file-height=\"20\"></a></span></div>",
+              "source": "commons-desc-page"
+            },
+            "DateTimeOriginal": {
+              "value": "1907–1908",
+              "source": "commons-desc-page"
+            },
+            "Credit": {
+              "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.google.com/culturalinstitute/asset-viewer/the-kiss/HQGxUutM_F6ZGg\">Google Art Project</a>",
+              "source": "commons-desc-page"
+            },
+            "LicenseShortName": {
+              "value": "Public domain",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "UsageTerms": {
+              "value": "Public domain",
+              "source": "commons-desc-page"
+            },
+            "AttributionRequired": {
+              "value": "false",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "Copyrighted": {
+              "value": "False",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "Restrictions": {
+              "value": "",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "License": {
+              "value": "pd",
+              "source": "commons-templates",
+              "hidden": ""
+            }
+          }
+        }
+      ]
+    }
+  },
+  {
+    "sourceId": "wikimedia",
+    "externalId": "41501847",
+    "canonicalUrl": "https://commons.wikimedia.org/wiki/File:Love_padlocks_on_the_Butchers%27_Bridge_(Ljubljana).jpg",
+    "title": "Love padlocks on the Butchers' Bridge (Ljubljana).jpg",
+    "authors": [
+      "Petar Milošević"
+    ],
+    "publishedAt": null,
+    "mediaType": "image",
+    "licence": {
+      "spdx": "CC-BY-SA-4.0",
+      "url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "assertedBy": "wikimedia",
+      "attribution": "Petar Milošević — Love padlocks on the Butchers' Bridge (Ljubljana).jpg"
+    },
+    "snippet": null,
+    "thumbnailUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/32/Love_padlocks_on_the_Butchers%27_Bridge_%28Ljubljana%29.jpg/500px-Love_padlocks_on_the_Butchers%27_Bridge_%28Ljubljana%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "raw": {
+      "pageid": 41501847,
+      "ns": 6,
+      "title": "File:Love padlocks on the Butchers' Bridge (Ljubljana).jpg",
+      "index": 1,
+      "imagerepository": "local",
+      "imageinfo": [
+        {
+          "thumburl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/32/Love_padlocks_on_the_Butchers%27_Bridge_%28Ljubljana%29.jpg/500px-Love_padlocks_on_the_Butchers%27_Bridge_%28Ljubljana%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumbwidth": 400,
+          "thumbheight": 269,
+          "responsiveUrls": {
+            "2": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/32/Love_padlocks_on_the_Butchers%27_Bridge_%28Ljubljana%29.jpg/960px-Love_padlocks_on_the_Butchers%27_Bridge_%28Ljubljana%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+          },
+          "thumbattribs": {
+            "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/32/Love_padlocks_on_the_Butchers%27_Bridge_%28Ljubljana%29.jpg/500px-Love_padlocks_on_the_Butchers%27_Bridge_%28Ljubljana%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "decoding": "async",
+            "loading": "lazy",
+            "width": 400,
+            "height": 269,
+            "srcset": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/32/Love_padlocks_on_the_Butchers%27_Bridge_%28Ljubljana%29.jpg/960px-Love_padlocks_on_the_Butchers%27_Bridge_%28Ljubljana%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail 2x"
+          },
+          "url": "https://upload.wikimedia.org/wikipedia/commons/3/32/Love_padlocks_on_the_Butchers%27_Bridge_%28Ljubljana%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "descriptionurl": "https://commons.wikimedia.org/wiki/File:Love_padlocks_on_the_Butchers%27_Bridge_(Ljubljana).jpg",
+          "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=41501847",
+          "extmetadata": {
+            "DateTime": {
+              "value": "2015-07-11 12:41:35",
+              "source": "mediawiki-metadata",
+              "hidden": ""
+            },
+            "ObjectName": {
+              "value": "Love padlocks on the Butchers' Bridge (Ljubljana)",
+              "source": "mediawiki-metadata"
+            },
+            "CommonsMetadataExtension": {
+              "value": 1.2,
+              "source": "extension",
+              "hidden": ""
+            },
+            "Categories": {
+              "value": "Heart symbols|Taken with Olympus E-P5|Self-published work|Featured pictures of bridges|Images with extracted images|Featured pictures of objects|Featured photos of PetarM|Odd one out|Featured pictures on Wikipedia, Persian|Featured pictures on Wikipedia, Slovenian|Heart-shaped objects|Featured pictures on Wikipedia, Bengali|Featured pictures of Ljubljana|Love padlocks on the Butchers' Bridge|Red padlocks",
+              "source": "commons-categories",
+              "hidden": ""
+            },
+            "Assessments": {
+              "value": "quality|featured|potd",
+              "source": "commons-categories",
+              "hidden": ""
+            },
+            "ImageDescription": {
+              "value": "<a href=\"https://en.wikipedia.org/wiki/Love_padlocks\" class=\"extiw\" title=\"en:Love padlocks\">Love padlocks</a> on the Butchers' Bridge in <a href=\"https://en.wikipedia.org/wiki/Ljubljana\" class=\"extiw\" title=\"en:Ljubljana\">Ljubljana</a>, Slovenia.",
+              "source": "commons-desc-page"
+            },
+            "DateTimeOriginal": {
+              "value": "2015-07-10 01:26:26",
+              "source": "commons-desc-page"
+            },
+            "Credit": {
+              "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+              "source": "commons-desc-page"
+            },
+            "Artist": {
+              "value": "<a href=\"//commons.wikimedia.org/wiki/User:PetarM\" title=\"User:PetarM\">Petar Milošević</a>",
+              "source": "commons-desc-page"
+            },
+            "Permission": {
+              "value": "<div style=\"clear:both; border: var(--border-style-base, 1px solid #999); margin: 1em; padding: 1em; background-color: var(--background-color-progressive-subtle, #F0F8FF); color: inherit;\">\n<p><span typeof=\"mw:File\"><a href=\"//commons.wikimedia.org/wiki/File:Right-pointing_hand_in_green_octagon.svg\" class=\"mw-file-description\"><img src=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e7/Right-pointing_hand_in_green_octagon.svg/40px-Right-pointing_hand_in_green_octagon.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail\" decoding=\"async\" loading=\"lazy\" width=\"38\" height=\"38\" class=\"mw-file-element\" srcset=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e7/Right-pointing_hand_in_green_octagon.svg/120px-Right-pointing_hand_in_green_octagon.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail 2x\" data-file-width=\"64\" data-file-height=\"64\"></a></span> You can use this picture according to license. For use outside of Wikipedia I would appreciate it if you let me know by sending e-mail to <b><a rel=\"nofollow\" class=\"external text\" href=\"mailto:petarmslo@gmail.com\">petarmslo@gmail.com</a></b> <span typeof=\"mw:File\"><a href=\"mailto:petarmslo@gmail.com\" rel=\"nofollow\"><img src=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/3/36/Nuvola_apps_email.png/40px-Nuvola_apps_email.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail\" decoding=\"async\" loading=\"lazy\" width=\"24\" height=\"24\" class=\"mw-file-element\" srcset=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/3/36/Nuvola_apps_email.png/60px-Nuvola_apps_email.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail 2x\" data-file-width=\"128\" data-file-height=\"128\"></a></span>.  Thank you in advance.\n</p>\n<div align=\"right\"><i><a href=\"//commons.wikimedia.org/wiki/User:PetarM\" title=\"User:PetarM\">Petar Milošević</a> <small> (author)</small></i></div></div>",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "LicenseShortName": {
+              "value": "CC BY-SA 4.0",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "UsageTerms": {
+              "value": "Creative Commons Attribution-Share Alike 4.0",
+              "source": "commons-desc-page"
+            },
+            "AttributionRequired": {
+              "value": "true",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "LicenseUrl": {
+              "value": "https://creativecommons.org/licenses/by-sa/4.0",
+              "source": "commons-desc-page"
+            },
+            "Copyrighted": {
+              "value": "True",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "Restrictions": {
+              "value": "",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "License": {
+              "value": "cc-by-sa-4.0",
+              "source": "commons-templates",
+              "hidden": ""
+            }
+          }
+        }
+      ]
+    }
+  },
+  {
+    "sourceId": "wikimedia",
+    "externalId": "128937736",
+    "canonicalUrl": "https://commons.wikimedia.org/wiki/File:Sean_Combs_Family_Tree.png",
+    "title": "Sean Combs Family Tree.png",
+    "authors": [
+      "SeanCombsFan1"
+    ],
+    "publishedAt": null,
+    "mediaType": "image",
+    "licence": {
+      "spdx": "CC-BY-SA-4.0",
+      "url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "assertedBy": "wikimedia",
+      "attribution": "SeanCombsFan1 — Sean Combs Family Tree.png"
+    },
+    "snippet": null,
+    "thumbnailUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e5/Sean_Combs_Family_Tree.png/500px-Sean_Combs_Family_Tree.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "raw": {
+      "pageid": 128937736,
+      "ns": 6,
+      "title": "File:Sean Combs Family Tree.png",
+      "index": 7,
+      "imagerepository": "local",
+      "imageinfo": [
+        {
+          "thumburl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e5/Sean_Combs_Family_Tree.png/500px-Sean_Combs_Family_Tree.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumbwidth": 400,
+          "thumbheight": 327,
+          "responsiveUrls": {
+            "2": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e5/Sean_Combs_Family_Tree.png/960px-Sean_Combs_Family_Tree.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+          },
+          "thumbattribs": {
+            "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e5/Sean_Combs_Family_Tree.png/500px-Sean_Combs_Family_Tree.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "decoding": "async",
+            "loading": "lazy",
+            "width": 400,
+            "height": 327,
+            "srcset": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e5/Sean_Combs_Family_Tree.png/960px-Sean_Combs_Family_Tree.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail 2x"
+          },
+          "url": "https://upload.wikimedia.org/wikipedia/commons/e/e5/Sean_Combs_Family_Tree.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "descriptionurl": "https://commons.wikimedia.org/wiki/File:Sean_Combs_Family_Tree.png",
+          "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=128937736",
+          "extmetadata": {
+            "DateTime": {
+              "value": "2023-02-21 20:04:20",
+              "source": "mediawiki-metadata",
+              "hidden": ""
+            },
+            "ObjectName": {
+              "value": "Sean Combs Family Tree",
+              "source": "mediawiki-metadata"
+            },
+            "CommonsMetadataExtension": {
+              "value": 1.2,
+              "source": "extension",
+              "hidden": ""
+            },
+            "Categories": {
+              "value": "Sean Combs|Self-published work",
+              "source": "commons-categories",
+              "hidden": ""
+            },
+            "Assessments": {
+              "value": "",
+              "source": "commons-categories",
+              "hidden": ""
+            },
+            "ImageDescription": {
+              "value": "Current family tree of Sean Combs as of Jan. 2023",
+              "source": "commons-desc-page"
+            },
+            "DateTimeOriginal": {
+              "value": "2023-01-22",
+              "source": "commons-desc-page"
+            },
+            "Credit": {
+              "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+              "source": "commons-desc-page"
+            },
+            "Artist": {
+              "value": "<a href=\"//commons.wikimedia.org/w/index.php?title=User:SeanCombsFan1&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"User:SeanCombsFan1 (page does not exist)\">SeanCombsFan1</a>",
+              "source": "commons-desc-page"
+            },
+            "LicenseShortName": {
+              "value": "CC BY-SA 4.0",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "UsageTerms": {
+              "value": "Creative Commons Attribution-Share Alike 4.0",
+              "source": "commons-desc-page"
+            },
+            "AttributionRequired": {
+              "value": "true",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "LicenseUrl": {
+              "value": "https://creativecommons.org/licenses/by-sa/4.0",
+              "source": "commons-desc-page"
+            },
+            "Copyrighted": {
+              "value": "True",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "Restrictions": {
+              "value": "",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "License": {
+              "value": "cc-by-sa-4.0",
+              "source": "commons-templates",
+              "hidden": ""
+            }
+          }
+        }
+      ]
+    }
+  },
+  {
+    "sourceId": "wikimedia",
+    "externalId": "149084833",
+    "canonicalUrl": "https://commons.wikimedia.org/wiki/File:Sean_Combs_in_2023.png",
+    "title": "Sean Combs in 2023.png",
+    "authors": [
+      "HOTSPOTATL"
+    ],
+    "publishedAt": null,
+    "mediaType": "image",
+    "licence": {
+      "spdx": "CC-BY",
+      "url": "https://creativecommons.org/licenses/by/3.0",
+      "assertedBy": "wikimedia",
+      "attribution": "HOTSPOTATL — Sean Combs in 2023.png"
+    },
+    "snippet": null,
+    "thumbnailUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5f/Sean_Combs_in_2023.png/500px-Sean_Combs_in_2023.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "raw": {
+      "pageid": 149084833,
+      "ns": 6,
+      "title": "File:Sean Combs in 2023.png",
+      "index": 3,
+      "imagerepository": "local",
+      "imageinfo": [
+        {
+          "thumburl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5f/Sean_Combs_in_2023.png/500px-Sean_Combs_in_2023.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumbwidth": 400,
+          "thumbheight": 595,
+          "responsiveUrls": {
+            "2": "https://upload.wikimedia.org/wikipedia/commons/5/5f/Sean_Combs_in_2023.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled"
+          },
+          "thumbattribs": {
+            "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5f/Sean_Combs_in_2023.png/500px-Sean_Combs_in_2023.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "decoding": "async",
+            "loading": "lazy",
+            "width": 400,
+            "height": 595,
+            "srcset": "https://upload.wikimedia.org/wikipedia/commons/5/5f/Sean_Combs_in_2023.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled 2x"
+          },
+          "url": "https://upload.wikimedia.org/wikipedia/commons/5/5f/Sean_Combs_in_2023.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "descriptionurl": "https://commons.wikimedia.org/wiki/File:Sean_Combs_in_2023.png",
+          "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=149084833",
+          "extmetadata": {
+            "DateTime": {
+              "value": "2025-03-25 14:08:50",
+              "source": "mediawiki-metadata",
+              "hidden": ""
+            },
+            "ObjectName": {
+              "value": "Sean Combs in 2023",
+              "source": "mediawiki-metadata"
+            },
+            "CommonsMetadataExtension": {
+              "value": 1.2,
+              "source": "extension",
+              "hidden": ""
+            },
+            "Categories": {
+              "value": "Sean Combs|Extracted images|Still images of YouTube videos",
+              "source": "commons-categories",
+              "hidden": ""
+            },
+            "Assessments": {
+              "value": "",
+              "source": "commons-categories",
+              "hidden": ""
+            },
+            "ImageDescription": {
+              "value": "Sean Combs during an interview 2023",
+              "source": "commons-desc-page"
+            },
+            "DateTimeOriginal": {
+              "value": "2023-09-19",
+              "source": "commons-desc-page"
+            },
+            "Credit": {
+              "value": "<p><a rel=\"nofollow\" class=\"external text\" href=\"https://www.youtube.com/watch?v=5AKvCe59HnU\">Diddy Talks About The Power of Radio &amp; Pays Homage To Media Mogul Cathy Hughes</a> at 0:46 \n</p>\nView/save archived version on <a rel=\"nofollow\" class=\"external autonumber\" href=\"https://web.archive.org/web/20240605062753/https://www.youtube.com/watch?v=5AKvCe59HnU\">[1]</a>",
+              "source": "commons-desc-page"
+            },
+            "Artist": {
+              "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.youtube.com/@HOTSPOTATL\">HOTSPOTATL</a>",
+              "source": "commons-desc-page"
+            },
+            "LicenseShortName": {
+              "value": "CC BY 3.0",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "UsageTerms": {
+              "value": "Creative Commons Attribution 3.0",
+              "source": "commons-desc-page"
+            },
+            "AttributionRequired": {
+              "value": "true",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "LicenseUrl": {
+              "value": "https://creativecommons.org/licenses/by/3.0",
+              "source": "commons-desc-page"
+            },
+            "Copyrighted": {
+              "value": "True",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "Restrictions": {
+              "value": "",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "License": {
+              "value": "cc-by-3.0",
+              "source": "commons-templates",
+              "hidden": ""
+            }
+          }
+        }
+      ]
+    }
+  },
+  {
+    "sourceId": "wikimedia",
+    "externalId": "155086335",
+    "canonicalUrl": "https://commons.wikimedia.org/wiki/File:Sean_Combs_(2023).jpg",
+    "title": "Sean Combs (2023).jpg",
+    "authors": [
+      "HOTSPOTATL"
+    ],
+    "publishedAt": null,
+    "mediaType": "image",
+    "licence": {
+      "spdx": "CC-BY",
+      "url": "https://creativecommons.org/licenses/by/3.0",
+      "assertedBy": "wikimedia",
+      "attribution": "HOTSPOTATL — Sean Combs (2023).jpg"
+    },
+    "snippet": null,
+    "thumbnailUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b9/Sean_Combs_%282023%29.jpg/500px-Sean_Combs_%282023%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "raw": {
+      "pageid": 155086335,
+      "ns": 6,
+      "title": "File:Sean Combs (2023).jpg",
+      "index": 6,
+      "imagerepository": "local",
+      "imageinfo": [
+        {
+          "thumburl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b9/Sean_Combs_%282023%29.jpg/500px-Sean_Combs_%282023%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumbwidth": 400,
+          "thumbheight": 605,
+          "responsiveUrls": {
+            "2": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b9/Sean_Combs_%282023%29.jpg/960px-Sean_Combs_%282023%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+          },
+          "thumbattribs": {
+            "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b9/Sean_Combs_%282023%29.jpg/500px-Sean_Combs_%282023%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "decoding": "async",
+            "loading": "lazy",
+            "width": 400,
+            "height": 605,
+            "srcset": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b9/Sean_Combs_%282023%29.jpg/960px-Sean_Combs_%282023%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail 2x"
+          },
+          "url": "https://upload.wikimedia.org/wikipedia/commons/b/b9/Sean_Combs_%282023%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "descriptionurl": "https://commons.wikimedia.org/wiki/File:Sean_Combs_(2023).jpg",
+          "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=155086335",
+          "extmetadata": {
+            "DateTime": {
+              "value": "2024-11-11 03:49:13",
+              "source": "mediawiki-metadata",
+              "hidden": ""
+            },
+            "ObjectName": {
+              "value": "Sean Combs (2023)",
+              "source": "mediawiki-metadata"
+            },
+            "CommonsMetadataExtension": {
+              "value": 1.2,
+              "source": "extension",
+              "hidden": ""
+            },
+            "Categories": {
+              "value": "Sean Combs|Media from YouTube|Still images of YouTube videos",
+              "source": "commons-categories",
+              "hidden": ""
+            },
+            "Assessments": {
+              "value": "",
+              "source": "commons-categories",
+              "hidden": ""
+            },
+            "ImageDescription": {
+              "value": "Sean Combs during an interview 2023 talking to HOTSPOT ATL about Kathy Hughes",
+              "source": "commons-desc-page"
+            },
+            "DateTimeOriginal": {
+              "value": "2023-09-19",
+              "source": "commons-desc-page"
+            },
+            "Credit": {
+              "value": "<bdi lang=\"en\" dir=\"ltr\"><a href=\"//commons.wikimedia.org/wiki/Commons:YouTube_files\" title=\"Commons:YouTube files\">YouTube</a>: <a rel=\"nofollow\" class=\"external text\" href=\"https://www.youtube.com/watch?v=5AKvCe59HnU\"><bdi lang=\"\">https://www.youtube.com/watch?v=5AKvCe59HnU</bdi></a> – View/save archived versions on <a rel=\"nofollow\" class=\"external text\" href=\"https://web.archive.org/web/*/https://www.youtube.com/watch?v=5AKvCe59HnU\">archive.org</a></bdi>",
+              "source": "commons-desc-page"
+            },
+            "Artist": {
+              "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.youtube.com/@HOTSPOTATL\">HOTSPOTATL</a>",
+              "source": "commons-desc-page"
+            },
+            "LicenseShortName": {
+              "value": "CC BY 3.0",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "UsageTerms": {
+              "value": "Creative Commons Attribution 3.0",
+              "source": "commons-desc-page"
+            },
+            "AttributionRequired": {
+              "value": "true",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "LicenseUrl": {
+              "value": "https://creativecommons.org/licenses/by/3.0",
+              "source": "commons-desc-page"
+            },
+            "Copyrighted": {
+              "value": "True",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "Restrictions": {
+              "value": "",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "License": {
+              "value": "cc-by-3.0",
+              "source": "commons-templates",
+              "hidden": ""
+            }
+          }
+        }
+      ]
+    }
+  },
+  {
+    "sourceId": "wikimedia",
+    "externalId": "156726853",
+    "canonicalUrl": "https://commons.wikimedia.org/wiki/File:Sean_Combs_2008.jpg",
+    "title": "Sean Combs 2008.jpg",
+    "authors": [
+      "Leo Brunvoll"
+    ],
+    "publishedAt": null,
+    "mediaType": "image",
+    "licence": {
+      "spdx": "CC-BY-SA",
+      "url": "https://creativecommons.org/licenses/by-sa/2.0",
+      "assertedBy": "wikimedia",
+      "attribution": "Leo Brunvoll — Sean Combs 2008.jpg"
+    },
+    "snippet": null,
+    "thumbnailUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/33/Sean_Combs_2008.jpg/500px-Sean_Combs_2008.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "raw": {
+      "pageid": 156726853,
+      "ns": 6,
+      "title": "File:Sean Combs 2008.jpg",
+      "index": 9,
+      "imagerepository": "local",
+      "imageinfo": [
+        {
+          "thumburl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/33/Sean_Combs_2008.jpg/500px-Sean_Combs_2008.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumbwidth": 400,
+          "thumbheight": 300,
+          "responsiveUrls": {
+            "2": "https://upload.wikimedia.org/wikipedia/commons/3/33/Sean_Combs_2008.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled"
+          },
+          "thumbattribs": {
+            "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/33/Sean_Combs_2008.jpg/500px-Sean_Combs_2008.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "decoding": "async",
+            "loading": "lazy",
+            "width": 400,
+            "height": 300,
+            "srcset": "https://upload.wikimedia.org/wikipedia/commons/3/33/Sean_Combs_2008.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled 2x"
+          },
+          "url": "https://upload.wikimedia.org/wikipedia/commons/3/33/Sean_Combs_2008.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "descriptionurl": "https://commons.wikimedia.org/wiki/File:Sean_Combs_2008.jpg",
+          "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=156726853",
+          "extmetadata": {
+            "DateTime": {
+              "value": "2024-12-16 05:51:56",
+              "source": "mediawiki-metadata",
+              "hidden": ""
+            },
+            "ObjectName": {
+              "value": "Sean Combs 2008",
+              "source": "mediawiki-metadata"
+            },
+            "CommonsMetadataExtension": {
+              "value": 1.2,
+              "source": "extension",
+              "hidden": ""
+            },
+            "Categories": {
+              "value": "Sean Combs|Flickr images reviewed by FlickreviewR 2|Flickr images missing SDC published in",
+              "source": "commons-categories",
+              "hidden": ""
+            },
+            "Assessments": {
+              "value": "",
+              "source": "commons-categories",
+              "hidden": ""
+            },
+            "ImageDescription": {
+              "value": "Sean Combs in 2008",
+              "source": "commons-desc-page"
+            },
+            "DateTimeOriginal": {
+              "value": "2008-05-13 10:08:19",
+              "source": "commons-desc-page"
+            },
+            "Credit": {
+              "value": "<a rel=\"nofollow\" class=\"external free\" href=\"https://www.flickr.com/photos/leoamadeus/2490158068/\">https://www.flickr.com/photos/leoamadeus/2490158068/</a>",
+              "source": "commons-desc-page"
+            },
+            "Artist": {
+              "value": "Leo Brunvoll",
+              "source": "commons-desc-page"
+            },
+            "LicenseShortName": {
+              "value": "CC BY-SA 2.0",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "UsageTerms": {
+              "value": "Creative Commons Attribution-Share Alike 2.0",
+              "source": "commons-desc-page"
+            },
+            "AttributionRequired": {
+              "value": "true",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "LicenseUrl": {
+              "value": "https://creativecommons.org/licenses/by-sa/2.0",
+              "source": "commons-desc-page"
+            },
+            "Copyrighted": {
+              "value": "True",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "Restrictions": {
+              "value": "",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "License": {
+              "value": "cc-by-sa-2.0",
+              "source": "commons-templates",
+              "hidden": ""
+            }
+          }
+        }
+      ]
+    }
+  },
+  {
+    "sourceId": "wikimedia",
+    "externalId": "156726855",
+    "canonicalUrl": "https://commons.wikimedia.org/wiki/File:Sean_Combs_in_2010.jpg",
+    "title": "Sean Combs in 2010.jpg",
+    "authors": [
+      "John Seb Barber"
+    ],
+    "publishedAt": null,
+    "mediaType": "image",
+    "licence": {
+      "spdx": "CC-BY",
+      "url": "https://creativecommons.org/licenses/by/2.0",
+      "assertedBy": "wikimedia",
+      "attribution": "John Seb Barber — Sean Combs in 2010.jpg"
+    },
+    "snippet": null,
+    "thumbnailUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d0/Sean_Combs_in_2010.jpg/500px-Sean_Combs_in_2010.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "raw": {
+      "pageid": 156726855,
+      "ns": 6,
+      "title": "File:Sean Combs in 2010.jpg",
+      "index": 10,
+      "imagerepository": "local",
+      "imageinfo": [
+        {
+          "thumburl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d0/Sean_Combs_in_2010.jpg/500px-Sean_Combs_in_2010.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumbwidth": 400,
+          "thumbheight": 533,
+          "responsiveUrls": {
+            "2": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d0/Sean_Combs_in_2010.jpg/960px-Sean_Combs_in_2010.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+          },
+          "thumbattribs": {
+            "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d0/Sean_Combs_in_2010.jpg/500px-Sean_Combs_in_2010.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "decoding": "async",
+            "loading": "lazy",
+            "width": 400,
+            "height": 533,
+            "srcset": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d0/Sean_Combs_in_2010.jpg/960px-Sean_Combs_in_2010.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail 2x"
+          },
+          "url": "https://upload.wikimedia.org/wikipedia/commons/d/d0/Sean_Combs_in_2010.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "descriptionurl": "https://commons.wikimedia.org/wiki/File:Sean_Combs_in_2010.jpg",
+          "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=156726855",
+          "extmetadata": {
+            "DateTime": {
+              "value": "2024-12-16 05:51:56",
+              "source": "mediawiki-metadata",
+              "hidden": ""
+            },
+            "ObjectName": {
+              "value": "Sean Combs in 2010",
+              "source": "mediawiki-metadata"
+            },
+            "CommonsMetadataExtension": {
+              "value": 1.2,
+              "source": "extension",
+              "hidden": ""
+            },
+            "Categories": {
+              "value": "Sean Combs|Files with coordinates missing SDC location of creation|Flickr images reviewed by FlickreviewR 2|Flickr images missing SDC published in",
+              "source": "commons-categories",
+              "hidden": ""
+            },
+            "Assessments": {
+              "value": "",
+              "source": "commons-categories",
+              "hidden": ""
+            },
+            "GPSLatitude": {
+              "value": "40.756290",
+              "source": "commons-desc-page"
+            },
+            "GPSLongitude": {
+              "value": "-73.988049",
+              "source": "commons-desc-page"
+            },
+            "GPSMapDatum": {
+              "value": "WGS-84",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "ImageDescription": {
+              "value": "Sean Combs in 2010",
+              "source": "commons-desc-page"
+            },
+            "DateTimeOriginal": {
+              "value": "2010-02-23 13:42:30",
+              "source": "commons-desc-page"
+            },
+            "Credit": {
+              "value": "<a rel=\"nofollow\" class=\"external free\" href=\"https://www.flickr.com/photos/johnseb/4455286950/\">https://www.flickr.com/photos/johnseb/4455286950/</a>",
+              "source": "commons-desc-page"
+            },
+            "Artist": {
+              "value": "John Seb Barber",
+              "source": "commons-desc-page"
+            },
+            "LicenseShortName": {
+              "value": "CC BY 2.0",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "UsageTerms": {
+              "value": "Creative Commons Attribution 2.0",
+              "source": "commons-desc-page"
+            },
+            "AttributionRequired": {
+              "value": "true",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "LicenseUrl": {
+              "value": "https://creativecommons.org/licenses/by/2.0",
+              "source": "commons-desc-page"
+            },
+            "Copyrighted": {
+              "value": "True",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "Restrictions": {
+              "value": "",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "License": {
+              "value": "cc-by-2.0",
+              "source": "commons-templates",
+              "hidden": ""
+            }
+          }
+        }
+      ]
+    }
+  },
+  {
+    "sourceId": "wikimedia",
+    "externalId": "158594667",
+    "canonicalUrl": "https://commons.wikimedia.org/wiki/File:Sean_Combs_Cannes_2012.jpg",
+    "title": "Sean Combs Cannes 2012.jpg",
+    "authors": [
+      "Nicolas Richoffer"
+    ],
+    "publishedAt": null,
+    "mediaType": "image",
+    "licence": {
+      "spdx": "CC-BY-SA-4.0",
+      "url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "assertedBy": "wikimedia",
+      "attribution": "Nicolas Richoffer — Sean Combs Cannes 2012.jpg"
+    },
+    "snippet": null,
+    "thumbnailUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/ff/Sean_Combs_Cannes_2012.jpg/500px-Sean_Combs_Cannes_2012.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "raw": {
+      "pageid": 158594667,
+      "ns": 6,
+      "title": "File:Sean Combs Cannes 2012.jpg",
+      "index": 8,
+      "imagerepository": "local",
+      "imageinfo": [
+        {
+          "thumburl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/ff/Sean_Combs_Cannes_2012.jpg/500px-Sean_Combs_Cannes_2012.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumbwidth": 400,
+          "thumbheight": 255,
+          "responsiveUrls": {
+            "2": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/ff/Sean_Combs_Cannes_2012.jpg/960px-Sean_Combs_Cannes_2012.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+          },
+          "thumbattribs": {
+            "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/ff/Sean_Combs_Cannes_2012.jpg/500px-Sean_Combs_Cannes_2012.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "decoding": "async",
+            "loading": "lazy",
+            "width": 400,
+            "height": 255,
+            "srcset": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/ff/Sean_Combs_Cannes_2012.jpg/960px-Sean_Combs_Cannes_2012.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail 2x"
+          },
+          "url": "https://upload.wikimedia.org/wikipedia/commons/f/ff/Sean_Combs_Cannes_2012.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "descriptionurl": "https://commons.wikimedia.org/wiki/File:Sean_Combs_Cannes_2012.jpg",
+          "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=158594667",
+          "extmetadata": {
+            "DateTime": {
+              "value": "2025-01-26 23:01:31",
+              "source": "mediawiki-metadata",
+              "hidden": ""
+            },
+            "ObjectName": {
+              "value": "Sean Combs Cannes 2012",
+              "source": "mediawiki-metadata"
+            },
+            "CommonsMetadataExtension": {
+              "value": 1.2,
+              "source": "extension",
+              "hidden": ""
+            },
+            "Categories": {
+              "value": "Sean Combs|2012 Cannes Film Festival|Self-published work|Images with extracted images",
+              "source": "commons-categories",
+              "hidden": ""
+            },
+            "Assessments": {
+              "value": "",
+              "source": "commons-categories",
+              "hidden": ""
+            },
+            "ImageDescription": {
+              "value": "Sean Combs sur le tapis rouge du Festival de Cannes, le 19 mai 2012.",
+              "source": "commons-desc-page"
+            },
+            "DateTimeOriginal": {
+              "value": "2012-05-19 18:47:35",
+              "source": "commons-desc-page"
+            },
+            "Credit": {
+              "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+              "source": "commons-desc-page"
+            },
+            "Artist": {
+              "value": "<a href=\"//commons.wikimedia.org/wiki/User:Nicolas_Richoffer\" title=\"User:Nicolas Richoffer\">Nicolas Richoffer</a>",
+              "source": "commons-desc-page"
+            },
+            "LicenseShortName": {
+              "value": "CC BY-SA 4.0",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "UsageTerms": {
+              "value": "Creative Commons Attribution-Share Alike 4.0",
+              "source": "commons-desc-page"
+            },
+            "AttributionRequired": {
+              "value": "true",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "LicenseUrl": {
+              "value": "https://creativecommons.org/licenses/by-sa/4.0",
+              "source": "commons-desc-page"
+            },
+            "Copyrighted": {
+              "value": "True",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "Restrictions": {
+              "value": "",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "License": {
+              "value": "cc-by-sa-4.0",
+              "source": "commons-templates",
+              "hidden": ""
+            }
+          }
+        }
+      ]
+    }
+  }
+]

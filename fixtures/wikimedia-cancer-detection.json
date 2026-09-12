@@ -1,0 +1,1199 @@
+[
+  {
+    "sourceId": "wikimedia",
+    "externalId": "15703636",
+    "canonicalUrl": "https://commons.wikimedia.org/wiki/File:Lead_time_bias.svg",
+    "title": "Lead time bias.svg",
+    "authors": [
+      "Mcstrother"
+    ],
+    "publishedAt": null,
+    "mediaType": "image",
+    "licence": {
+      "spdx": "CC-BY",
+      "url": "https://creativecommons.org/licenses/by/3.0",
+      "assertedBy": "wikimedia",
+      "attribution": "Mcstrother — Lead time bias.svg"
+    },
+    "snippet": null,
+    "thumbnailUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/02/Lead_time_bias.svg/500px-Lead_time_bias.svg.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "raw": {
+      "pageid": 15703636,
+      "ns": 6,
+      "title": "File:Lead time bias.svg",
+      "index": 4,
+      "imagerepository": "local",
+      "imageinfo": [
+        {
+          "thumburl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/02/Lead_time_bias.svg/500px-Lead_time_bias.svg.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumbwidth": 400,
+          "thumbheight": 200,
+          "responsiveUrls": {
+            "2": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/02/Lead_time_bias.svg/960px-Lead_time_bias.svg.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+          },
+          "thumbattribs": {
+            "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/02/Lead_time_bias.svg/500px-Lead_time_bias.svg.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "decoding": "async",
+            "loading": "lazy",
+            "width": 400,
+            "height": 200,
+            "srcset": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/02/Lead_time_bias.svg/960px-Lead_time_bias.svg.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail 2x"
+          },
+          "url": "https://upload.wikimedia.org/wikipedia/commons/0/02/Lead_time_bias.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "descriptionurl": "https://commons.wikimedia.org/wiki/File:Lead_time_bias.svg",
+          "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=15703636",
+          "extmetadata": {
+            "DateTime": {
+              "value": "2023-08-22 22:32:08",
+              "source": "mediawiki-metadata",
+              "hidden": ""
+            },
+            "ObjectName": {
+              "value": "Lead time bias",
+              "source": "mediawiki-metadata"
+            },
+            "CommonsMetadataExtension": {
+              "value": 1.2,
+              "source": "extension",
+              "hidden": ""
+            },
+            "Categories": {
+              "value": "Medical research|Cancer screening|Self-published work|Subfields of statistics",
+              "source": "commons-categories",
+              "hidden": ""
+            },
+            "Assessments": {
+              "value": "",
+              "source": "commons-categories",
+              "hidden": ""
+            },
+            "ImageDescription": {
+              "value": "Illustration of <a href=\"https://en.wikipedia.org/wiki/Lead_time_bias\" class=\"extiw\" title=\"en:Lead time bias\">en:Lead time bias</a>, in which screening/testing for a disease increases the perceived survival time of a patient without changing the course of the disease.",
+              "source": "commons-desc-page"
+            },
+            "DateTimeOriginal": {
+              "value": "2011-07-04",
+              "source": "commons-desc-page"
+            },
+            "Credit": {
+              "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+              "source": "commons-desc-page"
+            },
+            "Artist": {
+              "value": "<a href=\"//commons.wikimedia.org/wiki/User:Mcstrother\" title=\"User:Mcstrother\">Mcstrother</a>",
+              "source": "commons-desc-page"
+            },
+            "LicenseShortName": {
+              "value": "CC BY 3.0",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "UsageTerms": {
+              "value": "Creative Commons Attribution 3.0",
+              "source": "commons-desc-page"
+            },
+            "AttributionRequired": {
+              "value": "true",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "LicenseUrl": {
+              "value": "https://creativecommons.org/licenses/by/3.0",
+              "source": "commons-desc-page"
+            },
+            "Copyrighted": {
+              "value": "True",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "Restrictions": {
+              "value": "",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "License": {
+              "value": "cc-by-3.0",
+              "source": "commons-templates",
+              "hidden": ""
+            }
+          }
+        }
+      ]
+    }
+  },
+  {
+    "sourceId": "wikimedia",
+    "externalId": "15735817",
+    "canonicalUrl": "https://commons.wikimedia.org/wiki/File:Breast_and_Cervical_Cancer_Screening_Patients.jpg",
+    "title": "Breast and Cervical Cancer Screening Patients.jpg",
+    "authors": [
+      "Springluver"
+    ],
+    "publishedAt": null,
+    "mediaType": "image",
+    "licence": {
+      "spdx": "CC-BY-SA",
+      "url": "https://creativecommons.org/licenses/by-sa/3.0",
+      "assertedBy": "wikimedia",
+      "attribution": "Springluver — Breast and Cervical Cancer Screening Patients.jpg"
+    },
+    "snippet": null,
+    "thumbnailUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a9/Breast_and_Cervical_Cancer_Screening_Patients.jpg/500px-Breast_and_Cervical_Cancer_Screening_Patients.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "raw": {
+      "pageid": 15735817,
+      "ns": 6,
+      "title": "File:Breast and Cervical Cancer Screening Patients.jpg",
+      "index": 2,
+      "imagerepository": "local",
+      "imageinfo": [
+        {
+          "thumburl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a9/Breast_and_Cervical_Cancer_Screening_Patients.jpg/500px-Breast_and_Cervical_Cancer_Screening_Patients.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumbwidth": 400,
+          "thumbheight": 300,
+          "responsiveUrls": {
+            "2": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a9/Breast_and_Cervical_Cancer_Screening_Patients.jpg/960px-Breast_and_Cervical_Cancer_Screening_Patients.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+          },
+          "thumbattribs": {
+            "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a9/Breast_and_Cervical_Cancer_Screening_Patients.jpg/500px-Breast_and_Cervical_Cancer_Screening_Patients.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "decoding": "async",
+            "loading": "lazy",
+            "width": 400,
+            "height": 300,
+            "srcset": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a9/Breast_and_Cervical_Cancer_Screening_Patients.jpg/960px-Breast_and_Cervical_Cancer_Screening_Patients.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail 2x"
+          },
+          "url": "https://upload.wikimedia.org/wikipedia/commons/a/a9/Breast_and_Cervical_Cancer_Screening_Patients.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "descriptionurl": "https://commons.wikimedia.org/wiki/File:Breast_and_Cervical_Cancer_Screening_Patients.jpg",
+          "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=15735817",
+          "extmetadata": {
+            "DateTime": {
+              "value": "2011-07-08 07:17:03",
+              "source": "mediawiki-metadata",
+              "hidden": ""
+            },
+            "ObjectName": {
+              "value": "Breast and Cervical Cancer Screening Patients",
+              "source": "mediawiki-metadata"
+            },
+            "CommonsMetadataExtension": {
+              "value": 1.2,
+              "source": "extension",
+              "hidden": ""
+            },
+            "Categories": {
+              "value": "Taken with Kodak EasyShare DX4530|Cancer screening|Self-published work",
+              "source": "commons-categories",
+              "hidden": ""
+            },
+            "Assessments": {
+              "value": "",
+              "source": "commons-categories",
+              "hidden": ""
+            },
+            "ImageDescription": {
+              "value": "Breast and Cervical Cancer Screening Patients",
+              "source": "commons-desc-page"
+            },
+            "DateTimeOriginal": {
+              "value": "2004-11-11",
+              "source": "commons-desc-page"
+            },
+            "Credit": {
+              "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+              "source": "commons-desc-page"
+            },
+            "Artist": {
+              "value": "<a href=\"//commons.wikimedia.org/w/index.php?title=User:Springluver&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"User:Springluver (page does not exist)\">Springluver</a>",
+              "source": "commons-desc-page"
+            },
+            "LicenseShortName": {
+              "value": "CC BY-SA 3.0",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "UsageTerms": {
+              "value": "Creative Commons Attribution-Share Alike 3.0",
+              "source": "commons-desc-page"
+            },
+            "AttributionRequired": {
+              "value": "true",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "LicenseUrl": {
+              "value": "https://creativecommons.org/licenses/by-sa/3.0",
+              "source": "commons-desc-page"
+            },
+            "Copyrighted": {
+              "value": "True",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "Restrictions": {
+              "value": "",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "License": {
+              "value": "cc-by-sa-3.0",
+              "source": "commons-templates",
+              "hidden": ""
+            }
+          }
+        }
+      ]
+    }
+  },
+  {
+    "sourceId": "wikimedia",
+    "externalId": "20806784",
+    "canonicalUrl": "https://commons.wikimedia.org/wiki/File:Colorectal_Cancer_Screening_in_the_US_2008.png",
+    "title": "Colorectal Cancer Screening in the US 2008.png",
+    "authors": [
+      "CDC"
+    ],
+    "publishedAt": null,
+    "mediaType": "image",
+    "licence": {
+      "spdx": "PD",
+      "url": null,
+      "assertedBy": "wikimedia",
+      "attribution": "CDC — Colorectal Cancer Screening in the US 2008.png"
+    },
+    "snippet": null,
+    "thumbnailUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e8/Colorectal_Cancer_Screening_in_the_US_2008.png/500px-Colorectal_Cancer_Screening_in_the_US_2008.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "raw": {
+      "pageid": 20806784,
+      "ns": 6,
+      "title": "File:Colorectal Cancer Screening in the US 2008.png",
+      "index": 3,
+      "imagerepository": "local",
+      "imageinfo": [
+        {
+          "thumburl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e8/Colorectal_Cancer_Screening_in_the_US_2008.png/500px-Colorectal_Cancer_Screening_in_the_US_2008.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumbwidth": 400,
+          "thumbheight": 215,
+          "responsiveUrls": {
+            "2": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e8/Colorectal_Cancer_Screening_in_the_US_2008.png/960px-Colorectal_Cancer_Screening_in_the_US_2008.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+          },
+          "thumbattribs": {
+            "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e8/Colorectal_Cancer_Screening_in_the_US_2008.png/500px-Colorectal_Cancer_Screening_in_the_US_2008.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "decoding": "async",
+            "loading": "lazy",
+            "width": 400,
+            "height": 215,
+            "srcset": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e8/Colorectal_Cancer_Screening_in_the_US_2008.png/960px-Colorectal_Cancer_Screening_in_the_US_2008.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail 2x"
+          },
+          "url": "https://upload.wikimedia.org/wikipedia/commons/e/e8/Colorectal_Cancer_Screening_in_the_US_2008.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "descriptionurl": "https://commons.wikimedia.org/wiki/File:Colorectal_Cancer_Screening_in_the_US_2008.png",
+          "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=20806784",
+          "extmetadata": {
+            "DateTime": {
+              "value": "2012-08-24 01:35:15",
+              "source": "mediawiki-metadata",
+              "hidden": ""
+            },
+            "ObjectName": {
+              "value": "Colorectal Cancer Screening in the US 2008",
+              "source": "mediawiki-metadata"
+            },
+            "CommonsMetadataExtension": {
+              "value": 1.2,
+              "source": "extension",
+              "hidden": ""
+            },
+            "Categories": {
+              "value": "PD US HHS CDC|Derivative versions|CDC Vital Signs derivatives|Screening for colorectal cancer",
+              "source": "commons-categories",
+              "hidden": ""
+            },
+            "Assessments": {
+              "value": "",
+              "source": "commons-categories",
+              "hidden": ""
+            },
+            "ImageDescription": {
+              "value": "Colorectal Cancer Screening in the US 2008",
+              "source": "commons-desc-page"
+            },
+            "DateTimeOriginal": {
+              "value": "2012-08-23",
+              "source": "commons-desc-page"
+            },
+            "Credit": {
+              "value": "This file was derived from:  <a href=\"//commons.wikimedia.org/wiki/File:Cancer_Screening-CDC_Vital_Signs-July_2010.pdf\" title=\"File:Cancer Screening-CDC Vital Signs-July 2010.pdf\">Cancer Screening-CDC Vital Signs-July 2010.pdf</a><br>",
+              "source": "commons-desc-page"
+            },
+            "Artist": {
+              "value": "CDC",
+              "source": "commons-desc-page"
+            },
+            "LicenseShortName": {
+              "value": "Public domain",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "UsageTerms": {
+              "value": "Public domain",
+              "source": "commons-desc-page"
+            },
+            "AttributionRequired": {
+              "value": "false",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "Copyrighted": {
+              "value": "False",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "Restrictions": {
+              "value": "",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "License": {
+              "value": "pd",
+              "source": "commons-templates",
+              "hidden": ""
+            }
+          }
+        }
+      ]
+    }
+  },
+  {
+    "sourceId": "wikimedia",
+    "externalId": "22729212",
+    "canonicalUrl": "https://commons.wikimedia.org/wiki/File:An-EMT%E2%80%93Driven-Alternative-Splicing-Program-Occurs-in-Human-Breast-Cancer-and-Modulates-Cellular-pgen.1002218.s019.ogv",
+    "title": "An-EMT–Driven-Alternative-Splicing-Program-Occurs-in-Human-Breast-Cancer-and-Modulates-Cellular-pgen.1002218.s019.ogv",
+    "authors": [
+      "Shapiro I, Cheng A, Flytzanis N, Balsamo M, Condeelis J, Oktay M, Burge C, Gertler F"
+    ],
+    "publishedAt": null,
+    "mediaType": "image",
+    "licence": {
+      "spdx": "CC-BY",
+      "url": "https://creativecommons.org/licenses/by/2.5",
+      "assertedBy": "wikimedia",
+      "attribution": "Shapiro I, Cheng A, Flytzanis N, Balsamo M, Condeelis J, Oktay M, Burge C, Gertler F — An-EMT–Driven-Alternative-Splicing-Program-Occurs-in-Human-Breast-Cancer-and-Modulates-Cellular-pgen.1002218.s019.ogv"
+    },
+    "snippet": null,
+    "thumbnailUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a7/An-EMT%E2%80%93Driven-Alternative-Splicing-Program-Occurs-in-Human-Breast-Cancer-and-Modulates-Cellular-pgen.1002218.s019.ogv/500px--An-EMT%E2%80%93Driven-Alternative-Splicing-Program-Occurs-in-Human-Breast-Cancer-and-Modulates-Cellular-pgen.1002218.s019.ogv.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo",
+    "raw": {
+      "pageid": 22729212,
+      "ns": 6,
+      "title": "File:An-EMT–Driven-Alternative-Splicing-Program-Occurs-in-Human-Breast-Cancer-and-Modulates-Cellular-pgen.1002218.s019.ogv",
+      "index": 8,
+      "imagerepository": "local",
+      "imageinfo": [
+        {
+          "thumburl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a7/An-EMT%E2%80%93Driven-Alternative-Splicing-Program-Occurs-in-Human-Breast-Cancer-and-Modulates-Cellular-pgen.1002218.s019.ogv/500px--An-EMT%E2%80%93Driven-Alternative-Splicing-Program-Occurs-in-Human-Breast-Cancer-and-Modulates-Cellular-pgen.1002218.s019.ogv.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo",
+          "thumbwidth": 400,
+          "thumbheight": 295,
+          "responsiveUrls": {
+            "2": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a7/An-EMT%E2%80%93Driven-Alternative-Splicing-Program-Occurs-in-Human-Breast-Cancer-and-Modulates-Cellular-pgen.1002218.s019.ogv/960px--An-EMT%E2%80%93Driven-Alternative-Splicing-Program-Occurs-in-Human-Breast-Cancer-and-Modulates-Cellular-pgen.1002218.s019.ogv.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo"
+          },
+          "thumbattribs": [],
+          "url": "https://upload.wikimedia.org/wikipedia/commons/a/a7/An-EMT%E2%80%93Driven-Alternative-Splicing-Program-Occurs-in-Human-Breast-Cancer-and-Modulates-Cellular-pgen.1002218.s019.ogv?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "descriptionurl": "https://commons.wikimedia.org/wiki/File:An-EMT%E2%80%93Driven-Alternative-Splicing-Program-Occurs-in-Human-Breast-Cancer-and-Modulates-Cellular-pgen.1002218.s019.ogv",
+          "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=22729212",
+          "extmetadata": {
+            "DateTime": {
+              "value": "2012-11-16 21:47:32",
+              "source": "mediawiki-metadata",
+              "hidden": ""
+            },
+            "ObjectName": {
+              "value": "An-EMT–Driven-Alternative-Splicing-Program-Occurs-in-Human-Breast-Cancer-and-Modulates-Cellular-pgen.1002218.s019",
+              "source": "mediawiki-metadata"
+            },
+            "CommonsMetadataExtension": {
+              "value": 1.2,
+              "source": "extension",
+              "hidden": ""
+            },
+            "Categories": {
+              "value": "Alternative splicing|RNA-binding proteins|Repressor proteins|Media from PLOS Genetics|Mesenchymal stem cells|Cancer screening|Cell movement|Gene expression|RNA processing|Molecular cell biology|Videos of breast cancer|Uploaded with Open Access Media Importer|Ogv videos|Uploaded with Open Access Media Importer and needing category review|Basic cancer research|Videos from open-access scholarly articles|Genome sequencing|Tumor cell line|Epithelial-mesenchymal transitions videos|Video display resolution 1208 x 892|Early detection",
+              "source": "commons-categories",
+              "hidden": ""
+            },
+            "Assessments": {
+              "value": "",
+              "source": "commons-categories",
+              "hidden": ""
+            },
+            "ImageDescription": {
+              "value": "Monolayer migration of HMLE/pBP- Twist cells is cell-contact inhibited. HMLE/pBP-Twist cells were labeled with a cellular dye CMFDA and seeded in a confluent monolayer mixed 1∶20 with unlabelled cells. Cells were imaged for 12 hours with 10 min intervals. Cell tracks were generated using semi-automated cell tracking and represent single cell tracks over 12 hours. Centroids of fluorescent cells are marked by grey circles.",
+              "source": "commons-desc-page"
+            },
+            "DateTimeOriginal": {
+              "value": "2011-08",
+              "source": "commons-desc-page"
+            },
+            "Credit": {
+              "value": "Video S2 from <cite style=\"font-style:normal\">Shapiro I, Cheng A, Flytzanis N, Balsamo M, Condeelis J, Oktay M, Burge C, Gertler F (2011). \"<a rel=\"nofollow\" class=\"external text\" href=\"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3158048\">An EMT–Driven Alternative Splicing Program Occurs in Human Breast Cancer and Modulates Cellular Phenotype</a>\". <i>PLOS Genetics</i>. <span lang=\"en\" dir=\"ltr\"><a href=\"https://en.wikipedia.org/wiki/Digital_object_identifier\" class=\"extiw\" title=\"en:Digital object identifier\">DOI</a></span>:<a rel=\"nofollow\" class=\"external text\" href=\"https://doi.org/10.1371/journal.pgen.1002218\">10.1371/journal.pgen.1002218</a>. <span lang=\"en\" dir=\"ltr\"><a href=\"https://en.wikipedia.org/wiki/PubMed\" class=\"extiw\" title=\"en:PubMed\"><span lang=\"en\" dir=\"ltr\">PMID</span></a></span> <a rel=\"nofollow\" class=\"external text\" href=\"https://www.ncbi.nlm.nih.gov/pubmed/21876675\">21876675</a>. <span lang=\"en\" dir=\"ltr\"><a href=\"https://en.wikipedia.org/wiki/PubMed_Central\" class=\"extiw\" title=\"en:PubMed Central\"><span lang=\"en\" dir=\"ltr\">PMC</span></a></span>: <a rel=\"nofollow\" class=\"external text\" href=\"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3158048\">3158048</a>.</cite>",
+              "source": "commons-desc-page"
+            },
+            "Artist": {
+              "value": "Shapiro I, Cheng A, Flytzanis N, Balsamo M, Condeelis J, Oktay M, Burge C, Gertler F",
+              "source": "commons-desc-page"
+            },
+            "Permission": {
+              "value": "<i>This file was published in a <b><a href=\"https://en.wikipedia.org/wiki/Public_Library_of_Science\" class=\"extiw\" title=\"en:Public Library of Science\">Public Library of Science</a></b> journal. <a rel=\"nofollow\" class=\"external text\" href=\"http://www.plos.org\">Their website</a> <a rel=\"nofollow\" class=\"external text\" href=\"https://www.plos.org/terms-of-use\">states</a> that the content of all PLOS journals is published under the Creative Commons Attribution 4.0 license (or its previous version depending on the publication date), unless indicated otherwise.</i><br>",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "LicenseShortName": {
+              "value": "CC BY 2.5",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "UsageTerms": {
+              "value": "Creative Commons Attribution 2.5",
+              "source": "commons-desc-page"
+            },
+            "AttributionRequired": {
+              "value": "true",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "LicenseUrl": {
+              "value": "https://creativecommons.org/licenses/by/2.5",
+              "source": "commons-desc-page"
+            },
+            "Copyrighted": {
+              "value": "True",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "Restrictions": {
+              "value": "",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "License": {
+              "value": "cc-by-2.5",
+              "source": "commons-templates",
+              "hidden": ""
+            }
+          }
+        }
+      ]
+    }
+  },
+  {
+    "sourceId": "wikimedia",
+    "externalId": "22729218",
+    "canonicalUrl": "https://commons.wikimedia.org/wiki/File:An-EMT%E2%80%93Driven-Alternative-Splicing-Program-Occurs-in-Human-Breast-Cancer-and-Modulates-Cellular-pgen.1002218.s020.ogv",
+    "title": "An-EMT–Driven-Alternative-Splicing-Program-Occurs-in-Human-Breast-Cancer-and-Modulates-Cellular-pgen.1002218.s020.ogv",
+    "authors": [
+      "Shapiro I, Cheng A, Flytzanis N, Balsamo M, Condeelis J, Oktay M, Burge C, Gertler F"
+    ],
+    "publishedAt": null,
+    "mediaType": "image",
+    "licence": {
+      "spdx": "CC-BY",
+      "url": "https://creativecommons.org/licenses/by/2.5",
+      "assertedBy": "wikimedia",
+      "attribution": "Shapiro I, Cheng A, Flytzanis N, Balsamo M, Condeelis J, Oktay M, Burge C, Gertler F — An-EMT–Driven-Alternative-Splicing-Program-Occurs-in-Human-Breast-Cancer-and-Modulates-Cellular-pgen.1002218.s020.ogv"
+    },
+    "snippet": null,
+    "thumbnailUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ac/An-EMT%E2%80%93Driven-Alternative-Splicing-Program-Occurs-in-Human-Breast-Cancer-and-Modulates-Cellular-pgen.1002218.s020.ogv/500px--An-EMT%E2%80%93Driven-Alternative-Splicing-Program-Occurs-in-Human-Breast-Cancer-and-Modulates-Cellular-pgen.1002218.s020.ogv.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo",
+    "raw": {
+      "pageid": 22729218,
+      "ns": 6,
+      "title": "File:An-EMT–Driven-Alternative-Splicing-Program-Occurs-in-Human-Breast-Cancer-and-Modulates-Cellular-pgen.1002218.s020.ogv",
+      "index": 9,
+      "imagerepository": "local",
+      "imageinfo": [
+        {
+          "thumburl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ac/An-EMT%E2%80%93Driven-Alternative-Splicing-Program-Occurs-in-Human-Breast-Cancer-and-Modulates-Cellular-pgen.1002218.s020.ogv/500px--An-EMT%E2%80%93Driven-Alternative-Splicing-Program-Occurs-in-Human-Breast-Cancer-and-Modulates-Cellular-pgen.1002218.s020.ogv.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo",
+          "thumbwidth": 400,
+          "thumbheight": 327,
+          "responsiveUrls": {
+            "2": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ac/An-EMT%E2%80%93Driven-Alternative-Splicing-Program-Occurs-in-Human-Breast-Cancer-and-Modulates-Cellular-pgen.1002218.s020.ogv/960px--An-EMT%E2%80%93Driven-Alternative-Splicing-Program-Occurs-in-Human-Breast-Cancer-and-Modulates-Cellular-pgen.1002218.s020.ogv.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo"
+          },
+          "thumbattribs": [],
+          "url": "https://upload.wikimedia.org/wikipedia/commons/a/ac/An-EMT%E2%80%93Driven-Alternative-Splicing-Program-Occurs-in-Human-Breast-Cancer-and-Modulates-Cellular-pgen.1002218.s020.ogv?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "descriptionurl": "https://commons.wikimedia.org/wiki/File:An-EMT%E2%80%93Driven-Alternative-Splicing-Program-Occurs-in-Human-Breast-Cancer-and-Modulates-Cellular-pgen.1002218.s020.ogv",
+          "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=22729218",
+          "extmetadata": {
+            "DateTime": {
+              "value": "2012-11-16 21:47:50",
+              "source": "mediawiki-metadata",
+              "hidden": ""
+            },
+            "ObjectName": {
+              "value": "An-EMT–Driven-Alternative-Splicing-Program-Occurs-in-Human-Breast-Cancer-and-Modulates-Cellular-pgen.1002218.s020",
+              "source": "mediawiki-metadata"
+            },
+            "CommonsMetadataExtension": {
+              "value": 1.2,
+              "source": "extension",
+              "hidden": ""
+            },
+            "Categories": {
+              "value": "Alternative splicing|RNA-binding proteins|Repressor proteins|Media from PLOS Genetics|Mesenchymal stem cells|Cancer screening|Cell movement|Gene expression|RNA processing|Molecular cell biology|Videos of breast cancer|Uploaded with Open Access Media Importer|Ogv videos|Uploaded with Open Access Media Importer and needing category review|Basic cancer research|Videos from open-access scholarly articles|Genome sequencing|Tumor cell line|Epithelial-mesenchymal transitions videos|Early detection|Video display resolution 1176 x 960",
+              "source": "commons-categories",
+              "hidden": ""
+            },
+            "Assessments": {
+              "value": "",
+              "source": "commons-categories",
+              "hidden": ""
+            },
+            "ImageDescription": {
+              "value": "HMLE/pBP- Twist/ESRP1-EGFP cells demonstrate significant locomotion. HMLE/pBP-Twist/ESRP1-EGFP cells were labeled with a cellular dye CMFDA and seeded in a confluent monolayer mixed 1∶20 with unlabelled cells. Cells were imaged for 12 hours with 10 min intervals. Cell tracks were generated using semi-automated cell tracking and represent single cell tracks over 12 hours. Centroids of fluorescent cells are marked by grey circles.",
+              "source": "commons-desc-page"
+            },
+            "DateTimeOriginal": {
+              "value": "2011-08",
+              "source": "commons-desc-page"
+            },
+            "Credit": {
+              "value": "Video S3 from <cite style=\"font-style:normal\">Shapiro I, Cheng A, Flytzanis N, Balsamo M, Condeelis J, Oktay M, Burge C, Gertler F (2011). \"<a rel=\"nofollow\" class=\"external text\" href=\"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3158048\">An EMT–Driven Alternative Splicing Program Occurs in Human Breast Cancer and Modulates Cellular Phenotype</a>\". <i>PLOS Genetics</i>. <span lang=\"en\" dir=\"ltr\"><a href=\"https://en.wikipedia.org/wiki/Digital_object_identifier\" class=\"extiw\" title=\"en:Digital object identifier\">DOI</a></span>:<a rel=\"nofollow\" class=\"external text\" href=\"https://doi.org/10.1371/journal.pgen.1002218\">10.1371/journal.pgen.1002218</a>. <span lang=\"en\" dir=\"ltr\"><a href=\"https://en.wikipedia.org/wiki/PubMed\" class=\"extiw\" title=\"en:PubMed\"><span lang=\"en\" dir=\"ltr\">PMID</span></a></span> <a rel=\"nofollow\" class=\"external text\" href=\"https://www.ncbi.nlm.nih.gov/pubmed/21876675\">21876675</a>. <span lang=\"en\" dir=\"ltr\"><a href=\"https://en.wikipedia.org/wiki/PubMed_Central\" class=\"extiw\" title=\"en:PubMed Central\"><span lang=\"en\" dir=\"ltr\">PMC</span></a></span>: <a rel=\"nofollow\" class=\"external text\" href=\"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3158048\">3158048</a>.</cite>",
+              "source": "commons-desc-page"
+            },
+            "Artist": {
+              "value": "Shapiro I, Cheng A, Flytzanis N, Balsamo M, Condeelis J, Oktay M, Burge C, Gertler F",
+              "source": "commons-desc-page"
+            },
+            "Permission": {
+              "value": "<i>This file was published in a <b><a href=\"https://en.wikipedia.org/wiki/Public_Library_of_Science\" class=\"extiw\" title=\"en:Public Library of Science\">Public Library of Science</a></b> journal. <a rel=\"nofollow\" class=\"external text\" href=\"http://www.plos.org\">Their website</a> <a rel=\"nofollow\" class=\"external text\" href=\"https://www.plos.org/terms-of-use\">states</a> that the content of all PLOS journals is published under the Creative Commons Attribution 4.0 license (or its previous version depending on the publication date), unless indicated otherwise.</i><br>",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "LicenseShortName": {
+              "value": "CC BY 2.5",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "UsageTerms": {
+              "value": "Creative Commons Attribution 2.5",
+              "source": "commons-desc-page"
+            },
+            "AttributionRequired": {
+              "value": "true",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "LicenseUrl": {
+              "value": "https://creativecommons.org/licenses/by/2.5",
+              "source": "commons-desc-page"
+            },
+            "Copyrighted": {
+              "value": "True",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "Restrictions": {
+              "value": "",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "License": {
+              "value": "cc-by-2.5",
+              "source": "commons-templates",
+              "hidden": ""
+            }
+          }
+        }
+      ]
+    }
+  },
+  {
+    "sourceId": "wikimedia",
+    "externalId": "47239443",
+    "canonicalUrl": "https://commons.wikimedia.org/wiki/File:Crusade_Against_Cancer_5c_1965_issue_U.S._stamp.jpg",
+    "title": "Crusade Against Cancer 5c 1965 issue U.S. stamp.jpg",
+    "authors": [
+      "Bureau of Engraving and Printing. Designed by Stevan Dohanos."
+    ],
+    "publishedAt": null,
+    "mediaType": "image",
+    "licence": {
+      "spdx": "PD",
+      "url": null,
+      "assertedBy": "wikimedia",
+      "attribution": "Bureau of Engraving and Printing. Designed by Stevan Dohanos. — Crusade Against Cancer 5c 1965 issue U.S. stamp.jpg"
+    },
+    "snippet": null,
+    "thumbnailUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/49/Crusade_Against_Cancer_5c_1965_issue_U.S._stamp.jpg/500px-Crusade_Against_Cancer_5c_1965_issue_U.S._stamp.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "raw": {
+      "pageid": 47239443,
+      "ns": 6,
+      "title": "File:Crusade Against Cancer 5c 1965 issue U.S. stamp.jpg",
+      "index": 10,
+      "imagerepository": "local",
+      "imageinfo": [
+        {
+          "thumburl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/49/Crusade_Against_Cancer_5c_1965_issue_U.S._stamp.jpg/500px-Crusade_Against_Cancer_5c_1965_issue_U.S._stamp.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumbwidth": 400,
+          "thumbheight": 606,
+          "responsiveUrls": {
+            "2": "https://upload.wikimedia.org/wikipedia/commons/4/49/Crusade_Against_Cancer_5c_1965_issue_U.S._stamp.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled"
+          },
+          "thumbattribs": {
+            "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/49/Crusade_Against_Cancer_5c_1965_issue_U.S._stamp.jpg/500px-Crusade_Against_Cancer_5c_1965_issue_U.S._stamp.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "decoding": "async",
+            "loading": "lazy",
+            "width": 400,
+            "height": 606,
+            "srcset": "https://upload.wikimedia.org/wikipedia/commons/4/49/Crusade_Against_Cancer_5c_1965_issue_U.S._stamp.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled 2x"
+          },
+          "url": "https://upload.wikimedia.org/wikipedia/commons/4/49/Crusade_Against_Cancer_5c_1965_issue_U.S._stamp.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "descriptionurl": "https://commons.wikimedia.org/wiki/File:Crusade_Against_Cancer_5c_1965_issue_U.S._stamp.jpg",
+          "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=47239443",
+          "extmetadata": {
+            "DateTime": {
+              "value": "2016-02-29 12:45:16",
+              "source": "mediawiki-metadata",
+              "hidden": ""
+            },
+            "ObjectName": {
+              "value": "Crusade Against Cancer 5c 1965 issue U.S. stamp",
+              "source": "mediawiki-metadata"
+            },
+            "CommonsMetadataExtension": {
+              "value": 1.2,
+              "source": "extension",
+              "hidden": ""
+            },
+            "Categories": {
+              "value": "PD US Government|Cancer screening|Stevan Dohanos|1965 stamps of the United States|Commemorative stamps of the United States|CC-PD-Mark|Cancer on stamps|Stethoscopes in art|Light microscopes on stamps|Medical equipment on stamps",
+              "source": "commons-categories",
+              "hidden": ""
+            },
+            "Assessments": {
+              "value": "",
+              "source": "commons-categories",
+              "hidden": ""
+            },
+            "ImageDescription": {
+              "value": "Crusade Against Cancer - Early Diagnosis Saves Lives - 5-cent 1965 issue U.S. stamp.",
+              "source": "commons-desc-page"
+            },
+            "DateTimeOriginal": {
+              "value": "1965-04-01",
+              "source": "commons-desc-page"
+            },
+            "Credit": {
+              "value": "U.S. Postal Service; National Postal Museum: <a rel=\"nofollow\" class=\"external text\" href=\"http://arago.si.edu/category_2034166.html\">Crusade Against Cancer Issue</a>",
+              "source": "commons-desc-page"
+            },
+            "Artist": {
+              "value": "Bureau of Engraving and Printing. Designed by Stevan Dohanos.",
+              "source": "commons-desc-page"
+            },
+            "LicenseShortName": {
+              "value": "Public domain",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "UsageTerms": {
+              "value": "Public domain",
+              "source": "commons-desc-page"
+            },
+            "AttributionRequired": {
+              "value": "false",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "Copyrighted": {
+              "value": "False",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "Restrictions": {
+              "value": "",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "License": {
+              "value": "pd",
+              "source": "commons-templates",
+              "hidden": ""
+            }
+          }
+        }
+      ]
+    }
+  },
+  {
+    "sourceId": "wikimedia",
+    "externalId": "92030178",
+    "canonicalUrl": "https://commons.wikimedia.org/wiki/File:The_costs_and_effectiveness_of_cervical_cancer_screening_in_elderly_women_(IA_costseffectivene00mull).pdf",
+    "title": "The costs and effectiveness of cervical cancer screening in elderly women (IA costseffectivene00mull).pdf",
+    "authors": [
+      "Muller, Charlotte Feldman, 1921- United States. Congress. Office of Technology Assessment"
+    ],
+    "publishedAt": null,
+    "mediaType": "image",
+    "licence": {
+      "spdx": "PD",
+      "url": null,
+      "assertedBy": "wikimedia",
+      "attribution": "Muller, Charlotte Feldman, 1921- United States. Congress. Office of Technology Assessment — The costs and effectiveness of cervical cancer screening in elderly women (IA costseffectivene00mull).pdf"
+    },
+    "snippet": null,
+    "thumbnailUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d9/The_costs_and_effectiveness_of_cervical_cancer_screening_in_elderly_women_%28IA_costseffectivene00mull%29.pdf/page1-500px-The_costs_and_effectiveness_of_cervical_cancer_screening_in_elderly_women_%28IA_costseffectivene00mull%29.pdf.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "raw": {
+      "pageid": 92030178,
+      "ns": 6,
+      "title": "File:The costs and effectiveness of cervical cancer screening in elderly women (IA costseffectivene00mull).pdf",
+      "index": 1,
+      "imagerepository": "local",
+      "imageinfo": [
+        {
+          "thumburl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d9/The_costs_and_effectiveness_of_cervical_cancer_screening_in_elderly_women_%28IA_costseffectivene00mull%29.pdf/page1-500px-The_costs_and_effectiveness_of_cervical_cancer_screening_in_elderly_women_%28IA_costseffectivene00mull%29.pdf.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumbwidth": 400,
+          "thumbheight": 559,
+          "responsiveUrls": {
+            "2": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d9/The_costs_and_effectiveness_of_cervical_cancer_screening_in_elderly_women_%28IA_costseffectivene00mull%29.pdf/page1-960px-The_costs_and_effectiveness_of_cervical_cancer_screening_in_elderly_women_%28IA_costseffectivene00mull%29.pdf.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+          },
+          "thumbattribs": {
+            "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d9/The_costs_and_effectiveness_of_cervical_cancer_screening_in_elderly_women_%28IA_costseffectivene00mull%29.pdf/page1-500px-The_costs_and_effectiveness_of_cervical_cancer_screening_in_elderly_women_%28IA_costseffectivene00mull%29.pdf.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "decoding": "async",
+            "loading": "lazy",
+            "width": 400,
+            "height": 559,
+            "srcset": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d9/The_costs_and_effectiveness_of_cervical_cancer_screening_in_elderly_women_%28IA_costseffectivene00mull%29.pdf/page1-960px-The_costs_and_effectiveness_of_cervical_cancer_screening_in_elderly_women_%28IA_costseffectivene00mull%29.pdf.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail 2x"
+          },
+          "url": "https://upload.wikimedia.org/wikipedia/commons/d/d9/The_costs_and_effectiveness_of_cervical_cancer_screening_in_elderly_women_%28IA_costseffectivene00mull%29.pdf?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "descriptionurl": "https://commons.wikimedia.org/wiki/File:The_costs_and_effectiveness_of_cervical_cancer_screening_in_elderly_women_(IA_costseffectivene00mull).pdf",
+          "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=92030178",
+          "extmetadata": {
+            "DateTime": {
+              "value": "2020-07-08 17:08:26",
+              "source": "mediawiki-metadata",
+              "hidden": ""
+            },
+            "ObjectName": {
+              "value": "<div class=\"fn\">\nThe costs and effectiveness of cervical cancer screening in elderly women</div>",
+              "source": "commons-desc-page"
+            },
+            "CommonsMetadataExtension": {
+              "value": 1.2,
+              "source": "extension",
+              "hidden": ""
+            },
+            "Categories": {
+              "value": "PD US Government|Cervical cancer|Elderlycare|Cancer screening|FEDLINK - United States Federal Collection|Scans from the Internet Archive/unverified|CC-PD-Mark|Scans from the Internet Archive|Books uploaded by Fæ|Books without Wikidata item",
+              "source": "commons-categories",
+              "hidden": ""
+            },
+            "Assessments": {
+              "value": "",
+              "source": "commons-categories",
+              "hidden": ""
+            },
+            "Artist": {
+              "value": "<div class=\"fn value\">\n<dl><dd>Muller, Charlotte Feldman, 1921-</dd>\n<dd>United States. Congress. Office of Technology Assessment</dd></dl></div>",
+              "source": "commons-desc-page"
+            },
+            "ImageDescription": {
+              "value": "<div class=\"description\">\n<dl><dd>\"February 1990.\"</dd>\n<dd>Back cover: \"OTA-BP-H-65\"</dd>\n<dd>Includes bibliographical references (p. 76-87)</dd></dl>\n<br>Subjects: Cervix uteri; Preventive health services; Medical care, Cost of; Aged women; Medical screening; Cervix Neoplasms; Mass Screening; Preventive Health Services</div>",
+              "source": "commons-desc-page"
+            },
+            "Credit": {
+              "value": "<dl><dd><a href=\"//archive.org/details/costseffectivene00mull\" class=\"extiw\" title=\"iarchive:costseffectivene00mull\"><bdi class=\"description en\" lang=\"en\" dir=\"ltr\">Internet Archive identifier</bdi>: costseffectivene00mull</a></dd>\n<dd><a rel=\"nofollow\" class=\"external free\" href=\"https://archive.org/download/costseffectivene00mull/costseffectivene00mull.pdf\">https://archive.org/download/costseffectivene00mull/costseffectivene00mull.pdf</a></dd></dl>",
+              "source": "commons-desc-page"
+            },
+            "LicenseShortName": {
+              "value": "Public domain",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "UsageTerms": {
+              "value": "Public domain",
+              "source": "commons-desc-page"
+            },
+            "AttributionRequired": {
+              "value": "false",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "Copyrighted": {
+              "value": "False",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "Restrictions": {
+              "value": "",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "License": {
+              "value": "pd",
+              "source": "commons-templates",
+              "hidden": ""
+            }
+          }
+        }
+      ]
+    }
+  },
+  {
+    "sourceId": "wikimedia",
+    "externalId": "92324884",
+    "canonicalUrl": "https://commons.wikimedia.org/wiki/File:Developing_Intervention_Strategies_for_Breast_Cancer_Screening-_A_Self_Study_Guide_for_Program_Planners_(IA_developinginterv00halv).pdf",
+    "title": "Developing Intervention Strategies for Breast Cancer Screening- A Self Study Guide for Program Planners (IA developinginterv00halv).pdf",
+    "authors": [
+      "Halvorson, H.;Coyne, C."
+    ],
+    "publishedAt": null,
+    "mediaType": "image",
+    "licence": {
+      "spdx": "PD",
+      "url": null,
+      "assertedBy": "wikimedia",
+      "attribution": "Halvorson, H.;Coyne, C. — Developing Intervention Strategies for Breast Cancer Screening- A Self Study Guide for Program Planners (IA developinginterv00halv).pdf"
+    },
+    "snippet": null,
+    "thumbnailUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/47/Developing_Intervention_Strategies_for_Breast_Cancer_Screening-_A_Self_Study_Guide_for_Program_Planners_%28IA_developinginterv00halv%29.pdf/page1-500px-Developing_Intervention_Strategies_for_Breast_Cancer_Screening-_A_Self_Study_Guide_for_Program_Planners_%28IA_developinginterv00halv%29.pdf.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "raw": {
+      "pageid": 92324884,
+      "ns": 6,
+      "title": "File:Developing Intervention Strategies for Breast Cancer Screening- A Self Study Guide for Program Planners (IA developinginterv00halv).pdf",
+      "index": 6,
+      "imagerepository": "local",
+      "imageinfo": [
+        {
+          "thumburl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/47/Developing_Intervention_Strategies_for_Breast_Cancer_Screening-_A_Self_Study_Guide_for_Program_Planners_%28IA_developinginterv00halv%29.pdf/page1-500px-Developing_Intervention_Strategies_for_Breast_Cancer_Screening-_A_Self_Study_Guide_for_Program_Planners_%28IA_developinginterv00halv%29.pdf.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumbwidth": 400,
+          "thumbheight": 529,
+          "responsiveUrls": {
+            "2": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/47/Developing_Intervention_Strategies_for_Breast_Cancer_Screening-_A_Self_Study_Guide_for_Program_Planners_%28IA_developinginterv00halv%29.pdf/page1-960px-Developing_Intervention_Strategies_for_Breast_Cancer_Screening-_A_Self_Study_Guide_for_Program_Planners_%28IA_developinginterv00halv%29.pdf.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+          },
+          "thumbattribs": {
+            "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/47/Developing_Intervention_Strategies_for_Breast_Cancer_Screening-_A_Self_Study_Guide_for_Program_Planners_%28IA_developinginterv00halv%29.pdf/page1-500px-Developing_Intervention_Strategies_for_Breast_Cancer_Screening-_A_Self_Study_Guide_for_Program_Planners_%28IA_developinginterv00halv%29.pdf.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "decoding": "async",
+            "loading": "lazy",
+            "width": 400,
+            "height": 529,
+            "srcset": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/47/Developing_Intervention_Strategies_for_Breast_Cancer_Screening-_A_Self_Study_Guide_for_Program_Planners_%28IA_developinginterv00halv%29.pdf/page1-960px-Developing_Intervention_Strategies_for_Breast_Cancer_Screening-_A_Self_Study_Guide_for_Program_Planners_%28IA_developinginterv00halv%29.pdf.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail 2x"
+          },
+          "url": "https://upload.wikimedia.org/wikipedia/commons/4/47/Developing_Intervention_Strategies_for_Breast_Cancer_Screening-_A_Self_Study_Guide_for_Program_Planners_%28IA_developinginterv00halv%29.pdf?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "descriptionurl": "https://commons.wikimedia.org/wiki/File:Developing_Intervention_Strategies_for_Breast_Cancer_Screening-_A_Self_Study_Guide_for_Program_Planners_(IA_developinginterv00halv).pdf",
+          "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=92324884",
+          "extmetadata": {
+            "DateTime": {
+              "value": "2020-07-17 07:58:16",
+              "source": "mediawiki-metadata",
+              "hidden": ""
+            },
+            "ObjectName": {
+              "value": "<div class=\"fn\">\nDeveloping Intervention Strategies for Breast Cancer Screening: A Self Study Guide for Program Planners</div>",
+              "source": "commons-desc-page"
+            },
+            "CommonsMetadataExtension": {
+              "value": 1.2,
+              "source": "extension",
+              "hidden": ""
+            },
+            "Categories": {
+              "value": "PD US Government|Cancer screening|FEDLINK - United States Federal Collection|Scans from the Internet Archive/unverified|CC-PD-Mark|Scans from the Internet Archive|Books uploaded by Fæ|Books without Wikidata item",
+              "source": "commons-categories",
+              "hidden": ""
+            },
+            "Assessments": {
+              "value": "",
+              "source": "commons-categories",
+              "hidden": ""
+            },
+            "Artist": {
+              "value": "<div class=\"fn value\">\nHalvorson, H.;Coyne, C.</div>",
+              "source": "commons-desc-page"
+            },
+            "ImageDescription": {
+              "value": "<div class=\"description\">\nSubjects: BREAST CANCER; CERVICAL CANCER; COMMUNITY PROGRAMS; HEALTH PROMOTION; FOCUS GROUPS; COMMUNICATION STRATEGIES; LITERACY</div>",
+              "source": "commons-desc-page"
+            },
+            "Credit": {
+              "value": "<dl><dd><a href=\"//archive.org/details/developinginterv00halv\" class=\"extiw\" title=\"iarchive:developinginterv00halv\"><bdi class=\"description en\" lang=\"en\" dir=\"ltr\">Internet Archive identifier</bdi>: developinginterv00halv</a></dd>\n<dd><a rel=\"nofollow\" class=\"external free\" href=\"https://archive.org/download/developinginterv00halv/developinginterv00halv.pdf\">https://archive.org/download/developinginterv00halv/developinginterv00halv.pdf</a></dd></dl>",
+              "source": "commons-desc-page"
+            },
+            "LicenseShortName": {
+              "value": "Public domain",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "UsageTerms": {
+              "value": "Public domain",
+              "source": "commons-desc-page"
+            },
+            "AttributionRequired": {
+              "value": "false",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "Copyrighted": {
+              "value": "False",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "Restrictions": {
+              "value": "",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "License": {
+              "value": "pd",
+              "source": "commons-templates",
+              "hidden": ""
+            }
+          }
+        }
+      ]
+    }
+  },
+  {
+    "sourceId": "wikimedia",
+    "externalId": "134561721",
+    "canonicalUrl": "https://commons.wikimedia.org/wiki/File:202306_Cervical_Cancer_Screening.svg",
+    "title": "202306 Cervical Cancer Screening.svg",
+    "authors": [
+      "DataBase Center for Life Science (DBCLS)"
+    ],
+    "publishedAt": null,
+    "mediaType": "image",
+    "licence": {
+      "spdx": "CC-BY-4.0",
+      "url": "https://creativecommons.org/licenses/by/4.0",
+      "assertedBy": "wikimedia",
+      "attribution": "DataBase Center for Life Science (DBCLS) — 202306 Cervical Cancer Screening.svg"
+    },
+    "snippet": null,
+    "thumbnailUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f5/202306_Cervical_Cancer_Screening.svg/500px-202306_Cervical_Cancer_Screening.svg.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "raw": {
+      "pageid": 134561721,
+      "ns": 6,
+      "title": "File:202306 Cervical Cancer Screening.svg",
+      "index": 7,
+      "imagerepository": "local",
+      "imageinfo": [
+        {
+          "thumburl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f5/202306_Cervical_Cancer_Screening.svg/500px-202306_Cervical_Cancer_Screening.svg.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumbwidth": 400,
+          "thumbheight": 400,
+          "responsiveUrls": {
+            "2": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f5/202306_Cervical_Cancer_Screening.svg/960px-202306_Cervical_Cancer_Screening.svg.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+          },
+          "thumbattribs": {
+            "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f5/202306_Cervical_Cancer_Screening.svg/500px-202306_Cervical_Cancer_Screening.svg.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "decoding": "async",
+            "loading": "lazy",
+            "width": 400,
+            "height": 400,
+            "srcset": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f5/202306_Cervical_Cancer_Screening.svg/960px-202306_Cervical_Cancer_Screening.svg.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail 2x"
+          },
+          "url": "https://upload.wikimedia.org/wikipedia/commons/f/f5/202306_Cervical_Cancer_Screening.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "descriptionurl": "https://commons.wikimedia.org/wiki/File:202306_Cervical_Cancer_Screening.svg",
+          "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=134561721",
+          "extmetadata": {
+            "DateTime": {
+              "value": "2023-07-18 05:22:42",
+              "source": "mediawiki-metadata",
+              "hidden": ""
+            },
+            "ObjectName": {
+              "value": "202306 Cervical Cancer Screening",
+              "source": "mediawiki-metadata"
+            },
+            "CommonsMetadataExtension": {
+              "value": 1.2,
+              "source": "extension",
+              "hidden": ""
+            },
+            "Categories": {
+              "value": "Cervical cancer|Cancer screening|License review needed|Pap test|2023 illustrations|Life science images from DBCLS",
+              "source": "commons-categories",
+              "hidden": ""
+            },
+            "Assessments": {
+              "value": "",
+              "source": "commons-categories",
+              "hidden": ""
+            },
+            "ImageDescription": {
+              "value": "Cervical cancer screening",
+              "source": "commons-desc-page"
+            },
+            "DateTimeOriginal": {
+              "value": "2023-06-01",
+              "source": "commons-desc-page"
+            },
+            "Credit": {
+              "value": "<a rel=\"nofollow\" class=\"external free\" href=\"https://doi.org/10.7875/togopic.2023.137\">https://doi.org/10.7875/togopic.2023.137</a>",
+              "source": "commons-desc-page"
+            },
+            "Artist": {
+              "value": "DataBase Center for Life Science (DBCLS)",
+              "source": "commons-desc-page"
+            },
+            "Permission": {
+              "value": "<b>Are there any copyright considerations for use of TogoTV content?</b><br>The content of TogoTV is licensed under a Creative Commons License (CC) Attribution 4.0 (CC-BY-4.0) and the copyright of each content is reserved. Although the rights are retained by DBCLS TogoTV, as a shared material of the science community, it can be freely reprinted, modified, and reused (including secondary use for commercial purposes) without permission, provided that you “give proper credit (source), provide a link to the license, and indicate any changes“. (e.g., “The image of XX is from TogoTV (© 2016 DBCLS TogoTV, CC-BY-4.0 <a rel=\"nofollow\" class=\"external free\" href=\"https://creativecommons.org/licenses/by/4.0/.%E2%80%9C\">https://creativecommons.org/licenses/by/4.0/.“</a>))<a rel=\"nofollow\" class=\"external autonumber\" href=\"https://togotv.dbcls.jp/en/faq.html\">[1]</a>",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "LicenseShortName": {
+              "value": "CC BY 4.0",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "UsageTerms": {
+              "value": "Creative Commons Attribution 4.0",
+              "source": "commons-desc-page"
+            },
+            "AttributionRequired": {
+              "value": "true",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "LicenseUrl": {
+              "value": "https://creativecommons.org/licenses/by/4.0",
+              "source": "commons-desc-page"
+            },
+            "Copyrighted": {
+              "value": "True",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "Restrictions": {
+              "value": "",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "License": {
+              "value": "cc-by-4.0",
+              "source": "commons-templates",
+              "hidden": ""
+            }
+          }
+        }
+      ]
+    }
+  },
+  {
+    "sourceId": "wikimedia",
+    "externalId": "154793589",
+    "canonicalUrl": "https://commons.wikimedia.org/wiki/File:Estimated_Lifetime_Gained_With_Cancer_Screening_Tests.png",
+    "title": "Estimated Lifetime Gained With Cancer Screening Tests.png",
+    "authors": [
+      "Nirts"
+    ],
+    "publishedAt": null,
+    "mediaType": "image",
+    "licence": {
+      "spdx": "CC-BY-SA-4.0",
+      "url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "assertedBy": "wikimedia",
+      "attribution": "Nirts — Estimated Lifetime Gained With Cancer Screening Tests.png"
+    },
+    "snippet": null,
+    "thumbnailUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2b/Estimated_Lifetime_Gained_With_Cancer_Screening_Tests.png/500px-Estimated_Lifetime_Gained_With_Cancer_Screening_Tests.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "raw": {
+      "pageid": 154793589,
+      "ns": 6,
+      "title": "File:Estimated Lifetime Gained With Cancer Screening Tests.png",
+      "index": 5,
+      "imagerepository": "local",
+      "imageinfo": [
+        {
+          "thumburl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2b/Estimated_Lifetime_Gained_With_Cancer_Screening_Tests.png/500px-Estimated_Lifetime_Gained_With_Cancer_Screening_Tests.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumbwidth": 400,
+          "thumbheight": 336,
+          "responsiveUrls": {
+            "2": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2b/Estimated_Lifetime_Gained_With_Cancer_Screening_Tests.png/960px-Estimated_Lifetime_Gained_With_Cancer_Screening_Tests.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+          },
+          "thumbattribs": {
+            "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2b/Estimated_Lifetime_Gained_With_Cancer_Screening_Tests.png/500px-Estimated_Lifetime_Gained_With_Cancer_Screening_Tests.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "decoding": "async",
+            "loading": "lazy",
+            "width": 400,
+            "height": 336,
+            "srcset": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2b/Estimated_Lifetime_Gained_With_Cancer_Screening_Tests.png/960px-Estimated_Lifetime_Gained_With_Cancer_Screening_Tests.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail 2x"
+          },
+          "url": "https://upload.wikimedia.org/wikipedia/commons/2/2b/Estimated_Lifetime_Gained_With_Cancer_Screening_Tests.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "descriptionurl": "https://commons.wikimedia.org/wiki/File:Estimated_Lifetime_Gained_With_Cancer_Screening_Tests.png",
+          "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=154793589",
+          "extmetadata": {
+            "DateTime": {
+              "value": "2024-11-10 20:12:20",
+              "source": "mediawiki-metadata",
+              "hidden": ""
+            },
+            "ObjectName": {
+              "value": "Estimated Lifetime Gained With Cancer Screening Tests",
+              "source": "mediawiki-metadata"
+            },
+            "CommonsMetadataExtension": {
+              "value": 1.2,
+              "source": "extension",
+              "hidden": ""
+            },
+            "Categories": {
+              "value": "Graphics|Cancer screening|Clinical trials|Self-published work",
+              "source": "commons-categories",
+              "hidden": ""
+            },
+            "Assessments": {
+              "value": "",
+              "source": "commons-categories",
+              "hidden": ""
+            },
+            "ImageDescription": {
+              "value": "Life days gained by screening for cancers, according to a meta-analysis of randomized clinical trials for 6 commonly used cancer screening tests published by <a rel=\"nofollow\" class=\"external text\" href=\"https://pubmed.ncbi.nlm.nih.gov/37639247/\">Michael Bretthauer et al. in 2023</a>.",
+              "source": "commons-desc-page"
+            },
+            "DateTimeOriginal": {
+              "value": "2024-11-02",
+              "source": "commons-desc-page"
+            },
+            "Credit": {
+              "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+              "source": "commons-desc-page"
+            },
+            "Artist": {
+              "value": "<a href=\"//commons.wikimedia.org/wiki/User:Nirts\" title=\"User:Nirts\">Nirts</a>",
+              "source": "commons-desc-page"
+            },
+            "LicenseShortName": {
+              "value": "CC BY-SA 4.0",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "UsageTerms": {
+              "value": "Creative Commons Attribution-Share Alike 4.0",
+              "source": "commons-desc-page"
+            },
+            "AttributionRequired": {
+              "value": "true",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "LicenseUrl": {
+              "value": "https://creativecommons.org/licenses/by-sa/4.0",
+              "source": "commons-desc-page"
+            },
+            "Copyrighted": {
+              "value": "True",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "Restrictions": {
+              "value": "",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "License": {
+              "value": "cc-by-sa-4.0",
+              "source": "commons-templates",
+              "hidden": ""
+            }
+          }
+        }
+      ]
+    }
+  }
+]

@@ -1,0 +1,1225 @@
+[
+  {
+    "sourceId": "wikimedia",
+    "externalId": "10025841",
+    "canonicalUrl": "https://commons.wikimedia.org/wiki/File:Quantum_computer.svg",
+    "title": "Quantum computer.svg",
+    "authors": [
+      "Original reproduction: Jbw2, SVG version: WhiteTimberwolf"
+    ],
+    "publishedAt": null,
+    "mediaType": "image",
+    "licence": {
+      "spdx": "CC-BY",
+      "url": "https://creativecommons.org/licenses/by/3.0",
+      "assertedBy": "wikimedia",
+      "attribution": "Original reproduction: Jbw2, SVG version: WhiteTimberwolf — Quantum computer.svg"
+    },
+    "snippet": null,
+    "thumbnailUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/53/Quantum_computer.svg/500px-Quantum_computer.svg.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "raw": {
+      "pageid": 10025841,
+      "ns": 6,
+      "title": "File:Quantum computer.svg",
+      "index": 1,
+      "imagerepository": "local",
+      "imageinfo": [
+        {
+          "thumburl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/53/Quantum_computer.svg/500px-Quantum_computer.svg.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumbwidth": 400,
+          "thumbheight": 407,
+          "responsiveUrls": {
+            "2": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/53/Quantum_computer.svg/960px-Quantum_computer.svg.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+          },
+          "thumbattribs": {
+            "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/53/Quantum_computer.svg/500px-Quantum_computer.svg.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "decoding": "async",
+            "loading": "lazy",
+            "width": 400,
+            "height": 407,
+            "srcset": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/53/Quantum_computer.svg/960px-Quantum_computer.svg.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail 2x"
+          },
+          "url": "https://upload.wikimedia.org/wikipedia/commons/5/53/Quantum_computer.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "descriptionurl": "https://commons.wikimedia.org/wiki/File:Quantum_computer.svg",
+          "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=10025841",
+          "extmetadata": {
+            "DateTime": {
+              "value": "2010-04-16 12:08:14",
+              "source": "mediawiki-metadata",
+              "hidden": ""
+            },
+            "ObjectName": {
+              "value": "Quantum computer",
+              "source": "mediawiki-metadata"
+            },
+            "CommonsMetadataExtension": {
+              "value": 1.2,
+              "source": "extension",
+              "hidden": ""
+            },
+            "Categories": {
+              "value": "GFDL|Qubit|Quantum computing|Jean-Baptiste Waldner|License migration redundant|Self-published work",
+              "source": "commons-categories",
+              "hidden": ""
+            },
+            "Assessments": {
+              "value": "",
+              "source": "commons-categories",
+              "hidden": ""
+            },
+            "ImageDescription": {
+              "value": "Qubits are made up of controlled particles and the means of control (e.g. devices that trap particles and switch them from one state to another). There are 4 established qubit candidates: ion traps, quantum dots, semiconductor impurities, and superconducting circuits.",
+              "source": "commons-desc-page"
+            },
+            "DateTimeOriginal": {
+              "value": "2010-04-15",
+              "source": "commons-desc-page"
+            },
+            "Credit": {
+              "value": "adapted from <i>Nanocomputers and Swarm Intelligence</i> (page 157) ISTE, Waldner, JB (2007), <span lang=\"en\" dir=\"ltr\"><a href=\"https://en.wikipedia.org/wiki/ISBN\" class=\"extiw\" title=\"en:ISBN\"><span lang=\"en\" dir=\"ltr\">ISBN</span></a></span> <a href=\"//commons.wikimedia.org/wiki/Special:BookSources/2746215160\" title=\"Special:BookSources/2746215160\">2746215160</a>. Reproduced with author's authorization",
+              "source": "commons-desc-page"
+            },
+            "Artist": {
+              "value": "Original reproduction: <a href=\"https://en.wikipedia.org/wiki/User:Jbw2\" class=\"extiw\" title=\"en:User:Jbw2\">Jbw2</a>, SVG version: <a href=\"//commons.wikimedia.org/wiki/User:WhiteTimberwolf\" title=\"User:WhiteTimberwolf\">WhiteTimberwolf</a>",
+              "source": "commons-desc-page"
+            },
+            "Permission": {
+              "value": "You may select the license of your choice.",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "LicenseShortName": {
+              "value": "CC BY 3.0",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "UsageTerms": {
+              "value": "Creative Commons Attribution 3.0",
+              "source": "commons-desc-page"
+            },
+            "AttributionRequired": {
+              "value": "true",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "LicenseUrl": {
+              "value": "https://creativecommons.org/licenses/by/3.0",
+              "source": "commons-desc-page"
+            },
+            "Copyrighted": {
+              "value": "True",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "Restrictions": {
+              "value": "",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "License": {
+              "value": "cc-by-3.0",
+              "source": "commons-templates",
+              "hidden": ""
+            }
+          }
+        }
+      ]
+    }
+  },
+  {
+    "sourceId": "wikimedia",
+    "externalId": "113484468",
+    "canonicalUrl": "https://commons.wikimedia.org/wiki/File:Quantum_Computing_for_Google_Goggles_(4171280876).jpg",
+    "title": "Quantum Computing for Google Goggles (4171280876).jpg",
+    "authors": [
+      "Steve Jurvetson from Los Altos, USA"
+    ],
+    "publishedAt": null,
+    "mediaType": "image",
+    "licence": {
+      "spdx": "CC-BY",
+      "url": "https://creativecommons.org/licenses/by/2.0",
+      "assertedBy": "wikimedia",
+      "attribution": "Steve Jurvetson from Los Altos, USA — Quantum Computing for Google Goggles (4171280876).jpg"
+    },
+    "snippet": null,
+    "thumbnailUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/ba/Quantum_Computing_for_Google_Goggles_%284171280876%29.jpg/500px-Quantum_Computing_for_Google_Goggles_%284171280876%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "raw": {
+      "pageid": 113484468,
+      "ns": 6,
+      "title": "File:Quantum Computing for Google Goggles (4171280876).jpg",
+      "index": 4,
+      "imagerepository": "local",
+      "imageinfo": [
+        {
+          "thumburl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/ba/Quantum_Computing_for_Google_Goggles_%284171280876%29.jpg/500px-Quantum_Computing_for_Google_Goggles_%284171280876%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumbwidth": 400,
+          "thumbheight": 292,
+          "responsiveUrls": {
+            "2": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/ba/Quantum_Computing_for_Google_Goggles_%284171280876%29.jpg/960px-Quantum_Computing_for_Google_Goggles_%284171280876%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+          },
+          "thumbattribs": {
+            "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/ba/Quantum_Computing_for_Google_Goggles_%284171280876%29.jpg/500px-Quantum_Computing_for_Google_Goggles_%284171280876%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "decoding": "async",
+            "loading": "lazy",
+            "width": 400,
+            "height": 292,
+            "srcset": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/ba/Quantum_Computing_for_Google_Goggles_%284171280876%29.jpg/960px-Quantum_Computing_for_Google_Goggles_%284171280876%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail 2x"
+          },
+          "url": "https://upload.wikimedia.org/wikipedia/commons/b/ba/Quantum_Computing_for_Google_Goggles_%284171280876%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "descriptionurl": "https://commons.wikimedia.org/wiki/File:Quantum_Computing_for_Google_Goggles_(4171280876).jpg",
+          "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=113484468",
+          "extmetadata": {
+            "DateTime": {
+              "value": "2021-12-19 12:02:26",
+              "source": "mediawiki-metadata",
+              "hidden": ""
+            },
+            "ObjectName": {
+              "value": "Quantum Computing for Google Goggles (4171280876)",
+              "source": "mediawiki-metadata"
+            },
+            "CommonsMetadataExtension": {
+              "value": 1.2,
+              "source": "extension",
+              "hidden": ""
+            },
+            "Categories": {
+              "value": "Quantum computing|Flickr images reviewed by FlickreviewR 2",
+              "source": "commons-categories",
+              "hidden": ""
+            },
+            "Assessments": {
+              "value": "",
+              "source": "commons-categories",
+              "hidden": ""
+            },
+            "ImageDescription": {
+              "value": "<p>Kicking off the D-Wave Board meeting over lunch today at Goldman Sachs…  with new news from Google that they demonstrated the use of D-Wave’s quantum computer to deliver photo-driven search (and improve on classical machine learning).\n</p><p>Here is a summary from the &lt;a href=\"<a rel=\"nofollow\" class=\"external free\" href=\"http://googleresearch.blogspot.com/2009/12/machine-learning-with-quantum.html\">http://googleresearch.blogspot.com/2009/12/machine-learning-with-quantum.html</a>\" rel=\"noreferrer nofollow\"&gt;Google Reseach blog&lt;/a&gt;:\n</p><p>“Many Google services we offer depend on sophisticated artificial intelligence technologies such as machine learning or pattern recognition. If one takes a closer look at such capabilities one realizes that they often require the solution of what mathematicians call hard combinatorial optimization problems. It turns out that solving the hardest of such problems requires server farms so large that they can never be built. A new type of machine, a so-called quantum computer, can help here.\n</p>\nToday, at the Neural Information Processing Systems conference (NIPS 2009), we show the progress we have made. We demonstrate a detector that has learned to spot cars by looking at example pictures. It was trained with adiabatic quantum optimization using a D-Wave C4 Chimera chip. There are still many open questions but in our experiments we observed that this detector performs better than those we had trained using classical solvers running on the computers we have in our data centers today. Besides progress in engineering synthetic intelligence we hope that improved mastery of quantum computing will also increase our appreciation for the structure of reality as described by the laws of quantum physics.”",
+              "source": "commons-desc-page"
+            },
+            "DateTimeOriginal": {
+              "value": "2009-12-08 13:22",
+              "source": "commons-desc-page"
+            },
+            "Credit": {
+              "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/photos/jurvetson/4171280876/\">Quantum Computing for Google Goggles</a>",
+              "source": "commons-desc-page"
+            },
+            "Artist": {
+              "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/people/44124348109@N01\">Steve Jurvetson</a> from Los Altos, USA",
+              "source": "commons-desc-page"
+            },
+            "LicenseShortName": {
+              "value": "CC BY 2.0",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "UsageTerms": {
+              "value": "Creative Commons Attribution 2.0",
+              "source": "commons-desc-page"
+            },
+            "AttributionRequired": {
+              "value": "true",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "LicenseUrl": {
+              "value": "https://creativecommons.org/licenses/by/2.0",
+              "source": "commons-desc-page"
+            },
+            "Copyrighted": {
+              "value": "True",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "Restrictions": {
+              "value": "",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "License": {
+              "value": "cc-by-2.0",
+              "source": "commons-templates",
+              "hidden": ""
+            }
+          }
+        }
+      ]
+    }
+  },
+  {
+    "sourceId": "wikimedia",
+    "externalId": "149491560",
+    "canonicalUrl": "https://commons.wikimedia.org/wiki/File:2024_IBM_Quantum_Roadmap_Update.webm",
+    "title": "2024 IBM Quantum Roadmap Update.webm",
+    "authors": [
+      "IBM Research"
+    ],
+    "publishedAt": null,
+    "mediaType": "image",
+    "licence": {
+      "spdx": "CC-BY",
+      "url": "https://creativecommons.org/licenses/by/3.0",
+      "assertedBy": "wikimedia",
+      "attribution": "IBM Research"
+    },
+    "snippet": null,
+    "thumbnailUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8a/2024_IBM_Quantum_Roadmap_Update.webm/500px--2024_IBM_Quantum_Roadmap_Update.webm.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo",
+    "raw": {
+      "pageid": 149491560,
+      "ns": 6,
+      "title": "File:2024 IBM Quantum Roadmap Update.webm",
+      "index": 2,
+      "imagerepository": "local",
+      "imageinfo": [
+        {
+          "thumburl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8a/2024_IBM_Quantum_Roadmap_Update.webm/500px--2024_IBM_Quantum_Roadmap_Update.webm.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo",
+          "thumbwidth": 400,
+          "thumbheight": 225,
+          "responsiveUrls": {
+            "2": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8a/2024_IBM_Quantum_Roadmap_Update.webm/960px--2024_IBM_Quantum_Roadmap_Update.webm.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo"
+          },
+          "thumbattribs": [],
+          "url": "https://upload.wikimedia.org/wikipedia/commons/8/8a/2024_IBM_Quantum_Roadmap_Update.webm?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "descriptionurl": "https://commons.wikimedia.org/wiki/File:2024_IBM_Quantum_Roadmap_Update.webm",
+          "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=149491560",
+          "extmetadata": {
+            "DateTime": {
+              "value": "2024-06-18 07:43:19",
+              "source": "mediawiki-metadata",
+              "hidden": ""
+            },
+            "ObjectName": {
+              "value": "2024 IBM Quantum Roadmap Update",
+              "source": "mediawiki-metadata"
+            },
+            "CommonsMetadataExtension": {
+              "value": 1.2,
+              "source": "extension",
+              "hidden": ""
+            },
+            "Categories": {
+              "value": "Media from YouTube|Personality rights warning|Computing in the 2020s|License review needed (video)|Videos by IBM Research|History of quantum computing",
+              "source": "commons-categories",
+              "hidden": ""
+            },
+            "Assessments": {
+              "value": "",
+              "source": "commons-categories",
+              "hidden": ""
+            },
+            "ImageDescription": {
+              "value": "Jerry Chow, IBM Fellow and Director of Quantum Systems &amp; Runtime Technology, presents the updated IBM Quantum development and innovation roadmap through 2033.\n<p>The world has entered a new era of quantum utility, where quantum systems operating with 100+ qubits can reliably run circuits at scales inaccessible to brute force classical simulation. In this video, the IBM Quantum team explores how quantum utility and other recent innovations have laid the groundwork for an expanded quantum roadmap — one that now covers both the public-facing systems and services of the future, and the internal milestones that will drive those achievements.\n</p>\nLearn more about IBM Quantum at <a rel=\"nofollow\" class=\"external free\" href=\"https://www.ibm.com/quantum\">https://www.ibm.com/quantum</a>",
+              "source": "commons-desc-page"
+            },
+            "DateTimeOriginal": {
+              "value": "2024-05-20",
+              "source": "commons-desc-page"
+            },
+            "Credit": {
+              "value": "<ul><li><bdi lang=\"en\" dir=\"ltr\"><a href=\"//commons.wikimedia.org/wiki/Commons:YouTube_files\" title=\"Commons:YouTube files\">YouTube</a>: <a rel=\"nofollow\" class=\"external text\" href=\"https://www.youtube.com/watch?v=d5aIx79OTps\"><bdi lang=\"\">2024 IBM Quantum Roadmap Update</bdi></a> – View/save archived versions on <a rel=\"nofollow\" class=\"external text\" href=\"https://web.archive.org/web/*/https://www.youtube.com/watch?v=d5aIx79OTps\">archive.org</a></bdi></li>\n<li><a rel=\"nofollow\" class=\"external free\" href=\"https://web.archive.org/web/20240618074036/https://www.youtube.com/watch?v=d5aIx79OTps\">https://web.archive.org/web/20240618074036/https://www.youtube.com/watch?v=d5aIx79OTps</a></li></ul>",
+              "source": "commons-desc-page"
+            },
+            "Artist": {
+              "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.youtube.com/@ibmresearch\">IBM Research</a>",
+              "source": "commons-desc-page"
+            },
+            "LicenseShortName": {
+              "value": "CC BY 3.0",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "UsageTerms": {
+              "value": "Creative Commons Attribution 3.0",
+              "source": "commons-desc-page"
+            },
+            "AttributionRequired": {
+              "value": "true",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "Attribution": {
+              "value": "IBM Research",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "LicenseUrl": {
+              "value": "https://creativecommons.org/licenses/by/3.0",
+              "source": "commons-desc-page"
+            },
+            "Copyrighted": {
+              "value": "True",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "Restrictions": {
+              "value": "personality",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "License": {
+              "value": "cc-by-3.0",
+              "source": "commons-templates",
+              "hidden": ""
+            }
+          }
+        }
+      ]
+    }
+  },
+  {
+    "sourceId": "wikimedia",
+    "externalId": "154534710",
+    "canonicalUrl": "https://commons.wikimedia.org/wiki/File:Minister_Sir_Patrick_Vallance_officially_opens_the_National_Quantum_Computing_Centre_at_Harwell_Science_and_Innovation_Campus,_Oxfordshire,_United_Kingdom_on_25_October_2024_-_1.jpg",
+    "title": "Minister Sir Patrick Vallance officially opens the National Quantum Computing Centre at Harwell Science and Innovation Campus, Oxfordshire, United Kingdom on 25 October 2024 - 1.jpg",
+    "authors": [
+      "Department for Science, Innovation & Technology"
+    ],
+    "publishedAt": null,
+    "mediaType": "image",
+    "licence": {
+      "spdx": "CC-BY",
+      "url": "https://creativecommons.org/licenses/by/2.0",
+      "assertedBy": "wikimedia",
+      "attribution": "Department for Science, Innovation & Technology — Minister Sir Patrick Vallance officially opens the National Quantum Computing Centre at Harwell Science and Innovation Campus, Oxfordshire, United Kingdom on 25 October 2024 - 1.jpg"
+    },
+    "snippet": null,
+    "thumbnailUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bc/Minister_Sir_Patrick_Vallance_officially_opens_the_National_Quantum_Computing_Centre_at_Harwell_Science_and_Innovation_Campus%2C_Oxfordshire%2C_United_Kingdom_on_25_October_2024_-_1.jpg/500px-thumbnail.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "raw": {
+      "pageid": 154534710,
+      "ns": 6,
+      "title": "File:Minister Sir Patrick Vallance officially opens the National Quantum Computing Centre at Harwell Science and Innovation Campus, Oxfordshire, United Kingdom on 25 October 2024 - 1.jpg",
+      "index": 9,
+      "imagerepository": "local",
+      "imageinfo": [
+        {
+          "thumburl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bc/Minister_Sir_Patrick_Vallance_officially_opens_the_National_Quantum_Computing_Centre_at_Harwell_Science_and_Innovation_Campus%2C_Oxfordshire%2C_United_Kingdom_on_25_October_2024_-_1.jpg/500px-thumbnail.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumbwidth": 400,
+          "thumbheight": 267,
+          "responsiveUrls": {
+            "2": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bc/Minister_Sir_Patrick_Vallance_officially_opens_the_National_Quantum_Computing_Centre_at_Harwell_Science_and_Innovation_Campus%2C_Oxfordshire%2C_United_Kingdom_on_25_October_2024_-_1.jpg/960px-thumbnail.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+          },
+          "thumbattribs": {
+            "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bc/Minister_Sir_Patrick_Vallance_officially_opens_the_National_Quantum_Computing_Centre_at_Harwell_Science_and_Innovation_Campus%2C_Oxfordshire%2C_United_Kingdom_on_25_October_2024_-_1.jpg/500px-thumbnail.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "decoding": "async",
+            "loading": "lazy",
+            "width": 400,
+            "height": 267,
+            "srcset": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bc/Minister_Sir_Patrick_Vallance_officially_opens_the_National_Quantum_Computing_Centre_at_Harwell_Science_and_Innovation_Campus%2C_Oxfordshire%2C_United_Kingdom_on_25_October_2024_-_1.jpg/960px-thumbnail.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail 2x"
+          },
+          "url": "https://upload.wikimedia.org/wikipedia/commons/b/bc/Minister_Sir_Patrick_Vallance_officially_opens_the_National_Quantum_Computing_Centre_at_Harwell_Science_and_Innovation_Campus%2C_Oxfordshire%2C_United_Kingdom_on_25_October_2024_-_1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "descriptionurl": "https://commons.wikimedia.org/wiki/File:Minister_Sir_Patrick_Vallance_officially_opens_the_National_Quantum_Computing_Centre_at_Harwell_Science_and_Innovation_Campus,_Oxfordshire,_United_Kingdom_on_25_October_2024_-_1.jpg",
+          "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=154534710",
+          "extmetadata": {
+            "DateTime": {
+              "value": "2024-10-28 21:33:53",
+              "source": "mediawiki-metadata",
+              "hidden": ""
+            },
+            "ObjectName": {
+              "value": "Minister Sir Patrick Vallance officially opens the National Quantum Computing Centre at Harwell Science and Innovation Campus, Oxfordshire, United Kingdom on 25 October 2024 - 1",
+              "source": "mediawiki-metadata"
+            },
+            "CommonsMetadataExtension": {
+              "value": 1.2,
+              "source": "extension",
+              "hidden": ""
+            },
+            "Categories": {
+              "value": "Patrick Vallance|Quantum computing|Harwell Science and Innovation Campus|Flickr images reviewed by FlickreviewR 2|2024 in Oxfordshire|United Kingdom photographs taken on 2024-10-25|Flickr images missing SDC published in",
+              "source": "commons-categories",
+              "hidden": ""
+            },
+            "Assessments": {
+              "value": "",
+              "source": "commons-categories",
+              "hidden": ""
+            },
+            "ImageDescription": {
+              "value": "25/10/2024. Minister Sir Patrick Vallance officially opens the National Quantum Computing Centre. Picture by Zoe-Rose Herbert / DSIT",
+              "source": "commons-desc-page"
+            },
+            "DateTimeOriginal": {
+              "value": "2024-10-25 11:05:38",
+              "source": "commons-desc-page"
+            },
+            "Credit": {
+              "value": "<a rel=\"nofollow\" class=\"external free\" href=\"https://www.flickr.com/photos/200717224@N03/54099948365/\">https://www.flickr.com/photos/200717224@N03/54099948365/</a>",
+              "source": "commons-desc-page"
+            },
+            "Artist": {
+              "value": "Department for Science, Innovation &amp; Technology",
+              "source": "commons-desc-page"
+            },
+            "LicenseShortName": {
+              "value": "CC BY 2.0",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "UsageTerms": {
+              "value": "Creative Commons Attribution 2.0",
+              "source": "commons-desc-page"
+            },
+            "AttributionRequired": {
+              "value": "true",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "LicenseUrl": {
+              "value": "https://creativecommons.org/licenses/by/2.0",
+              "source": "commons-desc-page"
+            },
+            "Copyrighted": {
+              "value": "True",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "Restrictions": {
+              "value": "",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "License": {
+              "value": "cc-by-2.0",
+              "source": "commons-templates",
+              "hidden": ""
+            }
+          }
+        }
+      ]
+    }
+  },
+  {
+    "sourceId": "wikimedia",
+    "externalId": "154534713",
+    "canonicalUrl": "https://commons.wikimedia.org/wiki/File:Minister_Sir_Patrick_Vallance_officially_opens_the_National_Quantum_Computing_Centre_at_Harwell_Science_and_Innovation_Campus,_Oxfordshire,_United_Kingdom_on_25_October_2024_-_4.jpg",
+    "title": "Minister Sir Patrick Vallance officially opens the National Quantum Computing Centre at Harwell Science and Innovation Campus, Oxfordshire, United Kingdom on 25 October 2024 - 4.jpg",
+    "authors": [
+      "Department for Science, Innovation & Technology"
+    ],
+    "publishedAt": null,
+    "mediaType": "image",
+    "licence": {
+      "spdx": "CC-BY",
+      "url": "https://creativecommons.org/licenses/by/2.0",
+      "assertedBy": "wikimedia",
+      "attribution": "Department for Science, Innovation & Technology — Minister Sir Patrick Vallance officially opens the National Quantum Computing Centre at Harwell Science and Innovation Campus, Oxfordshire, United Kingdom on 25 October 2024 - 4.jpg"
+    },
+    "snippet": null,
+    "thumbnailUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ac/Minister_Sir_Patrick_Vallance_officially_opens_the_National_Quantum_Computing_Centre_at_Harwell_Science_and_Innovation_Campus%2C_Oxfordshire%2C_United_Kingdom_on_25_October_2024_-_4.jpg/500px-thumbnail.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "raw": {
+      "pageid": 154534713,
+      "ns": 6,
+      "title": "File:Minister Sir Patrick Vallance officially opens the National Quantum Computing Centre at Harwell Science and Innovation Campus, Oxfordshire, United Kingdom on 25 October 2024 - 4.jpg",
+      "index": 8,
+      "imagerepository": "local",
+      "imageinfo": [
+        {
+          "thumburl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ac/Minister_Sir_Patrick_Vallance_officially_opens_the_National_Quantum_Computing_Centre_at_Harwell_Science_and_Innovation_Campus%2C_Oxfordshire%2C_United_Kingdom_on_25_October_2024_-_4.jpg/500px-thumbnail.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumbwidth": 400,
+          "thumbheight": 267,
+          "responsiveUrls": {
+            "2": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ac/Minister_Sir_Patrick_Vallance_officially_opens_the_National_Quantum_Computing_Centre_at_Harwell_Science_and_Innovation_Campus%2C_Oxfordshire%2C_United_Kingdom_on_25_October_2024_-_4.jpg/960px-thumbnail.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+          },
+          "thumbattribs": {
+            "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ac/Minister_Sir_Patrick_Vallance_officially_opens_the_National_Quantum_Computing_Centre_at_Harwell_Science_and_Innovation_Campus%2C_Oxfordshire%2C_United_Kingdom_on_25_October_2024_-_4.jpg/500px-thumbnail.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "decoding": "async",
+            "loading": "lazy",
+            "width": 400,
+            "height": 267,
+            "srcset": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ac/Minister_Sir_Patrick_Vallance_officially_opens_the_National_Quantum_Computing_Centre_at_Harwell_Science_and_Innovation_Campus%2C_Oxfordshire%2C_United_Kingdom_on_25_October_2024_-_4.jpg/960px-thumbnail.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail 2x"
+          },
+          "url": "https://upload.wikimedia.org/wikipedia/commons/a/ac/Minister_Sir_Patrick_Vallance_officially_opens_the_National_Quantum_Computing_Centre_at_Harwell_Science_and_Innovation_Campus%2C_Oxfordshire%2C_United_Kingdom_on_25_October_2024_-_4.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "descriptionurl": "https://commons.wikimedia.org/wiki/File:Minister_Sir_Patrick_Vallance_officially_opens_the_National_Quantum_Computing_Centre_at_Harwell_Science_and_Innovation_Campus,_Oxfordshire,_United_Kingdom_on_25_October_2024_-_4.jpg",
+          "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=154534713",
+          "extmetadata": {
+            "DateTime": {
+              "value": "2024-10-28 21:33:57",
+              "source": "mediawiki-metadata",
+              "hidden": ""
+            },
+            "ObjectName": {
+              "value": "Minister Sir Patrick Vallance officially opens the National Quantum Computing Centre at Harwell Science and Innovation Campus, Oxfordshire, United Kingdom on 25 October 2024 - 4",
+              "source": "mediawiki-metadata"
+            },
+            "CommonsMetadataExtension": {
+              "value": 1.2,
+              "source": "extension",
+              "hidden": ""
+            },
+            "Categories": {
+              "value": "Patrick Vallance|Quantum computing|Harwell Science and Innovation Campus|Flickr images reviewed by FlickreviewR 2|October 2024 in Oxfordshire|United Kingdom photographs taken on 2024-10-25|Flickr images missing SDC published in",
+              "source": "commons-categories",
+              "hidden": ""
+            },
+            "Assessments": {
+              "value": "",
+              "source": "commons-categories",
+              "hidden": ""
+            },
+            "ImageDescription": {
+              "value": "25/10/2024. Minister Sir Patrick Vallance officially opens the National Quantum Computing Centre. Picture by Zoe-Rose Herbert / DSIT",
+              "source": "commons-desc-page"
+            },
+            "DateTimeOriginal": {
+              "value": "2024-10-25 11:25:38",
+              "source": "commons-desc-page"
+            },
+            "Credit": {
+              "value": "<a rel=\"nofollow\" class=\"external free\" href=\"https://www.flickr.com/photos/200717224@N03/54099494181/\">https://www.flickr.com/photos/200717224@N03/54099494181/</a>",
+              "source": "commons-desc-page"
+            },
+            "Artist": {
+              "value": "Department for Science, Innovation &amp; Technology",
+              "source": "commons-desc-page"
+            },
+            "LicenseShortName": {
+              "value": "CC BY 2.0",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "UsageTerms": {
+              "value": "Creative Commons Attribution 2.0",
+              "source": "commons-desc-page"
+            },
+            "AttributionRequired": {
+              "value": "true",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "LicenseUrl": {
+              "value": "https://creativecommons.org/licenses/by/2.0",
+              "source": "commons-desc-page"
+            },
+            "Copyrighted": {
+              "value": "True",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "Restrictions": {
+              "value": "",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "License": {
+              "value": "cc-by-2.0",
+              "source": "commons-templates",
+              "hidden": ""
+            }
+          }
+        }
+      ]
+    }
+  },
+  {
+    "sourceId": "wikimedia",
+    "externalId": "154534714",
+    "canonicalUrl": "https://commons.wikimedia.org/wiki/File:Minister_Sir_Patrick_Vallance_officially_opens_the_National_Quantum_Computing_Centre_at_Harwell_Science_and_Innovation_Campus,_Oxfordshire,_United_Kingdom_on_25_October_2024_-_5.jpg",
+    "title": "Minister Sir Patrick Vallance officially opens the National Quantum Computing Centre at Harwell Science and Innovation Campus, Oxfordshire, United Kingdom on 25 October 2024 - 5.jpg",
+    "authors": [
+      "Department for Science, Innovation & Technology"
+    ],
+    "publishedAt": null,
+    "mediaType": "image",
+    "licence": {
+      "spdx": "CC-BY",
+      "url": "https://creativecommons.org/licenses/by/2.0",
+      "assertedBy": "wikimedia",
+      "attribution": "Department for Science, Innovation & Technology — Minister Sir Patrick Vallance officially opens the National Quantum Computing Centre at Harwell Science and Innovation Campus, Oxfordshire, United Kingdom on 25 October 2024 - 5.jpg"
+    },
+    "snippet": null,
+    "thumbnailUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f2/Minister_Sir_Patrick_Vallance_officially_opens_the_National_Quantum_Computing_Centre_at_Harwell_Science_and_Innovation_Campus%2C_Oxfordshire%2C_United_Kingdom_on_25_October_2024_-_5.jpg/500px-thumbnail.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "raw": {
+      "pageid": 154534714,
+      "ns": 6,
+      "title": "File:Minister Sir Patrick Vallance officially opens the National Quantum Computing Centre at Harwell Science and Innovation Campus, Oxfordshire, United Kingdom on 25 October 2024 - 5.jpg",
+      "index": 10,
+      "imagerepository": "local",
+      "imageinfo": [
+        {
+          "thumburl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f2/Minister_Sir_Patrick_Vallance_officially_opens_the_National_Quantum_Computing_Centre_at_Harwell_Science_and_Innovation_Campus%2C_Oxfordshire%2C_United_Kingdom_on_25_October_2024_-_5.jpg/500px-thumbnail.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumbwidth": 400,
+          "thumbheight": 267,
+          "responsiveUrls": {
+            "2": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f2/Minister_Sir_Patrick_Vallance_officially_opens_the_National_Quantum_Computing_Centre_at_Harwell_Science_and_Innovation_Campus%2C_Oxfordshire%2C_United_Kingdom_on_25_October_2024_-_5.jpg/960px-thumbnail.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+          },
+          "thumbattribs": {
+            "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f2/Minister_Sir_Patrick_Vallance_officially_opens_the_National_Quantum_Computing_Centre_at_Harwell_Science_and_Innovation_Campus%2C_Oxfordshire%2C_United_Kingdom_on_25_October_2024_-_5.jpg/500px-thumbnail.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "decoding": "async",
+            "loading": "lazy",
+            "width": 400,
+            "height": 267,
+            "srcset": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f2/Minister_Sir_Patrick_Vallance_officially_opens_the_National_Quantum_Computing_Centre_at_Harwell_Science_and_Innovation_Campus%2C_Oxfordshire%2C_United_Kingdom_on_25_October_2024_-_5.jpg/960px-thumbnail.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail 2x"
+          },
+          "url": "https://upload.wikimedia.org/wikipedia/commons/f/f2/Minister_Sir_Patrick_Vallance_officially_opens_the_National_Quantum_Computing_Centre_at_Harwell_Science_and_Innovation_Campus%2C_Oxfordshire%2C_United_Kingdom_on_25_October_2024_-_5.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "descriptionurl": "https://commons.wikimedia.org/wiki/File:Minister_Sir_Patrick_Vallance_officially_opens_the_National_Quantum_Computing_Centre_at_Harwell_Science_and_Innovation_Campus,_Oxfordshire,_United_Kingdom_on_25_October_2024_-_5.jpg",
+          "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=154534714",
+          "extmetadata": {
+            "DateTime": {
+              "value": "2024-10-28 21:33:57",
+              "source": "mediawiki-metadata",
+              "hidden": ""
+            },
+            "ObjectName": {
+              "value": "Minister Sir Patrick Vallance officially opens the National Quantum Computing Centre at Harwell Science and Innovation Campus, Oxfordshire, United Kingdom on 25 October 2024 - 5",
+              "source": "mediawiki-metadata"
+            },
+            "CommonsMetadataExtension": {
+              "value": 1.2,
+              "source": "extension",
+              "hidden": ""
+            },
+            "Categories": {
+              "value": "Patrick Vallance|Quantum computing|Harwell Science and Innovation Campus|Flickr images reviewed by FlickreviewR 2|October 2024 in Oxfordshire|United Kingdom photographs taken on 2024-10-25|Flickr images missing SDC published in",
+              "source": "commons-categories",
+              "hidden": ""
+            },
+            "Assessments": {
+              "value": "",
+              "source": "commons-categories",
+              "hidden": ""
+            },
+            "ImageDescription": {
+              "value": "25/10/2024. Minister Sir Patrick Vallance officially opens the National Quantum Computing Centre. Picture by Zoe-Rose Herbert / DSIT",
+              "source": "commons-desc-page"
+            },
+            "DateTimeOriginal": {
+              "value": "2024-10-25 11:25:17",
+              "source": "commons-desc-page"
+            },
+            "Credit": {
+              "value": "<a rel=\"nofollow\" class=\"external free\" href=\"https://www.flickr.com/photos/200717224@N03/54099494186/\">https://www.flickr.com/photos/200717224@N03/54099494186/</a>",
+              "source": "commons-desc-page"
+            },
+            "Artist": {
+              "value": "Department for Science, Innovation &amp; Technology",
+              "source": "commons-desc-page"
+            },
+            "LicenseShortName": {
+              "value": "CC BY 2.0",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "UsageTerms": {
+              "value": "Creative Commons Attribution 2.0",
+              "source": "commons-desc-page"
+            },
+            "AttributionRequired": {
+              "value": "true",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "LicenseUrl": {
+              "value": "https://creativecommons.org/licenses/by/2.0",
+              "source": "commons-desc-page"
+            },
+            "Copyrighted": {
+              "value": "True",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "Restrictions": {
+              "value": "",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "License": {
+              "value": "cc-by-2.0",
+              "source": "commons-templates",
+              "hidden": ""
+            }
+          }
+        }
+      ]
+    }
+  },
+  {
+    "sourceId": "wikimedia",
+    "externalId": "154534716",
+    "canonicalUrl": "https://commons.wikimedia.org/wiki/File:Minister_Sir_Patrick_Vallance_officially_opens_the_National_Quantum_Computing_Centre_at_Harwell_Science_and_Innovation_Campus,_Oxfordshire,_United_Kingdom_on_25_October_2024_-_6.jpg",
+    "title": "Minister Sir Patrick Vallance officially opens the National Quantum Computing Centre at Harwell Science and Innovation Campus, Oxfordshire, United Kingdom on 25 October 2024 - 6.jpg",
+    "authors": [
+      "Department for Science, Innovation & Technology"
+    ],
+    "publishedAt": null,
+    "mediaType": "image",
+    "licence": {
+      "spdx": "CC-BY",
+      "url": "https://creativecommons.org/licenses/by/2.0",
+      "assertedBy": "wikimedia",
+      "attribution": "Department for Science, Innovation & Technology — Minister Sir Patrick Vallance officially opens the National Quantum Computing Centre at Harwell Science and Innovation Campus, Oxfordshire, United Kingdom on 25 October 2024 - 6.jpg"
+    },
+    "snippet": null,
+    "thumbnailUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/60/Minister_Sir_Patrick_Vallance_officially_opens_the_National_Quantum_Computing_Centre_at_Harwell_Science_and_Innovation_Campus%2C_Oxfordshire%2C_United_Kingdom_on_25_October_2024_-_6.jpg/500px-thumbnail.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "raw": {
+      "pageid": 154534716,
+      "ns": 6,
+      "title": "File:Minister Sir Patrick Vallance officially opens the National Quantum Computing Centre at Harwell Science and Innovation Campus, Oxfordshire, United Kingdom on 25 October 2024 - 6.jpg",
+      "index": 5,
+      "imagerepository": "local",
+      "imageinfo": [
+        {
+          "thumburl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/60/Minister_Sir_Patrick_Vallance_officially_opens_the_National_Quantum_Computing_Centre_at_Harwell_Science_and_Innovation_Campus%2C_Oxfordshire%2C_United_Kingdom_on_25_October_2024_-_6.jpg/500px-thumbnail.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumbwidth": 400,
+          "thumbheight": 267,
+          "responsiveUrls": {
+            "2": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/60/Minister_Sir_Patrick_Vallance_officially_opens_the_National_Quantum_Computing_Centre_at_Harwell_Science_and_Innovation_Campus%2C_Oxfordshire%2C_United_Kingdom_on_25_October_2024_-_6.jpg/960px-thumbnail.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+          },
+          "thumbattribs": {
+            "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/60/Minister_Sir_Patrick_Vallance_officially_opens_the_National_Quantum_Computing_Centre_at_Harwell_Science_and_Innovation_Campus%2C_Oxfordshire%2C_United_Kingdom_on_25_October_2024_-_6.jpg/500px-thumbnail.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "decoding": "async",
+            "loading": "lazy",
+            "width": 400,
+            "height": 267,
+            "srcset": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/60/Minister_Sir_Patrick_Vallance_officially_opens_the_National_Quantum_Computing_Centre_at_Harwell_Science_and_Innovation_Campus%2C_Oxfordshire%2C_United_Kingdom_on_25_October_2024_-_6.jpg/960px-thumbnail.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail 2x"
+          },
+          "url": "https://upload.wikimedia.org/wikipedia/commons/6/60/Minister_Sir_Patrick_Vallance_officially_opens_the_National_Quantum_Computing_Centre_at_Harwell_Science_and_Innovation_Campus%2C_Oxfordshire%2C_United_Kingdom_on_25_October_2024_-_6.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "descriptionurl": "https://commons.wikimedia.org/wiki/File:Minister_Sir_Patrick_Vallance_officially_opens_the_National_Quantum_Computing_Centre_at_Harwell_Science_and_Innovation_Campus,_Oxfordshire,_United_Kingdom_on_25_October_2024_-_6.jpg",
+          "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=154534716",
+          "extmetadata": {
+            "DateTime": {
+              "value": "2024-10-28 21:33:57",
+              "source": "mediawiki-metadata",
+              "hidden": ""
+            },
+            "ObjectName": {
+              "value": "Minister Sir Patrick Vallance officially opens the National Quantum Computing Centre at Harwell Science and Innovation Campus, Oxfordshire, United Kingdom on 25 October 2024 - 6",
+              "source": "mediawiki-metadata"
+            },
+            "CommonsMetadataExtension": {
+              "value": 1.2,
+              "source": "extension",
+              "hidden": ""
+            },
+            "Categories": {
+              "value": "Patrick Vallance|Quantum computing|Harwell Science and Innovation Campus|Flickr images reviewed by FlickreviewR 2|October 2024 in Oxfordshire|United Kingdom photographs taken on 2024-10-25",
+              "source": "commons-categories",
+              "hidden": ""
+            },
+            "Assessments": {
+              "value": "",
+              "source": "commons-categories",
+              "hidden": ""
+            },
+            "ImageDescription": {
+              "value": "25/10/2024. Minister Sir Patrick Vallance officially opens the National Quantum Computing Centre. Picture by Zoe-Rose Herbert / DSIT",
+              "source": "commons-desc-page"
+            },
+            "DateTimeOriginal": {
+              "value": "2024-10-25 11:41:45",
+              "source": "commons-desc-page"
+            },
+            "Credit": {
+              "value": "<a rel=\"nofollow\" class=\"external free\" href=\"https://www.flickr.com/photos/200717224@N03/54099831679/\">https://www.flickr.com/photos/200717224@N03/54099831679/</a>",
+              "source": "commons-desc-page"
+            },
+            "Artist": {
+              "value": "Department for Science, Innovation &amp; Technology",
+              "source": "commons-desc-page"
+            },
+            "LicenseShortName": {
+              "value": "CC BY 2.0",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "UsageTerms": {
+              "value": "Creative Commons Attribution 2.0",
+              "source": "commons-desc-page"
+            },
+            "AttributionRequired": {
+              "value": "true",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "LicenseUrl": {
+              "value": "https://creativecommons.org/licenses/by/2.0",
+              "source": "commons-desc-page"
+            },
+            "Copyrighted": {
+              "value": "True",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "Restrictions": {
+              "value": "",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "License": {
+              "value": "cc-by-2.0",
+              "source": "commons-templates",
+              "hidden": ""
+            }
+          }
+        }
+      ]
+    }
+  },
+  {
+    "sourceId": "wikimedia",
+    "externalId": "154534719",
+    "canonicalUrl": "https://commons.wikimedia.org/wiki/File:Minister_Sir_Patrick_Vallance_officially_opens_the_National_Quantum_Computing_Centre_at_Harwell_Science_and_Innovation_Campus,_Oxfordshire,_United_Kingdom_on_25_October_2024_-_7.jpg",
+    "title": "Minister Sir Patrick Vallance officially opens the National Quantum Computing Centre at Harwell Science and Innovation Campus, Oxfordshire, United Kingdom on 25 October 2024 - 7.jpg",
+    "authors": [
+      "Department for Science, Innovation & Technology"
+    ],
+    "publishedAt": null,
+    "mediaType": "image",
+    "licence": {
+      "spdx": "CC-BY",
+      "url": "https://creativecommons.org/licenses/by/2.0",
+      "assertedBy": "wikimedia",
+      "attribution": "Department for Science, Innovation & Technology — Minister Sir Patrick Vallance officially opens the National Quantum Computing Centre at Harwell Science and Innovation Campus, Oxfordshire, United Kingdom on 25 October 2024 - 7.jpg"
+    },
+    "snippet": null,
+    "thumbnailUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/93/Minister_Sir_Patrick_Vallance_officially_opens_the_National_Quantum_Computing_Centre_at_Harwell_Science_and_Innovation_Campus%2C_Oxfordshire%2C_United_Kingdom_on_25_October_2024_-_7.jpg/500px-thumbnail.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "raw": {
+      "pageid": 154534719,
+      "ns": 6,
+      "title": "File:Minister Sir Patrick Vallance officially opens the National Quantum Computing Centre at Harwell Science and Innovation Campus, Oxfordshire, United Kingdom on 25 October 2024 - 7.jpg",
+      "index": 6,
+      "imagerepository": "local",
+      "imageinfo": [
+        {
+          "thumburl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/93/Minister_Sir_Patrick_Vallance_officially_opens_the_National_Quantum_Computing_Centre_at_Harwell_Science_and_Innovation_Campus%2C_Oxfordshire%2C_United_Kingdom_on_25_October_2024_-_7.jpg/500px-thumbnail.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumbwidth": 400,
+          "thumbheight": 267,
+          "responsiveUrls": {
+            "2": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/93/Minister_Sir_Patrick_Vallance_officially_opens_the_National_Quantum_Computing_Centre_at_Harwell_Science_and_Innovation_Campus%2C_Oxfordshire%2C_United_Kingdom_on_25_October_2024_-_7.jpg/960px-thumbnail.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+          },
+          "thumbattribs": {
+            "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/93/Minister_Sir_Patrick_Vallance_officially_opens_the_National_Quantum_Computing_Centre_at_Harwell_Science_and_Innovation_Campus%2C_Oxfordshire%2C_United_Kingdom_on_25_October_2024_-_7.jpg/500px-thumbnail.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "decoding": "async",
+            "loading": "lazy",
+            "width": 400,
+            "height": 267,
+            "srcset": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/93/Minister_Sir_Patrick_Vallance_officially_opens_the_National_Quantum_Computing_Centre_at_Harwell_Science_and_Innovation_Campus%2C_Oxfordshire%2C_United_Kingdom_on_25_October_2024_-_7.jpg/960px-thumbnail.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail 2x"
+          },
+          "url": "https://upload.wikimedia.org/wikipedia/commons/9/93/Minister_Sir_Patrick_Vallance_officially_opens_the_National_Quantum_Computing_Centre_at_Harwell_Science_and_Innovation_Campus%2C_Oxfordshire%2C_United_Kingdom_on_25_October_2024_-_7.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "descriptionurl": "https://commons.wikimedia.org/wiki/File:Minister_Sir_Patrick_Vallance_officially_opens_the_National_Quantum_Computing_Centre_at_Harwell_Science_and_Innovation_Campus,_Oxfordshire,_United_Kingdom_on_25_October_2024_-_7.jpg",
+          "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=154534719",
+          "extmetadata": {
+            "DateTime": {
+              "value": "2024-10-28 21:34:00",
+              "source": "mediawiki-metadata",
+              "hidden": ""
+            },
+            "ObjectName": {
+              "value": "Minister Sir Patrick Vallance officially opens the National Quantum Computing Centre at Harwell Science and Innovation Campus, Oxfordshire, United Kingdom on 25 October 2024 - 7",
+              "source": "mediawiki-metadata"
+            },
+            "CommonsMetadataExtension": {
+              "value": 1.2,
+              "source": "extension",
+              "hidden": ""
+            },
+            "Categories": {
+              "value": "Quantum computing|Harwell Science and Innovation Campus|Flickr images reviewed by FlickreviewR 2|2024 in Oxfordshire|United Kingdom photographs taken on 2024-10-25|Flickr images missing SDC published in",
+              "source": "commons-categories",
+              "hidden": ""
+            },
+            "Assessments": {
+              "value": "",
+              "source": "commons-categories",
+              "hidden": ""
+            },
+            "ImageDescription": {
+              "value": "25/10/2024. Minister Sir Patrick Vallance officially opens the National Quantum Computing Centre. Picture by Zoe-Rose Herbert / DSIT",
+              "source": "commons-desc-page"
+            },
+            "DateTimeOriginal": {
+              "value": "2024-10-25 11:34:48",
+              "source": "commons-desc-page"
+            },
+            "Credit": {
+              "value": "<a rel=\"nofollow\" class=\"external free\" href=\"https://www.flickr.com/photos/200717224@N03/54099831664/\">https://www.flickr.com/photos/200717224@N03/54099831664/</a>",
+              "source": "commons-desc-page"
+            },
+            "Artist": {
+              "value": "Department for Science, Innovation &amp; Technology",
+              "source": "commons-desc-page"
+            },
+            "LicenseShortName": {
+              "value": "CC BY 2.0",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "UsageTerms": {
+              "value": "Creative Commons Attribution 2.0",
+              "source": "commons-desc-page"
+            },
+            "AttributionRequired": {
+              "value": "true",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "LicenseUrl": {
+              "value": "https://creativecommons.org/licenses/by/2.0",
+              "source": "commons-desc-page"
+            },
+            "Copyrighted": {
+              "value": "True",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "Restrictions": {
+              "value": "",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "License": {
+              "value": "cc-by-2.0",
+              "source": "commons-templates",
+              "hidden": ""
+            }
+          }
+        }
+      ]
+    }
+  },
+  {
+    "sourceId": "wikimedia",
+    "externalId": "154534725",
+    "canonicalUrl": "https://commons.wikimedia.org/wiki/File:Minister_Sir_Patrick_Vallance_officially_opens_the_National_Quantum_Computing_Centre_at_Harwell_Science_and_Innovation_Campus,_Oxfordshire,_United_Kingdom_on_25_October_2024_-_10.jpg",
+    "title": "Minister Sir Patrick Vallance officially opens the National Quantum Computing Centre at Harwell Science and Innovation Campus, Oxfordshire, United Kingdom on 25 October 2024 - 10.jpg",
+    "authors": [
+      "Department for Science, Innovation & Technology"
+    ],
+    "publishedAt": null,
+    "mediaType": "image",
+    "licence": {
+      "spdx": "CC-BY",
+      "url": "https://creativecommons.org/licenses/by/2.0",
+      "assertedBy": "wikimedia",
+      "attribution": "Department for Science, Innovation & Technology — Minister Sir Patrick Vallance officially opens the National Quantum Computing Centre at Harwell Science and Innovation Campus, Oxfordshire, United Kingdom on 25 October 2024 - 10.jpg"
+    },
+    "snippet": null,
+    "thumbnailUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ac/Minister_Sir_Patrick_Vallance_officially_opens_the_National_Quantum_Computing_Centre_at_Harwell_Science_and_Innovation_Campus%2C_Oxfordshire%2C_United_Kingdom_on_25_October_2024_-_10.jpg/500px-thumbnail.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "raw": {
+      "pageid": 154534725,
+      "ns": 6,
+      "title": "File:Minister Sir Patrick Vallance officially opens the National Quantum Computing Centre at Harwell Science and Innovation Campus, Oxfordshire, United Kingdom on 25 October 2024 - 10.jpg",
+      "index": 7,
+      "imagerepository": "local",
+      "imageinfo": [
+        {
+          "thumburl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ac/Minister_Sir_Patrick_Vallance_officially_opens_the_National_Quantum_Computing_Centre_at_Harwell_Science_and_Innovation_Campus%2C_Oxfordshire%2C_United_Kingdom_on_25_October_2024_-_10.jpg/500px-thumbnail.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumbwidth": 400,
+          "thumbheight": 267,
+          "responsiveUrls": {
+            "2": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ac/Minister_Sir_Patrick_Vallance_officially_opens_the_National_Quantum_Computing_Centre_at_Harwell_Science_and_Innovation_Campus%2C_Oxfordshire%2C_United_Kingdom_on_25_October_2024_-_10.jpg/960px-thumbnail.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+          },
+          "thumbattribs": {
+            "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ac/Minister_Sir_Patrick_Vallance_officially_opens_the_National_Quantum_Computing_Centre_at_Harwell_Science_and_Innovation_Campus%2C_Oxfordshire%2C_United_Kingdom_on_25_October_2024_-_10.jpg/500px-thumbnail.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "decoding": "async",
+            "loading": "lazy",
+            "width": 400,
+            "height": 267,
+            "srcset": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ac/Minister_Sir_Patrick_Vallance_officially_opens_the_National_Quantum_Computing_Centre_at_Harwell_Science_and_Innovation_Campus%2C_Oxfordshire%2C_United_Kingdom_on_25_October_2024_-_10.jpg/960px-thumbnail.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail 2x"
+          },
+          "url": "https://upload.wikimedia.org/wikipedia/commons/a/ac/Minister_Sir_Patrick_Vallance_officially_opens_the_National_Quantum_Computing_Centre_at_Harwell_Science_and_Innovation_Campus%2C_Oxfordshire%2C_United_Kingdom_on_25_October_2024_-_10.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "descriptionurl": "https://commons.wikimedia.org/wiki/File:Minister_Sir_Patrick_Vallance_officially_opens_the_National_Quantum_Computing_Centre_at_Harwell_Science_and_Innovation_Campus,_Oxfordshire,_United_Kingdom_on_25_October_2024_-_10.jpg",
+          "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=154534725",
+          "extmetadata": {
+            "DateTime": {
+              "value": "2024-10-28 21:34:04",
+              "source": "mediawiki-metadata",
+              "hidden": ""
+            },
+            "ObjectName": {
+              "value": "Minister Sir Patrick Vallance officially opens the National Quantum Computing Centre at Harwell Science and Innovation Campus, Oxfordshire, United Kingdom on 25 October 2024 - 10",
+              "source": "mediawiki-metadata"
+            },
+            "CommonsMetadataExtension": {
+              "value": 1.2,
+              "source": "extension",
+              "hidden": ""
+            },
+            "Categories": {
+              "value": "Patrick Vallance|Quantum computing|Harwell Science and Innovation Campus|Flickr images reviewed by FlickreviewR 2|2024 in Oxfordshire|United Kingdom photographs taken on 2024-10-25|Flickr images missing SDC published in",
+              "source": "commons-categories",
+              "hidden": ""
+            },
+            "Assessments": {
+              "value": "",
+              "source": "commons-categories",
+              "hidden": ""
+            },
+            "ImageDescription": {
+              "value": "25/10/2024. Minister Sir Patrick Vallance officially opens the National Quantum Computing Centre. Picture by Zoe-Rose Herbert / DSIT",
+              "source": "commons-desc-page"
+            },
+            "DateTimeOriginal": {
+              "value": "2024-10-25 12:24:39",
+              "source": "commons-desc-page"
+            },
+            "Credit": {
+              "value": "<a rel=\"nofollow\" class=\"external free\" href=\"https://www.flickr.com/photos/200717224@N03/54099747053/\">https://www.flickr.com/photos/200717224@N03/54099747053/</a>",
+              "source": "commons-desc-page"
+            },
+            "Artist": {
+              "value": "Department for Science, Innovation &amp; Technology",
+              "source": "commons-desc-page"
+            },
+            "LicenseShortName": {
+              "value": "CC BY 2.0",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "UsageTerms": {
+              "value": "Creative Commons Attribution 2.0",
+              "source": "commons-desc-page"
+            },
+            "AttributionRequired": {
+              "value": "true",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "LicenseUrl": {
+              "value": "https://creativecommons.org/licenses/by/2.0",
+              "source": "commons-desc-page"
+            },
+            "Copyrighted": {
+              "value": "True",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "Restrictions": {
+              "value": "",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "License": {
+              "value": "cc-by-2.0",
+              "source": "commons-templates",
+              "hidden": ""
+            }
+          }
+        }
+      ]
+    }
+  },
+  {
+    "sourceId": "wikimedia",
+    "externalId": "154534726",
+    "canonicalUrl": "https://commons.wikimedia.org/wiki/File:Minister_Sir_Patrick_Vallance_officially_opens_the_National_Quantum_Computing_Centre_at_Harwell_Science_and_Innovation_Campus,_Oxfordshire,_United_Kingdom_on_25_October_2024_-_11.jpg",
+    "title": "Minister Sir Patrick Vallance officially opens the National Quantum Computing Centre at Harwell Science and Innovation Campus, Oxfordshire, United Kingdom on 25 October 2024 - 11.jpg",
+    "authors": [
+      "Department for Science, Innovation & Technology"
+    ],
+    "publishedAt": null,
+    "mediaType": "image",
+    "licence": {
+      "spdx": "CC-BY",
+      "url": "https://creativecommons.org/licenses/by/2.0",
+      "assertedBy": "wikimedia",
+      "attribution": "Department for Science, Innovation & Technology — Minister Sir Patrick Vallance officially opens the National Quantum Computing Centre at Harwell Science and Innovation Campus, Oxfordshire, United Kingdom on 25 October 2024 - 11.jpg"
+    },
+    "snippet": null,
+    "thumbnailUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b8/Minister_Sir_Patrick_Vallance_officially_opens_the_National_Quantum_Computing_Centre_at_Harwell_Science_and_Innovation_Campus%2C_Oxfordshire%2C_United_Kingdom_on_25_October_2024_-_11.jpg/500px-thumbnail.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "raw": {
+      "pageid": 154534726,
+      "ns": 6,
+      "title": "File:Minister Sir Patrick Vallance officially opens the National Quantum Computing Centre at Harwell Science and Innovation Campus, Oxfordshire, United Kingdom on 25 October 2024 - 11.jpg",
+      "index": 3,
+      "imagerepository": "local",
+      "imageinfo": [
+        {
+          "thumburl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b8/Minister_Sir_Patrick_Vallance_officially_opens_the_National_Quantum_Computing_Centre_at_Harwell_Science_and_Innovation_Campus%2C_Oxfordshire%2C_United_Kingdom_on_25_October_2024_-_11.jpg/500px-thumbnail.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumbwidth": 400,
+          "thumbheight": 267,
+          "responsiveUrls": {
+            "2": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b8/Minister_Sir_Patrick_Vallance_officially_opens_the_National_Quantum_Computing_Centre_at_Harwell_Science_and_Innovation_Campus%2C_Oxfordshire%2C_United_Kingdom_on_25_October_2024_-_11.jpg/960px-thumbnail.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+          },
+          "thumbattribs": {
+            "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b8/Minister_Sir_Patrick_Vallance_officially_opens_the_National_Quantum_Computing_Centre_at_Harwell_Science_and_Innovation_Campus%2C_Oxfordshire%2C_United_Kingdom_on_25_October_2024_-_11.jpg/500px-thumbnail.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "decoding": "async",
+            "loading": "lazy",
+            "width": 400,
+            "height": 267,
+            "srcset": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b8/Minister_Sir_Patrick_Vallance_officially_opens_the_National_Quantum_Computing_Centre_at_Harwell_Science_and_Innovation_Campus%2C_Oxfordshire%2C_United_Kingdom_on_25_October_2024_-_11.jpg/960px-thumbnail.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail 2x"
+          },
+          "url": "https://upload.wikimedia.org/wikipedia/commons/b/b8/Minister_Sir_Patrick_Vallance_officially_opens_the_National_Quantum_Computing_Centre_at_Harwell_Science_and_Innovation_Campus%2C_Oxfordshire%2C_United_Kingdom_on_25_October_2024_-_11.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "descriptionurl": "https://commons.wikimedia.org/wiki/File:Minister_Sir_Patrick_Vallance_officially_opens_the_National_Quantum_Computing_Centre_at_Harwell_Science_and_Innovation_Campus,_Oxfordshire,_United_Kingdom_on_25_October_2024_-_11.jpg",
+          "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=154534726",
+          "extmetadata": {
+            "DateTime": {
+              "value": "2024-10-28 21:34:04",
+              "source": "mediawiki-metadata",
+              "hidden": ""
+            },
+            "ObjectName": {
+              "value": "Minister Sir Patrick Vallance officially opens the National Quantum Computing Centre at Harwell Science and Innovation Campus, Oxfordshire, United Kingdom on 25 October 2024 - 11",
+              "source": "mediawiki-metadata"
+            },
+            "CommonsMetadataExtension": {
+              "value": 1.2,
+              "source": "extension",
+              "hidden": ""
+            },
+            "Categories": {
+              "value": "Patrick Vallance|Quantum computing|Harwell Science and Innovation Campus|Flickr images reviewed by FlickreviewR 2|2024 in Oxfordshire|United Kingdom photographs taken on 2024-10-25",
+              "source": "commons-categories",
+              "hidden": ""
+            },
+            "Assessments": {
+              "value": "",
+              "source": "commons-categories",
+              "hidden": ""
+            },
+            "ImageDescription": {
+              "value": "25/10/2024. Minister Sir Patrick Vallance officially opens the National Quantum Computing Centre. Picture by Zoe-Rose Herbert / DSIT",
+              "source": "commons-desc-page"
+            },
+            "DateTimeOriginal": {
+              "value": "2024-10-25 12:26:29",
+              "source": "commons-desc-page"
+            },
+            "Credit": {
+              "value": "<a rel=\"nofollow\" class=\"external free\" href=\"https://www.flickr.com/photos/200717224@N03/54098630717/\">https://www.flickr.com/photos/200717224@N03/54098630717/</a>",
+              "source": "commons-desc-page"
+            },
+            "Artist": {
+              "value": "Department for Science, Innovation &amp; Technology",
+              "source": "commons-desc-page"
+            },
+            "LicenseShortName": {
+              "value": "CC BY 2.0",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "UsageTerms": {
+              "value": "Creative Commons Attribution 2.0",
+              "source": "commons-desc-page"
+            },
+            "AttributionRequired": {
+              "value": "true",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "LicenseUrl": {
+              "value": "https://creativecommons.org/licenses/by/2.0",
+              "source": "commons-desc-page"
+            },
+            "Copyrighted": {
+              "value": "True",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "Restrictions": {
+              "value": "",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "License": {
+              "value": "cc-by-2.0",
+              "source": "commons-templates",
+              "hidden": ""
+            }
+          }
+        }
+      ]
+    }
+  }
+]
