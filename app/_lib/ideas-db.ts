@@ -73,6 +73,30 @@ async function findIdeaByQuery(query: string): Promise<string | null> {
 
 export type SaveOutcome = { ok: boolean; error?: string };
 
+// unique (idea_id, external_id) makes a second save a no-op rather than a
+// duplicate row.
+async function insertPin(
+  ideaId: string,
+  userId: string,
+  result: SourceResult,
+): Promise<SaveOutcome> {
+  const { error } = await getSupabase().from("pins").upsert(
+    {
+      idea_id: ideaId,
+      external_id: resultKey(result),
+      user_id: userId,
+      payload: result,
+    },
+    { onConflict: "idea_id,external_id", ignoreDuplicates: true },
+  );
+
+  if (error) {
+    console.error(`[ideas] pin failed: ${error.message}`);
+    return { ok: false, error: error.message };
+  }
+  return { ok: true };
+}
+
 /** Creates the idea if this is the first pin for that query. */
 export async function saveResult(
   query: string,
@@ -105,23 +129,21 @@ export async function saveResult(
     ideaId = newIdeaId;
   }
 
-  // unique (idea_id, external_id) makes a second save a no-op rather than a
-  // duplicate row.
-  const { error } = await sb.from("pins").upsert(
-    {
-      idea_id: ideaId,
-      external_id: resultKey(result),
-      user_id: userId,
-      payload: result,
-    },
-    { onConflict: "idea_id,external_id", ignoreDuplicates: true },
-  );
+  return insertPin(ideaId, userId, result);
+}
 
-  if (error) {
-    console.error(`[ideas] pin failed: ${error.message}`);
-    return { ok: false, error: error.message };
-  }
-  return { ok: true };
+/**
+ * Adds a result to an idea that already exists. Separate from saveResult
+ * because there is nothing to look up or create — the caller has the id.
+ * RLS lets any member of the idea do this, not just the owner.
+ */
+export async function addResultToIdea(
+  ideaId: string,
+  result: SourceResult,
+): Promise<SaveOutcome> {
+  const userId = await currentUserId();
+  if (!userId) return { ok: false, error: "Not signed in" };
+  return insertPin(ideaId, userId, result);
 }
 
 /** Removes one pin. An idea left with no pins is dropped, as before. */

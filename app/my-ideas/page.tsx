@@ -8,6 +8,7 @@ import ResultCard, {
 } from "../_components/ResultCard";
 import PrintSheet from "../_components/PrintSheet";
 import MembersPanel from "../_components/MembersPanel";
+import IdeaSearch from "../_components/IdeaSearch";
 import {
   listIdeas,
   removeIdea,
@@ -190,6 +191,14 @@ export default function MyIdeas() {
               currentUserId={user?.id ?? null}
               inviteOpen={inviteOpen}
               onCloseInvite={() => setInviteOpen(false)}
+            />
+
+            {/* Keyed so switching ideas clears the query and its results. */}
+            <IdeaSearch
+              key={open.id}
+              ideaId={open.id}
+              savedKeys={new Set(open.results.map(resultKey))}
+              onAdded={reload}
             />
 
             {CATEGORY_LABELS.map((label) => {
