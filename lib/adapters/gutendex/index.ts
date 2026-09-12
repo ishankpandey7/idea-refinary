@@ -73,10 +73,11 @@ export const adapter: Adapter = {
 
       const params = new URLSearchParams({ search: q });
       const url = `${ENDPOINT}?${params.toString()}`;
-      // gutendex answers 403 to Vercel's egress with no User-Agent set,
-      // while the same request succeeds from a residential IP — confirmed in
-      // the function logs on 2026-09-13, seven invocations, all "HTTP 403".
-      // The other three sources do not care. Identify ourselves instead.
+      // The UA is courtesy, not a fix. gutendex answers 403 to every call
+      // from Vercel and 200 from a residential IP, with or without this
+      // header — measured both ways on 2026-09-13. The block is on the IP
+      // range, so Writing stays empty on the deployed site until the adapter
+      // talks to something other than gutendex.com.
       const res = await fetch(url, {
         headers: {
           Accept: "application/json",
