@@ -14,6 +14,8 @@ const CATEGORIES = [
   { id: "writing", label: "Writing" },
 ] as const;
 
+const LAST_SEARCH = "idea-refinery:last-search";
+
 export default function Home() {
   const [query, setQuery] = useState("");
   const [category, setCategory] = useState<string>("");
@@ -24,6 +26,7 @@ export default function Home() {
   // The query that was actually searched — this is the current idea.
   const [currentIdea, setCurrentIdea] = useState("");
   const [savedKeys, setSavedKeys] = useState<Set<string>>(new Set());
+  const [saveError, setSaveError] = useState<string | null>(null);
 
   const { user } = useAuth();
 
@@ -42,13 +45,13 @@ export default function Home() {
     if (currentIdea) void refreshSaved(currentIdea);
   }, [currentIdea, refreshSaved]);
 
-  async function runSearch(nextCategory = category) {
-    const q = query.trim();
+  const runSearchFor = useCallback(async (term: string, cat: string) => {
+    const q = term.trim();
     if (!q) return;
     setLoading(true);
     try {
       const url = `/api/search?q=${encodeURIComponent(q)}${
-        nextCategory ? `&category=${encodeURIComponent(nextCategory)}` : ""
+        cat ? `&category=${encodeURIComponent(cat)}` : ""
       }`;
       const res = await fetch(url);
       setResults(res.ok ? await res.json() : []);
@@ -58,7 +61,50 @@ export default function Home() {
       setCurrentIdea(q);
       setLoading(false);
       setSearched(true);
+
+      // This page is a client component, so its state is thrown away on
+      // unmount. The URL makes a search shareable and survives reload; the
+      // session copy also covers the header's "Search" link, which points at
+      // a bare "/" and so carries no query of its own.
+      const qs = new URLSearchParams({ q });
+      if (cat) qs.set("category", cat);
+      window.history.replaceState(null, "", `/?${qs.toString()}`);
+      try {
+        window.sessionStorage.setItem(LAST_SEARCH, JSON.stringify({ q, cat }));
+      } catch {
+        // Storage blocked — the URL still covers reload and back/forward.
+      }
     }
+  }, []);
+
+  // Restore once on mount: an explicit URL wins, otherwise this tab's last
+  // search.
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    let q = params.get("q")?.trim() ?? "";
+    let cat = params.get("category")?.trim() ?? "";
+
+    if (!q) {
+      try {
+        const raw = window.sessionStorage.getItem(LAST_SEARCH);
+        if (raw) {
+          const saved = JSON.parse(raw) as { q?: string; cat?: string };
+          q = saved.q?.trim() ?? "";
+          cat = saved.cat?.trim() ?? "";
+        }
+      } catch {
+        q = "";
+      }
+    }
+
+    if (!q) return;
+    setQuery(q);
+    setCategory(cat);
+    void runSearchFor(q, cat);
+  }, [runSearchFor]);
+
+  function runSearch(nextCategory = category) {
+    void runSearchFor(query, nextCategory);
   }
 
   function pickCategory(id: string) {
@@ -68,7 +114,10 @@ export default function Home() {
 
   async function onSave(r: SourceResult) {
     if (!user) return;
-    await saveResult(currentIdea, r);
+    const outcome = await saveResult(currentIdea, r);
+    // A save that fails silently is indistinguishable from one that worked
+    // until you go looking in the database, so say so here.
+    setSaveError(outcome.ok ? null : (outcome.error ?? "Save failed"));
     await refreshSaved(currentIdea);
   }
 
@@ -161,6 +210,12 @@ export default function Home() {
             </p>
           ) : null}
         </div>
+      ) : null}
+
+      {saveError ? (
+        <p className="mx-auto mt-6 max-w-xl rounded-2xl border border-[#e8451f]/50 bg-[#e8451f]/10 px-6 py-3 text-center text-[13px] text-[#ff9c6b]">
+          Could not save: {saveError}
+        </p>
       ) : null}
 
       {searched && !loading && results.length === 0 ? (

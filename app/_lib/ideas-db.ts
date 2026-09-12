@@ -66,32 +66,38 @@ async function findIdeaByQuery(query: string): Promise<string | null> {
   return data?.[0]?.id ?? null;
 }
 
+export type SaveOutcome = { ok: boolean; error?: string };
+
 /** Creates the idea if this is the first pin for that query. */
 export async function saveResult(
   query: string,
   result: SourceResult,
-): Promise<void> {
+): Promise<SaveOutcome> {
   const q = query.trim();
-  if (!q) return;
+  if (!q) return { ok: false, error: "Empty query" };
 
   const sb = getSupabase();
   const userId = await currentUserId();
-  if (!userId) return;
+  if (!userId) return { ok: false, error: "Not signed in" };
 
   let ideaId = await findIdeaByQuery(q);
 
   if (!ideaId) {
-    const { data, error } = await sb
+    // No .select() here on purpose. It would compile to RETURNING, which RLS
+    // checks against the SELECT policy — and that policy needs an
+    // idea_members row that the AFTER INSERT trigger has not written yet,
+    // because AFTER ROW triggers fire at the end of the statement. Minting
+    // the id client-side keeps the insert write-only and sidesteps it.
+    const newIdeaId = crypto.randomUUID();
+    const { error } = await sb
       .from("ideas")
-      .insert({ owner_id: userId, query: q })
-      .select("id")
-      .single();
+      .insert({ id: newIdeaId, owner_id: userId, query: q });
 
-    if (error || !data) {
-      console.error(`[ideas] create failed: ${error?.message}`);
-      return;
+    if (error) {
+      console.error(`[ideas] create failed: ${error.message}`);
+      return { ok: false, error: error.message };
     }
-    ideaId = data.id;
+    ideaId = newIdeaId;
   }
 
   // unique (idea_id, external_id) makes a second save a no-op rather than a
@@ -106,7 +112,11 @@ export async function saveResult(
     { onConflict: "idea_id,external_id", ignoreDuplicates: true },
   );
 
-  if (error) console.error(`[ideas] pin failed: ${error.message}`);
+  if (error) {
+    console.error(`[ideas] pin failed: ${error.message}`);
+    return { ok: false, error: error.message };
+  }
+  return { ok: true };
 }
 
 /** Removes one pin. An idea left with no pins is dropped, as before. */
