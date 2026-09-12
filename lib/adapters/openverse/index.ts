@@ -28,7 +28,8 @@ function mapLicence(
   if (code === "cc0") return "CC0-1.0";
   if (code === "pdm") return "PD";
   if (code === "by") return v === "4.0" ? "CC-BY-4.0" : "CC-BY";
-  if (code === "by-sa") return v === "4.0" ? "CC-BY-SA-4.0" : "UNKNOWN";
+  if (code === "by-sa") return v === "4.0" ? "CC-BY-SA-4.0" : "CC-BY-SA";
+  if (code === "by-nc") return "CC-BY-NC";
   return "UNKNOWN";
 }
 

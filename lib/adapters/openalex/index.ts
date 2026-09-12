@@ -26,19 +26,33 @@ type OpenAlexWork = {
 
 const LICENCE_MAP: Record<string, Spdx> = {
   "cc0": "CC0-1.0",
-  "cc-by": "CC-BY-4.0",
-  "cc-by-sa": "CC-BY-SA-4.0",
+  "cc-by": "CC-BY",
+  "cc-by-sa": "CC-BY-SA",
+  "cc-by-nc": "CC-BY-NC",
   "public-domain": "PD",
   "pd": "PD",
+  "pdm": "PD",
 };
 
 function mapLicence(raw: string | null | undefined): Spdx {
   if (!raw) return "UNKNOWN";
   const key = raw.trim().toLowerCase();
   if (LICENCE_MAP[key]) return LICENCE_MAP[key];
+
   if (key.startsWith("cc0")) return "CC0-1.0";
-  if (key.startsWith("cc-by-sa")) return "CC-BY-SA-4.0";
-  if (key.startsWith("cc-by")) return "CC-BY-4.0";
+
+  // Order matters: NC-SA / NC-ND / ND have no Spdx member, and a bare
+  // "cc-by" prefix test would otherwise mislabel them as CC-BY.
+  if (key.startsWith("cc-by-nc-")) return "UNKNOWN";
+  if (key.startsWith("cc-by-nd")) return "UNKNOWN";
+
+  if (key.startsWith("cc-by-sa")) {
+    return key.includes("4.0") ? "CC-BY-SA-4.0" : "CC-BY-SA";
+  }
+  if (key.startsWith("cc-by-nc")) return "CC-BY-NC";
+  if (key.startsWith("cc-by")) {
+    return key.includes("4.0") ? "CC-BY-4.0" : "CC-BY";
+  }
   return "UNKNOWN";
 }
 

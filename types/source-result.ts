@@ -1,7 +1,8 @@
 // contract-v1 — frozen. Changes require a full team stop.
 
 export type Spdx =
-  | "CC0-1.0" | "CC-BY" | "CC-BY-4.0" | "CC-BY-SA-4.0"
+  | "CC0-1.0" | "CC-BY" | "CC-BY-4.0"
+  | "CC-BY-SA" | "CC-BY-SA-4.0" | "CC-BY-NC"
   | "PD" | "OPEN-ACCESS" | "UNKNOWN";
 
 export type MediaType = "paper" | "image" | "text" | "record";

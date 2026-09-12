@@ -1,0 +1,713 @@
+[
+  {
+    "sourceId": "openverse",
+    "externalId": "08c142e6-e4ba-48e7-8cf2-8c0c18b6f19f",
+    "canonicalUrl": "https://www.flickr.com/photos/35734278@N05/8592339103",
+    "title": "T-ray sources could improve airport security, cancer detection",
+    "authors": [
+      "Argonne National Laboratory"
+    ],
+    "publishedAt": null,
+    "mediaType": "image",
+    "licence": {
+      "spdx": "UNKNOWN",
+      "url": "https://creativecommons.org/licenses/by-nc-sa/2.0/",
+      "assertedBy": "openverse",
+      "attribution": "\"T-ray sources could improve airport security, cancer detection\" by Argonne National Laboratory is licensed under CC BY-NC-SA 2.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/2.0/."
+    },
+    "snippet": null,
+    "thumbnailUrl": "https://api.openverse.org/v1/images/08c142e6-e4ba-48e7-8cf2-8c0c18b6f19f/thumb/",
+    "raw": {
+      "id": "08c142e6-e4ba-48e7-8cf2-8c0c18b6f19f",
+      "title": "T-ray sources could improve airport security, cancer detection",
+      "indexed_on": "2020-04-07T07:55:22.667887Z",
+      "foreign_landing_url": "https://www.flickr.com/photos/35734278@N05/8592339103",
+      "url": "https://live.staticflickr.com/8107/8592339103_d5c30f5fab_b.jpg",
+      "creator": "Argonne National Laboratory",
+      "creator_url": "https://www.flickr.com/photos/35734278@N05",
+      "license": "by-nc-sa",
+      "license_version": "2.0",
+      "license_url": "https://creativecommons.org/licenses/by-nc-sa/2.0/",
+      "provider": "flickr",
+      "source": "flickr",
+      "category": null,
+      "filesize": null,
+      "filetype": null,
+      "tags": [
+        {
+          "name": "airportsecurity",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "nationalsecurity",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "security",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "terahertzradiation",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "trays",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        }
+      ],
+      "attribution": "\"T-ray sources could improve airport security, cancer detection\" by Argonne National Laboratory is licensed under CC BY-NC-SA 2.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/2.0/.",
+      "fields_matched": [
+        "title"
+      ],
+      "mature": false,
+      "height": 678,
+      "width": 1024,
+      "thumbnail": "https://api.openverse.org/v1/images/08c142e6-e4ba-48e7-8cf2-8c0c18b6f19f/thumb/",
+      "detail_url": "https://api.openverse.org/v1/images/08c142e6-e4ba-48e7-8cf2-8c0c18b6f19f/",
+      "related_url": "https://api.openverse.org/v1/images/08c142e6-e4ba-48e7-8cf2-8c0c18b6f19f/related/",
+      "unstable__sensitivity": []
+    }
+  },
+  {
+    "sourceId": "openverse",
+    "externalId": "6d21baee-5acd-46ed-83d2-7c6e4097af60",
+    "canonicalUrl": "https://www.flickr.com/photos/48039697@N05/13243043384",
+    "title": "Dr. Richard G. Taylor, City Hospital Oral Surgery Service; President William H. Ellis, City Hospital Board of Truteees; and Mayor John F. Collins discuss a mouth cancer detection program",
+    "authors": [
+      "Boston City Archives"
+    ],
+    "publishedAt": null,
+    "mediaType": "image",
+    "licence": {
+      "spdx": "CC-BY",
+      "url": "https://creativecommons.org/licenses/by/2.0/",
+      "assertedBy": "openverse",
+      "attribution": "\"Dr. Richard G. Taylor, City Hospital Oral Surgery Service; President William H. Ellis, City Hospital Board of Truteees; and Mayor John F. Collins discuss a mouth cancer detection program\" by Boston City Archives is licensed under CC BY 2.0. To view a copy of this license, visit https://creativecommons.org/licenses/by/2.0/."
+    },
+    "snippet": null,
+    "thumbnailUrl": "https://api.openverse.org/v1/images/6d21baee-5acd-46ed-83d2-7c6e4097af60/thumb/",
+    "raw": {
+      "id": "6d21baee-5acd-46ed-83d2-7c6e4097af60",
+      "title": "Dr. Richard G. Taylor, City Hospital Oral Surgery Service; President William H. Ellis, City Hospital Board of Truteees; and Mayor John F. Collins discuss a mouth cancer detection program",
+      "indexed_on": "2020-04-03T04:40:29.591363Z",
+      "foreign_landing_url": "https://www.flickr.com/photos/48039697@N05/13243043384",
+      "url": "https://live.staticflickr.com/7431/13243043384_9960fa53ce_b.jpg",
+      "creator": "Boston City Archives",
+      "creator_url": "https://www.flickr.com/photos/48039697@N05",
+      "license": "by",
+      "license_version": "2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0/",
+      "provider": "flickr",
+      "source": "flickr",
+      "category": null,
+      "filesize": null,
+      "filetype": null,
+      "tags": [
+        {
+          "name": "boston",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "historicboston",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "johncollins",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "administration",
+          "accuracy": 0.98426,
+          "unstable__provider": "clarifai"
+        },
+        {
+          "name": "adult",
+          "accuracy": 0.97701,
+          "unstable__provider": "clarifai"
+        },
+        {
+          "name": "four",
+          "accuracy": 0.96598,
+          "unstable__provider": "clarifai"
+        },
+        {
+          "name": "group",
+          "accuracy": 0.986,
+          "unstable__provider": "clarifai"
+        },
+        {
+          "name": "group together",
+          "accuracy": 0.98227,
+          "unstable__provider": "clarifai"
+        },
+        {
+          "name": "leader",
+          "accuracy": 0.97594,
+          "unstable__provider": "clarifai"
+        },
+        {
+          "name": "man",
+          "accuracy": 0.98104,
+          "unstable__provider": "clarifai"
+        },
+        {
+          "name": "people",
+          "accuracy": 0.99362,
+          "unstable__provider": "clarifai"
+        },
+        {
+          "name": "three",
+          "accuracy": 0.96631,
+          "unstable__provider": "clarifai"
+        },
+        {
+          "name": "two",
+          "accuracy": 0.96204,
+          "unstable__provider": "clarifai"
+        }
+      ],
+      "attribution": "\"Dr. Richard G. Taylor, City Hospital Oral Surgery Service; President William H. Ellis, City Hospital Board of Truteees; and Mayor John F. Collins discuss a mouth cancer detection program\" by Boston City Archives is licensed under CC BY 2.0. To view a copy of this license, visit https://creativecommons.org/licenses/by/2.0/.",
+      "fields_matched": [
+        "description",
+        "title"
+      ],
+      "mature": false,
+      "height": 831,
+      "width": 1024,
+      "thumbnail": "https://api.openverse.org/v1/images/6d21baee-5acd-46ed-83d2-7c6e4097af60/thumb/",
+      "detail_url": "https://api.openverse.org/v1/images/6d21baee-5acd-46ed-83d2-7c6e4097af60/",
+      "related_url": "https://api.openverse.org/v1/images/6d21baee-5acd-46ed-83d2-7c6e4097af60/related/",
+      "unstable__sensitivity": []
+    }
+  },
+  {
+    "sourceId": "openverse",
+    "externalId": "91d791e1-a7b4-48db-8c41-854e166348e0",
+    "canonicalUrl": "https://www.flickr.com/photos/62408939@N00/9982589305",
+    "title": "@jackandraka talks about inspiration for his work on cancer detection - loss of family friend. #MedX",
+    "authors": [
+      "NickDawson"
+    ],
+    "publishedAt": null,
+    "mediaType": "image",
+    "licence": {
+      "spdx": "CC-BY-NC",
+      "url": "https://creativecommons.org/licenses/by-nc/2.0/",
+      "assertedBy": "openverse",
+      "attribution": "\"@jackandraka talks about inspiration for his work on cancer detection - loss of family friend. #MedX\" by NickDawson is licensed under CC BY-NC 2.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-nc/2.0/."
+    },
+    "snippet": null,
+    "thumbnailUrl": "https://api.openverse.org/v1/images/91d791e1-a7b4-48db-8c41-854e166348e0/thumb/",
+    "raw": {
+      "id": "91d791e1-a7b4-48db-8c41-854e166348e0",
+      "title": "@jackandraka talks about inspiration for his work on cancer detection - loss of family friend. #MedX",
+      "indexed_on": "2018-11-09T02:22:56.756031Z",
+      "foreign_landing_url": "https://www.flickr.com/photos/62408939@N00/9982589305",
+      "url": "https://live.staticflickr.com/5446/9982589305_5f7a8ec411_b.jpg",
+      "creator": "NickDawson",
+      "creator_url": "https://www.flickr.com/photos/62408939@N00",
+      "license": "by-nc",
+      "license_version": "2.0",
+      "license_url": "https://creativecommons.org/licenses/by-nc/2.0/",
+      "provider": "flickr",
+      "source": "flickr",
+      "category": null,
+      "filesize": null,
+      "filetype": null,
+      "tags": [
+        {
+          "name": "conference",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "engagement",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "epatient",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "healthcare",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "medicinex",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "medx",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "medx2013",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "originalfilter",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "paloalto",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "stanford",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "stanfordmedicinex",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        }
+      ],
+      "attribution": "\"@jackandraka talks about inspiration for his work on cancer detection - loss of family friend. #MedX\" by NickDawson is licensed under CC BY-NC 2.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-nc/2.0/.",
+      "fields_matched": [
+        "title"
+      ],
+      "mature": false,
+      "height": 768,
+      "width": 1024,
+      "thumbnail": "https://api.openverse.org/v1/images/91d791e1-a7b4-48db-8c41-854e166348e0/thumb/",
+      "detail_url": "https://api.openverse.org/v1/images/91d791e1-a7b4-48db-8c41-854e166348e0/",
+      "related_url": "https://api.openverse.org/v1/images/91d791e1-a7b4-48db-8c41-854e166348e0/related/",
+      "unstable__sensitivity": []
+    }
+  },
+  {
+    "sourceId": "openverse",
+    "externalId": "cc4cccbf-78f6-460e-b540-a02c737cd84d",
+    "canonicalUrl": "https://www.flickr.com/photos/112254964@N05/33541724918",
+    "title": "Free Cancer Detection and Awarness Camp, Porbandar, Feb 2019",
+    "authors": [
+      "Belur Math, Howrah"
+    ],
+    "publishedAt": null,
+    "mediaType": "image",
+    "licence": {
+      "spdx": "PD",
+      "url": "https://creativecommons.org/publicdomain/mark/1.0/",
+      "assertedBy": "openverse",
+      "attribution": "\"Free Cancer Detection and Awarness Camp, Porbandar, Feb 2019\" by Belur Math, Howrah is marked with Public Domain Mark 1.0. To view the terms, visit https://creativecommons.org/publicdomain/mark/1.0/."
+    },
+    "snippet": null,
+    "thumbnailUrl": "https://api.openverse.org/v1/images/cc4cccbf-78f6-460e-b540-a02c737cd84d/thumb/",
+    "raw": {
+      "id": "cc4cccbf-78f6-460e-b540-a02c737cd84d",
+      "title": "Free Cancer Detection and Awarness Camp, Porbandar, Feb 2019",
+      "indexed_on": "2020-03-16T10:36:33.743199Z",
+      "foreign_landing_url": "https://www.flickr.com/photos/112254964@N05/33541724918",
+      "url": "https://live.staticflickr.com/7803/33541724918_05ac47bb37_b.jpg",
+      "creator": "Belur Math, Howrah",
+      "creator_url": "https://www.flickr.com/photos/112254964@N05",
+      "license": "pdm",
+      "license_version": "1.0",
+      "license_url": "https://creativecommons.org/publicdomain/mark/1.0/",
+      "provider": "flickr",
+      "source": "flickr",
+      "category": null,
+      "filesize": null,
+      "filetype": null,
+      "tags": [
+        {
+          "name": "medicalcamp",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "porbandar",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "ramakrishnamission",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        }
+      ],
+      "attribution": "\"Free Cancer Detection and Awarness Camp, Porbandar, Feb 2019\" by Belur Math, Howrah is marked with Public Domain Mark 1.0. To view the terms, visit https://creativecommons.org/publicdomain/mark/1.0/.",
+      "fields_matched": [
+        "title"
+      ],
+      "mature": false,
+      "height": 576,
+      "width": 1024,
+      "thumbnail": "https://api.openverse.org/v1/images/cc4cccbf-78f6-460e-b540-a02c737cd84d/thumb/",
+      "detail_url": "https://api.openverse.org/v1/images/cc4cccbf-78f6-460e-b540-a02c737cd84d/",
+      "related_url": "https://api.openverse.org/v1/images/cc4cccbf-78f6-460e-b540-a02c737cd84d/related/",
+      "unstable__sensitivity": []
+    }
+  },
+  {
+    "sourceId": "openverse",
+    "externalId": "c9077811-fac2-43a6-9aeb-6afb286e19ef",
+    "canonicalUrl": "https://www.flickr.com/photos/65145438@N07/15632871996",
+    "title": "Cancer Detection Camp",
+    "authors": [
+      "Rotary Club of Nagpur"
+    ],
+    "publishedAt": null,
+    "mediaType": "image",
+    "licence": {
+      "spdx": "CC-BY",
+      "url": "https://creativecommons.org/licenses/by/2.0/",
+      "assertedBy": "openverse",
+      "attribution": "\"Cancer Detection Camp\" by Rotary Club of Nagpur is licensed under CC BY 2.0. To view a copy of this license, visit https://creativecommons.org/licenses/by/2.0/."
+    },
+    "snippet": null,
+    "thumbnailUrl": "https://api.openverse.org/v1/images/c9077811-fac2-43a6-9aeb-6afb286e19ef/thumb/",
+    "raw": {
+      "id": "c9077811-fac2-43a6-9aeb-6afb286e19ef",
+      "title": "Cancer Detection Camp",
+      "indexed_on": "2020-04-05T19:04:22.468798Z",
+      "foreign_landing_url": "https://www.flickr.com/photos/65145438@N07/15632871996",
+      "url": "https://live.staticflickr.com/5602/15632871996_d1fb068bbb_b.jpg",
+      "creator": "Rotary Club of Nagpur",
+      "creator_url": "https://www.flickr.com/photos/65145438@N07",
+      "license": "by",
+      "license_version": "2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0/",
+      "provider": "flickr",
+      "source": "flickr",
+      "category": null,
+      "filesize": null,
+      "filetype": null,
+      "tags": [],
+      "attribution": "\"Cancer Detection Camp\" by Rotary Club of Nagpur is licensed under CC BY 2.0. To view a copy of this license, visit https://creativecommons.org/licenses/by/2.0/.",
+      "fields_matched": [
+        "description",
+        "title"
+      ],
+      "mature": false,
+      "height": 768,
+      "width": 1024,
+      "thumbnail": "https://api.openverse.org/v1/images/c9077811-fac2-43a6-9aeb-6afb286e19ef/thumb/",
+      "detail_url": "https://api.openverse.org/v1/images/c9077811-fac2-43a6-9aeb-6afb286e19ef/",
+      "related_url": "https://api.openverse.org/v1/images/c9077811-fac2-43a6-9aeb-6afb286e19ef/related/",
+      "unstable__sensitivity": []
+    }
+  },
+  {
+    "sourceId": "openverse",
+    "externalId": "f1f52cc7-f32d-4292-86d1-0bad25d7c092",
+    "canonicalUrl": "https://www.flickr.com/photos/65145438@N07/15470626927",
+    "title": "Cancer Detection Camp",
+    "authors": [
+      "Rotary Club of Nagpur"
+    ],
+    "publishedAt": null,
+    "mediaType": "image",
+    "licence": {
+      "spdx": "CC-BY",
+      "url": "https://creativecommons.org/licenses/by/2.0/",
+      "assertedBy": "openverse",
+      "attribution": "\"Cancer Detection Camp\" by Rotary Club of Nagpur is licensed under CC BY 2.0. To view a copy of this license, visit https://creativecommons.org/licenses/by/2.0/."
+    },
+    "snippet": null,
+    "thumbnailUrl": "https://api.openverse.org/v1/images/f1f52cc7-f32d-4292-86d1-0bad25d7c092/thumb/",
+    "raw": {
+      "id": "f1f52cc7-f32d-4292-86d1-0bad25d7c092",
+      "title": "Cancer Detection Camp",
+      "indexed_on": "2020-04-05T19:04:22.468798Z",
+      "foreign_landing_url": "https://www.flickr.com/photos/65145438@N07/15470626927",
+      "url": "https://live.staticflickr.com/3940/15470626927_f5f8b57bea_b.jpg",
+      "creator": "Rotary Club of Nagpur",
+      "creator_url": "https://www.flickr.com/photos/65145438@N07",
+      "license": "by",
+      "license_version": "2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0/",
+      "provider": "flickr",
+      "source": "flickr",
+      "category": null,
+      "filesize": null,
+      "filetype": null,
+      "tags": [],
+      "attribution": "\"Cancer Detection Camp\" by Rotary Club of Nagpur is licensed under CC BY 2.0. To view a copy of this license, visit https://creativecommons.org/licenses/by/2.0/.",
+      "fields_matched": [
+        "description",
+        "title"
+      ],
+      "mature": false,
+      "height": 768,
+      "width": 1024,
+      "thumbnail": "https://api.openverse.org/v1/images/f1f52cc7-f32d-4292-86d1-0bad25d7c092/thumb/",
+      "detail_url": "https://api.openverse.org/v1/images/f1f52cc7-f32d-4292-86d1-0bad25d7c092/",
+      "related_url": "https://api.openverse.org/v1/images/f1f52cc7-f32d-4292-86d1-0bad25d7c092/related/",
+      "unstable__sensitivity": []
+    }
+  },
+  {
+    "sourceId": "openverse",
+    "externalId": "37de4e06-e39e-4b6e-8575-bdc064939758",
+    "canonicalUrl": "https://www.flickr.com/photos/112254964@N05/40452059823",
+    "title": "Free Cancer Detection and Awarness Camp, Porbandar, Feb 2019",
+    "authors": [
+      "Belur Math, Howrah"
+    ],
+    "publishedAt": null,
+    "mediaType": "image",
+    "licence": {
+      "spdx": "PD",
+      "url": "https://creativecommons.org/publicdomain/mark/1.0/",
+      "assertedBy": "openverse",
+      "attribution": "\"Free Cancer Detection and Awarness Camp, Porbandar, Feb 2019\" by Belur Math, Howrah is marked with Public Domain Mark 1.0. To view the terms, visit https://creativecommons.org/publicdomain/mark/1.0/."
+    },
+    "snippet": null,
+    "thumbnailUrl": "https://api.openverse.org/v1/images/37de4e06-e39e-4b6e-8575-bdc064939758/thumb/",
+    "raw": {
+      "id": "37de4e06-e39e-4b6e-8575-bdc064939758",
+      "title": "Free Cancer Detection and Awarness Camp, Porbandar, Feb 2019",
+      "indexed_on": "2020-03-16T10:36:33.743199Z",
+      "foreign_landing_url": "https://www.flickr.com/photos/112254964@N05/40452059823",
+      "url": "https://live.staticflickr.com/7846/40452059823_65ea5c0e3d_b.jpg",
+      "creator": "Belur Math, Howrah",
+      "creator_url": "https://www.flickr.com/photos/112254964@N05",
+      "license": "pdm",
+      "license_version": "1.0",
+      "license_url": "https://creativecommons.org/publicdomain/mark/1.0/",
+      "provider": "flickr",
+      "source": "flickr",
+      "category": null,
+      "filesize": null,
+      "filetype": null,
+      "tags": [
+        {
+          "name": "medicalcamp",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "porbandar",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "ramakrishnamission",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        }
+      ],
+      "attribution": "\"Free Cancer Detection and Awarness Camp, Porbandar, Feb 2019\" by Belur Math, Howrah is marked with Public Domain Mark 1.0. To view the terms, visit https://creativecommons.org/publicdomain/mark/1.0/.",
+      "fields_matched": [
+        "title"
+      ],
+      "mature": false,
+      "height": 454,
+      "width": 1024,
+      "thumbnail": "https://api.openverse.org/v1/images/37de4e06-e39e-4b6e-8575-bdc064939758/thumb/",
+      "detail_url": "https://api.openverse.org/v1/images/37de4e06-e39e-4b6e-8575-bdc064939758/",
+      "related_url": "https://api.openverse.org/v1/images/37de4e06-e39e-4b6e-8575-bdc064939758/related/",
+      "unstable__sensitivity": []
+    }
+  },
+  {
+    "sourceId": "openverse",
+    "externalId": "f83c8a14-4123-4335-80df-44ffba56127d",
+    "canonicalUrl": "https://www.flickr.com/photos/112254964@N05/32475556347",
+    "title": "Free Cancer Detection and Awarness Camp, Porbandar, Feb 2019",
+    "authors": [
+      "Belur Math, Howrah"
+    ],
+    "publishedAt": null,
+    "mediaType": "image",
+    "licence": {
+      "spdx": "PD",
+      "url": "https://creativecommons.org/publicdomain/mark/1.0/",
+      "assertedBy": "openverse",
+      "attribution": "\"Free Cancer Detection and Awarness Camp, Porbandar, Feb 2019\" by Belur Math, Howrah is marked with Public Domain Mark 1.0. To view the terms, visit https://creativecommons.org/publicdomain/mark/1.0/."
+    },
+    "snippet": null,
+    "thumbnailUrl": "https://api.openverse.org/v1/images/f83c8a14-4123-4335-80df-44ffba56127d/thumb/",
+    "raw": {
+      "id": "f83c8a14-4123-4335-80df-44ffba56127d",
+      "title": "Free Cancer Detection and Awarness Camp, Porbandar, Feb 2019",
+      "indexed_on": "2020-03-16T10:36:33.743199Z",
+      "foreign_landing_url": "https://www.flickr.com/photos/112254964@N05/32475556347",
+      "url": "https://live.staticflickr.com/7833/32475556347_6142e748f4_b.jpg",
+      "creator": "Belur Math, Howrah",
+      "creator_url": "https://www.flickr.com/photos/112254964@N05",
+      "license": "pdm",
+      "license_version": "1.0",
+      "license_url": "https://creativecommons.org/publicdomain/mark/1.0/",
+      "provider": "flickr",
+      "source": "flickr",
+      "category": null,
+      "filesize": null,
+      "filetype": null,
+      "tags": [
+        {
+          "name": "medicalcamp",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "porbandar",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "ramakrishnamission",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        }
+      ],
+      "attribution": "\"Free Cancer Detection and Awarness Camp, Porbandar, Feb 2019\" by Belur Math, Howrah is marked with Public Domain Mark 1.0. To view the terms, visit https://creativecommons.org/publicdomain/mark/1.0/.",
+      "fields_matched": [
+        "title"
+      ],
+      "mature": false,
+      "height": 682,
+      "width": 1024,
+      "thumbnail": "https://api.openverse.org/v1/images/f83c8a14-4123-4335-80df-44ffba56127d/thumb/",
+      "detail_url": "https://api.openverse.org/v1/images/f83c8a14-4123-4335-80df-44ffba56127d/",
+      "related_url": "https://api.openverse.org/v1/images/f83c8a14-4123-4335-80df-44ffba56127d/related/",
+      "unstable__sensitivity": []
+    }
+  },
+  {
+    "sourceId": "openverse",
+    "externalId": "a062dfe5-47e6-4098-a2dd-a3c54bd4cb0b",
+    "canonicalUrl": "https://www.flickr.com/photos/112254964@N05/32475556717",
+    "title": "Free Cancer Detection and Awarness Camp, Porbandar, Feb 2019",
+    "authors": [
+      "Belur Math, Howrah"
+    ],
+    "publishedAt": null,
+    "mediaType": "image",
+    "licence": {
+      "spdx": "PD",
+      "url": "https://creativecommons.org/publicdomain/mark/1.0/",
+      "assertedBy": "openverse",
+      "attribution": "\"Free Cancer Detection and Awarness Camp, Porbandar, Feb 2019\" by Belur Math, Howrah is marked with Public Domain Mark 1.0. To view the terms, visit https://creativecommons.org/publicdomain/mark/1.0/."
+    },
+    "snippet": null,
+    "thumbnailUrl": "https://api.openverse.org/v1/images/a062dfe5-47e6-4098-a2dd-a3c54bd4cb0b/thumb/",
+    "raw": {
+      "id": "a062dfe5-47e6-4098-a2dd-a3c54bd4cb0b",
+      "title": "Free Cancer Detection and Awarness Camp, Porbandar, Feb 2019",
+      "indexed_on": "2020-03-16T10:36:33.743199Z",
+      "foreign_landing_url": "https://www.flickr.com/photos/112254964@N05/32475556717",
+      "url": "https://live.staticflickr.com/7918/32475556717_79588e2d27_b.jpg",
+      "creator": "Belur Math, Howrah",
+      "creator_url": "https://www.flickr.com/photos/112254964@N05",
+      "license": "pdm",
+      "license_version": "1.0",
+      "license_url": "https://creativecommons.org/publicdomain/mark/1.0/",
+      "provider": "flickr",
+      "source": "flickr",
+      "category": null,
+      "filesize": null,
+      "filetype": null,
+      "tags": [
+        {
+          "name": "medicalcamp",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "porbandar",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "ramakrishnamission",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        }
+      ],
+      "attribution": "\"Free Cancer Detection and Awarness Camp, Porbandar, Feb 2019\" by Belur Math, Howrah is marked with Public Domain Mark 1.0. To view the terms, visit https://creativecommons.org/publicdomain/mark/1.0/.",
+      "fields_matched": [
+        "title"
+      ],
+      "mature": false,
+      "height": 576,
+      "width": 1024,
+      "thumbnail": "https://api.openverse.org/v1/images/a062dfe5-47e6-4098-a2dd-a3c54bd4cb0b/thumb/",
+      "detail_url": "https://api.openverse.org/v1/images/a062dfe5-47e6-4098-a2dd-a3c54bd4cb0b/",
+      "related_url": "https://api.openverse.org/v1/images/a062dfe5-47e6-4098-a2dd-a3c54bd4cb0b/related/",
+      "unstable__sensitivity": []
+    }
+  },
+  {
+    "sourceId": "openverse",
+    "externalId": "98239484-50b3-4fdb-b5e4-339690a9ee10",
+    "canonicalUrl": "https://www.flickr.com/photos/112254964@N05/32475556367",
+    "title": "Free Cancer Detection and Awarness Camp, Porbandar, Feb 2019",
+    "authors": [
+      "Belur Math, Howrah"
+    ],
+    "publishedAt": null,
+    "mediaType": "image",
+    "licence": {
+      "spdx": "PD",
+      "url": "https://creativecommons.org/publicdomain/mark/1.0/",
+      "assertedBy": "openverse",
+      "attribution": "\"Free Cancer Detection and Awarness Camp, Porbandar, Feb 2019\" by Belur Math, Howrah is marked with Public Domain Mark 1.0. To view the terms, visit https://creativecommons.org/publicdomain/mark/1.0/."
+    },
+    "snippet": null,
+    "thumbnailUrl": "https://api.openverse.org/v1/images/98239484-50b3-4fdb-b5e4-339690a9ee10/thumb/",
+    "raw": {
+      "id": "98239484-50b3-4fdb-b5e4-339690a9ee10",
+      "title": "Free Cancer Detection and Awarness Camp, Porbandar, Feb 2019",
+      "indexed_on": "2020-03-16T10:36:33.743199Z",
+      "foreign_landing_url": "https://www.flickr.com/photos/112254964@N05/32475556367",
+      "url": "https://live.staticflickr.com/7927/32475556367_fba6030be8_b.jpg",
+      "creator": "Belur Math, Howrah",
+      "creator_url": "https://www.flickr.com/photos/112254964@N05",
+      "license": "pdm",
+      "license_version": "1.0",
+      "license_url": "https://creativecommons.org/publicdomain/mark/1.0/",
+      "provider": "flickr",
+      "source": "flickr",
+      "category": null,
+      "filesize": null,
+      "filetype": null,
+      "tags": [
+        {
+          "name": "medicalcamp",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "porbandar",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "ramakrishnamission",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        }
+      ],
+      "attribution": "\"Free Cancer Detection and Awarness Camp, Porbandar, Feb 2019\" by Belur Math, Howrah is marked with Public Domain Mark 1.0. To view the terms, visit https://creativecommons.org/publicdomain/mark/1.0/.",
+      "fields_matched": [
+        "title"
+      ],
+      "mature": false,
+      "height": 682,
+      "width": 1024,
+      "thumbnail": "https://api.openverse.org/v1/images/98239484-50b3-4fdb-b5e4-339690a9ee10/thumb/",
+      "detail_url": "https://api.openverse.org/v1/images/98239484-50b3-4fdb-b5e4-339690a9ee10/",
+      "related_url": "https://api.openverse.org/v1/images/98239484-50b3-4fdb-b5e4-339690a9ee10/related/",
+      "unstable__sensitivity": []
+    }
+  }
+]

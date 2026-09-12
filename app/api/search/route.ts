@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { adaptersFor } from "@/lib/adapters/registry";
+import { isDemo, isRecording, readFixture, writeFixture } from "@/lib/fixtures";
 import type { Adapter, SourceResult } from "@/types/source-result";
 
 const TIMEOUT_MS = 4000;
@@ -29,6 +30,18 @@ function searchWithTimeout(
   return Promise.race([run, aborted]).finally(() => clearTimeout(timer));
 }
 
+// DEMO short-circuits before any adapter runs, so no network is touched.
+async function runAdapter(
+  adapter: Adapter,
+  query: string,
+): Promise<SourceResult[]> {
+  if (isDemo()) return readFixture(adapter.id, query);
+
+  const results = await searchWithTimeout(adapter, query);
+  if (isRecording()) await writeFixture(adapter.id, query, results);
+  return results;
+}
+
 export async function GET(request: Request) {
   const params = new URL(request.url).searchParams;
   const q = params.get("q")?.trim() ?? "";
@@ -38,7 +51,7 @@ export async function GET(request: Request) {
 
   const selected = adaptersFor(category);
   const settled = await Promise.allSettled(
-    selected.map((a) => searchWithTimeout(a, q)),
+    selected.map((a) => runAdapter(a, q)),
   );
 
   const results: SourceResult[] = [];

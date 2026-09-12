@@ -1,0 +1,1627 @@
+[
+  {
+    "sourceId": "openverse",
+    "externalId": "e7eb7c0b-87dd-4ce0-856b-1934932c8588",
+    "canonicalUrl": "https://www.flickr.com/photos/12836528@N00/35388675155",
+    "title": "Quantum computing",
+    "authors": [
+      "kevin dooley"
+    ],
+    "publishedAt": null,
+    "mediaType": "image",
+    "licence": {
+      "spdx": "CC-BY",
+      "url": "https://creativecommons.org/licenses/by/2.0/",
+      "assertedBy": "openverse",
+      "attribution": "\"Quantum computing\" by kevin dooley is licensed under CC BY 2.0. To view a copy of this license, visit https://creativecommons.org/licenses/by/2.0/."
+    },
+    "snippet": null,
+    "thumbnailUrl": "https://api.openverse.org/v1/images/e7eb7c0b-87dd-4ce0-856b-1934932c8588/thumb/",
+    "raw": {
+      "id": "e7eb7c0b-87dd-4ce0-856b-1934932c8588",
+      "title": "Quantum computing",
+      "indexed_on": "2020-03-20T23:08:34.010134Z",
+      "foreign_landing_url": "https://www.flickr.com/photos/12836528@N00/35388675155",
+      "url": "https://live.staticflickr.com/4262/35388675155_1eeb6deeb7_b.jpg",
+      "creator": "kevin dooley",
+      "creator_url": "https://www.flickr.com/photos/12836528@N00",
+      "license": "by",
+      "license_version": "2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0/",
+      "provider": "flickr",
+      "source": "flickr",
+      "category": null,
+      "filesize": null,
+      "filetype": null,
+      "tags": [
+        {
+          "name": "computing",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "quantum",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        }
+      ],
+      "attribution": "\"Quantum computing\" by kevin dooley is licensed under CC BY 2.0. To view a copy of this license, visit https://creativecommons.org/licenses/by/2.0/.",
+      "fields_matched": [
+        "description",
+        "title",
+        "tags.name"
+      ],
+      "mature": false,
+      "height": 768,
+      "width": 1024,
+      "thumbnail": "https://api.openverse.org/v1/images/e7eb7c0b-87dd-4ce0-856b-1934932c8588/thumb/",
+      "detail_url": "https://api.openverse.org/v1/images/e7eb7c0b-87dd-4ce0-856b-1934932c8588/",
+      "related_url": "https://api.openverse.org/v1/images/e7eb7c0b-87dd-4ce0-856b-1934932c8588/related/",
+      "unstable__sensitivity": []
+    }
+  },
+  {
+    "sourceId": "openverse",
+    "externalId": "e716ea7a-44a1-4bec-9c78-25ab774c01b8",
+    "canonicalUrl": "https://www.flickr.com/photos/40748696@N07/40786969122",
+    "title": "IBM quantum computer",
+    "authors": [
+      "IBM Research"
+    ],
+    "publishedAt": null,
+    "mediaType": "image",
+    "licence": {
+      "spdx": "UNKNOWN",
+      "url": "https://creativecommons.org/licenses/by-nd/2.0/",
+      "assertedBy": "openverse",
+      "attribution": "\"IBM quantum computer\" by IBM Research is licensed under CC BY-ND 2.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-nd/2.0/."
+    },
+    "snippet": null,
+    "thumbnailUrl": "https://api.openverse.org/v1/images/e716ea7a-44a1-4bec-9c78-25ab774c01b8/thumb/",
+    "raw": {
+      "id": "e716ea7a-44a1-4bec-9c78-25ab774c01b8",
+      "title": "IBM quantum computer",
+      "indexed_on": "2018-12-10T16:06:38.566303Z",
+      "foreign_landing_url": "https://www.flickr.com/photos/40748696@N07/40786969122",
+      "url": "https://live.staticflickr.com/4788/40786969122_9a55880199_b.jpg",
+      "creator": "IBM Research",
+      "creator_url": "https://www.flickr.com/photos/40748696@N07",
+      "license": "by-nd",
+      "license_version": "2.0",
+      "license_url": "https://creativecommons.org/licenses/by-nd/2.0/",
+      "provider": "flickr",
+      "source": "flickr",
+      "category": null,
+      "filesize": null,
+      "filetype": null,
+      "tags": [
+        {
+          "name": "computing",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "cryostat",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "quantum",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        }
+      ],
+      "attribution": "\"IBM quantum computer\" by IBM Research is licensed under CC BY-ND 2.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-nd/2.0/.",
+      "fields_matched": [
+        "description",
+        "title",
+        "tags.name"
+      ],
+      "mature": false,
+      "height": 1024,
+      "width": 670,
+      "thumbnail": "https://api.openverse.org/v1/images/e716ea7a-44a1-4bec-9c78-25ab774c01b8/thumb/",
+      "detail_url": "https://api.openverse.org/v1/images/e716ea7a-44a1-4bec-9c78-25ab774c01b8/",
+      "related_url": "https://api.openverse.org/v1/images/e716ea7a-44a1-4bec-9c78-25ab774c01b8/related/",
+      "unstable__sensitivity": []
+    }
+  },
+  {
+    "sourceId": "openverse",
+    "externalId": "ccb268ab-79f2-4fda-8012-559876c97aa4",
+    "canonicalUrl": "https://www.flickr.com/photos/44124348109@N01/14105339228",
+    "title": "WIRED Editorial Superposition on D-Wave and The Age of Quantum Computing",
+    "authors": [
+      "jurvetson"
+    ],
+    "publishedAt": null,
+    "mediaType": "image",
+    "licence": {
+      "spdx": "CC-BY",
+      "url": "https://creativecommons.org/licenses/by/2.0/",
+      "assertedBy": "openverse",
+      "attribution": "\"WIRED Editorial Superposition on D-Wave and The Age of Quantum Computing\" by jurvetson is licensed under CC BY 2.0. To view a copy of this license, visit https://creativecommons.org/licenses/by/2.0/."
+    },
+    "snippet": null,
+    "thumbnailUrl": "https://api.openverse.org/v1/images/ccb268ab-79f2-4fda-8012-559876c97aa4/thumb/",
+    "raw": {
+      "id": "ccb268ab-79f2-4fda-8012-559876c97aa4",
+      "title": "WIRED Editorial Superposition on D-Wave and The Age of Quantum Computing",
+      "indexed_on": "2020-04-03T23:58:31.086549Z",
+      "foreign_landing_url": "https://www.flickr.com/photos/44124348109@N01/14105339228",
+      "url": "https://live.staticflickr.com/3798/14105339228_e6df180fd2_b.jpg",
+      "creator": "jurvetson",
+      "creator_url": "https://www.flickr.com/photos/44124348109@N01",
+      "license": "by",
+      "license_version": "2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0/",
+      "provider": "flickr",
+      "source": "flickr",
+      "category": null,
+      "filesize": null,
+      "filetype": null,
+      "tags": [
+        {
+          "name": "adiabatic",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "article",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "cat",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "computer",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "curiosity",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "dwave",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "editorial",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "headline",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "magazine",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "optimization",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "problems",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "processor",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "quantum",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "schrödinger",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "schru00f6dinger",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "schr\\xf6dinger",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "superposition",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "wired",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        }
+      ],
+      "attribution": "\"WIRED Editorial Superposition on D-Wave and The Age of Quantum Computing\" by jurvetson is licensed under CC BY 2.0. To view a copy of this license, visit https://creativecommons.org/licenses/by/2.0/.",
+      "fields_matched": [
+        "description",
+        "title",
+        "tags.name"
+      ],
+      "mature": false,
+      "height": 850,
+      "width": 1024,
+      "thumbnail": "https://api.openverse.org/v1/images/ccb268ab-79f2-4fda-8012-559876c97aa4/thumb/",
+      "detail_url": "https://api.openverse.org/v1/images/ccb268ab-79f2-4fda-8012-559876c97aa4/",
+      "related_url": "https://api.openverse.org/v1/images/ccb268ab-79f2-4fda-8012-559876c97aa4/related/",
+      "unstable__sensitivity": []
+    }
+  },
+  {
+    "sourceId": "openverse",
+    "externalId": "ddccf0e5-5c24-4792-b943-91dac3516d6a",
+    "canonicalUrl": "https://www.flickr.com/photos/44124348109@N01/37777719711",
+    "title": "A quantum computing primer by Scott Aaronson",
+    "authors": [
+      "jurvetson"
+    ],
+    "publishedAt": null,
+    "mediaType": "image",
+    "licence": {
+      "spdx": "CC-BY",
+      "url": "https://creativecommons.org/licenses/by/2.0/",
+      "assertedBy": "openverse",
+      "attribution": "\"A quantum computing primer by Scott Aaronson\" by jurvetson is licensed under CC BY 2.0. To view a copy of this license, visit https://creativecommons.org/licenses/by/2.0/."
+    },
+    "snippet": null,
+    "thumbnailUrl": "https://api.openverse.org/v1/images/ddccf0e5-5c24-4792-b943-91dac3516d6a/thumb/",
+    "raw": {
+      "id": "ddccf0e5-5c24-4792-b943-91dac3516d6a",
+      "title": "A quantum computing primer by Scott Aaronson",
+      "indexed_on": "2020-03-22T01:33:32.354481Z",
+      "foreign_landing_url": "https://www.flickr.com/photos/44124348109@N01/37777719711",
+      "url": "https://live.staticflickr.com/4444/37777719711_79fd49a157_b.jpg",
+      "creator": "jurvetson",
+      "creator_url": "https://www.flickr.com/photos/44124348109@N01",
+      "license": "by",
+      "license_version": "2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0/",
+      "provider": "flickr",
+      "source": "flickr",
+      "category": null,
+      "filesize": null,
+      "filetype": null,
+      "tags": [
+        {
+          "name": "aaronson",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "adiabatic",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "austin",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "computing",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "deshaw",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "dwave",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "learning",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "machine",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "mit",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "quantum",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "scott",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "ut",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        }
+      ],
+      "attribution": "\"A quantum computing primer by Scott Aaronson\" by jurvetson is licensed under CC BY 2.0. To view a copy of this license, visit https://creativecommons.org/licenses/by/2.0/.",
+      "fields_matched": [
+        "description",
+        "title",
+        "tags.name"
+      ],
+      "mature": false,
+      "height": 732,
+      "width": 1024,
+      "thumbnail": "https://api.openverse.org/v1/images/ddccf0e5-5c24-4792-b943-91dac3516d6a/thumb/",
+      "detail_url": "https://api.openverse.org/v1/images/ddccf0e5-5c24-4792-b943-91dac3516d6a/",
+      "related_url": "https://api.openverse.org/v1/images/ddccf0e5-5c24-4792-b943-91dac3516d6a/related/",
+      "unstable__sensitivity": []
+    }
+  },
+  {
+    "sourceId": "openverse",
+    "externalId": "7b196a9f-16d5-4012-b783-1f7f221acdb5",
+    "canonicalUrl": "https://www.flickr.com/photos/44124348109@N01/36277044124",
+    "title": "D-Wave Quantum Computers and the Emergent AI of the Future in Rob Reid's book After On",
+    "authors": [
+      "jurvetson"
+    ],
+    "publishedAt": null,
+    "mediaType": "image",
+    "licence": {
+      "spdx": "CC-BY",
+      "url": "https://creativecommons.org/licenses/by/2.0/",
+      "assertedBy": "openverse",
+      "attribution": "\"D-Wave Quantum Computers and the Emergent AI of the Future in Rob Reid's book After On\" by jurvetson is licensed under CC BY 2.0. To view a copy of this license, visit https://creativecommons.org/licenses/by/2.0/."
+    },
+    "snippet": null,
+    "thumbnailUrl": "https://api.openverse.org/v1/images/7b196a9f-16d5-4012-b783-1f7f221acdb5/thumb/",
+    "raw": {
+      "id": "7b196a9f-16d5-4012-b783-1f7f221acdb5",
+      "title": "D-Wave Quantum Computers and the Emergent AI of the Future in Rob Reid's book After On",
+      "indexed_on": "2020-03-21T16:47:35.323837Z",
+      "foreign_landing_url": "https://www.flickr.com/photos/44124348109@N01/36277044124",
+      "url": "https://live.staticflickr.com/4424/36277044124_8a89d7c17a_b.jpg",
+      "creator": "jurvetson",
+      "creator_url": "https://www.flickr.com/photos/44124348109@N01",
+      "license": "by",
+      "license_version": "2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0/",
+      "provider": "flickr",
+      "source": "flickr",
+      "category": null,
+      "filesize": null,
+      "filetype": null,
+      "tags": [
+        {
+          "name": "5",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "after",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "book",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "computer",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "dwave",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "episode",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "on",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "podcast",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "qc",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "quantum",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "reid",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "rob",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "scifi",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        }
+      ],
+      "attribution": "\"D-Wave Quantum Computers and the Emergent AI of the Future in Rob Reid's book After On\" by jurvetson is licensed under CC BY 2.0. To view a copy of this license, visit https://creativecommons.org/licenses/by/2.0/.",
+      "fields_matched": [
+        "description",
+        "title",
+        "tags.name"
+      ],
+      "mature": false,
+      "height": 1024,
+      "width": 789,
+      "thumbnail": "https://api.openverse.org/v1/images/7b196a9f-16d5-4012-b783-1f7f221acdb5/thumb/",
+      "detail_url": "https://api.openverse.org/v1/images/7b196a9f-16d5-4012-b783-1f7f221acdb5/",
+      "related_url": "https://api.openverse.org/v1/images/7b196a9f-16d5-4012-b783-1f7f221acdb5/related/",
+      "unstable__sensitivity": []
+    }
+  },
+  {
+    "sourceId": "openverse",
+    "externalId": "37bb0e6d-d7cd-47d8-a322-b4030819cea8",
+    "canonicalUrl": "https://www.flickr.com/photos/44124348109@N01/18821356935",
+    "title": "Visiting @dwavesys in Vancouver, a parallel world building quantum computers",
+    "authors": [
+      "jurvetson"
+    ],
+    "publishedAt": null,
+    "mediaType": "image",
+    "licence": {
+      "spdx": "CC-BY",
+      "url": "https://creativecommons.org/licenses/by/2.0/",
+      "assertedBy": "openverse",
+      "attribution": "\"Visiting @dwavesys in Vancouver, a parallel world building quantum computers\" by jurvetson is licensed under CC BY 2.0. To view a copy of this license, visit https://creativecommons.org/licenses/by/2.0/."
+    },
+    "snippet": null,
+    "thumbnailUrl": "https://api.openverse.org/v1/images/37bb0e6d-d7cd-47d8-a322-b4030819cea8/thumb/",
+    "raw": {
+      "id": "37bb0e6d-d7cd-47d8-a322-b4030819cea8",
+      "title": "Visiting @dwavesys in Vancouver, a parallel world building quantum computers",
+      "indexed_on": "2020-03-29T08:47:30.929593Z",
+      "foreign_landing_url": "https://www.flickr.com/photos/44124348109@N01/18821356935",
+      "url": "https://live.staticflickr.com/5579/18821356935_15941109a6_b.jpg",
+      "creator": "jurvetson",
+      "creator_url": "https://www.flickr.com/photos/44124348109@N01",
+      "license": "by",
+      "license_version": "2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0/",
+      "provider": "flickr",
+      "source": "flickr",
+      "category": null,
+      "filesize": null,
+      "filetype": null,
+      "tags": [
+        {
+          "name": "adiabatic",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "computer",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "dwave",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "hq",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "physics",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "qc",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "quantum",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "supercool",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "vancouver",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "adult",
+          "accuracy": 0.97229,
+          "unstable__provider": "clarifai"
+        },
+        {
+          "name": "business",
+          "accuracy": 0.98151,
+          "unstable__provider": "clarifai"
+        },
+        {
+          "name": "indoors",
+          "accuracy": 0.94358,
+          "unstable__provider": "clarifai"
+        },
+        {
+          "name": "man",
+          "accuracy": 0.94268,
+          "unstable__provider": "clarifai"
+        },
+        {
+          "name": "people",
+          "accuracy": 0.97577,
+          "unstable__provider": "clarifai"
+        },
+        {
+          "name": "portrait",
+          "accuracy": 0.95999,
+          "unstable__provider": "clarifai"
+        },
+        {
+          "name": "room",
+          "accuracy": 0.93805,
+          "unstable__provider": "clarifai"
+        }
+      ],
+      "attribution": "\"Visiting @dwavesys in Vancouver, a parallel world building quantum computers\" by jurvetson is licensed under CC BY 2.0. To view a copy of this license, visit https://creativecommons.org/licenses/by/2.0/.",
+      "fields_matched": [
+        "description",
+        "title",
+        "tags.name"
+      ],
+      "mature": false,
+      "height": 1024,
+      "width": 944,
+      "thumbnail": "https://api.openverse.org/v1/images/37bb0e6d-d7cd-47d8-a322-b4030819cea8/thumb/",
+      "detail_url": "https://api.openverse.org/v1/images/37bb0e6d-d7cd-47d8-a322-b4030819cea8/",
+      "related_url": "https://api.openverse.org/v1/images/37bb0e6d-d7cd-47d8-a322-b4030819cea8/related/",
+      "unstable__sensitivity": []
+    }
+  },
+  {
+    "sourceId": "openverse",
+    "externalId": "006ae5c3-ac5c-4e23-9816-677e5b2cf8cf",
+    "canonicalUrl": "https://www.flickr.com/photos/44124348109@N01/9558389543",
+    "title": "Google's First Quantum Computer",
+    "authors": [
+      "jurvetson"
+    ],
+    "publishedAt": null,
+    "mediaType": "image",
+    "licence": {
+      "spdx": "CC-BY",
+      "url": "https://creativecommons.org/licenses/by/2.0/",
+      "assertedBy": "openverse",
+      "attribution": "\"Google's First Quantum Computer\" by jurvetson is licensed under CC BY 2.0. To view a copy of this license, visit https://creativecommons.org/licenses/by/2.0/."
+    },
+    "snippet": null,
+    "thumbnailUrl": "https://api.openverse.org/v1/images/006ae5c3-ac5c-4e23-9816-677e5b2cf8cf/thumb/",
+    "raw": {
+      "id": "006ae5c3-ac5c-4e23-9816-677e5b2cf8cf",
+      "title": "Google's First Quantum Computer",
+      "indexed_on": "2020-04-09T05:00:22.156454Z",
+      "foreign_landing_url": "https://www.flickr.com/photos/44124348109@N01/9558389543",
+      "url": "https://live.staticflickr.com/7285/9558389543_71333dd6a9_b.jpg",
+      "creator": "jurvetson",
+      "creator_url": "https://www.flickr.com/photos/44124348109@N01",
+      "license": "by",
+      "license_version": "2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0/",
+      "provider": "flickr",
+      "source": "flickr",
+      "category": null,
+      "filesize": null,
+      "filetype": null,
+      "tags": [
+        {
+          "name": "ames",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "center",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "computer",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "dwave",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "google",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "learning",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "machine",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "mk",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "nas",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "nasa",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "quail",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "quantum",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "supercomputer",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "superconducting",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "systems",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "tour",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "two",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "administration",
+          "accuracy": 0.93106,
+          "unstable__provider": "clarifai"
+        },
+        {
+          "name": "adult",
+          "accuracy": 0.96855,
+          "unstable__provider": "clarifai"
+        },
+        {
+          "name": "business",
+          "accuracy": 0.95759,
+          "unstable__provider": "clarifai"
+        },
+        {
+          "name": "education",
+          "accuracy": 0.93517,
+          "unstable__provider": "clarifai"
+        },
+        {
+          "name": "election",
+          "accuracy": 0.91274,
+          "unstable__provider": "clarifai"
+        },
+        {
+          "name": "exhibition",
+          "accuracy": 0.95229,
+          "unstable__provider": "clarifai"
+        },
+        {
+          "name": "group",
+          "accuracy": 0.99358,
+          "unstable__provider": "clarifai"
+        },
+        {
+          "name": "group together",
+          "accuracy": 0.94465,
+          "unstable__provider": "clarifai"
+        },
+        {
+          "name": "International",
+          "accuracy": 0.90092,
+          "unstable__provider": "clarifai"
+        },
+        {
+          "name": "leader",
+          "accuracy": 0.96043,
+          "unstable__provider": "clarifai"
+        },
+        {
+          "name": "league",
+          "accuracy": 0.90327,
+          "unstable__provider": "clarifai"
+        },
+        {
+          "name": "meeting",
+          "accuracy": 0.97663,
+          "unstable__provider": "clarifai"
+        },
+        {
+          "name": "people",
+          "accuracy": 0.94116,
+          "unstable__provider": "clarifai"
+        },
+        {
+          "name": "room",
+          "accuracy": 0.92549,
+          "unstable__provider": "clarifai"
+        },
+        {
+          "name": "wear",
+          "accuracy": 0.92638,
+          "unstable__provider": "clarifai"
+        },
+        {
+          "name": "woman",
+          "accuracy": 0.94343,
+          "unstable__provider": "clarifai"
+        }
+      ],
+      "attribution": "\"Google's First Quantum Computer\" by jurvetson is licensed under CC BY 2.0. To view a copy of this license, visit https://creativecommons.org/licenses/by/2.0/.",
+      "fields_matched": [
+        "description",
+        "title",
+        "tags.name"
+      ],
+      "mature": false,
+      "height": 902,
+      "width": 1024,
+      "thumbnail": "https://api.openverse.org/v1/images/006ae5c3-ac5c-4e23-9816-677e5b2cf8cf/thumb/",
+      "detail_url": "https://api.openverse.org/v1/images/006ae5c3-ac5c-4e23-9816-677e5b2cf8cf/",
+      "related_url": "https://api.openverse.org/v1/images/006ae5c3-ac5c-4e23-9816-677e5b2cf8cf/related/",
+      "unstable__sensitivity": []
+    }
+  },
+  {
+    "sourceId": "openverse",
+    "externalId": "9efdf64f-6d10-46d9-b82f-88e57f823e76",
+    "canonicalUrl": "https://www.flickr.com/photos/44124348109@N01/4171280876",
+    "title": "Quantum Computing for Google Goggles",
+    "authors": [
+      "jurvetson"
+    ],
+    "publishedAt": null,
+    "mediaType": "image",
+    "licence": {
+      "spdx": "CC-BY",
+      "url": "https://creativecommons.org/licenses/by/2.0/",
+      "assertedBy": "openverse",
+      "attribution": "\"Quantum Computing for Google Goggles\" by jurvetson is licensed under CC BY 2.0. To view a copy of this license, visit https://creativecommons.org/licenses/by/2.0/."
+    },
+    "snippet": null,
+    "thumbnailUrl": "https://api.openverse.org/v1/images/9efdf64f-6d10-46d9-b82f-88e57f823e76/thumb/",
+    "raw": {
+      "id": "9efdf64f-6d10-46d9-b82f-88e57f823e76",
+      "title": "Quantum Computing for Google Goggles",
+      "indexed_on": "2020-04-26T03:29:27.428541Z",
+      "foreign_landing_url": "https://www.flickr.com/photos/44124348109@N01/4171280876",
+      "url": "https://live.staticflickr.com/4004/4171280876_800e32bf4a_b.jpg",
+      "creator": "jurvetson",
+      "creator_url": "https://www.flickr.com/photos/44124348109@N01",
+      "license": "by",
+      "license_version": "2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0/",
+      "provider": "flickr",
+      "source": "flickr",
+      "category": null,
+      "filesize": null,
+      "filetype": null,
+      "tags": [
+        {
+          "name": "2009",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "ai",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "artificialintelligence",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "board",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "classifier",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "computer",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "dwave",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "goggle",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "goggles",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "goldmansachs",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "google",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "hartmutneven",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "image",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "imagerecognition",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "machinelearning",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "meeting",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "nips",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "paralleluniverses",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "photo",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "quantum",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "research",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "search",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "adult",
+          "accuracy": 0.94236,
+          "unstable__provider": "clarifai"
+        },
+        {
+          "name": "business",
+          "accuracy": 0.94451,
+          "unstable__provider": "clarifai"
+        },
+        {
+          "name": "conference room",
+          "accuracy": 0.93343,
+          "unstable__provider": "clarifai"
+        },
+        {
+          "name": "document",
+          "accuracy": 0.90275,
+          "unstable__provider": "clarifai"
+        },
+        {
+          "name": "education",
+          "accuracy": 0.97408,
+          "unstable__provider": "clarifai"
+        },
+        {
+          "name": "furniture",
+          "accuracy": 0.9142,
+          "unstable__provider": "clarifai"
+        },
+        {
+          "name": "group",
+          "accuracy": 0.95868,
+          "unstable__provider": "clarifai"
+        },
+        {
+          "name": "indoors",
+          "accuracy": 0.94714,
+          "unstable__provider": "clarifai"
+        },
+        {
+          "name": "league",
+          "accuracy": 0.99427,
+          "unstable__provider": "clarifai"
+        },
+        {
+          "name": "meeting",
+          "accuracy": 0.99529,
+          "unstable__provider": "clarifai"
+        },
+        {
+          "name": "office",
+          "accuracy": 0.94182,
+          "unstable__provider": "clarifai"
+        },
+        {
+          "name": "room",
+          "accuracy": 0.90272,
+          "unstable__provider": "clarifai"
+        },
+        {
+          "name": "table",
+          "accuracy": 0.91873,
+          "unstable__provider": "clarifai"
+        },
+        {
+          "name": "woman",
+          "accuracy": 0.90037,
+          "unstable__provider": "clarifai"
+        }
+      ],
+      "attribution": "\"Quantum Computing for Google Goggles\" by jurvetson is licensed under CC BY 2.0. To view a copy of this license, visit https://creativecommons.org/licenses/by/2.0/.",
+      "fields_matched": [
+        "description",
+        "title",
+        "tags.name"
+      ],
+      "mature": false,
+      "height": 748,
+      "width": 1024,
+      "thumbnail": "https://api.openverse.org/v1/images/9efdf64f-6d10-46d9-b82f-88e57f823e76/thumb/",
+      "detail_url": "https://api.openverse.org/v1/images/9efdf64f-6d10-46d9-b82f-88e57f823e76/",
+      "related_url": "https://api.openverse.org/v1/images/9efdf64f-6d10-46d9-b82f-88e57f823e76/related/",
+      "unstable__sensitivity": []
+    }
+  },
+  {
+    "sourceId": "openverse",
+    "externalId": "67302336-6e9b-4394-804f-1688cd846c04",
+    "canonicalUrl": "https://www.flickr.com/photos/44124348109@N01/8054771535",
+    "title": "Rose’s Law for Quantum Computers",
+    "authors": [
+      "jurvetson"
+    ],
+    "publishedAt": null,
+    "mediaType": "image",
+    "licence": {
+      "spdx": "CC-BY",
+      "url": "https://creativecommons.org/licenses/by/2.0/",
+      "assertedBy": "openverse",
+      "attribution": "\"Rose’s Law for Quantum Computers\" by jurvetson is licensed under CC BY 2.0. To view a copy of this license, visit https://creativecommons.org/licenses/by/2.0/."
+    },
+    "snippet": null,
+    "thumbnailUrl": "https://api.openverse.org/v1/images/67302336-6e9b-4394-804f-1688cd846c04/thumb/",
+    "raw": {
+      "id": "67302336-6e9b-4394-804f-1688cd846c04",
+      "title": "Rose’s Law for Quantum Computers",
+      "indexed_on": "2020-04-13T15:35:29.198724Z",
+      "foreign_landing_url": "https://www.flickr.com/photos/44124348109@N01/8054771535",
+      "url": "https://live.staticflickr.com/8181/8054771535_af92c448ed.jpg",
+      "creator": "jurvetson",
+      "creator_url": "https://www.flickr.com/photos/44124348109@N01",
+      "license": "by",
+      "license_version": "2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0/",
+      "provider": "flickr",
+      "source": "flickr",
+      "category": null,
+      "filesize": null,
+      "filetype": null,
+      "tags": [
+        {
+          "name": "accelerating",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "“and",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "canada",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "change",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "completely",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "computer",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "computing",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "david",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "deutsch",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "differentu201d",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "discrete",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "dwave",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "exponential",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "fdiamontheboard",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "for",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "inc",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "law",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "log",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "logscale",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "moore’s",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "mooreu2019s",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "now",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "optimization",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "parallel",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "qc",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "quantum",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "quantumcomputing",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "qubits",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "roses",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "roseslaw",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "scale",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "scaling",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "something",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "u201cand",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "universes",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "arrow",
+          "accuracy": 0.91636,
+          "unstable__provider": "clarifai"
+        },
+        {
+          "name": "banner",
+          "accuracy": 0.94062,
+          "unstable__provider": "clarifai"
+        },
+        {
+          "name": "business",
+          "accuracy": 0.9159,
+          "unstable__provider": "clarifai"
+        },
+        {
+          "name": "diagram",
+          "accuracy": 0.97871,
+          "unstable__provider": "clarifai"
+        },
+        {
+          "name": "facts",
+          "accuracy": 0.9064,
+          "unstable__provider": "clarifai"
+        },
+        {
+          "name": "graph",
+          "accuracy": 0.99267,
+          "unstable__provider": "clarifai"
+        },
+        {
+          "name": "illustration",
+          "accuracy": 0.95753,
+          "unstable__provider": "clarifai"
+        },
+        {
+          "name": "internet",
+          "accuracy": 0.92437,
+          "unstable__provider": "clarifai"
+        },
+        {
+          "name": "layout",
+          "accuracy": 0.93298,
+          "unstable__provider": "clarifai"
+        },
+        {
+          "name": "navigation",
+          "accuracy": 0.9589,
+          "unstable__provider": "clarifai"
+        },
+        {
+          "name": "page",
+          "accuracy": 0.97029,
+          "unstable__provider": "clarifai"
+        },
+        {
+          "name": "presentation",
+          "accuracy": 0.96071,
+          "unstable__provider": "clarifai"
+        },
+        {
+          "name": "site",
+          "accuracy": 0.94278,
+          "unstable__provider": "clarifai"
+        },
+        {
+          "name": "stripe",
+          "accuracy": 0.95711,
+          "unstable__provider": "clarifai"
+        },
+        {
+          "name": "template",
+          "accuracy": 0.95168,
+          "unstable__provider": "clarifai"
+        },
+        {
+          "name": "vector",
+          "accuracy": 0.93279,
+          "unstable__provider": "clarifai"
+        },
+        {
+          "name": "vectors",
+          "accuracy": 0.96415,
+          "unstable__provider": "clarifai"
+        },
+        {
+          "name": "World Wide Web",
+          "accuracy": 0.97594,
+          "unstable__provider": "clarifai"
+        }
+      ],
+      "attribution": "\"Rose’s Law for Quantum Computers\" by jurvetson is licensed under CC BY 2.0. To view a copy of this license, visit https://creativecommons.org/licenses/by/2.0/.",
+      "fields_matched": [
+        "description",
+        "title",
+        "tags.name"
+      ],
+      "mature": false,
+      "height": 397,
+      "width": 500,
+      "thumbnail": "https://api.openverse.org/v1/images/67302336-6e9b-4394-804f-1688cd846c04/thumb/",
+      "detail_url": "https://api.openverse.org/v1/images/67302336-6e9b-4394-804f-1688cd846c04/",
+      "related_url": "https://api.openverse.org/v1/images/67302336-6e9b-4394-804f-1688cd846c04/related/",
+      "unstable__sensitivity": []
+    }
+  },
+  {
+    "sourceId": "openverse",
+    "externalId": "62653bd1-0776-4ad2-8bd7-d737041a0180",
+    "canonicalUrl": "https://www.flickr.com/photos/44124348109@N01/8744236353",
+    "title": "D-Wave Quantum Computer Going to Google",
+    "authors": [
+      "jurvetson"
+    ],
+    "publishedAt": null,
+    "mediaType": "image",
+    "licence": {
+      "spdx": "CC-BY",
+      "url": "https://creativecommons.org/licenses/by/2.0/",
+      "assertedBy": "openverse",
+      "attribution": "\"D-Wave Quantum Computer Going to Google\" by jurvetson is licensed under CC BY 2.0. To view a copy of this license, visit https://creativecommons.org/licenses/by/2.0/."
+    },
+    "snippet": null,
+    "thumbnailUrl": "https://api.openverse.org/v1/images/62653bd1-0776-4ad2-8bd7-d737041a0180/thumb/",
+    "raw": {
+      "id": "62653bd1-0776-4ad2-8bd7-d737041a0180",
+      "title": "D-Wave Quantum Computer Going to Google",
+      "indexed_on": "2020-04-07T20:28:20.429525Z",
+      "foreign_landing_url": "https://www.flickr.com/photos/44124348109@N01/8744236353",
+      "url": "https://live.staticflickr.com/7287/8744236353_37b1389934_b.jpg",
+      "creator": "jurvetson",
+      "creator_url": "https://www.flickr.com/photos/44124348109@N01",
+      "license": "by",
+      "license_version": "2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0/",
+      "provider": "flickr",
+      "source": "flickr",
+      "category": null,
+      "filesize": null,
+      "filetype": null,
+      "tags": [
+        {
+          "name": "512",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "ai",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "artificialintelligence",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "board",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "british",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "canada",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "columbia",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "computer",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "dwave",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "dwavetwo",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "google",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "learning",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "machine",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "meeting",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "nasa",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "qc",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "quantum",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "qubits",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "sale",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "usra",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "administration",
+          "accuracy": 0.91083,
+          "unstable__provider": "clarifai"
+        },
+        {
+          "name": "adult",
+          "accuracy": 0.94363,
+          "unstable__provider": "clarifai"
+        },
+        {
+          "name": "business",
+          "accuracy": 0.95144,
+          "unstable__provider": "clarifai"
+        },
+        {
+          "name": "Congress",
+          "accuracy": 0.93957,
+          "unstable__provider": "clarifai"
+        },
+        {
+          "name": "convention",
+          "accuracy": 0.9226,
+          "unstable__provider": "clarifai"
+        },
+        {
+          "name": "education",
+          "accuracy": 0.96021,
+          "unstable__provider": "clarifai"
+        },
+        {
+          "name": "group",
+          "accuracy": 0.99415,
+          "unstable__provider": "clarifai"
+        },
+        {
+          "name": "group together",
+          "accuracy": 0.98079,
+          "unstable__provider": "clarifai"
+        },
+        {
+          "name": "leader",
+          "accuracy": 0.98595,
+          "unstable__provider": "clarifai"
+        },
+        {
+          "name": "league",
+          "accuracy": 0.99411,
+          "unstable__provider": "clarifai"
+        },
+        {
+          "name": "man",
+          "accuracy": 0.91896,
+          "unstable__provider": "clarifai"
+        },
+        {
+          "name": "many",
+          "accuracy": 0.92349,
+          "unstable__provider": "clarifai"
+        },
+        {
+          "name": "meeting",
+          "accuracy": 0.99761,
+          "unstable__provider": "clarifai"
+        },
+        {
+          "name": "people",
+          "accuracy": 0.94108,
+          "unstable__provider": "clarifai"
+        },
+        {
+          "name": "presentation",
+          "accuracy": 0.91228,
+          "unstable__provider": "clarifai"
+        },
+        {
+          "name": "room",
+          "accuracy": 0.95423,
+          "unstable__provider": "clarifai"
+        },
+        {
+          "name": "teamwork",
+          "accuracy": 0.93641,
+          "unstable__provider": "clarifai"
+        }
+      ],
+      "attribution": "\"D-Wave Quantum Computer Going to Google\" by jurvetson is licensed under CC BY 2.0. To view a copy of this license, visit https://creativecommons.org/licenses/by/2.0/.",
+      "fields_matched": [
+        "description",
+        "title",
+        "tags.name"
+      ],
+      "mature": false,
+      "height": 818,
+      "width": 1024,
+      "thumbnail": "https://api.openverse.org/v1/images/62653bd1-0776-4ad2-8bd7-d737041a0180/thumb/",
+      "detail_url": "https://api.openverse.org/v1/images/62653bd1-0776-4ad2-8bd7-d737041a0180/",
+      "related_url": "https://api.openverse.org/v1/images/62653bd1-0776-4ad2-8bd7-d737041a0180/related/",
+      "unstable__sensitivity": []
+    }
+  }
+]
