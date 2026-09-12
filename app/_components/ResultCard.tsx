@@ -3,13 +3,19 @@
 import type { ReactNode } from "react";
 import type { SourceResult } from "@/types/source-result";
 
-const OPEN_LICENCES = new Set([
+// "Known" rather than "open": NC and ND variants are Creative Commons but are
+// not open under the Open Definition. They are styled apart from UNKNOWN
+// because naming the licence is still more useful than saying nothing.
+const KNOWN_LICENCES = new Set([
   "CC0-1.0",
   "CC-BY",
   "CC-BY-4.0",
   "CC-BY-SA",
   "CC-BY-SA-4.0",
   "CC-BY-NC",
+  "CC-BY-NC-SA",
+  "CC-BY-NC-ND",
+  "CC-BY-ND",
   "PD",
   "OPEN-ACCESS",
 ]);
@@ -48,7 +54,7 @@ export default function ResultCard({
   action?: ReactNode;
 }) {
   const y = year(r.publishedAt);
-  const open = OPEN_LICENCES.has(r.licence.spdx);
+  const known = KNOWN_LICENCES.has(r.licence.spdx);
 
   return (
     <li className="flex flex-col rounded-2xl border border-[#3a1f14] bg-[#100a07]/70 p-6 transition hover:border-[#e8451f]/60">
@@ -96,7 +102,7 @@ export default function ResultCard({
       <div className="mt-5 flex items-center gap-2 border-t border-[#3a1f14]/60 pt-4">
         <span
           className={`rounded-full px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.14em] ${
-            open
+            known
               ? "bg-[#e8451f]/15 text-[#ff9c6b]"
               : "bg-[#2a1a12] text-[#8d7768]"
           }`}

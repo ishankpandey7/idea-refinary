@@ -23,14 +23,45 @@ type OpenAlexWork = {
   publication_date?: string | null;
   authorships?: OpenAlexAuthorship[] | null;
   best_oa_location?: OpenAlexLocation | null;
+  primary_location?: OpenAlexLocation | null;
+  locations?: (OpenAlexLocation | null)[] | null;
   open_access?: { is_oa?: boolean | null } | null;
 };
+
+/**
+ * OpenAlex spreads the licence across several places and often fills only one
+ * of them, so walk them in order of confidence before giving up.
+ */
+function pickLicence(work: OpenAlexWork): {
+  raw: string | null;
+  url: string | null;
+} {
+  const candidates: (OpenAlexLocation | null | undefined)[] = [
+    work.best_oa_location,
+    work.primary_location,
+    ...(work.locations ?? []),
+  ];
+
+  for (const loc of candidates) {
+    const raw = loc?.license?.trim();
+    if (raw) return { raw, url: loc?.landing_page_url ?? null };
+  }
+
+  const fallbackUrl =
+    work.best_oa_location?.landing_page_url ??
+    work.primary_location?.landing_page_url ??
+    null;
+  return { raw: null, url: fallbackUrl };
+}
 
 const LICENCE_MAP: Record<string, Spdx> = {
   "cc0": "CC0-1.0",
   "cc-by": "CC-BY",
   "cc-by-sa": "CC-BY-SA",
   "cc-by-nc": "CC-BY-NC",
+  "cc-by-nc-sa": "CC-BY-NC-SA",
+  "cc-by-nc-nd": "CC-BY-NC-ND",
+  "cc-by-nd": "CC-BY-ND",
   "public-domain": "PD",
   "pd": "PD",
   "pdm": "PD",
@@ -43,10 +74,11 @@ function mapLicence(raw: string | null | undefined): Spdx {
 
   if (key.startsWith("cc0")) return "CC0-1.0";
 
-  // Order matters: NC-SA / NC-ND / ND have no Spdx member, and a bare
-  // "cc-by" prefix test would otherwise mislabel them as CC-BY.
-  if (key.startsWith("cc-by-nc-")) return "UNKNOWN";
-  if (key.startsWith("cc-by-nd")) return "UNKNOWN";
+  // Order matters: a bare "cc-by" prefix test would otherwise swallow every
+  // NC / ND variant and mislabel it as CC-BY.
+  if (key.startsWith("cc-by-nc-sa")) return "CC-BY-NC-SA";
+  if (key.startsWith("cc-by-nc-nd")) return "CC-BY-NC-ND";
+  if (key.startsWith("cc-by-nd")) return "CC-BY-ND";
 
   if (key.startsWith("cc-by-sa")) {
     return key.includes("4.0") ? "CC-BY-SA-4.0" : "CC-BY-SA";
@@ -67,12 +99,17 @@ function toResult(work: OpenAlexWork): SourceResult | null {
     .map((a) => a?.author?.display_name)
     .filter((n): n is string => typeof n === "string" && n.length > 0);
 
-  const licenceRaw = work.best_oa_location?.license ?? null;
-  const spdx = licenceRaw
-    ? mapLicence(licenceRaw)
-    : work.open_access?.is_oa
-      ? "OPEN-ACCESS"
-      : "UNKNOWN";
+  // A licence string that has no Spdx member (cc-by-nc-nd, other-oa, ...) must
+  // not bury the fact that the work is open access, so fall through to is_oa
+  // rather than stopping at UNKNOWN.
+  const licence = pickLicence(work);
+  const mapped = licence.raw ? mapLicence(licence.raw) : "UNKNOWN";
+  const spdx =
+    mapped !== "UNKNOWN"
+      ? mapped
+      : work.open_access?.is_oa
+        ? "OPEN-ACCESS"
+        : "UNKNOWN";
 
   return {
     sourceId: SOURCE_ID,
@@ -84,7 +121,7 @@ function toResult(work: OpenAlexWork): SourceResult | null {
     mediaType: "paper",
     licence: {
       spdx,
-      url: work.best_oa_location?.landing_page_url ?? null,
+      url: licence.url,
       assertedBy: SOURCE_ID,
       attribution: `${authors.join(", ") || "Unknown"} — ${title}`,
     },

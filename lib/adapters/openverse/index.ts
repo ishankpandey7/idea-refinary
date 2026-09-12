@@ -30,6 +30,9 @@ function mapLicence(
   if (code === "by") return v === "4.0" ? "CC-BY-4.0" : "CC-BY";
   if (code === "by-sa") return v === "4.0" ? "CC-BY-SA-4.0" : "CC-BY-SA";
   if (code === "by-nc") return "CC-BY-NC";
+  if (code === "by-nc-sa") return "CC-BY-NC-SA";
+  if (code === "by-nc-nd") return "CC-BY-NC-ND";
+  if (code === "by-nd") return "CC-BY-ND";
   return "UNKNOWN";
 }
 
