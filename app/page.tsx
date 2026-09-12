@@ -17,39 +17,33 @@ const CATEGORIES = [
 const LAST_SEARCH = "idea-refinery:last-search";
 
 /**
- * The angle cards from the design. Three describe what the adapters return;
- * the fourth slot is POLICY in the mockup, which is a source type this app has
- * no adapter for, so it shows Collaborator instead — a feature that does
- * exist. Provider names are the four real adapters and nothing else.
+ * The cards under the hero, copied from the home mockup: icon, title, blurb —
+ * no meta blocks, those belong to the angle-selection screen this app has no
+ * route for. The mockup's fourth slot is POLICY, a source type with no
+ * adapter, so it shows Collaborator instead.
  */
 const ANGLES = [
   {
     glyph: "✦",
     title: "Research",
-    blurb: "Open-access papers and datasets behind the idea.",
-    metaLabel: "Focus areas",
-    meta: "Literature · Reviews · Datasets",
-    sources: "OpenAlex",
+    blurb:
+      "Papers, datasets and academic citations mapped directly to your central topic.",
     href: null,
     cta: null,
   },
   {
     glyph: "◈",
     title: "Art & creativity",
-    blurb: "Openly licensed images and artwork you can actually reuse.",
-    metaLabel: "Focus areas",
-    meta: "Photography · Illustration · Museum artworks",
-    sources: "Openverse · Wikimedia Commons",
+    blurb:
+      "Public domain images, illustrations and open-licence media assets with source tracking.",
     href: null,
     cta: null,
   },
   {
-    glyph: "✒",
+    glyph: "✎",
     title: "Writing",
-    blurb: "Public-domain texts and reference works to write from.",
-    metaLabel: "Focus areas",
-    meta: "Reference texts · Primary sources",
-    sources: "Gutendex",
+    blurb:
+      "Contextual essays, primary source text blocks and public-domain language resources.",
     href: null,
     cta: null,
   },
@@ -57,14 +51,13 @@ const ANGLES = [
     glyph: "✉",
     title: "Collaborator",
     blurb:
-      "Invite someone by email and work an idea together. Everyone on it can search, pin and remove sources.",
-    metaLabel: "What you get",
-    meta: "Shared boards · shared pins",
-    sources: "My Ideas",
+      "Invite someone by email to an idea. Everyone on it can search, pin and remove sources.",
     href: "/my-ideas",
-    cta: "Open My Ideas",
+    cta: "Invite from My Ideas",
   },
 ] as const;
+
+const EXAMPLE_QUERY = "a cancer awareness campaign for my campus";
 
 export default function Home() {
   const [query, setQuery] = useState("");
@@ -213,6 +206,20 @@ export default function Home() {
         </div>
       </form>
 
+      <p className="mt-4 flex flex-wrap items-center justify-center gap-2 text-[12px] text-[#8b8178]">
+        Try an example:
+        <button
+          type="button"
+          onClick={() => {
+            setQuery(EXAMPLE_QUERY);
+            void runSearchFor(EXAMPLE_QUERY, category);
+          }}
+          className="rounded-full border border-[#e5dccd] bg-[#fffdf9] px-4 py-1.5 text-[12px] text-[#57504a] transition hover:border-[#e8451f] hover:text-[#e8451f]"
+        >
+          {EXAMPLE_QUERY} &#8599;
+        </button>
+      </p>
+
       <div className="mt-6 flex flex-wrap justify-center gap-2.5">
         {CATEGORIES.map((c) => (
           <button
@@ -314,7 +321,7 @@ export default function Home() {
             public databases.
           </p>
 
-          <ul className="mt-10 grid gap-5 sm:grid-cols-2">
+          <ul className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
             {ANGLES.map((a) => (
               <li
                 key={a.title}
@@ -327,27 +334,17 @@ export default function Home() {
                   {a.glyph}
                 </span>
 
-                <h3 className="mt-4 font-serif text-xl text-[#1c1410]">
+                <h3 className="mt-4 font-serif text-lg text-[#1c1410]">
                   {a.title}
                 </h3>
                 <p className="mt-2 text-[13px] leading-relaxed text-[#57504a]">
                   {a.blurb}
                 </p>
 
-                <p className="mt-5 text-[10px] font-semibold uppercase tracking-[0.16em] text-[#9a9089]">
-                  {a.metaLabel}
-                </p>
-                <p className="mt-1.5 text-[12px] text-[#8b8178]">{a.meta}</p>
-
-                <p className="mt-4 text-[10px] font-semibold uppercase tracking-[0.16em] text-[#9a9089]">
-                  {a.href ? "Where it lives" : "Sources"}
-                </p>
-                <p className="mt-1.5 text-[12px] text-[#e8451f]">{a.sources}</p>
-
                 {a.href ? (
                   <Link
                     href={a.href}
-                    className="mt-6 inline-block self-start rounded-full bg-[#e8451f] px-6 py-2.5 text-[13px] font-medium text-white transition hover:bg-[#d13d18]"
+                    className="mt-auto pt-5 text-[12px] font-medium text-[#e8451f] underline-offset-2 hover:underline"
                   >
                     {a.cta} &rarr;
                   </Link>

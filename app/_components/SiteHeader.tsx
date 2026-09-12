@@ -18,12 +18,12 @@ export default function SiteHeader() {
       data-print-hide
       className="flex items-center justify-between gap-4 border-b border-[#e5dccd] bg-[#fffdf9] px-6 py-5 sm:px-10"
     >
-      <Link href="/" className="flex items-center gap-2.5">
-        <span aria-hidden className="text-lg text-[#e8451f]">
-          &#10022;
-        </span>
+      <Link href="/" className="flex items-baseline gap-1.5">
         <span className="font-serif text-xl tracking-tight text-[#1c1410]">
           Idea Refinery
+        </span>
+        <span aria-hidden className="text-lg leading-none text-[#e8451f]">
+          &bull;
         </span>
       </Link>
 

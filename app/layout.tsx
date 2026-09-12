@@ -36,6 +36,26 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           >
             <SiteHeader />
             {children}
+
+            <footer
+              data-print-hide
+              className="mt-auto border-t border-[#e5dccd] px-6 py-10 text-center sm:px-10"
+            >
+              <p className="text-[13px] text-[#57504a]">
+                <span className="font-serif text-[15px] text-[#1c1410]">
+                  Idea Refinery
+                </span>
+                <span aria-hidden className="mx-2 text-[#e8451f]">
+                  &bull;
+                </span>
+                Open-licence resource discovery engine
+              </p>
+              <p className="mx-auto mt-3 max-w-xl text-[11px] leading-relaxed text-[#9a9089]">
+                &copy; 2026 Idea Refinery. Results link back to the source and
+                carry the licence and attribution the provider published &mdash;
+                we never host the content.
+              </p>
+            </footer>
           </div>
         </AuthProvider>
       </body>
