@@ -11,6 +11,13 @@ import {
 
 const TIMEOUT_MS = 4000;
 
+// gutendex.com answers 403 to Vercel's default region and 200 from a
+// residential IP, header-independent — so the block is on the IP range.
+// Moving just this route is the cheap test: everything else in the app
+// stays where it was.
+export const preferredRegion = "bom1";
+
+
 // Adapters accept an optional AbortSignal as a second argument; the frozen
 // Adapter contract only declares the first, so narrow at the call site.
 type SearchWithSignal = (
