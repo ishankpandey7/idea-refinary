@@ -59,6 +59,9 @@ function toResult(book: GutendexBook): SourceResult | null {
   };
 }
 
+/** Named so a maintainer on the other end can see who is calling. */
+const UA = "IdeaCraft/1.0 (+https://idea-refinery-ten.vercel.app)";
+
 export const adapter: Adapter = {
   id: SOURCE_ID,
   label: "Project Gutenberg",
@@ -70,8 +73,15 @@ export const adapter: Adapter = {
 
       const params = new URLSearchParams({ search: q });
       const url = `${ENDPOINT}?${params.toString()}`;
+      // gutendex answers 403 to Vercel's egress with no User-Agent set,
+      // while the same request succeeds from a residential IP — confirmed in
+      // the function logs on 2026-09-13, seven invocations, all "HTTP 403".
+      // The other three sources do not care. Identify ourselves instead.
       const res = await fetch(url, {
-        headers: { Accept: "application/json" },
+        headers: {
+          Accept: "application/json",
+          "User-Agent": UA,
+        },
         signal,
       });
 
