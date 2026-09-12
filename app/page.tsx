@@ -185,21 +185,25 @@ export default function Home() {
           runSearch();
         }}
       >
-        <div className="flex items-center gap-3 rounded-full border border-[#e5dccd] bg-[#fffdf9] py-2 pl-6 pr-2 focus-within:border-[#e8451f]/70">
-          <span aria-hidden className="text-[#e8451f]">
-            &#8981;
-          </span>
-          <input
-            type="text"
-            value={query}
-            onChange={(e) => setQuery(e.target.value)}
-            placeholder="Describe your idea — e.g. a cancer awareness campaign for my campus"
-            className="w-full bg-transparent text-[15px] text-[#1c1410] placeholder:text-[#9a9089] focus:outline-none"
-          />
+        {/* Stacked on a phone: the button inside the pill leaves the input
+            too narrow to read what you typed. Nested again from sm up. */}
+        <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-0 sm:rounded-full sm:border sm:border-[#e5dccd] sm:bg-[#fffdf9] sm:py-2 sm:pl-6 sm:pr-2 sm:focus-within:border-[#e8451f]/70">
+          <div className="flex min-w-0 flex-1 items-center gap-3 rounded-full border border-[#e5dccd] bg-[#fffdf9] px-6 py-3 focus-within:border-[#e8451f]/70 sm:border-0 sm:bg-transparent sm:p-0 sm:focus-within:border-0">
+            <span aria-hidden className="text-[#e8451f]">
+              &#8981;
+            </span>
+            <input
+              type="text"
+              value={query}
+              onChange={(e) => setQuery(e.target.value)}
+              placeholder="Describe your idea — e.g. a cancer awareness campaign"
+              className="w-full min-w-0 bg-transparent text-[15px] text-[#1c1410] placeholder:text-[#9a9089] focus:outline-none"
+            />
+          </div>
           <button
             type="submit"
             disabled={loading}
-            className="shrink-0 rounded-full bg-[#e8451f] px-7 py-3 text-[14px] font-medium text-white transition hover:bg-[#d13d18] disabled:cursor-not-allowed disabled:opacity-60"
+            className="w-full shrink-0 rounded-full bg-[#e8451f] px-7 py-3 text-[14px] font-medium text-white transition hover:bg-[#d13d18] disabled:cursor-not-allowed disabled:opacity-60 sm:w-auto"
           >
             {loading ? "Searching…" : "Refine →"}
           </button>
