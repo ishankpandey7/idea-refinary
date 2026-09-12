@@ -11,10 +11,14 @@ import {
 
 const TIMEOUT_MS = 4000;
 
-// gutendex.com answers 403 to Vercel's default region and 200 from a
-// residential IP, header-independent — so the block is on the IP range.
-// Moving just this route is the cheap test: everything else in the app
-// stays where it was.
+// gutendex.com answers 403 to Vercel and 200 from a residential IP,
+// header-independent, so the block is on the IP range and iad1 is the range
+// most likely to be on it.
+//
+// This line does nothing on the Hobby plan — verified 2026-09-13, the
+// response came back `x-vercel-id: bom1::iad1::…`, edge in Mumbai and
+// compute still in Washington. Region has to be set in Project Settings ->
+// Functions instead. Kept because it becomes the right knob on Pro.
 export const preferredRegion = "bom1";
 
 
