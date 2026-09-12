@@ -2,6 +2,12 @@ import { NextResponse } from "next/server";
 import { adaptersFor } from "@/lib/adapters/registry";
 import { isDemo, isRecording, readFixture, writeFixture } from "@/lib/fixtures";
 import type { Adapter, SourceResult } from "@/types/source-result";
+import {
+  dedupe,
+  EMPTY_SEARCH,
+  type SearchResponse,
+  type SourceStat,
+} from "@/lib/search-response";
 
 const TIMEOUT_MS = 4000;
 
@@ -49,26 +55,67 @@ async function runAdapter(
   return results;
 }
 
+type Run = { stat: SourceStat; results: SourceResult[] };
+
+/**
+ * Replaces the old Promise.allSettled pass. Same guarantee — this never
+ * rejects — but it also records what each source actually returned, which
+ * allSettled threw away.
+ */
+async function runTimed(adapter: Adapter, query: string): Promise<Run> {
+  const demo = isDemo();
+  const started = performance.now();
+  const elapsed = () => (demo ? null : Math.round(performance.now() - started));
+
+  try {
+    const results = await runAdapter(adapter, query);
+    return {
+      results,
+      stat: {
+        id: adapter.id,
+        label: adapter.label,
+        count: results.length,
+        ms: elapsed(),
+        failed: false,
+      },
+    };
+  } catch (reason) {
+    console.error(`[${adapter.id}] ${String(reason)}`);
+    return {
+      results: [],
+      stat: {
+        id: adapter.id,
+        label: adapter.label,
+        count: 0,
+        ms: elapsed(),
+        failed: true,
+      },
+    };
+  }
+}
+
 export async function GET(request: Request) {
   const params = new URL(request.url).searchParams;
   const q = params.get("q")?.trim() ?? "";
   const category = params.get("category")?.trim() || null;
 
-  if (!q) return NextResponse.json([] as SourceResult[]);
+  if (!q) return NextResponse.json(EMPTY_SEARCH);
 
+  const demo = isDemo();
   const selected = adaptersFor(category);
-  const settled = await Promise.allSettled(
-    selected.map((a) => runAdapter(a, q)),
-  );
+  const started = performance.now();
 
-  const results: SourceResult[] = [];
-  settled.forEach((outcome, i) => {
-    if (outcome.status === "fulfilled") {
-      results.push(...outcome.value);
-    } else {
-      console.error(`[${selected[i].id}] ${String(outcome.reason)}`);
-    }
-  });
+  const runs = await Promise.all(selected.map((a) => runTimed(a, q)));
+  const fetched = runs.flatMap((r) => r.results);
+  const { results, deduped } = dedupe(fetched);
 
-  return NextResponse.json(results);
+  const body: SearchResponse = {
+    results,
+    sources: runs.map((r) => r.stat),
+    fetched: fetched.length,
+    deduped,
+    totalMs: demo ? null : Math.round(performance.now() - started),
+    demo,
+  };
+  return NextResponse.json(body);
 }

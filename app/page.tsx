@@ -3,6 +3,7 @@
 import { useCallback, useEffect, useState } from "react";
 import Link from "next/link";
 import type { SourceResult } from "@/types/source-result";
+import type { SearchResponse, SourceStat } from "@/lib/search-response";
 import ResultCard from "./_components/ResultCard";
 import {
   listIdeas,
@@ -65,6 +66,17 @@ const ANGLES = [
 
 const EXAMPLE_QUERY = "a cancer awareness campaign for my campus";
 
+/** Everything the envelope carries except the rows themselves. */
+type SearchMeta = Omit<SearchResponse, "results">;
+
+function duration(ms: number): string {
+  return ms < 1000 ? `${ms}ms` : `${(ms / 1000).toFixed(1)}s`;
+}
+
+function plural(n: number, word: string): string {
+  return `${n} ${word}${n === 1 ? "" : "s"}`;
+}
+
 /** Client-only — it reads Date.now(), and the list arrives after mount. */
 function ago(iso: string): string {
   const then = new Date(iso).getTime();
@@ -100,6 +112,7 @@ export default function Home() {
   const [savedKeys, setSavedKeys] = useState<Set<string>>(new Set());
   const [saveError, setSaveError] = useState<string | null>(null);
   const [recent, setRecent] = useState<Idea[]>([]);
+  const [meta, setMeta] = useState<SearchMeta | null>(null);
 
   const { user } = useAuth();
 
@@ -143,9 +156,20 @@ export default function Home() {
         cat ? `&category=${encodeURIComponent(cat)}` : ""
       }`;
       const res = await fetch(url);
-      setResults(res.ok ? await res.json() : []);
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+
+      const body = (await res.json()) as SearchResponse;
+      setResults(body.results ?? []);
+      setMeta({
+        sources: body.sources ?? [],
+        fetched: body.fetched ?? 0,
+        deduped: body.deduped ?? 0,
+        totalMs: body.totalMs ?? null,
+        demo: body.demo ?? false,
+      });
     } catch {
       setResults([]);
+      setMeta(null);
     } finally {
       setCurrentIdea(q);
       setLoading(false);
@@ -309,6 +333,40 @@ export default function Home() {
                   </Link>
                 </>
               ) : null}
+            </p>
+          ) : null}
+
+          {meta && meta.sources.length > 0 ? (
+            <div className="mx-auto mt-5 flex max-w-3xl flex-wrap items-center justify-center gap-x-5 gap-y-2">
+              {meta.sources.map((s: SourceStat) => (
+                <span
+                  key={s.id}
+                  className="flex items-center gap-2 text-[12px] text-muted"
+                  title={s.failed ? "This source did not answer" : undefined}
+                >
+                  <span
+                    aria-hidden
+                    className={`size-1.5 rounded-full ${
+                      s.failed ? "bg-line-strong" : "bg-brand"
+                    }`}
+                  />
+                  {s.label} {s.failed ? "unavailable" : plural(s.count, "result")}
+                  {s.ms !== null ? (
+                    <span className="text-faint">({duration(s.ms)})</span>
+                  ) : null}
+                </span>
+              ))}
+            </div>
+          ) : null}
+
+          {meta ? (
+            <p className="mt-3 text-[12px] text-faint">
+              {meta.fetched} fetched
+              {meta.deduped > 0
+                ? ` · ${plural(meta.deduped, "duplicate")} collapsed`
+                : ""}
+              {meta.totalMs !== null ? ` · ${duration(meta.totalMs)} total` : ""}
+              {meta.demo ? " · replayed from fixtures" : ""}
             </p>
           ) : null}
         </div>

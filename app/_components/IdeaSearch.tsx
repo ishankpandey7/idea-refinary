@@ -2,6 +2,7 @@
 
 import { useState, type FormEvent } from "react";
 import type { SourceResult } from "@/types/source-result";
+import type { SearchResponse } from "@/lib/search-response";
 import ResultCard from "./ResultCard";
 import { addResultToIdea, resultKey } from "../_lib/ideas-db";
 
@@ -35,7 +36,9 @@ export default function IdeaSearch({
     setError(null);
     try {
       const res = await fetch(`/api/search?q=${encodeURIComponent(q)}`);
-      setResults(res.ok ? await res.json() : []);
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      const body = (await res.json()) as SearchResponse;
+      setResults(body.results ?? []);
     } catch {
       setResults([]);
     } finally {
