@@ -47,12 +47,13 @@ function searchWithTimeout(
   return Promise.race([run, aborted]).finally(() => clearTimeout(timer));
 }
 
+type Rows = { results: SourceResult[]; cached: boolean };
+
 // DEMO short-circuits before any adapter runs, so no network is touched.
-async function runAdapter(
-  adapter: Adapter,
-  query: string,
-): Promise<SourceResult[]> {
-  if (isDemo()) return readFixture(adapter.id, query);
+async function runAdapter(adapter: Adapter, query: string): Promise<Rows> {
+  if (isDemo()) {
+    return { results: await readFixture(adapter.id, query), cached: true };
+  }
 
   const results = await searchWithTimeout(adapter, query);
 
@@ -63,7 +64,17 @@ async function runAdapter(
   if (isRecording() && results.length > 0) {
     await writeFixture(adapter.id, query, results);
   }
-  return results;
+  if (results.length > 0) return { results, cached: false };
+
+  // Empty. Either a genuine zero or a source that failed and swallowed it,
+  // which the adapter contract makes indistinguishable here. gutendex.com
+  // refuses this host outright, so "writing" would otherwise always be
+  // blank. If this query was recorded while the source was healthy, show
+  // that — flagged as cached, never passed off as live.
+  const saved = await readFixture(adapter.id, query);
+  return saved.length > 0
+    ? { results: saved, cached: true }
+    : { results, cached: false };
 }
 
 type Run = { stat: SourceStat; results: SourceResult[] };
@@ -79,15 +90,16 @@ async function runTimed(adapter: Adapter, query: string): Promise<Run> {
   const elapsed = () => (demo ? null : Math.round(performance.now() - started));
 
   try {
-    const results = await runAdapter(adapter, query);
+    const { results, cached } = await runAdapter(adapter, query);
     return {
       results,
       stat: {
         id: adapter.id,
         label: adapter.label,
         count: results.length,
-        ms: elapsed(),
+        ms: cached ? null : elapsed(),
         failed: false,
+        cached,
       },
     };
   } catch (reason) {
@@ -100,6 +112,7 @@ async function runTimed(adapter: Adapter, query: string): Promise<Run> {
         count: 0,
         ms: elapsed(),
         failed: true,
+        cached: false,
       },
     };
   }

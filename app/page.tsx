@@ -225,6 +225,10 @@ export default function Home() {
     if (searched) runSearch(id);
   }
 
+  const cachedLabels = (meta?.sources ?? [])
+    .filter((s) => s.cached && s.count > 0)
+    .map((s) => s.label);
+
   async function onSave(r: SourceResult) {
     if (!user) return;
     const outcome = await saveResult(currentIdea, r);
@@ -351,7 +355,9 @@ export default function Home() {
                     }`}
                   />
                   {s.label} {s.failed ? "unavailable" : plural(s.count, "result")}
-                  {s.ms !== null ? (
+                  {s.cached ? (
+                    <span className="font-medium text-accent">(cached)</span>
+                  ) : s.ms !== null ? (
                     <span className="text-faint">({duration(s.ms)})</span>
                   ) : null}
                 </span>
@@ -367,6 +373,15 @@ export default function Home() {
                 : ""}
               {meta.totalMs !== null ? ` · ${duration(meta.totalMs)} total` : ""}
               {meta.demo ? " · replayed from fixtures" : ""}
+            </p>
+          ) : null}
+
+          {!meta?.demo && cachedLabels.length > 0 ? (
+            <p className="mx-auto mt-2 max-w-xl text-[12px] leading-relaxed text-accent">
+              {cachedLabels.join(" and ")}{" "}
+              {cachedLabels.length === 1 ? "is" : "are"} unreachable from this
+              host right now, so those rows are a saved copy from an earlier
+              search &mdash; not live results.
             </p>
           ) : null}
         </div>

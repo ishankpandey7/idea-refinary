@@ -8,9 +8,11 @@ export type SourceStat = {
   id: string;
   label: string;
   count: number;
-  /** null in DEMO — results come off disk, so a duration would be a lie. */
+  /** null when the rows came off disk, so a duration would be a lie. */
   ms: number | null;
   failed: boolean;
+  /** Rows came from a recorded fixture, not a live call. Must be shown. */
+  cached: boolean;
 };
 
 export type SearchResponse = {
