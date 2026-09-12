@@ -1,0 +1,1077 @@
+[
+  {
+    "sourceId": "openverse",
+    "externalId": "85a734c8-f38a-4407-ba25-0b537ba2b69d",
+    "canonicalUrl": "https://www.flickr.com/photos/7787535@N07/1158260369",
+    "title": "Shakespeare's words",
+    "authors": [
+      "Calamity Meg"
+    ],
+    "publishedAt": null,
+    "mediaType": "image",
+    "licence": {
+      "spdx": "CC-BY-NC-ND",
+      "url": "https://creativecommons.org/licenses/by-nc-nd/2.0/",
+      "assertedBy": "openverse",
+      "attribution": "\"Shakespeare's words\" by Calamity Meg is licensed under CC BY-NC-ND 2.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-nd/2.0/."
+    },
+    "snippet": null,
+    "thumbnailUrl": "https://api.openverse.org/v1/images/85a734c8-f38a-4407-ba25-0b537ba2b69d/thumb/",
+    "raw": {
+      "id": "85a734c8-f38a-4407-ba25-0b537ba2b69d",
+      "title": "Shakespeare's words",
+      "indexed_on": "2020-05-03T07:13:29.110407Z",
+      "foreign_landing_url": "https://www.flickr.com/photos/7787535@N07/1158260369",
+      "url": "https://live.staticflickr.com/1046/1158260369_3ba07950e5_b.jpg",
+      "creator": "Calamity Meg",
+      "creator_url": "https://www.flickr.com/photos/7787535@N07",
+      "license": "by-nc-nd",
+      "license_version": "2.0",
+      "license_url": "https://creativecommons.org/licenses/by-nc-nd/2.0/",
+      "provider": "flickr",
+      "source": "flickr",
+      "category": null,
+      "filesize": null,
+      "filetype": null,
+      "tags": [
+        {
+          "name": "magnet",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "shakespeare",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "words",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        }
+      ],
+      "attribution": "\"Shakespeare's words\" by Calamity Meg is licensed under CC BY-NC-ND 2.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-nd/2.0/.",
+      "fields_matched": [
+        "description",
+        "title",
+        "tags.name"
+      ],
+      "mature": false,
+      "height": 766,
+      "width": 1024,
+      "thumbnail": "https://api.openverse.org/v1/images/85a734c8-f38a-4407-ba25-0b537ba2b69d/thumb/",
+      "detail_url": "https://api.openverse.org/v1/images/85a734c8-f38a-4407-ba25-0b537ba2b69d/",
+      "related_url": "https://api.openverse.org/v1/images/85a734c8-f38a-4407-ba25-0b537ba2b69d/related/",
+      "unstable__sensitivity": []
+    }
+  },
+  {
+    "sourceId": "openverse",
+    "externalId": "04084b3b-9ba1-40d7-8bb3-a1624919a79b",
+    "canonicalUrl": "https://www.flickr.com/photos/79721788@N00/8081573909",
+    "title": "Shakespeare`s Globe Theatre",
+    "authors": [
+      "D-Stanley"
+    ],
+    "publishedAt": null,
+    "mediaType": "image",
+    "licence": {
+      "spdx": "CC-BY",
+      "url": "https://creativecommons.org/licenses/by/2.0/",
+      "assertedBy": "openverse",
+      "attribution": "\"Shakespeare`s Globe Theatre\" by D-Stanley is licensed under CC BY 2.0. To view a copy of this license, visit https://creativecommons.org/licenses/by/2.0/."
+    },
+    "snippet": null,
+    "thumbnailUrl": "https://api.openverse.org/v1/images/04084b3b-9ba1-40d7-8bb3-a1624919a79b/thumb/",
+    "raw": {
+      "id": "04084b3b-9ba1-40d7-8bb3-a1624919a79b",
+      "title": "Shakespeare`s Globe Theatre",
+      "indexed_on": "2020-04-13T17:21:22.751907Z",
+      "foreign_landing_url": "https://www.flickr.com/photos/79721788@N00/8081573909",
+      "url": "https://live.staticflickr.com/8466/8081573909_2da2ceb43b_b.jpg",
+      "creator": "D-Stanley",
+      "creator_url": "https://www.flickr.com/photos/79721788@N00",
+      "license": "by",
+      "license_version": "2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0/",
+      "provider": "flickr",
+      "source": "flickr",
+      "category": null,
+      "filesize": null,
+      "filetype": null,
+      "tags": [
+        {
+          "name": "england",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "globe",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "london",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "shakespeare",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "architecture",
+          "accuracy": 0.98931,
+          "unstable__provider": "clarifai"
+        },
+        {
+          "name": "building",
+          "accuracy": 0.96628,
+          "unstable__provider": "clarifai"
+        },
+        {
+          "name": "museum",
+          "accuracy": 0.96033,
+          "unstable__provider": "clarifai"
+        },
+        {
+          "name": "outdoors",
+          "accuracy": 0.90736,
+          "unstable__provider": "clarifai"
+        },
+        {
+          "name": "roof",
+          "accuracy": 0.91318,
+          "unstable__provider": "clarifai"
+        },
+        {
+          "name": "temple",
+          "accuracy": 0.9611,
+          "unstable__provider": "clarifai"
+        },
+        {
+          "name": "wood",
+          "accuracy": 0.94722,
+          "unstable__provider": "clarifai"
+        }
+      ],
+      "attribution": "\"Shakespeare`s Globe Theatre\" by D-Stanley is licensed under CC BY 2.0. To view a copy of this license, visit https://creativecommons.org/licenses/by/2.0/.",
+      "fields_matched": [
+        "description",
+        "title",
+        "tags.name"
+      ],
+      "mature": false,
+      "height": 768,
+      "width": 1024,
+      "thumbnail": "https://api.openverse.org/v1/images/04084b3b-9ba1-40d7-8bb3-a1624919a79b/thumb/",
+      "detail_url": "https://api.openverse.org/v1/images/04084b3b-9ba1-40d7-8bb3-a1624919a79b/",
+      "related_url": "https://api.openverse.org/v1/images/04084b3b-9ba1-40d7-8bb3-a1624919a79b/related/",
+      "unstable__sensitivity": []
+    }
+  },
+  {
+    "sourceId": "openverse",
+    "externalId": "bb7b4fdd-9894-4f58-93e2-26e6ca1c8ac2",
+    "canonicalUrl": "https://www.flickr.com/photos/32652471@N00/2289708140",
+    "title": "A timeline of Shakespeare's plays at the Globe Theatre",
+    "authors": [
+      "Dysanovic"
+    ],
+    "publishedAt": null,
+    "mediaType": "image",
+    "licence": {
+      "spdx": "CC-BY",
+      "url": "https://creativecommons.org/licenses/by/2.0/",
+      "assertedBy": "openverse",
+      "attribution": "\"A timeline of Shakespeare's plays at the Globe Theatre\" by Dysanovic is licensed under CC BY 2.0. To view a copy of this license, visit https://creativecommons.org/licenses/by/2.0/."
+    },
+    "snippet": null,
+    "thumbnailUrl": "https://api.openverse.org/v1/images/bb7b4fdd-9894-4f58-93e2-26e6ca1c8ac2/thumb/",
+    "raw": {
+      "id": "bb7b4fdd-9894-4f58-93e2-26e6ca1c8ac2",
+      "title": "A timeline of Shakespeare's plays at the Globe Theatre",
+      "indexed_on": "2016-11-16T20:47:32.040454Z",
+      "foreign_landing_url": "https://www.flickr.com/photos/32652471@N00/2289708140",
+      "url": "https://live.staticflickr.com/2339/2289708140_744ab4ef61_b.jpg",
+      "creator": "Dysanovic",
+      "creator_url": "https://www.flickr.com/photos/32652471@N00",
+      "license": "by",
+      "license_version": "2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0/",
+      "provider": "flickr",
+      "source": "flickr",
+      "category": null,
+      "filesize": null,
+      "filetype": null,
+      "tags": [
+        {
+          "name": "globe",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "globetheater",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "globetheatre",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "london",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "shakespear",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "shakespeare",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "southbank",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "theater",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "theatre",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "timeline",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "williamshakespear",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "williamshakespeare",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "calendar",
+          "accuracy": 0.93331,
+          "unstable__provider": "clarifai"
+        },
+        {
+          "name": "calligraphy",
+          "accuracy": 0.95615,
+          "unstable__provider": "clarifai"
+        },
+        {
+          "name": "cartography",
+          "accuracy": 0.9219,
+          "unstable__provider": "clarifai"
+        },
+        {
+          "name": "city",
+          "accuracy": 0.91451,
+          "unstable__provider": "clarifai"
+        },
+        {
+          "name": "desktop",
+          "accuracy": 0.94539,
+          "unstable__provider": "clarifai"
+        },
+        {
+          "name": "illustration",
+          "accuracy": 0.9472,
+          "unstable__provider": "clarifai"
+        },
+        {
+          "name": "map",
+          "accuracy": 0.95657,
+          "unstable__provider": "clarifai"
+        },
+        {
+          "name": "margin",
+          "accuracy": 0.92329,
+          "unstable__provider": "clarifai"
+        },
+        {
+          "name": "text",
+          "accuracy": 0.97191,
+          "unstable__provider": "clarifai"
+        },
+        {
+          "name": "travel",
+          "accuracy": 0.96701,
+          "unstable__provider": "clarifai"
+        },
+        {
+          "name": "vector",
+          "accuracy": 0.95477,
+          "unstable__provider": "clarifai"
+        }
+      ],
+      "attribution": "\"A timeline of Shakespeare's plays at the Globe Theatre\" by Dysanovic is licensed under CC BY 2.0. To view a copy of this license, visit https://creativecommons.org/licenses/by/2.0/.",
+      "fields_matched": [
+        "title",
+        "tags.name"
+      ],
+      "mature": false,
+      "height": 768,
+      "width": 1024,
+      "thumbnail": "https://api.openverse.org/v1/images/bb7b4fdd-9894-4f58-93e2-26e6ca1c8ac2/thumb/",
+      "detail_url": "https://api.openverse.org/v1/images/bb7b4fdd-9894-4f58-93e2-26e6ca1c8ac2/",
+      "related_url": "https://api.openverse.org/v1/images/bb7b4fdd-9894-4f58-93e2-26e6ca1c8ac2/related/",
+      "unstable__sensitivity": []
+    }
+  },
+  {
+    "sourceId": "openverse",
+    "externalId": "8c84cbdc-1309-4917-a026-6a6f6698678c",
+    "canonicalUrl": "https://www.flickr.com/photos/40842447@N08/5936437813",
+    "title": "Sir John Gilbert (1817-1897) - 'The Plays of William Shakespeare'",
+    "authors": [
+      "sofi01"
+    ],
+    "publishedAt": null,
+    "mediaType": "image",
+    "licence": {
+      "spdx": "CC-BY-SA",
+      "url": "https://creativecommons.org/licenses/by-sa/2.0/",
+      "assertedBy": "openverse",
+      "attribution": "\"Sir John Gilbert (1817-1897) - 'The Plays of William Shakespeare'\" by sofi01 is licensed under CC BY-SA 2.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/2.0/."
+    },
+    "snippet": null,
+    "thumbnailUrl": "https://api.openverse.org/v1/images/8c84cbdc-1309-4917-a026-6a6f6698678c/thumb/",
+    "raw": {
+      "id": "8c84cbdc-1309-4917-a026-6a6f6698678c",
+      "title": "Sir John Gilbert (1817-1897) - 'The Plays of William Shakespeare'",
+      "indexed_on": "2020-04-17T00:05:30.614642Z",
+      "foreign_landing_url": "https://www.flickr.com/photos/40842447@N08/5936437813",
+      "url": "https://live.staticflickr.com/6148/5936437813_a7d24ec7cf_b.jpg",
+      "creator": "sofi01",
+      "creator_url": "https://www.flickr.com/photos/40842447@N08",
+      "license": "by-sa",
+      "license_version": "2.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/2.0/",
+      "provider": "flickr",
+      "source": "flickr",
+      "category": null,
+      "filesize": null,
+      "filetype": null,
+      "tags": [
+        {
+          "name": "shakespeare",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "sirjohngilbert",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        }
+      ],
+      "attribution": "\"Sir John Gilbert (1817-1897) - 'The Plays of William Shakespeare'\" by sofi01 is licensed under CC BY-SA 2.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/2.0/.",
+      "fields_matched": [
+        "title",
+        "tags.name"
+      ],
+      "mature": false,
+      "height": 805,
+      "width": 1024,
+      "thumbnail": "https://api.openverse.org/v1/images/8c84cbdc-1309-4917-a026-6a6f6698678c/thumb/",
+      "detail_url": "https://api.openverse.org/v1/images/8c84cbdc-1309-4917-a026-6a6f6698678c/",
+      "related_url": "https://api.openverse.org/v1/images/8c84cbdc-1309-4917-a026-6a6f6698678c/related/",
+      "unstable__sensitivity": []
+    }
+  },
+  {
+    "sourceId": "openverse",
+    "externalId": "f5e4e12b-5643-41d0-bada-9d920a984998",
+    "canonicalUrl": "https://www.flickr.com/photos/24141278@N00/436860466",
+    "title": "Shakespeare's birth place. Stratford upon Avon",
+    "authors": [
+      "elvis_payne"
+    ],
+    "publishedAt": null,
+    "mediaType": "image",
+    "licence": {
+      "spdx": "CC-BY-NC-ND",
+      "url": "https://creativecommons.org/licenses/by-nc-nd/2.0/",
+      "assertedBy": "openverse",
+      "attribution": "\"Shakespeare's birth place. Stratford upon Avon\" by elvis_payne is licensed under CC BY-NC-ND 2.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-nd/2.0/."
+    },
+    "snippet": null,
+    "thumbnailUrl": "https://api.openverse.org/v1/images/f5e4e12b-5643-41d0-bada-9d920a984998/thumb/",
+    "raw": {
+      "id": "f5e4e12b-5643-41d0-bada-9d920a984998",
+      "title": "Shakespeare's birth place. Stratford upon Avon",
+      "indexed_on": "2020-05-02T12:22:28.328218Z",
+      "foreign_landing_url": "https://www.flickr.com/photos/24141278@N00/436860466",
+      "url": "https://live.staticflickr.com/158/436860466_4fc25a0ceb.jpg",
+      "creator": "elvis_payne",
+      "creator_url": "https://www.flickr.com/photos/24141278@N00",
+      "license": "by-nc-nd",
+      "license_version": "2.0",
+      "license_url": "https://creativecommons.org/licenses/by-nc-nd/2.0/",
+      "provider": "flickr",
+      "source": "flickr",
+      "category": null,
+      "filesize": null,
+      "filetype": null,
+      "tags": [
+        {
+          "name": "avon",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "birth",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "england",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "place",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "plays",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "shakespeare",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "shakespeares",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "strange",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "stratford",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "uk",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "upon",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        }
+      ],
+      "attribution": "\"Shakespeare's birth place. Stratford upon Avon\" by elvis_payne is licensed under CC BY-NC-ND 2.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-nd/2.0/.",
+      "fields_matched": [
+        "description",
+        "title",
+        "tags.name"
+      ],
+      "mature": false,
+      "height": 388,
+      "width": 500,
+      "thumbnail": "https://api.openverse.org/v1/images/f5e4e12b-5643-41d0-bada-9d920a984998/thumb/",
+      "detail_url": "https://api.openverse.org/v1/images/f5e4e12b-5643-41d0-bada-9d920a984998/",
+      "related_url": "https://api.openverse.org/v1/images/f5e4e12b-5643-41d0-bada-9d920a984998/related/",
+      "unstable__sensitivity": []
+    }
+  },
+  {
+    "sourceId": "openverse",
+    "externalId": "6615c6ef-8007-4aec-a0e3-4a5d7a7825a0",
+    "canonicalUrl": "https://www.flickr.com/photos/7156765@N05/51734099159",
+    "title": "Prescott Ontario - Canada - St. Lawrence Shakespeare Festival",
+    "authors": [
+      "Onasill - Bill Badzo - 149 Million Views - Thank Y"
+    ],
+    "publishedAt": null,
+    "mediaType": "image",
+    "licence": {
+      "spdx": "CC-BY-NC-SA",
+      "url": "https://creativecommons.org/licenses/by-nc-sa/2.0/",
+      "assertedBy": "openverse",
+      "attribution": "\"Prescott Ontario - Canada - St. Lawrence Shakespeare Festival\" by Onasill - Bill Badzo - 149 Million Views - Thank Y is licensed under CC BY-NC-SA 2.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/2.0/."
+    },
+    "snippet": null,
+    "thumbnailUrl": "https://api.openverse.org/v1/images/6615c6ef-8007-4aec-a0e3-4a5d7a7825a0/thumb/",
+    "raw": {
+      "id": "6615c6ef-8007-4aec-a0e3-4a5d7a7825a0",
+      "title": "Prescott Ontario - Canada - St. Lawrence Shakespeare Festival",
+      "indexed_on": "2023-03-11T00:44:44.936984Z",
+      "foreign_landing_url": "https://www.flickr.com/photos/7156765@N05/51734099159",
+      "url": "https://live.staticflickr.com/65535/51734099159_5ece9aa35c_b.jpg",
+      "creator": "Onasill - Bill Badzo - 149 Million Views - Thank Y",
+      "creator_url": "https://www.flickr.com/photos/7156765@N05",
+      "license": "by-nc-sa",
+      "license_version": "2.0",
+      "license_url": "https://creativecommons.org/licenses/by-nc-sa/2.0/",
+      "provider": "flickr",
+      "source": "flickr",
+      "category": "photograph",
+      "filesize": null,
+      "filetype": "jpg",
+      "tags": [
+        {
+          "name": "attractionsite",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "ca",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "canada",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "clouds",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "coast",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "demolished",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "dominion",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "gulf",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "heritage",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "island",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "larwrence",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "onasill",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "ontario",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "prescott",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "river",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "saint",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "shakespeare",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "sky",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "st",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "thousand",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        }
+      ],
+      "attribution": "\"Prescott Ontario - Canada - St. Lawrence Shakespeare Festival\" by Onasill - Bill Badzo - 149 Million Views - Thank Y is licensed under CC BY-NC-SA 2.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/2.0/.",
+      "fields_matched": [
+        "description",
+        "title",
+        "tags.name"
+      ],
+      "mature": false,
+      "height": 1024,
+      "width": 683,
+      "thumbnail": "https://api.openverse.org/v1/images/6615c6ef-8007-4aec-a0e3-4a5d7a7825a0/thumb/",
+      "detail_url": "https://api.openverse.org/v1/images/6615c6ef-8007-4aec-a0e3-4a5d7a7825a0/",
+      "related_url": "https://api.openverse.org/v1/images/6615c6ef-8007-4aec-a0e3-4a5d7a7825a0/related/",
+      "unstable__sensitivity": []
+    }
+  },
+  {
+    "sourceId": "openverse",
+    "externalId": "d2e77938-b94a-4ac7-83b2-690103a3680b",
+    "canonicalUrl": "https://www.flickr.com/photos/51531384@N00/3234954204",
+    "title": "Shakespeare Tattoo",
+    "authors": [
+      "cranberries"
+    ],
+    "publishedAt": null,
+    "mediaType": "image",
+    "licence": {
+      "spdx": "CC-BY-NC-ND",
+      "url": "https://creativecommons.org/licenses/by-nc-nd/2.0/",
+      "assertedBy": "openverse",
+      "attribution": "\"Shakespeare Tattoo\" by cranberries is licensed under CC BY-NC-ND 2.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-nd/2.0/."
+    },
+    "snippet": null,
+    "thumbnailUrl": "https://api.openverse.org/v1/images/d2e77938-b94a-4ac7-83b2-690103a3680b/thumb/",
+    "raw": {
+      "id": "d2e77938-b94a-4ac7-83b2-690103a3680b",
+      "title": "Shakespeare Tattoo",
+      "indexed_on": "2018-09-11T14:50:30.013406Z",
+      "foreign_landing_url": "https://www.flickr.com/photos/51531384@N00/3234954204",
+      "url": "https://live.staticflickr.com/3461/3234954204_42ffc01646_b.jpg",
+      "creator": "cranberries",
+      "creator_url": "https://www.flickr.com/photos/51531384@N00",
+      "license": "by-nc-nd",
+      "license_version": "2.0",
+      "license_url": "https://creativecommons.org/licenses/by-nc-nd/2.0/",
+      "provider": "flickr",
+      "source": "flickr",
+      "category": null,
+      "filesize": null,
+      "filetype": null,
+      "tags": [
+        {
+          "name": "anthony",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "portlandmaine",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "shakespeare",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "tattoo",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "twelfthnight",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        }
+      ],
+      "attribution": "\"Shakespeare Tattoo\" by cranberries is licensed under CC BY-NC-ND 2.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-nd/2.0/.",
+      "fields_matched": [
+        "title",
+        "tags.name"
+      ],
+      "mature": false,
+      "height": 768,
+      "width": 1024,
+      "thumbnail": "https://api.openverse.org/v1/images/d2e77938-b94a-4ac7-83b2-690103a3680b/thumb/",
+      "detail_url": "https://api.openverse.org/v1/images/d2e77938-b94a-4ac7-83b2-690103a3680b/",
+      "related_url": "https://api.openverse.org/v1/images/d2e77938-b94a-4ac7-83b2-690103a3680b/related/",
+      "unstable__sensitivity": []
+    }
+  },
+  {
+    "sourceId": "openverse",
+    "externalId": "d1f0e153-0181-4b89-b4c3-6b1dbd5418ed",
+    "canonicalUrl": "https://www.flickr.com/photos/84172943@N00/14636471807",
+    "title": "Shakespeare's Star Wars",
+    "authors": [
+      "Daniel Y. Go"
+    ],
+    "publishedAt": null,
+    "mediaType": "image",
+    "licence": {
+      "spdx": "CC-BY-NC",
+      "url": "https://creativecommons.org/licenses/by-nc/2.0/",
+      "assertedBy": "openverse",
+      "attribution": "\"Shakespeare's Star Wars\" by Daniel Y. Go is licensed under CC BY-NC 2.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-nc/2.0/."
+    },
+    "snippet": null,
+    "thumbnailUrl": "https://api.openverse.org/v1/images/d1f0e153-0181-4b89-b4c3-6b1dbd5418ed/thumb/",
+    "raw": {
+      "id": "d1f0e153-0181-4b89-b4c3-6b1dbd5418ed",
+      "title": "Shakespeare's Star Wars",
+      "indexed_on": "2020-04-04T19:10:33.628806Z",
+      "foreign_landing_url": "https://www.flickr.com/photos/84172943@N00/14636471807",
+      "url": "https://live.staticflickr.com/2921/14636471807_8e9e574534_b.jpg",
+      "creator": "Daniel Y. Go",
+      "creator_url": "https://www.flickr.com/photos/84172943@N00",
+      "license": "by-nc",
+      "license_version": "2.0",
+      "license_url": "https://creativecommons.org/licenses/by-nc/2.0/",
+      "provider": "flickr",
+      "source": "flickr",
+      "category": null,
+      "filesize": null,
+      "filetype": null,
+      "tags": [
+        {
+          "name": "fuji",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "fujixt1",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "philippines",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "shakespeare",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "starwars",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "xt1",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        }
+      ],
+      "attribution": "\"Shakespeare's Star Wars\" by Daniel Y. Go is licensed under CC BY-NC 2.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-nc/2.0/.",
+      "fields_matched": [
+        "title",
+        "tags.name"
+      ],
+      "mature": false,
+      "height": 683,
+      "width": 1024,
+      "thumbnail": "https://api.openverse.org/v1/images/d1f0e153-0181-4b89-b4c3-6b1dbd5418ed/thumb/",
+      "detail_url": "https://api.openverse.org/v1/images/d1f0e153-0181-4b89-b4c3-6b1dbd5418ed/",
+      "related_url": "https://api.openverse.org/v1/images/d1f0e153-0181-4b89-b4c3-6b1dbd5418ed/related/",
+      "unstable__sensitivity": []
+    }
+  },
+  {
+    "sourceId": "openverse",
+    "externalId": "798394e5-7e5a-4862-bd50-600534f40a3c",
+    "canonicalUrl": "https://www.flickr.com/photos/79727841@N00/304477845",
+    "title": "The Shakespeare, High Street, Lincoln",
+    "authors": [
+      "Lincolnian (Brian)"
+    ],
+    "publishedAt": null,
+    "mediaType": "image",
+    "licence": {
+      "spdx": "CC-BY-SA",
+      "url": "https://creativecommons.org/licenses/by-sa/2.0/",
+      "assertedBy": "openverse",
+      "attribution": "\"The Shakespeare, High Street, Lincoln\" by Lincolnian (Brian) is licensed under CC BY-SA 2.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/2.0/."
+    },
+    "snippet": null,
+    "thumbnailUrl": "https://api.openverse.org/v1/images/798394e5-7e5a-4862-bd50-600534f40a3c/thumb/",
+    "raw": {
+      "id": "798394e5-7e5a-4862-bd50-600534f40a3c",
+      "title": "The Shakespeare, High Street, Lincoln",
+      "indexed_on": "2018-11-07T20:03:57.748699Z",
+      "foreign_landing_url": "https://www.flickr.com/photos/79727841@N00/304477845",
+      "url": "https://live.staticflickr.com/111/304477845_505cd2e018.jpg",
+      "creator": "Lincolnian (Brian)",
+      "creator_url": "https://www.flickr.com/photos/79727841@N00",
+      "license": "by-sa",
+      "license_version": "2.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/2.0/",
+      "provider": "flickr",
+      "source": "flickr",
+      "category": null,
+      "filesize": null,
+      "filetype": null,
+      "tags": [
+        {
+          "name": "50club",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "abc",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "england",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "lincoln",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "lincolnshire",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "pub",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "shakespeare",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "sign",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        }
+      ],
+      "attribution": "\"The Shakespeare, High Street, Lincoln\" by Lincolnian (Brian) is licensed under CC BY-SA 2.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/2.0/.",
+      "fields_matched": [
+        "description",
+        "title",
+        "tags.name"
+      ],
+      "mature": false,
+      "height": 500,
+      "width": 447,
+      "thumbnail": "https://api.openverse.org/v1/images/798394e5-7e5a-4862-bd50-600534f40a3c/thumb/",
+      "detail_url": "https://api.openverse.org/v1/images/798394e5-7e5a-4862-bd50-600534f40a3c/",
+      "related_url": "https://api.openverse.org/v1/images/798394e5-7e5a-4862-bd50-600534f40a3c/related/",
+      "unstable__sensitivity": []
+    }
+  },
+  {
+    "sourceId": "openverse",
+    "externalId": "6e783779-6870-4a9b-9090-ab14614813b3",
+    "canonicalUrl": "https://www.flickr.com/photos/126654539@N08/16668668610",
+    "title": "Royal Shakespeare Theatre, Stratford-upon-Avon",
+    "authors": [
+      "dolbinator1000"
+    ],
+    "publishedAt": null,
+    "mediaType": "image",
+    "licence": {
+      "spdx": "CC-BY",
+      "url": "https://creativecommons.org/licenses/by/2.0/",
+      "assertedBy": "openverse",
+      "attribution": "\"Royal Shakespeare Theatre, Stratford-upon-Avon\" by dolbinator1000 is licensed under CC BY 2.0. To view a copy of this license, visit https://creativecommons.org/licenses/by/2.0/."
+    },
+    "snippet": null,
+    "thumbnailUrl": "https://api.openverse.org/v1/images/6e783779-6870-4a9b-9090-ab14614813b3/thumb/",
+    "raw": {
+      "id": "6e783779-6870-4a9b-9090-ab14614813b3",
+      "title": "Royal Shakespeare Theatre, Stratford-upon-Avon",
+      "indexed_on": "2020-03-28T07:35:35.790642Z",
+      "foreign_landing_url": "https://www.flickr.com/photos/126654539@N08/16668668610",
+      "url": "https://live.staticflickr.com/7614/16668668610_1702bcc326_b.jpg",
+      "creator": "dolbinator1000",
+      "creator_url": "https://www.flickr.com/photos/126654539@N08",
+      "license": "by",
+      "license_version": "2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0/",
+      "provider": "flickr",
+      "source": "flickr",
+      "category": null,
+      "filesize": null,
+      "filetype": null,
+      "tags": [
+        {
+          "name": "avon",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "britiain",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "company",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "england",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "exposure",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "great",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "kingdom",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "long",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "reflection",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "reflections",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "river",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "royal",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "shadow",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "shadows",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "shakespeare",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "sky",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "stratford",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "theatre",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "tree",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "trees",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "uk",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "united",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "upon",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "warwickshire",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        },
+        {
+          "name": "water",
+          "accuracy": null,
+          "unstable__provider": "flickr"
+        }
+      ],
+      "attribution": "\"Royal Shakespeare Theatre, Stratford-upon-Avon\" by dolbinator1000 is licensed under CC BY 2.0. To view a copy of this license, visit https://creativecommons.org/licenses/by/2.0/.",
+      "fields_matched": [
+        "title",
+        "tags.name"
+      ],
+      "mature": false,
+      "height": 682,
+      "width": 1024,
+      "thumbnail": "https://api.openverse.org/v1/images/6e783779-6870-4a9b-9090-ab14614813b3/thumb/",
+      "detail_url": "https://api.openverse.org/v1/images/6e783779-6870-4a9b-9090-ab14614813b3/",
+      "related_url": "https://api.openverse.org/v1/images/6e783779-6870-4a9b-9090-ab14614813b3/related/",
+      "unstable__sensitivity": []
+    }
+  }
+]
