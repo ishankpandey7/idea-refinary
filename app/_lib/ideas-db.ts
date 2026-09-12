@@ -3,6 +3,7 @@ import { getSupabase } from "@/lib/supabase/client";
 
 export type Idea = {
   id: string;
+  ownerId: string;
   query: string;
   savedAt: string;
   results: SourceResult[];
@@ -19,6 +20,7 @@ type PinRow = {
 };
 type IdeaRow = {
   id: string;
+  owner_id: string;
   query: string;
   created_at: string;
   pins: PinRow[] | null;
@@ -33,7 +35,9 @@ async function currentUserId(): Promise<string | null> {
 export async function listIdeas(): Promise<Idea[]> {
   const { data, error } = await getSupabase()
     .from("ideas")
-    .select("id, query, created_at, pins ( external_id, payload, created_at )")
+    .select(
+      "id, owner_id, query, created_at, pins ( external_id, payload, created_at )",
+    )
     .order("created_at", { ascending: false });
 
   if (error) {
@@ -43,6 +47,7 @@ export async function listIdeas(): Promise<Idea[]> {
 
   return ((data ?? []) as IdeaRow[]).map((row) => ({
     id: row.id,
+    ownerId: row.owner_id,
     query: row.query,
     savedAt: row.created_at,
     results: (row.pins ?? [])

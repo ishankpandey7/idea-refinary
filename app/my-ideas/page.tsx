@@ -7,6 +7,7 @@ import ResultCard, {
   categoryOf,
 } from "../_components/ResultCard";
 import PrintSheet from "../_components/PrintSheet";
+import MembersPanel from "../_components/MembersPanel";
 import {
   listIdeas,
   removeIdea,
@@ -27,9 +28,19 @@ function when(iso: string): string {
       });
 }
 
+/** Marks an idea someone else owns and shared with you. */
+function SharedBadge() {
+  return (
+    <span className="rounded-full border border-[#e8451f]/40 bg-[#e8451f]/10 px-3 py-1 text-[10px] font-medium uppercase tracking-[0.16em] text-[#ff9c6b]">
+      Shared
+    </span>
+  );
+}
+
 export default function MyIdeas() {
   const [ideas, setIdeas] = useState<Idea[]>([]);
   const [openId, setOpenId] = useState<string | null>(null);
+  const [inviteOpen, setInviteOpen] = useState(false);
   const [ready, setReady] = useState(false);
 
   const { user, loading: authLoading, configured, imported } = useAuth();
@@ -64,7 +75,13 @@ export default function MyIdeas() {
     if (openId === ideaId) setOpenId(null);
   }
 
+  // Closing an idea, or switching to another one, puts the invite form away.
+  useEffect(() => {
+    setInviteOpen(false);
+  }, [openId]);
+
   const open = ideas.find((i) => i.id === openId) ?? null;
+  const ownsOpen = Boolean(open && user && open.ownerId === user.id);
 
   return (
     <>
@@ -136,21 +153,44 @@ export default function MyIdeas() {
               <span className="text-[12px] text-[#7a6558]">
                 {open.results.length} saved &middot; {when(open.savedAt)}
               </span>
+              {ownsOpen ? null : <SharedBadge />}
+
+              <div className="ml-auto" />
+
+              {ownsOpen ? (
+                <button
+                  type="button"
+                  onClick={() => setInviteOpen((v) => !v)}
+                  className="rounded-full border border-[#3a1f14] px-5 py-2 text-[13px] text-[#b39c8c] transition hover:border-[#e8451f]/60 hover:text-[#ff9c6b]"
+                >
+                  Invite
+                </button>
+              ) : null}
               <button
                 type="button"
                 onClick={() => window.print()}
-                className="ml-auto rounded-full bg-[#e8451f] px-5 py-2 text-[13px] font-medium text-white transition hover:bg-[#ff5a2e]"
+                className="rounded-full bg-[#e8451f] px-5 py-2 text-[13px] font-medium text-white transition hover:bg-[#ff5a2e]"
               >
                 Export PDF
               </button>
-              <button
-                type="button"
-                onClick={() => onRemoveIdea(open.id)}
-                className="rounded-full border border-[#3a1f14] px-5 py-2 text-[13px] text-[#7a6558] transition hover:border-[#e8451f] hover:text-[#ff9c6b]"
-              >
-                Delete idea
-              </button>
+              {ownsOpen ? (
+                <button
+                  type="button"
+                  onClick={() => onRemoveIdea(open.id)}
+                  className="rounded-full border border-[#3a1f14] px-5 py-2 text-[13px] text-[#7a6558] transition hover:border-[#e8451f] hover:text-[#ff9c6b]"
+                >
+                  Delete idea
+                </button>
+              ) : null}
             </div>
+
+            <MembersPanel
+              ideaId={open.id}
+              isOwner={ownsOpen}
+              currentUserId={user?.id ?? null}
+              inviteOpen={inviteOpen}
+              onCloseInvite={() => setInviteOpen(false)}
+            />
 
             {CATEGORY_LABELS.map((label) => {
               const group = open.results.filter((r) => categoryOf(r) === label);
@@ -205,6 +245,12 @@ export default function MyIdeas() {
                     </span>
                   </div>
 
+                  {user && idea.ownerId !== user.id ? (
+                    <div className="mt-3">
+                      <SharedBadge />
+                    </div>
+                  ) : null}
+
                   <h2 className="mt-4 font-serif text-xl leading-snug text-[#f5a962]">
                     {idea.query}
                   </h2>
@@ -221,13 +267,15 @@ export default function MyIdeas() {
                     >
                       Open
                     </button>
-                    <button
-                      type="button"
-                      onClick={() => onRemoveIdea(idea.id)}
-                      className="ml-auto rounded-full border border-[#3a1f14] px-5 py-2 text-[12px] text-[#7a6558] transition hover:border-[#e8451f] hover:text-[#ff9c6b]"
-                    >
-                      Delete
-                    </button>
+                    {user && idea.ownerId === user.id ? (
+                      <button
+                        type="button"
+                        onClick={() => onRemoveIdea(idea.id)}
+                        className="ml-auto rounded-full border border-[#3a1f14] px-5 py-2 text-[12px] text-[#7a6558] transition hover:border-[#e8451f] hover:text-[#ff9c6b]"
+                      >
+                        Delete
+                      </button>
+                    ) : null}
                   </div>
                 </li>
               );
