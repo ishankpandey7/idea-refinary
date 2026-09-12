@@ -4,7 +4,8 @@ import { useCallback, useEffect, useState } from "react";
 import Link from "next/link";
 import type { SourceResult } from "@/types/source-result";
 import ResultCard from "./_components/ResultCard";
-import { resultKey, saveResult, savedKeysFor } from "./_lib/ideas";
+import { resultKey, saveResult, savedKeysFor } from "./_lib/ideas-db";
+import { useAuth } from "./_components/AuthProvider";
 
 const CATEGORIES = [
   { id: "", label: "All" },
@@ -24,12 +25,21 @@ export default function Home() {
   const [currentIdea, setCurrentIdea] = useState("");
   const [savedKeys, setSavedKeys] = useState<Set<string>>(new Set());
 
-  const refreshSaved = useCallback((idea: string) => {
-    setSavedKeys(savedKeysFor(idea));
-  }, []);
+  const { user } = useAuth();
+
+  const refreshSaved = useCallback(
+    async (idea: string) => {
+      if (!user) {
+        setSavedKeys(new Set());
+        return;
+      }
+      setSavedKeys(await savedKeysFor(idea));
+    },
+    [user],
+  );
 
   useEffect(() => {
-    if (currentIdea) refreshSaved(currentIdea);
+    if (currentIdea) void refreshSaved(currentIdea);
   }, [currentIdea, refreshSaved]);
 
   async function runSearch(nextCategory = category) {
@@ -56,9 +66,10 @@ export default function Home() {
     if (searched) runSearch(id);
   }
 
-  function onSave(r: SourceResult) {
-    saveResult(currentIdea, r);
-    refreshSaved(currentIdea);
+  async function onSave(r: SourceResult) {
+    if (!user) return;
+    await saveResult(currentIdea, r);
+    await refreshSaved(currentIdea);
   }
 
   return (
@@ -130,10 +141,12 @@ export default function Home() {
           <p className="text-[11px] font-medium uppercase tracking-[0.18em] text-[#e8451f]">
             {results.length} result{results.length === 1 ? "" : "s"}
           </p>
-          {currentIdea ? (
+          {currentIdea && user ? (
             <p className="mt-2 text-[13px] text-[#7a6558]">
               Saving to idea{" "}
-              <span className="text-[#b39c8c]">&ldquo;{currentIdea}&rdquo;</span>
+              <span className="text-[#b39c8c]">
+                &ldquo;{currentIdea}&rdquo;
+              </span>
               {savedKeys.size > 0 ? (
                 <>
                   {" · "}
@@ -164,18 +177,27 @@ export default function Home() {
               key={resultKey(r)}
               result={r}
               action={
-                <button
-                  type="button"
-                  onClick={() => onSave(r)}
-                  disabled={saved}
-                  className={`rounded-full border px-4 py-1.5 text-[11px] font-medium transition ${
-                    saved
-                      ? "cursor-default border-[#e8451f]/40 bg-[#e8451f]/15 text-[#ff9c6b]"
-                      : "border-[#3a1f14] text-[#b39c8c] hover:border-[#e8451f] hover:text-[#ff9c6b]"
-                  }`}
-                >
-                  {saved ? "Saved" : "Save"}
-                </button>
+                user ? (
+                  <button
+                    type="button"
+                    onClick={() => onSave(r)}
+                    disabled={saved}
+                    className={`rounded-full border px-4 py-1.5 text-[11px] font-medium transition ${
+                      saved
+                        ? "cursor-default border-[#e8451f]/40 bg-[#e8451f]/15 text-[#ff9c6b]"
+                        : "border-[#3a1f14] text-[#b39c8c] hover:border-[#e8451f] hover:text-[#ff9c6b]"
+                    }`}
+                  >
+                    {saved ? "Saved" : "Save"}
+                  </button>
+                ) : (
+                  <Link
+                    href="/login"
+                    className="rounded-full border border-[#3a1f14] px-4 py-1.5 text-[11px] font-medium text-[#7a6558] transition hover:border-[#e8451f] hover:text-[#ff9c6b]"
+                  >
+                    Sign in to save
+                  </Link>
+                )
               }
             />
           );

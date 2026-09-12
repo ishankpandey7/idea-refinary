@@ -52,7 +52,12 @@ export function saveResult(query: string, result: SourceResult): Idea[] {
   let idea = ideas.find((i) => i.query === q);
 
   if (!idea) {
-    idea = { id: newId(), query: q, savedAt: new Date().toISOString(), results: [] };
+    idea = {
+      id: newId(),
+      query: q,
+      savedAt: new Date().toISOString(),
+      results: [],
+    };
     ideas.unshift(idea);
   }
   if (!idea.results.some((r) => resultKey(r) === resultKey(result))) {

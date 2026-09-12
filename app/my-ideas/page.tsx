@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import Link from "next/link";
 import ResultCard, {
   CATEGORY_LABELS,
@@ -8,12 +8,13 @@ import ResultCard, {
 } from "../_components/ResultCard";
 import PrintSheet from "../_components/PrintSheet";
 import {
-  readIdeas,
+  listIdeas,
   removeIdea,
   removeResult,
   resultKey,
   type Idea,
-} from "../_lib/ideas";
+} from "../_lib/ideas-db";
+import { useAuth } from "../_components/AuthProvider";
 
 function when(iso: string): string {
   const d = new Date(iso);
@@ -31,21 +32,35 @@ export default function MyIdeas() {
   const [openId, setOpenId] = useState<string | null>(null);
   const [ready, setReady] = useState(false);
 
-  // localStorage is only available after mount, so read it there to keep the
-  // server-rendered markup and the first client render in agreement.
-  useEffect(() => {
-    setIdeas(readIdeas());
-    setReady(true);
-  }, []);
+  const { user, loading: authLoading, configured, imported } = useAuth();
 
-  function onRemoveResult(ideaId: string, key: string) {
-    const next = removeResult(ideaId, key);
+  const reload = useCallback(async () => {
+    if (!user) {
+      setIdeas([]);
+      setReady(true);
+      return;
+    }
+    setIdeas(await listIdeas());
+    setReady(true);
+  }, [user]);
+
+  // Ideas live in the database now, so the list arrives after mount — and
+  // again after the first sign-in import finishes.
+  useEffect(() => {
+    if (authLoading) return;
+    void reload();
+  }, [authLoading, reload, imported]);
+
+  async function onRemoveResult(ideaId: string, key: string) {
+    await removeResult(ideaId, key);
+    const next = await listIdeas();
     setIdeas(next);
     if (!next.some((i) => i.id === ideaId)) setOpenId(null);
   }
 
-  function onRemoveIdea(ideaId: string) {
-    setIdeas(removeIdea(ideaId));
+  async function onRemoveIdea(ideaId: string) {
+    await removeIdea(ideaId);
+    setIdeas(await listIdeas());
     if (openId === ideaId) setOpenId(null);
   }
 
@@ -71,7 +86,31 @@ export default function MyIdeas() {
           Every search you save becomes an idea. Open one to see what you kept.
         </p>
 
-        {!ready ? null : ideas.length === 0 ? (
+        {imported ? (
+          <p className="mx-auto mt-8 max-w-xl rounded-2xl border border-[#e8451f]/40 bg-[#e8451f]/10 px-6 py-4 text-center text-[13px] text-[#ff9c6b]">
+            Moved {imported.results} saved result
+            {imported.results === 1 ? "" : "s"} from this browser into your
+            account.
+          </p>
+        ) : null}
+
+        {authLoading || !ready ? null : !configured ? (
+          <p className="mt-16 text-center text-[15px] text-[#7a6558]">
+            Sign-in is unavailable: this deployment has no Supabase keys set.
+          </p>
+        ) : !user ? (
+          <div className="mt-16 text-center">
+            <p className="text-[15px] text-[#7a6558]">
+              Sign in to see your saved ideas.
+            </p>
+            <Link
+              href="/login"
+              className="mt-6 inline-block rounded-full bg-[#e8451f] px-9 py-4 text-[15px] font-medium text-white transition hover:bg-[#ff5a2e]"
+            >
+              Sign in &rarr;
+            </Link>
+          </div>
+        ) : ideas.length === 0 ? (
           <div className="mt-16 text-center">
             <p className="text-[15px] text-[#7a6558]">Nothing saved yet.</p>
             <Link
