@@ -24,33 +24,42 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="en"
+      suppressHydrationWarning
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="min-h-full">
+        {/* Runs before the first paint so a stored choice does not flash the
+            other theme. Absent attribute = follow the OS, which is what the
+            prefers-color-scheme block in globals.css keys off. */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(){try{var t=localStorage.getItem("idea-refinery:theme");if(t==="light"||t==="dark"){document.documentElement.setAttribute("data-theme",t)}}catch(e){}})()`,
+          }}
+        />
         {/* globals.css styles `body` unlayered, which beats Tailwind's layered
             utilities — so the page shell lives on a wrapper, not on body. */}
         <AuthProvider>
           <div
             data-print-shell
-            className="flex min-h-screen flex-col bg-[#faf7f2] text-[#57504a] selection:bg-[#e8451f]/20"
+            className="flex min-h-screen flex-col bg-page text-body selection:bg-brand/20"
           >
             <SiteHeader />
             {children}
 
             <footer
               data-print-hide
-              className="mt-auto border-t border-[#e5dccd] px-6 py-10 text-center sm:px-10"
+              className="mt-auto border-t border-line px-6 py-10 text-center sm:px-10"
             >
-              <p className="text-[13px] text-[#57504a]">
-                <span className="font-serif text-[15px] text-[#1c1410]">
+              <p className="text-[13px] text-body">
+                <span className="font-serif text-[15px] text-ink">
                   Idea Refinery
                 </span>
-                <span aria-hidden className="mx-2 text-[#e8451f]">
+                <span aria-hidden className="mx-2 text-accent">
                   &bull;
                 </span>
                 Open-licence resource discovery engine
               </p>
-              <p className="mx-auto mt-3 max-w-xl text-[11px] leading-relaxed text-[#9a9089]">
+              <p className="mx-auto mt-3 max-w-xl text-[11px] leading-relaxed text-faint">
                 &copy; 2026 Idea Refinery. Results link back to the source and
                 carry the licence and attribution the provider published &mdash;
                 we never host the content.

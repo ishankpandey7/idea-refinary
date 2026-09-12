@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useAuth } from "./AuthProvider";
+import ThemeToggle from "./ThemeToggle";
 
 const LINKS = [
   { href: "/", label: "Search" },
@@ -16,13 +17,13 @@ export default function SiteHeader() {
   return (
     <header
       data-print-hide
-      className="flex items-center justify-between gap-3 border-b border-[#e5dccd] bg-[#fffdf9] px-4 py-4 sm:gap-4 sm:px-10 sm:py-5"
+      className="flex items-center justify-between gap-3 border-b border-line bg-raised px-4 py-4 sm:gap-4 sm:px-10 sm:py-5"
     >
       <Link href="/" className="flex items-baseline gap-1.5">
-        <span className="whitespace-nowrap font-serif text-base tracking-tight text-[#1c1410] sm:text-xl">
+        <span className="whitespace-nowrap font-serif text-base tracking-tight text-ink sm:text-xl">
           Idea Refinery
         </span>
-        <span aria-hidden className="text-lg leading-none text-[#e8451f]">
+        <span aria-hidden className="text-lg leading-none text-accent">
           &bull;
         </span>
       </Link>
@@ -34,8 +35,8 @@ export default function SiteHeader() {
             href={l.href}
             className={
               pathname === l.href
-                ? "whitespace-nowrap text-[#1c1410]"
-                : "whitespace-nowrap text-[#8b8178] transition hover:text-[#1c1410]"
+                ? "whitespace-nowrap text-ink"
+                : "whitespace-nowrap text-muted transition hover:text-ink"
             }
           >
             {l.label}
@@ -43,32 +44,33 @@ export default function SiteHeader() {
         ))}
       </nav>
 
-      {!configured || loading ? (
-        <div
-          aria-hidden
-          className="size-9 rounded-full border border-[#e5dccd]"
-        />
-      ) : user ? (
-        <div className="flex items-center gap-3">
-          <span className="hidden text-[13px] text-[#8b8178] sm:inline">
-            {user.email}
-          </span>
-          <button
-            type="button"
-            onClick={signOut}
-            className="whitespace-nowrap rounded-full border border-[#e5dccd] px-3 py-1.5 text-[12px] text-[#57504a] transition hover:border-[#e8451f] hover:text-[#e8451f] sm:px-4"
+      <div className="flex items-center gap-2 sm:gap-3">
+        <ThemeToggle />
+
+        {!configured || loading ? (
+          <div aria-hidden className="size-8 rounded-full border border-line" />
+        ) : user ? (
+          <div className="flex items-center gap-2 sm:gap-3">
+            <span className="hidden text-[13px] text-muted sm:inline">
+              {user.email}
+            </span>
+            <button
+              type="button"
+              onClick={signOut}
+              className="whitespace-nowrap rounded-full border border-line px-3 py-1.5 text-[12px] text-body transition hover:border-accent hover:text-accent sm:px-4"
+            >
+              Sign out
+            </button>
+          </div>
+        ) : (
+          <Link
+            href="/login"
+            className="whitespace-nowrap rounded-full bg-brand px-4 py-1.5 text-[12px] font-medium text-white transition hover:bg-brand-hover sm:px-5"
           >
-            Sign out
-          </button>
-        </div>
-      ) : (
-        <Link
-          href="/login"
-          className="whitespace-nowrap rounded-full bg-[#e8451f] px-4 py-1.5 text-[12px] font-medium text-white transition hover:bg-[#d13d18] sm:px-5"
-        >
-          Sign in
-        </Link>
-      )}
+            Sign in
+          </Link>
+        )}
+      </div>
     </header>
   );
 }

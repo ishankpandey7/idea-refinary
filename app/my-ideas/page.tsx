@@ -32,7 +32,7 @@ function when(iso: string): string {
 /** Marks an idea someone else owns and shared with you. */
 function SharedBadge() {
   return (
-    <span className="rounded-full border border-[#e8451f]/40 bg-[#e8451f]/10 px-3 py-1 text-[10px] font-medium uppercase tracking-[0.16em] text-[#e8451f]">
+    <span className="rounded-full border border-accent/40 bg-brand/10 px-3 py-1 text-[10px] font-medium uppercase tracking-[0.16em] text-accent">
       Shared
     </span>
   );
@@ -91,21 +91,21 @@ export default function MyIdeas() {
         className="mx-auto w-full max-w-5xl px-6 pb-24 pt-16 sm:px-10"
       >
         <div className="flex justify-center">
-          <span className="rounded-full border border-[#e5dccd] px-4 py-1.5 text-[11px] font-medium uppercase tracking-[0.18em] text-[#e8451f]">
+          <span className="rounded-full border border-line px-4 py-1.5 text-[11px] font-medium uppercase tracking-[0.18em] text-accent">
             My Ideas
           </span>
         </div>
 
-        <h1 className="mt-10 text-center font-serif text-5xl leading-[1.08] text-[#1c1410] sm:text-6xl">
-          Streams of <em className="italic text-[#e8451f]">thought.</em>
+        <h1 className="mt-10 text-center font-serif text-5xl leading-[1.08] text-ink sm:text-6xl">
+          Streams of <em className="italic text-accent">thought.</em>
         </h1>
 
-        <p className="mx-auto mt-6 max-w-xl text-center text-[15px] leading-relaxed text-[#57504a]">
+        <p className="mx-auto mt-6 max-w-xl text-center text-[15px] leading-relaxed text-body">
           Every search you save becomes an idea. Open one to see what you kept.
         </p>
 
         {imported ? (
-          <p className="mx-auto mt-8 max-w-xl rounded-2xl border border-[#e8451f]/40 bg-[#e8451f]/10 px-6 py-4 text-center text-[13px] text-[#e8451f]">
+          <p className="mx-auto mt-8 max-w-xl rounded-2xl border border-accent/40 bg-brand/10 px-6 py-4 text-center text-[13px] text-accent">
             Moved {imported.results} saved result
             {imported.results === 1 ? "" : "s"} from this browser into your
             account.
@@ -113,27 +113,27 @@ export default function MyIdeas() {
         ) : null}
 
         {authLoading || !ready ? null : !configured ? (
-          <p className="mt-16 text-center text-[15px] text-[#8b8178]">
+          <p className="mt-16 text-center text-[15px] text-muted">
             Sign-in is unavailable: this deployment has no Supabase keys set.
           </p>
         ) : !user ? (
           <div className="mt-16 text-center">
-            <p className="text-[15px] text-[#8b8178]">
+            <p className="text-[15px] text-muted">
               Sign in to see your saved ideas.
             </p>
             <Link
               href="/login"
-              className="mt-6 inline-block rounded-full bg-[#e8451f] px-9 py-4 text-[15px] font-medium text-white transition hover:bg-[#d13d18]"
+              className="mt-6 inline-block rounded-full bg-brand px-9 py-4 text-[15px] font-medium text-white transition hover:bg-brand-hover"
             >
               Sign in &rarr;
             </Link>
           </div>
         ) : ideas.length === 0 ? (
           <div className="mt-16 text-center">
-            <p className="text-[15px] text-[#8b8178]">Nothing saved yet.</p>
+            <p className="text-[15px] text-muted">Nothing saved yet.</p>
             <Link
               href="/"
-              className="mt-6 inline-block rounded-full bg-[#e8451f] px-9 py-4 text-[15px] font-medium text-white transition hover:bg-[#d13d18]"
+              className="mt-6 inline-block rounded-full bg-brand px-9 py-4 text-[15px] font-medium text-white transition hover:bg-brand-hover"
             >
               Start a search &rarr;
             </Link>
@@ -144,14 +144,14 @@ export default function MyIdeas() {
               <button
                 type="button"
                 onClick={() => setOpenId(null)}
-                className="rounded-full border border-[#e5dccd] px-5 py-2 text-[13px] text-[#57504a] transition hover:border-[#e8451f] hover:text-[#e8451f]"
+                className="rounded-full border border-line px-5 py-2 text-[13px] text-body transition hover:border-accent hover:text-accent"
               >
                 &larr; All ideas
               </button>
-              <h2 className="font-serif text-2xl text-[#1c1410]">
+              <h2 className="font-serif text-2xl text-ink">
                 &ldquo;{open.query}&rdquo;
               </h2>
-              <span className="text-[12px] text-[#8b8178]">
+              <span className="text-[12px] text-muted">
                 {open.results.length} saved &middot; {when(open.savedAt)}
               </span>
               {ownsOpen ? null : <SharedBadge />}
@@ -162,7 +162,7 @@ export default function MyIdeas() {
                 <button
                   type="button"
                   onClick={() => setInviteOpen((v) => !v)}
-                  className="rounded-full border border-[#e5dccd] px-5 py-2 text-[13px] text-[#57504a] transition hover:border-[#e8451f] hover:text-[#e8451f]"
+                  className="rounded-full border border-line px-5 py-2 text-[13px] text-body transition hover:border-accent hover:text-accent"
                 >
                   Invite
                 </button>
@@ -170,7 +170,7 @@ export default function MyIdeas() {
               <button
                 type="button"
                 onClick={() => window.print()}
-                className="rounded-full bg-[#e8451f] px-5 py-2 text-[13px] font-medium text-white transition hover:bg-[#d13d18]"
+                className="rounded-full bg-brand px-5 py-2 text-[13px] font-medium text-white transition hover:bg-brand-hover"
               >
                 Export PDF
               </button>
@@ -178,7 +178,7 @@ export default function MyIdeas() {
                 <button
                   type="button"
                   onClick={() => onRemoveIdea(open.id)}
-                  className="rounded-full border border-[#e5dccd] px-5 py-2 text-[13px] text-[#8b8178] transition hover:border-[#e8451f] hover:text-[#e8451f]"
+                  className="rounded-full border border-line px-5 py-2 text-[13px] text-muted transition hover:border-accent hover:text-accent"
                 >
                   Delete idea
                 </button>
@@ -206,7 +206,7 @@ export default function MyIdeas() {
               if (group.length === 0) return null;
               return (
                 <div key={label} className="mt-12">
-                  <p className="text-[11px] font-medium uppercase tracking-[0.18em] text-[#e8451f]">
+                  <p className="text-[11px] font-medium uppercase tracking-[0.18em] text-accent">
                     {label} &middot; {group.length}
                   </p>
                   <ul className="mt-6 grid gap-5 sm:grid-cols-2">
@@ -220,7 +220,7 @@ export default function MyIdeas() {
                             onClick={() =>
                               onRemoveResult(open.id, resultKey(r))
                             }
-                            className="rounded-full border border-[#e5dccd] px-4 py-1.5 text-[11px] font-medium text-[#8b8178] transition hover:border-[#e8451f] hover:text-[#e8451f]"
+                            className="rounded-full border border-line px-4 py-1.5 text-[11px] font-medium text-muted transition hover:border-accent hover:text-accent"
                           >
                             Remove
                           </button>
@@ -243,13 +243,13 @@ export default function MyIdeas() {
               return (
                 <li
                   key={idea.id}
-                  className="flex flex-col rounded-2xl border border-[#e5dccd] bg-[#f4eee4] p-6 transition hover:border-[#e8451f]"
+                  className="flex flex-col rounded-2xl border border-line bg-surface p-6 transition hover:border-accent"
                 >
                   <div className="flex items-center justify-between gap-3">
-                    <span className="rounded-full border border-[#e5dccd] px-3 py-1 text-[10px] font-medium uppercase tracking-[0.16em] text-[#e8451f]">
+                    <span className="rounded-full border border-line px-3 py-1 text-[10px] font-medium uppercase tracking-[0.16em] text-accent">
                       {idea.results.length} saved
                     </span>
-                    <span className="text-[12px] text-[#8b8178]">
+                    <span className="text-[12px] text-muted">
                       {when(idea.savedAt)}
                     </span>
                   </div>
@@ -260,19 +260,19 @@ export default function MyIdeas() {
                     </div>
                   ) : null}
 
-                  <h2 className="mt-4 font-serif text-xl leading-snug text-[#1c1410]">
+                  <h2 className="mt-4 font-serif text-xl leading-snug text-ink">
                     {idea.query}
                   </h2>
 
-                  <p className="mt-2 text-[13px] text-[#57504a]">
+                  <p className="mt-2 text-[13px] text-body">
                     {counts.map((c) => `${c.label} ${c.n}`).join("  ·  ")}
                   </p>
 
-                  <div className="mt-6 flex items-center gap-2 border-t border-[#e5dccd] pt-4">
+                  <div className="mt-6 flex items-center gap-2 border-t border-line pt-4">
                     <button
                       type="button"
                       onClick={() => setOpenId(idea.id)}
-                      className="rounded-full bg-[#e8451f] px-5 py-2 text-[12px] font-medium text-white transition hover:bg-[#d13d18]"
+                      className="rounded-full bg-brand px-5 py-2 text-[12px] font-medium text-white transition hover:bg-brand-hover"
                     >
                       Open
                     </button>
@@ -280,7 +280,7 @@ export default function MyIdeas() {
                       <button
                         type="button"
                         onClick={() => onRemoveIdea(idea.id)}
-                        className="ml-auto rounded-full border border-[#e5dccd] px-5 py-2 text-[12px] text-[#8b8178] transition hover:border-[#e8451f] hover:text-[#e8451f]"
+                        className="ml-auto rounded-full border border-line px-5 py-2 text-[12px] text-muted transition hover:border-accent hover:text-accent"
                       >
                         Delete
                       </button>

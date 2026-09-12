@@ -58,12 +58,12 @@ export default function ResultCard({
   const known = KNOWN_LICENCES.has(r.licence.spdx);
 
   return (
-    <li className="flex flex-col rounded-2xl border border-[#e5dccd] bg-[#f4eee4] p-6 transition hover:border-[#e8451f]/50">
+    <li className="flex flex-col rounded-2xl border border-line bg-surface p-6 transition hover:border-accent/50">
       <div className="flex items-center justify-between gap-3">
-        <span className="text-[10px] font-semibold uppercase tracking-[0.16em] text-[#e8451f]">
+        <span className="text-[10px] font-semibold uppercase tracking-[0.16em] text-accent">
           {r.sourceId}
         </span>
-        {y ? <span className="text-[12px] text-[#8b8178]">{y}</span> : null}
+        {y ? <span className="text-[12px] text-muted">{y}</span> : null}
       </div>
 
       {r.thumbnailUrl ? (
@@ -75,7 +75,7 @@ export default function ResultCard({
           onError={(e) => {
             e.currentTarget.hidden = true;
           }}
-          className="mt-4 h-40 w-full rounded-xl border border-[#e5dccd] bg-[#fffdf9] object-cover"
+          className="mt-4 h-40 w-full rounded-xl border border-line bg-raised object-cover"
         />
       ) : null}
 
@@ -84,24 +84,24 @@ export default function ResultCard({
           href={r.canonicalUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="text-[#1c1410] underline-offset-4 hover:text-[#e8451f] hover:underline"
+          className="text-ink underline-offset-4 hover:text-accent hover:underline"
         >
           {r.title}
         </a>
       </h2>
 
-      <p className="mt-2 line-clamp-2 text-[13px] text-[#57504a]">
+      <p className="mt-2 line-clamp-2 text-[13px] text-body">
         {r.authors.join(", ") || "Unknown"}
       </p>
 
       <div
         className={`mt-4 flex flex-wrap items-center gap-2 rounded-xl px-3 py-2 ${
-          known ? "bg-[#dff0e4]" : "bg-[#ece5d9]"
+          known ? "bg-ok-bg" : "bg-unknown-bg"
         }`}
       >
         <span
           className={`rounded-md px-2 py-1 text-[10px] font-semibold uppercase tracking-[0.14em] ${
-            known ? "bg-[#2b6b46] text-white" : "bg-[#d9cdb9] text-[#57504a]"
+            known ? "bg-ok-fg text-page" : "bg-line-strong text-body"
           }`}
         >
           {r.licence.spdx}
@@ -112,7 +112,7 @@ export default function ResultCard({
             target="_blank"
             rel="noopener noreferrer"
             className={`text-[11px] underline-offset-2 hover:underline ${
-              known ? "text-[#2b6b46]" : "text-[#8b8178]"
+              known ? "text-ok-fg" : "text-muted"
             }`}
           >
             licence
@@ -121,21 +121,21 @@ export default function ResultCard({
       </div>
 
       {r.snippet ? (
-        <p className="mt-3 line-clamp-3 text-[13px] leading-relaxed text-[#6f665e]">
+        <p className="mt-3 line-clamp-3 text-[13px] leading-relaxed text-soft">
           {r.snippet}
         </p>
       ) : null}
 
-      <p className="mt-3 line-clamp-2 text-[11px] leading-relaxed text-[#9a9089]">
+      <p className="mt-3 line-clamp-2 text-[11px] leading-relaxed text-faint">
         {r.licence.attribution}
       </p>
 
-      <div className="mt-4 flex items-center gap-3 border-t border-[#e5dccd] pt-4">
+      <div className="mt-4 flex items-center gap-3 border-t border-line pt-4">
         <a
           href={r.canonicalUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="text-[11px] font-medium text-[#57504a] underline-offset-2 transition hover:text-[#e8451f] hover:underline"
+          className="text-[11px] font-medium text-body underline-offset-2 transition hover:text-accent hover:underline"
         >
           Open source &#8599;
         </a>

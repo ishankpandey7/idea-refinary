@@ -73,8 +73,8 @@ export default function MembersPanel({
   }
 
   return (
-    <section className="mt-10 rounded-2xl border border-[#e5dccd] bg-[#f4eee4] p-6">
-      <p className="text-[11px] font-medium uppercase tracking-[0.18em] text-[#e8451f]">
+    <section className="mt-10 rounded-2xl border border-line bg-surface p-6">
+      <p className="text-[11px] font-medium uppercase tracking-[0.18em] text-accent">
         People &middot; {members.length}
       </p>
 
@@ -82,22 +82,22 @@ export default function MembersPanel({
         {members.map((m) => (
           <li
             key={m.userId}
-            className="flex items-center gap-3 border-b border-[#e5dccd] pb-2 last:border-0 last:pb-0"
+            className="flex items-center gap-3 border-b border-line pb-2 last:border-0 last:pb-0"
           >
-            <span className="text-[14px] text-[#1c1410]">
+            <span className="text-[14px] text-ink">
               {memberLabel(m)}
               {m.userId === currentUserId ? (
-                <span className="text-[#8b8178]"> (you)</span>
+                <span className="text-muted"> (you)</span>
               ) : null}
             </span>
-            <span className="rounded-full border border-[#e5dccd] px-3 py-0.5 text-[10px] font-medium uppercase tracking-[0.16em] text-[#8b8178]">
+            <span className="rounded-full border border-line px-3 py-0.5 text-[10px] font-medium uppercase tracking-[0.16em] text-muted">
               {m.role}
             </span>
             {isOwner && m.role !== "owner" ? (
               <button
                 type="button"
                 onClick={() => onRemove(m.userId)}
-                className="ml-auto rounded-full border border-[#e5dccd] px-4 py-1.5 text-[11px] font-medium text-[#8b8178] transition hover:border-[#e8451f] hover:text-[#e8451f]"
+                className="ml-auto rounded-full border border-line px-4 py-1.5 text-[11px] font-medium text-muted transition hover:border-accent hover:text-accent"
               >
                 Remove
               </button>
@@ -108,8 +108,8 @@ export default function MembersPanel({
 
       {isOwner && inviteOpen ? (
         <form className="mt-6 flex flex-col gap-3" onSubmit={onInvite}>
-          <div className="flex items-center gap-3 rounded-full border border-[#e5dccd] bg-[#fffdf9] px-6 py-3 focus-within:border-[#e8451f]/70">
-            <span aria-hidden className="text-[#e8451f]">
+          <div className="flex items-center gap-3 rounded-full border border-line bg-raised px-6 py-3 focus-within:border-accent/70">
+            <span aria-hidden className="text-accent">
               &#9993;
             </span>
             <input
@@ -118,26 +118,26 @@ export default function MembersPanel({
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               placeholder="they@example.com"
-              className="w-full bg-transparent text-[15px] text-[#1c1410] placeholder:text-[#8b8178] focus:outline-none"
+              className="w-full bg-transparent text-[15px] text-ink placeholder:text-muted focus:outline-none"
             />
           </div>
           <div className="flex items-center gap-2">
             <button
               type="submit"
               disabled={busy}
-              className="rounded-full bg-[#e8451f] px-6 py-2.5 text-[13px] font-medium text-white transition hover:bg-[#d13d18] disabled:cursor-not-allowed disabled:opacity-60"
+              className="rounded-full bg-brand px-6 py-2.5 text-[13px] font-medium text-white transition hover:bg-brand-hover disabled:cursor-not-allowed disabled:opacity-60"
             >
               {busy ? "Adding…" : "Add to idea"}
             </button>
             <button
               type="button"
               onClick={onCloseInvite}
-              className="rounded-full border border-[#e5dccd] px-6 py-2.5 text-[13px] text-[#8b8178] transition hover:border-[#e8451f] hover:text-[#e8451f]"
+              className="rounded-full border border-line px-6 py-2.5 text-[13px] text-muted transition hover:border-accent hover:text-accent"
             >
               Cancel
             </button>
           </div>
-          <p className="text-[12px] leading-relaxed text-[#8b8178]">
+          <p className="text-[12px] leading-relaxed text-muted">
             They need an Idea Refinery account already &mdash; this shares the
             idea, it does not send a signup invitation.
           </p>
@@ -145,10 +145,10 @@ export default function MembersPanel({
       ) : null}
 
       {error ? (
-        <p className="mt-4 text-[13px] text-[#e8451f]">{error}</p>
+        <p className="mt-4 text-[13px] text-accent">{error}</p>
       ) : null}
       {notice ? (
-        <p className="mt-4 text-[13px] text-[#57504a]">{notice}</p>
+        <p className="mt-4 text-[13px] text-body">{notice}</p>
       ) : null}
     </section>
   );

@@ -1,27 +1,93 @@
 @import "tailwindcss";
 
+/* One palette, two themes. Every colour in the app comes from these tokens,
+   so the toggle only has to flip `data-theme` on <html>.
+
+   No data-theme  -> follow the OS.
+   data-theme=light / dark -> the user overrode it, OS is ignored. */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --c-page:        #faf7f2;
+  --c-surface:     #f4eee4;
+  --c-raised:      #fffdf9;
+  --c-line:        #e5dccd;
+  --c-line-strong: #d9cdb9;
+  --c-ink:         #1c1410;
+  --c-body:        #57504a;
+  --c-soft:        #6f665e;
+  --c-muted:       #8b8178;
+  --c-faint:       #9a9089;
+  --c-accent:      #e8451f;
+  --c-brand:       #e8451f;
+  --c-brand-hover: #d13d18;
+  --c-ok-bg:       #dff0e4;
+  --c-ok-fg:       #2b6b46;
+  --c-unknown-bg:  #ece5d9;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --c-page:        #0a0605;
+    --c-surface:     #100a07;
+    --c-raised:      #120b08;
+    --c-line:        #3a1f14;
+    --c-line-strong: #4a2a1c;
+    --c-ink:         #f5a962;
+    --c-body:        #b39c8c;
+    --c-soft:        #8d7768;
+    --c-muted:       #7a6558;
+    --c-faint:       #6f5a4d;
+    --c-accent:      #ff9c6b;
+    --c-brand:       #e8451f;
+    --c-brand-hover: #ff5a2e;
+    --c-ok-bg:       #13291e;
+    --c-ok-fg:       #5cb489;
+    --c-unknown-bg:  #2a1a12;
+  }
+}
+
+:root[data-theme="dark"] {
+  --c-page:        #0a0605;
+  --c-surface:     #100a07;
+  --c-raised:      #120b08;
+  --c-line:        #3a1f14;
+  --c-line-strong: #4a2a1c;
+  --c-ink:         #f5a962;
+  --c-body:        #b39c8c;
+  --c-soft:        #8d7768;
+  --c-muted:       #7a6558;
+  --c-faint:       #6f5a4d;
+  --c-accent:      #ff9c6b;
+  --c-brand:       #e8451f;
+  --c-brand-hover: #ff5a2e;
+  --c-ok-bg:       #13291e;
+  --c-ok-fg:       #5cb489;
+  --c-unknown-bg:  #2a1a12;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
+  --color-page:        var(--c-page);
+  --color-surface:     var(--c-surface);
+  --color-raised:      var(--c-raised);
+  --color-line:        var(--c-line);
+  --color-line-strong: var(--c-line-strong);
+  --color-ink:         var(--c-ink);
+  --color-body:        var(--c-body);
+  --color-soft:        var(--c-soft);
+  --color-muted:       var(--c-muted);
+  --color-faint:       var(--c-faint);
+  --color-accent:      var(--c-accent);
+  --color-brand:       var(--c-brand);
+  --color-brand-hover: var(--c-brand-hover);
+  --color-ok-bg:       var(--c-ok-bg);
+  --color-ok-fg:       var(--c-ok-fg);
+  --color-unknown-bg:  var(--c-unknown-bg);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
 body {
-  background: var(--background);
-  color: var(--foreground);
+  background: var(--c-page);
+  color: var(--c-body);
   font-family: Arial, Helvetica, sans-serif;
 }
 

@@ -166,13 +166,13 @@ export default function Home() {
 
   return (
     <main className="mx-auto w-full max-w-5xl px-6 pb-24 pt-16 sm:px-10">
-      <h1 className="text-center font-serif text-5xl leading-[1.1] text-[#1c1410] sm:text-6xl">
+      <h1 className="text-center font-serif text-5xl leading-[1.1] text-ink sm:text-6xl">
         One idea in.
         <br />
         Open-licence sources out.
       </h1>
 
-      <p className="mx-auto mt-6 max-w-xl text-center text-[15px] leading-relaxed text-[#57504a]">
+      <p className="mx-auto mt-6 max-w-xl text-center text-[15px] leading-relaxed text-body">
         Describe what you&rsquo;re trying to make. Idea Refinery finds the
         research, visuals and language behind it &mdash; with reuse rights
         attached.
@@ -187,9 +187,9 @@ export default function Home() {
       >
         {/* Stacked on a phone: the button inside the pill leaves the input
             too narrow to read what you typed. Nested again from sm up. */}
-        <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-0 sm:rounded-full sm:border sm:border-[#e5dccd] sm:bg-[#fffdf9] sm:py-2 sm:pl-6 sm:pr-2 sm:focus-within:border-[#e8451f]/70">
-          <div className="flex min-w-0 flex-1 items-center gap-3 rounded-full border border-[#e5dccd] bg-[#fffdf9] px-6 py-3 focus-within:border-[#e8451f]/70 sm:border-0 sm:bg-transparent sm:p-0 sm:focus-within:border-0">
-            <span aria-hidden className="text-[#e8451f]">
+        <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-0 sm:rounded-full sm:border sm:border-line sm:bg-raised sm:py-2 sm:pl-6 sm:pr-2 sm:focus-within:border-accent/70">
+          <div className="flex min-w-0 flex-1 items-center gap-3 rounded-full border border-line bg-raised px-6 py-3 focus-within:border-accent/70 sm:border-0 sm:bg-transparent sm:p-0 sm:focus-within:border-0">
+            <span aria-hidden className="text-accent">
               &#8981;
             </span>
             <input
@@ -197,20 +197,20 @@ export default function Home() {
               value={query}
               onChange={(e) => setQuery(e.target.value)}
               placeholder="Describe your idea — e.g. a cancer awareness campaign"
-              className="w-full min-w-0 bg-transparent text-[15px] text-[#1c1410] placeholder:text-[#9a9089] focus:outline-none"
+              className="w-full min-w-0 bg-transparent text-[15px] text-ink placeholder:text-faint focus:outline-none"
             />
           </div>
           <button
             type="submit"
             disabled={loading}
-            className="w-full shrink-0 rounded-full bg-[#e8451f] px-7 py-3 text-[14px] font-medium text-white transition hover:bg-[#d13d18] disabled:cursor-not-allowed disabled:opacity-60 sm:w-auto"
+            className="w-full shrink-0 rounded-full bg-brand px-7 py-3 text-[14px] font-medium text-white transition hover:bg-brand-hover disabled:cursor-not-allowed disabled:opacity-60 sm:w-auto"
           >
             {loading ? "Searching…" : "Refine →"}
           </button>
         </div>
       </form>
 
-      <p className="mt-4 flex flex-wrap items-center justify-center gap-2 text-[12px] text-[#8b8178]">
+      <p className="mt-4 flex flex-wrap items-center justify-center gap-2 text-[12px] text-muted">
         Try an example:
         <button
           type="button"
@@ -218,7 +218,7 @@ export default function Home() {
             setQuery(EXAMPLE_QUERY);
             void runSearchFor(EXAMPLE_QUERY, category);
           }}
-          className="rounded-full border border-[#e5dccd] bg-[#fffdf9] px-4 py-1.5 text-[12px] text-[#57504a] transition hover:border-[#e8451f] hover:text-[#e8451f]"
+          className="rounded-full border border-line bg-raised px-4 py-1.5 text-[12px] text-body transition hover:border-accent hover:text-accent"
         >
           {EXAMPLE_QUERY} &#8599;
         </button>
@@ -232,8 +232,8 @@ export default function Home() {
             onClick={() => pickCategory(c.id)}
             className={`rounded-full border px-5 py-2 text-[13px] transition ${
               category === c.id
-                ? "border-[#1c1410] bg-[#1c1410] text-[#faf7f2]"
-                : "border-[#e5dccd] text-[#57504a] hover:border-[#1c1410]"
+                ? "border-ink bg-ink text-page"
+                : "border-line text-body hover:border-ink"
             }`}
           >
             {c.label}
@@ -243,13 +243,13 @@ export default function Home() {
 
       {searched ? (
         <div className="mt-14 text-center">
-          <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[#e8451f]">
+          <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-accent">
             {results.length} result{results.length === 1 ? "" : "s"}
           </p>
           {currentIdea && user ? (
-            <p className="mt-2 text-[13px] text-[#8b8178]">
+            <p className="mt-2 text-[13px] text-muted">
               Saving to idea{" "}
-              <span className="text-[#57504a]">
+              <span className="text-body">
                 &ldquo;{currentIdea}&rdquo;
               </span>
               {savedKeys.size > 0 ? (
@@ -257,7 +257,7 @@ export default function Home() {
                   {" · "}
                   <Link
                     href="/my-ideas"
-                    className="text-[#e8451f] underline-offset-2 hover:underline"
+                    className="text-accent underline-offset-2 hover:underline"
                   >
                     {savedKeys.size} saved
                   </Link>
@@ -269,13 +269,13 @@ export default function Home() {
       ) : null}
 
       {saveError ? (
-        <p className="mx-auto mt-6 max-w-xl rounded-2xl border border-[#e8451f]/40 bg-[#e8451f]/10 px-6 py-3 text-center text-[13px] text-[#c13c16]">
+        <p className="mx-auto mt-6 max-w-xl rounded-2xl border border-accent/40 bg-brand/10 px-6 py-3 text-center text-[13px] text-accent">
           Could not save: {saveError}
         </p>
       ) : null}
 
       {searched && !loading && results.length === 0 ? (
-        <p className="mt-6 text-center text-[15px] text-[#8b8178]">
+        <p className="mt-6 text-center text-[15px] text-muted">
           Nothing came back. Try another query.
         </p>
       ) : null}
@@ -295,8 +295,8 @@ export default function Home() {
                     disabled={saved}
                     className={`rounded-full border px-4 py-1.5 text-[11px] font-medium transition ${
                       saved
-                        ? "cursor-default border-[#e8451f]/40 bg-[#e8451f]/10 text-[#e8451f]"
-                        : "border-[#d9cdb9] bg-[#fffdf9] text-[#57504a] hover:border-[#e8451f] hover:text-[#e8451f]"
+                        ? "cursor-default border-accent/40 bg-brand/10 text-accent"
+                        : "border-line-strong bg-raised text-body hover:border-accent hover:text-accent"
                     }`}
                   >
                     {saved ? "Saved" : "Save"}
@@ -304,7 +304,7 @@ export default function Home() {
                 ) : (
                   <Link
                     href="/login"
-                    className="rounded-full border border-[#d9cdb9] bg-[#fffdf9] px-4 py-1.5 text-[11px] font-medium text-[#8b8178] transition hover:border-[#e8451f] hover:text-[#e8451f]"
+                    className="rounded-full border border-line-strong bg-raised px-4 py-1.5 text-[11px] font-medium text-muted transition hover:border-accent hover:text-accent"
                   >
                     Sign in to save
                   </Link>
@@ -317,10 +317,10 @@ export default function Home() {
 
       {searched ? null : (
         <section className="mt-24">
-          <h2 className="text-center font-serif text-3xl text-[#1c1410]">
+          <h2 className="text-center font-serif text-3xl text-ink">
             Start with an idea. We&rsquo;ll find the rest.
           </h2>
-          <p className="mx-auto mt-3 max-w-xl text-center text-[13px] text-[#8b8178]">
+          <p className="mx-auto mt-3 max-w-xl text-center text-[13px] text-muted">
             Instant discovery across trusted open archives, creative commons and
             public databases.
           </p>
@@ -329,26 +329,26 @@ export default function Home() {
             {ANGLES.map((a) => (
               <li
                 key={a.title}
-                className="flex flex-col rounded-2xl border border-[#e5dccd] bg-[#f4eee4] p-6"
+                className="flex flex-col rounded-2xl border border-line bg-surface p-6"
               >
                 <span
                   aria-hidden
-                  className="flex size-9 items-center justify-center rounded-xl border border-[#e5dccd] bg-[#fffdf9] text-[15px] text-[#e8451f]"
+                  className="flex size-9 items-center justify-center rounded-xl border border-line bg-raised text-[15px] text-accent"
                 >
                   {a.glyph}
                 </span>
 
-                <h3 className="mt-4 font-serif text-lg text-[#1c1410]">
+                <h3 className="mt-4 font-serif text-lg text-ink">
                   {a.title}
                 </h3>
-                <p className="mt-2 text-[13px] leading-relaxed text-[#57504a]">
+                <p className="mt-2 text-[13px] leading-relaxed text-body">
                   {a.blurb}
                 </p>
 
                 {a.href ? (
                   <Link
                     href={a.href}
-                    className="mt-auto pt-5 text-[12px] font-medium text-[#e8451f] underline-offset-2 hover:underline"
+                    className="mt-auto pt-5 text-[12px] font-medium text-accent underline-offset-2 hover:underline"
                   >
                     {a.cta} &rarr;
                   </Link>
