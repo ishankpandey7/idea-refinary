@@ -28,7 +28,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       <body className="min-h-full">
         {/* globals.css styles `body` unlayered, which beats Tailwind's layered
             utilities — so the dark shell lives on a wrapper, not on body. */}
-        <div className="flex min-h-screen flex-col bg-[#0a0605] text-[#e8d8cc] selection:bg-[#e8451f]/30">
+        <div data-print-shell className="flex min-h-screen flex-col bg-[#0a0605] text-[#e8d8cc] selection:bg-[#e8451f]/30">
           <SiteHeader />
           {children}
         </div>

@@ -24,3 +24,108 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+/* Print-to-PDF: swap the dark UI for a plain document.
+   Screen chrome is tagged [data-print-hide]; the printable copy of an idea
+   lives in [data-print-sheet], which is display:none on screen. */
+@media print {
+  @page {
+    margin: 18mm 16mm;
+  }
+
+  body {
+    background: #fff !important;
+    color: #000 !important;
+    font-family: Georgia, "Times New Roman", serif;
+  }
+
+  [data-print-shell] {
+    min-height: 0 !important;
+    background: #fff !important;
+    color: #000 !important;
+  }
+
+  [data-print-hide] {
+    display: none !important;
+  }
+
+  [data-print-sheet] {
+    display: block !important;
+  }
+
+  [data-print-head] {
+    border-bottom: 1px solid #000;
+    padding-bottom: 10px;
+    margin-bottom: 22px;
+  }
+
+  [data-print-head] h1 {
+    font-size: 22pt;
+    line-height: 1.2;
+    margin: 0 0 6px;
+  }
+
+  [data-print-head] p {
+    font-size: 9pt;
+    color: #444;
+    margin: 2px 0;
+  }
+
+  [data-print-group] {
+    margin-bottom: 20px;
+  }
+
+  [data-print-group] h2 {
+    font-size: 11pt;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    border-bottom: 1px solid #bbb;
+    padding-bottom: 4px;
+    margin: 0 0 12px;
+    break-after: avoid;
+  }
+
+  [data-print-group] ol {
+    margin: 0;
+    padding-left: 20px;
+  }
+
+  [data-print-item] {
+    break-inside: avoid;
+    margin-bottom: 14px;
+  }
+
+  [data-print-item] h3 {
+    font-size: 12pt;
+    line-height: 1.3;
+    margin: 0 0 3px;
+    font-weight: 600;
+  }
+
+  [data-print-item] p {
+    margin: 1px 0;
+  }
+
+  [data-print-meta] {
+    font-size: 9.5pt;
+    color: #333;
+  }
+
+  [data-print-url] {
+    font-family: "Courier New", monospace;
+    font-size: 8.5pt;
+    color: #000;
+    word-break: break-all;
+  }
+
+  [data-print-attr] {
+    font-size: 8.5pt;
+    color: #555;
+    font-style: italic;
+  }
+
+  a {
+    color: #000 !important;
+    text-decoration: none !important;
+  }
+}

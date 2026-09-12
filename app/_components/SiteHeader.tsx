@@ -12,7 +12,7 @@ export default function SiteHeader() {
   const pathname = usePathname();
 
   return (
-    <header className="flex items-center justify-between border-b border-[#3a1f14]/60 px-6 py-5 sm:px-10">
+    <header data-print-hide className="flex items-center justify-between border-b border-[#3a1f14]/60 px-6 py-5 sm:px-10">
       <Link href="/" className="flex items-center gap-2.5">
         <span aria-hidden className="text-lg text-[#e8451f]">
           &#10022;
