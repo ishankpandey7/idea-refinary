@@ -10,6 +10,7 @@ const CATEGORIES = [
   { id: "", label: "All" },
   { id: "research", label: "Research" },
   { id: "art", label: "Art" },
+  { id: "writing", label: "Writing" },
 ] as const;
 
 export default function Home() {
@@ -75,8 +76,8 @@ export default function Home() {
       </h1>
 
       <p className="mx-auto mt-6 max-w-xl text-center text-[15px] leading-relaxed text-[#b39c8c]">
-        Search open-licence research and art. Everything links back to the source
-        &mdash; we never host the content.
+        Search open-licence research, art and writing. Everything links back to
+        the source &mdash; we never host the content.
       </p>
 
       <form

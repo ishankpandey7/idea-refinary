@@ -1,8 +1,9 @@
 import type { Adapter } from "@/types/source-result";
 import { adapter as openalex } from "./openalex";
 import { adapter as openverse } from "./openverse";
+import { adapter as gutendex } from "./gutendex";
 
-export const adapters: Adapter[] = [openalex, openverse];
+export const adapters: Adapter[] = [openalex, openverse, gutendex];
 
 export type Category = Adapter["categories"][number];
 

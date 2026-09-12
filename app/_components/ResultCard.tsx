@@ -14,17 +14,23 @@ const OPEN_LICENCES = new Set([
   "OPEN-ACCESS",
 ]);
 
-export const CATEGORY_LABELS = ["Research", "Art"] as const;
+export const CATEGORY_LABELS = ["Research", "Art", "Writing"] as const;
 export type CategoryLabel = (typeof CATEGORY_LABELS)[number];
 
 const CATEGORY_BY_SOURCE: Record<string, CategoryLabel> = {
   openalex: "Research",
   openverse: "Art",
+  gutendex: "Writing",
 };
 
 export function categoryOf(r: SourceResult): CategoryLabel {
   return (
-    CATEGORY_BY_SOURCE[r.sourceId] ?? (r.mediaType === "image" ? "Art" : "Research")
+    CATEGORY_BY_SOURCE[r.sourceId] ??
+    (r.mediaType === "image"
+      ? "Art"
+      : r.mediaType === "text"
+        ? "Writing"
+        : "Research")
   );
 }
 
@@ -90,7 +96,9 @@ export default function ResultCard({
       <div className="mt-5 flex items-center gap-2 border-t border-[#3a1f14]/60 pt-4">
         <span
           className={`rounded-full px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.14em] ${
-            open ? "bg-[#e8451f]/15 text-[#ff9c6b]" : "bg-[#2a1a12] text-[#8d7768]"
+            open
+              ? "bg-[#e8451f]/15 text-[#ff9c6b]"
+              : "bg-[#2a1a12] text-[#8d7768]"
           }`}
         >
           {r.licence.spdx}
