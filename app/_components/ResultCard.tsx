@@ -27,6 +27,7 @@ const CATEGORY_BY_SOURCE: Record<string, CategoryLabel> = {
   openalex: "Research",
   openverse: "Art",
   gutendex: "Writing",
+  wikimedia: "Art",
 };
 
 export function categoryOf(r: SourceResult): CategoryLabel {
