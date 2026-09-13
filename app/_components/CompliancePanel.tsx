@@ -36,11 +36,14 @@ export default function CompliancePanel({
   onUsageChange,
   hideUsage = false,
   heading = "Licence check",
+  shareUrl,
 }: {
   title: string;
   results: SourceResult[];
   usage: Usage;
   onUsageChange: (next: Usage) => void;
+  /** Where this check reopens. Only the checker has one. */
+  shareUrl?: string;
   /** The caller already renders the toggles, so do not repeat them. */
   hideUsage?: boolean;
   /** Set this when another "Licence check" already sits on the page. */
@@ -52,8 +55,8 @@ export default function CompliancePanel({
 
   const counts = useMemo(() => tally(results, usage), [results, usage]);
   const credits = useMemo(
-    () => buildCredits({ title, results, usage }, format),
-    [title, results, usage, format],
+    () => buildCredits({ title, results, usage, shareUrl }, format),
+    [title, results, usage, shareUrl, format],
   );
 
   /**
@@ -124,6 +127,14 @@ export default function CompliancePanel({
         <Stat n={counts.blocked} label="Not usable" tone="text-stop-fg" />
       </dl>
 
+      {counts.asserted > 0 ? (
+        <p className="mt-5 rounded-xl border border-accent/40 bg-brand/10 px-4 py-3 text-[13px] leading-relaxed text-accent">
+          {counts.asserted} of these {counts.asserted === 1 ? "is" : "are"} your
+          own entry. Those licences are as you stated them &mdash; Idea Craft
+          did not read them &mdash; and every credits file and report says so.
+        </p>
+      ) : null}
+
       {counts.blocked > 0 ? (
         <p className="mt-5 rounded-xl bg-stop-bg px-4 py-3 text-[13px] leading-relaxed text-stop-fg">
           {counts.blocked === 1
@@ -187,9 +198,12 @@ export default function CompliancePanel({
       ) : null}
 
       <p className="mt-4 text-[11px] leading-relaxed text-faint">
-        Licence tags are as published by each source, and attribution lines are
-        reproduced exactly as the source supplied them. This is a compliance
-        aid, not legal advice.
+        Licence tags are as published by each source
+        {counts.asserted > 0
+          ? ", apart from your own entries, which are as you stated them"
+          : ""}
+        , and attribution lines are reproduced exactly as supplied. This is a
+        compliance aid, not legal advice.
       </p>
     </section>
   );

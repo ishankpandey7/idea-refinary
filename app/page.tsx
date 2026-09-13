@@ -1,13 +1,23 @@
 "use client";
 
-import { Suspense, useCallback, useEffect, useMemo, useState } from "react";
+import { Suspense, useCallback, useEffect, useMemo, useRef, useState } from "react";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import type { SourceResult } from "@/types/source-result";
 import type { CheckItem, CheckResponse } from "@/lib/resolve";
-import { extractLinks, MAX_LINKS, MAX_TEXT } from "@/lib/links";
-import { verdictFor, type Level, type Usage } from "@/lib/licence-rules";
+import { extractLinks, MAX_LINKS, MAX_TEXT, normaliseUrl } from "@/lib/links";
+import type { Level, Usage } from "@/lib/licence-rules";
+import {
+  decodeAsserted,
+  encodeAsserted,
+  MAX_ASSERTED,
+  newAsserted,
+  toResult,
+  verdictForResult,
+  type Asserted,
+} from "@/lib/asserted";
 import ResultCard, { categoryOf } from "./_components/ResultCard";
+import AssetForm from "./_components/AssetForm";
 import CompliancePanel from "./_components/CompliancePanel";
 import PrintSheet from "./_components/PrintSheet";
 import { useAuth } from "./_components/AuthProvider";
@@ -18,6 +28,7 @@ import { keysFor, saveResult as saveLocal, useLocalIdeas } from "./_lib/ideas";
 
 const PASTE_KEY = "idea-refinery:check-paste";
 const PROJECT_KEY = "idea-refinery:check-project";
+const ASSERTED_KEY = "idea-refinery:asserted";
 
 const DEFAULT_PROJECT = "My project";
 
@@ -58,9 +69,17 @@ const PLACEHOLDER = [
   "https://doi.org/10.7717/peerj.4375",
 ].join("\n");
 
-function plural(n: number, word: string): string {
-  return `${n} ${word}${n === 1 ? "" : "s"}`;
+function plural(n: number, word: string, many = `${word}s`): string {
+  return `${n} ${n === 1 ? word : many}`;
 }
+
+/** One row in the list of answers, whoever supplied the answer. */
+type Row = {
+  key: string;
+  result: SourceResult;
+  /** Set when the person described this one themselves. */
+  asset: Asserted | null;
+};
 
 /**
  * The share link is read with useSearchParams, which Next requires a Suspense
@@ -97,28 +116,77 @@ function Check() {
 
   const { user } = useAuth();
 
-  /** The links this page was opened on, if it was opened from a share. */
-  const shared = params.get("l");
-  const arrived = shared !== null;
-  const sharedLinks = useMemo(
-    () => (shared ? extractLinks(shared) : []),
-    [shared],
+  // -------------------------------------------------------------------------
+  // The half of the project no source can answer for
+  // -------------------------------------------------------------------------
+
+  const [assertedRaw, setAssertedRaw] = useStored(ASSERTED_KEY, "[]");
+  const asserted = useMemo(() => decodeAsserted(assertedRaw), [assertedRaw]);
+
+  /** The asset being described, and whether it is already in the list. */
+  const [editor, setEditor] = useState<{
+    asset: Asserted;
+    existing: boolean;
+  } | null>(null);
+
+  const setAsserted = useCallback(
+    (list: Asserted[]) => setAssertedRaw(encodeAsserted(list)),
+    [setAssertedRaw],
   );
 
   /**
-   * Puts the whole check in the address bar: the links, and the intent they
-   * were judged against. A check is only worth sending to someone if it
-   * carries the question too — the same list under "commercial" and under
-   * "personal" are different answers, and a link that dropped the intent
-   * would quietly show the reader the wrong one.
+   * The form lives in one fixed place, so opening it from a row forty lines
+   * down has to take you there. A tick late, so it exists to scroll to.
    */
-  const syncUrl = useCallback((links: string[], intent: Usage) => {
-    const qs = new URLSearchParams();
-    if (intent.commercial) qs.set("c", "1");
-    if (intent.modify) qs.set("m", "1");
-    qs.set("l", links.join("\n"));
-    window.history.replaceState(null, "", `/?${qs.toString()}`);
-  }, []);
+  function openForm(asset: Asserted, existing: boolean) {
+    setEditor({ asset, existing });
+    window.setTimeout(
+      () =>
+        document
+          .getElementById("by-hand")
+          ?.scrollIntoView({ behavior: "smooth", block: "center" }),
+      0,
+    );
+  }
+
+  function describe(url = "") {
+    openForm(newAsserted(url), false);
+  }
+
+  function saveAsset(next: Asserted) {
+    setAsserted(
+      asserted.some((a) => a.id === next.id)
+        ? asserted.map((a) => (a.id === next.id ? next : a))
+        : [...asserted, next].slice(0, MAX_ASSERTED),
+    );
+    setEditor(null);
+  }
+
+  function dropAsset(id: string) {
+    setAsserted(asserted.filter((a) => a.id !== id));
+    setEditor((e) => (e?.asset.id === id ? null : e));
+  }
+
+  // -------------------------------------------------------------------------
+  // Arriving on a shared check
+  // -------------------------------------------------------------------------
+
+  const sharedLinksParam = params.get("l");
+  const sharedAssetsParam = params.get("a");
+  const arrived = sharedLinksParam !== null || sharedAssetsParam !== null;
+
+  /**
+   * Memoised on the joined links rather than the raw parameter, so that
+   * rewriting the address bar with the same links does not hand the effect
+   * below a new array and set the whole check running a second time.
+   */
+  const sharedKey = sharedLinksParam
+    ? extractLinks(sharedLinksParam).join("\n")
+    : "";
+  const sharedLinks = useMemo(
+    () => (sharedKey ? sharedKey.split("\n") : []),
+    [sharedKey],
+  );
 
   /** The network half, with no state in it, so both callers can share it. */
   const resolve = useCallback(async (links: string[]) => {
@@ -131,22 +199,18 @@ function Check() {
     return (await res.json()) as CheckResponse;
   }, []);
 
-  const apply = useCallback(
-    (body: CheckResponse, links: string[], intent: Usage) => {
-      setResponse(body);
-      setChecked(links);
-      setFailed(false);
-      syncUrl(links, intent);
-    },
-    [syncUrl],
-  );
+  const apply = useCallback((body: CheckResponse, links: string[]) => {
+    setResponse(body);
+    setChecked(links);
+    setFailed(false);
+  }, []);
 
-  async function runCheck(links: string[], intent: Usage) {
+  async function runCheck(links: string[]) {
     if (links.length === 0) return;
     setLoading(true);
     setFailed(false);
     try {
-      apply(await resolve(links), links, intent);
+      apply(await resolve(links), links);
     } catch {
       setResponse(null);
       setFailed(true);
@@ -167,11 +231,32 @@ function Check() {
     [params],
   );
 
+  /**
+   * Seeding runs once. The effect below rewrites the address bar as soon as
+   * anything moves, and re-reading our own writing would undo whatever the
+   * person had just changed.
+   */
+  const seeded = useRef(false);
+
   useEffect(() => {
-    if (!arrived) return;
+    if (!arrived || seeded.current) return;
+    seeded.current = true;
+
     setUsage(sharedIntent);
-    setPaste(shared ?? "");
-  }, [arrived, shared, sharedIntent, setUsage, setPaste]);
+    // Only what the link actually carried. A link with entries of your own
+    // but no material must not empty the box you were half-way through
+    // filling in.
+    if (sharedLinksParam !== null) setPaste(sharedLinksParam);
+    if (sharedAssetsParam !== null) setAssertedRaw(sharedAssetsParam);
+  }, [
+    arrived,
+    sharedLinksParam,
+    sharedAssetsParam,
+    sharedIntent,
+    setUsage,
+    setPaste,
+    setAssertedRaw,
+  ]);
 
   // Runs the arrival check. Settled in a callback, so nothing is set
   // synchronously here; the spinner comes from `busy` below instead.
@@ -181,7 +266,7 @@ function Check() {
 
     void resolve(sharedLinks).then(
       (body) => {
-        if (active) apply(body, sharedLinks, sharedIntent);
+        if (active) apply(body, sharedLinks);
       },
       () => {
         if (active) setFailed(true);
@@ -191,7 +276,45 @@ function Check() {
     return () => {
       active = false;
     };
-  }, [sharedLinks, sharedIntent, resolve, apply]);
+  }, [sharedLinks, resolve, apply]);
+
+  /**
+   * The whole check as one address: the links, the things you described
+   * yourself, and the intent all of it was judged against.
+   *
+   * A check is only worth sending to someone if it carries the question too —
+   * the same list under "commercial" and under "personal" are different
+   * answers, and a link that dropped the intent would quietly show the reader
+   * the wrong one. Derived rather than stored, so the three can never
+   * disagree with what is on screen.
+   */
+  const sharePath = useMemo(() => {
+    // Until a check of its own has run, the links this page arrived on are
+    // the links it is about. Leaving them out while that first check is still
+    // in flight would rewrite them out of the address bar and cancel it.
+    const links = checked_.length > 0 ? checked_ : sharedLinks;
+    if (links.length === 0 && asserted.length === 0) return null;
+
+    const qs = new URLSearchParams();
+    if (usage.commercial) qs.set("c", "1");
+    if (usage.modify) qs.set("m", "1");
+    if (links.length > 0) qs.set("l", links.join("\n"));
+    if (asserted.length > 0) qs.set("a", encodeAsserted(asserted));
+
+    return `/?${qs.toString()}`;
+  }, [checked_, sharedLinks, asserted, usage]);
+
+  useEffect(() => {
+    if (sharePath) window.history.replaceState(null, "", sharePath);
+  }, [sharePath]);
+
+  // The credits file quotes this, so it has to be the whole address. Guarded
+  // because the shell prerenders, and there is nothing to share until a check
+  // has happened anyway.
+  const shareUrl =
+    sharePath && typeof window !== "undefined"
+      ? `${window.location.origin}${sharePath}`
+      : undefined;
 
   // An old link into the search page still works; this route no longer
   // answers it. Navigation, not state, so it belongs in an effect.
@@ -225,13 +348,6 @@ function Check() {
   const busy =
     loading || (sharedLinks.length > 0 && response === null && !failed);
 
-  function changeUsage(next: Usage) {
-    setUsage(next);
-    // The verdicts on screen just changed, so the link that reproduces them
-    // has to change with them.
-    if (checked_.length > 0) syncUrl(checked_, next);
-  }
-
   async function copyLink() {
     try {
       await navigator.clipboard.writeText(window.location.href);
@@ -246,12 +362,46 @@ function Check() {
 
   const pending = useMemo(() => extractLinks(paste), [paste]);
 
+  // -------------------------------------------------------------------------
+  // One list, however each answer was arrived at
+  // -------------------------------------------------------------------------
 
+  /** Addresses a source answered for, so the form can spot a double entry. */
+  const knownUrls = useMemo(() => {
+    const out = new Set<string>();
+    for (const i of response?.items ?? []) {
+      if (i.status !== "ok" || !i.result) continue;
+      out.add(normaliseUrl(i.input));
+      out.add(normaliseUrl(i.result.canonicalUrl));
+    }
+    return out;
+  }, [response]);
 
+  /** A link somebody has since answered for themselves is no longer unread. */
+  const assertedUrls = useMemo(
+    () =>
+      new Set(
+        asserted
+          .map((a) => a.url.trim())
+          .filter(Boolean)
+          .map(normaliseUrl),
+      ),
+    [asserted],
+  );
 
   const unread = useMemo(
-    () => (response?.items ?? []).filter((i) => i.status !== "ok"),
-    [response],
+    () =>
+      (response?.items ?? []).filter(
+        (i) => i.status !== "ok" && !assertedUrls.has(normaliseUrl(i.input)),
+      ),
+    [response, assertedUrls],
+  );
+
+  const answered = useMemo(
+    () =>
+      (response?.items ?? []).filter((i) => i.status !== "ok").length -
+      unread.length,
+    [response, unread],
   );
 
   // Worst first. Paste order is how you typed it; this is the order you need
@@ -259,18 +409,33 @@ function Check() {
   //
   // Keyed off `response` rather than a derived array — `response?.items ?? []`
   // is a fresh array on every render, which would make this memo do nothing.
-  const checked = useMemo(() => {
-    const rows = (response?.items ?? [])
+  const rows = useMemo((): Row[] => {
+    const read: Row[] = (response?.items ?? [])
       .filter((i) => i.status === "ok" && i.result)
       .map((i) => ({
-        item: i,
+        key: i.input,
         result: i.result as SourceResult,
-        verdict: verdictFor((i.result as SourceResult).licence.spdx, usage),
+        asset: null,
       }));
-    return rows.sort((a, b) => RANK[a.verdict.level] - RANK[b.verdict.level]);
-  }, [response, usage]);
 
-  const results = checked.map((c) => c.result);
+    const mine: Row[] = asserted.map((a) => ({
+      key: `you:${a.id}`,
+      result: toResult(a),
+      asset: a,
+    }));
+
+    return [...read, ...mine];
+  }, [response, asserted]);
+
+  const checked = useMemo(
+    () =>
+      rows
+        .map((row) => ({ ...row, verdict: verdictForResult(row.result, usage) }))
+        .sort((a, b) => RANK[a.verdict.level] - RANK[b.verdict.level]),
+    [rows, usage],
+  );
+
+  const results = useMemo(() => checked.map((c) => c.result), [checked]);
 
   const byLevel = (level: Level) =>
     checked.filter((c) => c.verdict.level === level).length;
@@ -283,9 +448,7 @@ function Check() {
     ? checked.filter((c) => c.verdict.level === active)
     : checked;
 
-  const unkept = checked
-    .map((c) => c.result)
-    .filter((r) => !savedKeys.has(resultKey(r)));
+  const unkept = results.filter((r) => !savedKeys.has(resultKey(r)));
 
   /**
    * Signed in this is one round trip per source, which is slow and fine — the
@@ -328,6 +491,7 @@ function Check() {
   }
 
   const savedCount = savedKeys.size;
+  const full = asserted.length >= MAX_ASSERTED;
 
   return (
     <>
@@ -378,14 +542,12 @@ function Check() {
           <Toggle
             on={usage.commercial}
             label="Commercial project"
-            onClick={() =>
-              changeUsage({ ...usage, commercial: !usage.commercial })
-            }
+            onClick={() => setUsage({ ...usage, commercial: !usage.commercial })}
           />
           <Toggle
             on={usage.modify}
             label="I will edit or adapt it"
-            onClick={() => changeUsage({ ...usage, modify: !usage.modify })}
+            onClick={() => setUsage({ ...usage, modify: !usage.modify })}
           />
         </div>
         <p className="mt-3 text-[12px] text-muted">
@@ -411,7 +573,7 @@ function Check() {
         <div className="mt-4 flex flex-wrap items-center gap-3">
           <button
             type="button"
-            onClick={() => void runCheck(pending, usage)}
+            onClick={() => void runCheck(pending)}
             disabled={busy || pending.length === 0}
             className="rounded-full bg-brand px-7 py-3 text-[14px] font-medium text-white transition hover:bg-brand-hover disabled:cursor-not-allowed disabled:opacity-60"
           >
@@ -462,7 +624,53 @@ function Check() {
             split the rest into a second check.
           </p>
         ) : null}
+
+        {/* The four sources cover a slice of a real project. Everything else
+            — the typeface, the music, the icon set, the stock photo — has to
+            come from the person, or the report is a report about a fifth of
+            their work. */}
+        <div className="mt-6 border-t border-line pt-5">
+          <p className="text-[13px] leading-relaxed text-body">
+            Using a font, a music track, an icon set, a stock photo? Idea Craft
+            cannot read those, but you can tell it what their licence is and
+            they go into the same verdicts, credits and report &mdash; marked
+            as yours.
+          </p>
+          <button
+            type="button"
+            onClick={() => describe()}
+            disabled={full}
+            className="mt-4 rounded-full border border-line-strong bg-raised px-5 py-2.5 text-[13px] text-body transition hover:border-accent hover:text-accent disabled:cursor-not-allowed disabled:opacity-60"
+          >
+            + Add something by hand
+          </button>
+          {asserted.length > 0 ? (
+            <span className="ml-3 text-[12px] text-faint">
+              {plural(asserted.length, "entry", "entries")} of your own
+            </span>
+          ) : null}
+          {full ? (
+            <p className="mt-3 text-[12px] text-accent">
+              That is {MAX_ASSERTED} entries of your own, which is the limit for
+              one check. Split the project in two.
+            </p>
+          ) : null}
+        </div>
       </section>
+
+      <div id="by-hand" className="mx-auto mt-8 max-w-3xl scroll-mt-24">
+        {editor ? (
+          <AssetForm
+            key={editor.asset.id}
+            initial={editor.asset}
+            usage={usage}
+            knownUrls={knownUrls}
+            editing={editor.existing}
+            onSave={saveAsset}
+            onCancel={() => setEditor(null)}
+          />
+        ) : null}
+      </div>
 
       {failed ? (
         <p className="mx-auto mt-6 max-w-3xl rounded-2xl border border-accent/40 bg-brand/10 px-6 py-3 text-center text-[13px] text-accent">
@@ -472,175 +680,196 @@ function Check() {
       ) : null}
 
       {response ? (
-        <>
-          <p className="mx-auto mt-10 max-w-3xl text-center text-[12px] text-faint">
-            {plural(response.found, "link")} in ·{" "}
-            {plural(checked.length, "source")} read
-            {unread.length > 0 ? ` · ${unread.length} not read` : ""}
-            {response.deduped > 0
-              ? ` · ${plural(response.deduped, "duplicate")} collapsed`
-              : ""}
-            {response.ignored > 0
-              ? ` · ${plural(response.ignored, "licence link")} ignored`
-              : ""}
-            {response.dropped > 0
-              ? ` · ${response.dropped} past the ${MAX_LINKS}-link limit`
-              : ""}
-            {response.ms !== null ? ` · ${response.ms}ms` : ""}
+        <p className="mx-auto mt-10 max-w-3xl text-center text-[12px] text-faint">
+          {plural(response.found, "link")} in ·{" "}
+          {plural(rows.filter((r) => !r.asset).length, "source")} read
+          {unread.length > 0 ? ` · ${unread.length} not read` : ""}
+          {answered > 0 ? ` · ${answered} answered by you` : ""}
+          {response.deduped > 0
+            ? ` · ${plural(response.deduped, "duplicate")} collapsed`
+            : ""}
+          {response.ignored > 0
+            ? ` · ${plural(response.ignored, "licence link")} ignored`
+            : ""}
+          {response.dropped > 0
+            ? ` · ${response.dropped} past the ${MAX_LINKS}-link limit`
+            : ""}
+          {response.ms !== null ? ` · ${response.ms}ms` : ""}
+        </p>
+      ) : null}
+
+      {sharePath ? (
+        <p className="mt-4 flex flex-wrap items-center justify-center gap-3 text-[12px] text-muted">
+          <button
+            type="button"
+            onClick={() => void copyLink()}
+            className="rounded-full border border-line px-5 py-2 text-[12px] text-body transition hover:border-accent hover:text-accent"
+          >
+            {copied ? "Link copied" : "Copy link to this check"}
+          </button>
+          <button
+            type="button"
+            onClick={() => window.print()}
+            className="rounded-full border border-line px-5 py-2 text-[12px] text-body transition hover:border-accent hover:text-accent"
+          >
+            Export PDF
+          </button>
+          The link reopens this check; the PDF is the report to hand over.
+        </p>
+      ) : null}
+
+      {results.length > 0 ? (
+        <div className="mx-auto max-w-3xl">
+          <CompliancePanel
+            title={project.trim() || DEFAULT_PROJECT}
+            results={results}
+            usage={usage}
+            onUsageChange={setUsage}
+            hideUsage
+            shareUrl={shareUrl}
+          />
+        </div>
+      ) : null}
+
+      {unread.length > 0 ? (
+        <section className="mx-auto mt-10 max-w-3xl rounded-2xl border border-line bg-surface p-6">
+          <p className="text-[11px] font-medium uppercase tracking-[0.18em] text-accent">
+            Not checked &middot; {unread.length}
           </p>
-
-          {checked_.length > 0 ? (
-            <p className="mt-4 flex flex-wrap items-center justify-center gap-3 text-[12px] text-muted">
-              <button
-                type="button"
-                onClick={() => void copyLink()}
-                className="rounded-full border border-line px-5 py-2 text-[12px] text-body transition hover:border-accent hover:text-accent"
-              >
-                {copied ? "Link copied" : "Copy link to this check"}
-              </button>
-              <button
-                type="button"
-                onClick={() => window.print()}
-                className="rounded-full border border-line px-5 py-2 text-[12px] text-body transition hover:border-accent hover:text-accent"
-              >
-                Export PDF
-              </button>
-              The link reopens this check; the PDF is the report to hand over.
-            </p>
-          ) : null}
-
-          {results.length > 0 ? (
-            <div className="mx-auto max-w-3xl">
-              <CompliancePanel
-                title={project.trim() || DEFAULT_PROJECT}
-                results={results}
-                usage={usage}
-                onUsageChange={changeUsage}
-                hideUsage
+          <p className="mt-3 text-[13px] leading-relaxed text-body">
+            These are missing from the counts above and from your credits. We
+            would rather leave a gap than fill it with a guess &mdash; but if
+            you know what the licence is, say so and the gap closes.
+          </p>
+          <ul className="mt-5 flex flex-col gap-4">
+            {unread.map((item) => (
+              <Unread
+                key={item.input}
+                item={item}
+                onDescribe={() => describe(item.input)}
+                disabled={full}
               />
-            </div>
-          ) : null}
+            ))}
+          </ul>
+        </section>
+      ) : null}
 
-          {unread.length > 0 ? (
-            <section className="mx-auto mt-10 max-w-3xl rounded-2xl border border-line bg-surface p-6">
-              <p className="text-[11px] font-medium uppercase tracking-[0.18em] text-accent">
-                Not checked &middot; {unread.length}
-              </p>
-              <p className="mt-3 text-[13px] leading-relaxed text-body">
-                These are missing from the counts above and from your credits.
-                We would rather leave a gap than fill it with a guess.
-              </p>
-              <ul className="mt-5 flex flex-col gap-4">
-                {unread.map((item) => (
-                  <Unread key={item.input} item={item} />
-                ))}
-              </ul>
-            </section>
-          ) : null}
+      {saveError ? (
+        <p className="mx-auto mt-6 max-w-3xl rounded-2xl border border-accent/40 bg-brand/10 px-6 py-3 text-center text-[13px] text-accent">
+          Could not save: {saveError}
+        </p>
+      ) : null}
 
-          {saveError ? (
-            <p className="mx-auto mt-6 max-w-3xl rounded-2xl border border-accent/40 bg-brand/10 px-6 py-3 text-center text-[13px] text-accent">
-              Could not save: {saveError}
-            </p>
-          ) : null}
+      {results.length > 0 ? (
+        <>
+          <div className="mt-12 flex flex-wrap items-baseline justify-between gap-3">
+            <h2 className="font-serif text-2xl text-ink">
+              {plural(results.length, "source")} checked
+            </h2>
+            {savedCount > 0 ? (
+              <Link
+                href="/my-ideas"
+                className="text-[12px] text-accent underline-offset-2 hover:underline"
+              >
+                {savedCount} kept in &ldquo;{project.trim()}&rdquo; &rarr;
+              </Link>
+            ) : (
+              <span className="text-[12px] text-muted">
+                Keep any of these and they become a project you can reopen.
+              </span>
+            )}
+          </div>
 
-          {results.length > 0 ? (
-            <>
-              <div className="mt-12 flex flex-wrap items-baseline justify-between gap-3">
-                <h2 className="font-serif text-2xl text-ink">
-                  {plural(results.length, "source")} checked
-                </h2>
-                {savedCount > 0 ? (
-                  <Link
-                    href="/my-ideas"
-                    className="text-[12px] text-accent underline-offset-2 hover:underline"
-                  >
-                    {savedCount} kept in &ldquo;{project.trim()}&rdquo; &rarr;
-                  </Link>
-                ) : (
-                  <span className="text-[12px] text-muted">
-                    Keep any of these and they become a project you can reopen.
-                  </span>
-                )}
-              </div>
-
-              <div className="mt-5 flex flex-wrap items-center gap-2">
-                <Chip on={active === null} onClick={() => setOnly(null)}>
-                  Everything {checked.length}
+          <div className="mt-5 flex flex-wrap items-center gap-2">
+            <Chip on={active === null} onClick={() => setOnly(null)}>
+              Everything {checked.length}
+            </Chip>
+            {LEVELS.map(({ level, label }) => {
+              const n = byLevel(level);
+              if (n === 0) return null;
+              return (
+                <Chip
+                  key={level}
+                  on={active === level}
+                  onClick={() => setOnly(active === level ? null : level)}
+                >
+                  {label} {n}
                 </Chip>
-                {LEVELS.map(({ level, label }) => {
-                  const n = byLevel(level);
-                  if (n === 0) return null;
-                  return (
-                    <Chip
-                      key={level}
-                      on={active === level}
-                      onClick={() => setOnly(active === level ? null : level)}
-                    >
-                      {label} {n}
-                    </Chip>
-                  );
-                })}
-                <span className="text-[12px] text-faint">Worst first.</span>
+              );
+            })}
+            <span className="text-[12px] text-faint">Worst first.</span>
 
-                {unkept.length > 0 ? (
-                  <button
-                    type="button"
-                    onClick={() => void keepAll()}
-                    disabled={keeping}
-                    className="ml-auto rounded-full border border-line px-5 py-2 text-[12px] text-body transition hover:border-accent hover:text-accent disabled:cursor-not-allowed disabled:opacity-60"
-                  >
-                    {keeping
-                      ? "Keeping…"
-                      : `Keep all ${unkept.length}`}
-                  </button>
-                ) : null}
-              </div>
+            {unkept.length > 0 ? (
+              <button
+                type="button"
+                onClick={() => void keepAll()}
+                disabled={keeping}
+                className="ml-auto rounded-full border border-line px-5 py-2 text-[12px] text-body transition hover:border-accent hover:text-accent disabled:cursor-not-allowed disabled:opacity-60"
+              >
+                {keeping ? "Keeping…" : `Keep all ${unkept.length}`}
+              </button>
+            ) : null}
+          </div>
 
-              <ul className="mt-6 grid gap-5 sm:grid-cols-2">
-                {shown.map(({ item, result: r, verdict }) => {
-                  const saved = savedKeys.has(resultKey(r));
-                  return (
-                    <ResultCard
-                      key={item.input}
-                      result={r}
-                      verdict={verdict}
-                      action={
-                        <div className="flex items-center gap-2">
-                          {/* A source you cannot use is the only kind that
-                              needs anything from you, and what it needs is a
-                              different source. This is what search is for. */}
-                          {verdict.level === "blocked" ||
-                          verdict.level === "verify" ? (
-                            <Link
-                              href={`/search?q=${encodeURIComponent(
-                                r.title,
-                              )}&category=${categoryOf(r).toLowerCase()}`}
-                              className="rounded-full border border-line px-4 py-1.5 text-[11px] font-medium text-muted transition hover:border-accent hover:text-accent"
-                            >
-                              Find a replacement &rarr;
-                            </Link>
-                          ) : null}
+          <ul className="mt-6 grid gap-5 sm:grid-cols-2">
+            {shown.map(({ key, result: r, verdict, asset }) => {
+              const saved = savedKeys.has(resultKey(r));
+              return (
+                <ResultCard
+                  key={key}
+                  result={r}
+                  verdict={verdict}
+                  action={
+                    <div className="flex items-center gap-2">
+                      {asset ? (
+                        <>
                           <button
                             type="button"
-                            onClick={() => onSave(r)}
-                            disabled={saved}
-                            className={`rounded-full border px-4 py-1.5 text-[11px] font-medium transition ${
-                              saved
-                                ? "cursor-default border-accent/40 bg-brand/10 text-accent"
-                                : "border-line-strong bg-raised text-body hover:border-accent hover:text-accent"
-                            }`}
+                            onClick={() => openForm(asset, true)}
+                            className="rounded-full border border-line px-4 py-1.5 text-[11px] font-medium text-muted transition hover:border-accent hover:text-accent"
                           >
-                            {saved ? "Kept" : "Keep"}
+                            Edit
                           </button>
-                        </div>
-                      }
-                    />
-                  );
-                })}
-              </ul>
-            </>
-          ) : null}
+                          <button
+                            type="button"
+                            onClick={() => dropAsset(asset.id)}
+                            className="rounded-full border border-line px-4 py-1.5 text-[11px] font-medium text-muted transition hover:border-accent hover:text-accent"
+                          >
+                            Remove
+                          </button>
+                        </>
+                      ) : verdict.level === "blocked" ||
+                        verdict.level === "verify" ? (
+                        // A source you cannot use is the only kind that needs
+                        // anything from you, and what it needs is a different
+                        // source. This is what search is for.
+                        <Link
+                          href={`/search?q=${encodeURIComponent(
+                            r.title,
+                          )}&category=${categoryOf(r).toLowerCase()}`}
+                          className="rounded-full border border-line px-4 py-1.5 text-[11px] font-medium text-muted transition hover:border-accent hover:text-accent"
+                        >
+                          Find a replacement &rarr;
+                        </Link>
+                      ) : null}
+                      <button
+                        type="button"
+                        onClick={() => onSave(r)}
+                        disabled={saved}
+                        className={`rounded-full border px-4 py-1.5 text-[11px] font-medium transition ${
+                          saved
+                            ? "cursor-default border-accent/40 bg-brand/10 text-accent"
+                            : "border-line-strong bg-raised text-body hover:border-accent hover:text-accent"
+                        }`}
+                      >
+                        {saved ? "Kept" : "Keep"}
+                      </button>
+                    </div>
+                  }
+                />
+              );
+            })}
+          </ul>
         </>
       ) : null}
 
@@ -662,7 +891,9 @@ function Check() {
       <p className="mx-auto mt-10 max-w-2xl text-center text-[11px] leading-relaxed text-faint">
         Idea Craft reads Wikimedia Commons, Openverse, OpenAlex (or any DOI) and
         Project Gutenberg. Licence tags and attribution lines are reproduced as
-        each source published them. This is a compliance aid, not legal advice.
+        each source published them; anything you added by hand is reproduced as
+        you stated it, and labelled that way. This is a compliance aid, not
+        legal advice.
       </p>
       </main>
 
@@ -677,8 +908,16 @@ function Check() {
   );
 }
 
-/** A link that produced no verdict, and the honest reason why. */
-function Unread({ item }: { item: CheckItem }) {
+/** A link that produced no verdict, the honest reason why, and a way out. */
+function Unread({
+  item,
+  onDescribe,
+  disabled,
+}: {
+  item: CheckItem;
+  onDescribe: () => void;
+  disabled: boolean;
+}) {
   const LABEL: Record<string, string> = {
     unsupported: "Not a source we read",
     notfound: "No record",
@@ -705,6 +944,18 @@ function Unread({ item }: { item: CheckItem }) {
       <p className="mt-2 text-[12px] leading-relaxed text-body">
         {item.reason}
       </p>
+
+      {/* Not offered for "not a link": there is nothing there to describe. */}
+      {item.status === "invalid" ? null : (
+        <button
+          type="button"
+          onClick={onDescribe}
+          disabled={disabled}
+          className="mt-3 rounded-full border border-line-strong px-4 py-1.5 text-[11px] font-medium text-body transition hover:border-accent hover:text-accent disabled:cursor-not-allowed disabled:opacity-60"
+        >
+          I know this licence &rarr;
+        </button>
+      )}
     </li>
   );
 }

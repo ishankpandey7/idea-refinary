@@ -15,7 +15,7 @@ import {
 } from "../_lib/ideas-db";
 import { useAuth } from "../_components/AuthProvider";
 import CompliancePanel from "../_components/CompliancePanel";
-import { verdictFor } from "@/lib/licence-rules";
+import { verdictForResult } from "@/lib/asserted";
 import { useUsage } from "../_lib/usage";
 import { tally } from "@/lib/credits";
 import {
@@ -496,7 +496,7 @@ function Home() {
             <ResultCard
               key={resultKey(r)}
               result={r}
-              verdict={verdictFor(r.licence.spdx, usage)}
+              verdict={verdictForResult(r, usage)}
               action={
                 <button
                   type="button"

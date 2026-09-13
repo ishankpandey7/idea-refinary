@@ -1,7 +1,7 @@
 import type { SourceResult } from "@/types/source-result";
 import { adapters, labelFor, resolvers } from "./adapters/registry";
 import type { ResolveOutcome } from "./resolve-types";
-import { MAX_LINKS, toUrl } from "./links";
+import { MAX_LINKS, normaliseUrl, toUrl } from "./links";
 
 /**
  * Turns a pile of pasted links into licence verdicts.
@@ -67,16 +67,6 @@ function isDeed(url: URL): boolean {
     return /^\/(licenses|publicdomain)\//.test(url.pathname);
   }
   return host === "spdx.org" || host === "rightsstatements.org";
-}
-
-/** Same shape as the search dedupe: host without www, path without a tail. */
-function normUrl(raw: string): string {
-  try {
-    const u = new URL(raw);
-    return `${u.hostname.replace(/^www\./, "")}${u.pathname.replace(/\/+$/, "")}`.toLowerCase();
-  } catch {
-    return raw.trim().toLowerCase();
-  }
 }
 
 // ---------------------------------------------------------------------------
@@ -316,12 +306,12 @@ export async function checkLinks(rawInputs: string[]): Promise<CheckResponse> {
   const resolved = new Set(
     items
       .filter((i) => i.status === "ok" && i.result)
-      .map((i) => normUrl((i.result as SourceResult).canonicalUrl)),
+      .map((i) => normaliseUrl((i.result as SourceResult).canonicalUrl)),
   );
 
   const visible = items.filter((i) => {
     if (i.status === "ok") return true;
-    if (!resolved.has(normUrl(i.input))) return true;
+    if (!resolved.has(normaliseUrl(i.input))) return true;
     deduped += 1;
     return false;
   });

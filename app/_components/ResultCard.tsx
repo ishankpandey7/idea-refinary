@@ -3,6 +3,7 @@
 import type { ReactNode } from "react";
 import type { SourceResult } from "@/types/source-result";
 import type { Verdict } from "@/lib/licence-rules";
+import { isAsserted, licenceLabel, SELF_LABEL } from "@/lib/asserted";
 
 // "Known" rather than "open": NC and ND variants are Creative Commons but are
 // not open under the Open Definition. They are styled apart from UNKNOWN
@@ -65,14 +66,30 @@ export default function ResultCard({
   verdict?: Verdict;
 }) {
   const y = year(r.publishedAt);
+  const mine = isAsserted(r);
+  const licence = licenceLabel(r);
+
+  // Strictly the tag, even on a row somebody entered themselves: green here
+  // means "a recognised open licence", and painting "all rights reserved"
+  // green because a human typed it would be the worst possible read.
   const known = KNOWN_LICENCES.has(r.licence.spdx);
+
+  // A font on a hard drive has no address, and a card that linked to nowhere
+  // would be worse than one that does not link at all.
+  const href = r.canonicalUrl.trim() ? r.canonicalUrl : null;
 
   return (
     <li className="flex flex-col rounded-2xl border border-line bg-surface p-6 transition hover:border-accent/50">
       <div className="flex items-center justify-between gap-3">
-        <span className="text-[10px] font-semibold uppercase tracking-[0.16em] text-accent">
-          {r.sourceId}
-        </span>
+        {mine ? (
+          <span className="rounded-full border border-accent/50 bg-brand/10 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[0.14em] text-accent">
+            {SELF_LABEL}
+          </span>
+        ) : (
+          <span className="text-[10px] font-semibold uppercase tracking-[0.16em] text-accent">
+            {r.sourceId}
+          </span>
+        )}
         {y ? <span className="text-[12px] text-muted">{y}</span> : null}
       </div>
 
@@ -90,14 +107,18 @@ export default function ResultCard({
       ) : null}
 
       <h2 className="mt-3 font-serif text-xl leading-snug">
-        <a
-          href={r.canonicalUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-ink underline-offset-4 hover:text-accent hover:underline"
-        >
-          {r.title}
-        </a>
+        {href ? (
+          <a
+            href={href}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-ink underline-offset-4 hover:text-accent hover:underline"
+          >
+            {r.title}
+          </a>
+        ) : (
+          <span className="text-ink">{r.title}</span>
+        )}
       </h2>
 
       <p className="mt-2 line-clamp-2 text-[13px] text-body">
@@ -122,7 +143,7 @@ export default function ResultCard({
             known ? "bg-ok-fg text-page" : "bg-line-strong text-body"
           }`}
         >
-          {r.licence.spdx}
+          {licence}
         </span>
         {r.licence.url ? (
           <a
@@ -163,18 +184,22 @@ export default function ResultCard({
       ) : null}
 
       <p className="mt-3 line-clamp-2 text-[11px] leading-relaxed text-faint">
-        {r.licence.attribution}
+        {r.licence.attribution || "No credit line given."}
       </p>
 
       <div className="mt-4 flex items-center gap-3 border-t border-line pt-4">
-        <a
-          href={r.canonicalUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-[11px] font-medium text-body underline-offset-2 transition hover:text-accent hover:underline"
-        >
-          Open source &#8599;
-        </a>
+        {href ? (
+          <a
+            href={href}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-[11px] font-medium text-body underline-offset-2 transition hover:text-accent hover:underline"
+          >
+            {mine ? "Open link" : "Open source"} &#8599;
+          </a>
+        ) : (
+          <span className="text-[11px] text-faint">No link given</span>
+        )}
         {action ? <div className="ml-auto">{action}</div> : null}
       </div>
     </li>

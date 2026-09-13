@@ -1,7 +1,13 @@
 "use client";
 
 import type { SourceResult } from "@/types/source-result";
-import { verdictFor, type Level, type Usage } from "@/lib/licence-rules";
+import type { Level, Usage } from "@/lib/licence-rules";
+import {
+  isAsserted,
+  licenceLabel,
+  SELF_LABEL,
+  verdictForResult,
+} from "@/lib/asserted";
 import { tally } from "@/lib/credits";
 import { resultKey } from "../_lib/ideas";
 
@@ -75,6 +81,14 @@ export default function PrintSheet({
           {counts.clear} clear &middot; {counts.caution} with conditions
           &middot; {counts.verify} to check &middot; {counts.blocked} not usable
         </p>
+        {counts.asserted > 0 ? (
+          <p>
+            {counts.asserted} of these {counts.asserted === 1 ? "was" : "were"}{" "}
+            entered by hand. Their licences are as the author of this report
+            stated them; Idea Craft did not read them from a source, and they
+            are marked below.
+          </p>
+        ) : null}
       </header>
 
       {counts.blocked > 0 ? (
@@ -88,7 +102,7 @@ export default function PrintSheet({
 
       {SECTIONS.map(({ level, heading }) => {
         const group = results.filter(
-          (r) => verdictFor(r.licence.spdx, usage).level === level,
+          (r) => verdictForResult(r, usage).level === level,
         );
         if (group.length === 0) return null;
 
@@ -99,24 +113,33 @@ export default function PrintSheet({
             </h2>
             <ol>
               {group.map((r) => {
-                const verdict = verdictFor(r.licence.spdx, usage);
+                const verdict = verdictForResult(r, usage);
+                const mine = isAsserted(r);
                 return (
                   <li key={resultKey(r)} data-print-item>
-                    <h3>{r.title}</h3>
+                    <h3>
+                      {r.title}
+                      {mine ? " — stated by hand" : ""}
+                    </h3>
                     <p data-print-meta>
                       {r.authors.join(", ") || "Unknown"}
                       {r.publishedAt ? ` · ${r.publishedAt}` : ""}
                     </p>
                     <p data-print-meta>
-                      Source: {r.sourceId} &middot; Licence: {r.licence.spdx}
+                      Source: {mine ? SELF_LABEL : r.sourceId} &middot; Licence:{" "}
+                      {licenceLabel(r)}
                     </p>
                     {verdict.notes.map((note) => (
                       <p key={note} data-print-meta>
                         {note}
                       </p>
                     ))}
-                    <p data-print-url>{r.canonicalUrl}</p>
-                    <p data-print-attr>{r.licence.attribution}</p>
+                    {r.canonicalUrl ? (
+                      <p data-print-url>{r.canonicalUrl}</p>
+                    ) : null}
+                    <p data-print-attr>
+                      {r.licence.attribution || "No credit line given."}
+                    </p>
                   </li>
                 );
               })}
@@ -128,8 +151,9 @@ export default function PrintSheet({
       <footer data-print-group>
         <p data-print-meta>
           Licence tags are as published by each source, and attribution lines
-          are reproduced exactly as the source supplied them. Idea Craft is a
-          compliance aid, not legal advice.
+          are reproduced exactly as supplied &mdash; by the source, or, where a
+          line is marked as stated by hand, by the author of this report. Idea
+          Craft is a compliance aid, not legal advice.
         </p>
       </footer>
     </section>

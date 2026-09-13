@@ -29,13 +29,20 @@ commercial project"* is not.
    every verdict: **Clear**, **Usable with conditions**, **Check before
    using**, **Not usable here**. Results come back worst first, and one click
    narrows them to just the ones you cannot use.
-3. **Hand it over.** Download the attribution block as plain text, Markdown or
+3. **Fill the gaps.** The four sources cover a slice of a real project; the
+   typeface, the music bed, the icon set and the stock photo are not in any
+   of them. Describe those yourself — pick the licence from a list that runs
+   from CC BY to the SIL Open Font Licence to "a stock licence I paid for" —
+   and they are judged, credited and reported alongside everything else,
+   labelled on every line as your word rather than a source's.
+4. **Hand it over.** Download the attribution block as plain text, Markdown or
    CSV, or print a licence report to PDF — grouped by verdict, with what
    cannot be used on the first page. Every attribution line is the string the
    provider published, verbatim.
-4. **Share it.** A finished check lives in the address bar, carrying both the
-   material *and* the intent it was judged under. Send it and the other
-   person sees the same answers, not their own.
+5. **Share it.** A finished check lives in the address bar, carrying the
+   material, everything you described by hand, *and* the intent it was all
+   judged under. Send it and the other person sees the same answers, not
+   their own.
 
 Search across the same four sources is still there, one tab over, for when
 you need material you do not have yet.
@@ -68,6 +75,10 @@ a source that fails to answer comes back as unanswered — neither is ever
 softened into something that looks like a licence. A wrong "clear" is the
 one failure this tool cannot survive.
 
+That holds for the entries you add by hand too. Idea Craft does not decide
+what those are; you state it, and every counter, credits file and printed
+report says which lines it read and which lines it was told.
+
 ## Sources
 
 | Source           | Covers   | Link shapes it resolves                                                     |
@@ -77,7 +88,9 @@ one failure this tool cannot survive.
 | OpenAlex         | papers   | `openalex.org/W…`, `doi.org/10.…`, or a bare DOI                             |
 | Project Gutenberg | writing | `/ebooks/<id>`, `/files/<id>/…`, `/cache/epub/<id>/…`                        |
 
-All four are queried anonymously. No API key is required.
+All four are queried anonymously. No API key is required. Anything else in
+your project — a font, a track, an icon set, a paid stock photo — is added by
+hand and marked as yours.
 
 ## Run it
 
@@ -94,7 +107,8 @@ variables and the database migrations.
 - `gutendex.com` returns 403 to Vercel's IP range, so Project Gutenberg is
   unreachable on the deployed site. It answers normally from a home
   connection. Search falls back to recorded fixtures and labels them as
-  cached; the checker reports the book as unchecked rather than guessing.
+  cached; the checker reports the book as unchecked rather than guessing, and
+  offers to let you state the licence yourself.
 - gutendex's first lookup for a given book can take 10–15 seconds, past the
   8-second budget. A second check usually succeeds.
 - Licence data is only as good as what each source published. This is a

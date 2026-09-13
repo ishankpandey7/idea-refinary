@@ -86,3 +86,19 @@ export function toUrl(raw: string): URL | null {
     return null;
   }
 }
+
+/**
+ * Host without www, path without a trailing slash, lowercased.
+ *
+ * The one rule for deciding that two links are the same asset — used by the
+ * checker to collapse twins, and by the by-hand form to notice that a source
+ * already answered for a link someone is about to describe themselves.
+ */
+export function normaliseUrl(raw: string): string {
+  try {
+    const u = new URL(raw);
+    return `${u.hostname.replace(/^www\./, "")}${u.pathname.replace(/\/+$/, "")}`.toLowerCase();
+  } catch {
+    return raw.trim().toLowerCase();
+  }
+}

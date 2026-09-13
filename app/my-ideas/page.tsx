@@ -11,7 +11,8 @@ import PrintSheet from "../_components/PrintSheet";
 import MembersPanel from "../_components/MembersPanel";
 import IdeaSearch from "../_components/IdeaSearch";
 import CompliancePanel from "../_components/CompliancePanel";
-import { verdictFor, type Usage } from "@/lib/licence-rules";
+import type { Usage } from "@/lib/licence-rules";
+import { verdictForResult } from "@/lib/asserted";
 import {
   listIdeas,
   removeIdea,
@@ -338,7 +339,7 @@ function MyIdeas() {
                       <ResultCard
                         key={resultKey(r)}
                         result={r}
-                        verdict={verdictFor(r.licence.spdx, open.usage)}
+                        verdict={verdictForResult(r, open.usage)}
                         action={
                           <button
                             type="button"
