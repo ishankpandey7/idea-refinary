@@ -8,6 +8,7 @@ import { extractLinks, MAX_LINKS } from "@/lib/links";
 import { verdictFor, type Level, type Usage } from "@/lib/licence-rules";
 import ResultCard from "./_components/ResultCard";
 import CompliancePanel from "./_components/CompliancePanel";
+import PrintSheet from "./_components/PrintSheet";
 import { useAuth } from "./_components/AuthProvider";
 import { readUsage, writeUsage, DEFAULT_USAGE, usageLabel } from "./_lib/usage";
 import { resultKey, saveResult, savedKeysFor } from "./_lib/ideas-db";
@@ -271,7 +272,11 @@ export default function Check() {
     : (readIdeas().find((i) => i.query === project.trim())?.results.length ?? 0);
 
   return (
-    <main className="mx-auto w-full max-w-5xl px-6 pb-24 pt-16 sm:px-10">
+    <>
+      <main
+        data-print-hide
+        className="mx-auto w-full max-w-5xl px-6 pb-24 pt-16 sm:px-10"
+      >
       <h1 className="text-center font-serif text-5xl leading-[1.1] text-ink sm:text-6xl">
         Can you actually
         <br />
@@ -422,7 +427,14 @@ export default function Check() {
               >
                 {copied ? "Link copied" : "Copy link to this check"}
               </button>
-              Reopens with the same material and the same intent.
+              <button
+                type="button"
+                onClick={() => window.print()}
+                className="rounded-full border border-line px-5 py-2 text-[12px] text-body transition hover:border-accent hover:text-accent"
+              >
+                Export PDF
+              </button>
+              The link reopens this check; the PDF is the report to hand over.
             </p>
           ) : null}
 
@@ -554,7 +566,16 @@ export default function Check() {
         Project Gutenberg. Licence tags and attribution lines are reproduced as
         each source published them. This is a compliance aid, not legal advice.
       </p>
-    </main>
+      </main>
+
+      {results.length > 0 ? (
+        <PrintSheet
+          title={project.trim() || DEFAULT_PROJECT}
+          results={results}
+          usage={usage}
+        />
+      ) : null}
+    </>
   );
 }
 

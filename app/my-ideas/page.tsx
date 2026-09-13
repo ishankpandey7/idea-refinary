@@ -393,7 +393,14 @@ export default function MyIdeas() {
           </ul>
         )}
       </main>
-      {open ? <PrintSheet idea={open} /> : null}
+      {open ? (
+        <PrintSheet
+          title={open.query}
+          results={open.results}
+          usage={open.usage}
+          savedAt={open.savedAt}
+        />
+      ) : null}
     </>
   );
 }

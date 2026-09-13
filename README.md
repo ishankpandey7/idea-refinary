@@ -27,9 +27,15 @@ commercial project"* is not.
    SPDX tag.
 2. **Judge.** Two questions — *commercial?* and *will you edit it?* — decide
    every verdict: **Clear**, **Usable with conditions**, **Check before
-   using**, **Not usable here**.
-3. **Credit.** Export the attribution block as plain text, Markdown or CSV.
-   Every attribution line is the string the provider published, verbatim.
+   using**, **Not usable here**. Results come back worst first, and one click
+   narrows them to just the ones you cannot use.
+3. **Hand it over.** Download the attribution block as plain text, Markdown or
+   CSV, or print a licence report to PDF — grouped by verdict, with what
+   cannot be used on the first page. Every attribution line is the string the
+   provider published, verbatim.
+4. **Share it.** A finished check lives in the address bar, carrying both the
+   material *and* the intent it was judged under. Send it and the other
+   person sees the same answers, not their own.
 
 Search across the same four sources is still there, one tab over, for when
 you need material you do not have yet.
