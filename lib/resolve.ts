@@ -56,6 +56,21 @@ export const EMPTY_CHECK: CheckResponse = {
 };
 
 /**
+ * A link back to Idea Craft itself.
+ *
+ * An exported credits file ends with the address that reopens the check —
+ * that is how entries someone added by hand survive the trip, since they are
+ * not links to anything a source could read. Paste that file back in and the
+ * address is in it, so it gets skipped the same way a licence deed does:
+ * correct to notice, useless to report.
+ */
+function isSelf(url: URL, host: string | null): boolean {
+  if (!host) return false;
+  const bare = (h: string) => h.toLowerCase().replace(/^www\./, "");
+  return bare(url.host) === bare(host);
+}
+
+/**
  * A licence deed describes material; it is never the material. These turn up
  * constantly because Creative Commons attribution strings quote the deed URL,
  * so a re-check of an exported credits file would otherwise open with a row
@@ -139,7 +154,11 @@ function claim(url: URL): { sourceId: string; key: string } | null {
   return null;
 }
 
-export async function checkLinks(rawInputs: string[]): Promise<CheckResponse> {
+export async function checkLinks(
+  rawInputs: string[],
+  /** This deployment's own host, so a link home is not reported as a source. */
+  selfHost: string | null = null,
+): Promise<CheckResponse> {
   const started = performance.now();
 
   const seenInput = new Set<string>();
@@ -171,7 +190,7 @@ export async function checkLinks(rawInputs: string[]): Promise<CheckResponse> {
       continue;
     }
 
-    if (isDeed(url)) {
+    if (isDeed(url) || isSelf(url, selfHost)) {
       ignored += 1;
       continue;
     }

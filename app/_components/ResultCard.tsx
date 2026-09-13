@@ -43,6 +43,21 @@ export function categoryOf(r: SourceResult): CategoryLabel {
   );
 }
 
+/**
+ * How a saved project is broken up on screen.
+ *
+ * Separate from CATEGORY_LABELS because that one also names a search filter,
+ * and there is nothing to search for here. A typeface is not research, and
+ * filing it under research because "record" had nowhere else to go was the
+ * kind of small lie that makes a report hard to trust.
+ */
+export const GROUP_LABELS = [...CATEGORY_LABELS, "Your own"] as const;
+export type GroupLabel = (typeof GROUP_LABELS)[number];
+
+export function groupOf(r: SourceResult): GroupLabel {
+  return isAsserted(r) ? "Your own" : categoryOf(r);
+}
+
 function year(publishedAt: string | null): string | null {
   if (!publishedAt) return null;
   const y = publishedAt.slice(0, 4);

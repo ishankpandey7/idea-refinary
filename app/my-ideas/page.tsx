@@ -4,8 +4,8 @@ import { Suspense, useEffect, useMemo, useState } from "react";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import ResultCard, {
-  CATEGORY_LABELS,
-  categoryOf,
+  GROUP_LABELS,
+  groupOf,
 } from "../_components/ResultCard";
 import PrintSheet from "../_components/PrintSheet";
 import MembersPanel from "../_components/MembersPanel";
@@ -326,8 +326,8 @@ function MyIdeas() {
               />
             ) : null}
 
-            {CATEGORY_LABELS.map((label) => {
-              const group = open.results.filter((r) => categoryOf(r) === label);
+            {GROUP_LABELS.map((label) => {
+              const group = open.results.filter((r) => groupOf(r) === label);
               if (group.length === 0) return null;
               return (
                 <div key={label} className="mt-12">
@@ -361,9 +361,9 @@ function MyIdeas() {
         ) : (
           <ul className="mt-14 grid gap-5 sm:grid-cols-2">
             {ideas.map((idea) => {
-              const counts = CATEGORY_LABELS.map((label) => ({
+              const counts = GROUP_LABELS.map((label) => ({
                 label,
-                n: idea.results.filter((r) => categoryOf(r) === label).length,
+                n: idea.results.filter((r) => groupOf(r) === label).length,
               })).filter((c) => c.n > 0);
 
               return (

@@ -29,6 +29,9 @@ export async function POST(request: Request) {
   const links = [...fromText, ...fromList];
   if (links.length === 0) return NextResponse.json(EMPTY_CHECK);
 
-  const result: CheckResponse = await checkLinks(links);
+  const result: CheckResponse = await checkLinks(
+    links,
+    request.headers.get("host"),
+  );
   return NextResponse.json(result);
 }

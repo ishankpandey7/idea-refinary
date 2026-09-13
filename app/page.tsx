@@ -688,8 +688,10 @@ function Check() {
           {response.deduped > 0
             ? ` · ${plural(response.deduped, "duplicate")} collapsed`
             : ""}
+          {/* Licence deeds, and the link home an exported credits file ends
+              with. References to material, never material. */}
           {response.ignored > 0
-            ? ` · ${plural(response.ignored, "licence link")} ignored`
+            ? ` · ${plural(response.ignored, "reference link")} ignored`
             : ""}
           {response.dropped > 0
             ? ` · ${response.dropped} past the ${MAX_LINKS}-link limit`
