@@ -313,7 +313,7 @@ export default function Home() {
           </p>
           {currentIdea && user ? (
             <p className="mt-2 text-[13px] text-muted">
-              Saving to idea{" "}
+              Saving to project{" "}
               <span className="text-body">
                 &ldquo;{currentIdea}&rdquo;
               </span>
@@ -505,7 +505,7 @@ export default function Home() {
             <div className="mt-16">
               <div className="flex items-end justify-between gap-4">
                 <h2 className="flex items-center gap-2 text-[13px] font-semibold uppercase tracking-[0.16em] text-accent">
-                  <span aria-hidden>&#128193;</span> Recent Saved Ideas
+                  <span aria-hidden>&#128193;</span> Recent projects
                 </h2>
                 <Link
                   href="/my-ideas"
@@ -538,7 +538,7 @@ export default function Home() {
                         href={`/my-ideas?idea=${encodeURIComponent(idea.id)}`}
                         className="ml-auto text-[12px] font-medium text-accent underline-offset-2 hover:underline"
                       >
-                        Open board &rarr;
+                        Open project &rarr;
                       </Link>
                     </div>
                   </li>

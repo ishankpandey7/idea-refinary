@@ -38,10 +38,10 @@ function when(iso: string): string {
       });
 }
 
-/** Stands in for owner_id on ideas that only exist in this browser. */
+/** Stands in for owner_id on projects that only exist in this browser. */
 const LOCAL_OWNER = "local";
 
-/** Marks an idea someone else owns and shared with you. */
+/** Marks a project someone else owns and shared with you. */
 function SharedBadge() {
   return (
     <span className="rounded-full border border-accent/40 bg-brand/10 px-3 py-1 text-[10px] font-medium uppercase tracking-[0.16em] text-accent">
@@ -126,7 +126,7 @@ export default function MyIdeas() {
     if (openId === ideaId) setOpenId(null);
   }
 
-  // Deep link from the home page's "Open board" — the list arrives after
+  // Deep link from the search page's "Open project" — the list arrives after
   // mount, so this just parks the id and `open` resolves once it lands.
   useEffect(() => {
     const id = new URLSearchParams(window.location.search).get("idea");
@@ -152,17 +152,17 @@ export default function MyIdeas() {
       >
         <div className="flex justify-center">
           <span className="rounded-full border border-line px-4 py-1.5 text-[11px] font-medium uppercase tracking-[0.18em] text-accent">
-            My Ideas
+            My Projects
           </span>
         </div>
 
         <h1 className="mt-10 text-center font-serif text-5xl leading-[1.08] text-ink sm:text-6xl">
-          Streams of <em className="italic text-accent">thought.</em>
+          Everything <em className="italic text-accent">you are using.</em>
         </h1>
 
         <p className="mx-auto mt-6 max-w-xl text-center text-[15px] leading-relaxed text-body">
-          Anything you keep &mdash; from a licence check or a search &mdash;
-          lands here. Open one to see what is in it.
+          Every source you keep lands in a project, with the licence verdicts
+          and the credits that go with it. Open one to see what is inside.
         </p>
 
         {imported ? (
@@ -175,7 +175,7 @@ export default function MyIdeas() {
 
         {!authLoading && ready && !user && ideas.length > 0 ? (
           <p className="mx-auto mt-8 max-w-xl rounded-2xl border border-line bg-surface px-6 py-4 text-center text-[13px] leading-relaxed text-body">
-            These are kept in this browser only.{" "}
+            These projects are kept in this browser only.{" "}
             {configured ? (
               <>
                 <Link
@@ -196,7 +196,7 @@ export default function MyIdeas() {
           <div className="mt-16 text-center">
             <p className="text-[15px] text-muted">
               {user
-                ? "Nothing saved yet."
+                ? "No projects yet."
                 : "Nothing kept in this browser yet."}
             </p>
             <Link
@@ -232,7 +232,7 @@ export default function MyIdeas() {
                 onClick={() => setOpenId(null)}
                 className="rounded-full border border-line px-5 py-2 text-[13px] text-body transition hover:border-accent hover:text-accent"
               >
-                &larr; All ideas
+                &larr; All projects
               </button>
               <h2 className="font-serif text-2xl text-ink">
                 &ldquo;{open.query}&rdquo;
@@ -266,7 +266,7 @@ export default function MyIdeas() {
                   onClick={() => onRemoveIdea(open.id)}
                   className="rounded-full border border-line px-5 py-2 text-[13px] text-muted transition hover:border-accent hover:text-accent"
                 >
-                  Delete idea
+                  Delete project
                 </button>
               ) : null}
             </div>

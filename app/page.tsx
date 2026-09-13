@@ -533,7 +533,7 @@ export default function Check() {
                   </Link>
                 ) : (
                   <span className="text-[12px] text-muted">
-                    Keep any of these to come back to them later.
+                    Keep any of these and they become a project you can reopen.
                   </span>
                 )}
               </div>
