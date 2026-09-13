@@ -1,11 +1,13 @@
 import type { SourceResult } from "@/types/source-result";
 import { getSupabase } from "@/lib/supabase/client";
+import type { Usage } from "@/lib/licence-rules";
 
 export type Idea = {
   id: string;
   ownerId: string;
   query: string;
   savedAt: string;
+  usage: Usage;
   results: SourceResult[];
 };
 
@@ -23,6 +25,8 @@ type IdeaRow = {
   owner_id: string;
   query: string;
   created_at: string;
+  usage_commercial: boolean | null;
+  usage_modify: boolean | null;
   pins: PinRow[] | null;
 };
 
@@ -36,7 +40,7 @@ export async function listIdeas(): Promise<Idea[]> {
   const { data, error } = await getSupabase()
     .from("ideas")
     .select(
-      "id, owner_id, query, created_at, pins ( external_id, payload, created_at )",
+      "id, owner_id, query, created_at, usage_commercial, usage_modify, pins ( external_id, payload, created_at )",
     )
     .order("created_at", { ascending: false });
 
@@ -50,6 +54,10 @@ export async function listIdeas(): Promise<Idea[]> {
     ownerId: row.owner_id,
     query: row.query,
     savedAt: row.created_at,
+    usage: {
+      commercial: row.usage_commercial ?? false,
+      modify: row.usage_modify ?? false,
+    },
     results: (row.pins ?? [])
       .slice()
       .sort((a, b) => a.created_at.localeCompare(b.created_at))
@@ -195,4 +203,24 @@ export async function savedKeysFor(query: string): Promise<Set<string>> {
   return new Set(
     (data ?? []).map((p: { external_id: string }) => p.external_id),
   );
+}
+
+/** Any member may set this — it describes the idea, not its owner. */
+export async function setIdeaUsage(
+  ideaId: string,
+  usage: Usage,
+): Promise<boolean> {
+  const { error } = await getSupabase()
+    .from("ideas")
+    .update({
+      usage_commercial: usage.commercial,
+      usage_modify: usage.modify,
+    })
+    .eq("id", ideaId);
+
+  if (error) {
+    console.error(`[ideas] usage update failed: ${error.message}`);
+    return false;
+  }
+  return true;
 }

@@ -2,6 +2,7 @@
 
 import type { ReactNode } from "react";
 import type { SourceResult } from "@/types/source-result";
+import type { Verdict } from "@/lib/licence-rules";
 
 // "Known" rather than "open": NC and ND variants are Creative Commons but are
 // not open under the Open Definition. They are styled apart from UNKNOWN
@@ -47,12 +48,21 @@ function year(publishedAt: string | null): string | null {
   return /^\d{4}$/.test(y) ? y : null;
 }
 
+const VERDICT_STYLE: Record<Verdict["level"], string> = {
+  clear: "bg-ok-fg text-page",
+  caution: "bg-warn-fg text-page",
+  verify: "bg-warn-fg text-page",
+  blocked: "bg-stop-fg text-page",
+};
+
 export default function ResultCard({
   result: r,
   action,
+  verdict,
 }: {
   result: SourceResult;
   action?: ReactNode;
+  verdict?: Verdict;
 }) {
   const y = year(r.publishedAt);
   const known = KNOWN_LICENCES.has(r.licence.spdx);
@@ -96,7 +106,15 @@ export default function ResultCard({
 
       <div
         className={`mt-4 flex flex-wrap items-center gap-2 rounded-xl px-3 py-2 ${
-          known ? "bg-ok-bg" : "bg-unknown-bg"
+          verdict
+            ? verdict.level === "blocked"
+              ? "bg-stop-bg"
+              : verdict.level === "clear"
+                ? "bg-ok-bg"
+                : "bg-warn-bg"
+            : known
+              ? "bg-ok-bg"
+              : "bg-unknown-bg"
         }`}
       >
         <span
@@ -118,7 +136,25 @@ export default function ResultCard({
             licence
           </a>
         ) : null}
+
+        {verdict ? (
+          <span
+            className={`ml-auto rounded-md px-2 py-1 text-[10px] font-semibold uppercase tracking-[0.12em] ${VERDICT_STYLE[verdict.level]}`}
+          >
+            {verdict.headline}
+          </span>
+        ) : null}
       </div>
+
+      {verdict ? (
+        <ul className="mt-2 flex flex-col gap-1">
+          {verdict.notes.map((note) => (
+            <li key={note} className="text-[12px] leading-relaxed text-soft">
+              {note}
+            </li>
+          ))}
+        </ul>
+      ) : null}
 
       {r.snippet ? (
         <p className="mt-3 line-clamp-3 text-[13px] leading-relaxed text-soft">

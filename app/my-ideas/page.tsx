@@ -9,11 +9,14 @@ import ResultCard, {
 import PrintSheet from "../_components/PrintSheet";
 import MembersPanel from "../_components/MembersPanel";
 import IdeaSearch from "../_components/IdeaSearch";
+import CompliancePanel from "../_components/CompliancePanel";
+import { verdictFor, type Usage } from "@/lib/licence-rules";
 import {
   listIdeas,
   removeIdea,
   removeResult,
   resultKey,
+  setIdeaUsage,
   type Idea,
 } from "../_lib/ideas-db";
 import { useAuth } from "../_components/AuthProvider";
@@ -68,6 +71,15 @@ export default function MyIdeas() {
     const next = await listIdeas();
     setIdeas(next);
     if (!next.some((i) => i.id === ideaId)) setOpenId(null);
+  }
+
+  // Optimistic: the panel recomputes every verdict from this, and waiting a
+  // round trip to redraw a toggle feels broken.
+  async function onUsageChange(ideaId: string, usage: Usage) {
+    setIdeas((prev) =>
+      prev.map((i) => (i.id === ideaId ? { ...i, usage } : i)),
+    );
+    if (!(await setIdeaUsage(ideaId, usage))) setIdeas(await listIdeas());
   }
 
   async function onRemoveIdea(ideaId: string) {
@@ -200,6 +212,13 @@ export default function MyIdeas() {
               onCloseInvite={() => setInviteOpen(false)}
             />
 
+            <CompliancePanel
+              title={open.query}
+              results={open.results}
+              usage={open.usage}
+              onUsageChange={(u) => void onUsageChange(open.id, u)}
+            />
+
             {/* Keyed so switching ideas clears the query and its results. */}
             <IdeaSearch
               key={open.id}
@@ -221,6 +240,7 @@ export default function MyIdeas() {
                       <ResultCard
                         key={resultKey(r)}
                         result={r}
+                        verdict={verdictFor(r.licence.spdx, open.usage)}
                         action={
                           <button
                             type="button"

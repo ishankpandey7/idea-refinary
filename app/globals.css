@@ -21,6 +21,10 @@
   --c-brand-hover: #d13d18;
   --c-ok-bg:       #dff0e4;
   --c-ok-fg:       #2b6b46;
+  --c-warn-bg:     #fdf0d9;
+  --c-warn-fg:     #8a5a10;
+  --c-stop-bg:     #fbe3de;
+  --c-stop-fg:     #a3341c;
   --c-unknown-bg:  #ece5d9;
 }
 
@@ -41,6 +45,10 @@
     --c-brand-hover: #ff5a2e;
     --c-ok-bg:       #13291e;
     --c-ok-fg:       #5cb489;
+    --c-warn-bg:     #2b2113;
+    --c-warn-fg:     #d9a441;
+    --c-stop-bg:     #2e1713;
+    --c-stop-fg:     #e2705a;
     --c-unknown-bg:  #2a1a12;
   }
 }
@@ -61,6 +69,10 @@
   --c-brand-hover: #ff5a2e;
   --c-ok-bg:       #13291e;
   --c-ok-fg:       #5cb489;
+  --c-warn-bg:     #2b2113;
+  --c-warn-fg:     #d9a441;
+  --c-stop-bg:     #2e1713;
+  --c-stop-fg:     #e2705a;
   --c-unknown-bg:  #2a1a12;
 }
 
@@ -80,6 +92,10 @@
   --color-brand-hover: var(--c-brand-hover);
   --color-ok-bg:       var(--c-ok-bg);
   --color-ok-fg:       var(--c-ok-fg);
+  --color-warn-bg:     var(--c-warn-bg);
+  --color-warn-fg:     var(--c-warn-fg);
+  --color-stop-bg:     var(--c-stop-bg);
+  --color-stop-fg:     var(--c-stop-fg);
   --color-unknown-bg:  var(--c-unknown-bg);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
