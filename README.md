@@ -38,14 +38,14 @@ All of it works without an account. Signing in only keeps your picks.
 
 ## Why the verdict is the product
 
-Measured over the 201 real results in `fixtures/`:
+Measured over the 211 real results in `fixtures/`:
 
-| Intent                      | Clear | Conditions | Check | **Not usable** |
-| --------------------------- | ----: | ---------: | ----: | -------------: |
-| Commercial project, edited  |    97 |         36 |    44 |         **24** |
-| Personal project, unmodified |   112 |         45 |    44 |          **0** |
+| Intent                       | Clear | Conditions | Check | **Not usable** |
+| ---------------------------- | ----: | ---------: | ----: | -------------: |
+| Commercial project, edited   |    98 |         36 |    53 |         **24** |
+| Personal project, unmodified |   113 |         45 |    53 |          **0** |
 
-Same library, opposite answer. Just over half the library carries a problem
+Same library, opposite answer. 113 of 211 — just over half — carry a problem
 in commercial use, and none of it is visible from a badge.
 
 Three rules that are easy to get backwards, and are the reason the rules
