@@ -11,6 +11,29 @@ import { termsFor, verdictFor, worst, type Usage, type Level } from "./licence-r
  */
 export type CreditsFormat = "text" | "markdown" | "csv";
 
+/**
+ * The address the checker can read this row back from.
+ *
+ * Matters because credits are not just an output — "re-check the project
+ * before the next release" means pasting this list back in, and every URL in
+ * it has to survive that trip. Three of the four sources already do:
+ * canonicalUrl is the Commons file page, the OpenAlex work, the Gutenberg
+ * ebook. Openverse is the exception — its canonicalUrl is the foreign landing
+ * page (Flickr, and others), which is correct for attribution and unreadable
+ * for a re-check, so the Openverse record's own address is carried alongside
+ * it rather than replacing it.
+ *
+ * Derived from externalId, which for Openverse is the record uuid. This is a
+ * URL shape, not a lookup, which is why it can live here rather than in the
+ * resolver — but the shape has to keep matching what that resolver's
+ * identify() accepts.
+ */
+function recheckUrl(r: SourceResult): string | null {
+  if (r.sourceId !== "openverse" || !r.externalId) return null;
+  const url = `https://openverse.org/image/${r.externalId}`;
+  return url === r.canonicalUrl ? null : url;
+}
+
 export type CreditsInput = {
   title: string;
   results: SourceResult[];
@@ -67,6 +90,7 @@ export function buildCredits(
       "credit_required",
       "share_alike",
       "url",
+      "recheck_url",
       "attribution",
     ];
     const rows = results.map((r) => {
@@ -80,6 +104,7 @@ export function buildCredits(
         String(t.attribution),
         String(t.shareAlike),
         csvCell(r.canonicalUrl),
+        csvCell(recheckUrl(r) ?? r.canonicalUrl),
         csvCell(r.licence.attribution),
       ].join(",");
     });
@@ -114,22 +139,26 @@ export function buildCredits(
             ? " [SHARE-ALIKE]"
             : "";
 
+    const recheck = recheckUrl(r);
+
     if (md) {
       out.push(`${i + 1}. **${r.title}** — \`${r.licence.spdx}\`${flag}`);
       out.push(`   ${r.licence.attribution}`);
       out.push(`   <${r.canonicalUrl}>`);
+      if (recheck) out.push(`   checked via <${recheck}>`);
     } else {
       out.push(`${i + 1}. ${r.title} — ${r.licence.spdx}${flag}`);
       out.push(`   ${r.licence.attribution}`);
       out.push(`   ${r.canonicalUrl}`);
+      if (recheck) out.push(`   checked via ${recheck}`);
     }
     out.push("");
   });
 
   out.push(
     md
-      ? "_Licence tags are as published by each source. This is a compliance aid, not legal advice._"
-      : "Licence tags are as published by each source. This is a compliance aid, not legal advice.",
+      ? "_Licence tags are as published by each source. Paste this file back into Idea Craft to re-check it. This is a compliance aid, not legal advice._"
+      : "Licence tags are as published by each source. Paste this file back into Idea Craft to re-check it. This is a compliance aid, not legal advice.",
   );
   return out.join("\n");
 }

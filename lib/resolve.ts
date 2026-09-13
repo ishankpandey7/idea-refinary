@@ -41,6 +41,8 @@ export type CheckResponse = {
   dropped: number;
   /** Links that pointed at something already in the list. */
   deduped: number;
+  /** Licence deeds and the like — never material, so never a verdict. */
+  ignored: number;
   ms: number | null;
 };
 
@@ -49,8 +51,33 @@ export const EMPTY_CHECK: CheckResponse = {
   found: 0,
   dropped: 0,
   deduped: 0,
+  ignored: 0,
   ms: null,
 };
+
+/**
+ * A licence deed describes material; it is never the material. These turn up
+ * constantly because Creative Commons attribution strings quote the deed URL,
+ * so a re-check of an exported credits file would otherwise open with a row
+ * saying we could not read creativecommons.org — true, useless, and alarming.
+ */
+function isDeed(url: URL): boolean {
+  const host = url.hostname.toLowerCase().replace(/^www\./, "");
+  if (host === "creativecommons.org") {
+    return /^\/(licenses|publicdomain)\//.test(url.pathname);
+  }
+  return host === "spdx.org" || host === "rightsstatements.org";
+}
+
+/** Same shape as the search dedupe: host without www, path without a tail. */
+function normUrl(raw: string): string {
+  try {
+    const u = new URL(raw);
+    return `${u.hostname.replace(/^www\./, "")}${u.pathname.replace(/\/+$/, "")}`.toLowerCase();
+  } catch {
+    return raw.trim().toLowerCase();
+  }
+}
 
 // ---------------------------------------------------------------------------
 // What to say when we cannot answer
@@ -138,6 +165,7 @@ export async function checkLinks(rawInputs: string[]): Promise<CheckResponse> {
   const slots: Slot[] = [];
   const identities = new Set<string>();
   let deduped = 0;
+  let ignored = 0;
 
   for (const input of kept) {
     const url = toUrl(input);
@@ -150,6 +178,11 @@ export async function checkLinks(rawInputs: string[]): Promise<CheckResponse> {
         reason:
           "That is not a link. Paste the address of the page the material lives on.",
       });
+      continue;
+    }
+
+    if (isDeed(url)) {
+      ignored += 1;
       continue;
     }
 
@@ -275,11 +308,30 @@ export async function checkLinks(rawInputs: string[]): Promise<CheckResponse> {
     };
   });
 
+  // An Openverse row credits its foreign landing page (Flickr, and others),
+  // which nothing here can read — so an exported credits file names the same
+  // asset twice, once readably and once not. Both lines are correct and only
+  // one is a result, so the unreadable twin is a duplicate, not a failure.
+  // Matched on the resolved canonicalUrl, so this is an identity, not a guess.
+  const resolved = new Set(
+    items
+      .filter((i) => i.status === "ok" && i.result)
+      .map((i) => normUrl((i.result as SourceResult).canonicalUrl)),
+  );
+
+  const visible = items.filter((i) => {
+    if (i.status === "ok") return true;
+    if (!resolved.has(normUrl(i.input))) return true;
+    deduped += 1;
+    return false;
+  });
+
   return {
-    items,
+    items: visible,
     found: inputs.length,
     dropped: Math.max(0, inputs.length - kept.length),
     deduped,
+    ignored,
     ms: Math.round(performance.now() - started),
   };
 }

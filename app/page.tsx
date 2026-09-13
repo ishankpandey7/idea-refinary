@@ -412,6 +412,9 @@ export default function Check() {
             {response.deduped > 0
               ? ` · ${plural(response.deduped, "duplicate")} collapsed`
               : ""}
+            {response.ignored > 0
+              ? ` · ${plural(response.ignored, "licence link")} ignored`
+              : ""}
             {response.dropped > 0
               ? ` · ${response.dropped} past the ${MAX_LINKS}-link limit`
               : ""}

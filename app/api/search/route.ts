@@ -11,16 +11,15 @@ import {
 
 const TIMEOUT_MS = 4000;
 
-// gutendex.com answers 403 to Vercel and 200 from a residential IP,
-// header-independent, so the block is on the IP range and iad1 is the range
-// most likely to be on it.
-//
-// This line does nothing on the Hobby plan — verified 2026-09-13, the
-// response came back `x-vercel-id: bom1::iad1::…`, edge in Mumbai and
-// compute still in Washington. Region has to be set in Project Settings ->
-// Functions instead. Kept because it becomes the right knob on Pro.
-export const preferredRegion = "bom1";
-
+// No preferredRegion here, deliberately. It was set to "bom1" to try to dodge
+// gutendex.com's 403, which it answers to Vercel and not to a residential IP.
+// Two things came out of that, measured 2026-09-13, and both say leave it off:
+// the export is ignored on the Hobby plan entirely (the response still came
+// back `x-vercel-id: bom1::iad1::…` — edge in Mumbai, compute in Washington;
+// the real knob is Project Settings -> Functions), and bom1 compute is worse
+// for this app anyway, taking the three working sources from ~850ms to
+// ~2059ms because the source APIs are farther away than the user is. Next 16
+// has since deprecated the export, so it was only buying a build warning.
 
 // Adapters accept an optional AbortSignal as a second argument; the frozen
 // Adapter contract only declares the first, so narrow at the call site.
