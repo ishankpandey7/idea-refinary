@@ -5,7 +5,7 @@ import Link from "next/link";
 import type { SourceResult } from "@/types/source-result";
 import type { CheckItem, CheckResponse } from "@/lib/resolve";
 import { extractLinks, MAX_LINKS } from "@/lib/links";
-import { verdictFor, type Usage } from "@/lib/licence-rules";
+import { verdictFor, type Level, type Usage } from "@/lib/licence-rules";
 import ResultCard from "./_components/ResultCard";
 import CompliancePanel from "./_components/CompliancePanel";
 import { useAuth } from "./_components/AuthProvider";
@@ -21,6 +21,21 @@ const PASTE_KEY = "idea-refinery:check-paste";
 const PROJECT_KEY = "idea-refinery:check-project";
 
 const DEFAULT_PROJECT = "My project";
+
+/** Act on the blocked ones first; a clear source needs nothing from you. */
+const RANK: Record<Level, number> = {
+  blocked: 0,
+  verify: 1,
+  caution: 2,
+  clear: 3,
+};
+
+const LEVELS: { level: Level; label: string }[] = [
+  { level: "blocked", label: "Not usable" },
+  { level: "verify", label: "Check licence" },
+  { level: "caution", label: "Conditions" },
+  { level: "clear", label: "Clear" },
+];
 
 /**
  * Five links that between them show the whole answer: public domain, a
@@ -74,6 +89,7 @@ export default function Check() {
   const [loading, setLoading] = useState(false);
   const [failed, setFailed] = useState(false);
 
+  const [only, setOnly] = useState<Level | null>(null);
   const [savedKeys, setSavedKeys] = useState<Set<string>>(new Set());
   const [saveError, setSaveError] = useState<string | null>(null);
 
@@ -121,6 +137,7 @@ export default function Check() {
 
   const pending = useMemo(() => extractLinks(paste), [paste]);
 
+
   async function check() {
     if (pending.length === 0) return;
     setLoading(true);
@@ -141,12 +158,39 @@ export default function Check() {
     }
   }
 
-  const items = response?.items ?? [];
-  const read_ = items.filter((i) => i.status === "ok" && i.result);
-  const unread = items.filter((i) => i.status !== "ok");
-  const results = read_
-    .map((i) => i.result)
-    .filter((r): r is SourceResult => r !== null);
+  const unread = useMemo(
+    () => (response?.items ?? []).filter((i) => i.status !== "ok"),
+    [response],
+  );
+
+  // Worst first. Paste order is how you typed it; this is the order you need
+  // to act in, and with forty assets the two are not the same thing.
+  //
+  // Keyed off `response` rather than a derived array — `response?.items ?? []`
+  // is a fresh array on every render, which would make this memo do nothing.
+  const checked = useMemo(() => {
+    const rows = (response?.items ?? [])
+      .filter((i) => i.status === "ok" && i.result)
+      .map((i) => ({
+        item: i,
+        result: i.result as SourceResult,
+        verdict: verdictFor((i.result as SourceResult).licence.spdx, usage),
+      }));
+    return rows.sort((a, b) => RANK[a.verdict.level] - RANK[b.verdict.level]);
+  }, [response, usage]);
+
+  const results = checked.map((c) => c.result);
+
+  const byLevel = (level: Level) =>
+    checked.filter((c) => c.verdict.level === level).length;
+
+  // Changing the intent re-judges everything, so a filter can end up pinned to
+  // a level that is now empty. Resolving that here rather than in an effect
+  // means there is never a render showing an empty grid.
+  const active = only && byLevel(only) > 0 ? only : null;
+  const shown = active
+    ? checked.filter((c) => c.verdict.level === active)
+    : checked;
 
   async function onSave(r: SourceResult) {
     const title = project.trim() || DEFAULT_PROJECT;
@@ -289,7 +333,7 @@ export default function Check() {
         <>
           <p className="mx-auto mt-10 max-w-3xl text-center text-[12px] text-faint">
             {plural(response.found, "link")} in ·{" "}
-            {plural(read_.length, "source")} read
+            {plural(checked.length, "source")} read
             {unread.length > 0 ? ` · ${unread.length} not read` : ""}
             {response.deduped > 0
               ? ` · ${plural(response.deduped, "duplicate")} collapsed`
@@ -355,15 +399,36 @@ export default function Check() {
                 )}
               </div>
 
+              <div className="mt-5 flex flex-wrap items-center gap-2">
+                <Chip on={active === null} onClick={() => setOnly(null)}>
+                  Everything {checked.length}
+                </Chip>
+                {LEVELS.map(({ level, label }) => {
+                  const n = byLevel(level);
+                  if (n === 0) return null;
+                  return (
+                    <Chip
+                      key={level}
+                      on={active === level}
+                      onClick={() => setOnly(active === level ? null : level)}
+                    >
+                      {label} {n}
+                    </Chip>
+                  );
+                })}
+                <span className="text-[12px] text-faint">
+                  Worst first.
+                </span>
+              </div>
+
               <ul className="mt-6 grid gap-5 sm:grid-cols-2">
-                {read_.map((item) => {
-                  const r = item.result as SourceResult;
+                {shown.map(({ item, result: r, verdict }) => {
                   const saved = savedKeys.has(resultKey(r));
                   return (
                     <ResultCard
                       key={item.input}
                       result={r}
-                      verdict={verdictFor(r.licence.spdx, usage)}
+                      verdict={verdict}
                       action={
                         <button
                           type="button"
@@ -440,6 +505,31 @@ function Unread({ item }: { item: CheckItem }) {
         {item.reason}
       </p>
     </li>
+  );
+}
+
+function Chip({
+  on,
+  onClick,
+  children,
+}: {
+  on: boolean;
+  onClick: () => void;
+  children: React.ReactNode;
+}) {
+  return (
+    <button
+      type="button"
+      onClick={onClick}
+      aria-pressed={on}
+      className={`rounded-full border px-4 py-1.5 text-[12px] transition ${
+        on
+          ? "border-ink bg-ink text-page"
+          : "border-line text-body hover:border-ink"
+      }`}
+    >
+      {children}
+    </button>
   );
 }
 

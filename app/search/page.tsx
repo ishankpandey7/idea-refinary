@@ -32,47 +32,6 @@ const CATEGORIES = [
 
 const LAST_SEARCH = "idea-refinery:last-search";
 
-/**
- * The cards under the hero, copied from the home mockup: icon, title, blurb —
- * no meta blocks, those belong to the angle-selection screen this app has no
- * route for. The mockup's fourth slot is POLICY, a source type with no
- * adapter, so it shows Collaborator instead.
- */
-const ANGLES = [
-  {
-    glyph: "✦",
-    title: "Research",
-    blurb:
-      "Papers, datasets and academic citations mapped directly to your central topic.",
-    href: null,
-    cta: null,
-  },
-  {
-    glyph: "◈",
-    title: "Art & creativity",
-    blurb:
-      "Public domain images, illustrations and open-licence media assets with source tracking.",
-    href: null,
-    cta: null,
-  },
-  {
-    glyph: "✎",
-    title: "Writing",
-    blurb:
-      "Contextual essays, primary source text blocks and public-domain language resources.",
-    href: null,
-    cta: null,
-  },
-  {
-    glyph: "✉",
-    title: "Collaborator",
-    blurb:
-      "Invite someone by email to an idea. Everyone on it can search, pin and remove sources.",
-    href: "/my-ideas",
-    cta: "Invite from My Ideas",
-  },
-] as const;
-
 const EXAMPLE_QUERY = "a cancer awareness campaign for my campus";
 
 /** Everything the envelope carries except the rows themselves. */
@@ -273,15 +232,15 @@ export default function Home() {
   return (
     <main className="mx-auto w-full max-w-5xl px-6 pb-24 pt-16 sm:px-10">
       <h1 className="text-center font-serif text-5xl leading-[1.1] text-ink sm:text-6xl">
-        One idea in.
+        Find material
         <br />
-        Open-licence sources out.
+        you can use.
       </h1>
 
       <p className="mx-auto mt-6 max-w-xl text-center text-[15px] leading-relaxed text-body">
-        Describe what you&rsquo;re trying to make. Idea Craft finds the
-        research, visuals and language behind it &mdash; with reuse rights
-        attached.
+        Four open archives, one query. Every result arrives with its licence
+        already judged against what you are doing &mdash; so you can tell
+        before you pick, not after you ship.
       </p>
 
       <form
@@ -524,49 +483,26 @@ export default function Home() {
       </ul>
 
       {searched ? null : (
-        <section className="mt-24">
-          <h2 className="text-center font-serif text-3xl text-ink">
-            Start with an idea. We&rsquo;ll find the rest.
-          </h2>
-          <p className="mx-auto mt-3 max-w-xl text-center text-[13px] text-muted">
-            Instant discovery across trusted open archives, creative commons and
-            public databases.
-          </p>
-
-          <ul className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-            {ANGLES.map((a) => (
-              <li
-                key={a.title}
-                className="flex flex-col rounded-2xl border border-line bg-surface p-6"
-              >
-                <span
-                  aria-hidden
-                  className="flex size-9 items-center justify-center rounded-xl border border-line bg-raised text-[15px] text-accent"
-                >
-                  {a.glyph}
-                </span>
-
-                <h3 className="mt-4 font-serif text-lg text-ink">
-                  {a.title}
-                </h3>
-                <p className="mt-2 text-[13px] leading-relaxed text-body">
-                  {a.blurb}
-                </p>
-
-                {a.href ? (
-                  <Link
-                    href={a.href}
-                    className="mt-auto pt-5 text-[12px] font-medium text-accent underline-offset-2 hover:underline"
-                  >
-                    {a.cta} &rarr;
-                  </Link>
-                ) : null}
-              </li>
-            ))}
-          </ul>
+        <section className="mt-20">
+          <div className="rounded-2xl border border-line bg-surface p-8 text-center">
+            <h2 className="font-serif text-2xl text-ink">
+              Already have the material?
+            </h2>
+            <p className="mx-auto mt-3 max-w-lg text-[13px] leading-relaxed text-body">
+              Search is for finding things you do not have yet. If you already
+              know what you are using, paste the links instead and skip
+              straight to the verdicts.
+            </p>
+            <Link
+              href="/"
+              className="mt-6 inline-block rounded-full border border-line-strong px-7 py-3 text-[13px] font-medium text-body transition hover:border-accent hover:text-accent"
+            >
+              Check what you have &rarr;
+            </Link>
+          </div>
 
           {recent.length > 0 ? (
-            <div className="mt-20">
+            <div className="mt-16">
               <div className="flex items-end justify-between gap-4">
                 <h2 className="flex items-center gap-2 text-[13px] font-semibold uppercase tracking-[0.16em] text-accent">
                   <span aria-hidden>&#128193;</span> Recent Saved Ideas
