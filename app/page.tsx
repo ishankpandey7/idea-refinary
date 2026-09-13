@@ -4,7 +4,7 @@ import { useCallback, useEffect, useMemo, useState } from "react";
 import Link from "next/link";
 import type { SourceResult } from "@/types/source-result";
 import type { CheckItem, CheckResponse } from "@/lib/resolve";
-import { extractLinks, MAX_LINKS } from "@/lib/links";
+import { extractLinks, MAX_LINKS, MAX_TEXT } from "@/lib/links";
 import { verdictFor, type Level, type Usage } from "@/lib/licence-rules";
 import ResultCard, { categoryOf } from "./_components/ResultCard";
 import CompliancePanel from "./_components/CompliancePanel";
@@ -426,6 +426,16 @@ export default function Check() {
               : ""}
           </span>
         </div>
+
+        {/* Saying nothing here would drop the tail of a long paste without
+            anyone noticing, which is the one thing this tool must not do. */}
+        {paste.length > MAX_TEXT ? (
+          <p className="mt-3 text-[12px] leading-relaxed text-accent">
+            That is longer than {MAX_TEXT.toLocaleString()} characters. Only
+            the links in the first {MAX_TEXT.toLocaleString()} are read &mdash;
+            split the rest into a second check.
+          </p>
+        ) : null}
       </section>
 
       {failed ? (
