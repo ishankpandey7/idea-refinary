@@ -1,4 +1,5 @@
 import type { Adapter, SourceResult, Spdx } from "@/types/source-result";
+import { mapLimit, type ResolveOutcome, type Resolver } from "@/lib/resolve-types";
 
 const SOURCE_ID = "openverse";
 const ENDPOINT = "https://api.openverse.org/v1/images/";
@@ -103,3 +104,79 @@ export const adapter: Adapter = {
 };
 
 export const search = adapter.search;
+
+// ---------------------------------------------------------------------------
+// Resolve: an Openverse link someone already has -> the same SourceResult.
+// ---------------------------------------------------------------------------
+
+const UUID =
+  /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
+
+/**
+ * Openverse items are addressed by uuid, in one of a few wrappers:
+ * openverse.org/image/<uuid>, the localised /en/image/<uuid>, the old
+ * wordpress.org/openverse/ path, and the API's own /v1/images/<uuid>.
+ *
+ * Only images. The adapter searches images, so audio would be a licence
+ * verdict on a row this app cannot otherwise produce.
+ */
+function identify(url: URL): string | null {
+  const host = url.hostname.toLowerCase().replace(/^www\./, "");
+  if (
+    host !== "openverse.org" &&
+    host !== "api.openverse.org" &&
+    host !== "wordpress.org"
+  ) {
+    return null;
+  }
+
+  const parts = url.pathname.split("/").filter(Boolean);
+  const at = parts.findIndex((p) => p === "image" || p === "images");
+  if (at === -1) return null;
+
+  const id = parts[at + 1];
+  return id && UUID.test(id) ? id.toLowerCase() : null;
+}
+
+/** The detail endpoint takes one id, so this is a pool rather than a batch. */
+const IN_FLIGHT = 5;
+
+async function resolveOne(
+  id: string,
+  signal?: AbortSignal,
+): Promise<ResolveOutcome> {
+  try {
+    const res = await fetch(`${ENDPOINT}${id}/`, {
+      headers: { Accept: "application/json" },
+      signal,
+    });
+
+    if (res.status === 404) return { status: "notfound" };
+    if (!res.ok) {
+      console.error(`[${SOURCE_ID}] resolve HTTP ${res.status}`);
+      return { status: "unreachable", detail: `HTTP ${res.status}` };
+    }
+
+    const image = (await res.json()) as OpenverseImage | null;
+    const result = image ? toResult(image) : null;
+    return result ? { status: "ok", result } : { status: "notfound" };
+  } catch (err) {
+    const detail = err instanceof Error ? err.message : String(err);
+    console.error(`[${SOURCE_ID}] resolve ${detail}`);
+    return { status: "unreachable", detail };
+  }
+}
+
+export const resolver: Resolver = {
+  identify,
+  async resolveBatch(keys, signal) {
+    const outcomes = await mapLimit(keys, IN_FLIGHT, (id) =>
+      resolveOne(id, signal),
+    );
+    const out: Record<string, ResolveOutcome> = {};
+    keys.forEach((key, i) => {
+      out[key] = outcomes[i];
+    });
+    return out;
+  },
+};

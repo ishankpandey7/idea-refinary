@@ -20,6 +20,12 @@ import {
   type Idea,
 } from "../_lib/ideas-db";
 import { useAuth } from "../_components/AuthProvider";
+import {
+  readIdeas as readLocalIdeas,
+  removeIdea as removeLocalIdea,
+  removeResult as removeLocalResult,
+} from "../_lib/ideas";
+import { readUsage, writeUsage } from "../_lib/usage";
 
 function when(iso: string): string {
   const d = new Date(iso);
@@ -31,6 +37,9 @@ function when(iso: string): string {
         year: "numeric",
       });
 }
+
+/** Stands in for owner_id on ideas that only exist in this browser. */
+const LOCAL_OWNER = "local";
 
 /** Marks an idea someone else owns and shared with you. */
 function SharedBadge() {
@@ -49,15 +58,28 @@ export default function MyIdeas() {
 
   const { user, loading: authLoading, configured, imported } = useAuth();
 
+  /**
+   * Signed out, picks live in this browser — the licence check never needed
+   * an account, so neither does looking at what it found. The local store has
+   * no owner and no per-idea usage, so those are filled in from the one place
+   * a signed-out person can set them: the shared usage preference.
+   */
+  const localIdeas = useCallback((): Idea[] => {
+    const usage = readUsage();
+    return readLocalIdeas().map((i) => ({
+      id: i.id,
+      ownerId: LOCAL_OWNER,
+      query: i.query,
+      savedAt: i.savedAt,
+      usage,
+      results: i.results,
+    }));
+  }, []);
+
   const reload = useCallback(async () => {
-    if (!user) {
-      setIdeas([]);
-      setReady(true);
-      return;
-    }
-    setIdeas(await listIdeas());
+    setIdeas(user ? await listIdeas() : localIdeas());
     setReady(true);
-  }, [user]);
+  }, [user, localIdeas]);
 
   // Ideas live in the database now, so the list arrives after mount — and
   // again after the first sign-in import finishes.
@@ -67,8 +89,12 @@ export default function MyIdeas() {
   }, [authLoading, reload, imported]);
 
   async function onRemoveResult(ideaId: string, key: string) {
-    await removeResult(ideaId, key);
-    const next = await listIdeas();
+    if (!user) {
+      removeLocalResult(ideaId, key);
+    } else {
+      await removeResult(ideaId, key);
+    }
+    const next = user ? await listIdeas() : localIdeas();
     setIdeas(next);
     if (!next.some((i) => i.id === ideaId)) setOpenId(null);
   }
@@ -76,6 +102,13 @@ export default function MyIdeas() {
   // Optimistic: the panel recomputes every verdict from this, and waiting a
   // round trip to redraw a toggle feels broken.
   async function onUsageChange(ideaId: string, usage: Usage) {
+    // Signed out there is nowhere per-idea to put this, so it moves the one
+    // shared preference — and every idea on screen with it.
+    if (!user) {
+      writeUsage(usage);
+      setIdeas((prev) => prev.map((i) => ({ ...i, usage })));
+      return;
+    }
     setIdeas((prev) =>
       prev.map((i) => (i.id === ideaId ? { ...i, usage } : i)),
     );
@@ -83,8 +116,13 @@ export default function MyIdeas() {
   }
 
   async function onRemoveIdea(ideaId: string) {
-    await removeIdea(ideaId);
-    setIdeas(await listIdeas());
+    if (!user) {
+      removeLocalIdea(ideaId);
+      setIdeas(localIdeas());
+    } else {
+      await removeIdea(ideaId);
+      setIdeas(await listIdeas());
+    }
     if (openId === ideaId) setOpenId(null);
   }
 
@@ -101,7 +139,10 @@ export default function MyIdeas() {
   }, [openId]);
 
   const open = ideas.find((i) => i.id === openId) ?? null;
-  const ownsOpen = Boolean(open && user && open.ownerId === user.id);
+  // A local idea is yours by definition — it is in your browser.
+  const ownsOpen = Boolean(
+    open && (user ? open.ownerId === user.id : open.ownerId === LOCAL_OWNER),
+  );
 
   return (
     <>
@@ -120,7 +161,8 @@ export default function MyIdeas() {
         </h1>
 
         <p className="mx-auto mt-6 max-w-xl text-center text-[15px] leading-relaxed text-body">
-          Every search you save becomes an idea. Open one to see what you kept.
+          Anything you keep &mdash; from a licence check or a search &mdash;
+          lands here. Open one to see what is in it.
         </p>
 
         {imported ? (
@@ -131,31 +173,56 @@ export default function MyIdeas() {
           </p>
         ) : null}
 
-        {authLoading || !ready ? null : !configured ? (
-          <p className="mt-16 text-center text-[15px] text-muted">
-            Sign-in is unavailable: this deployment has no Supabase keys set.
+        {!authLoading && ready && !user && ideas.length > 0 ? (
+          <p className="mx-auto mt-8 max-w-xl rounded-2xl border border-line bg-surface px-6 py-4 text-center text-[13px] leading-relaxed text-body">
+            These are kept in this browser only.{" "}
+            {configured ? (
+              <>
+                <Link
+                  href="/login"
+                  className="text-accent underline-offset-2 hover:underline"
+                >
+                  Sign in
+                </Link>{" "}
+                and they move into your account &mdash; nothing here is lost.
+              </>
+            ) : (
+              "Clearing site data clears them."
+            )}
           </p>
-        ) : !user ? (
+        ) : null}
+
+        {authLoading || !ready ? null : ideas.length === 0 ? (
           <div className="mt-16 text-center">
             <p className="text-[15px] text-muted">
-              Sign in to see your saved ideas.
+              {user
+                ? "Nothing saved yet."
+                : "Nothing kept in this browser yet."}
             </p>
-            <Link
-              href="/login"
-              className="mt-6 inline-block rounded-full bg-brand px-9 py-4 text-[15px] font-medium text-white transition hover:bg-brand-hover"
-            >
-              Sign in &rarr;
-            </Link>
-          </div>
-        ) : ideas.length === 0 ? (
-          <div className="mt-16 text-center">
-            <p className="text-[15px] text-muted">Nothing saved yet.</p>
             <Link
               href="/"
               className="mt-6 inline-block rounded-full bg-brand px-9 py-4 text-[15px] font-medium text-white transition hover:bg-brand-hover"
             >
-              Start a search &rarr;
+              Check your material &rarr;
             </Link>
+            {!user ? (
+              <p className="mt-6 text-[13px] text-muted">
+                {configured ? (
+                  <>
+                    Already kept some elsewhere?{" "}
+                    <Link
+                      href="/login"
+                      className="text-accent underline-offset-2 hover:underline"
+                    >
+                      Sign in
+                    </Link>
+                    .
+                  </>
+                ) : (
+                  "Sign-in is unavailable: this deployment has no Supabase keys set."
+                )}
+              </p>
+            ) : null}
           </div>
         ) : open ? (
           <section className="mt-14">
@@ -177,7 +244,7 @@ export default function MyIdeas() {
 
               <div className="ml-auto" />
 
-              {ownsOpen ? (
+              {user && ownsOpen ? (
                 <button
                   type="button"
                   onClick={() => setInviteOpen((v) => !v)}
@@ -204,13 +271,17 @@ export default function MyIdeas() {
               ) : null}
             </div>
 
-            <MembersPanel
-              ideaId={open.id}
-              isOwner={ownsOpen}
-              currentUserId={user?.id ?? null}
-              inviteOpen={inviteOpen}
-              onCloseInvite={() => setInviteOpen(false)}
-            />
+            {/* Sharing is a database idea. A local one has nobody to share
+                with, and the panel's queries need a signed-in session. */}
+            {user ? (
+              <MembersPanel
+                ideaId={open.id}
+                isOwner={ownsOpen}
+                currentUserId={user.id}
+                inviteOpen={inviteOpen}
+                onCloseInvite={() => setInviteOpen(false)}
+              />
+            ) : null}
 
             <CompliancePanel
               title={open.query}
@@ -219,13 +290,16 @@ export default function MyIdeas() {
               onUsageChange={(u) => void onUsageChange(open.id, u)}
             />
 
-            {/* Keyed so switching ideas clears the query and its results. */}
-            <IdeaSearch
-              key={open.id}
-              ideaId={open.id}
-              savedKeys={new Set(open.results.map(resultKey))}
-              onAdded={reload}
-            />
+            {/* Keyed so switching ideas clears the query and its results.
+                Adding writes a pin row, so this is signed-in only. */}
+            {user ? (
+              <IdeaSearch
+                key={open.id}
+                ideaId={open.id}
+                savedKeys={new Set(open.results.map(resultKey))}
+                onAdded={reload}
+              />
+            ) : null}
 
             {CATEGORY_LABELS.map((label) => {
               const group = open.results.filter((r) => categoryOf(r) === label);

@@ -18,6 +18,7 @@ export default function CompliancePanel({
   usage,
   onUsageChange,
   hideUsage = false,
+  heading = "Licence check",
 }: {
   title: string;
   results: SourceResult[];
@@ -25,6 +26,8 @@ export default function CompliancePanel({
   onUsageChange: (next: Usage) => void;
   /** The caller already renders the toggles, so do not repeat them. */
   hideUsage?: boolean;
+  /** Set this when another "Licence check" already sits on the page. */
+  heading?: string;
 }) {
   const [format, setFormat] = useState<CreditsFormat>("text");
   const [showCredits, setShowCredits] = useState(false);
@@ -51,14 +54,14 @@ export default function CompliancePanel({
   return (
     <section className="mt-10 rounded-2xl border border-line bg-surface p-6">
       <p className="text-[11px] font-medium uppercase tracking-[0.18em] text-accent">
-        Licence check
+        {heading}
       </p>
 
       {hideUsage ? null : (
         <>
           <p className="mt-3 text-[13px] leading-relaxed text-body">
-            Tell us what you are doing with this material and every saved
-            source is judged against its licence.
+            Tell us what you are doing with this material and every source
+            below is judged against its licence.
           </p>
 
           <div className="mt-5 flex flex-wrap gap-2">
@@ -87,8 +90,9 @@ export default function CompliancePanel({
 
       {counts.blocked > 0 ? (
         <p className="mt-5 rounded-xl bg-stop-bg px-4 py-3 text-[13px] leading-relaxed text-stop-fg">
-          {counts.blocked} saved source{counts.blocked === 1 ? "" : "s"} cannot
-          be used the way you described. They are marked below.
+          {counts.blocked === 1
+            ? "1 source cannot be used the way you described. It is marked below, and flagged in your credits."
+            : `${counts.blocked} sources cannot be used the way you described. They are marked below, and flagged in your credits.`}
         </p>
       ) : null}
 

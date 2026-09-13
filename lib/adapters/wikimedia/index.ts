@@ -1,4 +1,5 @@
 import type { Adapter, SourceResult, Spdx } from "@/types/source-result";
+import { fillMissing, type ResolveOutcome, type Resolver } from "@/lib/resolve-types";
 
 const SOURCE_ID = "wikimedia";
 const ENDPOINT = "https://commons.wikimedia.org/w/api.php";
@@ -166,3 +167,156 @@ export const adapter: Adapter = {
 };
 
 export const search = adapter.search;
+
+// ---------------------------------------------------------------------------
+// Resolve: a Commons link someone already has -> the same SourceResult.
+// ---------------------------------------------------------------------------
+
+/**
+ * MediaWiki title normalisation, the part of it that matters here: underscores
+ * are spaces and the first letter is always capitalised. Doing it on both ends
+ * lets a response be matched back to the key that asked for it.
+ */
+function canon(name: string): string {
+  const s = name.replace(/_/g, " ").trim();
+  return s.charAt(0).toUpperCase() + s.slice(1);
+}
+
+function decode(value: string): string | null {
+  try {
+    return decodeURIComponent(value);
+  } catch {
+    // A stray % makes this throw. The link is malformed, not ours.
+    return null;
+  }
+}
+
+/** Strips the "File:" / "Image:" namespace, whichever the link used. */
+function unnamespace(title: string): string | null {
+  const m = title.match(/^(?:File|Image):(.+)$/i);
+  return m ? m[1].trim() : null;
+}
+
+/**
+ * Accepts every shape a Commons link arrives in: the file page, a FilePath
+ * shortcut, an index.php?title= link, and the raw upload.wikimedia.org URL
+ * that browsers give you from "copy image address" — including its /thumb/
+ * form, where the real file name is the second-to-last segment.
+ */
+function identify(url: URL): string | null {
+  const host = url.hostname.toLowerCase().replace(/^www\./, "");
+
+  if (host === "upload.wikimedia.org") {
+    const parts = url.pathname.split("/").filter(Boolean);
+    // /wikipedia/commons/9/97/Name.jpg
+    // /wikipedia/commons/thumb/9/97/Name.jpg/500px-Name.jpg
+    if (parts[0] !== "wikipedia" || parts[1] !== "commons") return null;
+    const name = parts[2] === "thumb" ? parts.at(-2) : parts.at(-1);
+    if (!name) return null;
+    const decoded = decode(name);
+    return decoded ? canon(decoded) : null;
+  }
+
+  if (host !== "commons.wikimedia.org" && host !== "commons.m.wikimedia.org") {
+    return null;
+  }
+
+  const wiki = url.pathname.match(/^\/wiki\/(.+)$/);
+  const raw = wiki ? decode(wiki[1]) : url.searchParams.get("title");
+  if (!raw) return null;
+
+  const title = raw.replace(/_/g, " ").trim();
+
+  const filePath = title.match(/^Special:FilePath\/(.+)$/i);
+  if (filePath) return canon(filePath[1]);
+
+  const file = unnamespace(title);
+  return file ? canon(file) : null;
+}
+
+/** The API takes up to 50 titles per call, and there is no reason to push it. */
+const TITLES_PER_CALL = 50;
+
+async function resolveChunk(
+  keys: string[],
+  signal?: AbortSignal,
+): Promise<Record<string, ResolveOutcome>> {
+  const params = new URLSearchParams({
+    action: "query",
+    titles: keys.map((k) => `File:${k}`).join("|"),
+    prop: "imageinfo",
+    iiprop: "url|extmetadata",
+    iiurlwidth: "400",
+    format: "json",
+    origin: "*",
+  });
+
+  const res = await fetch(`${ENDPOINT}?${params.toString()}`, {
+    headers: { Accept: "application/json" },
+    signal,
+  });
+
+  if (!res.ok) {
+    console.error(`[${SOURCE_ID}] resolve HTTP ${res.status}`);
+    return fillMissing({}, keys, {
+      status: "unreachable",
+      detail: `HTTP ${res.status}`,
+    });
+  }
+
+  const body = (await res.json()) as {
+    query?: {
+      pages?: Record<string, WikimediaPage>;
+      normalized?: { from?: string; to?: string }[];
+      redirects?: { from?: string; to?: string }[];
+    } | null;
+  } | null;
+
+  const query = body?.query;
+
+  // MediaWiki answers under the title it normalised or redirected to, which
+  // is not always the one that was asked for. Walk the chain backwards so a
+  // renamed file still lands on the link the person pasted.
+  const back = new Map<string, string>();
+  for (const hop of [...(query?.normalized ?? []), ...(query?.redirects ?? [])]) {
+    const from = hop.from ? unnamespace(hop.from) : null;
+    const to = hop.to ? unnamespace(hop.to) : null;
+    if (from && to) back.set(canon(to), canon(from));
+  }
+
+  const wanted = new Map(keys.map((k) => [canon(k), k]));
+  const out: Record<string, ResolveOutcome> = {};
+
+  for (const page of Object.values(query?.pages ?? {})) {
+    let title = canon(unnamespace(page.title ?? "") ?? "");
+    for (let hop = 0; hop < 4 && !wanted.has(title) && back.has(title); hop++) {
+      title = back.get(title) as string;
+    }
+
+    const key = wanted.get(title);
+    if (!key) continue;
+
+    const result = toResult(page);
+    out[key] = result ? { status: "ok", result } : { status: "notfound" };
+  }
+
+  return fillMissing(out, keys, { status: "notfound" });
+}
+
+export const resolver: Resolver = {
+  identify,
+  async resolveBatch(keys, signal) {
+    const out: Record<string, ResolveOutcome> = {};
+    try {
+      for (let i = 0; i < keys.length; i += TITLES_PER_CALL) {
+        const chunk = keys.slice(i, i + TITLES_PER_CALL);
+        Object.assign(out, await resolveChunk(chunk, signal));
+      }
+    } catch (err) {
+      const detail = err instanceof Error ? err.message : String(err);
+      console.error(`[${SOURCE_ID}] resolve ${detail}`);
+      return fillMissing(out, keys, { status: "unreachable", detail });
+    }
+    return out;
+  },
+};

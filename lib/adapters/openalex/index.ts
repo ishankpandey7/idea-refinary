@@ -1,4 +1,5 @@
 import type { Adapter, SourceResult, Spdx } from "@/types/source-result";
+import { fillMissing, type ResolveOutcome, type Resolver } from "@/lib/resolve-types";
 
 const SOURCE_ID = "openalex";
 const ENDPOINT = "https://api.openalex.org/works";
@@ -171,3 +172,151 @@ export const adapter: Adapter = {
 };
 
 export const search = adapter.search;
+
+// ---------------------------------------------------------------------------
+// Resolve: a paper link someone already has -> the same SourceResult.
+// ---------------------------------------------------------------------------
+
+const DOI_KEY = "doi:";
+
+/**
+ * Two ways a paper gets referenced: an OpenAlex work id, or a DOI — which is
+ * how papers are actually cited, so doi.org links matter more than
+ * openalex.org ones here.
+ */
+function identify(url: URL): string | null {
+  const host = url.hostname.toLowerCase().replace(/^www\./, "");
+  const parts = url.pathname.split("/").filter(Boolean);
+
+  if (host === "doi.org" || host === "dx.doi.org") {
+    const doi = decodeURIComponent(url.pathname.replace(/^\//, "")).trim();
+    return /^10\.\d{4,9}\//.test(doi) ? `${DOI_KEY}${doi.toLowerCase()}` : null;
+  }
+
+  if (host === "openalex.org" || host === "api.openalex.org") {
+    // openalex.org/W123 · openalex.org/works/W123 · api.openalex.org/works/W123
+    const id = parts.at(-1) ?? "";
+    return /^W\d+$/i.test(id) ? id.toUpperCase() : null;
+  }
+
+  return null;
+}
+
+/** OpenAlex takes 200 per page; 50 keeps the URL a sane length. */
+const PER_CALL = 50;
+
+function keyForWork(work: OpenAlexWork): string[] {
+  const keys: string[] = [];
+  const id = work.id?.replace("https://openalex.org/", "").trim();
+  if (id) keys.push(id.toUpperCase());
+  const doi = work.doi?.replace(/^https?:\/\/(dx\.)?doi\.org\//i, "").trim();
+  if (doi) keys.push(`${DOI_KEY}${doi.toLowerCase()}`);
+  return keys;
+}
+
+async function fetchWorks(
+  filter: string,
+  signal?: AbortSignal,
+): Promise<OpenAlexWork[] | { unreachable: string }> {
+  const params = new URLSearchParams({
+    filter,
+    "per-page": String(PER_CALL),
+  });
+  if (MAILTO) params.set("mailto", MAILTO);
+
+  const res = await fetch(`${ENDPOINT}?${params.toString()}`, {
+    headers: { Accept: "application/json" },
+    signal,
+  });
+
+  if (!res.ok) {
+    console.error(`[${SOURCE_ID}] resolve HTTP ${res.status}`);
+    return { unreachable: `HTTP ${res.status}` };
+  }
+
+  const body: unknown = await res.json();
+  const works = (body as { results?: OpenAlexWork[] } | null)?.results;
+  return Array.isArray(works) ? works : { unreachable: "unexpected payload" };
+}
+
+/**
+ * A DOI is allowed to contain a comma, and a comma is how OpenAlex separates
+ * AND-ed filters — so those few cannot ride in a batch and are asked for one
+ * at a time instead. `|` is the OR separator and gets the same treatment.
+ */
+function batchable(doi: string): boolean {
+  return !doi.includes(",") && !doi.includes("|");
+}
+
+async function collect(
+  keys: string[],
+  filterFor: (keys: string[]) => string,
+  out: Record<string, ResolveOutcome>,
+  signal?: AbortSignal,
+): Promise<void> {
+  for (let i = 0; i < keys.length; i += PER_CALL) {
+    const chunk = keys.slice(i, i + PER_CALL);
+    const works = await fetchWorks(filterFor(chunk), signal);
+
+    if ("unreachable" in works) {
+      fillMissing(out, chunk, { status: "unreachable", detail: works.unreachable });
+      continue;
+    }
+
+    for (const work of works) {
+      const result = toResult(work);
+      if (!result) continue;
+      // A work answers to both its OpenAlex id and its DOI; whichever of the
+      // two was pasted is the one that needs filling in.
+      for (const key of keyForWork(work)) {
+        if (keys.includes(key) && !out[key]) out[key] = { status: "ok", result };
+      }
+    }
+    fillMissing(out, chunk, { status: "notfound" });
+  }
+}
+
+export const resolver: Resolver = {
+  identify,
+  async resolveBatch(keys, signal) {
+    const out: Record<string, ResolveOutcome> = {};
+    const ids = keys.filter((k) => !k.startsWith(DOI_KEY));
+    const dois = keys
+      .filter((k) => k.startsWith(DOI_KEY))
+      .map((k) => k.slice(DOI_KEY.length));
+
+    try {
+      if (ids.length > 0) {
+        await collect(ids, (c) => `ids.openalex:${c.join("|")}`, out, signal);
+      }
+
+      const wide = dois.filter(batchable);
+      if (wide.length > 0) {
+        await collect(
+          wide.map((d) => `${DOI_KEY}${d}`),
+          (c) =>
+            `doi:${c
+              .map((k) => `https://doi.org/${k.slice(DOI_KEY.length)}`)
+              .join("|")}`,
+          out,
+          signal,
+        );
+      }
+
+      for (const odd of dois.filter((d) => !batchable(d))) {
+        await collect(
+          [`${DOI_KEY}${odd}`],
+          () => `doi:https://doi.org/${odd}`,
+          out,
+          signal,
+        );
+      }
+    } catch (err) {
+      const detail = err instanceof Error ? err.message : String(err);
+      console.error(`[${SOURCE_ID}] resolve ${detail}`);
+      return fillMissing(out, keys, { status: "unreachable", detail });
+    }
+
+    return fillMissing(out, keys, { status: "notfound" });
+  },
+};

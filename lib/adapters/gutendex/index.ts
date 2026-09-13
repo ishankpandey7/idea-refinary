@@ -1,4 +1,5 @@
 import type { Adapter, SourceResult, Spdx } from "@/types/source-result";
+import { fillMissing, type ResolveOutcome, type Resolver } from "@/lib/resolve-types";
 
 const SOURCE_ID = "gutendex";
 // The no-slash form 301s to this; go straight there to skip the extra hop.
@@ -112,3 +113,88 @@ export const adapter: Adapter = {
 };
 
 export const search = adapter.search;
+
+// ---------------------------------------------------------------------------
+// Resolve: a Gutenberg link someone already has -> the same SourceResult.
+// ---------------------------------------------------------------------------
+
+/**
+ * Every Gutenberg URL carries the ebook number somewhere, and there are four
+ * places it hides: /ebooks/1342, the download forms /ebooks/1342.html.images
+ * and /files/1342/..., the /cache/epub/1342/... mirror, and gutendex's own
+ * /books/1342.
+ */
+function identify(url: URL): string | null {
+  const host = url.hostname.toLowerCase().replace(/^(www|m)\./, "");
+  const parts = url.pathname.split("/").filter(Boolean);
+
+  const after = (segment: string): string | null => {
+    const at = parts.indexOf(segment);
+    if (at === -1) return null;
+    const id = (parts[at + 1] ?? "").match(/^\d+/)?.[0];
+    return id || null;
+  };
+
+  if (host === "gutendex.com") return after("books");
+  if (host !== "gutenberg.org") return null;
+
+  return after("ebooks") ?? after("files") ?? after("epub");
+}
+
+/** gutendex takes a comma-separated id list, so this is one call for many. */
+const IDS_PER_CALL = 50;
+
+async function resolveChunk(
+  keys: string[],
+  signal?: AbortSignal,
+): Promise<Record<string, ResolveOutcome>> {
+  const params = new URLSearchParams({ ids: keys.join(",") });
+  const res = await fetch(`${ENDPOINT}?${params.toString()}`, {
+    headers: { Accept: "application/json", "User-Agent": UA },
+    signal,
+  });
+
+  if (!res.ok) {
+    console.error(`[${SOURCE_ID}] resolve HTTP ${res.status}`);
+    // 403 here is the known Vercel block, not a missing book. Saying
+    // "not found" would be a lie that reads as a licence answer.
+    return fillMissing({}, keys, {
+      status: "unreachable",
+      detail: `HTTP ${res.status}`,
+    });
+  }
+
+  const body: unknown = await res.json();
+  const books = (body as { results?: GutendexBook[] } | null)?.results;
+  if (!Array.isArray(books)) {
+    return fillMissing({}, keys, {
+      status: "unreachable",
+      detail: "unexpected payload",
+    });
+  }
+
+  const out: Record<string, ResolveOutcome> = {};
+  for (const book of books) {
+    const result = toResult(book);
+    if (result) out[String(book.id)] = { status: "ok", result };
+  }
+  return fillMissing(out, keys, { status: "notfound" });
+}
+
+export const resolver: Resolver = {
+  identify,
+  async resolveBatch(keys, signal) {
+    const out: Record<string, ResolveOutcome> = {};
+    try {
+      for (let i = 0; i < keys.length; i += IDS_PER_CALL) {
+        const chunk = keys.slice(i, i + IDS_PER_CALL);
+        Object.assign(out, await resolveChunk(chunk, signal));
+      }
+    } catch (err) {
+      const detail = err instanceof Error ? err.message : String(err);
+      console.error(`[${SOURCE_ID}] resolve ${detail}`);
+      return fillMissing(out, keys, { status: "unreachable", detail });
+    }
+    return out;
+  },
+};

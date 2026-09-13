@@ -5,9 +5,11 @@ import { usePathname } from "next/navigation";
 import { useAuth } from "./AuthProvider";
 import ThemeToggle from "./ThemeToggle";
 
+// `short` is what fits on a 375px phone once there are three of these.
 const LINKS = [
-  { href: "/", label: "Search" },
-  { href: "/my-ideas", label: "My Ideas" },
+  { href: "/", label: "Check", short: "Check" },
+  { href: "/search", label: "Search", short: "Search" },
+  { href: "/my-ideas", label: "My Ideas", short: "Ideas" },
 ];
 
 export default function SiteHeader() {
@@ -17,18 +19,21 @@ export default function SiteHeader() {
   return (
     <header
       data-print-hide
-      className="flex items-center justify-between gap-3 border-b border-line bg-raised px-4 py-4 sm:gap-4 sm:px-10 sm:py-5"
+      className="flex items-center justify-between gap-2 border-b border-line bg-raised px-4 py-4 sm:gap-4 sm:px-10 sm:py-5"
     >
       <Link href="/" className="flex items-baseline gap-1.5">
         <span className="whitespace-nowrap font-serif text-base tracking-tight text-ink sm:text-xl">
           Idea Craft
         </span>
-        <span aria-hidden className="text-lg leading-none text-accent">
+        <span
+          aria-hidden
+          className="hidden text-lg leading-none text-accent sm:inline"
+        >
           &bull;
         </span>
       </Link>
 
-      <nav className="flex gap-3.5 text-[12px] sm:gap-8 sm:text-sm">
+      <nav className="flex gap-3 text-[12px] sm:gap-8 sm:text-sm">
         {LINKS.map((l) => (
           <Link
             key={l.href}
@@ -39,7 +44,8 @@ export default function SiteHeader() {
                 : "whitespace-nowrap text-muted transition hover:text-ink"
             }
           >
-            {l.label}
+            <span className="sm:hidden">{l.short}</span>
+            <span className="hidden sm:inline">{l.label}</span>
           </Link>
         ))}
       </nav>

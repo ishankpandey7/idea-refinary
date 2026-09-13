@@ -1,8 +1,16 @@
 # Idea Craft
 
-Federated open-licence search + idea workspace. One query fans out to
-source APIs; results are normalised, deduped, licence-tagged and shown
-as outbound deep links. We never host content.
+A licence checker for open-licence material, with search attached.
+
+Paste the links to what you are using; each one is resolved against the
+source that published it, its licence is normalised to an SPDX enum, and
+that enum is judged against what you said you were doing with the material
+— commercial or not, edited or not. Out comes a verdict per source
+(clear / conditions / check / not usable) and the credits you owe, as
+text, Markdown or CSV. Search is the secondary path, for when you need
+more material than you already have.
+
+Everything works signed out. Sign-in only keeps things.
 
 ## Stack
 Next.js App Router · TypeScript · Tailwind · Supabase · Vercel.
@@ -25,6 +33,16 @@ lib/core/*
 - Source-specific fields go in `raw`. Never add top-level fields.
 - Licence maps to the Spdx enum. Use "UNKNOWN" rather than guessing.
 - snippet is provider-supplied text ONLY. Never generate or summarise.
+
+## Resolver rules
+Each adapter also exports `resolver: Resolver` (lib/resolve-types.ts).
+- identify(url) returns this source's lookup key, or null. No network.
+- resolveBatch never throws and answers for every key it was given.
+- Reuse the adapter's own toResult / mapLicence. One licence map per source.
+- Distinguish notfound (the source answered) from unreachable (it did not).
+  Never report an unreachable source as "no record".
+- A link we cannot resolve is reported as unresolved. Never infer a licence
+  from a URL, a host or a file name.
 
 ## Data rules
 - Every table is RLS-protected. Access to an idea means a row in
