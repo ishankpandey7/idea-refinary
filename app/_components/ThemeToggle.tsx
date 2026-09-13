@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useStored } from "../_lib/stored";
 
 export type Theme = "light" | "dark" | "auto";
 
@@ -34,32 +34,16 @@ function apply(theme: Theme): void {
 }
 
 export default function ThemeToggle() {
-  const [theme, setTheme] = useState<Theme>("auto");
-  const [ready, setReady] = useState(false);
-
-  // The inline script has already painted the right colours; this only syncs
-  // the button's own label, so it can wait for mount.
-  useEffect(() => {
-    let stored: Theme = "auto";
-    try {
-      const raw = window.localStorage.getItem(THEME_KEY);
-      if (isTheme(raw)) stored = raw;
-    } catch {
-      // Storage blocked — stay on auto.
-    }
-    setTheme(stored);
-    setReady(true);
-  }, []);
+  // The inline script in the layout has already painted the right colours off
+  // this same key; the button only needs it for its own label. Reading it as
+  // an external store means no mount effect and no second render.
+  const [raw, setRaw] = useStored(THEME_KEY, "auto");
+  const theme: Theme = isTheme(raw) ? raw : "auto";
 
   function cycle() {
     const next = ORDER[(ORDER.indexOf(theme) + 1) % ORDER.length];
-    setTheme(next);
     apply(next);
-    try {
-      window.localStorage.setItem(THEME_KEY, next);
-    } catch {
-      // Not persisted, but the page still switches for this visit.
-    }
+    setRaw(next);
   }
 
   return (
@@ -70,7 +54,7 @@ export default function ThemeToggle() {
       aria-label={`Theme: ${LABEL[theme]}. Click to change.`}
       className="flex size-8 shrink-0 items-center justify-center rounded-full border border-line text-[13px] text-body transition hover:border-accent hover:text-accent"
     >
-      <span aria-hidden>{ready ? GLYPH[theme] : ""}</span>
+      <span aria-hidden>{GLYPH[theme]}</span>
     </button>
   );
 }

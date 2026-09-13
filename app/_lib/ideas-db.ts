@@ -53,7 +53,9 @@ export async function listIdeas(): Promise<Idea[]> {
   const load = (columns: string) =>
     sb.from("ideas").select(columns).order("created_at", { ascending: false });
 
-  let { data, error } = await load(WITH_USAGE);
+  const first = await load(WITH_USAGE);
+  let { data } = first;
+  const { error } = first;
 
   if (error) {
     console.error(`[ideas] list failed: ${error.message}`);

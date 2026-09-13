@@ -1,7 +1,8 @@
 "use client";
 
-import { useCallback, useEffect, useMemo, useState } from "react";
+import { Suspense, useCallback, useEffect, useMemo, useState } from "react";
 import Link from "next/link";
+import { useSearchParams } from "next/navigation";
 import type { SourceResult } from "@/types/source-result";
 import type { CheckItem, CheckResponse } from "@/lib/resolve";
 import { extractLinks, MAX_LINKS, MAX_TEXT } from "@/lib/links";
@@ -10,13 +11,10 @@ import ResultCard, { categoryOf } from "./_components/ResultCard";
 import CompliancePanel from "./_components/CompliancePanel";
 import PrintSheet from "./_components/PrintSheet";
 import { useAuth } from "./_components/AuthProvider";
-import { readUsage, writeUsage, DEFAULT_USAGE, usageLabel } from "./_lib/usage";
+import { useUsage, usageLabel } from "./_lib/usage";
+import { useStored } from "./_lib/stored";
 import { resultKey, saveResult, savedKeysFor } from "./_lib/ideas-db";
-import {
-  readIdeas,
-  saveResult as saveLocal,
-  savedKeysFor as savedKeysLocal,
-} from "./_lib/ideas";
+import { keysFor, saveResult as saveLocal, useLocalIdeas } from "./_lib/ideas";
 
 const PASTE_KEY = "idea-refinery:check-paste";
 const PROJECT_KEY = "idea-refinery:check-project";
@@ -60,31 +58,30 @@ const PLACEHOLDER = [
   "https://doi.org/10.7717/peerj.4375",
 ].join("\n");
 
-function read(key: string, fallback: string): string {
-  if (typeof window === "undefined") return fallback;
-  try {
-    return window.localStorage.getItem(key) ?? fallback;
-  } catch {
-    return fallback;
-  }
-}
-
-function write(key: string, value: string): void {
-  try {
-    window.localStorage.setItem(key, value);
-  } catch {
-    // Storage blocked — the box still works for this visit.
-  }
-}
-
 function plural(n: number, word: string): string {
   return `${n} ${word}${n === 1 ? "" : "s"}`;
 }
 
-export default function Check() {
-  const [project, setProject] = useState(DEFAULT_PROJECT);
-  const [paste, setPaste] = useState("");
-  const [usage, setUsage] = useState<Usage>(DEFAULT_USAGE);
+/**
+ * The share link is read with useSearchParams, which Next requires a Suspense
+ * boundary around. Everything on this page is client state anyway — the shell
+ * renders immediately and the check fills in — so an empty fallback costs
+ * nothing a reader would notice.
+ */
+export default function CheckPage() {
+  return (
+    <Suspense fallback={null}>
+      <Check />
+    </Suspense>
+  );
+}
+
+function Check() {
+  const params = useSearchParams();
+
+  const [project, setProject] = useStored(PROJECT_KEY, DEFAULT_PROJECT);
+  const [paste, setPaste] = useStored(PASTE_KEY, "");
+  const [usage, setUsage] = useUsage();
 
   const [response, setResponse] = useState<CheckResponse | null>(null);
   const [loading, setLoading] = useState(false);
@@ -93,14 +90,20 @@ export default function Check() {
   const [only, setOnly] = useState<Level | null>(null);
   /** The links the current response is about, for rebuilding the share link. */
   const [checked_, setChecked] = useState<string[]>([]);
-  /** True when this page was opened from someone else's share link. */
-  const [arrived, setArrived] = useState(false);
   const [copied, setCopied] = useState(false);
   const [keeping, setKeeping] = useState(false);
-  const [savedKeys, setSavedKeys] = useState<Set<string>>(new Set());
+  const [dbKeys, setDbKeys] = useState<Set<string>>(new Set());
   const [saveError, setSaveError] = useState<string | null>(null);
 
   const { user } = useAuth();
+
+  /** The links this page was opened on, if it was opened from a share. */
+  const shared = params.get("l");
+  const arrived = shared !== null;
+  const sharedLinks = useMemo(
+    () => (shared ? extractLinks(shared) : []),
+    [shared],
+  );
 
   /**
    * Puts the whole check in the address bar: the links, and the intent they
@@ -117,78 +120,113 @@ export default function Check() {
     window.history.replaceState(null, "", `/?${qs.toString()}`);
   }, []);
 
-  const runCheck = useCallback(
-    async (links: string[], intent: Usage) => {
-      if (links.length === 0) return;
-      setLoading(true);
+  /** The network half, with no state in it, so both callers can share it. */
+  const resolve = useCallback(async (links: string[]) => {
+    const res = await fetch("/api/resolve", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ urls: links }),
+    });
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    return (await res.json()) as CheckResponse;
+  }, []);
+
+  const apply = useCallback(
+    (body: CheckResponse, links: string[], intent: Usage) => {
+      setResponse(body);
+      setChecked(links);
       setFailed(false);
-      try {
-        const res = await fetch("/api/resolve", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ urls: links }),
-        });
-        if (!res.ok) throw new Error(`HTTP ${res.status}`);
-        setResponse((await res.json()) as CheckResponse);
-        setChecked(links);
-        syncUrl(links, intent);
-      } catch {
-        setResponse(null);
-        setFailed(true);
-      } finally {
-        setLoading(false);
-      }
+      syncUrl(links, intent);
     },
     [syncUrl],
   );
 
-  // Restore once on mount. A shared link wins over this browser's own state —
-  // someone who followed one came to see that check, not their last one.
-  useEffect(() => {
-    const params = new URLSearchParams(window.location.search);
-
-    // An old link into the search page still works; this route no longer
-    // answers it.
-    if (params.get("q")) {
-      window.location.replace(`/search${window.location.search}`);
-      return;
+  async function runCheck(links: string[], intent: Usage) {
+    if (links.length === 0) return;
+    setLoading(true);
+    setFailed(false);
+    try {
+      apply(await resolve(links), links, intent);
+    } catch {
+      setResponse(null);
+      setFailed(true);
+    } finally {
+      setLoading(false);
     }
+  }
 
-    setProject(read(PROJECT_KEY, DEFAULT_PROJECT));
-
-    const shared = params.get("l");
-    if (shared) {
-      const intent: Usage = {
-        commercial: params.get("c") === "1",
-        modify: params.get("m") === "1",
-      };
-      setUsage(intent);
-      writeUsage(intent);
-      setPaste(shared);
-      write(PASTE_KEY, shared);
-      setArrived(true);
-      void runCheck(extractLinks(shared), intent);
-      return;
-    }
-
-    setUsage(readUsage());
-    setPaste(read(PASTE_KEY, ""));
-  }, [runCheck]);
-
-  const refreshSaved = useCallback(
-    async (title: string) => {
-      setSavedKeys(user ? await savedKeysFor(title) : savedKeysLocal(title));
-    },
-    [user],
+  // A share link carries the intent it was judged under, and that has to win
+  // over whatever this browser last had — someone who followed one came to
+  // see that check, not their own. Written to the shared store rather than
+  // held separately, so the toggles and /search agree with it immediately.
+  const sharedIntent = useMemo(
+    (): Usage => ({
+      commercial: params.get("c") === "1",
+      modify: params.get("m") === "1",
+    }),
+    [params],
   );
 
   useEffect(() => {
-    if (project.trim()) void refreshSaved(project.trim());
-  }, [project, refreshSaved]);
+    if (!arrived) return;
+    setUsage(sharedIntent);
+    setPaste(shared ?? "");
+  }, [arrived, shared, sharedIntent, setUsage, setPaste]);
+
+  // Runs the arrival check. Settled in a callback, so nothing is set
+  // synchronously here; the spinner comes from `busy` below instead.
+  useEffect(() => {
+    if (sharedLinks.length === 0) return;
+    let active = true;
+
+    void resolve(sharedLinks).then(
+      (body) => {
+        if (active) apply(body, sharedLinks, sharedIntent);
+      },
+      () => {
+        if (active) setFailed(true);
+      },
+    );
+
+    return () => {
+      active = false;
+    };
+  }, [sharedLinks, sharedIntent, resolve, apply]);
+
+  // An old link into the search page still works; this route no longer
+  // answers it. Navigation, not state, so it belongs in an effect.
+  useEffect(() => {
+    if (params.get("q")) {
+      window.location.replace(`/search?${params.toString()}`);
+    }
+  }, [params]);
+
+  // Signed out the answer is already in the store and needs no round trip;
+  // signed in it is a query, settled in a callback.
+  const localIdeas = useLocalIdeas();
+
+  useEffect(() => {
+    const title = project.trim();
+    if (!user || !title) return;
+    let active = true;
+
+    void savedKeysFor(title).then((keys) => {
+      if (active) setDbKeys(keys);
+    });
+
+    return () => {
+      active = false;
+    };
+  }, [user, project]);
+
+  const savedKeys = user ? dbKeys : keysFor(localIdeas, project.trim());
+
+  /** True while the arrival check is still in flight, before `loading` owns it. */
+  const busy =
+    loading || (sharedLinks.length > 0 && response === null && !failed);
 
   function changeUsage(next: Usage) {
     setUsage(next);
-    writeUsage(next);
     // The verdicts on screen just changed, so the link that reproduces them
     // has to change with them.
     if (checked_.length > 0) syncUrl(checked_, next);
@@ -204,16 +242,6 @@ export default function Check() {
       // there is still a way to get it — just do not claim this worked.
       setCopied(false);
     }
-  }
-
-  function changeProject(next: string) {
-    setProject(next);
-    write(PROJECT_KEY, next);
-  }
-
-  function changePaste(next: string) {
-    setPaste(next);
-    write(PASTE_KEY, next);
   }
 
   const pending = useMemo(() => extractLinks(paste), [paste]);
@@ -280,7 +308,7 @@ export default function Check() {
           break;
         }
       }
-      await refreshSaved(title);
+      if (user) setDbKeys(await savedKeysFor(title));
     } finally {
       setKeeping(false);
     }
@@ -289,19 +317,17 @@ export default function Check() {
   async function onSave(r: SourceResult) {
     const title = project.trim() || DEFAULT_PROJECT;
     if (!user) {
+      // The store notifies, so the card, the count and /my-ideas all redraw.
       saveLocal(title, r);
       setSaveError(null);
-      await refreshSaved(title);
       return;
     }
     const outcome = await saveResult(title, r);
     setSaveError(outcome.ok ? null : (outcome.error ?? "Save failed"));
-    await refreshSaved(title);
+    setDbKeys(await savedKeysFor(title));
   }
 
-  const savedCount = user
-    ? savedKeys.size
-    : (readIdeas().find((i) => i.query === project.trim())?.results.length ?? 0);
+  const savedCount = savedKeys.size;
 
   return (
     <>
@@ -340,7 +366,7 @@ export default function Check() {
           id="project"
           type="text"
           value={project}
-          onChange={(e) => changeProject(e.target.value)}
+          onChange={(e) => setProject(e.target.value)}
           placeholder={DEFAULT_PROJECT}
           className="mt-3 w-full rounded-xl border border-line bg-raised px-4 py-3 text-[15px] text-ink placeholder:text-faint focus:border-accent/70 focus:outline-none"
         />
@@ -375,7 +401,7 @@ export default function Check() {
         <textarea
           id="paste"
           value={paste}
-          onChange={(e) => changePaste(e.target.value)}
+          onChange={(e) => setPaste(e.target.value)}
           rows={8}
           spellCheck={false}
           placeholder={PLACEHOLDER}
@@ -386,10 +412,10 @@ export default function Check() {
           <button
             type="button"
             onClick={() => void runCheck(pending, usage)}
-            disabled={loading || pending.length === 0}
+            disabled={busy || pending.length === 0}
             className="rounded-full bg-brand px-7 py-3 text-[14px] font-medium text-white transition hover:bg-brand-hover disabled:cursor-not-allowed disabled:opacity-60"
           >
-            {loading
+            {busy
               ? "Checking…"
               : pending.length === 0
                 ? "Check licences"
@@ -398,7 +424,7 @@ export default function Check() {
 
           <button
             type="button"
-            onClick={() => changePaste(EXAMPLE)}
+            onClick={() => setPaste(EXAMPLE)}
             className="rounded-full border border-line px-5 py-2.5 text-[12px] text-body transition hover:border-accent hover:text-accent"
           >
             Use an example
@@ -408,7 +434,7 @@ export default function Check() {
             <button
               type="button"
               onClick={() => {
-                changePaste("");
+                setPaste("");
                 setResponse(null);
               }}
               className="text-[12px] text-muted underline-offset-2 transition hover:text-accent hover:underline"

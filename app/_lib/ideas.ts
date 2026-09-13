@@ -1,4 +1,8 @@
+"use client";
+
+import { useMemo } from "react";
 import type { SourceResult } from "@/types/source-result";
+import { readStored, useStored, writeStored } from "./stored";
 
 export type Idea = {
   id: string;
@@ -8,6 +12,7 @@ export type Idea = {
 };
 
 const KEY = "idea-refinery:ideas";
+const EMPTY = "[]";
 
 export function resultKey(r: SourceResult): string {
   return `${r.sourceId}:${r.externalId}`;
@@ -21,29 +26,38 @@ function newId(): string {
   }
 }
 
-export function readIdeas(): Idea[] {
-  if (typeof window === "undefined") return [];
+function parse(raw: string): Idea[] {
   try {
-    const raw = window.localStorage.getItem(KEY);
-    if (!raw) return [];
-    const parsed: unknown = JSON.parse(raw);
-    return Array.isArray(parsed) ? (parsed as Idea[]) : [];
+    const value: unknown = JSON.parse(raw);
+    return Array.isArray(value) ? (value as Idea[]) : [];
   } catch {
     return [];
   }
 }
 
+export function readIdeas(): Idea[] {
+  return parse(readStored(KEY, EMPTY));
+}
+
 function writeIdeas(ideas: Idea[]): Idea[] {
-  if (typeof window === "undefined") return ideas;
-  try {
-    window.localStorage.setItem(KEY, JSON.stringify(ideas));
-  } catch {
-    // Quota or a browser that blocks storage - keep the in-memory list.
-  }
+  writeStored(KEY, JSON.stringify(ideas));
   return ideas;
 }
 
-/** Adds a result to the idea for `query`, creating that idea if needed. */
+/**
+ * The signed-out store, as something React can subscribe to.
+ *
+ * Every component that shows saved work reads this, so a Keep on the checker
+ * updates its own count, the header link and /my-ideas in the same render —
+ * which the old read-during-render version did not do.
+ */
+export function useLocalIdeas(): Idea[] {
+  const [raw] = useStored(KEY, EMPTY);
+  // Keyed on the raw string so the array identity is stable between writes.
+  return useMemo(() => parse(raw), [raw]);
+}
+
+/** Adds a result to the project for `query`, creating it if needed. */
 export function saveResult(query: string, result: SourceResult): Idea[] {
   const q = query.trim();
   if (!q) return readIdeas();
@@ -66,7 +80,7 @@ export function saveResult(query: string, result: SourceResult): Idea[] {
   return writeIdeas(ideas);
 }
 
-/** Removes one result. An idea left with no results is dropped too. */
+/** Removes one result. A project left with nothing in it is dropped too. */
 export function removeResult(ideaId: string, key: string): Idea[] {
   const ideas = readIdeas()
     .map((i) =>
@@ -82,8 +96,12 @@ export function removeIdea(ideaId: string): Idea[] {
   return writeIdeas(readIdeas().filter((i) => i.id !== ideaId));
 }
 
-export function savedKeysFor(query: string): Set<string> {
+export function keysFor(ideas: Idea[], query: string): Set<string> {
   const q = query.trim();
-  const idea = readIdeas().find((i) => i.query === q);
+  const idea = ideas.find((i) => i.query === q);
   return new Set(idea ? idea.results.map(resultKey) : []);
+}
+
+export function savedKeysFor(query: string): Set<string> {
+  return keysFor(readIdeas(), query);
 }

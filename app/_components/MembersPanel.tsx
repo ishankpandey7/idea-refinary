@@ -32,15 +32,18 @@ export default function MembersPanel({
     setMembers(await listMembers(ideaId));
   }, [ideaId]);
 
+  // Settled in a callback rather than the effect body, which also fixes a
+  // race: switching projects quickly could land the slower answer last.
+  // The form resets on its own — /my-ideas keys this on the project id, so a
+  // different project gets a fresh component rather than a cleared one.
   useEffect(() => {
-    void reload();
-  }, [reload]);
-
-  // A different idea starts with a clean form.
-  useEffect(() => {
-    setEmail("");
-    setError(null);
-    setNotice(null);
+    let active = true;
+    void listMembers(ideaId).then((rows) => {
+      if (active) setMembers(rows);
+    });
+    return () => {
+      active = false;
+    };
   }, [ideaId]);
 
   async function onInvite(e: FormEvent) {

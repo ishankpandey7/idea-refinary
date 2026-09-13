@@ -38,14 +38,13 @@ export function useAuth(): AuthState {
  */
 export default function AuthProvider({ children }: { children: ReactNode }) {
   const [user, setUser] = useState<User | null>(null);
-  const [loading, setLoading] = useState(true);
+  // Nothing to wait for when there are no keys, so this never starts true —
+  // the alternative is an effect whose only job is to switch it off.
+  const [loading, setLoading] = useState(isSupabaseConfigured);
   const [imported, setImported] = useState<ImportOutcome | null>(null);
 
   useEffect(() => {
-    if (!isSupabaseConfigured) {
-      setLoading(false);
-      return;
-    }
+    if (!isSupabaseConfigured) return;
 
     const sb = getSupabase();
     let active = true;

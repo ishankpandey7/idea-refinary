@@ -1,7 +1,8 @@
 "use client";
 
-import { useCallback, useEffect, useState } from "react";
+import { Suspense, useEffect, useMemo, useState } from "react";
 import Link from "next/link";
+import { useSearchParams } from "next/navigation";
 import ResultCard, {
   CATEGORY_LABELS,
   categoryOf,
@@ -21,11 +22,11 @@ import {
 } from "../_lib/ideas-db";
 import { useAuth } from "../_components/AuthProvider";
 import {
-  readIdeas as readLocalIdeas,
   removeIdea as removeLocalIdea,
   removeResult as removeLocalResult,
+  useLocalIdeas,
 } from "../_lib/ideas";
-import { readUsage, writeUsage } from "../_lib/usage";
+import { useUsage } from "../_lib/usage";
 
 function when(iso: string): string {
   const d = new Date(iso);
@@ -50,95 +51,117 @@ function SharedBadge() {
   );
 }
 
-export default function MyIdeas() {
-  const [ideas, setIdeas] = useState<Idea[]>([]);
-  const [openId, setOpenId] = useState<string | null>(null);
-  const [inviteOpen, setInviteOpen] = useState(false);
-  const [ready, setReady] = useState(false);
+/** Suspense, because useSearchParams below needs one. See the checker. */
+export default function MyIdeasPage() {
+  return (
+    <Suspense fallback={null}>
+      <MyIdeas />
+    </Suspense>
+  );
+}
+
+function MyIdeas() {
+  const [dbIdeas, setDbIdeas] = useState<Idea[]>([]);
+  const params = useSearchParams();
+  /** Deep link from the search page's "Open project". */
+  const linked = params.get("idea");
+
+  // null means "whatever the link said"; a click replaces it outright, and
+  // closing sets it to "" so the link cannot re-open behind you.
+  const [picked, setPicked] = useState<string | null>(null);
+  const openId = picked ?? linked;
+
+  const [inviteFor, setInviteFor] = useState<string | null>(null);
+  /** Only the database list is awaited; the local one is already here. */
+  const [dbLoaded, setDbLoaded] = useState(false);
 
   const { user, loading: authLoading, configured, imported } = useAuth();
+
+  const [usage, setUsage] = useUsage();
+  const stored = useLocalIdeas();
 
   /**
    * Signed out, picks live in this browser — the licence check never needed
    * an account, so neither does looking at what it found. The local store has
-   * no owner and no per-idea usage, so those are filled in from the one place
-   * a signed-out person can set them: the shared usage preference.
+   * no owner and no per-project usage, so those are filled in from the one
+   * place a signed-out person can set them: the shared usage preference.
    */
-  const localIdeas = useCallback((): Idea[] => {
-    const usage = readUsage();
-    return readLocalIdeas().map((i) => ({
-      id: i.id,
-      ownerId: LOCAL_OWNER,
-      query: i.query,
-      savedAt: i.savedAt,
-      usage,
-      results: i.results,
-    }));
-  }, []);
+  const localIdeas = useMemo(
+    (): Idea[] =>
+      stored.map((i) => ({
+        id: i.id,
+        ownerId: LOCAL_OWNER,
+        query: i.query,
+        savedAt: i.savedAt,
+        usage,
+        results: i.results,
+      })),
+    [stored, usage],
+  );
 
-  const reload = useCallback(async () => {
-    setIdeas(user ? await listIdeas() : localIdeas());
-    setReady(true);
-  }, [user, localIdeas]);
+  const ideas = user ? dbIdeas : localIdeas;
 
-  // Ideas live in the database now, so the list arrives after mount — and
-  // again after the first sign-in import finishes.
+  // The database list arrives after mount, and again after the first sign-in
+  // import finishes. Settled in a callback, so nothing is set synchronously.
   useEffect(() => {
-    if (authLoading) return;
-    void reload();
-  }, [authLoading, reload, imported]);
+    if (authLoading || !user) return;
+    let active = true;
+
+    void listIdeas().then((rows) => {
+      if (!active) return;
+      setDbIdeas(rows);
+      setDbLoaded(true);
+    });
+
+    return () => {
+      active = false;
+    };
+  }, [authLoading, user, imported]);
+
+  const ready = !user || dbLoaded;
 
   async function onRemoveResult(ideaId: string, key: string) {
     if (!user) {
       removeLocalResult(ideaId, key);
-    } else {
-      await removeResult(ideaId, key);
+      return;
     }
-    const next = user ? await listIdeas() : localIdeas();
-    setIdeas(next);
-    if (!next.some((i) => i.id === ideaId)) setOpenId(null);
+    await removeResult(ideaId, key);
+    const next = await listIdeas();
+    setDbIdeas(next);
+    if (!next.some((i) => i.id === ideaId)) setPicked("");
   }
 
   // Optimistic: the panel recomputes every verdict from this, and waiting a
   // round trip to redraw a toggle feels broken.
-  async function onUsageChange(ideaId: string, usage: Usage) {
-    // Signed out there is nowhere per-idea to put this, so it moves the one
-    // shared preference — and every idea on screen with it.
+  async function onUsageChange(ideaId: string, next: Usage) {
+    // Signed out there is nowhere per-project to put this, so it moves the
+    // one shared preference — and every project on screen with it.
     if (!user) {
-      writeUsage(usage);
-      setIdeas((prev) => prev.map((i) => ({ ...i, usage })));
+      setUsage(next);
       return;
     }
-    setIdeas((prev) =>
-      prev.map((i) => (i.id === ideaId ? { ...i, usage } : i)),
+    // Optimistic: the panel recomputes every verdict from this, and waiting a
+    // round trip to redraw a toggle feels broken.
+    setDbIdeas((prev) =>
+      prev.map((i) => (i.id === ideaId ? { ...i, usage: next } : i)),
     );
-    if (!(await setIdeaUsage(ideaId, usage))) setIdeas(await listIdeas());
+    if (!(await setIdeaUsage(ideaId, next))) setDbIdeas(await listIdeas());
   }
 
   async function onRemoveIdea(ideaId: string) {
     if (!user) {
       removeLocalIdea(ideaId);
-      setIdeas(localIdeas());
     } else {
       await removeIdea(ideaId);
-      setIdeas(await listIdeas());
+      setDbIdeas(await listIdeas());
     }
-    if (openId === ideaId) setOpenId(null);
+    if (openId === ideaId) setPicked("");
   }
 
-  // Deep link from the search page's "Open project" — the list arrives after
-  // mount, so this just parks the id and `open` resolves once it lands.
-  useEffect(() => {
-    const id = new URLSearchParams(window.location.search).get("idea");
-    if (id) setOpenId(id);
-  }, []);
-
-  // Closing an idea, or switching to another one, puts the invite form away.
-  useEffect(() => {
-    setInviteOpen(false);
-  }, [openId]);
-
   const open = ideas.find((i) => i.id === openId) ?? null;
+  // Derived rather than reset in an effect, so opening a different project
+  // cannot leave the previous one's invite form showing for a frame.
+  const inviteOpen = inviteFor !== null && inviteFor === openId;
   // A local idea is yours by definition — it is in your browser.
   const ownsOpen = Boolean(
     open && (user ? open.ownerId === user.id : open.ownerId === LOCAL_OWNER),
@@ -229,7 +252,7 @@ export default function MyIdeas() {
             <div className="flex flex-wrap items-center gap-4">
               <button
                 type="button"
-                onClick={() => setOpenId(null)}
+                onClick={() => setPicked("")}
                 className="rounded-full border border-line px-5 py-2 text-[13px] text-body transition hover:border-accent hover:text-accent"
               >
                 &larr; All projects
@@ -247,7 +270,7 @@ export default function MyIdeas() {
               {user && ownsOpen ? (
                 <button
                   type="button"
-                  onClick={() => setInviteOpen((v) => !v)}
+                  onClick={() => setInviteFor(inviteOpen ? null : openId)}
                   className="rounded-full border border-line px-5 py-2 text-[13px] text-body transition hover:border-accent hover:text-accent"
                 >
                   Invite
@@ -275,11 +298,12 @@ export default function MyIdeas() {
                 with, and the panel's queries need a signed-in session. */}
             {user ? (
               <MembersPanel
+                key={open.id}
                 ideaId={open.id}
                 isOwner={ownsOpen}
                 currentUserId={user.id}
                 inviteOpen={inviteOpen}
-                onCloseInvite={() => setInviteOpen(false)}
+                onCloseInvite={() => setInviteFor(null)}
               />
             ) : null}
 
@@ -290,14 +314,14 @@ export default function MyIdeas() {
               onUsageChange={(u) => void onUsageChange(open.id, u)}
             />
 
-            {/* Keyed so switching ideas clears the query and its results.
+            {/* Keyed so switching projects clears the query and its results.
                 Adding writes a pin row, so this is signed-in only. */}
             {user ? (
               <IdeaSearch
                 key={open.id}
                 ideaId={open.id}
                 savedKeys={new Set(open.results.map(resultKey))}
-                onAdded={reload}
+                onAdded={async () => setDbIdeas(await listIdeas())}
               />
             ) : null}
 
@@ -372,7 +396,7 @@ export default function MyIdeas() {
                   <div className="mt-6 flex items-center gap-2 border-t border-line pt-4">
                     <button
                       type="button"
-                      onClick={() => setOpenId(idea.id)}
+                      onClick={() => setPicked(idea.id)}
                       className="rounded-full bg-brand px-5 py-2 text-[12px] font-medium text-white transition hover:bg-brand-hover"
                     >
                       Open

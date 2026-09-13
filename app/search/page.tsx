@@ -1,7 +1,8 @@
 "use client";
 
-import { useCallback, useEffect, useState } from "react";
+import { Suspense, useCallback, useEffect, useMemo, useState } from "react";
 import Link from "next/link";
+import { useSearchParams } from "next/navigation";
 import type { SourceResult } from "@/types/source-result";
 import type { SearchResponse, SourceStat } from "@/lib/search-response";
 import ResultCard from "../_components/ResultCard";
@@ -14,13 +15,13 @@ import {
 } from "../_lib/ideas-db";
 import { useAuth } from "../_components/AuthProvider";
 import CompliancePanel from "../_components/CompliancePanel";
-import { verdictFor, type Usage } from "@/lib/licence-rules";
-import { DEFAULT_USAGE, readUsage, writeUsage } from "../_lib/usage";
+import { verdictFor } from "@/lib/licence-rules";
+import { useUsage } from "../_lib/usage";
 import { tally } from "@/lib/credits";
 import {
-  readIdeas,
+  keysFor,
   saveResult as saveLocal,
-  savedKeysFor as savedKeysLocal,
+  useLocalIdeas,
 } from "../_lib/ideas";
 
 const CATEGORIES = [
@@ -68,16 +69,44 @@ function ago(iso: string): string {
   });
 }
 
-export default function Home() {
-  const [query, setQuery] = useState("");
-  const [category, setCategory] = useState<string>("");
+/** Suspense, because useSearchParams below needs one. See the checker. */
+export default function SearchPage() {
+  return (
+    <Suspense fallback={null}>
+      <Home />
+    </Suspense>
+  );
+}
+
+/** An explicit URL wins; otherwise this tab picks up where it left off. */
+function opening(params: URLSearchParams): { q: string; cat: string } {
+  const q = params.get("q")?.trim() ?? "";
+  if (q) return { q, cat: params.get("category")?.trim() ?? "" };
+
+  try {
+    const raw = window.sessionStorage.getItem(LAST_SEARCH);
+    const saved = raw ? (JSON.parse(raw) as { q?: string; cat?: string }) : null;
+    return { q: saved?.q?.trim() ?? "", cat: saved?.cat?.trim() ?? "" };
+  } catch {
+    return { q: "", cat: "" };
+  }
+}
+
+function Home() {
+  const params = useSearchParams();
+  // Only ever the opening value — the boundary above means this component's
+  // first render is on the client, so there is no server HTML to disagree with.
+  const start = useMemo(() => opening(params), [params]);
+
+  const [query, setQuery] = useState(start.q);
+  const [category, setCategory] = useState<string>(start.cat);
   const [results, setResults] = useState<SourceResult[]>([]);
   const [loading, setLoading] = useState(false);
   const [searched, setSearched] = useState(false);
 
-  // The query that was actually searched — this is the current idea.
+  // The query that was actually searched — this is the current project.
   const [currentIdea, setCurrentIdea] = useState("");
-  const [savedKeys, setSavedKeys] = useState<Set<string>>(new Set());
+  const [dbKeys, setDbKeys] = useState<Set<string>>(new Set());
   const [saveError, setSaveError] = useState<string | null>(null);
   const [recent, setRecent] = useState<Idea[]>([]);
   const [meta, setMeta] = useState<SearchMeta | null>(null);
@@ -86,37 +115,33 @@ export default function Home() {
   // have an account. Signed out, picks and this preference live in
   // localStorage — and migrate-local lifts them into Postgres on first
   // sign-in, so nothing picked now is lost later.
-  const [usage, setUsage] = useState<Usage>(DEFAULT_USAGE);
+  const [usage, changeUsage] = useUsage();
 
   const { user } = useAuth();
 
+  const localIdeas = useLocalIdeas();
+
+  // Signed out the picks are already in the store; signed in it is a query,
+  // settled in a callback so nothing is set synchronously in the effect.
   useEffect(() => {
-    setUsage(readUsage());
-  }, []);
+    if (!user || !currentIdea) return;
+    let active = true;
 
-  function changeUsage(next: Usage) {
-    setUsage(next);
-    writeUsage(next);
-  }
+    void savedKeysFor(currentIdea).then((keys) => {
+      if (active) setDbKeys(keys);
+    });
 
-  const refreshSaved = useCallback(
-    async (idea: string) => {
-      setSavedKeys(user ? await savedKeysFor(idea) : savedKeysLocal(idea));
-    },
-    [user],
-  );
+    return () => {
+      active = false;
+    };
+  }, [user, currentIdea]);
 
+  const savedKeys = user ? dbKeys : keysFor(localIdeas, currentIdea);
+
+  // RLS already scopes this to projects you are a member of, so shared ones
+  // show up too.
   useEffect(() => {
-    if (currentIdea) void refreshSaved(currentIdea);
-  }, [currentIdea, refreshSaved]);
-
-  // RLS already scopes this to ideas you are a member of, so the home page
-  // shows shared ones too.
-  useEffect(() => {
-    if (!user) {
-      setRecent([]);
-      return;
-    }
+    if (!user) return;
     let active = true;
     void listIdeas().then((all) => {
       if (active) setRecent(all.slice(0, 2));
@@ -126,32 +151,31 @@ export default function Home() {
     };
   }, [user]);
 
-  const runSearchFor = useCallback(async (term: string, cat: string) => {
-    const q = term.trim();
-    if (!q) return;
-    setLoading(true);
-    try {
-      const url = `/api/search?q=${encodeURIComponent(q)}${
-        cat ? `&category=${encodeURIComponent(cat)}` : ""
-      }`;
-      const res = await fetch(url);
-      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+  /** The network half, with no state in it, so both callers can share it. */
+  const fetchSearch = useCallback(async (q: string, cat: string) => {
+    const url = `/api/search?q=${encodeURIComponent(q)}${
+      cat ? `&category=${encodeURIComponent(cat)}` : ""
+    }`;
+    const res = await fetch(url);
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    return (await res.json()) as SearchResponse;
+  }, []);
 
-      const body = (await res.json()) as SearchResponse;
-      setResults(body.results ?? []);
-      setMeta({
-        sources: body.sources ?? [],
-        fetched: body.fetched ?? 0,
-        deduped: body.deduped ?? 0,
-        totalMs: body.totalMs ?? null,
-        demo: body.demo ?? false,
-      });
-    } catch {
-      setResults([]);
-      setMeta(null);
-    } finally {
+  const apply = useCallback(
+    (body: SearchResponse | null, q: string, cat: string) => {
+      setResults(body?.results ?? []);
+      setMeta(
+        body
+          ? {
+              sources: body.sources ?? [],
+              fetched: body.fetched ?? 0,
+              deduped: body.deduped ?? 0,
+              totalMs: body.totalMs ?? null,
+              demo: body.demo ?? false,
+            }
+          : null,
+      );
       setCurrentIdea(q);
-      setLoading(false);
       setSearched(true);
 
       // This page is a client component, so its state is thrown away on
@@ -166,34 +190,44 @@ export default function Home() {
       } catch {
         // Storage blocked — the URL still covers reload and back/forward.
       }
-    }
-  }, []);
+    },
+    [],
+  );
 
-  // Restore once on mount: an explicit URL wins, otherwise this tab's last
-  // search.
-  useEffect(() => {
-    const params = new URLSearchParams(window.location.search);
-    let q = params.get("q")?.trim() ?? "";
-    let cat = params.get("category")?.trim() ?? "";
-
-    if (!q) {
-      try {
-        const raw = window.sessionStorage.getItem(LAST_SEARCH);
-        if (raw) {
-          const saved = JSON.parse(raw) as { q?: string; cat?: string };
-          q = saved.q?.trim() ?? "";
-          cat = saved.cat?.trim() ?? "";
-        }
-      } catch {
-        q = "";
-      }
-    }
-
+  async function runSearchFor(term: string, cat: string) {
+    const q = term.trim();
     if (!q) return;
-    setQuery(q);
-    setCategory(cat);
-    void runSearchFor(q, cat);
-  }, [runSearchFor]);
+    setLoading(true);
+    try {
+      apply(await fetchSearch(q, cat), q, cat);
+    } catch {
+      apply(null, q, cat);
+    } finally {
+      setLoading(false);
+    }
+  }
+
+  // The opening search, settled in a callback so nothing is set synchronously
+  // here. `start` only ever changes when the URL does.
+  useEffect(() => {
+    if (!start.q) return;
+    let active = true;
+
+    void fetchSearch(start.q, start.cat).then(
+      (body) => {
+        if (active) apply(body, start.q, start.cat);
+      },
+      () => {
+        if (active) apply(null, start.q, start.cat);
+      },
+    );
+
+    return () => {
+      active = false;
+    };
+  }, [start, fetchSearch, apply]);
+
+  const busy = loading || (Boolean(start.q) && !searched);
 
   function runSearch(nextCategory = category) {
     void runSearchFor(query, nextCategory);
@@ -207,7 +241,7 @@ export default function Home() {
   // Picked items come from whichever store the Save button writes to.
   const picked = user
     ? results.filter((r) => savedKeys.has(resultKey(r)))
-    : (readIdeas().find((i) => i.query === currentIdea)?.results ?? []);
+    : (localIdeas.find((i) => i.query === currentIdea)?.results ?? []);
 
   const counts = searched && results.length > 0 ? tally(results, usage) : null;
 
@@ -217,16 +251,16 @@ export default function Home() {
 
   async function onSave(r: SourceResult) {
     if (!user) {
+      // The store notifies, so every count on the page redraws with it.
       saveLocal(currentIdea, r);
       setSaveError(null);
-      await refreshSaved(currentIdea);
       return;
     }
     const outcome = await saveResult(currentIdea, r);
     // A save that fails silently is indistinguishable from one that worked
     // until you go looking in the database, so say so here.
     setSaveError(outcome.ok ? null : (outcome.error ?? "Save failed"));
-    await refreshSaved(currentIdea);
+    setDbKeys(await savedKeysFor(currentIdea));
   }
 
   return (
@@ -267,10 +301,10 @@ export default function Home() {
           </div>
           <button
             type="submit"
-            disabled={loading}
+            disabled={busy}
             className="w-full shrink-0 rounded-full bg-brand px-7 py-3 text-[14px] font-medium text-white transition hover:bg-brand-hover disabled:cursor-not-allowed disabled:opacity-60 sm:w-auto"
           >
-            {loading ? "Searching…" : "Refine →"}
+            {busy ? "Searching…" : "Refine →"}
           </button>
         </div>
       </form>
@@ -449,7 +483,7 @@ export default function Home() {
         </p>
       ) : null}
 
-      {searched && !loading && results.length === 0 ? (
+      {searched && !busy && results.length === 0 ? (
         <p className="mt-6 text-center text-[15px] text-muted">
           Nothing came back. Try another query.
         </p>
