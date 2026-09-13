@@ -17,11 +17,14 @@ export default function CompliancePanel({
   results,
   usage,
   onUsageChange,
+  hideUsage = false,
 }: {
   title: string;
   results: SourceResult[];
   usage: Usage;
   onUsageChange: (next: Usage) => void;
+  /** The caller already renders the toggles, so do not repeat them. */
+  hideUsage?: boolean;
 }) {
   const [format, setFormat] = useState<CreditsFormat>("text");
   const [showCredits, setShowCredits] = useState(false);
@@ -51,25 +54,29 @@ export default function CompliancePanel({
         Licence check
       </p>
 
-      <p className="mt-3 text-[13px] leading-relaxed text-body">
-        Tell us what you are doing with this material and every saved source is
-        judged against its licence.
-      </p>
+      {hideUsage ? null : (
+        <>
+          <p className="mt-3 text-[13px] leading-relaxed text-body">
+            Tell us what you are doing with this material and every saved
+            source is judged against its licence.
+          </p>
 
-      <div className="mt-5 flex flex-wrap gap-2">
-        <Toggle
-          on={usage.commercial}
-          label="Commercial project"
-          onClick={() =>
-            onUsageChange({ ...usage, commercial: !usage.commercial })
-          }
-        />
-        <Toggle
-          on={usage.modify}
-          label="I will edit or adapt it"
-          onClick={() => onUsageChange({ ...usage, modify: !usage.modify })}
-        />
-      </div>
+          <div className="mt-5 flex flex-wrap gap-2">
+            <Toggle
+              on={usage.commercial}
+              label="Commercial project"
+              onClick={() =>
+                onUsageChange({ ...usage, commercial: !usage.commercial })
+              }
+            />
+            <Toggle
+              on={usage.modify}
+              label="I will edit or adapt it"
+              onClick={() => onUsageChange({ ...usage, modify: !usage.modify })}
+            />
+          </div>
+        </>
+      )}
 
       <dl className="mt-6 grid grid-cols-2 gap-3 sm:grid-cols-4">
         <Stat n={counts.clear} label="Clear" tone="text-ok-fg" />

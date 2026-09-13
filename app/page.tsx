@@ -13,6 +13,14 @@ import {
   type Idea,
 } from "./_lib/ideas-db";
 import { useAuth } from "./_components/AuthProvider";
+import CompliancePanel from "./_components/CompliancePanel";
+import { verdictFor, type Usage } from "@/lib/licence-rules";
+import { tally } from "@/lib/credits";
+import {
+  readIdeas,
+  saveResult as saveLocal,
+  savedKeysFor as savedKeysLocal,
+} from "./_lib/ideas";
 
 const CATEGORIES = [
   { id: "", label: "All" },
@@ -65,6 +73,22 @@ const ANGLES = [
 ] as const;
 
 const EXAMPLE_QUERY = "a cancer awareness campaign for my campus";
+const USAGE_KEY = "idea-refinery:usage";
+
+function readUsage(): Usage {
+  if (typeof window === "undefined") return { commercial: false, modify: false };
+  try {
+    const raw = window.localStorage.getItem(USAGE_KEY);
+    if (!raw) return { commercial: false, modify: false };
+    const parsed = JSON.parse(raw) as Partial<Usage>;
+    return {
+      commercial: parsed.commercial === true,
+      modify: parsed.modify === true,
+    };
+  } catch {
+    return { commercial: false, modify: false };
+  }
+}
 
 /** Everything the envelope carries except the rows themselves. */
 type SearchMeta = Omit<SearchResponse, "results">;
@@ -114,15 +138,33 @@ export default function Home() {
   const [recent, setRecent] = useState<Idea[]>([]);
   const [meta, setMeta] = useState<SearchMeta | null>(null);
 
+  // The licence check is the reason to be here, so it must work before you
+  // have an account. Signed out, picks and this preference live in
+  // localStorage — and migrate-local lifts them into Postgres on first
+  // sign-in, so nothing picked now is lost later.
+  const [usage, setUsage] = useState<Usage>({
+    commercial: false,
+    modify: false,
+  });
+
   const { user } = useAuth();
+
+  useEffect(() => {
+    setUsage(readUsage());
+  }, []);
+
+  function changeUsage(next: Usage) {
+    setUsage(next);
+    try {
+      window.localStorage.setItem(USAGE_KEY, JSON.stringify(next));
+    } catch {
+      // Not persisted; the toggles still work for this visit.
+    }
+  }
 
   const refreshSaved = useCallback(
     async (idea: string) => {
-      if (!user) {
-        setSavedKeys(new Set());
-        return;
-      }
-      setSavedKeys(await savedKeysFor(idea));
+      setSavedKeys(user ? await savedKeysFor(idea) : savedKeysLocal(idea));
     },
     [user],
   );
@@ -225,12 +267,24 @@ export default function Home() {
     if (searched) runSearch(id);
   }
 
+  // Picked items come from whichever store the Save button writes to.
+  const picked = user
+    ? results.filter((r) => savedKeys.has(resultKey(r)))
+    : (readIdeas().find((i) => i.query === currentIdea)?.results ?? []);
+
+  const counts = searched && results.length > 0 ? tally(results, usage) : null;
+
   const cachedLabels = (meta?.sources ?? [])
     .filter((s) => s.cached && s.count > 0)
     .map((s) => s.label);
 
   async function onSave(r: SourceResult) {
-    if (!user) return;
+    if (!user) {
+      saveLocal(currentIdea, r);
+      setSaveError(null);
+      await refreshSaved(currentIdea);
+      return;
+    }
     const outcome = await saveResult(currentIdea, r);
     // A save that fails silently is indistinguishable from one that worked
     // until you go looking in the database, so say so here.
@@ -387,6 +441,70 @@ export default function Home() {
         </div>
       ) : null}
 
+      {counts ? (
+        <div className="mx-auto mt-10 max-w-3xl rounded-2xl border border-line bg-surface p-6">
+          <p className="text-[11px] font-medium uppercase tracking-[0.18em] text-accent">
+            Licence check
+          </p>
+          <p className="mt-3 text-[13px] leading-relaxed text-body">
+            Say what you are doing with this material and every result below is
+            judged against its licence. No account needed.
+          </p>
+
+          <div className="mt-5 flex flex-wrap gap-2">
+            <button
+              type="button"
+              aria-pressed={usage.commercial}
+              onClick={() =>
+                changeUsage({ ...usage, commercial: !usage.commercial })
+              }
+              className={`rounded-full border px-5 py-2 text-[13px] transition ${
+                usage.commercial
+                  ? "border-ink bg-ink text-page"
+                  : "border-line text-body hover:border-ink"
+              }`}
+            >
+              {usage.commercial ? "✓ " : ""}Commercial project
+            </button>
+            <button
+              type="button"
+              aria-pressed={usage.modify}
+              onClick={() => changeUsage({ ...usage, modify: !usage.modify })}
+              className={`rounded-full border px-5 py-2 text-[13px] transition ${
+                usage.modify
+                  ? "border-ink bg-ink text-page"
+                  : "border-line text-body hover:border-ink"
+              }`}
+            >
+              {usage.modify ? "✓ " : ""}I will edit or adapt it
+            </button>
+          </div>
+
+          <p className="mt-5 flex flex-wrap gap-x-4 gap-y-1 text-[13px]">
+            <span className="text-ok-fg">{counts.clear} clear</span>
+            <span className="text-warn-fg">
+              {counts.caution} with conditions
+            </span>
+            <span className="text-warn-fg">{counts.verify} to check</span>
+            <span className={counts.blocked > 0 ? "text-stop-fg" : "text-faint"}>
+              {counts.blocked} not usable
+            </span>
+          </p>
+        </div>
+      ) : null}
+
+      {picked.length > 0 ? (
+        <div className="mx-auto max-w-3xl">
+          <CompliancePanel
+            title={currentIdea}
+            results={picked}
+            usage={usage}
+            onUsageChange={changeUsage}
+            hideUsage
+          />
+        </div>
+      ) : null}
+
       {saveError ? (
         <p className="mx-auto mt-6 max-w-xl rounded-2xl border border-accent/40 bg-brand/10 px-6 py-3 text-center text-[13px] text-accent">
           Could not save: {saveError}
@@ -406,28 +524,20 @@ export default function Home() {
             <ResultCard
               key={resultKey(r)}
               result={r}
+              verdict={verdictFor(r.licence.spdx, usage)}
               action={
-                user ? (
-                  <button
-                    type="button"
-                    onClick={() => onSave(r)}
-                    disabled={saved}
-                    className={`rounded-full border px-4 py-1.5 text-[11px] font-medium transition ${
-                      saved
-                        ? "cursor-default border-accent/40 bg-brand/10 text-accent"
-                        : "border-line-strong bg-raised text-body hover:border-accent hover:text-accent"
-                    }`}
-                  >
-                    {saved ? "Saved" : "Save"}
-                  </button>
-                ) : (
-                  <Link
-                    href="/login"
-                    className="rounded-full border border-line-strong bg-raised px-4 py-1.5 text-[11px] font-medium text-muted transition hover:border-accent hover:text-accent"
-                  >
-                    Sign in to save
-                  </Link>
-                )
+                <button
+                  type="button"
+                  onClick={() => onSave(r)}
+                  disabled={saved}
+                  className={`rounded-full border px-4 py-1.5 text-[11px] font-medium transition ${
+                    saved
+                      ? "cursor-default border-accent/40 bg-brand/10 text-accent"
+                      : "border-line-strong bg-raised text-body hover:border-accent hover:text-accent"
+                  }`}
+                >
+                  {saved ? "Picked" : "Pick"}
+                </button>
               }
             />
           );
