@@ -519,9 +519,12 @@ function Check() {
 
       {arrived ? (
         <p className="mx-auto mt-8 max-w-2xl rounded-2xl border border-line bg-surface px-6 py-4 text-center text-[13px] leading-relaxed text-body">
-          Opened from a shared check. The material and the intent below both
-          came from that link &mdash; change either and the answers change with
-          it.
+          {/* True of a link someone sent you and of a reload of your own
+              work, because since hand entries there is no difference: the
+              address bar is where a check lives. */}
+          Everything below came from the address bar &mdash; the material, and
+          the intent it was judged under. Change either and the answers change
+          with it; copy the link to hand someone else the same check.
         </p>
       ) : null}
 
