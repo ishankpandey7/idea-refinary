@@ -6,7 +6,7 @@ import type { SourceResult } from "@/types/source-result";
 import type { CheckItem, CheckResponse } from "@/lib/resolve";
 import { extractLinks, MAX_LINKS } from "@/lib/links";
 import { verdictFor, type Level, type Usage } from "@/lib/licence-rules";
-import ResultCard from "./_components/ResultCard";
+import ResultCard, { categoryOf } from "./_components/ResultCard";
 import CompliancePanel from "./_components/CompliancePanel";
 import PrintSheet from "./_components/PrintSheet";
 import { useAuth } from "./_components/AuthProvider";
@@ -96,6 +96,7 @@ export default function Check() {
   /** True when this page was opened from someone else's share link. */
   const [arrived, setArrived] = useState(false);
   const [copied, setCopied] = useState(false);
+  const [keeping, setKeeping] = useState(false);
   const [savedKeys, setSavedKeys] = useState<Set<string>>(new Set());
   const [saveError, setSaveError] = useState<string | null>(null);
 
@@ -253,6 +254,37 @@ export default function Check() {
   const shown = active
     ? checked.filter((c) => c.verdict.level === active)
     : checked;
+
+  const unkept = checked
+    .map((c) => c.result)
+    .filter((r) => !savedKeys.has(resultKey(r)));
+
+  /**
+   * Signed in this is one round trip per source, which is slow and fine — the
+   * alternative is forty clicks. Sequential on purpose: `saveResult` creates
+   * the idea on its first call, and running them at once would race to create
+   * it several times over.
+   */
+  async function keepAll() {
+    const title = project.trim() || DEFAULT_PROJECT;
+    setKeeping(true);
+    try {
+      for (const r of unkept) {
+        if (!user) {
+          saveLocal(title, r);
+          continue;
+        }
+        const outcome = await saveResult(title, r);
+        if (!outcome.ok) {
+          setSaveError(outcome.error ?? "Save failed");
+          break;
+        }
+      }
+      await refreshSaved(title);
+    } finally {
+      setKeeping(false);
+    }
+  }
 
   async function onSave(r: SourceResult) {
     const title = project.trim() || DEFAULT_PROJECT;
@@ -513,9 +545,20 @@ export default function Check() {
                     </Chip>
                   );
                 })}
-                <span className="text-[12px] text-faint">
-                  Worst first.
-                </span>
+                <span className="text-[12px] text-faint">Worst first.</span>
+
+                {unkept.length > 0 ? (
+                  <button
+                    type="button"
+                    onClick={() => void keepAll()}
+                    disabled={keeping}
+                    className="ml-auto rounded-full border border-line px-5 py-2 text-[12px] text-body transition hover:border-accent hover:text-accent disabled:cursor-not-allowed disabled:opacity-60"
+                  >
+                    {keeping
+                      ? "Keeping…"
+                      : `Keep all ${unkept.length}`}
+                  </button>
+                ) : null}
               </div>
 
               <ul className="mt-6 grid gap-5 sm:grid-cols-2">
@@ -527,18 +570,34 @@ export default function Check() {
                       result={r}
                       verdict={verdict}
                       action={
-                        <button
-                          type="button"
-                          onClick={() => onSave(r)}
-                          disabled={saved}
-                          className={`rounded-full border px-4 py-1.5 text-[11px] font-medium transition ${
-                            saved
-                              ? "cursor-default border-accent/40 bg-brand/10 text-accent"
-                              : "border-line-strong bg-raised text-body hover:border-accent hover:text-accent"
-                          }`}
-                        >
-                          {saved ? "Kept" : "Keep"}
-                        </button>
+                        <div className="flex items-center gap-2">
+                          {/* A source you cannot use is the only kind that
+                              needs anything from you, and what it needs is a
+                              different source. This is what search is for. */}
+                          {verdict.level === "blocked" ||
+                          verdict.level === "verify" ? (
+                            <Link
+                              href={`/search?q=${encodeURIComponent(
+                                r.title,
+                              )}&category=${categoryOf(r).toLowerCase()}`}
+                              className="rounded-full border border-line px-4 py-1.5 text-[11px] font-medium text-muted transition hover:border-accent hover:text-accent"
+                            >
+                              Find a replacement &rarr;
+                            </Link>
+                          ) : null}
+                          <button
+                            type="button"
+                            onClick={() => onSave(r)}
+                            disabled={saved}
+                            className={`rounded-full border px-4 py-1.5 text-[11px] font-medium transition ${
+                              saved
+                                ? "cursor-default border-accent/40 bg-brand/10 text-accent"
+                                : "border-line-strong bg-raised text-body hover:border-accent hover:text-accent"
+                            }`}
+                          >
+                            {saved ? "Kept" : "Keep"}
+                          </button>
+                        </div>
                       }
                     />
                   );
