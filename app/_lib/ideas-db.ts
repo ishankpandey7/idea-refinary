@@ -35,21 +35,38 @@ async function currentUserId(): Promise<string | null> {
   return data.user?.id ?? null;
 }
 
-/** RLS limits this to ideas the signed-in user is a member of. */
+const PINS = "pins ( external_id, payload, created_at )";
+const WITH_USAGE = `id, owner_id, query, created_at, usage_commercial, usage_modify, ${PINS}`;
+const WITHOUT_USAGE = `id, owner_id, query, created_at, ${PINS}`;
+
+/**
+ * RLS limits this to ideas the signed-in user is a member of.
+ *
+ * The usage columns arrive in migration 0004, and a deploy can reach users
+ * before someone has run it. Asking for a column that does not exist fails
+ * the whole query, which would empty everyone's list — so fall back to the
+ * older shape rather than showing people nothing.
+ */
 export async function listIdeas(): Promise<Idea[]> {
-  const { data, error } = await getSupabase()
-    .from("ideas")
-    .select(
-      "id, owner_id, query, created_at, usage_commercial, usage_modify, pins ( external_id, payload, created_at )",
-    )
-    .order("created_at", { ascending: false });
+  const sb = getSupabase();
+
+  const load = (columns: string) =>
+    sb.from("ideas").select(columns).order("created_at", { ascending: false });
+
+  let { data, error } = await load(WITH_USAGE);
 
   if (error) {
     console.error(`[ideas] list failed: ${error.message}`);
-    return [];
+    const retry = await load(WITHOUT_USAGE);
+    if (retry.error) {
+      console.error(`[ideas] list retry failed: ${retry.error.message}`);
+      return [];
+    }
+    console.error("[ideas] served without usage — run migration 0004");
+    data = retry.data;
   }
 
-  return ((data ?? []) as IdeaRow[]).map((row) => ({
+  return ((data ?? []) as unknown as IdeaRow[]).map((row) => ({
     id: row.id,
     ownerId: row.owner_id,
     query: row.query,
