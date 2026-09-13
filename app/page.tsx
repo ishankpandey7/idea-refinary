@@ -90,24 +90,88 @@ export default function Check() {
   const [failed, setFailed] = useState(false);
 
   const [only, setOnly] = useState<Level | null>(null);
+  /** The links the current response is about, for rebuilding the share link. */
+  const [checked_, setChecked] = useState<string[]>([]);
+  /** True when this page was opened from someone else's share link. */
+  const [arrived, setArrived] = useState(false);
+  const [copied, setCopied] = useState(false);
   const [savedKeys, setSavedKeys] = useState<Set<string>>(new Set());
   const [saveError, setSaveError] = useState<string | null>(null);
 
   const { user } = useAuth();
 
-  // localStorage is client-only, so everything restores after mount.
-  useEffect(() => {
-    setUsage(readUsage());
-    setProject(read(PROJECT_KEY, DEFAULT_PROJECT));
-    setPaste(read(PASTE_KEY, ""));
+  /**
+   * Puts the whole check in the address bar: the links, and the intent they
+   * were judged against. A check is only worth sending to someone if it
+   * carries the question too — the same list under "commercial" and under
+   * "personal" are different answers, and a link that dropped the intent
+   * would quietly show the reader the wrong one.
+   */
+  const syncUrl = useCallback((links: string[], intent: Usage) => {
+    const qs = new URLSearchParams();
+    if (intent.commercial) qs.set("c", "1");
+    if (intent.modify) qs.set("m", "1");
+    qs.set("l", links.join("\n"));
+    window.history.replaceState(null, "", `/?${qs.toString()}`);
   }, []);
 
-  // An old shared link into the search page still works; this route is no
-  // longer the one that answers it.
+  const runCheck = useCallback(
+    async (links: string[], intent: Usage) => {
+      if (links.length === 0) return;
+      setLoading(true);
+      setFailed(false);
+      try {
+        const res = await fetch("/api/resolve", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ urls: links }),
+        });
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+        setResponse((await res.json()) as CheckResponse);
+        setChecked(links);
+        syncUrl(links, intent);
+      } catch {
+        setResponse(null);
+        setFailed(true);
+      } finally {
+        setLoading(false);
+      }
+    },
+    [syncUrl],
+  );
+
+  // Restore once on mount. A shared link wins over this browser's own state —
+  // someone who followed one came to see that check, not their last one.
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
-    if (params.get("q")) window.location.replace(`/search${window.location.search}`);
-  }, []);
+
+    // An old link into the search page still works; this route no longer
+    // answers it.
+    if (params.get("q")) {
+      window.location.replace(`/search${window.location.search}`);
+      return;
+    }
+
+    setProject(read(PROJECT_KEY, DEFAULT_PROJECT));
+
+    const shared = params.get("l");
+    if (shared) {
+      const intent: Usage = {
+        commercial: params.get("c") === "1",
+        modify: params.get("m") === "1",
+      };
+      setUsage(intent);
+      writeUsage(intent);
+      setPaste(shared);
+      write(PASTE_KEY, shared);
+      setArrived(true);
+      void runCheck(extractLinks(shared), intent);
+      return;
+    }
+
+    setUsage(readUsage());
+    setPaste(read(PASTE_KEY, ""));
+  }, [runCheck]);
 
   const refreshSaved = useCallback(
     async (title: string) => {
@@ -123,6 +187,21 @@ export default function Check() {
   function changeUsage(next: Usage) {
     setUsage(next);
     writeUsage(next);
+    // The verdicts on screen just changed, so the link that reproduces them
+    // has to change with them.
+    if (checked_.length > 0) syncUrl(checked_, next);
+  }
+
+  async function copyLink() {
+    try {
+      await navigator.clipboard.writeText(window.location.href);
+      setCopied(true);
+      window.setTimeout(() => setCopied(false), 2000);
+    } catch {
+      // Clipboard blocked. The address bar already holds the same link, so
+      // there is still a way to get it — just do not claim this worked.
+      setCopied(false);
+    }
   }
 
   function changeProject(next: string) {
@@ -138,25 +217,7 @@ export default function Check() {
   const pending = useMemo(() => extractLinks(paste), [paste]);
 
 
-  async function check() {
-    if (pending.length === 0) return;
-    setLoading(true);
-    setFailed(false);
-    try {
-      const res = await fetch("/api/resolve", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ urls: pending }),
-      });
-      if (!res.ok) throw new Error(`HTTP ${res.status}`);
-      setResponse((await res.json()) as CheckResponse);
-    } catch {
-      setResponse(null);
-      setFailed(true);
-    } finally {
-      setLoading(false);
-    }
-  }
+
 
   const unread = useMemo(
     () => (response?.items ?? []).filter((i) => i.status !== "ok"),
@@ -223,6 +284,14 @@ export default function Check() {
         you owe. No account needed.
       </p>
 
+      {arrived ? (
+        <p className="mx-auto mt-8 max-w-2xl rounded-2xl border border-line bg-surface px-6 py-4 text-center text-[13px] leading-relaxed text-body">
+          Opened from a shared check. The material and the intent below both
+          came from that link &mdash; change either and the answers change with
+          it.
+        </p>
+      ) : null}
+
       <section className="mx-auto mt-12 max-w-3xl rounded-2xl border border-line bg-surface p-6 sm:p-8">
         <label
           htmlFor="project"
@@ -279,7 +348,7 @@ export default function Check() {
         <div className="mt-4 flex flex-wrap items-center gap-3">
           <button
             type="button"
-            onClick={() => void check()}
+            onClick={() => void runCheck(pending, usage)}
             disabled={loading || pending.length === 0}
             className="rounded-full bg-brand px-7 py-3 text-[14px] font-medium text-white transition hover:bg-brand-hover disabled:cursor-not-allowed disabled:opacity-60"
           >
@@ -343,6 +412,19 @@ export default function Check() {
               : ""}
             {response.ms !== null ? ` · ${response.ms}ms` : ""}
           </p>
+
+          {checked_.length > 0 ? (
+            <p className="mt-4 flex flex-wrap items-center justify-center gap-3 text-[12px] text-muted">
+              <button
+                type="button"
+                onClick={() => void copyLink()}
+                className="rounded-full border border-line px-5 py-2 text-[12px] text-body transition hover:border-accent hover:text-accent"
+              >
+                {copied ? "Link copied" : "Copy link to this check"}
+              </button>
+              Reopens with the same material and the same intent.
+            </p>
+          ) : null}
 
           {results.length > 0 ? (
             <div className="mx-auto max-w-3xl">

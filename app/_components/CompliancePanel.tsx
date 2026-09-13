@@ -6,11 +6,28 @@ import type { Usage } from "@/lib/licence-rules";
 import { tally } from "@/lib/credits";
 import { buildCredits, type CreditsFormat } from "@/lib/credits";
 
-const FORMATS: { id: CreditsFormat; label: string }[] = [
-  { id: "text", label: "Plain text" },
-  { id: "markdown", label: "Markdown" },
-  { id: "csv", label: "CSV" },
+const FORMATS: {
+  id: CreditsFormat;
+  label: string;
+  ext: string;
+  mime: string;
+}[] = [
+  { id: "text", label: "Plain text", ext: "txt", mime: "text/plain" },
+  { id: "markdown", label: "Markdown", ext: "md", mime: "text/markdown" },
+  { id: "csv", label: "CSV", ext: "csv", mime: "text/csv" },
 ];
+
+/** Filename-safe, and recognisable as the project it came from. */
+function slug(title: string): string {
+  return (
+    title
+      .trim()
+      .toLowerCase()
+      .replace(/[^a-z0-9]+/g, "-")
+      .replace(/^-+|-+$/g, "")
+      .slice(0, 60) || "credits"
+  );
+}
 
 export default function CompliancePanel({
   title,
@@ -38,6 +55,25 @@ export default function CompliancePanel({
     () => buildCredits({ title, results, usage }, format),
     [title, results, usage, format],
   );
+
+  /**
+   * The credits are the thing you hand to someone else — a licence review, a
+   * repo, an app store form. A textarea you have to select is not that, so
+   * this writes the actual file.
+   */
+  function download() {
+    const spec = FORMATS.find((f) => f.id === format) ?? FORMATS[0];
+    const url = URL.createObjectURL(
+      new Blob([credits], { type: `${spec.mime};charset=utf-8` }),
+    );
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = `credits-${slug(title)}.${spec.ext}`;
+    a.click();
+    // Revoked on the next tick: the click has already started the save, and
+    // holding the blob forever leaks it.
+    window.setTimeout(() => URL.revokeObjectURL(url), 0);
+  }
 
   async function copy() {
     try {
@@ -120,13 +156,22 @@ export default function CompliancePanel({
                 {f.label}
               </button>
             ))}
-            <button
-              type="button"
-              onClick={copy}
-              className="ml-auto rounded-full border border-line px-5 py-2 text-[12px] text-body transition hover:border-accent hover:text-accent"
-            >
-              {copied ? "Copied" : "Copy"}
-            </button>
+            <div className="ml-auto flex items-center gap-2">
+              <button
+                type="button"
+                onClick={download}
+                className="rounded-full border border-line px-5 py-2 text-[12px] text-body transition hover:border-accent hover:text-accent"
+              >
+                Download
+              </button>
+              <button
+                type="button"
+                onClick={copy}
+                className="rounded-full border border-line px-5 py-2 text-[12px] text-body transition hover:border-accent hover:text-accent"
+              >
+                {copied ? "Copied" : "Copy"}
+              </button>
+            </div>
           </>
         ) : null}
       </div>
