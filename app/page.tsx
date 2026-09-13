@@ -262,6 +262,12 @@ function Check() {
   // synchronously here; the spinner comes from `busy` below instead.
   useEffect(() => {
     if (sharedLinks.length === 0) return;
+    // The address bar describes whatever check is on screen, including one
+    // this page just ran itself — writing the links into it is what makes a
+    // check shareable, and without this guard it also asked the four sources
+    // the same question a second time, every time.
+    if (checked_.join("\n") === sharedLinks.join("\n")) return;
+
     let active = true;
 
     void resolve(sharedLinks).then(
@@ -276,7 +282,7 @@ function Check() {
     return () => {
       active = false;
     };
-  }, [sharedLinks, resolve, apply]);
+  }, [sharedLinks, checked_, resolve, apply]);
 
   /**
    * The whole check as one address: the links, the things you described
