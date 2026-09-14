@@ -28,6 +28,9 @@ import {
   useLocalIdeas,
 } from "../_lib/ideas";
 import { useUsage } from "../_lib/usage";
+import { loadIntoChecker } from "../_lib/check-paste";
+import { hasContent } from "../_lib/project-list";
+import { useRouter } from "next/navigation";
 
 function when(iso: string): string {
   const d = new Date(iso);
@@ -62,6 +65,7 @@ export default function MyIdeasPage() {
 }
 
 function MyIdeas() {
+  const router = useRouter();
   const [dbIdeas, setDbIdeas] = useState<Idea[]>([]);
   const params = useSearchParams();
   /** Deep link from the search page's "Open project". */
@@ -94,8 +98,11 @@ function MyIdeas() {
         ownerId: LOCAL_OWNER,
         query: i.query,
         savedAt: i.savedAt,
-        usage,
+        // A saved list carries the intent it was judged under; without one,
+        // the shared preference is the only answer a signed-out person has.
+        usage: i.list?.usage ?? usage,
         results: i.results,
+        list: i.list,
       })),
     [stored, usage],
   );
@@ -267,6 +274,22 @@ function MyIdeas() {
               {ownsOpen ? null : <SharedBadge />}
 
               <div className="ml-auto" />
+
+              {/* The whole point of keeping a list rather than a pile of
+                  snapshots: run the same check again, now, and find out what
+                  changed while you were not looking. */}
+              {hasContent(open.list) ? (
+                <button
+                  type="button"
+                  onClick={() => {
+                    loadIntoChecker(open.query, open.list!);
+                    router.push("/?run=1");
+                  }}
+                  className="rounded-full border border-accent/50 bg-brand/10 px-5 py-2 text-[13px] text-accent transition hover:border-accent"
+                >
+                  Re-check this project
+                </button>
+              ) : null}
 
               {user && ownsOpen ? (
                 <button

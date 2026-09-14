@@ -14,7 +14,8 @@ import { useStored } from "./stored";
  * False/false is the safe default — nothing reads as clear until someone has
  * actually said what they are doing.
  */
-const KEY = "idea-refinery:usage";
+export const USAGE_KEY = "idea-refinery:usage";
+const KEY = USAGE_KEY;
 
 export const DEFAULT_USAGE: Usage = { commercial: false, modify: false };
 

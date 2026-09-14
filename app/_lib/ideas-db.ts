@@ -1,6 +1,7 @@
 import type { SourceResult } from "@/types/source-result";
 import { getSupabase } from "@/lib/supabase/client";
 import type { Usage } from "@/lib/licence-rules";
+import { decodeList, encodeList, type ProjectList } from "./project-list";
 
 export type Idea = {
   id: string;
@@ -9,6 +10,8 @@ export type Idea = {
   savedAt: string;
   usage: Usage;
   results: SourceResult[];
+  /** The check this project records. Null until 0005 is run, or never saved. */
+  list: ProjectList | null;
 };
 
 export function resultKey(r: SourceResult): string {
@@ -27,6 +30,7 @@ type IdeaRow = {
   created_at: string;
   usage_commercial: boolean | null;
   usage_modify: boolean | null;
+  source_list: unknown;
   pins: PinRow[] | null;
 };
 
@@ -36,16 +40,29 @@ async function currentUserId(): Promise<string | null> {
 }
 
 const PINS = "pins ( external_id, payload, created_at )";
-const WITH_USAGE = `id, owner_id, query, created_at, usage_commercial, usage_modify, ${PINS}`;
-const WITHOUT_USAGE = `id, owner_id, query, created_at, ${PINS}`;
+const BASE = `id, owner_id, query, created_at`;
+const USAGE = `usage_commercial, usage_modify`;
+
+/**
+ * Newest shape first, each fallback dropping the columns a migration adds.
+ *
+ * A deploy reaches users before a migration does, and asking Postgres for a
+ * column that is not there fails the whole select — which would empty every
+ * list rather than serve a slightly older one.
+ */
+const SHAPES = [
+  `${BASE}, ${USAGE}, source_list, ${PINS}`,
+  `${BASE}, ${USAGE}, ${PINS}`,
+  `${BASE}, ${PINS}`,
+];
 
 /**
  * RLS limits this to ideas the signed-in user is a member of.
  *
- * The usage columns arrive in migration 0004, and a deploy can reach users
- * before someone has run it. Asking for a column that does not exist fails
- * the whole query, which would empty everyone's list — so fall back to the
- * older shape rather than showing people nothing.
+ * Columns arrive with migrations and a deploy can reach users before someone
+ * has run one. Asking for a column that does not exist fails the whole query,
+ * which would empty everyone's list — so this walks SHAPES until one answers
+ * rather than showing people nothing.
  */
 export async function listIdeas(): Promise<Idea[]> {
   const sb = getSupabase();
@@ -53,20 +70,23 @@ export async function listIdeas(): Promise<Idea[]> {
   const load = (columns: string) =>
     sb.from("ideas").select(columns).order("created_at", { ascending: false });
 
-  const first = await load(WITH_USAGE);
-  let { data } = first;
-  const { error } = first;
+  let data: unknown[] | null = null;
 
-  if (error) {
-    console.error(`[ideas] list failed: ${error.message}`);
-    const retry = await load(WITHOUT_USAGE);
-    if (retry.error) {
-      console.error(`[ideas] list retry failed: ${retry.error.message}`);
-      return [];
+  for (let i = 0; i < SHAPES.length; i += 1) {
+    const attempt = await load(SHAPES[i]);
+    if (!attempt.error) {
+      if (i > 0) {
+        console.error(
+          `[ideas] served on an older shape — run the pending migration (${i} column set${i === 1 ? "" : "s"} behind)`,
+        );
+      }
+      data = attempt.data;
+      break;
     }
-    console.error("[ideas] served without usage — run migration 0004");
-    data = retry.data;
+    console.error(`[ideas] list shape ${i} failed: ${attempt.error.message}`);
   }
+
+  if (data === null) return [];
 
   return ((data ?? []) as unknown as IdeaRow[]).map((row) => ({
     id: row.id,
@@ -77,6 +97,7 @@ export async function listIdeas(): Promise<Idea[]> {
       commercial: row.usage_commercial ?? false,
       modify: row.usage_modify ?? false,
     },
+    list: decodeList(row.source_list),
     results: (row.pins ?? [])
       .slice()
       .sort((a, b) => a.created_at.localeCompare(b.created_at))
@@ -222,6 +243,56 @@ export async function savedKeysFor(query: string): Promise<Set<string>> {
   return new Set(
     (data ?? []).map((p: { external_id: string }) => p.external_id),
   );
+}
+
+/**
+ * Records what the project is a list of, creating it if it is new.
+ *
+ * Silent when the column is missing: the ledger simply has not been switched
+ * on yet, and failing a save the person did not ask for would be worse than
+ * doing nothing. listIdeas already logs which migration is pending.
+ */
+export async function saveList(
+  query: string,
+  list: ProjectList,
+): Promise<SaveOutcome> {
+  const q = query.trim();
+  if (!q) return { ok: false, error: "Empty query" };
+
+  const sb = getSupabase();
+  const userId = await currentUserId();
+  if (!userId) return { ok: false, error: "Not signed in" };
+
+  let ideaId = await findIdeaByQuery(q);
+
+  if (!ideaId) {
+    // Write-only insert, for the RLS reason spelled out in saveResult.
+    const newIdeaId = crypto.randomUUID();
+    const { error } = await sb
+      .from("ideas")
+      .insert({ id: newIdeaId, owner_id: userId, query: q });
+
+    if (error) {
+      console.error(`[ideas] create failed: ${error.message}`);
+      return { ok: false, error: error.message };
+    }
+    ideaId = newIdeaId;
+  }
+
+  const { error } = await sb
+    .from("ideas")
+    .update({
+      source_list: encodeList(list),
+      usage_commercial: list.usage.commercial,
+      usage_modify: list.usage.modify,
+    })
+    .eq("id", ideaId);
+
+  if (error) {
+    console.error(`[ideas] list save failed: ${error.message}`);
+    return { ok: false, error: error.message };
+  }
+  return { ok: true };
 }
 
 /** Any member may set this — it describes the idea, not its owner. */

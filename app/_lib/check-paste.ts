@@ -1,8 +1,11 @@
 "use client";
 
 import type { SourceResult } from "@/types/source-result";
+import { encodeAsserted } from "@/lib/asserted";
 import { extractLinks, normaliseUrl, recheckUrl } from "@/lib/links";
+import type { ProjectList } from "./project-list";
 import { readStored, useStored, writeStored } from "./stored";
+import { USAGE_KEY } from "./usage";
 
 /**
  * The material box on the checker, reachable from anywhere.
@@ -18,6 +21,8 @@ import { readStored, useStored, writeStored } from "./stored";
  * anyone can see, edit and share.
  */
 export const PASTE_KEY = "idea-refinery:check-paste";
+export const PROJECT_KEY = "idea-refinery:check-project";
+export const ASSERTED_KEY = "idea-refinery:asserted";
 
 export function useCheckPaste(): [string, (value: string) => void] {
   return useStored(PASTE_KEY, "");
@@ -81,4 +86,23 @@ export function addToCheck(r: SourceResult): boolean {
   const body = paste.replace(/\s+$/, "");
   writeStored(PASTE_KEY, body ? `${body}\n${url}` : url);
   return true;
+}
+
+/**
+ * Loads a saved project back into the checker, replacing what is there.
+ *
+ * Replacing, not merging: reopening project B while project A is in the box
+ * is a switch somebody asked for, and folding the two together would hand
+ * them a report about neither. The merge in the arrival path is for the
+ * other case — the same check, one link newer.
+ *
+ * The caller navigates to /?run=1 afterwards. The material is deliberately
+ * not in that URL: the box has just been set on purpose, and a link full of
+ * links would merge a second copy straight back in.
+ */
+export function loadIntoChecker(title: string, list: ProjectList): void {
+  writeStored(PROJECT_KEY, title);
+  writeStored(PASTE_KEY, list.paste);
+  writeStored(ASSERTED_KEY, encodeAsserted(list.asserted));
+  writeStored(USAGE_KEY, JSON.stringify(list.usage));
 }

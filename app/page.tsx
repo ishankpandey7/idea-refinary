@@ -22,14 +22,28 @@ import CompliancePanel from "./_components/CompliancePanel";
 import PrintSheet from "./_components/PrintSheet";
 import { useAuth } from "./_components/AuthProvider";
 import { useUsage, usageLabel } from "./_lib/usage";
-import { useStored } from "./_lib/stored";
-import { mergeIntoCheck, useCheckPaste } from "./_lib/check-paste";
-import { resultKey, saveResult, savedKeysFor } from "./_lib/ideas-db";
-import { keysFor, saveResult as saveLocal, useLocalIdeas } from "./_lib/ideas";
+import { readStored, useStored } from "./_lib/stored";
+import {
+  ASSERTED_KEY,
+  mergeIntoCheck,
+  PASTE_KEY,
+  PROJECT_KEY,
+  useCheckPaste,
+} from "./_lib/check-paste";
+import {
+  resultKey,
+  saveList,
+  saveResult,
+  savedKeysFor,
+} from "./_lib/ideas-db";
+import {
+  keysFor,
+  saveList as saveListLocal,
+  saveResult as saveLocal,
+  useLocalIdeas,
+} from "./_lib/ideas";
 import { SAMPLE_CREDITS } from "./_lib/sample";
-
-const PROJECT_KEY = "idea-refinery:check-project";
-const ASSERTED_KEY = "idea-refinery:asserted";
+import type { ProjectList } from "./_lib/project-list";
 
 const DEFAULT_PROJECT = "My project";
 
@@ -114,6 +128,8 @@ function Check() {
   const [keeping, setKeeping] = useState(false);
   const [dbKeys, setDbKeys] = useState<Set<string>>(new Set());
   const [saveError, setSaveError] = useState<string | null>(null);
+  /** The list as it stood when it was last written to a project. */
+  const [savedAs, setSavedAs] = useState<string | null>(null);
 
   const { user } = useAuth();
 
@@ -259,6 +275,30 @@ function Check() {
     setAssertedRaw,
   ]);
 
+  /**
+   * Reopening a saved project.
+   *
+   * /my-ideas writes that project's list into the box and sends you here with
+   * run=1, which means "check what is in the box" — deliberately not a link
+   * full of material, because the box was just replaced on purpose and
+   * merging a second copy in would undo that.
+   */
+  const runOnce = params.get("run") === "1";
+  const ranOnce = useRef(false);
+
+  useEffect(() => {
+    if (!runOnce || ranOnce.current) return;
+    ranOnce.current = true;
+
+    const links = extractLinks(readStored(PASTE_KEY, ""));
+    if (links.length === 0) return;
+
+    void resolve(links).then(
+      (body) => apply(body, links),
+      () => setFailed(true),
+    );
+  }, [runOnce, resolve, apply]);
+
   // Runs the arrival check. Settled in a callback, so nothing is set
   // synchronously here; the spinner comes from `busy` below instead.
   useEffect(() => {
@@ -351,9 +391,10 @@ function Check() {
 
   const savedKeys = user ? dbKeys : keysFor(localIdeas, project.trim());
 
-  /** True while the arrival check is still in flight, before `loading` owns it. */
+  /** True while an opening check is still in flight, before `loading` owns it. */
   const busy =
-    loading || (sharedLinks.length > 0 && response === null && !failed);
+    loading ||
+    ((sharedLinks.length > 0 || runOnce) && response === null && !failed);
 
   async function copyLink() {
     try {
@@ -469,33 +510,6 @@ function Check() {
 
   const unkept = results.filter((r) => !savedKeys.has(resultKey(r)));
 
-  /**
-   * Signed in this is one round trip per source, which is slow and fine — the
-   * alternative is forty clicks. Sequential on purpose: `saveResult` creates
-   * the idea on its first call, and running them at once would race to create
-   * it several times over.
-   */
-  async function keepAll() {
-    const title = project.trim() || DEFAULT_PROJECT;
-    setKeeping(true);
-    try {
-      for (const r of unkept) {
-        if (!user) {
-          saveLocal(title, r);
-          continue;
-        }
-        const outcome = await saveResult(title, r);
-        if (!outcome.ok) {
-          setSaveError(outcome.error ?? "Save failed");
-          break;
-        }
-      }
-      if (user) setDbKeys(await savedKeysFor(title));
-    } finally {
-      setKeeping(false);
-    }
-  }
-
   async function onSave(r: SourceResult) {
     const title = project.trim() || DEFAULT_PROJECT;
     if (!user) {
@@ -507,6 +521,75 @@ function Check() {
     const outcome = await saveResult(title, r);
     setSaveError(outcome.ok ? null : (outcome.error ?? "Save failed"));
     setDbKeys(await savedKeysFor(title));
+  }
+
+  /**
+   * What this project is a record of, right now.
+   *
+   * The input, not the results: results are a snapshot of one afternoon, and
+   * a ledger has to be able to run the whole thing again next release.
+   */
+  const list: ProjectList = useMemo(
+    () => ({ paste, asserted, usage }),
+    [paste, asserted, usage],
+  );
+
+  // Identity, so the button can say "Saved" only while what is on screen is
+  // still what was written, and go back the moment anything moves.
+  const listKey = useMemo(
+    () =>
+      JSON.stringify([
+        project.trim(),
+        paste,
+        encodeAsserted(asserted),
+        usage.commercial,
+        usage.modify,
+      ]),
+    [project, paste, asserted, usage],
+  );
+
+  const listSaved = savedAs === listKey;
+
+  /**
+   * Writes the list, and keeps every result alongside it.
+   *
+   * One button on purpose. "Keep these forty things" and "remember what this
+   * project is made of" were never two decisions a person wanted to make
+   * separately — the second is the only reason the first is worth anything a
+   * month later.
+   */
+  async function saveCheck() {
+    const title = project.trim() || DEFAULT_PROJECT;
+    setKeeping(true);
+    try {
+      if (user) {
+        const outcome = await saveList(title, list);
+        if (!outcome.ok) {
+          setSaveError(outcome.error ?? "Save failed");
+          return;
+        }
+      } else {
+        saveListLocal(title, list);
+      }
+
+      for (const r of unkept) {
+        if (!user) {
+          saveLocal(title, r);
+          continue;
+        }
+        const outcome = await saveResult(title, r);
+        if (!outcome.ok) {
+          setSaveError(outcome.error ?? "Save failed");
+          return;
+        }
+      }
+
+      if (user) setDbKeys(await savedKeysFor(title));
+      setSaveError(null);
+      setSavedAs(listKey);
+    } finally {
+      setKeeping(false);
+    }
   }
 
   const savedCount = savedKeys.size;
@@ -831,16 +914,24 @@ function Check() {
             })}
             <span className="text-[12px] text-faint">Worst first.</span>
 
-            {unkept.length > 0 ? (
-              <button
-                type="button"
-                onClick={() => void keepAll()}
-                disabled={keeping}
-                className="ml-auto rounded-full border border-line px-5 py-2 text-[12px] text-body transition hover:border-accent hover:text-accent disabled:cursor-not-allowed disabled:opacity-60"
-              >
-                {keeping ? "Keeping…" : `Keep all ${unkept.length}`}
-              </button>
-            ) : null}
+            {/* The ledger act: the project stops being a pile of snapshots
+                and starts being a list you can run again. */}
+            <button
+              type="button"
+              onClick={() => void saveCheck()}
+              disabled={keeping || listSaved}
+              className={`ml-auto rounded-full border px-5 py-2 text-[12px] transition disabled:cursor-not-allowed ${
+                listSaved
+                  ? "border-accent/40 bg-brand/10 text-accent opacity-100"
+                  : "border-line text-body hover:border-accent hover:text-accent disabled:opacity-60"
+              }`}
+            >
+              {keeping
+                ? "Saving…"
+                : listSaved
+                  ? `Saved to “${project.trim() || DEFAULT_PROJECT}”`
+                  : `Save this check to “${project.trim() || DEFAULT_PROJECT}”`}
+            </button>
           </div>
 
           <ul className="mt-6 grid gap-5 sm:grid-cols-2">
