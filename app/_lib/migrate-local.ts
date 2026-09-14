@@ -1,5 +1,5 @@
 import { readIdeas } from "./ideas";
-import { saveResult } from "./ideas-db";
+import { saveList, saveResult } from "./ideas-db";
 
 /**
  * One-time lift of the pre-auth localStorage store into the database.
@@ -47,6 +47,11 @@ export async function importLocalIdeas(
 
   let results = 0;
   for (const idea of local) {
+    // The list first: it is what the project is a record of, and lifting the
+    // snapshots without it would hand someone an account full of projects
+    // they can read and never re-check.
+    if (idea.list) await saveList(idea.query, idea.list);
+
     for (const r of idea.results) {
       await saveResult(idea.query, r);
       results += 1;
