@@ -23,10 +23,10 @@ import PrintSheet from "./_components/PrintSheet";
 import { useAuth } from "./_components/AuthProvider";
 import { useUsage, usageLabel } from "./_lib/usage";
 import { useStored } from "./_lib/stored";
+import { mergeIntoCheck, useCheckPaste } from "./_lib/check-paste";
 import { resultKey, saveResult, savedKeysFor } from "./_lib/ideas-db";
 import { keysFor, saveResult as saveLocal, useLocalIdeas } from "./_lib/ideas";
 
-const PASTE_KEY = "idea-refinery:check-paste";
 const PROJECT_KEY = "idea-refinery:check-project";
 const ASSERTED_KEY = "idea-refinery:asserted";
 
@@ -99,7 +99,7 @@ function Check() {
   const params = useSearchParams();
 
   const [project, setProject] = useStored(PROJECT_KEY, DEFAULT_PROJECT);
-  const [paste, setPaste] = useStored(PASTE_KEY, "");
+  const [paste, setPaste] = useCheckPaste();
   const [usage, setUsage] = useUsage();
 
   const [response, setResponse] = useState<CheckResponse | null>(null);
@@ -243,18 +243,18 @@ function Check() {
     seeded.current = true;
 
     setUsage(sharedIntent);
-    // Only what the link actually carried. A link with entries of your own
-    // but no material must not empty the box you were half-way through
-    // filling in.
-    if (sharedLinksParam !== null) setPaste(sharedLinksParam);
+    // Only what the link actually carried, and always added rather than
+    // substituted: a link with entries of your own but no material must not
+    // empty the box, and a link whose material is a subset of the box must
+    // not throw the rest of it away.
+    if (sharedLinks.length > 0) mergeIntoCheck(sharedLinks);
     if (sharedAssetsParam !== null) setAssertedRaw(sharedAssetsParam);
   }, [
     arrived,
-    sharedLinksParam,
+    sharedLinks,
     sharedAssetsParam,
     sharedIntent,
     setUsage,
-    setPaste,
     setAssertedRaw,
   ]);
 
@@ -367,6 +367,18 @@ function Check() {
   }
 
   const pending = useMemo(() => extractLinks(paste), [paste]);
+
+  /**
+   * Links in the box that the answers on screen do not cover yet.
+   *
+   * Usually these arrived from /search, on the other side of a "find a
+   * replacement" — you come back to a page full of verdicts and nothing
+   * obvious saying the new one is not among them.
+   */
+  const unchecked = useMemo(
+    () => pending.filter((link) => !checked_.includes(link)),
+    [pending, checked_],
+  );
 
   // -------------------------------------------------------------------------
   // One list, however each answer was arrived at
@@ -623,6 +635,14 @@ function Check() {
               : ""}
           </span>
         </div>
+
+        {response && unchecked.length > 0 ? (
+          <p className="mt-3 text-[12px] leading-relaxed text-accent">
+            {plural(unchecked.length, "link")} in the box{" "}
+            {unchecked.length === 1 ? "is" : "are"} not in the answers below
+            yet &mdash; check again to judge {unchecked.length === 1 ? "it" : "them"}.
+          </p>
+        ) : null}
 
         {/* Saying nothing here would drop the tail of a long paste without
             anyone noticing, which is the one thing this tool must not do. */}

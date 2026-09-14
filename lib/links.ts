@@ -1,3 +1,5 @@
+import type { SourceResult } from "@/types/source-result";
+
 /**
  * Pulling links out of whatever got pasted.
  *
@@ -101,4 +103,27 @@ export function normaliseUrl(raw: string): string {
   } catch {
     return raw.trim().toLowerCase();
   }
+}
+
+/**
+ * The address the checker can read this row back from.
+ *
+ * Matters because credits are not just an output — "re-check the project
+ * before the next release" means pasting this list back in, and every URL in
+ * it has to survive that trip. Three of the four sources already do:
+ * canonicalUrl is the Commons file page, the OpenAlex work, the Gutenberg
+ * ebook. Openverse is the exception — its canonicalUrl is the foreign landing
+ * page (Flickr, and others), which is correct for attribution and unreadable
+ * for a re-check, so the Openverse record's own address is carried alongside
+ * it rather than replacing it.
+ *
+ * Derived from externalId, which for Openverse is the record uuid. This is a
+ * URL shape, not a lookup, which is why it can live here rather than in the
+ * resolver — but the shape has to keep matching what that resolver's
+ * identify() accepts.
+ */
+export function recheckUrl(r: SourceResult): string | null {
+  if (r.sourceId !== "openverse" || !r.externalId) return null;
+  const url = `https://openverse.org/image/${r.externalId}`;
+  return url === r.canonicalUrl ? null : url;
 }

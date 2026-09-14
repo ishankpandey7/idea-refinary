@@ -23,6 +23,8 @@ import {
   saveResult as saveLocal,
   useLocalIdeas,
 } from "../_lib/ideas";
+import { addToCheck, inCheck, useCheckPaste } from "../_lib/check-paste";
+import { extractLinks } from "@/lib/links";
 
 const CATEGORIES = [
   { id: "", label: "All" },
@@ -137,6 +139,15 @@ function Home() {
   }, [user, currentIdea]);
 
   const savedKeys = user ? dbKeys : keysFor(localIdeas, currentIdea);
+
+  // The check being built on `/`. Subscribed rather than read once, so a card
+  // flips to "In your check" the moment it is added, and the count in the bar
+  // moves with it.
+  const [checkPaste] = useCheckPaste();
+  const checkCount = useMemo(
+    () => extractLinks(checkPaste).length,
+    [checkPaste],
+  );
 
   // RLS already scopes this to projects you are a member of, so shared ones
   // show up too.
@@ -274,7 +285,7 @@ function Home() {
       <p className="mx-auto mt-6 max-w-xl text-center text-[15px] leading-relaxed text-body">
         Four open archives, one query. Every result arrives with its licence
         already judged against what you are doing &mdash; so you can tell
-        before you pick, not after you ship.
+        before you use it, not after you ship.
       </p>
 
       <form
@@ -339,6 +350,24 @@ function Home() {
           </button>
         ))}
       </div>
+
+      {/* The way back. Search is not a destination — you came here because
+          something in your project could not be used, and the replacement is
+          no use sitting on this page. */}
+      {checkCount > 0 ? (
+        <p className="mt-8 flex flex-wrap items-center justify-center gap-3 rounded-2xl border border-line bg-surface px-6 py-3 text-[12px] text-body">
+          <span>
+            {checkCount} {checkCount === 1 ? "link" : "links"} in your check.
+            Add anything below to it.
+          </span>
+          <Link
+            href="/"
+            className="rounded-full border border-line px-5 py-1.5 text-[12px] text-body transition hover:border-accent hover:text-accent"
+          >
+            Back to the check &rarr;
+          </Link>
+        </p>
+      ) : null}
 
       {searched ? (
         <div className="mt-14 text-center">
@@ -472,7 +501,7 @@ function Home() {
             usage={usage}
             onUsageChange={changeUsage}
             hideUsage
-            heading="Licence check — your picks"
+            heading="Licence check — what you kept"
           />
         </div>
       ) : null}
@@ -492,24 +521,39 @@ function Home() {
       <ul className="mt-8 grid gap-5 sm:grid-cols-2">
         {results.map((r) => {
           const saved = savedKeys.has(resultKey(r));
+          const added = inCheck(checkPaste, r);
           return (
             <ResultCard
               key={resultKey(r)}
               result={r}
               verdict={verdictForResult(r, usage)}
               action={
-                <button
-                  type="button"
-                  onClick={() => onSave(r)}
-                  disabled={saved}
-                  className={`rounded-full border px-4 py-1.5 text-[11px] font-medium transition ${
-                    saved
-                      ? "cursor-default border-accent/40 bg-brand/10 text-accent"
-                      : "border-line-strong bg-raised text-body hover:border-accent hover:text-accent"
-                  }`}
-                >
-                  {saved ? "Picked" : "Pick"}
-                </button>
+                <div className="flex items-center gap-2">
+                  <button
+                    type="button"
+                    onClick={() => addToCheck(r)}
+                    disabled={added}
+                    className={`rounded-full border px-4 py-1.5 text-[11px] font-medium transition ${
+                      added
+                        ? "cursor-default border-accent/40 bg-brand/10 text-accent"
+                        : "border-line-strong bg-raised text-body hover:border-accent hover:text-accent"
+                    }`}
+                  >
+                    {added ? "In your check" : "Add to check"}
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => onSave(r)}
+                    disabled={saved}
+                    className={`rounded-full border px-4 py-1.5 text-[11px] font-medium transition ${
+                      saved
+                        ? "cursor-default border-accent/40 bg-brand/10 text-accent"
+                        : "border-line text-muted hover:border-accent hover:text-accent"
+                    }`}
+                  >
+                    {saved ? "Kept" : "Keep"}
+                  </button>
+                </div>
               }
             />
           );
