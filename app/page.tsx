@@ -34,12 +34,12 @@ import {
   resultKey,
   saveList,
   saveResult,
-  savedKeysFor,
+  savedResultsFor,
 } from "./_lib/ideas-db";
 import {
-  keysFor,
   saveList as saveListLocal,
   saveResult as saveLocal,
+  savedResultsFor as savedResultsLocal,
   useLocalIdeas,
 } from "./_lib/ideas";
 import { SAMPLE_CREDITS } from "./_lib/sample";
@@ -126,7 +126,8 @@ function Check() {
   const [checked_, setChecked] = useState<string[]>([]);
   const [copied, setCopied] = useState(false);
   const [keeping, setKeeping] = useState(false);
-  const [dbKeys, setDbKeys] = useState<Set<string>>(new Set());
+  /** What this project's sources said last time. Empty until one is saved. */
+  const [dbSaved, setDbSaved] = useState<Map<string, SourceResult>>(new Map());
   const [saveError, setSaveError] = useState<string | null>(null);
   /** The list as it stood when it was last written to a project. */
   const [savedAs, setSavedAs] = useState<string | null>(null);
@@ -380,8 +381,8 @@ function Check() {
     if (!user || !title) return;
     let active = true;
 
-    void savedKeysFor(title).then((keys) => {
-      if (active) setDbKeys(keys);
+    void savedResultsFor(title).then((saved) => {
+      if (active) setDbSaved(saved);
     });
 
     return () => {
@@ -389,7 +390,15 @@ function Check() {
     };
   }, [user, project]);
 
-  const savedKeys = user ? dbKeys : keysFor(localIdeas, project.trim());
+  const savedResults = useMemo(
+    () => (user ? dbSaved : savedResultsLocal(localIdeas, project.trim())),
+    [user, dbSaved, localIdeas, project],
+  );
+
+  const savedKeys = useMemo(
+    () => new Set(savedResults.keys()),
+    [savedResults],
+  );
 
   /** True while an opening check is still in flight, before `loading` owns it. */
   const busy =
@@ -497,6 +506,32 @@ function Check() {
 
   const results = useMemo(() => checked.map((c) => c.result), [checked]);
 
+  /**
+   * What a source says now against what it said when this project was saved.
+   *
+   * The reason to keep a list at all. Licences do move — a Commons file gets
+   * its rights corrected, a paper is re-deposited under different terms — and
+   * a compliance report that quietly carried the old answer would be the one
+   * failure this product cannot survive, just slower.
+   *
+   * Only rows a source answered for. An entry you edited yourself changed
+   * because you changed it, which is not news.
+   */
+  const changed = useMemo(() => {
+    const out = new Map<string, string>();
+    if (savedResults.size === 0) return out;
+
+    for (const row of checked) {
+      if (row.asset) continue;
+      const before = savedResults.get(resultKey(row.result));
+      if (!before) continue;
+      if (before.licence.spdx !== row.result.licence.spdx) {
+        out.set(row.key, before.licence.spdx);
+      }
+    }
+    return out;
+  }, [checked, savedResults]);
+
   const byLevel = (level: Level) =>
     checked.filter((c) => c.verdict.level === level).length;
 
@@ -508,8 +543,6 @@ function Check() {
     ? checked.filter((c) => c.verdict.level === active)
     : checked;
 
-  const unkept = results.filter((r) => !savedKeys.has(resultKey(r)));
-
   async function onSave(r: SourceResult) {
     const title = project.trim() || DEFAULT_PROJECT;
     if (!user) {
@@ -520,7 +553,7 @@ function Check() {
     }
     const outcome = await saveResult(title, r);
     setSaveError(outcome.ok ? null : (outcome.error ?? "Save failed"));
-    setDbKeys(await savedKeysFor(title));
+    setDbSaved(await savedResultsFor(title));
   }
 
   /**
@@ -572,7 +605,19 @@ function Check() {
         saveListLocal(title, list);
       }
 
-      for (const r of unkept) {
+      // Everything new, plus anything a source has since changed its mind
+      // about. Untouched rows are skipped so a no-op re-save stays cheap.
+      const stale = results.filter((r) => {
+        const before = savedResults.get(resultKey(r));
+        return (
+          !before ||
+          before.licence.spdx !== r.licence.spdx ||
+          before.licence.attribution !== r.licence.attribution ||
+          before.title !== r.title
+        );
+      });
+
+      for (const r of stale) {
         if (!user) {
           saveLocal(title, r);
           continue;
@@ -584,7 +629,7 @@ function Check() {
         }
       }
 
-      if (user) setDbKeys(await savedKeysFor(title));
+      if (user) setDbSaved(await savedResultsFor(title));
       setSaveError(null);
       setSavedAs(listKey);
     } finally {
@@ -833,6 +878,15 @@ function Check() {
         </p>
       ) : null}
 
+      {changed.size > 0 ? (
+        <p className="mx-auto mt-6 max-w-3xl rounded-2xl border border-accent/50 bg-brand/10 px-6 py-4 text-center text-[13px] leading-relaxed text-accent">
+          {plural(changed.size, "licence")}{" "}
+          {changed.size === 1 ? "has" : "have"} changed since you last saved
+          this project. The rows are marked below, and your credits already
+          carry the new terms &mdash; save the check again to record them.
+        </p>
+      ) : null}
+
       {results.length > 0 ? (
         <div className="mx-auto max-w-3xl">
           <CompliancePanel
@@ -942,6 +996,7 @@ function Check() {
                   key={key}
                   result={r}
                   verdict={verdict}
+                  was={changed.get(key)}
                   action={
                     <div className="flex items-center gap-2">
                       {asset ? (

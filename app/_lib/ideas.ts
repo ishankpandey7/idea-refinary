@@ -96,9 +96,14 @@ export function saveResult(query: string, result: SourceResult): Idea[] {
     };
     ideas.unshift(idea);
   }
-  if (!idea.results.some((r) => resultKey(r) === resultKey(result))) {
-    idea.results.push(result);
-  }
+  // Replace rather than skip. A second save of the same asset is a re-check
+  // that found something — often the whole reason to save again — and keeping
+  // the older snapshot would leave the project reporting terms the source has
+  // since moved off.
+  const at = idea.results.findIndex((r) => resultKey(r) === resultKey(result));
+  if (at === -1) idea.results.push(result);
+  else idea.results[at] = result;
+
   return writeIdeas(ideas);
 }
 
@@ -154,4 +159,19 @@ export function keysFor(ideas: Idea[], query: string): Set<string> {
 
 export function savedKeysFor(query: string): Set<string> {
   return keysFor(readIdeas(), query);
+}
+
+/**
+ * What each source said about this project last time, keyed by result.
+ *
+ * The point of keeping a list rather than a pile of snapshots is being able
+ * to run it again — and the answer to "what changed?" is only available if
+ * the old answers are still here to compare against.
+ */
+export function savedResultsFor(
+  ideas: Idea[],
+  query: string,
+): Map<string, SourceResult> {
+  const idea = ideas.find((i) => i.query === query.trim());
+  return new Map((idea?.results ?? []).map((r) => [resultKey(r), r]));
 }

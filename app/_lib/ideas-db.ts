@@ -121,8 +121,11 @@ async function findIdeaByQuery(query: string): Promise<string | null> {
 
 export type SaveOutcome = { ok: boolean; error?: string };
 
-// unique (idea_id, external_id) makes a second save a no-op rather than a
-// duplicate row.
+// unique (idea_id, external_id) turns a second save into an update of the
+// payload rather than a duplicate row. It has to be an update, not a skip: a
+// re-check that found new terms is usually the reason someone saved again,
+// and created_at is left out of the write so the order it was first kept in
+// survives.
 async function insertPin(
   ideaId: string,
   userId: string,
@@ -135,7 +138,7 @@ async function insertPin(
       user_id: userId,
       payload: result,
     },
-    { onConflict: "idea_id,external_id", ignoreDuplicates: true },
+    { onConflict: "idea_id,external_id", ignoreDuplicates: false },
   );
 
   if (error) {
@@ -225,23 +228,39 @@ export async function removeIdea(ideaId: string): Promise<void> {
 }
 
 export async function savedKeysFor(query: string): Promise<Set<string>> {
+  return new Set((await savedResultsFor(query)).keys());
+}
+
+/**
+ * What each source said about this project last time, keyed by result.
+ *
+ * Carries the payload, not just the key, because the point of keeping a list
+ * is being able to run it again — and "what changed?" needs the old answer
+ * still sitting there to compare against. One query either way.
+ */
+export async function savedResultsFor(
+  query: string,
+): Promise<Map<string, SourceResult>> {
   const q = query.trim();
-  if (!q) return new Set();
+  if (!q) return new Map();
 
   const ideaId = await findIdeaByQuery(q);
-  if (!ideaId) return new Set();
+  if (!ideaId) return new Map();
 
   const { data, error } = await getSupabase()
     .from("pins")
-    .select("external_id")
+    .select("external_id, payload")
     .eq("idea_id", ideaId);
 
   if (error) {
-    console.error(`[ideas] keys failed: ${error.message}`);
-    return new Set();
+    console.error(`[ideas] saved results failed: ${error.message}`);
+    return new Map();
   }
-  return new Set(
-    (data ?? []).map((p: { external_id: string }) => p.external_id),
+  return new Map(
+    (data ?? []).map((p: { external_id: string; payload: SourceResult }) => [
+      p.external_id,
+      p.payload,
+    ]),
   );
 }
 

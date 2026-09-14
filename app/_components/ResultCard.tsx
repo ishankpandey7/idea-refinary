@@ -75,10 +75,13 @@ export default function ResultCard({
   result: r,
   action,
   verdict,
+  was,
 }: {
   result: SourceResult;
   action?: ReactNode;
   verdict?: Verdict;
+  /** The licence this row carried last time the project was saved. */
+  was?: string;
 }) {
   const y = year(r.publishedAt);
   const mine = isAsserted(r);
@@ -181,6 +184,13 @@ export default function ResultCard({
           </span>
         ) : null}
       </div>
+
+      {was ? (
+        <p className="mt-2 rounded-lg border border-accent/50 bg-brand/10 px-3 py-2 text-[12px] leading-relaxed text-accent">
+          Changed since you last saved this project &mdash; it was{" "}
+          <span className="font-semibold">{was}</span>.
+        </p>
+      ) : null}
 
       {verdict ? (
         <ul className="mt-2 flex flex-col gap-1">
