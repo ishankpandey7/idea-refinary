@@ -17,7 +17,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Idea Craft",
   description:
-    "Paste the links to the material in your project and find out whether its licence clears the use you have in mind — with the credits you owe, ready to publish.",
+    "Paste the links to everything in your project and get the attribution you are obliged to publish — text, Markdown, CSV or a PDF licence report — with anything you cannot legally use flagged before you ship.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
@@ -57,7 +57,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
                 <span aria-hidden className="mx-2 text-accent">
                   &bull;
                 </span>
-                Licence checker for open-licence material
+                Credits and licence reports for what you are using
               </p>
               <p className="mx-auto mt-3 max-w-xl text-[11px] leading-relaxed text-faint">
                 &copy; 2026 Idea Craft. Results link back to the source and

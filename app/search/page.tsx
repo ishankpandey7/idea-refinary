@@ -501,7 +501,7 @@ function Home() {
             usage={usage}
             onUsageChange={changeUsage}
             hideUsage
-            heading="Licence check — what you kept"
+            heading="Credits — what you kept"
           />
         </div>
       ) : null}

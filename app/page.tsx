@@ -26,6 +26,7 @@ import { useStored } from "./_lib/stored";
 import { mergeIntoCheck, useCheckPaste } from "./_lib/check-paste";
 import { resultKey, saveResult, savedKeysFor } from "./_lib/ideas-db";
 import { keysFor, saveResult as saveLocal, useLocalIdeas } from "./_lib/ideas";
+import { SAMPLE_CREDITS } from "./_lib/sample";
 
 const PROJECT_KEY = "idea-refinery:check-project";
 const ASSERTED_KEY = "idea-refinery:asserted";
@@ -518,15 +519,15 @@ function Check() {
         className="mx-auto w-full max-w-5xl px-6 pb-24 pt-16 sm:px-10"
       >
       <h1 className="text-center font-serif text-5xl leading-[1.1] text-ink sm:text-6xl">
-        Can you actually
+        The credits you owe,
         <br />
-        use it?
+        written for you.
       </h1>
 
       <p className="mx-auto mt-6 max-w-xl text-center text-[15px] leading-relaxed text-body">
-        Paste the links to the material in your project. Idea Craft reads each
-        licence, judges it against what you are doing, and writes the credits
-        you owe. No account needed.
+        Paste the links to everything in your project. Idea Craft writes the
+        attribution you are obliged to publish &mdash; and flags anything you
+        cannot legally use, before you ship it. No account needed.
       </p>
 
       {arrived ? (
@@ -902,6 +903,27 @@ function Check() {
             })}
           </ul>
         </>
+      ) : null}
+
+      {/* Cold arrival. A big empty box does not say what it is for, and the
+          honest way to say it is not a diagram of the pipeline — it is the
+          thing you came here for, in the shape you will get it. Rendered
+          through the real credits builder, so it cannot drift from the file
+          that actually downloads. */}
+      {results.length === 0 && !response ? (
+        <section className="mx-auto mt-12 max-w-3xl">
+          <p className="text-center text-[11px] font-medium uppercase tracking-[0.18em] text-accent">
+            What comes out
+          </p>
+          <pre className="mt-5 overflow-x-auto rounded-2xl border border-line bg-surface p-6 font-mono text-[11.5px] leading-relaxed text-soft">
+            {SAMPLE_CREDITS}
+          </pre>
+          <p className="mt-4 text-center text-[13px] leading-relaxed text-body">
+            Plain text, Markdown or CSV &mdash; plus a PDF licence report to
+            hand to a client or an app store, and a link that reopens the whole
+            check for someone else.
+          </p>
+        </section>
       ) : null}
 
       <section className="mt-24 rounded-2xl border border-line bg-surface p-8 text-center">

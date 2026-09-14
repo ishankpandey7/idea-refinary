@@ -35,7 +35,7 @@ export default function CompliancePanel({
   usage,
   onUsageChange,
   hideUsage = false,
-  heading = "Licence check",
+  heading = "Your credits",
   shareUrl,
 }: {
   title: string;
@@ -46,11 +46,14 @@ export default function CompliancePanel({
   shareUrl?: string;
   /** The caller already renders the toggles, so do not repeat them. */
   hideUsage?: boolean;
-  /** Set this when another "Licence check" already sits on the page. */
+  /** Set this when another credits block already sits on the page. */
   heading?: string;
 }) {
   const [format, setFormat] = useState<CreditsFormat>("text");
-  const [showCredits, setShowCredits] = useState(false);
+  // Open. The credits are the thing you came for; making you press a
+  // button to see them said the verdicts were the product and these were a
+  // footnote, which is backwards.
+  const [showCredits, setShowCredits] = useState(true);
   const [copied, setCopied] = useState(false);
 
   const counts = useMemo(() => tally(results, usage), [results, usage]);
@@ -120,6 +123,8 @@ export default function CompliancePanel({
         </>
       )}
 
+      {/* The safety net, above the thing you came for: a credits file is only
+          worth publishing once you know nothing in it is unusable. */}
       <dl className="mt-6 grid grid-cols-2 gap-3 sm:grid-cols-4">
         <Stat n={counts.clear} label="Clear" tone="text-ok-fg" />
         <Stat n={counts.caution} label="Conditions" tone="text-warn-fg" />
@@ -146,45 +151,41 @@ export default function CompliancePanel({
       <div className="mt-6 flex flex-wrap items-center gap-2 border-t border-line pt-5">
         <button
           type="button"
-          onClick={() => setShowCredits((v) => !v)}
+          onClick={download}
           className="rounded-full bg-brand px-6 py-2.5 text-[13px] font-medium text-white transition hover:bg-brand-hover"
         >
-          {showCredits ? "Hide credits" : "Build credits"}
+          Download credits
         </button>
-        {showCredits ? (
-          <>
-            {FORMATS.map((f) => (
-              <button
-                key={f.id}
-                type="button"
-                onClick={() => setFormat(f.id)}
-                className={`rounded-full border px-4 py-2 text-[12px] transition ${
-                  format === f.id
-                    ? "border-ink bg-ink text-page"
-                    : "border-line text-body hover:border-ink"
-                }`}
-              >
-                {f.label}
-              </button>
-            ))}
-            <div className="ml-auto flex items-center gap-2">
-              <button
-                type="button"
-                onClick={download}
-                className="rounded-full border border-line px-5 py-2 text-[12px] text-body transition hover:border-accent hover:text-accent"
-              >
-                Download
-              </button>
-              <button
-                type="button"
-                onClick={copy}
-                className="rounded-full border border-line px-5 py-2 text-[12px] text-body transition hover:border-accent hover:text-accent"
-              >
-                {copied ? "Copied" : "Copy"}
-              </button>
-            </div>
-          </>
-        ) : null}
+        {FORMATS.map((f) => (
+          <button
+            key={f.id}
+            type="button"
+            onClick={() => setFormat(f.id)}
+            className={`rounded-full border px-4 py-2 text-[12px] transition ${
+              format === f.id
+                ? "border-ink bg-ink text-page"
+                : "border-line text-body hover:border-ink"
+            }`}
+          >
+            {f.label}
+          </button>
+        ))}
+        <div className="ml-auto flex items-center gap-2">
+          <button
+            type="button"
+            onClick={copy}
+            className="rounded-full border border-line px-5 py-2 text-[12px] text-body transition hover:border-accent hover:text-accent"
+          >
+            {copied ? "Copied" : "Copy"}
+          </button>
+          <button
+            type="button"
+            onClick={() => setShowCredits((v) => !v)}
+            className="text-[12px] text-muted underline-offset-2 transition hover:text-accent hover:underline"
+          >
+            {showCredits ? "Hide" : "Show"}
+          </button>
+        </div>
       </div>
 
       {showCredits ? (

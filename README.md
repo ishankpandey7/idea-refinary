@@ -1,8 +1,9 @@
 # Idea Craft
 
-**A licence checker for open-licence material.** Paste the links to what you
-are using, say what you are doing with it, and find out which of it you can
-actually ship — with the credits you owe, ready to publish.
+**The credits you owe, written for you.** Paste the links to everything in
+your project and get the attribution you are obliged to publish — as text,
+Markdown, CSV or a PDF licence report — with anything you cannot legally use
+flagged before you ship it.
 
 Live: <https://idea-refinery-ten.vercel.app>
 
@@ -10,14 +11,18 @@ Live: <https://idea-refinery-ten.vercel.app>
 
 ## The problem
 
-People who publish commercially — indie game devs, YouTubers, course
-creators, agencies, self-publishers — use open-licence assets and lose track
-of which asset carries which licence. Today that tracking is a spreadsheet
-kept by hand, or it does not happen at all.
+Every release needs an attribution list: the credits screen in a game, the
+description under a video, the third-party notices on an app store form, the
+acknowledgements at the back of a deck. Building one means going back through
+every asset, working out what its licence was, and writing the line that
+licence demands, in the wording it demands. It is an hour of miserable work,
+it happens every release, and it is mostly done from memory.
 
-Licence tags are already structured data. Nobody judges them against intent.
-A "CC BY-NC" badge is useless on its own; *"these 24 assets cannot go in your
-commercial project"* is not.
+The second problem is the one nobody goes looking for. Licence tags are
+already structured data and nobody judges them against intent, so a list you
+assemble by hand can quietly contain something you are not allowed to ship at
+all. A "CC BY-NC" badge is useless on its own; *"these 24 assets cannot go in
+your commercial project"* is not.
 
 ## What it does
 
@@ -49,7 +54,7 @@ you need material you do not have yet.
 
 All of it works without an account. Signing in only keeps your picks.
 
-## Why the verdict is the product
+## Why the verdict comes with it
 
 Measured over the 211 real results in `fixtures/`:
 
