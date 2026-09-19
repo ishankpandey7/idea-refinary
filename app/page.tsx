@@ -293,7 +293,10 @@ function Check() {
     try {
       apply(await resolve(links), links);
     } catch {
-      setResponse(null);
+      // Keep what is on screen. This used to setResponse(null), so one
+      // dropped packet during a re-check emptied every verdict, the credits
+      // panel and all the cards. The other two entry paths already kept the
+      // previous answers; a report a minute old beats no report at all.
       setFailed(true);
     } finally {
       setLoading(false);
@@ -354,17 +357,39 @@ function Check() {
    */
   const runOnce = params.get("run") === "1";
   const ranOnce = useRef(false);
+  /**
+   * True while a reopened project's check is still in flight.
+   *
+   * Real state rather than a reading of `params`: `runOnce` stayed true for
+   * the whole visit, so `busy` hung on any path that did not set `response`,
+   * and the only button that starts a check sat disabled reading "Checking…"
+   * no matter what was pasted after. Whether there is anything to wait for
+   * is known at mount, so it is decided here rather than by a setState in
+   * the effect body, which would cascade a render.
+   */
+  const [opening, setOpening] = useState(
+    () => runOnce && extractLinks(readStored(PASTE_KEY, "")).length > 0,
+  );
 
   useEffect(() => {
     if (!runOnce || ranOnce.current) return;
     ranOnce.current = true;
 
+    // A project can legitimately have no links in it — all hand entries, or
+    // prose nobody pasted a URL into. `opening` already started false in
+    // that case, so there is nothing to settle and nothing to wait for.
     const links = extractLinks(readStored(PASTE_KEY, ""));
     if (links.length === 0) return;
 
     void resolve(links).then(
-      (body) => apply(body, links),
-      () => setFailed(true),
+      (body) => {
+        apply(body, links);
+        setOpening(false);
+      },
+      () => {
+        setFailed(true);
+        setOpening(false);
+      },
     );
   }, [runOnce, resolve, apply]);
 
@@ -473,7 +498,8 @@ function Check() {
   /** True while an opening check is still in flight, before `loading` owns it. */
   const busy =
     loading ||
-    ((sharedLinks.length > 0 || runOnce) && response === null && !failed);
+    opening ||
+    (sharedLinks.length > 0 && response === null && !failed);
 
   async function copyLink() {
     try {
@@ -710,6 +736,16 @@ function Check() {
   const savedCount = savedKeys.size;
   const full = asserted.length >= MAX_ASSERTED;
   const stated = isStated(usage);
+  /**
+   * Whether there is a report at all.
+   *
+   * "Export PDF" hung off `sharePath`, which only means the check is
+   * addressable — paste five links no source can read and the button was
+   * there, printing a blank sheet. The sheet and the button now agree, and
+   * links nobody could read are part of the report rather than missing
+   * from it.
+   */
+  const printable = results.length > 0 || unread.length > 0;
 
   return (
     <>
@@ -885,14 +921,25 @@ function Check() {
       </div>
 
       {failed ? (
-        <p className="mx-auto mt-6 max-w-3xl rounded-2xl border border-accent/40 bg-brand/10 px-6 py-3 text-center text-[13px] text-accent">
-          The check did not complete. Nothing is known about these links — try
-          again.
+        <p
+          role="status"
+          className="mx-auto mt-6 max-w-3xl rounded-2xl border border-accent/40 bg-brand/10 px-6 py-3 text-center text-[13px] text-accent"
+        >
+          {response
+            ? "This re-check did not complete, so everything below is from the last check that did. Nothing here has moved — try again."
+            : "The check did not complete. Nothing is known about these links — try again."}
         </p>
       ) : null}
 
-      {response ? (
-        <p className="mx-auto mt-10 max-w-3xl text-center text-[12px] text-faint">
+      {response && (response.found > 0 || response.items.length > 0) ? (
+        // The one line that says what just happened, ~900px above the cards
+        // it describes. Announced, because a sighted user sees the page
+        // change and a screen-reader user was told nothing at all.
+        <p
+          role="status"
+          aria-live="polite"
+          className="mx-auto mt-10 max-w-3xl text-center text-[12px] text-soft"
+        >
           {plural(response.found, "link")} in ·{" "}
           {plural(rows.filter((r) => !r.asset).length, "source")} read
           {unread.length > 0 ? ` · ${unread.length} not read` : ""}
@@ -921,14 +968,18 @@ function Check() {
           >
             {copied ? "Link copied" : "Copy link to this check"}
           </button>
-          <button
-            type="button"
-            onClick={() => window.print()}
-            className="rounded-full border border-line px-5 py-2 text-[12px] text-body transition hover:border-accent hover:text-accent"
-          >
-            Export PDF
-          </button>
-          The link reopens this check; the PDF is the report to hand over.
+          {printable ? (
+            <button
+              type="button"
+              onClick={() => window.print()}
+              className="rounded-full border border-line px-5 py-2 text-[12px] text-body transition hover:border-accent hover:text-accent"
+            >
+              Export PDF
+            </button>
+          ) : null}
+          {printable
+            ? "The link reopens this check; the PDF is the report to hand over."
+            : "The link reopens this check. There is nothing to print yet."}
         </p>
       ) : null}
 
@@ -1136,11 +1187,12 @@ function Check() {
       </p>
       </main>
 
-      {results.length > 0 ? (
+      {printable ? (
         <PrintSheet
           title={project.trim() || DEFAULT_PROJECT}
           results={results}
           usage={usage}
+          unresolved={unread}
         />
       ) : null}
     </>

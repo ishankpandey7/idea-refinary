@@ -1,6 +1,7 @@
 "use client";
 
 import type { SourceResult } from "@/types/source-result";
+import type { CheckItem } from "@/lib/resolve";
 import type { Level, Usage } from "@/lib/licence-rules";
 import {
   isAsserted,
@@ -69,12 +70,21 @@ export default function PrintSheet({
   results,
   usage,
   savedAt,
+  unresolved = [],
 }: {
   title: string;
   results: SourceResult[];
   usage: Usage;
   /** Omitted by the checker, where nothing has been saved yet. */
   savedAt?: string;
+  /**
+   * Links that produced no verdict. On screen these get their own section;
+   * leaving them out of the printed copy meant the document that goes to a
+   * client or an app store was the only place they vanished — an asset
+   * quietly leaving the report is the exact failure this product promises
+   * not to make.
+   */
+  unresolved?: CheckItem[];
 }) {
   const counts = tally(results, usage);
 
@@ -93,6 +103,9 @@ export default function PrintSheet({
         <p>
           {counts.clear} clear &middot; {counts.caution} with conditions
           &middot; {counts.verify} to check &middot; {counts.blocked} not usable
+          {unresolved.length > 0
+            ? ` · ${unresolved.length} could not be read`
+            : ""}
         </p>
         {counts.asserted > 0 ? (
           <p>
@@ -160,6 +173,26 @@ export default function PrintSheet({
           </section>
         );
       })}
+
+      {unresolved.length > 0 ? (
+        <section data-print-group>
+          <h2>Could not be read ({unresolved.length})</h2>
+          <p data-print-meta>
+            No licence is known for these and none is guessed at. They are
+            absent from the counts above and from the credits, and they still
+            need checking by hand before this project ships.
+          </p>
+          <ol>
+            {unresolved.map((item) => (
+              <li key={item.input} data-print-item>
+                <h3>{item.sourceLabel ?? "Not a source we read"}</h3>
+                <p data-print-url>{item.input}</p>
+                <p data-print-meta>{item.reason}</p>
+              </li>
+            ))}
+          </ol>
+        </section>
+      ) : null}
 
       <footer data-print-group>
         <p data-print-meta>
