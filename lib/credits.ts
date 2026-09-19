@@ -6,8 +6,10 @@ import {
   licenceLabel,
   pickFor,
   assertedOf,
+  SELF_LABEL,
   verdictForResult,
 } from "./asserted";
+import { sourceLabel } from "./source-labels";
 
 /**
  * Builds the credits people are legally obliged to publish.
@@ -121,7 +123,7 @@ export function buildCredits(
       const t = termsOf(r);
       return [
         csvCell(r.title),
-        csvCell(r.sourceId),
+        csvCell(isAsserted(r) ? SELF_LABEL : sourceLabel(r.sourceId)),
         csvCell(isAsserted(r) ? "you" : "idea craft"),
         csvCell(licenceLabel(r)),
         t.ambiguous ? csvCell("unstated") : String(t.commercial),
@@ -169,7 +171,12 @@ export function buildCredits(
         : level === "verify"
           ? " [CHECK LICENCE]"
           : level === "caution"
-            ? " [SHARE-ALIKE]"
+            // Not "[SHARE-ALIKE]". A caution is also what `atLeast` produces
+            // for "a stock licence I paid for" and "I have the rights
+            // holder's permission", and stamping share-alike on those told
+            // the reader about a licence obligation that does not exist.
+            // Where share-alike does apply, the per-row notes already say so.
+            ? " [CONDITIONS]"
             : "";
 
     const mine = isAsserted(r) ? ` ${MARK}` : "";

@@ -1,4 +1,5 @@
 import type { Adapter, SourceResult, Spdx } from "@/types/source-result";
+import { SOURCE_LABELS } from "@/lib/source-labels";
 import { fillMissing, type ResolveOutcome, type Resolver } from "@/lib/resolve-types";
 
 const SOURCE_ID = "wikimedia";
@@ -111,7 +112,7 @@ function toResult(page: WikimediaPage): SourceResult | null {
 
 export const adapter: Adapter = {
   id: SOURCE_ID,
-  label: "Wikimedia Commons",
+  label: SOURCE_LABELS.wikimedia,
   categories: ["art"],
   async search(query: string, signal?: AbortSignal): Promise<SourceResult[]> {
     try {

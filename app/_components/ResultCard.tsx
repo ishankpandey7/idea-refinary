@@ -4,6 +4,7 @@ import type { ReactNode } from "react";
 import type { SourceResult } from "@/types/source-result";
 import type { Verdict } from "@/lib/licence-rules";
 import { isAsserted, licenceLabel, SELF_LABEL } from "@/lib/asserted";
+import { sourceLabel } from "@/lib/source-labels";
 
 // "Known" rather than "open": NC and ND variants are Creative Commons but are
 // not open under the Open Definition. They are styled apart from UNKNOWN
@@ -96,6 +97,17 @@ export default function ResultCard({
   // would be worse than one that does not link at all.
   const href = r.canonicalUrl.trim() ? r.canonicalUrl : null;
 
+  // The pill names the licence; its colour must not contradict the verdict
+  // sitting beside it. KNOWN_LICENCES includes CC BY-NC, ND and NC-ND, so
+  // "recognised tag" painted a green licence next to a red "Not usable here"
+  // on the same row. A recognised-but-unjudged tag still reads green; once
+  // there is a verdict, the verdict decides.
+  const licencePill = verdict
+    ? VERDICT_STYLE[verdict.level]
+    : known
+      ? "bg-ok-fg text-page"
+      : "bg-line-strong text-body";
+
   return (
     <li className="flex flex-col rounded-2xl border border-line bg-surface p-6 transition hover:border-accent/50">
       <div className="flex items-center justify-between gap-3">
@@ -105,7 +117,7 @@ export default function ResultCard({
           </span>
         ) : (
           <span className="text-[10px] font-semibold uppercase tracking-[0.16em] text-accent">
-            {r.sourceId}
+            {sourceLabel(r.sourceId)}
           </span>
         )}
         {y ? <span className="text-[12px] text-muted">{y}</span> : null}
@@ -157,9 +169,7 @@ export default function ResultCard({
         }`}
       >
         <span
-          className={`rounded-md px-2 py-1 text-[10px] font-semibold uppercase tracking-[0.14em] ${
-            known ? "bg-ok-fg text-page" : "bg-line-strong text-body"
-          }`}
+          className={`rounded-md px-2 py-1 text-[10px] font-semibold uppercase tracking-[0.14em] ${licencePill}`}
         >
           {licence}
         </span>
@@ -169,7 +179,11 @@ export default function ResultCard({
             target="_blank"
             rel="noopener noreferrer"
             className={`text-[11px] underline-offset-2 hover:underline ${
-              known ? "text-ok-fg" : "text-muted"
+              verdict && verdict.level !== "clear"
+                ? "text-muted"
+                : known
+                  ? "text-ok-fg"
+                  : "text-muted"
             }`}
           >
             licence

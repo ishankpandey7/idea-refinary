@@ -17,6 +17,7 @@ import { useAuth } from "../_components/AuthProvider";
 import CompliancePanel from "../_components/CompliancePanel";
 import UsageQuestions from "../_components/UsageQuestions";
 import { verdictForResult } from "@/lib/asserted";
+import { LEVEL_COPY } from "@/lib/licence-rules";
 import { useUsage } from "../_lib/usage";
 import { tally } from "@/lib/credits";
 import {
@@ -457,13 +458,17 @@ function Home() {
           </div>
 
           <p className="mt-5 flex flex-wrap gap-x-4 gap-y-1 text-[13px]">
-            <span className="text-ok-fg">{counts.clear} clear</span>
-            <span className="text-warn-fg">
-              {counts.caution} with conditions
+            <span className="text-ok-fg">
+              {counts.clear} {LEVEL_COPY.clear.short.toLowerCase()}
             </span>
-            <span className="text-warn-fg">{counts.verify} to check</span>
+            <span className="text-warn-fg">
+              {counts.caution} {LEVEL_COPY.caution.short.toLowerCase()}
+            </span>
+            <span className="text-warn-fg">
+              {counts.verify} {LEVEL_COPY.verify.short.toLowerCase()}
+            </span>
             <span className={counts.blocked > 0 ? "text-stop-fg" : "text-faint"}>
-              {counts.blocked} not usable
+              {counts.blocked} {LEVEL_COPY.blocked.short.toLowerCase()}
             </span>
           </p>
         </div>

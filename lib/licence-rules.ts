@@ -75,6 +75,53 @@ export function isStated(usage: Usage): boolean {
 
 export type Level = "clear" | "caution" | "verify" | "blocked";
 
+/**
+ * The only place a verdict is named.
+ *
+ * The same four levels were spelled five different ways — the verdict pill
+ * said "Usable with conditions", the filter chip said "Conditions", the
+ * count tile said "Conditions", the printed report said "Usable with
+ * conditions" and the search page said "with conditions". A reader
+ * comparing the screen to the PDF they just exported had to work out that
+ * four wordings were one verdict.
+ *
+ * Three registers, because a chip and a section heading genuinely need
+ * different lengths — but one table, so they can only ever disagree in
+ * length and never in meaning.
+ */
+export const LEVEL_COPY: Record<
+  Level,
+  {
+    /** The verdict itself, on a card. */
+    headline: string;
+    /** A filter chip, a count tile, a tally line. */
+    short: string;
+    /** A section heading in the printed report. */
+    heading: string;
+  }
+> = {
+  clear: {
+    headline: "Clear",
+    short: "Clear",
+    heading: "Clear to use",
+  },
+  caution: {
+    headline: "Usable with conditions",
+    short: "Conditions",
+    heading: "Usable with conditions",
+  },
+  verify: {
+    headline: "Check before using",
+    short: "Check licence",
+    heading: "Check the licence before using",
+  },
+  blocked: {
+    headline: "Not usable here",
+    short: "Not usable",
+    heading: "Not usable for this project",
+  },
+};
+
 export type Verdict = {
   level: Level;
   /** One short line, safe to render in a chip. */
@@ -215,26 +262,19 @@ export function verdictForTerms(
     level = floor;
   }
 
+  // The one place "clear" is qualified: a credit you owe is not a condition
+  // on using the thing, but it is still something you have to do.
   const headline =
-    level === "blocked"
-      ? "Not usable here"
-      : level === "verify"
-        ? "Check before using"
-        : level === "caution"
-          ? "Usable with conditions"
-          : terms.attribution
-            ? "Clear — credit required"
-            : "Clear";
+    level === "clear" && terms.attribution
+      ? `${LEVEL_COPY.clear.headline} — credit required`
+      : LEVEL_COPY[level].headline;
 
   return { level, headline, notes };
 }
 
-/** Judges one licence tag against one intended use. */
-export function verdictFor(spdx: Spdx, usage: Usage): Verdict {
-  return verdictForTerms(termsFor(spdx), usage, {
-    ambiguousNote:
-      spdx === "OPEN-ACCESS"
-        ? "Open access means free to read. It does not state reuse terms — check the publisher's page before using this."
-        : UNSTATED,
-  });
-}
+// `verdictFor(spdx, usage)` used to live here. CLAUDE.md forbids the UI from
+// calling it — a hand entry's spdx is UNKNOWN whenever the licence has no
+// place in the frozen enum (MIT, OFL, Unsplash), so it judges a stated MIT
+// licence as "nobody said". Nothing imported it, so it is gone rather than
+// left lying about for someone to reach for. `verdictForResult` in
+// lib/asserted.ts is the only verdict call there is.

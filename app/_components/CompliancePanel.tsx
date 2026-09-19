@@ -2,7 +2,7 @@
 
 import { useMemo, useState } from "react";
 import type { SourceResult } from "@/types/source-result";
-import type { Usage } from "@/lib/licence-rules";
+import { LEVEL_COPY, type Usage } from "@/lib/licence-rules";
 import { tally } from "@/lib/credits";
 import { buildCredits, type CreditsFormat } from "@/lib/credits";
 import UsageQuestions from "./UsageQuestions";
@@ -120,10 +120,26 @@ export default function CompliancePanel({
       {/* The safety net, above the thing you came for: a credits file is only
           worth publishing once you know nothing in it is unusable. */}
       <dl className="mt-6 grid grid-cols-2 gap-3 sm:grid-cols-4">
-        <Stat n={counts.clear} label="Clear" tone="text-ok-fg" />
-        <Stat n={counts.caution} label="Conditions" tone="text-warn-fg" />
-        <Stat n={counts.verify} label="Check licence" tone="text-warn-fg" />
-        <Stat n={counts.blocked} label="Not usable" tone="text-stop-fg" />
+        <Stat
+          n={counts.clear}
+          label={LEVEL_COPY.clear.short}
+          tone="text-ok-fg"
+        />
+        <Stat
+          n={counts.caution}
+          label={LEVEL_COPY.caution.short}
+          tone="text-warn-fg"
+        />
+        <Stat
+          n={counts.verify}
+          label={LEVEL_COPY.verify.short}
+          tone="text-warn-fg"
+        />
+        <Stat
+          n={counts.blocked}
+          label={LEVEL_COPY.blocked.short}
+          tone="text-stop-fg"
+        />
       </dl>
 
       {counts.asserted > 0 ? (

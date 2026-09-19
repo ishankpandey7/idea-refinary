@@ -2,7 +2,8 @@
 
 import type { SourceResult } from "@/types/source-result";
 import type { CheckItem } from "@/lib/resolve";
-import type { Level, Usage } from "@/lib/licence-rules";
+import { LEVEL_COPY, type Level, type Usage } from "@/lib/licence-rules";
+import { sourceLabel } from "@/lib/source-labels";
 import {
   isAsserted,
   licenceLabel,
@@ -28,12 +29,7 @@ function day(iso: string): string {
  * A printed report is read top-down once, so what cannot be used has to be
  * the first thing on the page.
  */
-const SECTIONS: { level: Level; heading: string }[] = [
-  { level: "blocked", heading: "Not usable for this project" },
-  { level: "verify", heading: "Check the licence before using" },
-  { level: "caution", heading: "Usable with conditions" },
-  { level: "clear", heading: "Clear to use" },
-];
+const SECTIONS: Level[] = ["blocked", "verify", "caution", "clear"];
 
 /**
  * An unanswered question is printed as unanswered. This report leaves the
@@ -126,7 +122,7 @@ export default function PrintSheet({
         </section>
       ) : null}
 
-      {SECTIONS.map(({ level, heading }) => {
+      {SECTIONS.map((level) => {
         const group = results.filter(
           (r) => verdictForResult(r, usage).level === level,
         );
@@ -135,7 +131,7 @@ export default function PrintSheet({
         return (
           <section key={level} data-print-group>
             <h2>
-              {heading} ({group.length})
+              {LEVEL_COPY[level].heading} ({group.length})
             </h2>
             <ol>
               {group.map((r) => {
@@ -152,7 +148,8 @@ export default function PrintSheet({
                       {r.publishedAt ? ` · ${r.publishedAt}` : ""}
                     </p>
                     <p data-print-meta>
-                      Source: {mine ? SELF_LABEL : r.sourceId} &middot; Licence:{" "}
+                      Source: {mine ? SELF_LABEL : sourceLabel(r.sourceId)} &middot;{" "}
+                      Licence:{" "}
                       {licenceLabel(r)}
                     </p>
                     {verdict.notes.map((note) => (

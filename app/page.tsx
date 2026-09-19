@@ -6,7 +6,12 @@ import { useSearchParams } from "next/navigation";
 import type { SourceResult } from "@/types/source-result";
 import type { CheckItem, CheckResponse } from "@/lib/resolve";
 import { extractLinks, MAX_LINKS, MAX_TEXT, normaliseUrl } from "@/lib/links";
-import { isStated, type Level, type Usage } from "@/lib/licence-rules";
+import {
+  isStated,
+  LEVEL_COPY,
+  type Level,
+  type Usage,
+} from "@/lib/licence-rules";
 import {
   decodeAsserted,
   encodeAsserted,
@@ -56,12 +61,8 @@ const RANK: Record<Level, number> = {
   clear: 3,
 };
 
-const LEVELS: { level: Level; label: string }[] = [
-  { level: "blocked", label: "Not usable" },
-  { level: "verify", label: "Check licence" },
-  { level: "caution", label: "Conditions" },
-  { level: "clear", label: "Clear" },
-];
+/** Worst first. Named once, in lib/licence-rules. */
+const LEVELS: Level[] = ["blocked", "verify", "caution", "clear"];
 
 /**
  * Five links that between them show the whole answer: public domain, a
@@ -746,6 +747,8 @@ function Check() {
    * from it.
    */
   const printable = results.length > 0 || unread.length > 0;
+  const mineCount = checked.filter((c) => c.asset).length;
+  const readCount = checked.length - mineCount;
 
   return (
     <>
@@ -1037,8 +1040,12 @@ function Check() {
       {results.length > 0 ? (
         <>
           <div className="mt-12 flex flex-wrap items-baseline justify-between gap-3">
+            {/* Split. Merging them hid the whole point of the product: what
+                a source answered for and what you answered for are different
+                kinds of claim, and every other surface says which is which. */}
             <h2 className="font-serif text-2xl text-ink">
-              {plural(results.length, "source")} checked
+              {plural(readCount, "source")} checked
+              {mineCount > 0 ? ` · ${mineCount} stated by you` : ""}
             </h2>
             {savedCount > 0 ? (
               <Link
@@ -1058,7 +1065,7 @@ function Check() {
             <Chip on={active === null} onClick={() => setOnly(null)}>
               Everything {checked.length}
             </Chip>
-            {LEVELS.map(({ level, label }) => {
+            {LEVELS.map((level) => {
               const n = byLevel(level);
               if (n === 0) return null;
               return (
@@ -1067,7 +1074,7 @@ function Check() {
                   on={active === level}
                   onClick={() => setOnly(active === level ? null : level)}
                 >
-                  {label} {n}
+                  {LEVEL_COPY[level].short} {n}
                 </Chip>
               );
             })}

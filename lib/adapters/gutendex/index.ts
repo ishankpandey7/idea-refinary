@@ -1,4 +1,5 @@
 import type { Adapter, SourceResult, Spdx } from "@/types/source-result";
+import { SOURCE_LABELS } from "@/lib/source-labels";
 import { fillMissing, type ResolveOutcome, type Resolver } from "@/lib/resolve-types";
 
 const SOURCE_ID = "gutendex";
@@ -65,7 +66,7 @@ const UA = "IdeaCraft/1.0 (+https://idea-refinery-ten.vercel.app)";
 
 export const adapter: Adapter = {
   id: SOURCE_ID,
-  label: "Project Gutenberg",
+  label: SOURCE_LABELS.gutendex,
   categories: ["writing"],
   async search(query: string, signal?: AbortSignal): Promise<SourceResult[]> {
     try {

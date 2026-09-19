@@ -1,4 +1,5 @@
 import type { Adapter, SourceResult, Spdx } from "@/types/source-result";
+import { SOURCE_LABELS } from "@/lib/source-labels";
 import { mapLimit, type ResolveOutcome, type Resolver } from "@/lib/resolve-types";
 
 const SOURCE_ID = "openverse";
@@ -68,7 +69,7 @@ function toResult(image: OpenverseImage): SourceResult | null {
 
 export const adapter: Adapter = {
   id: SOURCE_ID,
-  label: "Openverse",
+  label: SOURCE_LABELS.openverse,
   categories: ["art"],
   async search(query: string, signal?: AbortSignal): Promise<SourceResult[]> {
     try {
