@@ -107,6 +107,8 @@ function Home() {
   const [results, setResults] = useState<SourceResult[]>([]);
   const [loading, setLoading] = useState(false);
   const [searched, setSearched] = useState(false);
+  /** The last attempt threw. Distinct from a search that came back empty. */
+  const [failed, setFailed] = useState(false);
 
   // The query that was actually searched — this is the current project.
   const [currentIdea, setCurrentIdea] = useState("");
@@ -211,9 +213,14 @@ function Home() {
     const q = term.trim();
     if (!q) return;
     setLoading(true);
+    setFailed(false);
     try {
       apply(await fetchSearch(q, cat), q, cat);
     } catch {
+      // Not the same as a search that came back empty. Both used to land on
+      // "Nothing came back. Try another query.", which sent people off to
+      // reword a query that was never the problem.
+      setFailed(true);
       apply(null, q, cat);
     } finally {
       setLoading(false);
@@ -231,7 +238,10 @@ function Home() {
         if (active) apply(body, start.q, start.cat);
       },
       () => {
-        if (active) apply(null, start.q, start.cat);
+        if (active) {
+          setFailed(true);
+          apply(null, start.q, start.cat);
+        }
       },
     );
 
@@ -308,7 +318,7 @@ function Home() {
               type="text"
               value={query}
               onChange={(e) => setQuery(e.target.value)}
-              placeholder="Describe your idea — e.g. a cancer awareness campaign"
+              placeholder="What are you looking for? — e.g. a cancer awareness campaign"
               className="w-full min-w-0 bg-transparent text-[15px] text-ink placeholder:text-faint focus:outline-none"
             />
           </div>
@@ -317,7 +327,7 @@ function Home() {
             disabled={busy}
             className="w-full shrink-0 rounded-full bg-brand px-7 py-3 text-[14px] font-medium text-white transition hover:bg-brand-hover disabled:cursor-not-allowed disabled:opacity-60 sm:w-auto"
           >
-            {busy ? "Searching…" : "Refine →"}
+            {busy ? "Searching…" : "Search →"}
           </button>
         </div>
       </form>
@@ -494,8 +504,13 @@ function Home() {
       ) : null}
 
       {searched && !busy && results.length === 0 ? (
-        <p className="mt-6 text-center text-[15px] text-muted">
-          Nothing came back. Try another query.
+        <p
+          role="status"
+          className="mt-6 text-center text-[15px] text-muted"
+        >
+          {failed
+            ? "The search did not complete — that is us, not your query. Try again in a moment."
+            : "Nothing came back. Try another query."}
         </p>
       ) : null}
 

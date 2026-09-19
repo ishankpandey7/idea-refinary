@@ -64,7 +64,7 @@ export default function IdeaSearch({
   return (
     <section className="mt-10 rounded-2xl border border-line bg-surface p-6">
       <p className="text-[11px] font-medium uppercase tracking-[0.18em] text-accent">
-        Add to this idea
+        Add to this project
       </p>
 
       <form className="mt-5 flex flex-col gap-3 sm:flex-row" onSubmit={onSearch}>
@@ -124,10 +124,10 @@ export default function IdeaSearch({
                       }`}
                     >
                       {saved
-                        ? "In this idea"
+                        ? "In this project"
                         : adding === key
                           ? "Adding…"
-                          : "Add to idea"}
+                          : "Add to project"}
                     </button>
                   }
                 />

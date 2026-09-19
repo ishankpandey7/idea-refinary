@@ -803,6 +803,14 @@ function Check() {
         >
           Your material
         </label>
+        {/* What can be read, before you paste — not as a row of failures
+            afterwards. The hand-entry block below then reads as the next
+            step rather than an afterthought. */}
+        <p className="mt-2 text-[12px] leading-relaxed text-muted">
+          Readable automatically: Wikimedia Commons, Openverse, any DOI or
+          OpenAlex link, and Project Gutenberg. Everything else &mdash; fonts,
+          music, icon sets, stock photos &mdash; you add by hand below.
+        </p>
         <textarea
           id="paste"
           value={paste}
@@ -829,8 +837,14 @@ function Check() {
 
           <button
             type="button"
-            onClick={() => setPaste(EXAMPLE)}
-            className="rounded-full border border-line px-5 py-2.5 text-[12px] text-body transition hover:border-accent hover:text-accent"
+            // Filling the box and stopping asked the highest-intent button on
+            // a cold page for a second click and an inference. It runs the
+            // check too: the point of the example is the answers.
+            onClick={() => {
+              setPaste(EXAMPLE);
+              void runCheck(extractLinks(EXAMPLE));
+            }}
+            className="min-h-11 rounded-full border border-line px-5 text-[12px] text-body transition hover:border-accent hover:text-accent"
           >
             Use an example
           </button>
@@ -1011,7 +1025,7 @@ function Check() {
       {unread.length > 0 ? (
         <section className="mx-auto mt-10 max-w-3xl rounded-2xl border border-line bg-surface p-6">
           <p className="text-[11px] font-medium uppercase tracking-[0.18em] text-accent">
-            Not checked &middot; {unread.length}
+            Not read &middot; {unread.length}
           </p>
           <p className="mt-3 text-[13px] leading-relaxed text-body">
             These are missing from the counts above and from your credits. We
@@ -1116,14 +1130,14 @@ function Check() {
                           <button
                             type="button"
                             onClick={() => openForm(asset, true)}
-                            className="rounded-full border border-line px-4 py-1.5 text-[11px] font-medium text-muted transition hover:border-accent hover:text-accent"
+                            className="inline-flex min-h-11 items-center rounded-full border border-line px-4 text-[11px] font-medium text-muted transition hover:border-accent hover:text-accent"
                           >
                             Edit
                           </button>
                           <button
                             type="button"
                             onClick={() => dropAsset(asset.id)}
-                            className="rounded-full border border-line px-4 py-1.5 text-[11px] font-medium text-muted transition hover:border-accent hover:text-accent"
+                            className="inline-flex min-h-11 items-center rounded-full border border-line px-4 text-[11px] font-medium text-muted transition hover:border-accent hover:text-accent"
                           >
                             Remove
                           </button>
@@ -1137,7 +1151,7 @@ function Check() {
                           href={`/search?q=${encodeURIComponent(
                             r.title,
                           )}&category=${categoryOf(r).toLowerCase()}`}
-                          className="rounded-full border border-line px-4 py-1.5 text-[11px] font-medium text-muted transition hover:border-accent hover:text-accent"
+                          className="inline-flex min-h-11 items-center rounded-full border border-line px-4 text-[11px] font-medium text-muted transition hover:border-accent hover:text-accent"
                         >
                           Find a replacement &rarr;
                         </Link>
@@ -1146,7 +1160,7 @@ function Check() {
                         type="button"
                         onClick={() => onSave(r)}
                         disabled={saved}
-                        className={`rounded-full border px-4 py-1.5 text-[11px] font-medium transition ${
+                        className={`inline-flex min-h-11 items-center rounded-full border px-4 text-[11px] font-medium transition ${
                           saved
                             ? "cursor-default border-accent/40 bg-brand/10 text-accent"
                             : "border-line-strong bg-raised text-body hover:border-accent hover:text-accent"
@@ -1272,7 +1286,7 @@ function Chip({
       type="button"
       onClick={onClick}
       aria-pressed={on}
-      className={`rounded-full border px-4 py-1.5 text-[12px] transition ${
+      className={`inline-flex min-h-11 items-center rounded-full border px-4 text-[12px] transition ${
         on
           ? "border-ink bg-ink text-page"
           : "border-line text-body hover:border-ink"

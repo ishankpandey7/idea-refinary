@@ -42,7 +42,7 @@ export default function Login() {
       </div>
 
       <h1 className="mt-10 text-center font-serif text-5xl leading-[1.08] text-ink">
-        Keep your <em className="italic text-accent">ideas.</em>
+        Keep your <em className="italic text-accent">projects.</em>
       </h1>
 
       {!isSupabaseConfigured ? (

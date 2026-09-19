@@ -130,7 +130,7 @@ export default function MembersPanel({
               disabled={busy}
               className="rounded-full bg-brand px-6 py-2.5 text-[13px] font-medium text-white transition hover:bg-brand-hover disabled:cursor-not-allowed disabled:opacity-60"
             >
-              {busy ? "Adding…" : "Add to idea"}
+              {busy ? "Adding…" : "Add to project"}
             </button>
             <button
               type="button"
@@ -142,7 +142,7 @@ export default function MembersPanel({
           </div>
           <p className="text-[12px] leading-relaxed text-muted">
             They need an Idea Craft account already &mdash; this shares the
-            idea, it does not send a signup invitation.
+            project, it does not send a signup invitation.
           </p>
         </form>
       ) : null}

@@ -233,44 +233,49 @@ export async function checkLinks(
     bySource.set(slot.sourceId, keys);
   }
 
-  const controller = new AbortController();
-  const timer = setTimeout(() => controller.abort(), TIMEOUT_MS);
   const outcomes = new Map<string, ResolveOutcome>();
 
-  try {
-    await Promise.all(
-      [...bySource].map(async ([sourceId, keys]) => {
-        const resolver = resolvers[sourceId];
+  await Promise.all(
+    [...bySource].map(async ([sourceId, keys]) => {
+      const resolver = resolvers[sourceId];
 
-        /** Backstop for keys the resolver never answered for. */
-        const fillGaps = (detail: string): void => {
-          for (const key of keys) {
-            const at = `${sourceId}:${key}`;
-            if (!outcomes.has(at)) {
-              outcomes.set(at, { status: "unreachable", detail });
-            }
+      /** Backstop for keys the resolver never answered for. */
+      const fillGaps = (detail: string): void => {
+        for (const key of keys) {
+          const at = `${sourceId}:${key}`;
+          if (!outcomes.has(at)) {
+            outcomes.set(at, { status: "unreachable", detail });
           }
-        };
-
-        if (!resolver) return fillGaps("no resolver");
-
-        try {
-          const answered = await resolver.resolveBatch(keys, controller.signal);
-          for (const key of keys) {
-            const outcome = answered[key];
-            if (outcome) outcomes.set(`${sourceId}:${key}`, outcome);
-          }
-          fillGaps("no answer");
-        } catch (err) {
-          // Resolvers catch their own failures, so this is the timeout path.
-          console.error(`[${sourceId}] resolve batch ${String(err)}`);
-          fillGaps(err instanceof Error ? err.message : String(err));
         }
-      }),
-    );
-  } finally {
-    clearTimeout(timer);
-  }
+      };
+
+      if (!resolver) return fillGaps("no resolver");
+
+      // One controller and one timer per source, not one for all four.
+      // Shared, the first source to burn the budget aborted the other three
+      // mid-flight and every one of them reported "did not answer within 8
+      // seconds" — and gutendex, which resolves its keys sequentially and is
+      // documented above as 10-15s cold, burns it routinely. The timeout is
+      // meant to bound one slow source, not to let it take the others down.
+      const controller = new AbortController();
+      const timer = setTimeout(() => controller.abort(), TIMEOUT_MS);
+
+      try {
+        const answered = await resolver.resolveBatch(keys, controller.signal);
+        for (const key of keys) {
+          const outcome = answered[key];
+          if (outcome) outcomes.set(`${sourceId}:${key}`, outcome);
+        }
+        fillGaps("no answer");
+      } catch (err) {
+        // Resolvers catch their own failures, so this is the timeout path.
+        console.error(`[${sourceId}] resolve batch ${String(err)}`);
+        fillGaps(err instanceof Error ? err.message : String(err));
+      } finally {
+        clearTimeout(timer);
+      }
+    }),
+  );
 
   const items: CheckItem[] = slots.map((slot) => {
     const sourceLabel = slot.sourceId ? labelFor(slot.sourceId) : null;

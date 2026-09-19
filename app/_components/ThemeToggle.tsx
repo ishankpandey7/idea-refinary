@@ -52,7 +52,7 @@ export default function ThemeToggle() {
       onClick={cycle}
       title={`Theme: ${LABEL[theme]} — click to change`}
       aria-label={`Theme: ${LABEL[theme]}. Click to change.`}
-      className="flex size-8 shrink-0 items-center justify-center rounded-full border border-line text-[13px] text-body transition hover:border-accent hover:text-accent"
+      className="flex size-11 shrink-0 items-center justify-center rounded-full border border-line text-[13px] text-body transition hover:border-accent hover:text-accent"
     >
       <span aria-hidden>{GLYPH[theme]}</span>
     </button>
