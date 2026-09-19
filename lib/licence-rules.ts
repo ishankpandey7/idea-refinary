@@ -56,8 +56,22 @@ export function termsFor(spdx: Spdx): Terms {
   return TERMS[spdx] ?? TERMS.UNKNOWN;
 }
 
-/** What the person intends to do with the material. */
-export type Usage = { commercial: boolean; modify: boolean };
+/**
+ * What the person intends to do with the material.
+ *
+ * `null` is the third state and the one that matters: it means nobody has
+ * said. It is not the same as `false`, and treating the two alike is the
+ * worst mistake this file can make — `false` for both is the *most*
+ * permissive question you can ask a licence, because nothing is forbidden
+ * until you have said you want to do it. A stranger who has answered nothing
+ * would be told CC BY-NC-ND was clear to use.
+ */
+export type Usage = { commercial: boolean | null; modify: boolean | null };
+
+/** True once both questions have an answer — either answer. */
+export function isStated(usage: Usage): boolean {
+  return usage.commercial !== null && usage.modify !== null;
+}
 
 export type Level = "clear" | "caution" | "verify" | "blocked";
 
@@ -85,6 +99,15 @@ export function worst(levels: Level[]): Level {
 
 const UNSTATED =
   "The source did not state a licence. Check the original page before using this.";
+
+/**
+ * Said when the licence withholds a permission and nobody has said whether
+ * they need it. The verdict is floored at "verify" alongside it, because the
+ * alternative is reading silence as "no, I do not need that" — which is the
+ * one reading that can turn a licence you may not use into a green tick.
+ */
+const UNDECIDED =
+  "You have not said what you are doing with this. It is restricted in a way that may or may not matter — answer the two questions and this becomes a verdict.";
 
 export type VerdictOptions = {
   /**
@@ -117,6 +140,12 @@ export type VerdictOptions = {
  * person said they were going to do. Terms nobody has stated are "verify" —
  * telling someone they may not use something, when the truth is that nobody
  * has said, would be its own kind of wrong.
+ *
+ * The mirror of that: an intent nobody has stated is "verify" too, wherever
+ * the intent is what decides. Both blocking branches below are guarded by
+ * the intent, so with no intent neither can fire, and the licence that
+ * withholds the most would come back looking like the licence that withholds
+ * nothing.
  */
 export function verdictForTerms(
   terms: Terms,
@@ -126,13 +155,23 @@ export function verdictForTerms(
   const notes = (opts.notes ?? []).filter(Boolean);
   let level: Level = "clear";
 
+  // Only where an answer could actually change the outcome. CC0 is clear
+  // whatever you are doing with it, and asking about it would be noise; a
+  // no-derivatives licence with "will you edit it?" unanswered is not.
+  const undecided =
+    !terms.ambiguous &&
+    ((usage.commercial === null && !terms.commercial) ||
+      (usage.modify === null && !terms.modify));
+
+  if (undecided) notes.push(UNDECIDED);
+
   if (terms.ambiguous) {
     level = "verify";
     notes.push(opts.ambiguousNote ?? UNSTATED);
   } else {
     const stated = opts.voice === "stated";
 
-    if (usage.commercial && !terms.commercial) {
+    if (usage.commercial === true && !terms.commercial) {
       level = "blocked";
       notes.push(
         stated
@@ -165,8 +204,15 @@ export function verdictForTerms(
     }
   }
 
-  if (opts.atLeast && LEVEL_RANK[opts.atLeast] > LEVEL_RANK[level]) {
-    level = opts.atLeast;
+  // Both floors at once: what the caller asked for, and "verify" when the
+  // intent that would decide this has not been given. Whichever is worse
+  // wins, and neither can lower a level the terms already earned.
+  const floor = worst([
+    opts.atLeast ?? "clear",
+    undecided ? "verify" : "clear",
+  ]);
+  if (LEVEL_RANK[floor] > LEVEL_RANK[level]) {
+    level = floor;
   }
 
   const headline =

@@ -5,6 +5,7 @@ import type { SourceResult } from "@/types/source-result";
 import type { Usage } from "@/lib/licence-rules";
 import { tally } from "@/lib/credits";
 import { buildCredits, type CreditsFormat } from "@/lib/credits";
+import UsageQuestions from "./UsageQuestions";
 
 const FORMATS: {
   id: CreditsFormat;
@@ -106,18 +107,11 @@ export default function CompliancePanel({
             below is judged against its licence.
           </p>
 
-          <div className="mt-5 flex flex-wrap gap-2">
-            <Toggle
-              on={usage.commercial}
-              label="Commercial project"
-              onClick={() =>
-                onUsageChange({ ...usage, commercial: !usage.commercial })
-              }
-            />
-            <Toggle
-              on={usage.modify}
-              label="I will edit or adapt it"
-              onClick={() => onUsageChange({ ...usage, modify: !usage.modify })}
+          <div className="mt-5">
+            <UsageQuestions
+              usage={usage}
+              onChange={onUsageChange}
+              size="compact"
             />
           </div>
         </>
@@ -210,31 +204,6 @@ export default function CompliancePanel({
   );
 }
 
-function Toggle({
-  on,
-  label,
-  onClick,
-}: {
-  on: boolean;
-  label: string;
-  onClick: () => void;
-}) {
-  return (
-    <button
-      type="button"
-      onClick={onClick}
-      aria-pressed={on}
-      className={`rounded-full border px-5 py-2 text-[13px] transition ${
-        on
-          ? "border-ink bg-ink text-page"
-          : "border-line text-body hover:border-ink"
-      }`}
-    >
-      {on ? "✓ " : ""}
-      {label}
-    </button>
-  );
-}
 
 function Stat({ n, label, tone }: { n: number; label: string; tone: string }) {
   return (

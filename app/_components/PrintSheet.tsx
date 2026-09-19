@@ -34,10 +34,23 @@ const SECTIONS: { level: Level; heading: string }[] = [
   { level: "clear", heading: "Clear to use" },
 ];
 
+/**
+ * An unanswered question is printed as unanswered. This report leaves the
+ * building, and stating an intent nobody gave would be the report inventing
+ * its own premise.
+ */
 function intentLine(usage: Usage): string {
   return [
-    usage.commercial ? "commercial use" : "non-commercial use",
-    usage.modify ? "adapted or edited" : "used unmodified",
+    usage.commercial === null
+      ? "commercial use NOT STATED"
+      : usage.commercial
+        ? "commercial use"
+        : "non-commercial use",
+    usage.modify === null
+      ? "editing NOT STATED"
+      : usage.modify
+        ? "adapted or edited"
+        : "used unmodified",
   ].join(", ");
 }
 

@@ -69,12 +69,28 @@ export function tally(results: SourceResult[], usage: Usage): Tally {
   return { total: results.length, ...counts, asserted, level: worst(levels) };
 }
 
+/**
+ * The question these verdicts answer, said in the file itself.
+ *
+ * An unanswered question is named as unanswered. This line is read by people
+ * who were not there when the check was run — a client, a reviewer, an app
+ * store — and printing "non-commercial use" because nobody ticked the box
+ * would put words in the author's mouth in the one document meant to be
+ * quotable.
+ */
 function usageLine(usage: Usage): string {
-  const parts = [
-    usage.commercial ? "commercial use" : "non-commercial use",
-    usage.modify ? "adapted or edited" : "used unmodified",
-  ];
-  return parts.join(", ");
+  return [
+    usage.commercial === null
+      ? "commercial use NOT STATED"
+      : usage.commercial
+        ? "commercial use"
+        : "non-commercial use",
+    usage.modify === null
+      ? "editing NOT STATED"
+      : usage.modify
+        ? "adapted or edited"
+        : "used unmodified",
+  ].join(", ");
 }
 
 function csvCell(value: string): string {

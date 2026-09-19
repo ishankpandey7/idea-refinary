@@ -93,9 +93,13 @@ export async function listIdeas(): Promise<Idea[]> {
     ownerId: row.owner_id,
     query: row.query,
     savedAt: row.created_at,
+    // NULL means the column was never written — a project saved before
+    // 0004, or before the question was asked. That is "not stated", not
+    // "no": see the Usage type. The columns are already nullable, so this
+    // needs no migration.
     usage: {
-      commercial: row.usage_commercial ?? false,
-      modify: row.usage_modify ?? false,
+      commercial: row.usage_commercial ?? null,
+      modify: row.usage_modify ?? null,
     },
     list: decodeList(row.source_list),
     results: (row.pins ?? [])

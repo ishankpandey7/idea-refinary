@@ -15,6 +15,7 @@ import {
 } from "../_lib/ideas-db";
 import { useAuth } from "../_components/AuthProvider";
 import CompliancePanel from "../_components/CompliancePanel";
+import UsageQuestions from "../_components/UsageQuestions";
 import { verdictForResult } from "@/lib/asserted";
 import { useUsage } from "../_lib/usage";
 import { tally } from "@/lib/credits";
@@ -451,33 +452,8 @@ function Home() {
             judged against its licence. No account needed.
           </p>
 
-          <div className="mt-5 flex flex-wrap gap-2">
-            <button
-              type="button"
-              aria-pressed={usage.commercial}
-              onClick={() =>
-                changeUsage({ ...usage, commercial: !usage.commercial })
-              }
-              className={`rounded-full border px-5 py-2 text-[13px] transition ${
-                usage.commercial
-                  ? "border-ink bg-ink text-page"
-                  : "border-line text-body hover:border-ink"
-              }`}
-            >
-              {usage.commercial ? "✓ " : ""}Commercial project
-            </button>
-            <button
-              type="button"
-              aria-pressed={usage.modify}
-              onClick={() => changeUsage({ ...usage, modify: !usage.modify })}
-              className={`rounded-full border px-5 py-2 text-[13px] transition ${
-                usage.modify
-                  ? "border-ink bg-ink text-page"
-                  : "border-line text-body hover:border-ink"
-              }`}
-            >
-              {usage.modify ? "✓ " : ""}I will edit or adapt it
-            </button>
+          <div className="mt-5">
+            <UsageQuestions usage={usage} onChange={changeUsage} />
           </div>
 
           <p className="mt-5 flex flex-wrap gap-x-4 gap-y-1 text-[13px]">

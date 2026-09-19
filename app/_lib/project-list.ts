@@ -29,7 +29,7 @@ export type ProjectList = {
 export const EMPTY_LIST: ProjectList = {
   paste: "",
   asserted: [],
-  usage: { commercial: false, modify: false },
+  usage: { commercial: null, modify: null },
 };
 
 export function hasContent(list: ProjectList | null): boolean {
@@ -66,9 +66,13 @@ export function decodeList(raw: unknown): ProjectList | null {
     paste: typeof s.paste === "string" ? s.paste : "",
     asserted:
       typeof s.asserted === "string" ? decodeAsserted(s.asserted) : [],
+    // A row written before the question had a third answer stored `false`
+    // for "not asked". It reads back as "no" here, which is the answer the
+    // person was shown at the time, so the saved verdicts do not move under
+    // them. Only a genuinely absent value is unanswered.
     usage: {
-      commercial: s.commercial === true,
-      modify: s.modify === true,
+      commercial: s.commercial === true ? true : s.commercial === false ? false : null,
+      modify: s.modify === true ? true : s.modify === false ? false : null,
     },
   };
 }

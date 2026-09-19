@@ -6,7 +6,7 @@ import { useSearchParams } from "next/navigation";
 import type { SourceResult } from "@/types/source-result";
 import type { CheckItem, CheckResponse } from "@/lib/resolve";
 import { extractLinks, MAX_LINKS, MAX_TEXT, normaliseUrl } from "@/lib/links";
-import type { Level, Usage } from "@/lib/licence-rules";
+import { isStated, type Level, type Usage } from "@/lib/licence-rules";
 import {
   decodeAsserted,
   encodeAsserted,
@@ -19,6 +19,7 @@ import {
 import ResultCard, { categoryOf } from "./_components/ResultCard";
 import AssetForm from "./_components/AssetForm";
 import CompliancePanel from "./_components/CompliancePanel";
+import UsageQuestions from "./_components/UsageQuestions";
 import PrintSheet from "./_components/PrintSheet";
 import { useAuth } from "./_components/AuthProvider";
 import { useUsage, usageLabel } from "./_lib/usage";
@@ -241,13 +242,18 @@ function Check() {
   // over whatever this browser last had — someone who followed one came to
   // see that check, not their own. Written to the shared store rather than
   // held separately, so the toggles and /search agree with it immediately.
-  const sharedIntent = useMemo(
-    (): Usage => ({
-      commercial: params.get("c") === "1",
-      modify: params.get("m") === "1",
-    }),
-    [params],
-  );
+  // "1" and "0" are both answers; an absent parameter is not one. A link
+  // made before the question had a third state carries `c` only when the
+  // answer was yes, so its silence reads as unanswered and the check it
+  // reopens is floored at "check before using" rather than quietly showing
+  // a stranger the most permissive reading.
+  const sharedIntent = useMemo((): Usage => {
+    const read = (key: string): boolean | null => {
+      const raw = params.get(key);
+      return raw === "1" ? true : raw === "0" ? false : null;
+    };
+    return { commercial: read("c"), modify: read("m") };
+  }, [params]);
 
   /**
    * Seeding runs once. The effect below rewrites the address bar as soon as
@@ -344,8 +350,10 @@ function Check() {
     if (links.length === 0 && asserted.length === 0) return null;
 
     const qs = new URLSearchParams();
-    if (usage.commercial) qs.set("c", "1");
-    if (usage.modify) qs.set("m", "1");
+    // Written whenever there is an answer, including "no" — the reader has
+    // to be able to tell a stated no from a question nobody reached.
+    if (usage.commercial !== null) qs.set("c", usage.commercial ? "1" : "0");
+    if (usage.modify !== null) qs.set("m", usage.modify ? "1" : "0");
     if (links.length > 0) qs.set("l", links.join("\n"));
     if (asserted.length > 0) qs.set("a", encodeAsserted(asserted));
 
@@ -639,6 +647,7 @@ function Check() {
 
   const savedCount = savedKeys.size;
   const full = asserted.length >= MAX_ASSERTED;
+  const stated = isStated(usage);
 
   return (
     <>
@@ -688,20 +697,13 @@ function Check() {
         <p className="mt-6 text-[11px] font-medium uppercase tracking-[0.18em] text-accent">
           What are you doing with it?
         </p>
-        <div className="mt-3 flex flex-wrap gap-2">
-          <Toggle
-            on={usage.commercial}
-            label="Commercial project"
-            onClick={() => setUsage({ ...usage, commercial: !usage.commercial })}
-          />
-          <Toggle
-            on={usage.modify}
-            label="I will edit or adapt it"
-            onClick={() => setUsage({ ...usage, modify: !usage.modify })}
-          />
+        <div className="mt-3">
+          <UsageQuestions usage={usage} onChange={setUsage} />
         </div>
         <p className="mt-3 text-[12px] text-muted">
-          Judging everything below as {usageLabel(usage)}.
+          {stated
+            ? `Judging everything below as ${usageLabel(usage)}.`
+            : "Until both are answered, anything with a restriction on it reads “check before using” — a licence only forbids what you have said you want to do."}
         </p>
 
         <label
@@ -1184,28 +1186,3 @@ function Chip({
   );
 }
 
-function Toggle({
-  on,
-  label,
-  onClick,
-}: {
-  on: boolean;
-  label: string;
-  onClick: () => void;
-}) {
-  return (
-    <button
-      type="button"
-      onClick={onClick}
-      aria-pressed={on}
-      className={`rounded-full border px-5 py-2 text-[13px] transition ${
-        on
-          ? "border-ink bg-ink text-page"
-          : "border-line text-body hover:border-ink"
-      }`}
-    >
-      {on ? "✓ " : ""}
-      {label}
-    </button>
-  );
-}
