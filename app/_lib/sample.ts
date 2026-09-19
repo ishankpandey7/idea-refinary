@@ -1,4 +1,5 @@
 import type { SourceResult } from "@/types/source-result";
+import type { Usage } from "@/lib/licence-rules";
 import { buildCredits } from "@/lib/credits";
 
 /**
@@ -46,8 +47,7 @@ const SAMPLE: SourceResult[] = [
       spdx: "PD",
       url: null,
       assertedBy: "wikimedia",
-      attribution:
-        "NASA/Apollo 17 crew — The Earth seen from Apollo 17.jpg",
+      attribution: "NASA/Apollo 17 crew — The Earth seen from Apollo 17.jpg",
     },
     snippet: null,
     thumbnailUrl: null,
@@ -55,13 +55,23 @@ const SAMPLE: SourceResult[] = [
   },
 ];
 
-export const SAMPLE_CREDITS = buildCredits(
-  {
-    title: "Indie game",
-    results: SAMPLE,
-    usage: { commercial: true, modify: true },
-  },
-  "text",
-)
-  // The real footer points at a share link this preview does not have.
-  .split("\n\nRe-check this project")[0];
+/**
+ * The trailing line of a credits file with no share link. Split on the line
+ * itself rather than on the wording of the branch above it: the previous
+ * split looked for "Re-check this project", which is the *shareUrl* branch
+ * and never fires here, so it silently matched nothing and the preview told
+ * a stranger to paste back a file they do not have.
+ */
+const RECHECK_LINE = "\nPaste this file back";
+
+/**
+ * Built per call, against the project name and intent that are actually on
+ * screen. Frozen at "Indie game / commercial / edited" it contradicted the
+ * questions 300px above it — and pressing Yes or No changed nothing, which
+ * is the only way a stranger can work out what those questions do.
+ */
+export function sampleCredits(title: string, usage: Usage): string {
+  return buildCredits({ title, results: SAMPLE, usage }, "text").split(
+    RECHECK_LINE,
+  )[0];
+}

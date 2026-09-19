@@ -22,7 +22,7 @@ import CompliancePanel from "./_components/CompliancePanel";
 import UsageQuestions from "./_components/UsageQuestions";
 import PrintSheet from "./_components/PrintSheet";
 import { useAuth } from "./_components/AuthProvider";
-import { useUsage, usageLabel } from "./_lib/usage";
+import { DEFAULT_USAGE, useUsage, usageLabel } from "./_lib/usage";
 import { readStored, useStored } from "./_lib/stored";
 import {
   ASSERTED_KEY,
@@ -43,7 +43,7 @@ import {
   savedResultsFor as savedResultsLocal,
   useLocalIdeas,
 } from "./_lib/ideas";
-import { SAMPLE_CREDITS } from "./_lib/sample";
+import { sampleCredits } from "./_lib/sample";
 import type { ProjectList } from "./_lib/project-list";
 
 const DEFAULT_PROJECT = "My project";
@@ -98,16 +98,78 @@ type Row = {
 };
 
 /**
- * The share link is read with useSearchParams, which Next requires a Suspense
- * boundary around. Everything on this page is client state anyway — the shell
- * renders immediately and the check fills in — so an empty fallback costs
- * nothing a reader would notice.
+ * The share link is read with useSearchParams, which puts everything under
+ * it outside the prerender. With `fallback={null}` that meant the whole page
+ * — the build emitted a bailout marker between the header and the footer and
+ * not one `<h1>`, so a crawler, a link preview and anyone on a slow
+ * connection got a blank sheet from the one page the product is named after.
+ *
+ * The fallback now carries the part that never depended on the URL: the
+ * masthead and the sample of what comes out. Same components the client
+ * render uses, so there is nothing to keep in sync and nothing that can
+ * flash. Results are still client-only, which is what CLAUDE.md requires.
  */
 export default function CheckPage() {
   return (
-    <Suspense fallback={null}>
+    <Suspense fallback={<ColdOpen />}>
       <Check />
     </Suspense>
+  );
+}
+
+/** Everything above the fold that the server already knows. */
+function Masthead() {
+  return (
+    <>
+      <h1 className="text-center font-serif text-5xl leading-[1.1] text-ink sm:text-6xl">
+        The credits you owe,
+        <br />
+        written for you.
+      </h1>
+
+      <p className="mx-auto mt-6 max-w-xl text-center text-[15px] leading-relaxed text-body">
+        Paste the links to everything in your project. Idea Craft writes the
+        attribution you are obliged to publish &mdash; and flags anything you
+        cannot legally use, before you ship it. No account needed.
+      </p>
+    </>
+  );
+}
+
+/**
+ * Cold arrival. A big empty box does not say what it is for, and the honest
+ * way to say it is not a diagram of the pipeline — it is the thing you came
+ * here for, in the shape you will get it. Rendered through the real credits
+ * builder, so it cannot drift from the file that actually downloads.
+ */
+function SampleCredits({ title, usage }: { title: string; usage: Usage }) {
+  return (
+    <section className="mx-auto mt-12 max-w-3xl">
+      <p className="text-center text-[11px] font-medium uppercase tracking-[0.18em] text-accent">
+        What comes out
+      </p>
+      <pre className="mt-5 overflow-x-auto rounded-2xl border border-line bg-surface p-6 font-mono text-[11.5px] leading-relaxed text-soft">
+        {sampleCredits(title, usage)}
+      </pre>
+      <p className="mt-4 text-center text-[13px] leading-relaxed text-body">
+        Plain text, Markdown or CSV &mdash; plus a PDF licence report to hand
+        to a client or an app store, and a link that reopens the whole check
+        for someone else.
+      </p>
+    </section>
+  );
+}
+
+/** The prerendered shell: no URL read, so the server can emit all of it. */
+function ColdOpen() {
+  return (
+    <main
+      data-print-hide
+      className="mx-auto w-full max-w-5xl px-6 pb-24 pt-16 sm:px-10"
+    >
+      <Masthead />
+      <SampleCredits title={DEFAULT_PROJECT} usage={DEFAULT_USAGE} />
+    </main>
   );
 }
 
@@ -655,17 +717,7 @@ function Check() {
         data-print-hide
         className="mx-auto w-full max-w-5xl px-6 pb-24 pt-16 sm:px-10"
       >
-      <h1 className="text-center font-serif text-5xl leading-[1.1] text-ink sm:text-6xl">
-        The credits you owe,
-        <br />
-        written for you.
-      </h1>
-
-      <p className="mx-auto mt-6 max-w-xl text-center text-[15px] leading-relaxed text-body">
-        Paste the links to everything in your project. Idea Craft writes the
-        attribution you are obliged to publish &mdash; and flags anything you
-        cannot legally use, before you ship it. No account needed.
-      </p>
+      <Masthead />
 
       {arrived ? (
         <p className="mx-auto mt-8 max-w-2xl rounded-2xl border border-line bg-surface px-6 py-4 text-center text-[13px] leading-relaxed text-body">
@@ -1053,25 +1105,11 @@ function Check() {
         </>
       ) : null}
 
-      {/* Cold arrival. A big empty box does not say what it is for, and the
-          honest way to say it is not a diagram of the pipeline — it is the
-          thing you came here for, in the shape you will get it. Rendered
-          through the real credits builder, so it cannot drift from the file
-          that actually downloads. */}
       {results.length === 0 && !response ? (
-        <section className="mx-auto mt-12 max-w-3xl">
-          <p className="text-center text-[11px] font-medium uppercase tracking-[0.18em] text-accent">
-            What comes out
-          </p>
-          <pre className="mt-5 overflow-x-auto rounded-2xl border border-line bg-surface p-6 font-mono text-[11.5px] leading-relaxed text-soft">
-            {SAMPLE_CREDITS}
-          </pre>
-          <p className="mt-4 text-center text-[13px] leading-relaxed text-body">
-            Plain text, Markdown or CSV &mdash; plus a PDF licence report to
-            hand to a client or an app store, and a link that reopens the whole
-            check for someone else.
-          </p>
-        </section>
+        <SampleCredits
+          title={project.trim() || DEFAULT_PROJECT}
+          usage={usage}
+        />
       ) : null}
 
       <section className="mt-24 rounded-2xl border border-line bg-surface p-8 text-center">
