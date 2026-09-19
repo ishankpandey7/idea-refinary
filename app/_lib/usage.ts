@@ -20,7 +20,23 @@ const KEY = USAGE_KEY;
 
 export const DEFAULT_USAGE: Usage = { commercial: null, modify: null };
 
-const DEFAULT_RAW = JSON.stringify(DEFAULT_USAGE);
+/**
+ * Bumped when `false` stopped meaning "not asked".
+ *
+ * Everything written by an older build stored `{commercial:false,
+ * modify:false}` for an untouched pair — and worse, arriving on a share
+ * link with no `c`/`m` in it *wrote* that pair. So a stored false is not
+ * evidence anybody answered no, and reading it as one would handed every
+ * returning visitor exactly the permissive verdict this change exists to
+ * stop. An unversioned value is discarded and the two questions are asked
+ * once more, which is a cheap thing to spend to not inherit an answer
+ * nobody gave.
+ */
+const VERSION = 2;
+
+type Stored = Partial<Usage> & { v?: unknown };
+
+const DEFAULT_RAW = JSON.stringify({ ...DEFAULT_USAGE, v: VERSION });
 
 /** Anything that is not a literal true or false has not been answered. */
 function answer(value: unknown): boolean | null {
@@ -29,7 +45,8 @@ function answer(value: unknown): boolean | null {
 
 function parse(raw: string): Usage {
   try {
-    const value = JSON.parse(raw) as Partial<Usage>;
+    const value = JSON.parse(raw) as Stored;
+    if (value.v !== VERSION) return DEFAULT_USAGE;
     return {
       commercial: answer(value.commercial),
       modify: answer(value.modify),
@@ -52,7 +69,7 @@ export function useUsage(): [Usage, (next: Usage) => void] {
   const usage = useMemo(() => parse(raw), [raw]);
 
   const set = useCallback(
-    (next: Usage) => setRaw(JSON.stringify(next)),
+    (next: Usage) => setRaw(JSON.stringify({ ...next, v: VERSION })),
     [setRaw],
   );
 

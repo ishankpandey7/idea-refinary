@@ -5,20 +5,32 @@
 
    No data-theme  -> follow the OS.
    data-theme=light / dark -> the user overrode it, OS is ignored. */
+/* Every value below that carries text clears 4.5:1 against all three of
+   page, surface and raised — measured, not eyeballed. The ones that did not:
+   --c-faint was 2.71:1 on surface and carried the attribution line, the check
+   summary and the "N links dropped" warning, so the text warning you that
+   material had silently fallen out of your report was the least readable text
+   on the page. --c-muted was 3.30:1. --c-accent was 3.43:1 and is every input
+   label and every error. White on --c-brand was 3.96:1, which is every
+   primary button: Check licences, Download credits, Export PDF, Sign in.
+
+   Raising faint and muted compresses the ramp — "faint" cannot be fainter
+   than legible — so soft moves with them to keep body > soft > muted > faint
+   in the right order rather than crossing over. */
 :root {
   --c-page:        #faf7f2;
   --c-surface:     #f4eee4;
   --c-raised:      #fffdf9;
-  --c-line:        #e5dccd;
-  --c-line-strong: #d9cdb9;
+  --c-line:        #d8ccb8;
+  --c-line-strong: #c3b298;
   --c-ink:         #1c1410;
   --c-body:        #57504a;
-  --c-soft:        #6f665e;
-  --c-muted:       #8b8178;
-  --c-faint:       #9a9089;
-  --c-accent:      #e8451f;
-  --c-brand:       #e8451f;
-  --c-brand-hover: #d13d18;
+  --c-soft:        #5f574f;
+  --c-muted:       #696059;
+  --c-faint:       #726a65;
+  --c-accent:      #c1391a;
+  --c-brand:       #c23a14;
+  --c-brand-hover: #a82f0e;
   --c-ok-bg:       #dff0e4;
   --c-ok-fg:       #2b6b46;
   --c-warn-bg:     #fdf0d9;
@@ -30,48 +42,72 @@
 
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
+    /* page -> surface was 1.026:1 and surface -> raised 1.008:1, so every
+       card, the paste box and the credits textarea were the same black as
+       the page and the whole bg-surface / bg-raised system did nothing. The
+       1px border was the only thing separating them and it sat at 1.33:1.
+       Surfaces now step 1.12 and 1.08, and the border carries the rest at
+       2.01:1 — lifting the surfaces costs text contrast, so the text ramp
+       below is solved against `raised`, the lightest of the three, not
+       against the page. */
     --c-page:        #0a0605;
-    --c-surface:     #100a07;
-    --c-raised:      #120b08;
-    --c-line:        #3a1f14;
-    --c-line-strong: #4a2a1c;
+    --c-surface:     #1b1512;
+    --c-raised:      #241c18;
+    --c-line:        #603824;
+    --c-line-strong: #7a4f33;
     --c-ink:         #f5a962;
     --c-body:        #b39c8c;
-    --c-soft:        #8d7768;
-    --c-muted:       #7a6558;
-    --c-faint:       #6f5a4d;
+    --c-soft:        #a69382;
+    --c-muted:       #9c8a79;
+    --c-faint:       #928277;
+    /* Left alone: 9.8:1 on page. The audit called this invisible in dark
+       mode; it is the light-mode value that fails. */
     --c-accent:      #ff9c6b;
-    --c-brand:       #e8451f;
-    --c-brand-hover: #ff5a2e;
+    --c-brand:       #c23a14;
+    /* Lighter on hover here, darker in light mode — both keep white at or
+       above 4.5:1, which is what decides the direction. */
+    --c-brand-hover: #d43f1c;
     --c-ok-bg:       #13291e;
     --c-ok-fg:       #5cb489;
     --c-warn-bg:     #2b2113;
     --c-warn-fg:     #d9a441;
-    --c-stop-bg:     #2e1713;
+    --c-stop-bg:     #361914;
     --c-stop-fg:     #e2705a;
     --c-unknown-bg:  #2a1a12;
   }
 }
 
 :root[data-theme="dark"] {
+  /* page -> surface was 1.026:1 and surface -> raised 1.008:1, so every
+     card, the paste box and the credits textarea were the same black as
+     the page and the whole bg-surface / bg-raised system did nothing. The
+     1px border was the only thing separating them and it sat at 1.33:1.
+     Surfaces now step 1.12 and 1.08, and the border carries the rest at
+     2.01:1 — lifting the surfaces costs text contrast, so the text ramp
+     below is solved against `raised`, the lightest of the three, not
+     against the page. */
   --c-page:        #0a0605;
-  --c-surface:     #100a07;
-  --c-raised:      #120b08;
-  --c-line:        #3a1f14;
-  --c-line-strong: #4a2a1c;
+  --c-surface:     #1b1512;
+  --c-raised:      #241c18;
+  --c-line:        #603824;
+  --c-line-strong: #7a4f33;
   --c-ink:         #f5a962;
   --c-body:        #b39c8c;
-  --c-soft:        #8d7768;
-  --c-muted:       #7a6558;
-  --c-faint:       #6f5a4d;
+  --c-soft:        #a69382;
+  --c-muted:       #9c8a79;
+  --c-faint:       #928277;
+  /* Left alone: 9.8:1 on page. The audit called this invisible in dark
+     mode; it is the light-mode value that fails. */
   --c-accent:      #ff9c6b;
-  --c-brand:       #e8451f;
-  --c-brand-hover: #ff5a2e;
+  --c-brand:       #c23a14;
+  /* Lighter on hover here, darker in light mode — both keep white at or
+     above 4.5:1, which is what decides the direction. */
+  --c-brand-hover: #d43f1c;
   --c-ok-bg:       #13291e;
   --c-ok-fg:       #5cb489;
   --c-warn-bg:     #2b2113;
   --c-warn-fg:     #d9a441;
-  --c-stop-bg:     #2e1713;
+  --c-stop-bg:     #361914;
   --c-stop-fg:     #e2705a;
   --c-unknown-bg:  #2a1a12;
 }
@@ -101,10 +137,18 @@
   --font-mono: var(--font-geist-mono);
 }
 
+/* This rule is unlayered, so it beats Tailwind's layered `font-sans` no
+   matter what any element asks for. It said Arial — so the two Geist faces
+   the layout downloads were fetched on every visit and never painted once,
+   and `font-sans` was defined in @theme and referenced by nothing. Pointing
+   it at the variable is what makes the download worth making. The stack
+   after it is the fallback for the moment before the font arrives, and for
+   anyone who blocks it. */
 body {
   background: var(--c-page);
   color: var(--c-body);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-geist-sans), ui-sans-serif, system-ui, -apple-system,
+    "Segoe UI", Roboto, Arial, sans-serif;
 }
 
 /* Print-to-PDF: swap the dark UI for a plain document.
