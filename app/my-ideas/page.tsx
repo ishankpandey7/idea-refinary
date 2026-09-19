@@ -417,19 +417,42 @@ function MyIdeas() {
                     {counts.map((c) => `${c.label} ${c.n}`).join("  ·  ")}
                   </p>
 
+                  {/* Whether this is a ledger or just a pile of snapshots.
+                      Nothing on this grid said, so the difference between a
+                      project you can run again next release and one you
+                      cannot was invisible until you opened it — and a
+                      project saved from /search never has a list at all. */}
+                  <p className="mt-3 text-[12px] leading-relaxed text-muted">
+                    {hasContent(idea.list)
+                      ? "Keeps the list it was checked from — re-checkable."
+                      : "No list kept. Open it, then save a check to make this re-checkable."}
+                  </p>
+
                   <div className="mt-6 flex items-center gap-2 border-t border-line pt-4">
                     <button
                       type="button"
                       onClick={() => setPicked(idea.id)}
-                      className="rounded-full bg-brand px-5 py-2 text-[12px] font-medium text-white transition hover:bg-brand-hover"
+                      className="inline-flex min-h-11 items-center rounded-full bg-brand px-5 text-[12px] font-medium text-white transition hover:bg-brand-hover"
                     >
                       Open
                     </button>
+                    {hasContent(idea.list) ? (
+                      <button
+                        type="button"
+                        onClick={() => {
+                          loadIntoChecker(idea.query, idea.list!);
+                          router.push("/?run=1");
+                        }}
+                        className="inline-flex min-h-11 items-center rounded-full border border-line-strong px-5 text-[12px] text-body transition hover:border-accent hover:text-accent"
+                      >
+                        Re-check
+                      </button>
+                    ) : null}
                     {user && idea.ownerId === user.id ? (
                       <button
                         type="button"
                         onClick={() => onRemoveIdea(idea.id)}
-                        className="ml-auto rounded-full border border-line px-5 py-2 text-[12px] text-muted transition hover:border-accent hover:text-accent"
+                        className="ml-auto inline-flex min-h-11 items-center rounded-full border border-line px-5 text-[12px] text-muted transition hover:border-accent hover:text-accent"
                       >
                         Delete
                       </button>

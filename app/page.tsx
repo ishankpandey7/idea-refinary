@@ -281,10 +281,32 @@ function Check() {
     return (await res.json()) as CheckResponse;
   }, []);
 
+  /**
+   * Where the answers start, so pressing the button can take you to them.
+   *
+   * They render roughly 900px below it, and nothing moved on screen when a
+   * check finished — a sighted user saw an unchanged page and a screen
+   * reader user was told nothing at all. The counts line carries
+   * role="status" for the second half of that.
+   */
+  const answersRef = useRef<HTMLDivElement | null>(null);
+
   const apply = useCallback((body: CheckResponse, links: string[]) => {
     setResponse(body);
     setChecked(links);
     setFailed(false);
+
+    // After paint, and honouring a reduced-motion preference rather than
+    // smooth-scrolling someone who asked us not to.
+    window.setTimeout(() => {
+      const reduced = window.matchMedia(
+        "(prefers-reduced-motion: reduce)",
+      ).matches;
+      answersRef.current?.scrollIntoView({
+        behavior: reduced ? "auto" : "smooth",
+        block: "start",
+      });
+    }, 0);
   }, []);
 
   async function runCheck(links: string[]) {
@@ -947,6 +969,8 @@ function Check() {
             : "The check did not complete. Nothing is known about these links — try again."}
         </p>
       ) : null}
+
+      <div ref={answersRef} className="scroll-mt-6" />
 
       {response && (response.found > 0 || response.items.length > 0) ? (
         // The one line that says what just happened, ~900px above the cards
