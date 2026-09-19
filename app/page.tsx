@@ -193,6 +193,8 @@ function Check() {
   /** What this project's sources said last time. Empty until one is saved. */
   const [dbSaved, setDbSaved] = useState<Map<string, SourceResult>>(new Map());
   const [saveError, setSaveError] = useState<string | null>(null);
+  /** Saved, but something in it could not be kept. Not a failure. */
+  const [saveWarning, setSaveWarning] = useState<string | null>(null);
   /** The list as it stood when it was last written to a project. */
   const [savedAs, setSavedAs] = useState<string | null>(null);
 
@@ -713,6 +715,7 @@ function Check() {
   async function saveCheck() {
     const title = project.trim() || DEFAULT_PROJECT;
     setKeeping(true);
+    setSaveWarning(null);
     try {
       if (user) {
         const outcome = await saveList(title, list);
@@ -720,6 +723,9 @@ function Check() {
           setSaveError(outcome.error ?? "Save failed");
           return;
         }
+        // Kept, but not all of it. Said out loud rather than leaving the
+        // person to discover on /my-ideas that the project has no list.
+        setSaveWarning(outcome.warning ?? null);
       } else {
         saveListLocal(title, list);
       }
@@ -1070,8 +1076,20 @@ function Check() {
       ) : null}
 
       {saveError ? (
-        <p className="mx-auto mt-6 max-w-3xl rounded-2xl border border-accent/40 bg-brand/10 px-6 py-3 text-center text-[13px] text-accent">
+        <p
+          role="status"
+          className="mx-auto mt-6 max-w-3xl rounded-2xl border border-accent/40 bg-brand/10 px-6 py-3 text-center text-[13px] text-accent"
+        >
           Could not save: {saveError}
+        </p>
+      ) : null}
+
+      {saveWarning ? (
+        <p
+          role="status"
+          className="mx-auto mt-6 max-w-3xl rounded-2xl border border-line-strong bg-raised px-6 py-3 text-center text-[13px] leading-relaxed text-body"
+        >
+          {saveWarning}
         </p>
       ) : null}
 

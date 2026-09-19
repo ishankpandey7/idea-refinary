@@ -123,7 +123,12 @@ async function findIdeaByQuery(query: string): Promise<string | null> {
   return data?.[0]?.id ?? null;
 }
 
-export type SaveOutcome = { ok: boolean; error?: string };
+export type SaveOutcome = {
+  ok: boolean;
+  error?: string;
+  /** Saved, but not everything asked for could be kept. */
+  warning?: string;
+};
 
 // unique (idea_id, external_id) turns a second save into an update of the
 // payload rather than a duplicate row. It has to be an update, not a skip: a
@@ -302,20 +307,36 @@ export async function saveList(
     ideaId = newIdeaId;
   }
 
-  const { error } = await sb
+  // `listIdeas` walks SHAPES for exactly this reason and the write side did
+  // not, which broke the rule in CLAUDE.md: a deploy reaches users before a
+  // migration does. Until 0005 adds `source_list`, Postgres rejected the
+  // whole update — and the checker returns early when the list save fails,
+  // so a signed-in person on an un-migrated database could not save their
+  // results either, and read a raw 42703 while being told nothing useful.
+  const usage = {
+    usage_commercial: list.usage.commercial,
+    usage_modify: list.usage.modify,
+  };
+
+  const full = await sb
     .from("ideas")
-    .update({
-      source_list: encodeList(list),
-      usage_commercial: list.usage.commercial,
-      usage_modify: list.usage.modify,
-    })
+    .update({ source_list: encodeList(list), ...usage })
     .eq("id", ideaId);
 
-  if (error) {
-    console.error(`[ideas] list save failed: ${error.message}`);
-    return { ok: false, error: error.message };
+  if (!full.error) return { ok: true };
+  console.error(`[ideas] list save failed: ${full.error.message}`);
+
+  const withoutList = await sb.from("ideas").update(usage).eq("id", ideaId);
+  if (withoutList.error) {
+    console.error(`[ideas] usage save failed: ${withoutList.error.message}`);
+    return { ok: false, error: withoutList.error.message };
   }
-  return { ok: true };
+
+  return {
+    ok: true,
+    warning:
+      "Your sources were kept, but this project did not keep the list it was checked from, so it cannot be re-checked in one click. The database is missing a column a migration adds.",
+  };
 }
 
 /** Any member may set this — it describes the idea, not its owner. */
