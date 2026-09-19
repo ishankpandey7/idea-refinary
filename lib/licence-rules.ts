@@ -199,7 +199,11 @@ export function verdictForTerms(
   usage: Usage,
   opts: VerdictOptions = {},
 ): Verdict {
-  const notes = (opts.notes ?? []).filter(Boolean);
+  // Said before anything the licence itself says, so it is kept separate
+  // and composed at the end — the undecided note in between can only be
+  // written once the level is known.
+  const lead = (opts.notes ?? []).filter(Boolean);
+  const notes: string[] = [];
   let level: Level = "clear";
 
   // Only where an answer could actually change the outcome. CC0 is clear
@@ -209,8 +213,6 @@ export function verdictForTerms(
     !terms.ambiguous &&
     ((usage.commercial === null && !terms.commercial) ||
       (usage.modify === null && !terms.modify));
-
-  if (undecided) notes.push(UNDECIDED);
 
   if (terms.ambiguous) {
     level = "verify";
@@ -264,12 +266,21 @@ export function verdictForTerms(
 
   // The one place "clear" is qualified: a credit you owe is not a condition
   // on using the thing, but it is still something you have to do.
+  // Not on a row that is already unusable: "answer the two questions and
+  // this becomes a verdict" contradicts "Not usable here" printed above it,
+  // and one unanswered question does not soften an answered one that blocks.
+  const all = [
+    ...lead,
+    ...(undecided && level !== "blocked" ? [UNDECIDED] : []),
+    ...notes,
+  ];
+
   const headline =
     level === "clear" && terms.attribution
       ? `${LEVEL_COPY.clear.headline} — credit required`
       : LEVEL_COPY[level].headline;
 
-  return { level, headline, notes };
+  return { level, headline, notes: all };
 }
 
 // `verdictFor(spdx, usage)` used to live here. CLAUDE.md forbids the UI from

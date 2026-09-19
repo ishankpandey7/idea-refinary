@@ -5,7 +5,7 @@ import { encodeAsserted } from "@/lib/asserted";
 import { extractLinks, normaliseUrl, recheckUrl } from "@/lib/links";
 import type { ProjectList } from "./project-list";
 import { readStored, useStored, writeStored } from "./stored";
-import { USAGE_KEY } from "./usage";
+import { packUsage, USAGE_KEY } from "./usage";
 
 /**
  * The material box on the checker, reachable from anywhere.
@@ -104,5 +104,5 @@ export function loadIntoChecker(title: string, list: ProjectList): void {
   writeStored(PROJECT_KEY, title);
   writeStored(PASTE_KEY, list.paste);
   writeStored(ASSERTED_KEY, encodeAsserted(list.asserted));
-  writeStored(USAGE_KEY, JSON.stringify(list.usage));
+  writeStored(USAGE_KEY, packUsage(list.usage));
 }

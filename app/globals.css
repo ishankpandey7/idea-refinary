@@ -28,7 +28,11 @@
   --c-soft:        #5f574f;
   --c-muted:       #696059;
   --c-faint:       #726a65;
-  --c-accent:      #c1391a;
+  /* Solved against the bg-brand/10 composite as well as the three plain
+     backgrounds: that alpha tint is the backdrop for roughly fifteen
+     accent-on-tint callouts, and 10% of brand over surface (#efdccf) is a
+     lower bar than surface itself. */
+  --c-accent:      #b53518;
   --c-brand:       #c23a14;
   --c-brand-hover: #a82f0e;
   --c-ok-bg:       #dff0e4;

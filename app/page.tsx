@@ -822,7 +822,7 @@ function Check() {
         <p className="mt-3 text-[12px] text-muted">
           {stated
             ? `Judging everything below as ${usageLabel(usage)}.`
-            : "Until both are answered, anything with a restriction on it reads “check before using” — a licence only forbids what you have said you want to do."}
+            : "Anything an unanswered question could decide reads “check before using” until you answer it — a licence only forbids what you have said you want to do."}
         </p>
 
         <label
@@ -1282,7 +1282,7 @@ function Unread({
   return (
     <li className="rounded-xl border border-line bg-raised px-4 py-3">
       <div className="flex flex-wrap items-center gap-2">
-        <span className="rounded-md bg-line-strong px-2 py-1 text-[10px] font-semibold uppercase tracking-[0.12em] text-body">
+        <span className="rounded-md bg-unknown-bg px-2 py-1 text-[10px] font-semibold uppercase tracking-[0.12em] text-body">
           {LABEL[item.status] ?? item.status}
         </span>
         {item.sourceLabel ? (

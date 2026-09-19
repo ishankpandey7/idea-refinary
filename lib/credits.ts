@@ -128,8 +128,13 @@ export function buildCredits(
         csvCell(licenceLabel(r)),
         t.ambiguous ? csvCell("unstated") : String(t.commercial),
         t.ambiguous ? csvCell("unstated") : String(t.modify),
-        String(t.attribution),
-        String(t.shareAlike),
+        // Guarded for the same reason as the two above. A licence nobody
+        // could read does not get `share_alike,false` in a machine-readable
+        // column — that tells a downstream reader there is no copyleft
+        // obligation on an asset whose terms are unknown, which is the one
+        // direction this file must never guess in.
+        t.ambiguous ? csvCell("unstated") : String(t.attribution),
+        t.ambiguous ? csvCell("unstated") : String(t.shareAlike),
         csvCell(r.canonicalUrl),
         csvCell(recheckUrl(r) ?? r.canonicalUrl),
         csvCell(r.licence.attribution),
@@ -164,18 +169,21 @@ export function buildCredits(
   out.push("");
 
   results.forEach((r, i) => {
-    const { level } = verdictForResult(r, usage);
+    const { level, notes } = verdictForResult(r, usage);
     const flag =
       level === "blocked"
         ? " [NOT USABLE]"
         : level === "verify"
           ? " [CHECK LICENCE]"
           : level === "caution"
-            // Not "[SHARE-ALIKE]". A caution is also what `atLeast` produces
-            // for "a stock licence I paid for" and "I have the rights
-            // holder's permission", and stamping share-alike on those told
-            // the reader about a licence obligation that does not exist.
-            // Where share-alike does apply, the per-row notes already say so.
+            // Not "[SHARE-ALIKE]". A caution is also what `atLeast`
+            // produces for "a stock licence I paid for" and "I have the
+            // rights holder's permission", and stamping share-alike on
+            // those told the reader about an obligation that does not
+            // exist. Which condition it actually is now comes from the
+            // notes printed under the row — this file used to print none
+            // of them, so replacing the flag alone would have deleted the
+            // only statement of share-alike in the downloaded credits.
             ? " [CONDITIONS]"
             : "";
 
@@ -187,11 +195,13 @@ export function buildCredits(
     if (md) {
       out.push(`${i + 1}. **${r.title}** — \`${licence}\`${flag}${mine}`);
       out.push(`   ${credit}`);
+      for (const note of notes) out.push(`   - ${note}`);
       if (r.canonicalUrl) out.push(`   <${r.canonicalUrl}>`);
       if (recheck) out.push(`   checked via <${recheck}>`);
     } else {
       out.push(`${i + 1}. ${r.title} — ${licence}${flag}${mine}`);
       out.push(`   ${credit}`);
+      for (const note of notes) out.push(`   - ${note}`);
       if (r.canonicalUrl) out.push(`   ${r.canonicalUrl}`);
       if (recheck) out.push(`   checked via ${recheck}`);
     }

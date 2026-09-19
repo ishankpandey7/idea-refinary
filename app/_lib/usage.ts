@@ -34,6 +34,18 @@ export const DEFAULT_USAGE: Usage = { commercial: null, modify: null };
  */
 const VERSION = 2;
 
+/**
+ * The only way to write this key.
+ *
+ * Anything that stores a usage pair has to stamp the version or `parse`
+ * throws it away as legacy — which is exactly what happened to
+ * loadIntoChecker: reopening a saved project silently discarded the intent
+ * the project was saved with, and reset the site-wide answer with it.
+ */
+export function packUsage(usage: Usage): string {
+  return JSON.stringify({ ...usage, v: VERSION });
+}
+
 type Stored = Partial<Usage> & { v?: unknown };
 
 const DEFAULT_RAW = JSON.stringify({ ...DEFAULT_USAGE, v: VERSION });
@@ -68,10 +80,7 @@ export function useUsage(): [Usage, (next: Usage) => void] {
   // stored value does — verdicts are memoised on it.
   const usage = useMemo(() => parse(raw), [raw]);
 
-  const set = useCallback(
-    (next: Usage) => setRaw(JSON.stringify({ ...next, v: VERSION })),
-    [setRaw],
-  );
+  const set = useCallback((next: Usage) => setRaw(packUsage(next)), [setRaw]);
 
   return [usage, set];
 }
