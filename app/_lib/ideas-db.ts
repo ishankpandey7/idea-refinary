@@ -370,6 +370,12 @@ async function writeIdeaRow(
 
   // At most three attempts, each dropping one named thing.
   for (let i = 0; i < 3; i += 1) {
+    // Everything this database can take has now been dropped, so there is
+    // nothing left to send. Reached when neither migration has run and
+    // neither question was answered: the row keeps none of this, but the
+    // results are written separately by the caller and are unaffected.
+    if (Object.keys(patch).length === 0) break;
+
     const { error } = await update(patch);
     if (!error) break;
 
@@ -395,16 +401,20 @@ async function writeIdeaRow(
 
   if (listKept && intentKept) return { ok: true };
 
-  const missing = [
+  // Named exactly. An earlier version opened with "this project's intent was
+  // saved", which was false in the case that matters most — neither
+  // migration run and neither question answered means nothing was written to
+  // the row at all.
+  const lost = [
     listKept
       ? null
       : "the list it was checked from, so it cannot be re-checked in one click",
-    intentKept ? null : "the questions you left unanswered",
+    intentKept ? null : "what you are using it for",
   ].filter(Boolean);
 
   return {
     ok: true,
-    warning: `This project's intent was saved, but not ${missing.join(" or ")}. The database is behind the app by a migration.`,
+    warning: `Your sources are saved. This project could not keep ${lost.join(" or ")} — the database is behind the app by a migration.`,
   };
 }
 
