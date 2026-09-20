@@ -323,7 +323,7 @@ function Tick({
       type="button"
       onClick={onClick}
       aria-pressed={on}
-      className={`rounded-full border px-4 py-1.5 text-[12px] transition ${
+      className={`inline-flex min-h-11 items-center rounded-full border px-4 text-[12px] transition ${
         on
           ? "border-ink bg-ink text-page"
           : "border-line text-body hover:border-ink"

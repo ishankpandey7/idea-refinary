@@ -716,6 +716,7 @@ function Check() {
     const title = project.trim() || DEFAULT_PROJECT;
     setKeeping(true);
     setSaveWarning(null);
+    let partial = false;
     try {
       if (user) {
         const outcome = await saveList(title, list);
@@ -726,6 +727,10 @@ function Check() {
         // Kept, but not all of it. Said out loud rather than leaving the
         // person to discover on /my-ideas that the project has no list.
         setSaveWarning(outcome.warning ?? null);
+        // Tracked, so the button below does not go to a disabled "Saved"
+        // for a list identity that was never stored — which also left no
+        // way to press it again.
+        partial = Boolean(outcome.warning);
       } else {
         saveListLocal(title, list);
       }
@@ -750,13 +755,18 @@ function Check() {
         const outcome = await saveResult(title, r);
         if (!outcome.ok) {
           setSaveError(outcome.error ?? "Save failed");
+          // The list warning, if there is one, says the sources were kept.
+          // They were not.
+          setSaveWarning(null);
           return;
         }
       }
 
       if (user) setDbSaved(await savedResultsFor(title));
       setSaveError(null);
-      setSavedAs(listKey);
+      // Only when all of it landed. listKey covers the paste and the hand
+      // entries, which are exactly what a partial save did not write.
+      if (!partial) setSavedAs(listKey);
     } finally {
       setKeeping(false);
     }
@@ -884,7 +894,7 @@ function Check() {
                 setPaste("");
                 setResponse(null);
               }}
-              className="text-[12px] text-muted underline-offset-2 transition hover:text-accent hover:underline"
+              className="inline-flex min-h-11 items-center px-2 text-[12px] text-muted underline-offset-2 transition hover:text-accent hover:underline"
             >
               Clear
             </button>
@@ -933,7 +943,7 @@ function Check() {
             type="button"
             onClick={() => describe()}
             disabled={full}
-            className="mt-4 rounded-full border border-line-strong bg-raised px-5 py-2.5 text-[13px] text-body transition hover:border-accent hover:text-accent disabled:cursor-not-allowed disabled:opacity-60"
+            className="mt-4 inline-flex min-h-11 items-center rounded-full border border-line-strong bg-raised px-5 text-[13px] text-body transition hover:border-accent hover:text-accent disabled:cursor-not-allowed disabled:opacity-60"
           >
             + Add something by hand
           </button>
@@ -1282,7 +1292,7 @@ function Unread({
   return (
     <li className="rounded-xl border border-line bg-raised px-4 py-3">
       <div className="flex flex-wrap items-center gap-2">
-        <span className="rounded-md bg-unknown-bg px-2 py-1 text-[10px] font-semibold uppercase tracking-[0.12em] text-body">
+        <span className="rounded-md border border-line-strong px-2 py-1 text-[10px] font-semibold uppercase tracking-[0.12em] text-body">
           {LABEL[item.status] ?? item.status}
         </span>
         {item.sourceLabel ? (
@@ -1305,7 +1315,7 @@ function Unread({
           type="button"
           onClick={onDescribe}
           disabled={disabled}
-          className="mt-3 rounded-full border border-line-strong px-4 py-1.5 text-[11px] font-medium text-body transition hover:border-accent hover:text-accent disabled:cursor-not-allowed disabled:opacity-60"
+          className="inline-flex min-h-11 items-center mt-3 rounded-full border border-line-strong px-4 text-[11px] font-medium text-body transition hover:border-accent hover:text-accent disabled:cursor-not-allowed disabled:opacity-60"
         >
           I know this licence &rarr;
         </button>

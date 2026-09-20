@@ -100,7 +100,7 @@ export default function MembersPanel({
               <button
                 type="button"
                 onClick={() => onRemove(m.userId)}
-                className="ml-auto rounded-full border border-line px-4 py-1.5 text-[11px] font-medium text-muted transition hover:border-accent hover:text-accent"
+                className="inline-flex min-h-11 items-center ml-auto rounded-full border border-line px-4 text-[11px] font-medium text-muted transition hover:border-accent hover:text-accent"
               >
                 Remove
               </button>

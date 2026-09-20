@@ -5,6 +5,8 @@ import type { SourceResult } from "@/types/source-result";
 import type { SearchResponse } from "@/lib/search-response";
 import ResultCard from "./ResultCard";
 import { addResultToIdea, resultKey } from "../_lib/ideas-db";
+import { verdictForResult } from "@/lib/asserted";
+import type { Usage } from "@/lib/licence-rules";
 
 /**
  * Search from inside an open idea, so anyone on it can add to it. The search
@@ -15,10 +17,13 @@ export default function IdeaSearch({
   ideaId,
   savedKeys,
   onAdded,
+  usage,
 }: {
   ideaId: string;
   savedKeys: Set<string>;
   onAdded: () => Promise<void> | void;
+  /** So a result here is judged the same way it is on every other surface. */
+  usage: Usage;
 }) {
   const [query, setQuery] = useState("");
   const [results, setResults] = useState<SourceResult[]>([]);
@@ -112,14 +117,15 @@ export default function IdeaSearch({
                 <ResultCard
                   key={key}
                   result={r}
+                  verdict={verdictForResult(r, usage)}
                   action={
                     <button
                       type="button"
                       onClick={() => onAdd(r)}
                       disabled={saved || adding === key}
-                      className={`rounded-full border px-4 py-1.5 text-[11px] font-medium transition ${
+                      className={`inline-flex min-h-11 items-center rounded-full border px-4 text-[11px] font-medium transition ${
                         saved
-                          ? "cursor-default border-accent/40 bg-brand/15 text-accent"
+                          ? "cursor-default border-accent/40 bg-brand/10 text-accent"
                           : "border-line text-body hover:border-accent hover:text-accent disabled:opacity-60"
                       }`}
                     >

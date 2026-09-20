@@ -42,7 +42,20 @@ type Stored = {
   asserted?: unknown;
   commercial?: unknown;
   modify?: unknown;
+  v?: unknown;
 };
+
+/**
+ * Bumped when `false` stopped meaning "not asked", for the same reason and
+ * on the same terms as the version in app/_lib/usage.ts.
+ *
+ * A list written by an older build stored false/false for a pair nobody had
+ * answered. Reading that back as a stated "no" is bad on its own, and worse
+ * now that reopening a project writes the pair into the site-wide key: one
+ * legacy project would teach the whole site that the answer to both
+ * questions was no, and CC BY-NC-ND would read clear everywhere after.
+ */
+const VERSION = 2;
 
 /** Shaped for storage: asserted through its own codec, never raw. */
 export function encodeList(list: ProjectList): Stored {
@@ -51,6 +64,7 @@ export function encodeList(list: ProjectList): Stored {
     asserted: encodeAsserted(list.asserted),
     commercial: list.usage.commercial,
     modify: list.usage.modify,
+    v: VERSION,
   };
 }
 
@@ -62,17 +76,18 @@ export function decodeList(raw: unknown): ProjectList | null {
   if (typeof raw !== "object" || raw === null) return null;
   const s = raw as Stored;
 
+  const answered = s.v === VERSION;
+
   return {
     paste: typeof s.paste === "string" ? s.paste : "",
     asserted:
       typeof s.asserted === "string" ? decodeAsserted(s.asserted) : [],
-    // A row written before the question had a third answer stored `false`
-    // for "not asked". It reads back as "no" here, which is the answer the
-    // person was shown at the time, so the saved verdicts do not move under
-    // them. Only a genuinely absent value is unanswered.
+    // Only a versioned row is trusted to mean what it says. Before the
+    // version existed, `false` was written for a question nobody had been
+    // asked, and there is no way to tell the two apart afterwards.
     usage: {
-      commercial: s.commercial === true ? true : s.commercial === false ? false : null,
-      modify: s.modify === true ? true : s.modify === false ? false : null,
+      commercial: answered && typeof s.commercial === "boolean" ? s.commercial : null,
+      modify: answered && typeof s.modify === "boolean" ? s.modify : null,
     },
   };
 }

@@ -191,7 +191,7 @@ export default function CompliancePanel({
           <button
             type="button"
             onClick={() => setShowCredits((v) => !v)}
-            className="text-[12px] text-muted underline-offset-2 transition hover:text-accent hover:underline"
+            className="inline-flex min-h-11 items-center px-2 text-[12px] text-muted underline-offset-2 transition hover:text-accent hover:underline"
           >
             {showCredits ? "Hide" : "Show"}
           </button>

@@ -59,7 +59,7 @@ export default function Login() {
             href="/my-ideas"
             className="mt-6 inline-block rounded-full bg-brand px-9 py-4 text-[15px] font-medium text-white transition hover:bg-brand-hover"
           >
-            Go to My Ideas &rarr;
+            Go to My Projects &rarr;
           </Link>
         </div>
       ) : sent ? (

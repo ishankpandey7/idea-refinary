@@ -102,16 +102,17 @@ export default function ResultCard({
   // "recognised tag" painted a green licence next to a red "Not usable here"
   // on the same row. A recognised-but-unjudged tag still reads green; once
   // there is a verdict, the verdict decides.
-  // `bg-unknown-bg`, not `bg-line-strong`: line-strong is a *border* token
-  // and strengthening it for the dark-mode card borders dropped body text on
-  // it to 2.69:1 — on the one pill whose job is to say the licence was not
-  // recognised. unknown-bg is the token that exists for this and reads
-  // 6.3:1 in both themes.
+  // Outlined rather than filled. line-strong is a *border* token, and
+  // strengthening it for the dark card borders took body text on it down to
+  // 2.69:1; swapping the fill to unknown-bg then put the pill on a wrapper
+  // of the same colour, 1.00:1, so it had no edge at all. As an outline it
+  // reads against whichever tint is behind it — 6.3:1 either way — and the
+  // border is what makes it a pill.
   const licencePill = verdict
     ? VERDICT_STYLE[verdict.level]
     : known
       ? "bg-ok-fg text-page"
-      : "bg-unknown-bg text-body";
+      : "border border-line-strong text-body";
 
   return (
     <li className="flex flex-col rounded-2xl border border-line bg-surface p-6 transition hover:border-accent/50">

@@ -93,10 +93,12 @@ export async function listIdeas(): Promise<Idea[]> {
     ownerId: row.owner_id,
     query: row.query,
     savedAt: row.created_at,
-    // NULL means the column was never written — a project saved before
-    // 0004, or before the question was asked. That is "not stated", not
-    // "no": see the Usage type. The columns are already nullable, so this
-    // needs no migration.
+    // NULL means nobody answered. 0004 created these `not null default
+    // false` — this comment used to claim they were already nullable, which
+    // was read off the defensive TypeScript type above rather than the
+    // schema, and it was wrong: writing null failed with 23502 and took the
+    // whole save with it. 0006 drops the constraint; writeIdeaRow copes
+    // until it has run.
     usage: {
       commercial: row.usage_commercial ?? null,
       modify: row.usage_modify ?? null,
@@ -307,53 +309,138 @@ export async function saveList(
     ideaId = newIdeaId;
   }
 
-  // `listIdeas` walks SHAPES for exactly this reason and the write side did
-  // not, which broke the rule in CLAUDE.md: a deploy reaches users before a
-  // migration does. Until 0005 adds `source_list`, Postgres rejected the
-  // whole update — and the checker returns early when the list save fails,
-  // so a signed-in person on an un-migrated database could not save their
-  // results either, and read a raw 42703 while being told nothing useful.
-  const usage = {
+  return writeIdeaRow(ideaId, list);
+}
+
+/** Postgres says which migration is missing; guess at nothing else. */
+const UNDEFINED_COLUMN = "42703";
+const NOT_NULL_VIOLATION = "23502";
+
+function code(error: { code?: string } | null): string {
+  return error?.code ?? "";
+}
+
+/** The two intent columns with the unanswered ones left out entirely. */
+function statedOnly(usage: Usage): Record<string, boolean> {
+  const out: Record<string, boolean> = {};
+  if (usage.commercial !== null) out.usage_commercial = usage.commercial;
+  if (usage.modify !== null) out.usage_modify = usage.modify;
+  return out;
+}
+
+/**
+ * Writes the project row, dropping only what this database cannot take.
+ *
+ * `listIdeas` walks SHAPES because a deploy reaches users before a migration
+ * does; the write side has to do the same or saving breaks for exactly the
+ * window that rule exists to cover. Two migrations are in play:
+ *
+ * - 0005 adds `source_list`. Without it the whole update was rejected, and
+ *   because the checker returns early on a failed list save, the results
+ *   were lost too.
+ * - 0006 makes the intent columns nullable. 0004 created them `not null`,
+ *   so writing "nobody answered" — now the default state of every new
+ *   visit — failed with 23502 and lost the save the same way.
+ *
+ * Each step is taken only when Postgres names that exact cause. Falling back
+ * on any error at all meant a dropped packet was reported to the person as a
+ * missing database column, with `ok: true` on top of it.
+ */
+async function writeIdeaRow(
+  ideaId: string,
+  list: ProjectList,
+): Promise<SaveOutcome> {
+  const sb = getSupabase();
+  const update = (patch: Record<string, unknown>) =>
+    sb.from("ideas").update(patch).eq("id", ideaId);
+
+  const intent = {
     usage_commercial: list.usage.commercial,
     usage_modify: list.usage.modify,
   };
+  const unanswered =
+    list.usage.commercial === null || list.usage.modify === null;
 
-  const full = await sb
-    .from("ideas")
-    .update({ source_list: encodeList(list), ...usage })
-    .eq("id", ideaId);
+  let listKept = true;
+  let intentKept = true;
+  let patch: Record<string, unknown> = {
+    source_list: encodeList(list),
+    ...intent,
+  };
 
-  if (!full.error) return { ok: true };
-  console.error(`[ideas] list save failed: ${full.error.message}`);
+  // At most three attempts, each dropping one named thing.
+  for (let i = 0; i < 3; i += 1) {
+    const { error } = await update(patch);
+    if (!error) break;
 
-  const withoutList = await sb.from("ideas").update(usage).eq("id", ideaId);
-  if (withoutList.error) {
-    console.error(`[ideas] usage save failed: ${withoutList.error.message}`);
-    return { ok: false, error: withoutList.error.message };
+    console.error(`[ideas] list save failed (${code(error)}): ${error.message}`);
+
+    if (code(error) === UNDEFINED_COLUMN && "source_list" in patch) {
+      const { source_list: _dropped, ...rest } = patch;
+      void _dropped;
+      patch = rest;
+      listKept = false;
+      continue;
+    }
+    if (code(error) === NOT_NULL_VIOLATION && unanswered && intentKept) {
+      const { usage_commercial: _c, usage_modify: _m, ...rest } = patch;
+      void _c;
+      void _m;
+      patch = { ...rest, ...statedOnly(list.usage) };
+      intentKept = false;
+      continue;
+    }
+    return { ok: false, error: error.message };
   }
+
+  if (listKept && intentKept) return { ok: true };
+
+  const missing = [
+    listKept
+      ? null
+      : "the list it was checked from, so it cannot be re-checked in one click",
+    intentKept ? null : "the questions you left unanswered",
+  ].filter(Boolean);
 
   return {
     ok: true,
-    warning:
-      "Your sources were kept, but this project did not keep the list it was checked from, so it cannot be re-checked in one click. The database is missing a column a migration adds.",
+    warning: `This project's intent was saved, but not ${missing.join(" or ")}. The database is behind the app by a migration.`,
   };
 }
 
-/** Any member may set this — it describes the idea, not its owner. */
+/**
+ * Any member may set this — it describes the idea, not its owner.
+ *
+ * Writes the list's copy of the intent as well as the columns. They are two
+ * records of the same answer, and `/my-ideas` reads the list's copy first
+ * (and hands it to "Re-check this project"), so updating only the columns
+ * left the re-check running under an intent the person had already changed.
+ */
 export async function setIdeaUsage(
   ideaId: string,
   usage: Usage,
+  list?: ProjectList | null,
 ): Promise<boolean> {
-  const { error } = await getSupabase()
-    .from("ideas")
-    .update({
-      usage_commercial: usage.commercial,
-      usage_modify: usage.modify,
-    })
-    .eq("id", ideaId);
+  const sb = getSupabase();
+  const patch: Record<string, unknown> = {
+    usage_commercial: usage.commercial,
+    usage_modify: usage.modify,
+  };
+  if (list) patch.source_list = encodeList({ ...list, usage });
 
-  if (error) {
-    console.error(`[ideas] usage update failed: ${error.message}`);
+  const first = await sb.from("ideas").update(patch).eq("id", ideaId);
+  if (!first.error) return true;
+  console.error(
+    `[ideas] usage update failed (${code(first.error)}): ${first.error.message}`,
+  );
+
+  // Same two migrations, same reason as writeIdeaRow.
+  const retry: Record<string, unknown> = { ...statedOnly(usage) };
+  if (Object.keys(retry).length === 0) return false;
+
+  const second = await sb.from("ideas").update(retry).eq("id", ideaId);
+  if (second.error) {
+    console.error(`[ideas] usage retry failed: ${second.error.message}`);
     return false;
   }
   return true;

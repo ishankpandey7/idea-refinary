@@ -97,8 +97,10 @@ export default function PrintSheet({
           {day(new Date().toISOString())}
         </p>
         <p>
-          {counts.clear} clear &middot; {counts.caution} with conditions
-          &middot; {counts.verify} to check &middot; {counts.blocked} not usable
+          {counts.clear} {LEVEL_COPY.clear.short.toLowerCase()} &middot;{" "}
+          {counts.caution} {LEVEL_COPY.caution.short.toLowerCase()} &middot;{" "}
+          {counts.verify} {LEVEL_COPY.verify.short.toLowerCase()} &middot;{" "}
+          {counts.blocked} {LEVEL_COPY.blocked.short.toLowerCase()}
           {unresolved.length > 0
             ? ` · ${unresolved.length} could not be read`
             : ""}

@@ -153,7 +153,13 @@ function MyIdeas() {
     setDbIdeas((prev) =>
       prev.map((i) => (i.id === ideaId ? { ...i, usage: next } : i)),
     );
-    if (!(await setIdeaUsage(ideaId, next))) setDbIdeas(await listIdeas());
+    // The list carries its own copy of the intent and /my-ideas reads that
+    // one first, so writing only the columns left "Re-check this project"
+    // running under an intent the person had just changed away from.
+    const current = dbIdeas.find((i) => i.id === ideaId)?.list ?? null;
+    if (!(await setIdeaUsage(ideaId, next, current))) {
+      setDbIdeas(await listIdeas());
+    }
   }
 
   async function onRemoveIdea(ideaId: string) {
@@ -182,7 +188,7 @@ function MyIdeas() {
         className="mx-auto w-full max-w-5xl px-6 pb-24 pt-16 sm:px-10"
       >
         <div className="flex justify-center">
-          <span className="rounded-full border border-line px-4 py-1.5 text-[11px] font-medium uppercase tracking-[0.18em] text-accent">
+          <span className="inline-flex min-h-11 items-center rounded-full border border-line px-4 text-[11px] font-medium uppercase tracking-[0.18em] text-accent">
             My Projects
           </span>
         </div>
@@ -346,6 +352,7 @@ function MyIdeas() {
                 ideaId={open.id}
                 savedKeys={new Set(open.results.map(resultKey))}
                 onAdded={async () => setDbIdeas(await listIdeas())}
+                usage={open.usage}
               />
             ) : null}
 
@@ -369,7 +376,7 @@ function MyIdeas() {
                             onClick={() =>
                               onRemoveResult(open.id, resultKey(r))
                             }
-                            className="rounded-full border border-line px-4 py-1.5 text-[11px] font-medium text-muted transition hover:border-accent hover:text-accent"
+                            className="inline-flex min-h-11 items-center rounded-full border border-line px-4 text-[11px] font-medium text-muted transition hover:border-accent hover:text-accent"
                           >
                             Remove
                           </button>

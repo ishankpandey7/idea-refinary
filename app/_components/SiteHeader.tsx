@@ -38,11 +38,12 @@ export default function SiteHeader() {
           <Link
             key={l.href}
             href={l.href}
-            className={
+            // Primary navigation, and 18px tall on a phone before this.
+            className={`inline-flex min-h-11 items-center whitespace-nowrap ${
               pathname === l.href
-                ? "whitespace-nowrap text-ink"
-                : "whitespace-nowrap text-muted transition hover:text-ink"
-            }
+                ? "text-ink"
+                : "text-muted transition hover:text-ink"
+            }`}
           >
             <span className="sm:hidden">{l.short}</span>
             <span className="hidden sm:inline">{l.label}</span>
@@ -63,7 +64,7 @@ export default function SiteHeader() {
             <button
               type="button"
               onClick={signOut}
-              className="whitespace-nowrap rounded-full border border-line px-3 py-1.5 text-[12px] text-body transition hover:border-accent hover:text-accent sm:px-4"
+              className="inline-flex min-h-11 items-center whitespace-nowrap rounded-full border border-line px-3 text-[12px] text-body transition hover:border-accent hover:text-accent sm:px-4"
             >
               Sign out
             </button>
@@ -71,7 +72,7 @@ export default function SiteHeader() {
         ) : (
           <Link
             href="/login"
-            className="whitespace-nowrap rounded-full bg-brand px-4 py-1.5 text-[12px] font-medium text-white transition hover:bg-brand-hover sm:px-5"
+            className="inline-flex min-h-11 items-center whitespace-nowrap rounded-full bg-brand px-4 text-[12px] font-medium text-white transition hover:bg-brand-hover sm:px-5"
           >
             Sign in
           </Link>

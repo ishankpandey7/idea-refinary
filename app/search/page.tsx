@@ -340,7 +340,7 @@ function Home() {
             setQuery(EXAMPLE_QUERY);
             void runSearchFor(EXAMPLE_QUERY, category);
           }}
-          className="rounded-full border border-line bg-raised px-4 py-1.5 text-[12px] text-body transition hover:border-accent hover:text-accent"
+          className="inline-flex min-h-11 items-center rounded-full border border-line bg-raised px-4 text-[12px] text-body transition hover:border-accent hover:text-accent"
         >
           {EXAMPLE_QUERY} &#8599;
         </button>
@@ -374,7 +374,7 @@ function Home() {
           </span>
           <Link
             href="/"
-            className="rounded-full border border-line px-5 py-1.5 text-[12px] text-body transition hover:border-accent hover:text-accent"
+            className="inline-flex min-h-11 items-center rounded-full border border-line px-5 text-[12px] text-body transition hover:border-accent hover:text-accent"
           >
             Back to the check &rarr;
           </Link>
@@ -529,7 +529,7 @@ function Home() {
                     type="button"
                     onClick={() => addToCheck(r)}
                     disabled={added}
-                    className={`rounded-full border px-4 py-1.5 text-[11px] font-medium transition ${
+                    className={`inline-flex min-h-11 items-center rounded-full border px-4 text-[11px] font-medium transition ${
                       added
                         ? "cursor-default border-accent/40 bg-brand/10 text-accent"
                         : "border-line-strong bg-raised text-body hover:border-accent hover:text-accent"
@@ -541,7 +541,7 @@ function Home() {
                     type="button"
                     onClick={() => onSave(r)}
                     disabled={saved}
-                    className={`rounded-full border px-4 py-1.5 text-[11px] font-medium transition ${
+                    className={`inline-flex min-h-11 items-center rounded-full border px-4 text-[11px] font-medium transition ${
                       saved
                         ? "cursor-default border-accent/40 bg-brand/10 text-accent"
                         : "border-line text-muted hover:border-accent hover:text-accent"
